@@ -1,0 +1,18 @@
+services:
+  sqlsugar-mcp:
+    build: .
+    image: sqlsugar-notes-mcp
+    container_name: sqlsugar-notes-mcp
+    ports:
+      - "5688:5688"
+    environment:
+      TRANSPORT: http
+      PORT: "5688"
+      # 設 token 即要求 Authorization: Bearer <token>;留空則公開存取
+      MCP_AUTH_TOKEN: ${MCP_AUTH_TOKEN:-}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:5688/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

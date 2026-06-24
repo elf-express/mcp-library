@@ -1,0 +1,120 @@
+name: Sync to HuggingFace Spaces
+
+# =============================================================================
+# 自動同步 huggingface/ 目錄內容至 HuggingFace Space
+# 觸發時機:
+#   - push 到 main 且變更了 huggingface/ 或 Dockerfile 相關檔案
+#   - 手動 dispatch
+#
+# 前置條件:
+#   1. 在 HuggingFace 建立 Space:https://huggingface.co/new-space
+#      - Owner: 你的 HF 帳號(例如 168express)
+#      - Space name: sqlsugar-mcp
+#      - SDK: Docker
+#   2. 取得 HF Access Token:https://huggingface.co/settings/tokens
+#      - 權限選 "Write"
+#   3. 加到 GitHub repo secret:
+#      - 變數名:HF_TOKEN
+#      - GitHub repo → Settings → Secrets and variables → Actions → New secret
+#   4. 視情況改下方 env.HF_SPACE_OWNER / HF_SPACE_NAME
+# =============================================================================
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'huggingface/**'
+      - '.github/workflows/hf-spaces-sync.yml'
+  workflow_dispatch:
+
+env:
+  HF_SPACE_OWNER: 168express
+  HF_SPACE_NAME: sqlsugar-mcp
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    name: Push huggingface/ → HF Space
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          # 不需要完整歷史,只要 huggingface/ 目錄
+          fetch-depth: 1
+
+      - name: Validate HF_TOKEN
+        run: |
+          if [ -z "${{ secrets.HF_TOKEN }}" ]; then
+            echo "::error::HF_TOKEN secret 未設定"
+            echo "::error::請至 https://huggingface.co/settings/tokens 建立 write token"
+            echo "::error::並加到 GitHub repo → Settings → Secrets → HF_TOKEN"
+            exit 1
+          fi
+
+      - name: Setup git for HF
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Clone HF Space repo
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # HF Spaces 用 HTTPS 推送,token 走 URL 內嵌
+          git clone "https://${HF_SPACE_OWNER}:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_OWNER}/${HF_SPACE_NAME}" hf-space
+
+      - name: Copy huggingface/ contents into Space
+        run: |
+          # 清掉舊內容(保留 .git 與 .gitattributes 等隱藏檔)
+          find hf-space -mindepth 1 -maxdepth 1 \
+               -not -name '.git' \
+               -not -name '.gitattributes' \
+               -exec rm -rf {} +
+
+          # 複製 huggingface/ 所有檔案到 Space root
+          cp -r huggingface/. hf-space/
+
+          echo "Files synced to HF Space:"
+          ls -la hf-space/
+
+      - name: Commit & push to HF Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          cd hf-space
+
+          # 設定遠端 URL(包含 token)
+          git remote set-url origin "https://${HF_SPACE_OWNER}:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_OWNER}/${HF_SPACE_NAME}"
+
+          # 若無變更則跳過
+          if git diff --quiet && git diff --cached --quiet; then
+            git add -A
+          fi
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "::notice::HF Space 內容無變更,跳過 push"
+            exit 0
+          fi
+
+          # commit 訊息帶上對應的 GitHub commit
+          git commit -m "sync: from elf-express/SqlSugar-Mcp@${{ github.sha }}
+
+          GitHub commit: ${{ github.event.head_commit.message }}
+          Source: https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+
+          git push origin main
+
+      - name: Summary
+        run: |
+          echo "## HuggingFace Space 已同步 🤗" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Space**:https://huggingface.co/spaces/${HF_SPACE_OWNER}/${HF_SPACE_NAME}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Endpoint**:https://${HF_SPACE_OWNER}-${HF_SPACE_NAME}.hf.space/mcp" >> $GITHUB_STEP_SUMMARY
+          echo "- **Health**:https://${HF_SPACE_OWNER}-${HF_SPACE_NAME}.hf.space/health" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "首次部署 Space 需要 build(拉映像)約 1-2 分鐘,之後 push 重啟在數秒內完成。" >> $GITHUB_STEP_SUMMARY

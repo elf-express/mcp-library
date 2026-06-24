@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.zeabur.app/template.json",
+  "name": "SqlSugar MCP Server",
+  "description": "MCP server for querying SqlSugar ORM documentation",
+  "services": [
+    {
+      "name": "sqlsugar-mcp",
+      "icon": "https://avatars.githubusercontent.com/u/153623537?s=200&v=4",
+      "template": "PREBUILT_V2",
+      "spec": {
+        "source": {
+          "image": "ghcr.io/elf-express/sqlsugar-mcp:latest"
+        },
+        "ports": [
+          {
+            "id": "web",
+            "port": 5688,
+            "type": "HTTP"
+          }
+        ],
+        "env": {
+          "TRANSPORT": {
+            "default": "http",
+            "expose": false
+          },
+          "PORT": {
+            "default": "5688",
+            "expose": false
+          },
+          "MCP_AUTH_TOKEN": {
+            "default": "",
+            "expose": true,
+            "description": "Bearer token for /mcp endpoint. Leave empty to allow public access. Generate with: openssl rand -hex 32"
+          }
+        },
+        "healthCheck": {
+          "type": "HTTP",
+          "http": {
+            "path": "/health",
+            "port": "web"
+          }
+        }
+      }
+    }
+  ]
+}

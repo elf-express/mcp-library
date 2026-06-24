@@ -1,0 +1,91 @@
+# =====================================================
+# .gitignore - 團隊規範(Node + .NET + IDE + OS)
+# =====================================================
+
+# ---------- OS ----------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---------- IDE / Editor ----------
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+.history/
+
+# ---------- 環境變數 / 機密 ----------
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+appsettings.Development.json
+appsettings.Production.json
+
+# ---------- Node / Frontend ----------
+node_modules/
+dist/
+dist-ssr/
+.cache/
+.parcel-cache/
+.turbo/
+.vite/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+*.tsbuildinfo
+
+# ---------- .NET / C# ----------
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+.vs/
+.vshistory/
+PublishProfiles/
+*.pubxml
+*.publishproj
+artifacts/
+*.nupkg
+*.snupkg
+
+# ---------- 資料庫 / 備份 ----------
+*.bak
+*.sqlite
+*.sqlite3
+*.db
+*.mdf
+*.ldf
+*.ndf
+
+# ---------- 暫存 / 輸出 ----------
+*.tmp
+*.temp
+*.cache
+tmp/
+temp/
+output/
+
+# ---------- Docker ----------
+.docker-compose.override.yml
+docker-compose.override.yml

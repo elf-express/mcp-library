@@ -1,0 +1,12 @@
+# mcp-library — 多個 MCP server 統一掛載(疊加 / include 方式)
+#
+# 在本目錄下執行一次 `docker compose up -d`,即透過 include 把各 server 的
+# compose 疊加在一起,一次構建並掛起全部。各 server 的 compose 自包含
+# (build 路徑、port、token 自管);新增服務只要多加一行 include。
+#
+# 公司一套、家裡一套(兩網域備援)。各服務 port/token 互不干擾。
+include:
+  - fc-designer-mcp/docker-compose.yml
+  - sqlsugar-mcp/sqlsugar-mcp-server/docker-compose.yml
+  # 日後新增 einvoice — 補上 einvoice/ 子目錄與其 compose 後取消註解:
+  # - einvoice-mcp/docker-compose.yml

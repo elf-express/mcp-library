@@ -1,0 +1,39 @@
+{
+  "name": "SqlSugar MCP Server",
+  "image": "ghcr.io/elf-express/sqlsugar-mcp:latest",
+
+  // Codespace 啟動後自動執行(image CMD 已經是 node dist/index.js)
+  // 但 Codespace 預設不會跑 CMD,需用 overrideCommand
+  "overrideCommand": false,
+
+  // 對外公開 5688 port,Codespace 會給你一個 https URL
+  "forwardPorts": [5688],
+  "portsAttributes": {
+    "5688": {
+      "label": "MCP Server (HTTP)",
+      "visibility": "public",
+      "onAutoForward": "notify"
+    }
+  },
+
+  // 環境變數(避免敏感資訊放這,改用 Codespaces Secrets)
+  "containerEnv": {
+    "TRANSPORT": "http",
+    "PORT": "5688"
+    // MCP_AUTH_TOKEN 請在 GitHub → Settings → Codespaces → Secrets 設定
+  },
+
+  // 連接後顯示提示
+  "postAttachCommand": {
+    "info": "echo '🚀 MCP server 已啟動於 http://localhost:5688'; echo '   public URL 見 PORTS 頁籤'; echo '   /health → 健康檢查;/mcp → MCP endpoint'"
+  },
+
+  // VS Code 擴充(連到 Codespace 用網頁 VS Code 時)
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

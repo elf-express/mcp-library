@@ -1,0 +1,64 @@
+# =============================================================================
+# Dependabot 設定 - 自動建立相依套件更新 PR
+# 文件: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# =============================================================================
+
+version: 2
+updates:
+  # ---------------------------------------------------------------------------
+  # GitHub Actions
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Taipei
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - ci/cd
+    commit-message:
+      prefix: chore(ci)
+      include: scope
+
+  # ---------------------------------------------------------------------------
+  # MCP Server 的 npm 套件
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: npm
+    directory: /sqlsugar-mcp-server
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Taipei
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+      - mcp-server
+    commit-message:
+      prefix: chore(deps)
+      include: scope
+    ignore:
+      # 大版本更新由人工評估
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # ---------------------------------------------------------------------------
+  # MCP Server 的 Dockerfile base image
+  # ---------------------------------------------------------------------------
+  - package-ecosystem: docker
+    directory: /sqlsugar-mcp-server
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Taipei
+    open-pull-requests-limit: 3
+    labels:
+      - dependencies
+      - docker
+    commit-message:
+      prefix: chore(docker)
+      include: scope

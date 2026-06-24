@@ -1,0 +1,199 @@
+name: Release
+
+# =============================================================================
+# 發版 Workflow
+# 觸發方式(兩種):
+#   1. 自動:main → release 的 PR 合併後(push to release)
+#      會從 merge commit 訊息抓取版本號(PR 標題格式:release: vX.Y.Z)
+#   2. 手動:於 GitHub Actions 頁面 workflow_dispatch,輸入版本號
+#
+# 流程:
+#   1. 解析版本號
+#   2. 驗證該版本 tag 是否已存在
+#   3. 建立 tag(推送 tag 後會觸發 docker-publish.yml)
+#   4. 從上個 tag 至今的 commits 產生 release notes
+#   5. 建立 GitHub Release
+# =============================================================================
+
+on:
+  push:
+    branches:
+      - release
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: '版本號(必須符合 vX.Y.Z 或 vX.Y.Z-rcN 格式)'
+        required: true
+        type: string
+      prerelease:
+        description: '是否為 prerelease'
+        required: false
+        type: boolean
+        default: false
+
+# 預設 workflow 權限最小化;只在需要寫入的 job 內放寬
+# 需要 actions:write 才能在發版完成後主動 dispatch docker-publish.yml
+# (GITHUB_TOKEN 推送的 tag 不會觸發其他 workflow,故需顯式 dispatch)
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    # 此 job 需要:
+    # - contents: write → 建立 tag 與 GitHub Release
+    # - actions: write  → dispatch docker-publish.yml(繞過 GITHUB_TOKEN 不觸發 workflow 的限制)
+    # 注意:job-level permissions 完全覆寫 workflow-level,故必須完整列出所需權限
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # 需要完整歷史以產生 changelog
+          ref: release
+
+      # -----------------------------------------------------------------------
+      # 解析版本號
+      # -----------------------------------------------------------------------
+      - name: Resolve version
+        id: version
+        run: |
+          set -e
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+            PRERELEASE="${{ github.event.inputs.prerelease }}"
+            echo "手動觸發,版本號:$VERSION"
+          else
+            MSG=$(git log -1 --pretty=%s)
+            echo "Commit 訊息: $MSG"
+
+            VERSION=$(echo "$MSG" | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?' | head -1 || true)
+
+            if [ -z "$VERSION" ]; then
+              # 非 release: 格式的推送(例如首次建立 release 分支、hotfix 直接 push)
+              # 不視為錯誤 — 僅 skip 後續步驟,要發版請用手動觸發
+              echo "::notice::Commit 訊息不符 release: vX.Y.Z 格式,本次推送略過自動發版"
+              echo "::notice::實際訊息:$MSG"
+              echo "::notice::如需發版,請於 Actions 頁面手動觸發 Release workflow"
+              echo "skip=true" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+
+            if [[ "$VERSION" == *-* ]]; then
+              PRERELEASE="true"
+            else
+              PRERELEASE="false"
+            fi
+
+            echo "自動解析版本:$VERSION(prerelease: $PRERELEASE)"
+          fi
+
+          if ! echo "$VERSION" | grep -qE '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$'; then
+            echo "::error::版本格式錯誤:$VERSION(應為 vX.Y.Z 或 vX.Y.Z-rcN)"
+            exit 1
+          fi
+
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "prerelease=$PRERELEASE" >> $GITHUB_OUTPUT
+
+      - name: Check tag does not exist
+        if: steps.version.outputs.skip != 'true'
+        run: |
+          if git rev-parse "${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "::error::Tag ${{ steps.version.outputs.version }} 已存在"
+            echo "::error::如需重新發版,請先刪除舊 tag:"
+            echo "::error::  git tag -d ${{ steps.version.outputs.version }}"
+            echo "::error::  git push origin :refs/tags/${{ steps.version.outputs.version }}"
+            exit 1
+          fi
+          echo "Tag ${{ steps.version.outputs.version }} 可用"
+
+      - name: Create tag
+        if: steps.version.outputs.skip != 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git tag -a "${{ steps.version.outputs.version }}" \
+                  -m "Release ${{ steps.version.outputs.version }}"
+          git push origin "${{ steps.version.outputs.version }}"
+
+          echo "Tag ${{ steps.version.outputs.version }} 已建立並推送(將觸發 docker-publish.yml)"
+
+      - name: Generate release notes
+        id: notes
+        if: steps.version.outputs.skip != 'true'
+        run: |
+          PREV_TAG=$(git describe --tags --abbrev=0 "${{ steps.version.outputs.version }}^" 2>/dev/null || echo "")
+
+          if [ -z "$PREV_TAG" ]; then
+            echo "首次發版,列出所有 commits"
+            COMMITS=$(git log --pretty=format:"- %s (%h)" "${{ steps.version.outputs.version }}")
+            COMPARE_LINK=""
+          else
+            echo "從 $PREV_TAG 到 ${{ steps.version.outputs.version }}"
+            COMMITS=$(git log --pretty=format:"- %s (%h)" "$PREV_TAG".."${{ steps.version.outputs.version }}")
+            COMPARE_LINK="完整變更:[$PREV_TAG...${{ steps.version.outputs.version }}](https://github.com/${{ github.repository }}/compare/$PREV_TAG...${{ steps.version.outputs.version }})"
+          fi
+
+          {
+            echo "notes<<RELEASE_NOTES_EOF"
+            echo "## 變更內容"
+            echo ""
+            echo "$COMMITS"
+            echo ""
+            echo "## Docker 映像"
+            echo ""
+            echo '```bash'
+            echo "docker pull ghcr.io/${{ github.repository_owner }}/sqlsugar-mcp:${{ steps.version.outputs.version }}"
+            echo "docker pull ghcr.io/${{ github.repository_owner }}/sqlsugar-mcp:latest"
+            echo '```'
+            echo ""
+            if [ -n "$COMPARE_LINK" ]; then
+              echo "---"
+              echo "$COMPARE_LINK"
+            fi
+            echo "RELEASE_NOTES_EOF"
+          } >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        if: steps.version.outputs.skip != 'true'
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          body: ${{ steps.notes.outputs.notes }}
+          target_commitish: release
+          draft: false
+          prerelease: ${{ steps.version.outputs.prerelease }}
+
+      # -----------------------------------------------------------------------
+      # 顯式 dispatch docker-publish.yml
+      # 原因:GITHUB_TOKEN 推送的 tag 不會觸發其他 workflow(GitHub 防迴圈設計)
+      # 解法:用 workflow_dispatch API 直接呼叫,此 API 不受該限制
+      # -----------------------------------------------------------------------
+      - name: Trigger Docker publish
+        if: steps.version.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run docker-publish.yml \
+            --ref "${{ steps.version.outputs.version }}" \
+            -f tag="${{ steps.version.outputs.version }}"
+          echo "已 dispatch docker-publish.yml,將建構 ${{ steps.version.outputs.version }} 映像"
+
+      - name: Summary
+        if: steps.version.outputs.skip != 'true'
+        run: |
+          echo "## 發版完成" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **版本**:\`${{ steps.version.outputs.version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Prerelease**:${{ steps.version.outputs.prerelease }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Release 頁面**:https://github.com/${{ github.repository }}/releases/tag/${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Docker 映像建構中**:由 \`docker-publish.yml\` 處理(已自動 dispatch)" >> $GITHUB_STEP_SUMMARY

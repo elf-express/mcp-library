@@ -1,0 +1,161 @@
+name: CI
+
+# =============================================================================
+# 通用 CI Workflow
+# 觸發時機:
+#   - push 到 main 或 release
+#   - PR 開到 main 或 release
+# 內含:
+#   - basics: commit lint、大檔案檢查、機密掃描、line endings
+#   - mcp-server: sqlsugar-mcp-server/ 的 TypeScript build
+# =============================================================================
+
+on:
+  push:
+    branches:
+      - main
+      - release
+  pull_request:
+    branches:
+      - main
+      - release
+
+# 取消同分支上仍在跑的舊 workflow,避免浪費資源
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # 基礎檢查
+  # ---------------------------------------------------------------------------
+  basics:
+    name: Basics (commit / file check)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check commit messages (Conventional Commits)
+        # PR 到 main 時檢查;到 release 不檢查(release PR 標題格式不同)
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
+        uses: webiny/action-conventional-commits@v1.4.2
+
+      - name: Check release PR title format
+        # PR 到 release 時,檢查標題必須為 release: vX.Y.Z 格式
+        if: github.event_name == 'pull_request' && github.base_ref == 'release'
+        run: |
+          TITLE="${{ github.event.pull_request.title }}"
+          echo "PR 標題:$TITLE"
+
+          if ! echo "$TITLE" | grep -qE '^release: v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?( .*)?$'; then
+            echo "::error::Release PR 標題格式錯誤"
+            echo "::error::實際:$TITLE"
+            echo "::error::應為:release: vX.Y.Z 或 release: vX.Y.Z - 描述"
+            exit 1
+          fi
+          echo "Release PR 標題格式正確"
+
+      - name: Check for large files (> 5MB)
+        run: |
+          LARGE_FILES=$(find . -type f -size +5M -not -path "./.git/*" -not -path "./node_modules/*" || true)
+          if [ -n "$LARGE_FILES" ]; then
+            echo "::error::發現大檔案(>5MB),請考慮使用 Git LFS:"
+            echo "$LARGE_FILES"
+            exit 1
+          fi
+
+      - name: Check for forbidden patterns (basic secret scan)
+        run: |
+          # 涵蓋常見變體:password/passwd/secret/api_key/access_token/auth_token/connection_string/private_key/client_secret
+          PATTERN='(password|passwd|secret|api[_-]?key|access[_-]?token|auth[_-]?token|connection[_-]?string|private[_-]?key|client[_-]?secret)["'"'"']?\s*[:=]\s*["'"'"'][^"'"'"']{8,}["'"'"']'
+          # 排除:
+          # - examples/ 與效能測試目錄:僅為示範代碼,本機連線字串不視為真實機密
+          # - notes/:文件目錄可能含示範代碼片段
+          if grep -rniE "$PATTERN" \
+               --include="*.cs" --include="*.ts" --include="*.js" --include="*.mjs" \
+               --include="*.json" --include="*.yml" --include="*.yaml" \
+               --include="*.env*" --include="*.config" --include="*.properties" \
+               --exclude="*.example*" --exclude="*.sample*" \
+               --exclude="package-lock.json" \
+               --exclude-dir=node_modules --exclude-dir=bin --exclude-dir=obj \
+               --exclude-dir=.git --exclude-dir=dist --exclude-dir=build \
+               --exclude-dir=examples --exclude-dir=notes \
+               --exclude-dir='SqlSugar-vs-EFCore效能測試-MySQL版' \
+               --exclude-dir='SqlSugar-vs-EFCore效能測試-SqlServer版' . ; then
+            echo "::error::偵測到疑似機密資訊硬編碼"
+            echo "::error::請改用環境變數、.env(已 .gitignore)或 secret manager"
+            echo "::error::若為誤判,請用 *.example 後綴或在該行加 // pragma: allowlist secret"
+            exit 1
+          fi
+          echo "未發現明顯機密資訊"
+
+  # ---------------------------------------------------------------------------
+  # MCP Server:TypeScript build (sqlsugar-mcp-server/)
+  # ---------------------------------------------------------------------------
+  mcp-server:
+    name: MCP Server (Node/TS build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sqlsugar-mcp-server
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: sqlsugar-mcp-server/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check & Build
+        run: npm run build
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Verify build output
+        run: |
+          if [ ! -f dist/index.js ]; then
+            echo "::error::Build did not produce dist/index.js"
+            exit 1
+          fi
+          echo "Build artifacts:"
+          ls -la dist/
+
+  # ---------------------------------------------------------------------------
+  # Docker build 驗證 (PR 時只 build 不 push,避免推壞的映像)
+  # ---------------------------------------------------------------------------
+  docker-build:
+    name: Docker Build Verification
+    runs-on: ubuntu-latest
+    needs: mcp-server
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build (no push)
+        uses: docker/build-push-action@v6
+        with:
+          context: ./sqlsugar-mcp-server
+          file: ./sqlsugar-mcp-server/Dockerfile
+          push: false
+          load: true
+          tags: sqlsugar-mcp:ci-test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
