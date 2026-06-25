@@ -1,0 +1,87 @@
+name: npm Publish
+
+# =============================================================================
+# 把 @elf-express/docs-mcp-server 發布到 npm,讓使用者能用一行裝:
+#   npx -y @elf-express/docs-mcp-server
+#
+# 觸發:
+#   1. push tag v*.*.*           → 以「tag 的版本號」發布正式版到 npm
+#   2. workflow_dispatch         → 預設只 npm pack(dry-run)檢視 tarball 內容,不發布
+#
+# 前置(一次性):
+#   - npm 上要有 elf-express org(免費);scoped 套件才能用 @elf-express/ 前綴
+#   - repo secret NPM_TOKEN:npm 的 Automation token(npmjs.com → Access Tokens)
+# =============================================================================
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '只打包檢視內容(npm pack),不真的發布'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish @elf-express/docs-mcp-server
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs-mcp-server
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # registry-url 會幫我們寫好 .npmrc,publish 時讀 NODE_AUTH_TOKEN 認證
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: npm
+          cache-dependency-path: docs-mcp-server/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      # tag 推送:用 tag 的版本號當發布版本(單一真實來源,免手改 package.json)。
+      # 例:push tag v1.2.0 → 發布 1.2.0。
+      - name: 由 tag 設定版本
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: npm version "${GITHUB_REF_NAME#v}" --no-git-tag-version --allow-same-version
+
+      # 正式發布:僅 tag 推送時。access:public 已寫在 package.json 的 publishConfig。
+      - name: Publish to npm
+        if: github.event_name == 'push'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 手動觸發:只檢視會打包哪些檔(確認 dist/ 與 corpora/ 有進 tarball),不發布
+      - name: Dry-run(npm pack 檢視 tarball 內容)
+        if: github.event_name == 'workflow_dispatch'
+        run: npm pack --dry-run
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## 📦 npm:\`@elf-express/docs-mcp-server\`"
+            echo ""
+            echo "一行安裝:"
+            echo '```bash'
+            echo "npx -y @elf-express/docs-mcp-server"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

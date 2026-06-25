@@ -9,6 +9,35 @@
 
 種子語料已打包進 `corpora/`:`sqlsugar`(74 篇)、`fc`(133 篇),會跟著映像一起部署。
 
+## 安裝(npx 一行裝,本機 stdio)
+
+發布到 npm 後,任何專案**不必 clone、不必 build**,一行就裝。在工作目錄建 `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "docs": {
+      "command": "npx",
+      "args": ["-y", "@elf-express/docs-mcp-server"]
+    }
+  }
+}
+```
+
+重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar` + `fc` 兩本(共 207 篇)。
+
+| AI 助手 | 設定檔 |
+|---|---|
+| Claude Code | `.mcp.json`(原生支援) |
+| Cursor | `.cursor/mcp.json` |
+| Windsurf | `.windsurfrules` |
+| Claude Desktop | `claude_desktop_config.json` |
+
+- 只想掛**單一本書**:加 `"env": { "DOCS_SCOPE": "fc" }`,該連線就只看得到 `fc`。
+- **還沒發到 npm**(或想用本機原始碼):改成 `"command": "node", "args": ["<repo>/docs-mcp-server/dist/index.js"]`,前置先 `npm install && npm run build`。
+
+> 要遠端 / 雲端 / 多人共用,改走下方 **http** 模式(Streamable HTTP),不是 npx。
+
 ## 工具(皆唯讀)
 
 | 工具 | 功能 |
