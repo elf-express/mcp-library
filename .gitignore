@@ -3,3 +3,8 @@ dist/
 .env
 *.log
 .DS_Store
+
+# Cypress 執行產物(截圖 / 影片 / 下載),非原始碼
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
