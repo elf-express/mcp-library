@@ -1,7 +1,7 @@
 services:
   fc-docs-mcp:
     build: .
-    image: fc-docs-mcp
+    image: ghcr.io/elf-express/fc-docs-mcp:latest
     container_name: fc-docs-mcp
     ports:
       - "5689:5689"
