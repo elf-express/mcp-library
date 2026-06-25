@@ -1,0 +1,44 @@
+# 給 Dockhand(或任何 GitOps 工具):只部署 docs-mcp + 一次性 registrar,
+# 把兩本書註冊進你「現有」的 MCPJungle gateway。不另起 gateway / DB。
+#
+# 前提:
+#   - 你現有的 MCPJungle 已在某個 Docker 網路上。把該網路名填到 MCPJUNGLE_NETWORK(預設 mcpjungl);
+#     若你現有 compose 沒設 name:,Docker 會加專案前綴(如 myproj_mcpjungl),請填完整名。
+#   - registrar 以 REGISTRY_URL 指向現有 gateway(預設 http://mcpjungle-server:8080,= 其 container_name:內部埠)。
+#
+# Dockhand 設定:
+#   - Git 倉庫指向本 repo;compose 路徑 docs-mcp-server/docker-compose.dockhand.yml
+#   - env 編輯器(若與預設不同才需填):MCPJUNGLE_NETWORK、REGISTRY_URL、REGISTER_LIST
+#   - 開 webhook 自動重佈;每次 push 後 docs-mcp 重建、registrar 重跑(已註冊的略過)
+services:
+  docs-mcp:
+    build: .
+    image: docs-mcp-server
+    container_name: docs-mcp-server
+    environment:
+      TRANSPORT: http
+      PORT: "5690"
+      MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
+    networks: [gateway]
+    restart: unless-stopped
+
+  # 一次性:等現有 gateway 就緒,把書註冊進去,然後結束(Exited 0 正常)
+  registrar:
+    image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
+    depends_on:
+      - docs-mcp
+    entrypoint: ["/bin/sh", "/registrar.sh"]
+    environment:
+      REGISTRY_URL: ${REGISTRY_URL:-http://mcpjungle-server:8080}
+      # 預設只註冊兩本書(你現有 gateway 多半已有 filesystem/fetch 等);要加就改清單
+      REGISTER_LIST: ${REGISTER_LIST:-sqlsugar fc}
+    volumes:
+      - ./mcpjungle:/configs:ro
+      - ./mcpjungle/registrar.sh:/registrar.sh:ro
+    networks: [gateway]
+    restart: "no"
+
+networks:
+  gateway:
+    external: true
+    name: ${MCPJUNGLE_NETWORK:-mcpjungl}
