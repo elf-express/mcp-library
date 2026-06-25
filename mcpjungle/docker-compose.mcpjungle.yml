@@ -7,7 +7,7 @@
 #   docker network create shared-db
 #   docker network create mcpjungl
 # 起:
-#   cp .env.mcpjungle.example .env   # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
+#   cp .env.example .env   # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
 #   docker compose -f docker-compose.mcpjungle.yml up -d --build
 services:
   mcpjungle:
@@ -27,13 +27,13 @@ services:
     restart: always
 
   docs-mcp:
-    build: .
+    build: ../docs-mcp-server
     image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
     environment:
       TRANSPORT: http
       PORT: "5690"
-      # dev 留空 = 僅內部網路可達。要硬化:設 DOCS_MCP_AUTH_TOKEN 並在 mcpjungle/*.json 加 bearer_token。
+      # dev 留空 = 僅內部網路可達。要硬化:設 DOCS_MCP_AUTH_TOKEN 並在 servers/*.json 加 bearer_token。
       MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
     networks: [mcpjungl]
     restart: unless-stopped
@@ -48,8 +48,8 @@ services:
     environment:
       REGISTRY_URL: http://mcpjungle:8080
     volumes:
-      - ./mcpjungle:/configs:ro
-      - ./mcpjungle/registrar.sh:/registrar.sh:ro
+      - ./servers:/configs:ro
+      - ./registrar.sh:/registrar.sh:ro
     networks: [mcpjungl]
     restart: "no"
 

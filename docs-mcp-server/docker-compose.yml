@@ -1,7 +1,7 @@
 services:
   docs-mcp:
     build: .
-    image: docs-mcp-server
+    image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
     ports:
       - "5690:5690"

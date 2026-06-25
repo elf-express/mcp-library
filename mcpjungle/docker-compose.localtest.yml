@@ -31,11 +31,11 @@ services:
     ports:
       - "18800:8080"
     volumes:
-      - ./mcpjungle:/host:ro        # filesystem server 讀這裡(測試用;正式環境見 mcpjungle.yml)
+      - ./servers:/host:ro        # filesystem server 讀這裡(測試用;正式環境見 mcpjungle.yml)
     networks: [mcpjungl, shared-db] # gateway 橋接:mcpjungl 找 MCP server、shared-db 連 DB
 
   docs-mcp:
-    build: .
+    build: ../docs-mcp-server
     image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
     environment:
@@ -52,8 +52,8 @@ services:
     environment:
       REGISTRY_URL: http://mcpjungle:8080
     volumes:
-      - ./mcpjungle:/configs:ro
-      - ./mcpjungle/registrar.sh:/registrar.sh:ro
+      - ./servers:/configs:ro
+      - ./registrar.sh:/registrar.sh:ro
     networks: [mcpjungl]
     restart: "no"
 

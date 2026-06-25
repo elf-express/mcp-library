@@ -7,6 +7,7 @@
 | 子目錄 | 服務 | 形態 | 說明 |
 | --- | --- | --- | --- |
 | [`docs-mcp-server/`](./docs-mcp-server) | `docs-mcp-server` | **多語料(推薦)** | 一個 server 掛多本書,目前 `sqlsugar`(74 篇)+ `fc`(133 篇)。新增書 = 丟資料夾 + `corpus.json`,零程式碼 |
+| [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | 部署 | 整個 library 的 gateway:composes / registrar / 各 server 註冊檔(`servers/`) |
 | [`sqlsugar-mcp/`](./sqlsugar-mcp/sqlsugar-mcp-server) | `sqlsugar-notes-mcp` | 單一(legacy) | 舊版 standalone;另含範例 C# 程式碼搜尋 |
 | [`fc-designer-mcp/`](./fc-designer-mcp) | `fc-docs-mcp` | 單一(legacy) | 舊版 standalone |
 
@@ -16,19 +17,20 @@
 
 ## 部署(推薦:MCPJungle)
 
-完整版見 [`docs-mcp-server/README.md` →「五、部署到 MCPJungle」](./docs-mcp-server/README.md)。最短路徑:
+gateway 部署都在 [`mcpjungle/`](./mcpjungle)(完整說明見 [`mcpjungle/README.md`](./mcpjungle/README.md))。最短路徑:
 
 ```
-cd docs-mcp-server
-cp .env.mcpjungle.example .env        # 填 MCPJUNGLE_DATABASE_URL(連線字串走環境變數,不落地)
-docker compose -f docker-compose.mcpjungle.yml up -d --build   # gateway + docs-mcp 同在 mcpjungl 網路
-brew install mcpjungle/mcpjungle/mcpjungle                     # 官方 CLI(或 GitHub Releases 下載)
-REGISTRY=http://localhost:18800 ./mcpjungle/register.sh        # 註冊兩本書 + 官方工具(filesystem/fetch/time)
+docker network create shared-db mcpjungl   # 一次;shared-db 你的 DB stack 已建就只建 mcpjungl
+cd mcpjungle
+cp .env.example .env                        # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
+docker compose -f docker-compose.mcpjungle.yml up -d --build
+brew install mcpjungle/mcpjungle/mcpjungle  # 官方 CLI(或 GitHub Releases 下載)
+REGISTRY=http://localhost:18800 ./register.sh   # 註冊兩本書 + 官方工具(filesystem/fetch/time)
 ```
 
-*   用戶端連 `http://<host>:18800/mcp`(全部),或 `http://<host>:18800/mcp/<corpus>` 對應的工具群組。
-*   每本書在 gateway 是獨立 server(`sqlsugar__*`、`fc__*`),可各自分組/權限,仍只部署一份 docs-mcp。
-*   機密(DB 連線字串等)一律走 `.env`,已由 `.gitignore` 擋住不進 git。
+* 用戶端連 `http://<host>:18800/mcp`(全部),或 `http://<host>:18800/mcp/<corpus>` 對應的工具群組。
+* 每本書在 gateway 是獨立 server(`sqlsugar__*`、`fc__*`),可各自分組/權限,仍只部署一份 docs-mcp。
+* 機密(DB 連線字串等)一律走 `.env`,已由 `.gitignore` 擋住不進 git。
 
 ### 備援架構
 
