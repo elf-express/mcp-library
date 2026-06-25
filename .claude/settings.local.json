@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"E:/source/mcp-library/docs-mcp-server\")",
+      "Bash(seq 1 30)",
+      "Bash(break)",
+      "Bash(sleep 0.5)"
+    ]
+  }
+}

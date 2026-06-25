@@ -1,0 +1,5 @@
+{
+  "title": "SqlSugar ORM",
+  "description": "SqlSugar .NET ORM 用法筆記:查詢/更新/交易/多租戶/導航/分頁/效能等,多附官方來源與「速查表」段落。",
+  "capabilities": { "cheatsheet": true }
+}

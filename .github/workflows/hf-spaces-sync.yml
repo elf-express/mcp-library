@@ -1,0 +1,111 @@
+name: Sync to HuggingFace Spaces
+
+# =============================================================================
+# monorepo 版 — matrix 同步各 server 的 huggingface/ 目錄至各自 HF Space
+# 觸發時機:
+#   - push 到 main 且變更了任一 server 的 huggingface/ 或本 workflow
+#   - 手動 dispatch
+#
+# 前置條件:
+#   1. 在 HuggingFace 為每個 server 建立 Space(SDK: Docker):
+#      - 168express/fc-designer-mcp
+#      - 168express/sqlsugar-mcp
+#   2. 取得 HF Access Token(權限 Write):https://huggingface.co/settings/tokens
+#   3. 加到 GitHub repo secret:HF_TOKEN
+#      (Settings → Secrets and variables → Actions → New secret)
+# =============================================================================
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'fc-designer-mcp/huggingface/**'
+      - 'sqlsugar-mcp/huggingface/**'
+      - '.github/workflows/hf-spaces-sync.yml'
+  workflow_dispatch:
+
+env:
+  HF_SPACE_OWNER: 168express
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    name: Sync ${{ matrix.space_name }} → HF Space
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - hf_dir: fc-designer-mcp/huggingface
+            space_name: fc-designer-mcp
+          - hf_dir: sqlsugar-mcp/huggingface
+            space_name: sqlsugar-mcp
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Validate HF_TOKEN
+        run: |
+          if [ -z "${{ secrets.HF_TOKEN }}" ]; then
+            echo "::error::HF_TOKEN secret 未設定"
+            echo "::error::請至 https://huggingface.co/settings/tokens 建立 write token"
+            echo "::error::並加到 GitHub repo → Settings → Secrets → HF_TOKEN"
+            exit 1
+          fi
+
+      - name: Setup git for HF
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Clone HF Space repo
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git clone "https://${HF_SPACE_OWNER}:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_OWNER}/${{ matrix.space_name }}" hf-space
+
+      - name: Copy ${{ matrix.hf_dir }}/ contents into Space
+        run: |
+          # 清掉舊內容(保留 .git 與 .gitattributes 等隱藏檔)
+          find hf-space -mindepth 1 -maxdepth 1 \
+               -not -name '.git' \
+               -not -name '.gitattributes' \
+               -exec rm -rf {} +
+
+          # 複製該 server 的 huggingface/ 所有檔案到 Space root
+          cp -r "${{ matrix.hf_dir }}/." hf-space/
+
+          echo "Files synced to HF Space (${{ matrix.space_name }}):"
+          ls -la hf-space/
+
+      - name: Commit & push to HF Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          cd hf-space
+          git remote set-url origin "https://${HF_SPACE_OWNER}:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE_OWNER}/${{ matrix.space_name }}"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "::notice::HF Space (${{ matrix.space_name }}) 內容無變更,跳過 push"
+            exit 0
+          fi
+
+          git commit -m "sync: from ${{ github.repository }}@${{ github.sha }}
+
+          Source: https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+
+          git push origin main
+
+      - name: Summary
+        run: |
+          echo "## 🤗 ${{ matrix.space_name }} 已同步" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Space**:https://huggingface.co/spaces/${HF_SPACE_OWNER}/${{ matrix.space_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Endpoint**:https://${HF_SPACE_OWNER}-${{ matrix.space_name }}.hf.space/mcp" >> $GITHUB_STEP_SUMMARY
+          echo "- **Health**:https://${HF_SPACE_OWNER}-${{ matrix.space_name }}.hf.space/health" >> $GITHUB_STEP_SUMMARY
