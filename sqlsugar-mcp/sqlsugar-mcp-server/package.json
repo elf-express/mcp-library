@@ -1,11 +1,11 @@
 {
-  "name": "sqlsugar-notes-mcp-server",
+  "name": "sqlsugar-mcp-server",
   "version": "1.0.0",
   "description": "MCP server for searching and reading SqlSugar markdown notes",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "sqlsugar-notes-mcp-server": "dist/index.js"
+    "sqlsugar-mcp-server": "dist/index.js"
   },
   "scripts": {
     "start": "node dist/index.js",

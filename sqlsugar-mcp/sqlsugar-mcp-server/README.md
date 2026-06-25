@@ -76,8 +76,8 @@ curl -X POST http://localhost:5688/mcp \
 不用 compose 的話:
 
 ```bash
-docker build -t sqlsugar-notes-mcp .
-docker run -d -p 5688:5688 -e MCP_AUTH_TOKEN=my-secret-123 --name sqlsugar-mcp sqlsugar-notes-mcp
+docker build -t sqlsugar-mcp .
+docker run -d -p 5688:5688 -e MCP_AUTH_TOKEN=my-secret-123 --name sqlsugar-mcp sqlsugar-mcp
 ```
 
 ---

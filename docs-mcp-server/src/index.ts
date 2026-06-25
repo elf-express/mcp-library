@@ -182,16 +182,16 @@ function createServer(scope?: string): McpServer {
 
 function logStartupInfo(scope?: string): void {
   const corpora = discoverCorpora();
-  console.error("[docs-mcp] corpora 目錄載入 " + corpora.length + " 個語料、" + totalDocCount() + " 篇文件");
+  console.error("[docs-mcp-server] corpora 目錄載入 " + corpora.length + " 個語料、" + totalDocCount() + " 篇文件");
   for (const c of corpora) {
-    console.error("[docs-mcp]   - " + c.id + (c.title !== c.id ? " (" + c.title + ")" : ""));
+    console.error("[docs-mcp-server]   - " + c.id + (c.title !== c.id ? " (" + c.title + ")" : ""));
   }
   if (corpora.length === 0) {
-    console.error("[docs-mcp] 警告:找不到任何語料。請設定 DOCS_CORPORA_DIR 或在 corpora/ 放語料目錄。");
+    console.error("[docs-mcp-server] 警告:找不到任何語料。請設定 DOCS_CORPORA_DIR 或在 corpora/ 放語料目錄。");
   }
   if (scope) {
-    if (getCorpus(scope)) console.error("[docs-mcp] 已鎖定單一語料:" + scope);
-    else console.error('[docs-mcp] 警告:DOCS_SCOPE="' + scope + '" 不存在,可用:' + corpusIdList());
+    if (getCorpus(scope)) console.error("[docs-mcp-server] 已鎖定單一語料:" + scope);
+    else console.error('[docs-mcp-server] 警告:DOCS_SCOPE="' + scope + '" 不存在,可用:' + corpusIdList());
   }
 }
 
@@ -201,7 +201,7 @@ async function runStdio(): Promise<void> {
   const server = createServer(scope);
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("[docs-mcp] server 已透過 stdio 啟動" + (scope ? "(鎖定語料 " + scope + ")" : ""));
+  console.error("[docs-mcp-server] server 已透過 stdio 啟動" + (scope ? "(鎖定語料 " + scope + ")" : ""));
 }
 
 const transport = (process.env.TRANSPORT || "stdio").toLowerCase();
@@ -214,6 +214,6 @@ const boot =
       })
     : runStdio();
 boot.catch((err) => {
-  console.error("[docs-mcp] 啟動失敗:", err);
+  console.error("[docs-mcp-server] 啟動失敗:", err);
   process.exit(1);
 });

@@ -1,4 +1,4 @@
-# fc-docs-mcp-server
+# fc-designer-mcp-server
 
 FcDesigner Pro 官方文件的 MCP server——對 133 篇繁體中文文件(二次開發 / 產品手冊 / 開發文檔)做關鍵字搜尋與讀取。屬於 `mcp-library` monorepo 下的子服務之一。
 
@@ -52,8 +52,8 @@ TRANSPORT=http PORT=5689 node dist/index.js
 ## Docker
 
 ```bash
-docker build -t fc-docs-mcp .
-docker run -e MCP_AUTH_TOKEN=your-secret -p 5689:5689 fc-docs-mcp
+docker build -t fc-designer-mcp .
+docker run -e MCP_AUTH_TOKEN=your-secret -p 5689:5689 fc-designer-mcp
 ```
 
 或在 `mcp-library` 根目錄 `docker-compose up`,連同其他 MCP 一起掛起。

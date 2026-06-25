@@ -34,7 +34,7 @@ services:
       - ./servers:/host:ro        # filesystem server 讀這裡(測試用;正式環境見 mcpjungle.yml)
     networks: [mcpjungl, shared-db] # gateway 橋接:mcpjungl 找 MCP server、shared-db 連 DB
 
-  docs-mcp:
+  docs-mcp-server:
     build: ../docs-mcp-server
     image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
@@ -47,7 +47,7 @@ services:
     image: ghcr.io/mcpjungle/mcpjungle:latest-stdio
     depends_on:
       - mcpjungle
-      - docs-mcp
+      - docs-mcp-server
     entrypoint: ["/bin/sh", "/registrar.sh"]
     environment:
       REGISTRY_URL: http://mcpjungle:8080

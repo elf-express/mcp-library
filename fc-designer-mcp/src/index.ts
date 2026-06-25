@@ -58,7 +58,7 @@ function textResult(text: string) {
 }
 
 function createServer(): McpServer {
-  const server = new McpServer({ name: "fc-docs-mcp-server", version: "1.0.0" });
+  const server = new McpServer({ name: "fc-designer-mcp-server", version: "1.0.0" });
 
   server.registerTool(
     "fc_search_docs",
@@ -112,10 +112,10 @@ function createServer(): McpServer {
 
 function logStartupInfo(): void {
   const files = listMarkdownFiles();
-  console.error("[fc-docs-mcp] 文件資料夾:" + resolveNotesDir());
-  console.error("[fc-docs-mcp] 載入 " + files.length + " 篇 .md 文件");
+  console.error("[fc-designer-mcp] 文件資料夾:" + resolveNotesDir());
+  console.error("[fc-designer-mcp] 載入 " + files.length + " 篇 .md 文件");
   if (files.length === 0) {
-    console.error("[fc-docs-mcp] 警告:找不到任何 .md 檔。請設定 FC_DOCS_DIR。");
+    console.error("[fc-designer-mcp] 警告:找不到任何 .md 檔。請設定 FC_DOCS_DIR。");
   }
 }
 
@@ -124,7 +124,7 @@ async function runStdio(): Promise<void> {
   const server = createServer();
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("[fc-docs-mcp] server 已透過 stdio 啟動");
+  console.error("[fc-designer-mcp] server 已透過 stdio 啟動");
 }
 
 const transport = (process.env.TRANSPORT || "stdio").toLowerCase();
@@ -133,6 +133,6 @@ const boot =
     ? runHttp(createServer, () => listMarkdownFiles().length)
     : runStdio();
 boot.catch((err) => {
-  console.error("[fc-docs-mcp] 啟動失敗:", err);
+  console.error("[fc-designer-mcp] 啟動失敗:", err);
   process.exit(1);
 });

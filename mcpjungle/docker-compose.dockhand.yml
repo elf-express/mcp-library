@@ -11,7 +11,7 @@
 #   - env 編輯器(若與預設不同才需填):MCPJUNGLE_NETWORK、REGISTRY_URL、REGISTER_LIST
 #   - 開 webhook 自動重佈;每次 push 後 docs-mcp 重建、registrar 重跑(已註冊的略過)
 services:
-  docs-mcp:
+  docs-mcp-server:
     build: ../docs-mcp-server
     image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
@@ -26,7 +26,7 @@ services:
   registrar:
     image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
     depends_on:
-      - docs-mcp
+      - docs-mcp-server
     entrypoint: ["/bin/sh", "/registrar.sh"]
     environment:
       REGISTRY_URL: ${REGISTRY_URL:-http://mcpjungle-server:8080}

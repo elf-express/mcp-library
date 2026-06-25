@@ -1,11 +1,11 @@
 {
-  "name": "fc-docs-mcp-server",
+  "name": "fc-designer-mcp-server",
   "version": "1.0.0",
   "description": "MCP server for searching and reading FcDesigner Pro docs",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "fc-docs-mcp-server": "dist/index.js"
+    "fc-designer-mcp-server": "dist/index.js"
   },
   "scripts": {
     "start": "node dist/index.js",

@@ -12,7 +12,7 @@ export async function runHttp(
   createServer: () => McpServer,
   notesCount: () => number
 ): Promise<void> {
-  console.error("[sqlsugar-notes-mcp] 載入 " + notesCount() + " 篇 .md 筆記");
+  console.error("[sqlsugar-mcp] 載入 " + notesCount() + " 篇 .md 筆記");
   const port = parseInt(process.env.PORT || "5688", 10);
   const authToken = process.env.MCP_AUTH_TOKEN?.trim();
 
@@ -69,7 +69,7 @@ export async function runHttp(
       }
       await transport.handleRequest(req, res, req.body);
     } catch (err) {
-      console.error("[sqlsugar-notes-mcp] 處理請求失敗:", err);
+      console.error("[sqlsugar-mcp] 處理請求失敗:", err);
       if (!res.headersSent) {
         res.status(500).json({
           jsonrpc: "2.0",
@@ -94,7 +94,7 @@ export async function runHttp(
   app.delete("/mcp", handleSessionRequest);
 
   app.listen(port, () => {
-    console.error("[sqlsugar-notes-mcp] HTTP server 已啟動:http://0.0.0.0:" + port + "/mcp");
-    console.error("[sqlsugar-notes-mcp] 驗證:" + (authToken ? "已啟用 Bearer Token" : "未啟用 (公開存取)"));
+    console.error("[sqlsugar-mcp] HTTP server 已啟動:http://0.0.0.0:" + port + "/mcp");
+    console.error("[sqlsugar-mcp] 驗證:" + (authToken ? "已啟用 Bearer Token" : "未啟用 (公開存取)"));
   });
 }

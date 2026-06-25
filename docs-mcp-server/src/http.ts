@@ -89,7 +89,7 @@ export async function runHttp(
       }
       await transport.handleRequest(req, res, req.body);
     } catch (err) {
-      console.error("[docs-mcp] 處理請求失敗:", err);
+      console.error("[docs-mcp-server] 處理請求失敗:", err);
       if (!res.headersSent) {
         res.status(500).json({
           jsonrpc: "2.0",
@@ -123,10 +123,10 @@ export async function runHttp(
 
   app.listen(port, () => {
     console.error(
-      "[docs-mcp] HTTP server 已啟動:http://0.0.0.0:" + port +
+      "[docs-mcp-server] HTTP server 已啟動:http://0.0.0.0:" + port +
       " (全語料 /mcp;單書 /mcp/<corpus>)"
     );
-    console.error("[docs-mcp] 語料數:" + deps.corporaCount() + ",文件數:" + deps.docCount());
-    console.error("[docs-mcp] 驗證:" + (authToken ? "已啟用 Bearer Token" : "未啟用 (公開存取)"));
+    console.error("[docs-mcp-server] 語料數:" + deps.corporaCount() + ",文件數:" + deps.docCount());
+    console.error("[docs-mcp-server] 驗證:" + (authToken ? "已啟用 Bearer Token" : "未啟用 (公開存取)"));
   });
 }

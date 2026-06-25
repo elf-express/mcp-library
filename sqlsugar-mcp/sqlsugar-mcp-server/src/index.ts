@@ -73,7 +73,7 @@ function textResult(text: string) {
 }
 
 function createServer(): McpServer {
-  const server = new McpServer({ name: "sqlsugar-notes-mcp-server", version: "1.0.0" });
+  const server = new McpServer({ name: "sqlsugar-mcp-server", version: "1.0.0" });
 
   server.registerTool(
     "sqlsugar_search_notes",
@@ -180,11 +180,11 @@ function createServer(): McpServer {
 
 function logStartupInfo(): void {
   const files = listMarkdownFiles();
-  console.error("[sqlsugar-notes-mcp] 筆記資料夾:" + resolveNotesDir());
-  console.error("[sqlsugar-notes-mcp] 載入 " + files.length + " 篇 .md 筆記");
-  console.error("[sqlsugar-notes-mcp] 範例原始碼:" + listCodeFiles().length + " 檔 @ " + resolveExamplesDir());
+  console.error("[sqlsugar-mcp] 筆記資料夾:" + resolveNotesDir());
+  console.error("[sqlsugar-mcp] 載入 " + files.length + " 篇 .md 筆記");
+  console.error("[sqlsugar-mcp] 範例原始碼:" + listCodeFiles().length + " 檔 @ " + resolveExamplesDir());
   if (files.length === 0) {
-    console.error("[sqlsugar-notes-mcp] 警告:找不到任何 .md 檔。請設定 SQLSUGAR_NOTES_DIR。");
+    console.error("[sqlsugar-mcp] 警告:找不到任何 .md 檔。請設定 SQLSUGAR_NOTES_DIR。");
   }
 }
 
@@ -193,7 +193,7 @@ async function runStdio(): Promise<void> {
   const server = createServer();
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("[sqlsugar-notes-mcp] server 已透過 stdio 啟動");
+  console.error("[sqlsugar-mcp] server 已透過 stdio 啟動");
 }
 
 const transport = (process.env.TRANSPORT || "stdio").toLowerCase();
@@ -202,6 +202,6 @@ const boot =
     ? runHttp(createServer, () => listMarkdownFiles().length)
     : runStdio();
 boot.catch((err) => {
-  console.error("[sqlsugar-notes-mcp] 啟動失敗:", err);
+  console.error("[sqlsugar-mcp] 啟動失敗:", err);
   process.exit(1);
 });

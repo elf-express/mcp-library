@@ -9,6 +9,6 @@ include:
   - mcpjungle/docker-compose.mcpjungle.yml
 
 services:
-  docs-mcp:
+  docs-mcp-server:
     build: !reset null     # 移除 build,改用 ghcr 現成 image
     pull_policy: always    # 每次 up 都拉最新 latest

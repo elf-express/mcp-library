@@ -1,5 +1,5 @@
 services:
-  docs-mcp:
+  docs-mcp-server:
     build: .
     image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
