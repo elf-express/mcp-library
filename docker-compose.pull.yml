@@ -1,11 +1,9 @@
-# 一鍵起全部 —— pull 版:docs-mcp 不在本機 build,直接拉 ghcr 現成 image
+# 一鍵起 —— pull 版:docs-mcp 不在本機 build,直接拉 ghcr 現成 image
 # (image 由 .github/workflows/docker-publish.yml 在 push 時自動 build+push)。
-#
-# 前置:同 docker-compose.yml(docker network create shared-db mcpjungl;cp .env.example .env)
+# DB 用外部 IP;網路自建。同 docker-compose.yml,只差 docs-mcp 改 pull。
 # 起:  docker compose -f docker-compose.pull.yml up -d
-# Dockhand(pull 法):compose 路徑填 docker-compose.pull.yml(部署快,不在 server 上 build)。
+# Dockhand(pull 法):compose 路徑填 docker-compose.pull.yml。
 include:
-  - shared-db/docker-compose.yml
   - mcpjungle/docker-compose.mcpjungle.yml
 
 services:

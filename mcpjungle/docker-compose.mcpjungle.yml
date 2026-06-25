@@ -1,20 +1,16 @@
-# MCPJungle gateway + docs-mcp + 一次性 registrar,用雙網路拓撲:
-#   - shared-db:你的(共用)Postgres 所在的網路 → gateway 接它連 DB
-#   - mcpjungl :MCPJungle 與各 MCP server 所在的網路
-# 不含 Postgres(DB 由你的 DB stack 管,在 shared-db 上)。機密走 .env,不進 git。
-#
-# 前置(一次):建立兩個網路(shared-db 若你的 DB stack 已建就跳過)
-#   docker network create shared-db
-#   docker network create mcpjungl
+# MCPJungle gateway + docs-mcp + 一次性 registrar。自包含,跟你其他 stack 一樣:
+#   - DB 用「外部 IP」連(MCPJUNGLE_DATABASE_URL 的 host 填你 DB 的 IP)→ 本 stack 不含 Postgres、不需 shared-db 網路。
+#   - 網路 mcpjungl 由本 stack「自建」(部署時自動建 <project>_mcpjungl,像 immich_default 那樣),不必先 docker network create。
+# 機密走 .env,不進 git。
 # 起:
-#   cp .env.example .env   # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
+#   cp .env.example .env   # 填 MCPJUNGLE_DATABASE_URL(host 用你 DB 的 IP)
 #   docker compose -f docker-compose.mcpjungle.yml up -d --build
 services:
   mcpjungle:
     image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
     container_name: mcpjungle-server
     environment:
-      # 連線字串走環境變數(密碼不落地);host = shared-db 上的 DB 容器名
+      # DB 連線字串:host 用你 DB 的 IP(例 192.168.25.100:15432)。密碼不落地到 git。
       DATABASE_URL: ${MCPJUNGLE_DATABASE_URL:?set MCPJUNGLE_DATABASE_URL in .env}
       SERVER_MODE: ${SERVER_MODE:-development}
       OTEL_ENABLED: ${OTEL_ENABLED:-false}
@@ -23,7 +19,7 @@ services:
       - "${MCPJUNGLE_HOST_PORT:-18800}:8080"
     volumes:
       - ${MCPJUNGLE_DATA_DIR:-/mnt/docker/app/data/mcpjungle}:/host:ro
-    networks: [mcpjungl, shared-db]   # 橋接:mcpjungl 找 MCP server、shared-db 連 DB
+    networks: [mcpjungl]
     restart: always
 
   docs-mcp-server:
@@ -54,9 +50,5 @@ services:
     restart: "no"
 
 networks:
-  shared-db:
-    external: true
-    name: ${SHARED_DB_NETWORK:-shared-db}
   mcpjungl:
-    external: true
-    name: ${MCPJUNGLE_NETWORK:-mcpjungl}
+    driver: bridge        # 本 stack 自建(prefix 為 <project>_mcpjungl);不必先 docker network create

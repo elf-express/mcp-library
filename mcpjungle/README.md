@@ -6,7 +6,7 @@
 
 ```
 mcpjungle/
-  docker-compose.mcpjungle.yml   正式:gateway + docs-mcp + registrar(雙網路,接你 shared-db 上的 DB)
+  docker-compose.mcpjungle.yml   正式:gateway + docs-mcp + registrar(DB 走外部 IP、網路自建)
   docker-compose.localtest.yml   本機自包含測試(內含 postgres、自建網路)
   docker-compose.dockhand.yml    只部署 docs-mcp + registrar,接「現有」gateway(Dockhand 用)
   .env.example                   機密範本(複製成 .env)
@@ -17,24 +17,22 @@ mcpjungle/
 
 > docs-mcp 的 image 由 `../docs-mcp-server` 建置(compose 內 `build: ../docs-mcp-server`)。
 
-## 網路拓撲(雙網路)
+## 網路 / DB
 
-- `shared-db`:你的(共用)Postgres 所在網路。
-- `mcpjungl`:MCPJungle gateway 與各 MCP server 所在網路。
-- `mcpjungle-server` **同接兩者**(用 mcpjungl 找 MCP server、用 shared-db 連 DB);`docs-mcp-server` 只在 `mcpjungl`。
+- **網路 `mcpjungl` 由本 stack 自建**(部署時自動建 `<project>_mcpjungl`,像 `immich_default` 那樣),**不必先 `docker network create`**。gateway / docs-mcp / registrar 都在這個網路。
+- **DB 走外部 IP**:`MCPJUNGLE_DATABASE_URL` 的 host 填你 DB 的 **IP**(例 `192.168.25.100:15432`),本 compose **不含 Postgres**。
 
-## 一、一鍵起(正式:接你 shared-db 上的 DB)
-
-本 compose **不含 Postgres**(DB 由你的 stack 管,在 `shared-db` 上)。
+## 一、一鍵起
 
 ```bash
-docker network create shared-db mcpjungl   # 一次;shared-db 你的 DB stack 已建就只建 mcpjungl
 cd mcpjungle
-cp .env.example .env                        # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB,host 用 DB 容器名)
+cp .env.example .env                        # 填 MCPJUNGLE_DATABASE_URL(host 用你 DB 的 IP)
 docker compose -f docker-compose.mcpjungle.yml up -d --build
 ```
 
-拓撲與 registrar 自動註冊都**已沙盒實測**(sqlsugar / fc / filesystem / fetch / time 共 5 個)。
+網路自建、DB 走 IP、registrar 自動註冊都**已沙盒實測**(sqlsugar / fc / filesystem / fetch / time 共 5 個)。
+
+> ⚠️ container 名 `mcpjungle-server`:已有同名 gateway 在跑要先停掉(否則撞名)。
 
 > 想全自包含測試(內含 postgres)?用 [`docker-compose.localtest.yml`](./docker-compose.localtest.yml)。
 > 要把 docs 接進你**現有**的 gateway?見下方 Dockhand 節。
