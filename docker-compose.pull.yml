@@ -10,3 +10,6 @@ services:
   docs-mcp-server:
     build: !reset null     # 移除 build,改用 ghcr 現成 image
     pull_policy: always    # 每次 up 都拉最新 latest
+  registrar:
+    build: !reset null     # registrar 也改拉現成 image(docs-registrar,設定檔已烤進去)
+    pull_policy: always

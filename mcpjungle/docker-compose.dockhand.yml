@@ -24,17 +24,16 @@ services:
 
   # 一次性:等現有 gateway 就緒,把書註冊進去,然後結束(Exited 0 正常)
   registrar:
-    image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
+    build:
+      context: .
+      dockerfile: Dockerfile.registrar
+    image: ghcr.io/elf-express/docs-registrar:latest
     depends_on:
       - docs-mcp-server
-    entrypoint: ["/bin/sh", "/registrar.sh"]
     environment:
       REGISTRY_URL: ${REGISTRY_URL:-http://mcpjungle-server:8080}
       # 預設只註冊兩本書(你現有 gateway 多半已有 filesystem/fetch 等);要加就改清單
       REGISTER_LIST: ${REGISTER_LIST:-sqlsugar fc}
-    volumes:
-      - ./servers:/configs:ro
-      - ./registrar.sh:/registrar.sh:ro
     networks: [gateway]
     restart: "no"
 

@@ -34,18 +34,18 @@ services:
     networks: [mcpjungl]
     restart: unless-stopped
 
-  # 一次性:等 gateway 起來後自動把所有 server 註冊,然後結束(GitOps 自動部署)
+  # 一次性:等 gateway 起來後自動把所有 server 註冊,然後結束(GitOps 自動部署)。
+  # 設定檔 + 腳本烤進 image(不用 bind mount,Dockhand 等 clone-進容器的工具才相容)。
   registrar:
-    image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
+    build:
+      context: .
+      dockerfile: Dockerfile.registrar
+    image: ghcr.io/elf-express/docs-registrar:latest
     depends_on:
       - mcpjungle
       - docs-mcp-server
-    entrypoint: ["/bin/sh", "/registrar.sh"]
     environment:
       REGISTRY_URL: http://mcpjungle:8080
-    volumes:
-      - ./servers:/configs:ro
-      - ./registrar.sh:/registrar.sh:ro
     networks: [mcpjungl]
     restart: "no"
 

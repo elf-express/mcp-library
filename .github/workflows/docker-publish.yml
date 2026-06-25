@@ -46,6 +46,11 @@ jobs:
             context: ./docs-mcp-server
             title: Docs MCP Server (multi-corpus)
             description: Multi-corpus MCP server for searching bundled markdown docs
+          - image: docs-registrar
+            context: ./mcpjungle
+            dockerfile: ./mcpjungle/Dockerfile.registrar
+            title: MCPJungle registrar (docs configs baked in)
+            description: One-shot registrar with bundled server registration configs
           - image: fc-designer-mcp
             context: ./fc-designer-mcp
             title: FcDesigner Pro Docs MCP Server
@@ -99,7 +104,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ${{ matrix.context }}
-          file: ${{ matrix.context }}/Dockerfile
+          file: ${{ matrix.dockerfile || format('{0}/Dockerfile', matrix.context) }}
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
