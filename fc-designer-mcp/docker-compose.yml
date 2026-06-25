@@ -1,8 +1,8 @@
 services:
-  fc-docs-mcp:
+  fc-designer-mcp:
     build: .
-    image: ghcr.io/elf-express/fc-docs-mcp:latest
-    container_name: fc-docs-mcp
+    image: ghcr.io/elf-express/fc-designer-mcp:latest
+    container_name: fc-designer-mcp
     ports:
       - "5689:5689"
     environment:

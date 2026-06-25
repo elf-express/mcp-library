@@ -1,8 +1,8 @@
 services:
   sqlsugar-mcp:
     build: .
-    image: ghcr.io/elf-express/sqlsugar-notes-mcp:latest
-    container_name: sqlsugar-notes-mcp
+    image: ghcr.io/elf-express/sqlsugar-mcp:latest
+    container_name: sqlsugar-mcp
     ports:
       - "5688:5688"
     environment:

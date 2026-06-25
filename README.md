@@ -51,7 +51,7 @@ docker compose up -d --build
 
 ## legacy standalone
 
-舊的兩個 standalone server(`sqlsugar-notes-mcp` / `fc-docs-mcp`)已被 docs-mcp 的「語料」取代,不在根 compose 堆疊。若仍要單獨跑,進各自資料夾 `docker compose up -d`(token 用 `MCP_AUTH_TOKEN` / `FC_MCP_AUTH_TOKEN`,留空則公開)。
+舊的兩個 standalone server(`sqlsugar-mcp` / `fc-designer-mcp`)已被 docs-mcp 的「語料」取代,不在根 compose 堆疊。若仍要單獨跑,進各自資料夾 `docker compose up -d`(token 用 `MCP_AUTH_TOKEN` / `FC_MCP_AUTH_TOKEN`,留空則公開)。
 
 ## 開發單一服務
 

@@ -96,7 +96,7 @@ compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway
 
 ## 六、建置 / 推送 image 到 ghcr.io
 
-自 build 的 image 為 `ghcr.io/elf-express/<name>:latest`(`docs-mcp-server` / `sqlsugar-notes-mcp` / `fc-docs-mcp`);`mcpjungle`/`postgres` 是官方 image 不推。
+自 build 的 image 為 `ghcr.io/elf-express/<name>:latest`(`docs-mcp-server` / `sqlsugar-mcp` / `fc-designer-mcp`);`mcpjungle`/`postgres` 是官方 image 不推。
 
 ```bash
 echo "$GHCR_PAT" | docker login ghcr.io -u <github 帳號> --password-stdin   # PAT 需 packages:write 權限
