@@ -1,0 +1,33 @@
+# shared-db —— 共用 Postgres(MCPJungle 等服務的 DB),獨立成一個 stack。
+# 在 shared-db 網路上,供其他 stack(如 mcpjungle)以容器名 shared-postgres 連線。
+#
+# 前置(一次):docker network create shared-db
+# Dockhand:新增 Git stack,指向本 repo,compose 路徑 shared-db/docker-compose.yml,
+#           env 編輯器填 POSTGRES_PASSWORD。先部署這個,再部署 mcpjungle。
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: shared-postgres          # ← mcpjungle 的 MCPJUNGLE_DATABASE_URL host 用這個
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mcpjungle}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-mcpjungle}  # 自動建立 mcpjungle 這個 database
+    volumes:
+      - pgdata:/var/lib/postgresql/data       # 持久化:容器重建資料仍在
+    ports:
+      - "${POSTGRES_HOST_PORT:-15432}:5432"    # 選用:host 上用 DBeaver 之類連進來管理
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mcpjungle}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [shared-db]
+    restart: always
+
+volumes:
+  pgdata:
+
+networks:
+  shared-db:
+    external: true
+    name: ${SHARED_DB_NETWORK:-shared-db}

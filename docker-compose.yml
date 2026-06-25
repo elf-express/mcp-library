@@ -1,12 +1,16 @@
-# mcp-library — 多個 MCP server 統一掛載(疊加 / include 方式)
+# mcp-library —— 一鍵起全部:Postgres(shared-db)+ MCPJungle gateway + docs-mcp + registrar。
+# 透過 include 疊加 shared-db 與 mcpjungle 兩個 stack(各自也可單獨部署,見其資料夾)。
 #
-# 在本目錄下執行一次 `docker compose up -d`,即透過 include 把各 server 的
-# compose 疊加在一起,一次構建並掛起全部。各 server 的 compose 自包含
-# (build 路徑、port、token 自管);新增服務只要多加一行 include。
+# 前置(一次):建立兩個 Docker 網路
+#   docker network create shared-db mcpjungl
+# 起:
+#   cp .env.example .env        # 填 POSTGRES_PASSWORD 與 MCPJUNGLE_DATABASE_URL
+#   docker compose up -d --build
 #
-# 公司一套、家裡一套(兩網域備援)。各服務 port/token 互不干擾。
+# Dockhand:指向本 repo、compose 路徑 docker-compose.yml,env 編輯器填上述兩個機密 → 一鍵全起。
+#
+# 註:舊的 standalone sqlsugar / fc 已被 docs-mcp 的「語料」取代,不在此一鍵堆疊;
+#     若仍要單獨跑,進各自資料夾(sqlsugar-mcp/… 或 fc-designer-mcp/)docker compose up。
 include:
-  - fc-designer-mcp/docker-compose.yml
-  - sqlsugar-mcp/sqlsugar-mcp-server/docker-compose.yml
-  # 日後新增 einvoice — 補上 einvoice/ 子目錄與其 compose 後取消註解:
-  # - einvoice-mcp/docker-compose.yml
+  - shared-db/docker-compose.yml             # Postgres(shared-db 網路)
+  - mcpjungle/docker-compose.mcpjungle.yml   # gateway + docs-mcp + registrar(mcpjungl + shared-db)

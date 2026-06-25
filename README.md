@@ -1,36 +1,36 @@
 # mcp-library
 
-多個 MCP server 的統一目錄(monorepo)。文檔查詢類已收斂為單一**多語料** server [`docs-mcp-server`](./docs-mcp-server)(一個 server 掛多本「書」),統一透過 **MCPJungle** gateway 對外。
+多個 MCP server 的統一目錄(monorepo)。文檔查詢類已收斂為單一**多語料** server [`docs-mcp-server`](./docs-mcp-server),統一透過 **MCPJungle** gateway 對外。**根目錄一個 `docker compose up` 即可拉起全部。**
 
-## 服務一覽
+## 結構 / 服務一覽
 
-| 子目錄 | 服務 | 形態 | 說明 |
-| --- | --- | --- | --- |
-| [`docs-mcp-server/`](./docs-mcp-server) | `docs-mcp-server` | **多語料(推薦)** | 一個 server 掛多本書,目前 `sqlsugar`(74 篇)+ `fc`(133 篇)。新增書 = 丟資料夾 + `corpus.json`,零程式碼 |
-| [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | 部署 | 整個 library 的 gateway:composes / registrar / 各 server 註冊檔(`servers/`) |
-| [`sqlsugar-mcp/`](./sqlsugar-mcp/sqlsugar-mcp-server) | `sqlsugar-notes-mcp` | 單一(legacy) | 舊版 standalone;另含範例 C# 程式碼搜尋 |
-| [`fc-designer-mcp/`](./fc-designer-mcp) | `fc-docs-mcp` | 單一(legacy) | 舊版 standalone |
-
-> 文檔查詢的新工作流一律走 `docs-mcp-server`(以「語料」疊加);上面兩個 standalone 保留可回退,不再擴充。
+| 子目錄 | 角色 | 說明 |
+| --- | --- | --- |
+| [`docs-mcp-server/`](./docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar` 74 + `fc` 133);新增書 = 丟資料夾 + `corpus.json` |
+| [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
+| [`shared-db/`](./shared-db) | 共用 Postgres | gateway 的 DB,在 `shared-db` 網路上 |
+| [`sqlsugar-mcp/`](./sqlsugar-mcp/sqlsugar-mcp-server) · [`fc-designer-mcp/`](./fc-designer-mcp) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
 
 ---
 
-## 部署(推薦:MCPJungle)
+## 部署:一鍵起全部(推薦)
 
-gateway 部署都在 [`mcpjungle/`](./mcpjungle)(完整說明見 [`mcpjungle/README.md`](./mcpjungle/README.md))。最短路徑:
+根 `docker-compose.yml` 用 `include` 疊起 `shared-db`(Postgres)+ `mcpjungle`(gateway + docs-mcp + registrar)。
 
-```
-docker network create shared-db mcpjungl   # 一次;shared-db 你的 DB stack 已建就只建 mcpjungl
-cd mcpjungle
-cp .env.example .env                        # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
-docker compose -f docker-compose.mcpjungle.yml up -d --build
-brew install mcpjungle/mcpjungle/mcpjungle  # 官方 CLI(或 GitHub Releases 下載)
-REGISTRY=http://localhost:18800 ./register.sh   # 註冊兩本書 + 官方工具(filesystem/fetch/time)
+```bash
+docker network create shared-db mcpjungl    # 一次
+cp .env.example .env                         # 填 POSTGRES_PASSWORD 與 MCPJUNGLE_DATABASE_URL(密碼兩處一致)
+docker compose up -d --build
 ```
 
-* 用戶端連 `http://<host>:18800/mcp`(全部),或 `http://<host>:18800/mcp/<corpus>` 對應的工具群組。
-* 每本書在 gateway 是獨立 server(`sqlsugar__*`、`fc__*`),可各自分組/權限,仍只部署一份 docs-mcp。
-* 機密(DB 連線字串等)一律走 `.env`,已由 `.gitignore` 擋住不進 git。
+* 起來的容器:`shared-postgres` + `mcpjungle-server`(:18800)+ `docs-mcp-server` + 一次性 registrar。
+* registrar 自動把 5 個 server 註冊上(`sqlsugar` / `fc` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 18 秒**。
+* 用戶端連 `http://<host>:18800/mcp`(全部)或 `http://<host>:18800/mcp/<corpus>`。
+* gateway 啟動時若 DB 還沒 ready 會短暫 `Restarting`,DB healthy 後自動接上(`restart: always`),屬正常。
+
+**Dockhand**:新增 Git stack 指向本 repo、compose 路徑 `docker-compose.yml`,env 編輯器填 `POSTGRES_PASSWORD` 與 `MCPJUNGLE_DATABASE_URL` → git clone 後一鍵全起。(網路 `shared-db`/`mcpjungl` 需先 `docker network create` 一次。)
+
+> 各 stack 也可**單獨部署**:詳見 [`mcpjungle/README.md`](./mcpjungle/README.md)(gateway / Dockhand 接現有 gateway / ghcr 推送)、[`shared-db/`](./shared-db)(DB)。
 
 ### 備援架構
 
@@ -38,15 +38,9 @@ REGISTRY=http://localhost:18800 ./register.sh   # 註冊兩本書 + 官方工具
 
 ---
 
-## 部署(legacy:standalone 各自一個 server)
+## legacy standalone
 
-舊的兩個 standalone server 仍可獨立掛起(不經多語料合併):
-
-```
-docker compose up -d       # 根 docker-compose.yml:include fc-designer-mcp + sqlsugar-mcp-server
-```
-
-各服務 port/token 自管(見各子目錄 compose);token 用環境變數 `MCP_AUTH_TOKEN`(留空則公開)。
+舊的兩個 standalone server(`sqlsugar-notes-mcp` / `fc-docs-mcp`)已被 docs-mcp 的「語料」取代,不在根 compose 堆疊。若仍要單獨跑,進各自資料夾 `docker compose up -d`(token 用 `MCP_AUTH_TOKEN` / `FC_MCP_AUTH_TOKEN`,留空則公開)。
 
 ## 開發單一服務
 
