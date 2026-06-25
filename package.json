@@ -1,0 +1,13 @@
+{
+  "name": "mcp-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCP server 庫(monorepo);根層含 Cypress E2E 測試",
+  "scripts": {
+    "cypress": "cypress open",
+    "test:e2e": "cypress run --e2e"
+  },
+  "devDependencies": {
+    "cypress": "^15.18.0"
+  }
+}
