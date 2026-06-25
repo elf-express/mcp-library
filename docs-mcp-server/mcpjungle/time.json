@@ -1,0 +1,7 @@
+{
+  "name": "time",
+  "transport": "stdio",
+  "description": "目前時間與時區轉換的官方工具(uvx,無需 token)。",
+  "command": "uvx",
+  "args": ["mcp-server-time", "--local-timezone=Asia/Taipei"]
+}

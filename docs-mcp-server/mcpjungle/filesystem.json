@@ -1,0 +1,7 @@
+{
+  "name": "filesystem",
+  "transport": "stdio",
+  "description": "讀取 gateway 容器內 /host 目錄(= compose 掛載的 MCPJUNGLE_DATA_DIR,唯讀)的檔案系統工具。",
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem", "/host"]
+}

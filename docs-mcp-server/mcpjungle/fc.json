@@ -1,0 +1,6 @@
+{
+  "name": "fc",
+  "transport": "streamable_http",
+  "description": "FcDesigner Pro 表單設計器文件:二次開發/產品手冊/開發文檔(docs_search / docs_read / docs_list_corpora)",
+  "url": "http://docs-mcp-server:5690/mcp/fc"
+}

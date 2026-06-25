@@ -218,8 +218,34 @@ export function loadSources(corpus: Corpus): Record<string, string> {
   }
 }
 
+/**
+ * 從文件內文抽出官方來源 URL。掃描前 15 行,挑「引用區塊(>)或含 source/来源/來源/官方 字樣」的行,
+ * 優先取 markdown 連結 [文字](url),否則取裸 URL。支援兩種常見格式:
+ *   sqlsugar: `> 📖 官方文件:[果糖網…](https://…)`
+ *   fc:       `> Source: https://…`
+ */
+export function extractSourceUrl(content: string): string | undefined {
+  const lines = content.split(/\r?\n/).slice(0, 15);
+  for (const line of lines) {
+    if (!/^\s*>/.test(line) && !/source|来源|來源|官方/i.test(line)) continue;
+    const md = line.match(/\]\((https?:\/\/[^)\s]+)\)/);
+    if (md) return md[1];
+    const bare = line.match(/(https?:\/\/[^\s)]+)/);
+    if (bare) return bare[1];
+  }
+  return undefined;
+}
+
+/**
+ * 來源連結。優先用 sources.json(明確覆寫),否則自動從該文件內文抽取。
+ * 兩者皆無則回空字串。
+ */
 export function sourceLine(corpus: Corpus, filename: string): string {
-  const url = loadSources(corpus)[filename];
+  let url: string | undefined = loadSources(corpus)[filename];
+  if (!url) {
+    const f = listMarkdownFiles(corpus).find((x) => x.filename === filename);
+    if (f) url = extractSourceUrl(readNoteContent(f));
+  }
   return url ? "📖 官方文件來源:" + url : "";
 }
 

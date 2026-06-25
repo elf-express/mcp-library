@@ -1,0 +1,42 @@
+# 一鍵起 MCPJungle gateway + docs-mcp-server,兩者同在 mcpjungl 網路。
+# 機密(DB 連線字串、token)一律走 .env,不寫進本檔、不進 git。
+#   1) cp .env.mcpjungle.example .env   並填 MCPJUNGLE_DATABASE_URL
+#   2) docker compose -f docker-compose.mcpjungle.yml up -d --build
+services:
+  mcpjungle:
+    image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
+    container_name: mcpjungle-server
+    environment:
+      # 連線字串改用環境變數(密碼不落地到 compose / git)
+      DATABASE_URL: ${MCPJUNGLE_DATABASE_URL:?set MCPJUNGLE_DATABASE_URL in .env}
+      SERVER_MODE: ${SERVER_MODE:-development}
+      OTEL_ENABLED: ${OTEL_ENABLED:-false}
+      MCP_SERVER_INIT_REQ_TIMEOUT_SEC: ${MCP_SERVER_INIT_REQ_TIMEOUT_SEC:-10}
+    ports:
+      # 18800 避開 Stalwart admin(預設 8080);被佔用改 MCPJUNGLE_HOST_PORT
+      - "${MCPJUNGLE_HOST_PORT:-18800}:8080"
+    volumes:
+      # filesystem MCP server 能讀到的目錄(唯讀最安全)
+      - ${MCPJUNGLE_DATA_DIR:-/mnt/docker/app/data/mcpjungle}:/host:ro
+    networks:
+      - mcpjungl
+    restart: always
+
+  docs-mcp:
+    build: .
+    image: docs-mcp-server
+    container_name: docs-mcp-server
+    environment:
+      TRANSPORT: http
+      PORT: "5690"
+      # dev 留空 = 僅內部網路可達、免 token。要硬化:設 DOCS_MCP_AUTH_TOKEN,
+      # 並在 mcpjungle/*.json 加回 "bearer_token": "<同一個 token>"。
+      MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
+    networks:
+      - mcpjungl
+    restart: unless-stopped
+
+networks:
+  mcpjungl:
+    driver: bridge
+    name: mcpjungl

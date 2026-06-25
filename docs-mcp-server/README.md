@@ -56,7 +56,7 @@
 }
 ```
 
-4.(選填)放一個 `sources.json` 對照「相對路徑 → 官方文件 URL」:
+4.(通常不用)來源連結會**自動從每份 MD 的開頭抽取**(支援 `> Source: https://…` 或 `> 📖 官方文件:[文字](https://…)` 兩種格式)。只有想**覆寫**自動抽取時,才放一個 `sources.json`:
 
 ```json
 { "指南/快速上手.md": "https://furion.net/docs/get-start" }
@@ -153,6 +153,87 @@ Settings → Connectors → Add custom connector:
 ```
 
 ---
+
+## 五、部署到 MCPJungle(本案採用)
+
+[MCPJungle](https://github.com/mcpjungle/MCPJungle) 是自架的 MCP gateway / registry:把多個 MCP server 註冊進去,對用戶端只開一個入口(預設 `http://<host>:8080/mcp`),並負責命名空間、分組與存取控制。本 server 是標準 streamable HTTP MCP server,直接用 URL 註冊即可。
+
+> 想先在本機把整條鏈跑通(不接你的真 DB)?用 [`docker-compose.localtest.yml`](./docker-compose.localtest.yml)(內含本地 postgres),已沙盒實測:sqlsugar / fc / filesystem / fetch / time 共 5 個 server 全部註冊成功。
+
+### 步驟
+
+1. **一鍵起 gateway + 本 server(同網路、機密走 `.env`)**:
+   ```bash
+   cd docs-mcp-server
+   cp .env.mcpjungle.example .env       # 填 MCPJUNGLE_DATABASE_URL(DB 連線字串改用環境變數,不落地)
+   docker compose -f docker-compose.mcpjungle.yml up -d --build
+   ```
+   兩個容器都在 `mcpjungl` 網路:`mcpjungle-server`(gateway,host port 18800)、`docs-mcp-server`(本 server,內部 5690,不對外開埠)。gateway 以容器名連本 server:`http://docs-mcp-server:5690/mcp/<corpus>`。
+   > 已有自己的 MCPJungle compose?只要(1)`DATABASE_URL:` 改成 `${MCPJUNGLE_DATABASE_URL}` 並把值移進 `.env`、(2)`networks` 區塊加 `name: mcpjungl`、(3)貼上本檔的 `docs-mcp` service 即可。
+
+2. **裝官方 CLI 並註冊語料**(dev 模式、免 token;設定檔在 `./mcpjungle/`,url 已用容器名)。
+
+   裝 CLI(server/client 同一個 binary):
+   ```bash
+   brew install mcpjungle/mcpjungle/mcpjungle      # macOS/Linux;或 GitHub Releases 下載 binary
+   ```
+   讓 CLI 指向你的 gateway(host port 18800)——旗標或 `~/.mcpjungle.conf` 二選一:
+   ```bash
+   mcpjungle --registry http://localhost:18800 list tools     # 旗標(全域,放 subcommand 前)
+   # 或寫 ~/.mcpjungle.conf:  registry_url: http://localhost:18800
+   ```
+   註冊(直接從 repo 跑,免複製進容器):
+   ```bash
+   REGISTRY=http://localhost:18800 ./mcpjungle/register.sh    # 預設:sqlsugar + fc + 官方工具(filesystem/fetch/time)
+   # 手動等同:mcpjungle --registry http://localhost:18800 register -c ./mcpjungle/sqlsugar.json
+   ```
+   > **別搞混兩個位址**:`--registry`(=18800)是 **CLI → gateway**;json 裡的 `http://docs-mcp-server:5690/...` 是 **gateway → 本 server**(容器名,由 gateway 在 `mcpjungl` 網路內解析)。
+   >
+   > 不想裝 CLI?用容器內的 binary:把 json 放到 gateway 掛載的 `/host`,`docker exec mcpjungle-server mcpjungle register -c /host/sqlsugar.json`。
+
+   兩種策略擇一:
+
+   **A. 每本書各自註冊**(推薦,延續模型 B;可在 gateway 對「每本書」做分組/權限):`sqlsugar.json` + `fc.json` → 工具 `sqlsugar__docs_search`、`fc__docs_search`(MCPJungle 用 `<server>__<tool>`)。新增一本書 = 本 server 丟資料夾重啟 + 多註冊一個指向 `/mcp/<id>` 的設定檔。
+
+   **B. 整包註冊成一個 `docs`**(最省事;新增書不必動 gateway):改註冊 `docs-all.json`(url 指 `/mcp`)→ 工具 `docs__docs_search`(用 `corpus` 參數選書)、`docs__docs_list_corpora`(列全部)。新增書只要本 server 重啟,gateway 自動看得到。
+
+3. **存取控制**(選用,enterprise 模式):
+   ```bash
+   export SERVER_MODE=enterprise        # 或 mcpjungle start --enterprise
+   mcpjungle create mcp-client claude-x --allow "sqlsugar"   # 該 client 只能用 sqlsugar(需採策略 A)
+   ```
+
+4. **用戶端連 MCPJungle**(不是直連本 server;你的 host port 是 18800):
+   - Claude Desktop:`npx mcp-remote http://<host>:18800/mcp`
+   - 工具分組端點:`http://<host>:18800/v0/groups/<group>/mcp`
+
+### 順便註冊 MCPJungle 官方 stdio 工具(filesystem / fetch / time)
+
+> 釐清:**MCPJungle 本身沒有內建工具**——依官方文檔,所有工具都來自註冊的 MCP server。但 `-stdio` image 內含 npx/uvx,可直接跑官方 reference server。`register.sh` 預設就把這三個無需 token 的一起註冊(設 `WITH_TOOLS=0` 可略過):
+
+| 設定檔 | 命令 | 說明 |
+|---|---|---|
+| `filesystem.json` | `npx @modelcontextprotocol/server-filesystem /host` | 讀 gateway 容器內 `/host`(= compose 掛載的 `MCPJUNGLE_DATA_DIR`,唯讀) |
+| `fetch.json` | `uvx mcp-server-fetch` | 抓網頁轉 markdown |
+| `time.json` | `uvx mcp-server-time --local-timezone=Asia/Taipei` | 目前時間 / 時區轉換 |
+
+註冊後工具名同樣是 `<server>__<tool>`:`filesystem__read_file`、`fetch__fetch`、`time__get_current_time`…
+
+要 **github** 等**需 token** 的官方 server?照 stdio 格式加 `env` 欄位即可(我沒放進 `register.sh` 自動註冊,以免無 token 失敗):
+```json
+{ "name": "github", "transport": "stdio", "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-github"],
+  "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "你的PAT" } }
+```
+
+### 認證對應
+
+| 連線 | 怎麼帶 |
+|---|---|
+| gateway → 本 server | 註冊設定檔的 `bearer_token` = 本 server 的 `MCP_AUTH_TOKEN`(兩邊一致;或兩邊都不設) |
+| 用戶端 → gateway | dev 模式開放;enterprise 模式用 `mcpjungle create mcp-client` 發 token |
+
+> 重點:**模型 B 的 `/mcp/<corpus>` 子端點 + MCPJungle = 一份部署,卻能在 gateway 把每本書當成獨立服務做命名空間與權限**(原本要拆成多個 server 才有的隔離,現在不必)。
 
 ## 與舊 server 的關係
 

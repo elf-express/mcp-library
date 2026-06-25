@@ -20,10 +20,14 @@ import {
   doListCorpora,
   findNotes,
   listMarkdownFiles,
+  extractSourceUrl,
+  sourceLine,
   _clearCaches,
 } from "../src/corpus.js";
 
 const SPEEDY = `# Speedy
+
+> Source: https://embedded.example/speedy-WRONG
 
 Keyword 出現第一次。
 
@@ -55,6 +59,14 @@ const ONLY = `# Only
 Keyword 與 BetaOnly 都在這裡。
 `;
 
+// 只在內文寫來源(markdown 連結形式)、不放進 sources.json,用來驗證自動抽取。
+const EMBED = `# Embed
+
+> 📖 官方文件:[官方頁](https://embedded.example/embed)
+
+這篇沒有那個關鍵字,僅測試來源自動抽取。
+`;
+
 let root: string;
 const originalEnv = process.env.DOCS_CORPORA_DIR;
 
@@ -77,6 +89,7 @@ beforeAll(() => {
   write("alpha/speedy.md", SPEEDY);
   write("alpha/plain.md", PLAIN);
   write("alpha/sub/nested.md", NESTED);
+  write("alpha/embed.md", EMBED);
 
   // 語料 beta(未啟用 cheatsheet,無 title 以驗證 fallback = id)
   write("beta/corpus.json", JSON.stringify({ capabilities: { cheatsheet: false } }));
@@ -130,7 +143,8 @@ describe("discoverCorpora / getCorpus", () => {
     expect(files).toContain("speedy.md");
     expect(files).toContain("plain.md");
     expect(files).toContain("sub/nested.md");
-    expect(files).toHaveLength(3);
+    expect(files).toContain("embed.md");
+    expect(files).toHaveLength(4);
   });
 });
 
@@ -186,7 +200,7 @@ describe("doRead — 讀取與來源連結", () => {
   it("讀 alpha/speedy → 含 [alpha] 標頭與 sources.json 的官方連結", () => {
     const r = doRead("alpha", "speedy");
     expect(r).toContain("# [alpha] speedy.md");
-    expect(r).toContain("https://example.com/speedy");
+    expect(r).toContain("https://example.com/speedy"); // 標頭來源來自 sources.json
   });
 
   it("子目錄檔可用「檔名」或「相對路徑」讀到", () => {
@@ -197,6 +211,33 @@ describe("doRead — 讀取與來源連結", () => {
   it("未知檔名 → 提示找不到;未知語料 → 提示語料", () => {
     expect(doRead("alpha", "xxoo不存在")).toContain("找不到符合");
     expect(doRead("nope", "speedy")).toContain('找不到語料 "nope"');
+  });
+});
+
+// ===========================================================================
+// 來源抽取 / 覆寫
+// ===========================================================================
+
+describe("sourceLine — 自動從內文抽取,sources.json 優先覆寫", () => {
+  it("embed.md 不在 sources.json,來源自動從內文 markdown 連結抽取", () => {
+    const r = doRead("alpha", "embed");
+    expect(r).toContain("https://embedded.example/embed");
+  });
+
+  it("extractSourceUrl 支援兩種格式(裸 URL / markdown 連結),無來源回 undefined", () => {
+    expect(extractSourceUrl("# t\n\n> Source: https://a.example/x\n")).toBe("https://a.example/x");
+    expect(extractSourceUrl("# t\n\n> 📖 官方文件:[頁](https://b.example/y)\n")).toBe("https://b.example/y");
+    expect(extractSourceUrl("# t\n\n一般內文,沒有來源行。\n")).toBeUndefined();
+  });
+
+  it("sourceLine:speedy.md 有 sources.json → 用它覆寫內文的來源(不取 WRONG)", () => {
+    const line = sourceLine(getCorpus("alpha")!, "speedy.md");
+    expect(line).toContain("https://example.com/speedy");
+    expect(line).not.toContain("speedy-WRONG");
+  });
+
+  it("sourceLine:embed.md 不在 sources.json → 回退到內文抽取", () => {
+    expect(sourceLine(getCorpus("alpha")!, "embed.md")).toContain("https://embedded.example/embed");
   });
 });
 
@@ -233,7 +274,7 @@ describe("doListCorpora", () => {
     expect(r).toContain("共 2 個");
     expect(r).toContain("alpha");
     expect(r).toContain("beta");
-    expect(r).toContain("文件數:3");
+    expect(r).toContain("文件數:4");
     expect(r).toContain("文件數:1");
     expect(r).toContain("· 速查表"); // alpha 的能力標記
   });

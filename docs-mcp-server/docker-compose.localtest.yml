@@ -1,0 +1,59 @@
+# 本機端到端測試:postgres + MCPJungle + docs-mcp 一次起,不依賴外部 DB / LAN。
+# 用途:在接你的真實 MCPJungle(真 Postgres)之前,先把「註冊 + 工具呼叫」整條鏈在本機跑通。
+# 已於沙盒實測通過(5 個 server:sqlsugar/fc/filesystem/fetch/time 全部註冊成功)。
+#
+# 起:
+#   cd docs-mcp-server
+#   docker compose -f docker-compose.localtest.yml up -d --build
+#
+# 註冊(用本機 CLI,跨平台、最乾淨):
+#   mcpjungle --registry http://localhost:18800 register -c ./mcpjungle/sqlsugar.json
+#   mcpjungle --registry http://localhost:18800 register -c ./mcpjungle/fc.json
+#   mcpjungle --registry http://localhost:18800 list servers
+#   # 沒裝 CLI 就用容器內的(json 已掛在 /host):
+#   #   docker exec mcpjungle-server /mcpjungle register -c /host/sqlsugar.json
+#   #   (Windows Git Bash 要加 MSYS_NO_PATHCONV=1 以免 /host、/mcpjungle 被轉成 Windows 路徑)
+#
+# 用戶端:http://localhost:18800/mcp
+# 收:docker compose -f docker-compose.localtest.yml down -v
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mcpjungle
+      POSTGRES_PASSWORD: mcpjungle
+      POSTGRES_DB: mcpjungle
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mcpjungle"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    networks: [net]
+
+  mcpjungle:
+    image: ghcr.io/mcpjungle/mcpjungle:latest-stdio
+    container_name: mcpjungle-server
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://mcpjungle:mcpjungle@postgres:5432/mcpjungle?sslmode=disable
+      SERVER_MODE: development
+    ports:
+      - "18800:8080"
+    volumes:
+      - ./mcpjungle:/host:ro      # 註冊設定檔以 /host 取用
+    networks: [net]
+
+  docs-mcp:
+    build: .
+    image: docs-mcp-server
+    container_name: docs-mcp-server
+    environment:
+      TRANSPORT: http
+      PORT: "5690"
+    networks: [net]
+
+networks:
+  net:
+    driver: bridge

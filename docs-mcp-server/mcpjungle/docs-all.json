@@ -1,0 +1,6 @@
+{
+  "name": "docs",
+  "transport": "streamable_http",
+  "description": "多語料文檔。先用 docs_list_corpora 看有哪些語料,再用 docs_search 帶 corpus 參數選書(sqlsugar / fc / …)。",
+  "url": "http://docs-mcp-server:5690/mcp"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "sqlsugar",
+  "transport": "streamable_http",
+  "description": "SqlSugar .NET ORM 文檔:搜尋/讀取/速查表(docs_search / docs_read / docs_cheatsheet / docs_list_corpora)",
+  "url": "http://docs-mcp-server:5690/mcp/sqlsugar"
+}

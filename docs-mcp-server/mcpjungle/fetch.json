@@ -1,0 +1,7 @@
+{
+  "name": "fetch",
+  "transport": "stdio",
+  "description": "抓取網頁 URL 並轉成 markdown 的官方工具(uvx,無需 token)。",
+  "command": "uvx",
+  "args": ["mcp-server-fetch"]
+}
