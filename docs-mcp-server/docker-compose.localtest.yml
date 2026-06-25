@@ -54,6 +54,21 @@ services:
       PORT: "5690"
     networks: [net]
 
+  # 一次性註冊:等 gateway 起來後自動註冊全部 server,然後結束(驗證 GitOps 自動部署)
+  registrar:
+    image: ghcr.io/mcpjungle/mcpjungle:latest-stdio
+    depends_on:
+      - mcpjungle
+      - docs-mcp
+    entrypoint: ["/bin/sh", "/registrar.sh"]
+    environment:
+      REGISTRY_URL: http://mcpjungle:8080
+    volumes:
+      - ./mcpjungle:/configs:ro
+      - ./mcpjungle/registrar.sh:/registrar.sh:ro
+    networks: [net]
+    restart: "no"
+
 networks:
   net:
     driver: bridge

@@ -226,6 +226,20 @@ Settings → Connectors → Add custom connector:
   "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "你的PAT" } }
 ```
 
+### GitOps 自動部署(Portainer / Komodo / Dockge…)
+
+compose 內含一個一次性 `registrar` 容器:`docker compose up` 起來後,它會等 gateway 就緒、把所有 server 自動註冊,然後結束(`Exited (0)` 是正常的)。**已沙盒實測:`up` 後約 24 秒自動註冊 sqlsugar / fc / filesystem / fetch / time 共 5 個,無需手動 `register.sh`。**
+
+在「指向 git 倉庫自動部署」的工具裡:
+
+1. 新增一個 stack,指向本 repo,compose 路徑填 `docs-mcp-server/docker-compose.mcpjungle.yml`。
+2. 在工具的**環境變數 UI** 填機密(因為 `.env` 不進 git):至少 `MCPJUNGLE_DATABASE_URL`,其餘用預設。
+3. 部署。之後每次 `git push` → 工具 webhook/輪詢自動重拉重佈,registrar 再跑一次(已註冊的會略過)。
+
+調整要註冊哪些:registrar 的 `REGISTER_LIST` env(預設 `sqlsugar fc filesystem fetch time`)。
+
+> 想註冊進你**現有**的 gateway(而非本 compose 內建那個)?把 `mcpjungle` / `postgres` 兩個 service 拿掉,讓 `docs-mcp` 與 `registrar` join 你現有的 `mcpjungl` 網路(`external: true`),並設 `registrar` 的 `REGISTRY_URL` 指向現有 gateway(如 `http://mcpjungle-server:8080`)。
+
 ### 認證對應
 
 | 連線 | 怎麼帶 |
