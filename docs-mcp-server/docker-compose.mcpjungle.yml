@@ -1,25 +1,29 @@
-# 一鍵起 MCPJungle gateway + docs-mcp-server,兩者同在 mcpjungl 網路。
-# 機密(DB 連線字串、token)一律走 .env,不寫進本檔、不進 git。
-#   1) cp .env.mcpjungle.example .env   並填 MCPJUNGLE_DATABASE_URL
-#   2) docker compose -f docker-compose.mcpjungle.yml up -d --build
+# MCPJungle gateway + docs-mcp + 一次性 registrar,用雙網路拓撲:
+#   - shared-db:你的(共用)Postgres 所在的網路 → gateway 接它連 DB
+#   - mcpjungl :MCPJungle 與各 MCP server 所在的網路
+# 不含 Postgres(DB 由你的 DB stack 管,在 shared-db 上)。機密走 .env,不進 git。
+#
+# 前置(一次):建立兩個網路(shared-db 若你的 DB stack 已建就跳過)
+#   docker network create shared-db
+#   docker network create mcpjungl
+# 起:
+#   cp .env.mcpjungle.example .env   # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
+#   docker compose -f docker-compose.mcpjungle.yml up -d --build
 services:
   mcpjungle:
     image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
     container_name: mcpjungle-server
     environment:
-      # 連線字串改用環境變數(密碼不落地到 compose / git)
+      # 連線字串走環境變數(密碼不落地);host = shared-db 上的 DB 容器名
       DATABASE_URL: ${MCPJUNGLE_DATABASE_URL:?set MCPJUNGLE_DATABASE_URL in .env}
       SERVER_MODE: ${SERVER_MODE:-development}
       OTEL_ENABLED: ${OTEL_ENABLED:-false}
       MCP_SERVER_INIT_REQ_TIMEOUT_SEC: ${MCP_SERVER_INIT_REQ_TIMEOUT_SEC:-10}
     ports:
-      # 18800 避開 Stalwart admin(預設 8080);被佔用改 MCPJUNGLE_HOST_PORT
       - "${MCPJUNGLE_HOST_PORT:-18800}:8080"
     volumes:
-      # filesystem MCP server 能讀到的目錄(唯讀最安全)
       - ${MCPJUNGLE_DATA_DIR:-/mnt/docker/app/data/mcpjungle}:/host:ro
-    networks:
-      - mcpjungl
+    networks: [mcpjungl, shared-db]   # 橋接:mcpjungl 找 MCP server、shared-db 連 DB
     restart: always
 
   docs-mcp:
@@ -29,15 +33,12 @@ services:
     environment:
       TRANSPORT: http
       PORT: "5690"
-      # dev 留空 = 僅內部網路可達、免 token。要硬化:設 DOCS_MCP_AUTH_TOKEN,
-      # 並在 mcpjungle/*.json 加回 "bearer_token": "<同一個 token>"。
+      # dev 留空 = 僅內部網路可達。要硬化:設 DOCS_MCP_AUTH_TOKEN 並在 mcpjungle/*.json 加 bearer_token。
       MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
-    networks:
-      - mcpjungl
+    networks: [mcpjungl]
     restart: unless-stopped
 
-  # 一次性註冊容器:等 gateway 起來後自動把所有 server 註冊,然後結束。
-  # 讓「git pull -> docker compose up」即完成部署 + 註冊(GitOps 自動部署)。
+  # 一次性:等 gateway 起來後自動把所有 server 註冊,然後結束(GitOps 自動部署)
   registrar:
     image: ghcr.io/mcpjungle/mcpjungle:${MCPJUNGLE_IMAGE_TAG:-latest-stdio}
     depends_on:
@@ -49,11 +50,13 @@ services:
     volumes:
       - ./mcpjungle:/configs:ro
       - ./mcpjungle/registrar.sh:/registrar.sh:ro
-    networks:
-      - mcpjungl
+    networks: [mcpjungl]
     restart: "no"
 
 networks:
+  shared-db:
+    external: true
+    name: ${SHARED_DB_NETWORK:-shared-db}
   mcpjungl:
-    driver: bridge
-    name: mcpjungl
+    external: true
+    name: ${MCPJUNGLE_NETWORK:-mcpjungl}

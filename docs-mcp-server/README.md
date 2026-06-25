@@ -162,14 +162,15 @@ Settings → Connectors → Add custom connector:
 
 ### 步驟
 
-1. **一鍵起 gateway + 本 server(同網路、機密走 `.env`)**:
+1. **一鍵起 gateway + 本 server(雙網路、機密走 `.env`)**:
    ```bash
+   docker network create shared-db mcpjungl   # 一次;shared-db 你的 DB stack 已建就只建 mcpjungl
    cd docs-mcp-server
-   cp .env.mcpjungle.example .env       # 填 MCPJUNGLE_DATABASE_URL(DB 連線字串改用環境變數,不落地)
+   cp .env.mcpjungle.example .env             # 填 MCPJUNGLE_DATABASE_URL(指向 shared-db 上的 DB)
    docker compose -f docker-compose.mcpjungle.yml up -d --build
    ```
-   兩個容器都在 `mcpjungl` 網路:`mcpjungle-server`(gateway,host port 18800)、`docs-mcp-server`(本 server,內部 5690,不對外開埠)。gateway 以容器名連本 server:`http://docs-mcp-server:5690/mcp/<corpus>`。
-   > 已有自己的 MCPJungle compose?只要(1)`DATABASE_URL:` 改成 `${MCPJUNGLE_DATABASE_URL}` 並把值移進 `.env`、(2)`networks` 區塊加 `name: mcpjungl`、(3)貼上本檔的 `docs-mcp` service 即可。
+   拓撲(**已沙盒實測**):`docs-mcp-server` 在 `mcpjungl`;`mcpjungle-server` 同接 `mcpjungl`+`shared-db`(用 mcpjungl 找 MCP server、用 shared-db 連你 DB stack 的 Postgres);host port 18800。本 compose **不含 Postgres**,`MCPJUNGLE_DATABASE_URL` 的 host 用 DB 容器名。registrar 起來後自動註冊全部。
+   > 想全自包含測試(內含 postgres、自建網路)?用 `docker-compose.localtest.yml`。要把 docs 接進你**現有**的 gateway 則用 `docker-compose.dockhand.yml`(見下方 Dockhand 節)。
 
 2. **裝官方 CLI 並註冊語料**(dev 模式、免 token;設定檔在 `./mcpjungle/`,url 已用容器名)。
 

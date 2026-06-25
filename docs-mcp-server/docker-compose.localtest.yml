@@ -1,21 +1,10 @@
-# 本機端到端測試:postgres + MCPJungle + docs-mcp 一次起,不依賴外部 DB / LAN。
-# 用途:在接你的真實 MCPJungle(真 Postgres)之前,先把「註冊 + 工具呼叫」整條鏈在本機跑通。
-# 已於沙盒實測通過(5 個 server:sqlsugar/fc/filesystem/fetch/time 全部註冊成功)。
+# 本機端到端測試:雙網路拓撲(DB 在 shared-db、MCP 在 mcpjungl、gateway 橋接兩者)。
+# 自包含、不依賴外部網路/DB;網路用 localtest-* 命名,避免撞到你正式的 mcpjungl / shared-db。
 #
-# 起:
 #   cd docs-mcp-server
 #   docker compose -f docker-compose.localtest.yml up -d --build
-#
-# 註冊(用本機 CLI,跨平台、最乾淨):
-#   mcpjungle --registry http://localhost:18800 register -c ./mcpjungle/sqlsugar.json
-#   mcpjungle --registry http://localhost:18800 register -c ./mcpjungle/fc.json
-#   mcpjungle --registry http://localhost:18800 list servers
-#   # 沒裝 CLI 就用容器內的(json 已掛在 /host):
-#   #   docker exec mcpjungle-server /mcpjungle register -c /host/sqlsugar.json
-#   #   (Windows Git Bash 要加 MSYS_NO_PATHCONV=1 以免 /host、/mcpjungle 被轉成 Windows 路徑)
-#
-# 用戶端:http://localhost:18800/mcp
-# 收:docker compose -f docker-compose.localtest.yml down -v
+#   docker exec mcpjungle-server /mcpjungle list servers    # 應自動有 5 個(registrar 註冊)
+#   docker compose -f docker-compose.localtest.yml down -v
 services:
   postgres:
     image: postgres:16-alpine
@@ -28,7 +17,7 @@ services:
       interval: 3s
       timeout: 3s
       retries: 30
-    networks: [net]
+    networks: [shared-db]          # DB 只在資料庫網路
 
   mcpjungle:
     image: ghcr.io/mcpjungle/mcpjungle:latest-stdio
@@ -42,8 +31,8 @@ services:
     ports:
       - "18800:8080"
     volumes:
-      - ./mcpjungle:/host:ro      # 註冊設定檔以 /host 取用
-    networks: [net]
+      - ./mcpjungle:/host:ro        # filesystem server 讀這裡(測試用;正式環境見 mcpjungle.yml)
+    networks: [mcpjungl, shared-db] # gateway 橋接:mcpjungl 找 MCP server、shared-db 連 DB
 
   docs-mcp:
     build: .
@@ -52,9 +41,8 @@ services:
     environment:
       TRANSPORT: http
       PORT: "5690"
-    networks: [net]
+    networks: [mcpjungl]            # MCP server 只在 mcpjungl
 
-  # 一次性註冊:等 gateway 起來後自動註冊全部 server,然後結束(驗證 GitOps 自動部署)
   registrar:
     image: ghcr.io/mcpjungle/mcpjungle:latest-stdio
     depends_on:
@@ -66,9 +54,13 @@ services:
     volumes:
       - ./mcpjungle:/configs:ro
       - ./mcpjungle/registrar.sh:/registrar.sh:ro
-    networks: [net]
+    networks: [mcpjungl]
     restart: "no"
 
 networks:
-  net:
+  shared-db:
     driver: bridge
+    name: localtest-shared-db
+  mcpjungl:
+    driver: bridge
+    name: localtest-mcpjungl
