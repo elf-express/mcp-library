@@ -42,6 +42,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - image: docs-mcp-server
+            context: ./docs-mcp-server
+            title: Docs MCP Server (multi-corpus)
+            description: Multi-corpus MCP server for searching bundled markdown docs
           - image: fc-designer-mcp
             context: ./fc-designer-mcp
             title: FcDesigner Pro Docs MCP Server
