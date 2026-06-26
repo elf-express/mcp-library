@@ -61,7 +61,7 @@ jobs:
             description: MCP server for querying SqlSugar ORM documentation
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # 多平台建構支援(Linux/amd64 + arm64)
       - name: Set up QEMU
