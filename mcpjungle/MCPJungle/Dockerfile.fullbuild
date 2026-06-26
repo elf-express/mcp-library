@@ -1,0 +1,54 @@
+# syntax=docker/dockerfile:1
+#
+# Full-source build for THIS fork (frontend + Go binary in one image).
+# Use this when deploying the fork via a git-clone deploy tool with
+# "Build images on deploy" enabled — it builds EVERYTHING from source.
+#
+# (Upstream's ./Dockerfile only COPYs a goreleaser-built binary and does NOT
+#  build the frontend or the Go binary, so it cannot produce the new dashboard.
+#  This file does the whole chain: npm build → go build(embed) → distroless.)
+#
+# Build context must be the repo root:
+#   docker build -f Dockerfile.fullbuild -t ghcr.io/elf-express/mcpjungle:dev .
+
+# ---- Stage 1: build the dashboard frontend ----
+FROM node:20-alpine AS frontend
+WORKDIR /app
+# install deps first (better layer caching)
+COPY web/dashboard/package.json web/dashboard/package-lock.json ./web/dashboard/
+RUN cd web/dashboard && npm ci
+# the dashboard's vite alias @repo-assets resolves to ../../assets (repo root)
+COPY assets ./assets
+COPY web/dashboard ./web/dashboard
+RUN cd web/dashboard && npm run build
+# -> /app/web/dashboard/dist
+
+# ---- Stage 2: build the Go binary (embeds the built frontend) ----
+FROM golang:1.24-alpine AS builder
+WORKDIR /app
+RUN apk add --no-cache git
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+# place the freshly-built frontend where //go:embed expects it
+# (internal/dashboardui/embed.go embeds ./dist relative to that package)
+RUN rm -rf internal/dashboardui/dist
+COPY --from=frontend /app/web/dashboard/dist ./internal/dashboardui/dist
+RUN CGO_ENABLED=0 GOOS=linux go build -trimpath -o /mcpjungle ./main.go
+
+# ---- Stage 3: runtime WITH npx + uvx (so stdio servers work) ----
+# Mirrors upstream's stdio.Dockerfile base (uv + Node 20) so filesystem/fetch/time
+# and other stdio MCP servers can start. Our built binary already embeds the new dashboard.
+FROM ghcr.io/astral-sh/uv:debian
+LABEL org.opencontainers.image.source="https://github.com/elf-express/MCPJungle"
+LABEL org.opencontainers.image.description="MCPJungle fork (stdio) — dashboard i18n + segmented Add Server + setup guide"
+RUN apt-get update \
+    && apt-get install -y curl gnupg \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+COPY --from=builder /mcpjungle /mcpjungle
+EXPOSE 8080
+ENTRYPOINT ["/mcpjungle"]
+CMD ["start"]

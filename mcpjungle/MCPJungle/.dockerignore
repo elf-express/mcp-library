@@ -1,0 +1,10 @@
+# Keep the build context small & reproducible for Dockerfile.fullbuild.
+.git
+.github
+.superpowers
+web/dashboard/node_modules
+web/dashboard/dist
+internal/dashboardui/dist
+**/*.test.ts
+*.md
+docs

@@ -1,0 +1,242 @@
+{
+  "common": {
+    "language": "語言",
+    "loading": {
+      "title": "載入儀表板中",
+      "subtitle": "正在查詢 MCPJungle 本地狀態、伺服器、工具、提示與資源。"
+    },
+    "error": {
+      "title": "儀表板 API 無法使用",
+      "subtitle": "無法從本地伺服器載入儀表板資料。"
+    },
+    "serverVersion": "伺服器版本 {{version}}",
+    "endpoint": "端點",
+    "enabled": "已啟用",
+    "disabled": "已停用",
+    "enable": "啟用",
+    "disable": "停用",
+    "saving": "儲存中...",
+    "tools": "工具",
+    "close": "關閉",
+    "cancel": "取消",
+    "remove": "移除",
+    "none": "無",
+    "unknown": "未知",
+    "noDescription": "無說明",
+    "allServers": "所有伺服器",
+    "searchServers": "搜尋伺服器",
+    "searchTools": "搜尋工具",
+    "searchPrompts": "搜尋提示",
+    "serverDisabled": "伺服器已停用",
+    "enabledSuccess": "{{name}} 已啟用。",
+    "disabledSuccess": "{{name}} 已停用。",
+    "deletedSuccess": "{{name}} 已刪除。",
+    "streamableHttp": "Streamable HTTP",
+    "metrics": {
+      "servers": "伺服器",
+      "tools": "工具",
+      "prompts": "提示",
+      "resources": "資源"
+    },
+    "table": {
+      "tool": "工具",
+      "canonicalName": "標準名稱",
+      "server": "伺服器",
+      "description": "說明",
+      "status": "狀態",
+      "actions": "操作",
+      "group": "群組",
+      "tools": "工具",
+      "name": "名稱",
+      "uri": "URI",
+      "mime": "MIME",
+      "prompt": "提示"
+    },
+    "field": {
+      "required": "必填",
+      "description": "說明",
+      "enum": "列舉",
+      "default": "預設值",
+      "notes": "備註"
+    },
+    "noSchema": "無可用的 schema。",
+    "noArguments": "無參數",
+    "unknownError": "未知錯誤",
+    "yes": "是",
+    "no": "否"
+  },
+  "feedback": {
+    "updated": "已更新",
+    "failed": "請求失敗"
+  },
+  "nav": {
+    "servers": "伺服器",
+    "tools": "工具",
+    "toolGroups": "工具群組",
+    "prompts": "提示",
+    "resources": "資源",
+    "systemInfo": "系統資訊",
+    "reportBugs": "回報問題",
+    "documentation": "說明文件"
+  },
+  "section": {
+    "servers": {
+      "title": "伺服器",
+      "subtitle": "",
+      "cardTitle": "伺服器",
+      "cardSubtitle": "已註冊的 MCP 伺服器",
+      "disabledNote": "此伺服器已註冊，但目前未對 MCP 用戶端開放。",
+      "deleteConfirm": "刪除伺服器「{{name}}」？此操作將移除該伺服器的註冊及所有已發現的工具、提示與資源。",
+      "detail": {
+        "target": "目標",
+        "sessionMode": "工作階段模式",
+        "headerKeys": "標頭金鑰",
+        "envKeys": "環境變數金鑰"
+      }
+    },
+    "tools": {
+      "title": "工具",
+      "subtitle": "已發現所有已註冊伺服器上的工具。",
+      "cardTitle": "工具",
+      "cardSubtitle": "已發現已註冊伺服器上的工具",
+      "detail": {
+        "panelLabel": "工具詳情",
+        "inputFields": "輸入欄位",
+        "noFields": "未提供結構化輸入欄位。",
+        "rawSchema": "原始結構描述"
+      }
+    },
+    "toolGroups": {
+      "title": "工具群組",
+      "subtitle": "",
+      "cardTitle": "已設定的工具群組",
+      "deleteConfirm": "刪除工具群組「{{name}}」？",
+      "detail": {
+        "panelLabel": "工具群組詳情",
+        "mcpEndpoints": "MCP 端點",
+        "includedTools": "包含的工具",
+        "noTools": "此群組中沒有工具。"
+      }
+    },
+    "prompts": {
+      "title": "提示",
+      "subtitle": "目前透過 MCPJungle 公開的提示範本。",
+      "cardTitle": "提示",
+      "cardSubtitle": "已發現的提示範本",
+      "detail": {
+        "panelLabel": "提示詳情",
+        "arguments": "參數",
+        "noArguments": "無參數。",
+        "rawArguments": "原始參數"
+      }
+    },
+    "resources": {
+      "title": "資源",
+      "subtitle": "已透過閘道器註冊並代理的資源。",
+      "cardTitle": "資源",
+      "cardSubtitle": "已發現的 MCP 資源"
+    },
+    "diagnostics": {
+      "title": "系統資訊",
+      "subtitle": "",
+      "cardTitle": "系統資訊",
+      "cardSubtitle": "執行階段詳情",
+      "version": "版本",
+      "mode": "模式",
+      "database": "資料庫",
+      "runtimeTitle": "執行階段詳情",
+      "runtimeSubtitle": "系統資訊",
+      "fullBuild": "完整版本",
+      "globalEndpoint": "全域 MCP 端點",
+      "enabledTransports": "已啟用的傳輸"
+    }
+  },
+  "addServer": {
+    "panelLabel": "新增伺服器",
+    "modalTitle": "註冊 MCP 伺服器",
+    "oauthTitle": "完成 OAuth 授權",
+    "addButton": "新增伺服器",
+    "registering": "註冊中...",
+    "serverName": "伺服器名稱",
+    "tab": {
+      "remote": "遠端 URL",
+      "local": "本機指令",
+      "json": "貼 JSON"
+    },
+    "transport": {
+      "label": "傳輸方式",
+      "http": "Streamable HTTP",
+      "sse": "SSE"
+    },
+    "sessionMode": "工作階段模式",
+    "command": "指令",
+    "arguments": "參數",
+    "envVars": "環境變數",
+    "addEnvVar": "新增環境變數",
+    "targetUrl": "目標 URL",
+    "bearerToken": "Bearer Token",
+    "headers": "標頭",
+    "addHeader": "新增標頭",
+    "json": {
+      "label": "伺服器 JSON",
+      "placeholder": "{\"name\":\"context7\",\"transport\":\"streamable_http\",\"url\":\"https://mcp.context7.com/mcp\"}"
+    },
+    "oauthMessage": "此 MCP 伺服器需要 OAuth 授權。請在瀏覽器中繼續以完成註冊。",
+    "oauthStatusLabel": "狀態",
+    "oauthWaiting": "等待 OAuth 授權中...",
+    "oauthAuthRequired": "需要授權",
+    "oauthExpires": "到期時間：{{time}}",
+    "oauthError": "OAuth 授權無法完成，請重新開始註冊。",
+    "oauthCheckError": "無法確認 OAuth 授權狀態。",
+    "startOver": "重新開始",
+    "startOverMessage": "請重新開始註冊以重試 OAuth。",
+    "continueOAuth": "繼續 OAuth",
+    "openOAuthAgain": "再次開啟 OAuth",
+    "success": "伺服器 {{name}} 已成功註冊。",
+    "error": {
+      "nameRequired": "伺服器名稱為必填項目。",
+      "commandRequired": "stdio 伺服器需要填寫指令。",
+      "urlRequired": "HTTP 及 SSE 伺服器需要填寫目標 URL。",
+      "jsonInvalid": "JSON 格式錯誤。",
+      "transportInvalid": "transport 無效（須為 stdio / streamable_http / sse）。"
+    }
+  },
+  "setupGuide": {
+    "navTitle": "安裝指南",
+    "title": "安裝指南",
+    "subtitle": "如何新增一個 MCP server",
+    "intro": "註冊 server 有三種方式。挑一個符合你手上資料的,再去填 Add Server 表單。",
+    "remote": {
+      "title": "1. 遠端 URL（雲端 server）",
+      "body": "你有一個 server 網址（Streamable HTTP 或 SSE）。大多數公開 MCP server 都這樣裝。",
+      "fields": "在 Add Server → 遠端 URL：Server name 填一個名字（例如「context7」）；Target URL 填下面那串網址。"
+    },
+    "local": {
+      "title": "2. 本機指令（npx / uvx）",
+      "body": "Server 以本機指令當作程序執行。適合 filesystem、git 等官方 reference server。",
+      "fields": "在 Add Server → 本機指令：Command 填 npx；Arguments 一行一個。",
+      "note": "本機（stdio）server 需要 gateway 跑 -stdio 版本的 image。"
+    },
+    "json": {
+      "title": "3. 貼 JSON（進階）",
+      "body": "已經有完整的 server JSON 設定？在 Add Server → 貼 JSON 整段貼上即可。"
+    }
+  },
+  "toolGroup": {
+    "modalTitle": "新增工具群組",
+    "addButton": "新增工具群組",
+    "groupName": "群組名稱",
+    "availableTools": "可用工具",
+    "selectedTools": "已選工具",
+    "registerFirst": "請先註冊 MCP 伺服器以取得可分組的工具。",
+    "selectAtLeastOne": "請至少選擇一個工具。",
+    "success": {
+      "created": "工具群組 {{name}} 已建立。"
+    },
+    "error": {
+      "nameRequired": "群組名稱為必填項目。",
+      "selectAtLeastOne": "請至少選擇一個工具。",
+      "duplicate": "同名工具群組已存在。"
+    }
+  }
+}

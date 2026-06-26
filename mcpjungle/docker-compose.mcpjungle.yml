@@ -7,8 +7,10 @@
 #   docker compose -f docker-compose.mcpjungle.yml up -d --build
 services:
   mcpjungle:
-    image: ${MCPJUNGLE_IMAGE:-ghcr.io/elf-express/mcpjungle:latest}
-    pull_policy: always
+    build:
+      context: ./MCPJungle
+      dockerfile: Dockerfile.fullbuild
+    image: mcpjungle-fork:latest
     container_name: mcpjungle-server
     environment:
       # DB 連線字串:host 用你 DB 的 IP(例 192.168.25.100:15432)。密碼不落地到 git。

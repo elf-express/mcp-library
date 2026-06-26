@@ -1,0 +1,42 @@
+name: Build & push fork image
+
+# Build the full-source fork image (frontend + Go embed) and push to ghcr.
+# Because this Action runs INSIDE elf-express/MCPJungle, the resulting package
+# is automatically linked to this repo — so it shows under the repo's Packages
+# and its visibility can be set to public the same way as docs-mcp-server.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/dashboard/**"
+      - "internal/dashboardui/**"
+      - "Dockerfile.fullbuild"
+      - ".github/workflows/docker-publish.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to ghcr.io
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push (Dockerfile.fullbuild)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.fullbuild
+          push: true
+          tags: ghcr.io/elf-express/mcpjungle:latest

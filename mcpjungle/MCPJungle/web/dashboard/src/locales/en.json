@@ -1,0 +1,242 @@
+{
+  "common": {
+    "language": "Language",
+    "loading": {
+      "title": "Loading dashboard",
+      "subtitle": "Querying local MCPJungle state, servers, tools, prompts, and resources."
+    },
+    "error": {
+      "title": "Dashboard API unavailable",
+      "subtitle": "Failed to load dashboard data from the local server."
+    },
+    "serverVersion": "Server version {{version}}",
+    "endpoint": "Endpoint",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "enable": "Enable",
+    "disable": "Disable",
+    "saving": "Saving...",
+    "tools": "tools",
+    "close": "Close",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "none": "None",
+    "unknown": "Unknown",
+    "noDescription": "No description",
+    "allServers": "All servers",
+    "searchServers": "Search servers",
+    "searchTools": "Search tools",
+    "searchPrompts": "Search prompts",
+    "serverDisabled": "Server disabled",
+    "enabledSuccess": "{{name}} enabled.",
+    "disabledSuccess": "{{name}} disabled.",
+    "deletedSuccess": "{{name}} deleted.",
+    "streamableHttp": "Streamable HTTP",
+    "metrics": {
+      "servers": "Servers",
+      "tools": "Tools",
+      "prompts": "Prompts",
+      "resources": "Resources"
+    },
+    "table": {
+      "tool": "Tool",
+      "canonicalName": "Canonical name",
+      "server": "Server",
+      "description": "Description",
+      "status": "Status",
+      "actions": "Actions",
+      "group": "Group",
+      "tools": "Tools",
+      "name": "Name",
+      "uri": "URI",
+      "mime": "MIME",
+      "prompt": "Prompt"
+    },
+    "field": {
+      "required": "Required",
+      "description": "Description",
+      "enum": "Enum",
+      "default": "Default",
+      "notes": "Notes"
+    },
+    "noSchema": "No schema available.",
+    "noArguments": "No arguments",
+    "unknownError": "Unknown error",
+    "yes": "yes",
+    "no": "no"
+  },
+  "feedback": {
+    "updated": "Updated",
+    "failed": "Request failed"
+  },
+  "nav": {
+    "servers": "Servers",
+    "tools": "Tools",
+    "toolGroups": "Tool Groups",
+    "prompts": "Prompts",
+    "resources": "Resources",
+    "systemInfo": "System Info",
+    "reportBugs": "Report Bugs",
+    "documentation": "Documentation"
+  },
+  "section": {
+    "servers": {
+      "title": "Servers",
+      "subtitle": "",
+      "cardTitle": "Servers",
+      "cardSubtitle": "Registered MCP servers",
+      "disabledNote": "This server is registered but currently not exposed to MCP clients.",
+      "deleteConfirm": "Delete server \"{{name}}\"? This removes the registration and all discovered tools, prompts, and resources from MCPJungle.",
+      "detail": {
+        "target": "Target",
+        "sessionMode": "Session mode",
+        "headerKeys": "Header keys",
+        "envKeys": "Env keys"
+      }
+    },
+    "tools": {
+      "title": "Tools",
+      "subtitle": "All discovered tools across registered servers.",
+      "cardTitle": "Tools",
+      "cardSubtitle": "Discovered tools across registered servers",
+      "detail": {
+        "panelLabel": "Tool details",
+        "inputFields": "Input fields",
+        "noFields": "No structured input fields were provided.",
+        "rawSchema": "Raw schema"
+      }
+    },
+    "toolGroups": {
+      "title": "Tool Groups",
+      "subtitle": "",
+      "cardTitle": "Configured tool groups",
+      "deleteConfirm": "Delete tool group \"{{name}}\"?",
+      "detail": {
+        "panelLabel": "Tool group details",
+        "mcpEndpoints": "MCP endpoints",
+        "includedTools": "Included tools",
+        "noTools": "No tools in this group."
+      }
+    },
+    "prompts": {
+      "title": "Prompts",
+      "subtitle": "Prompt templates currently exposed through MCPJungle.",
+      "cardTitle": "Prompts",
+      "cardSubtitle": "Discovered prompt templates",
+      "detail": {
+        "panelLabel": "Prompt details",
+        "arguments": "Arguments",
+        "noArguments": "No arguments.",
+        "rawArguments": "Raw arguments"
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "subtitle": "Resources registered and proxied through the gateway.",
+      "cardTitle": "Resources",
+      "cardSubtitle": "Discovered MCP resources"
+    },
+    "diagnostics": {
+      "title": "System Info",
+      "subtitle": "",
+      "cardTitle": "System Info",
+      "cardSubtitle": "Runtime details",
+      "version": "Version",
+      "mode": "Mode",
+      "database": "Database",
+      "runtimeTitle": "Runtime details",
+      "runtimeSubtitle": "System information",
+      "fullBuild": "Full build",
+      "globalEndpoint": "Global MCP Endpoint",
+      "enabledTransports": "Enabled transports"
+    }
+  },
+  "addServer": {
+    "panelLabel": "Add server",
+    "modalTitle": "Register an MCP server",
+    "oauthTitle": "Complete OAuth authorization",
+    "addButton": "Add Server",
+    "registering": "Registering...",
+    "serverName": "Server name",
+    "tab": {
+      "remote": "Remote URL",
+      "local": "Local command",
+      "json": "Paste JSON"
+    },
+    "transport": {
+      "label": "Transport",
+      "http": "Streamable HTTP",
+      "sse": "SSE"
+    },
+    "sessionMode": "Session mode",
+    "command": "Command",
+    "arguments": "Arguments",
+    "envVars": "Environment variables",
+    "addEnvVar": "Add env var",
+    "targetUrl": "Target URL",
+    "bearerToken": "Bearer token",
+    "headers": "Headers",
+    "addHeader": "Add header",
+    "json": {
+      "label": "Server JSON",
+      "placeholder": "{\"name\":\"context7\",\"transport\":\"streamable_http\",\"url\":\"https://mcp.context7.com/mcp\"}"
+    },
+    "oauthMessage": "This MCP server requires OAuth authorization. Continue in your browser to complete registration.",
+    "oauthStatusLabel": "Status",
+    "oauthWaiting": "Waiting for OAuth authorization...",
+    "oauthAuthRequired": "Authorization required",
+    "oauthExpires": "Expires {{time}}",
+    "oauthError": "OAuth authorization could not be completed. Start registration again.",
+    "oauthCheckError": "Failed to check OAuth authorization state.",
+    "startOver": "Start over",
+    "startOverMessage": "Start registration again to retry OAuth.",
+    "continueOAuth": "Continue OAuth",
+    "openOAuthAgain": "Open OAuth again",
+    "success": "Server {{name}} registered.",
+    "error": {
+      "nameRequired": "Server name is required.",
+      "commandRequired": "Command is required for stdio servers.",
+      "urlRequired": "Target URL is required for HTTP and SSE servers.",
+      "jsonInvalid": "Invalid JSON.",
+      "transportInvalid": "Invalid transport (use stdio, streamable_http, or sse)."
+    }
+  },
+  "setupGuide": {
+    "navTitle": "Setup Guide",
+    "title": "Setup Guide",
+    "subtitle": "How to add an MCP server",
+    "intro": "Three ways to register a server. Pick the one that matches what you have, then fill the Add Server form.",
+    "remote": {
+      "title": "1. Remote URL (hosted server)",
+      "body": "You have a server URL (Streamable HTTP or SSE). Most public MCP servers work this way.",
+      "fields": "In Add Server → Remote URL: Server name = a label like \"context7\"; Target URL = the address below."
+    },
+    "local": {
+      "title": "2. Local command (npx / uvx)",
+      "body": "The server runs as a local process via a command. Good for filesystem, git, and other reference servers.",
+      "fields": "In Add Server → Local command: Command = npx; Arguments = one per line.",
+      "note": "Local (stdio) servers require the gateway to run the -stdio image."
+    },
+    "json": {
+      "title": "3. Paste JSON (advanced)",
+      "body": "Already have the full server config as JSON? Paste it whole in Add Server → Paste JSON."
+    }
+  },
+  "toolGroup": {
+    "modalTitle": "Add Tool Group",
+    "addButton": "Add Tool Group",
+    "groupName": "Group name",
+    "availableTools": "Available tools",
+    "selectedTools": "Selected tools",
+    "registerFirst": "Register MCP servers first so tools are available to group.",
+    "selectAtLeastOne": "Select at least one tool.",
+    "success": {
+      "created": "Tool group {{name}} created."
+    },
+    "error": {
+      "nameRequired": "Group name is required.",
+      "selectAtLeastOne": "Select at least one tool.",
+      "duplicate": "A tool group with that name already exists."
+    }
+  }
+}
