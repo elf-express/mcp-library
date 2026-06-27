@@ -23,6 +23,8 @@ const __dirname = path.dirname(__filename);
 export const CHARACTER_LIMIT = 25000;
 
 const SKIP_DIRS = new Set([".git", "node_modules", "dist"]);
+const CODE_EXT = new Set([".cs", ".csproj", ".sln", ".json", ".ts", ".js"]);
+const CODE_SKIP_DIRS = new Set([...SKIP_DIRS, "bin", "obj", ".vs"]);
 
 // ---------------------------------------------------------------------------
 // 型別
@@ -47,6 +49,11 @@ export interface Corpus {
 
 export interface NoteFile {
   filename: string; // 相對語料根的路徑,如 "開發文檔/structure.md"
+  fullPath: string;
+}
+
+export interface CodeFile {
+  path: string;     // 相對 examples/ 的路徑
   fullPath: string;
 }
 
@@ -176,7 +183,7 @@ export function listMarkdownFiles(corpus: Corpus): NoteFile[] {
     }
     for (const e of entries) {
       if (e.isDirectory()) {
-        if (SKIP_DIRS.has(e.name)) continue;
+        if (SKIP_DIRS.has(e.name) || e.name === "examples") continue;
         walk(path.join(dir, e.name), rel ? rel + "/" + e.name : e.name);
       } else if (e.name.toLowerCase().endsWith(".md")) {
         const r = rel ? rel + "/" + e.name : e.name;
@@ -186,6 +193,50 @@ export function listMarkdownFiles(corpus: Corpus): NoteFile[] {
   };
   walk(corpus.dir, "");
   return out.sort((a, b) => a.filename.localeCompare(b.filename, "zh-Hant"));
+}
+
+export function resolveExamplesDir(corpus: Corpus): string {
+  return path.join(corpus.dir, "examples");
+}
+
+/** 遞迴掃 examples/ 下白名單副檔名的源碼檔(跳 bin/obj/.vs)。 */
+export function listCodeFiles(corpus: Corpus): CodeFile[] {
+  const root = resolveExamplesDir(corpus);
+  const out: CodeFile[] = [];
+  const walk = (dir: string, rel: string) => {
+    let entries: fs.Dirent[];
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      if (e.isDirectory()) {
+        if (CODE_SKIP_DIRS.has(e.name)) continue;
+        walk(path.join(dir, e.name), rel ? rel + "/" + e.name : e.name);
+      } else if (CODE_EXT.has(path.extname(e.name).toLowerCase())) {
+        const r = rel ? rel + "/" + e.name : e.name;
+        out.push({ path: r, fullPath: path.join(dir, e.name) });
+      }
+    }
+  };
+  walk(root, "");
+  return out.sort((a, b) => a.path.localeCompare(b.path));
+}
+
+export function readCodeFileContent(file: CodeFile): string {
+  let mtimeMs = 0;
+  try {
+    mtimeMs = fs.statSync(file.fullPath).mtimeMs;
+  } catch {
+    return "";
+  }
+  const cached = contentCache.get(file.fullPath);
+  if (cached && cached.mtimeMs === mtimeMs) return cached.content;
+  let content = fs.readFileSync(file.fullPath, "utf-8");
+  if (content.charCodeAt(0) === 0xfeff) content = content.slice(1);
+  contentCache.set(file.fullPath, { content, mtimeMs });
+  return content;
 }
 
 export function readNoteContent(file: NoteFile): string {
