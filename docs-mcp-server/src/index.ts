@@ -30,6 +30,8 @@ import {
   doRead,
   doCheatsheet,
   doOutline,
+  doCodeSearch,
+  doCodeRead,
 } from "./corpus.js";
 
 // ---------------------------------------------------------------------------
@@ -187,6 +189,49 @@ function createServer(scope?: string): McpServer {
       if (!corpus || !corpus.trim()) return textResult(needCorpus());
       return textResult(doCheatsheet(corpus, p.filename));
     }
+  );
+
+  const CodeSearchInputSchema = z
+    .object({
+      corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+      query: z.string().max(200).default("").describe("關鍵字(空白分隔為 AND)。留空 = 列出有哪些範例檔。"),
+      limit: z.number().int().min(1).max(30).default(10).describe("最多回傳幾檔(預設 10)"),
+      context_lines: z.number().int().min(0).max(6).default(2).describe("片段上下文行數(預設 2)"),
+    })
+    .strict();
+
+  const CodeReadInputSchema = z
+    .object({
+      corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+      path: z.string().min(1).max(300).describe("源碼檔路徑或檔名(結尾/包含模糊比對)。"),
+    })
+    .strict();
+
+  server.registerTool(
+    "docs_code_search",
+    {
+      title: "搜尋範例源碼",
+      description:
+        "在某語料附帶的程式碼範例中搜尋(query 留空則列出有哪些範例檔)。\n\n" +
+        "僅對啟用 examples 能力的語料有效(否則提示改用 docs_search)。\n\n" +
+        "參數:corpus、query(空=列檔)、limit、context_lines。" + scopeNote,
+      inputSchema: CodeSearchInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doCodeSearch(scope ?? p.corpus, p.query, p.limit, p.context_lines))
+  );
+
+  server.registerTool(
+    "docs_code_read",
+    {
+      title: "讀取範例源碼",
+      description:
+        "依路徑讀某語料的單一範例源碼檔(含程式碼框)。僅對啟用 examples 的語料有效。\n\n" +
+        "參數:corpus、path(模糊比對)。" + scopeNote,
+      inputSchema: CodeReadInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doCodeRead(scope ?? p.corpus, p.path))
   );
 
   server.registerTool(

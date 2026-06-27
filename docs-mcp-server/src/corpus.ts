@@ -506,6 +506,95 @@ export function doCheatsheet(corpusId: string, filename: string): string {
   return truncateIfNeeded(`# [${corpusId}] ${file.filename} — 速查表` + (csrc ? "\n\n> " + csrc : "") + "\n\n" + cheat);
 }
 
+/** examples 能力 gate:回 Corpus 或錯誤訊息字串。 */
+function requireExamples(corpusId: string | undefined): Corpus | string {
+  if (!corpusId || !corpusId.trim()) {
+    return `請指定 corpus(可用:${corpusIdList()})。`;
+  }
+  const c = getCorpus(corpusId);
+  if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
+  if (!c.capabilities.examples) {
+    return `語料 "${corpusId}" 無代碼範例(未啟用 examples)。請改用 docs_search 查文檔。`;
+  }
+  return c;
+}
+
+/** query 空 → 列範例檔(按頂層目錄分組);有 query → 關鍵字 AND 搜代碼。 */
+export function doCodeSearch(corpusId: string | undefined, query: string, limit: number, ctx: number): string {
+  const c = requireExamples(corpusId);
+  if (typeof c === "string") return c;
+  const files = listCodeFiles(c);
+  if (files.length === 0) return `語料 "${c.id}" 的 examples/ 沒有源碼檔。`;
+
+  const keywords = query.split(/\s+/).map((k) => k.trim()).filter((k) => k.length > 0);
+  if (keywords.length === 0) {
+    const out: string[] = [`# ${c.id} 範例源碼(${files.length} 檔)`, ""];
+    let lastTop = "";
+    for (const f of files) {
+      const top = f.path.includes("/") ? f.path.split("/")[0] : "(根)";
+      if (top !== lastTop) { out.push(`## ${top}`); lastTop = top; }
+      out.push(`- ${f.path}`);
+    }
+    out.push("", `> 讀單檔:docs_code_read(corpus="${c.id}", path="…");搜尋:docs_code_search(corpus="${c.id}", query="…")`);
+    return truncateIfNeeded(out.join("\n"));
+  }
+
+  const lower = keywords.map((k) => k.toLowerCase());
+  interface CodeHit { path: string; hitCount: number; snippets: string[] }
+  const hits: CodeHit[] = [];
+  for (const file of files) {
+    const content = readCodeFileContent(file);
+    const lc = content.toLowerCase();
+    if (!lower.every((k) => lc.includes(k))) continue;
+    const lines = content.split(/\r?\n/);
+    const idxs: number[] = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (lower.some((k) => lines[i].toLowerCase().includes(k))) idxs.push(i);
+    }
+    if (idxs.length === 0) continue;
+    const ranges: Array<[number, number]> = [];
+    for (const idx of idxs) {
+      const lo = Math.max(0, idx - ctx), hi = Math.min(lines.length - 1, idx + ctx);
+      const last = ranges[ranges.length - 1];
+      if (last && lo <= last[1] + 1) last[1] = Math.max(last[1], hi);
+      else ranges.push([lo, hi]);
+    }
+    const snippets = ranges.slice(0, 4).map(([lo, hi]) => {
+      const block: string[] = [];
+      for (let i = lo; i <= hi; i++) block.push(String(i + 1).padStart(4) + ": " + lines[i]);
+      return block.join("\n");
+    });
+    hits.push({ path: file.path, hitCount: idxs.length, snippets });
+  }
+  if (hits.length === 0) {
+    return `在 "${c.id}" 範例源碼中找不到同時含 [${keywords.join(", ")}] 的檔。建議減少關鍵字,或 docs_code_search(corpus="${c.id}", query="") 看有哪些檔。`;
+  }
+  hits.sort((a, b) => b.hitCount - a.hitCount);
+  const out: string[] = [`# 範例源碼搜尋:[${keywords.join(", ")}](${c.id})`, "", `共 ${hits.length} 檔命中。`, ""];
+  for (const h of hits.slice(0, limit)) {
+    out.push(`## ${h.path} (${h.hitCount} 處)`);
+    for (const s of h.snippets) { out.push("```"); out.push(s); out.push("```"); }
+    out.push(`> 讀全檔:docs_code_read(corpus="${c.id}", path="${h.path}")`, "");
+  }
+  return truncateIfNeeded(out.join("\n"));
+}
+
+/** 依 path 模糊比對讀單一範例源碼檔(結尾 / 包含)。 */
+export function doCodeRead(corpusId: string | undefined, p: string): string {
+  const c = requireExamples(corpusId);
+  if (typeof c === "string") return c;
+  const q = p.trim().toLowerCase();
+  const files = listCodeFiles(c);
+  let m = files.filter((f) => f.path.toLowerCase() === q);
+  if (m.length === 0) m = files.filter((f) => f.path.toLowerCase().endsWith("/" + q) || f.path.toLowerCase() === q);
+  if (m.length === 0) m = files.filter((f) => f.path.toLowerCase().includes(q));
+  if (m.length === 0) return `在 "${c.id}" 範例中找不到符合 "${p}" 的源碼檔。用 docs_code_search(corpus="${c.id}", query="") 看清單。`;
+  if (m.length > 1) return `"${p}" 符合多檔,請更精確:\n\n` + m.map((f) => "- " + f.path).join("\n");
+  const file = m[0];
+  const ext = path.extname(file.path).replace(".", "") || "";
+  return truncateIfNeeded(`# [${c.id}] ${file.path}\n\n\`\`\`${ext}\n` + readCodeFileContent(file) + "\n```");
+}
+
 /**
  * 結構大綱:列某語料的分類目錄 + 篇名(headings=true 才展開篇內 ##/### 標題)。
  * path 給定 → 只展開該頂層分類。corpusId 省略 → 提示先用 docs_list_corpora。
