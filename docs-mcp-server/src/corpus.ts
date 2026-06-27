@@ -456,6 +456,55 @@ export function doCheatsheet(corpusId: string, filename: string): string {
 }
 
 /**
+ * 結構大綱:列某語料的分類目錄 + 篇名(headings=true 才展開篇內 ##/### 標題)。
+ * path 給定 → 只展開該頂層分類。corpusId 省略 → 提示先用 docs_list_corpora。
+ */
+export function doOutline(corpusId: string | undefined, path: string | undefined, headings: boolean): string {
+  if (!corpusId || !corpusId.trim()) {
+    return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
+  }
+  const c = getCorpus(corpusId);
+  if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
+
+  const files = listMarkdownFiles(c);
+  // 依頂層目錄分組(無子目錄者歸 "(根)")
+  const groups = new Map<string, typeof files>();
+  for (const f of files) {
+    const top = f.filename.includes("/") ? f.filename.split("/")[0] : "(根)";
+    if (!groups.has(top)) groups.set(top, []);
+    groups.get(top)!.push(f);
+  }
+
+  const wantPath = path?.trim();
+  if (wantPath && !groups.has(wantPath)) {
+    return `語料 "${corpusId}" 沒有分類 "${wantPath}"。可用分類:${[...groups.keys()].join(", ")}。`;
+  }
+
+  const out: string[] = [`# ${c.id} 結構大綱(${files.length} 篇 · ${groups.size} 類)`, ""];
+  for (const [top, fs] of groups) {
+    if (wantPath && top !== wantPath) continue;
+    out.push(`## ${top} (${fs.length} 篇)`);
+    for (const f of fs) {
+      const name = f.filename.includes("/") ? f.filename.split("/").slice(1).join("/") : f.filename;
+      const display = name.replace(/\.md$/i, "");
+      if (headings) {
+        out.push(`- ${display}`);
+        for (const h of extractHeadings(readNoteContent(f))) {
+          out.push(`  ${"  ".repeat(h.level - 2)}- ${h.text}`);
+        }
+      } else {
+        out.push(`- ${display}`);
+      }
+    }
+    out.push("");
+  }
+  if (!headings) {
+    out.push(`> 要展開篇內標題:docs_outline(corpus="${c.id}", path="<分類>", headings=true)`);
+  }
+  return truncateIfNeeded(out.join("\n"));
+}
+
+/**
  * 列出語料。onlyId 給定 → 只列該語料(供 /mcp/:corpus scoped 端點);
  * filter 給定 → 以 id/title 子字串過濾。
  */

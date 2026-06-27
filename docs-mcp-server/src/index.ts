@@ -29,6 +29,7 @@ import {
   doSearch,
   doRead,
   doCheatsheet,
+  doOutline,
 } from "./corpus.js";
 
 // ---------------------------------------------------------------------------
@@ -68,6 +69,17 @@ const CheatsheetInputSchema = z
       .describe("語料 id(用 docs_list_corpora 取得)。單書端點或 DOCS_SCOPE 下可省略。"),
     filename: z.string().min(1, "filename 不可為空").max(300)
       .describe('文件檔名或相對路徑,.md 可省略,支援模糊比對。'),
+  })
+  .strict();
+
+const OutlineInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional()
+      .describe("語料 id(用 docs_list_corpora 取得)。單書端點 /mcp/<corpus> 或 DOCS_SCOPE 下可省略。"),
+    path: z.string().max(200).optional()
+      .describe("只展開某個頂層分類(如 \"開發文檔\")。省略則列全部分類。"),
+    headings: z.boolean().default(false)
+      .describe("true 才展開每篇的 ##/### 標題(會讀全部檔案、較重)。預設 false。"),
   })
   .strict();
 
@@ -175,6 +187,24 @@ function createServer(scope?: string): McpServer {
       if (!corpus || !corpus.trim()) return textResult(needCorpus());
       return textResult(doCheatsheet(corpus, p.filename));
     }
+  );
+
+  server.registerTool(
+    "docs_outline",
+    {
+      title: "語料結構大綱",
+      description:
+        "列出某個語料的內部目錄(分類資料夾 + 每篇檔名,可選展開篇內 ##/### 標題)。\n\n" +
+        "用途:當你還不知道某本「書」裡有什麼時的入口——比 docs_search(要先有關鍵字)、docs_read(要先知檔名)更早一步。\n\n" +
+        "參數:\n" +
+        "  - corpus (string):語料 id。\n" +
+        "  - path (string,選填):只展開某個分類。\n" +
+        "  - headings (boolean,選填):true 展開篇內標題,預設 false。" +
+        scopeNote,
+      inputSchema: OutlineInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doOutline(scope ?? p.corpus, p.path, p.headings))
   );
 
   return server;
