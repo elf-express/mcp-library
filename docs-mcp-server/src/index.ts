@@ -250,7 +250,7 @@ function createServer(scope?: string): McpServer {
       description:
         "在某語料中按名字(API/方法/組件)精確定位到對應的標題段落,比全文搜尋更準。\n\n" +
         "僅對啟用 symbol 能力的語料有效(否則提示改用 docs_search/docs_outline)。\n\n" +
-        "參數:corpus、name(對 ##/### 標題比對)、limit。" + scopeNote,
+        "參數:corpus、name(對 #/##/### 標題比對)、limit。" + scopeNote,
       inputSchema: SymbolInputSchema.shape,
       annotations: READ_ONLY,
     },

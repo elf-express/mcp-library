@@ -609,7 +609,7 @@ export function doCodeRead(corpusId: string | undefined, p: string): string {
  * 結構大綱:列某語料的分類目錄 + 篇名(headings=true 才展開篇內 ##/### 標題)。
  * path 給定 → 只展開該頂層分類。corpusId 省略 → 提示先用 docs_list_corpora。
  */
-export function doOutline(corpusId: string | undefined, path: string | undefined, headings: boolean): string {
+export function doOutline(corpusId: string | undefined, filterPath: string | undefined, headings: boolean): string {
   if (!corpusId || !corpusId.trim()) {
     return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
   }
@@ -625,7 +625,7 @@ export function doOutline(corpusId: string | undefined, path: string | undefined
     groups.get(top)!.push(f);
   }
 
-  const wantPath = path?.trim();
+  const wantPath = filterPath?.trim();
   if (wantPath && !groups.has(wantPath)) {
     return `語料 "${corpusId}" 沒有分類 "${wantPath}"。可用分類:${[...groups.keys()].join(", ")}。`;
   }
@@ -703,8 +703,9 @@ export function doSymbol(corpusId: string | undefined, name: string, limit: numb
     return `符號 "${name}" 在 "${corpusId}" 有 ${matches.length} 個候選(顯示前 ${limit}):\n\n${list}\n\n請用更精確的名稱,或 docs_read 讀整篇。`;
   }
   const out: string[] = [];
+  const allFiles = listMarkdownFiles(c);
   for (const m of matches) {
-    const file = listMarkdownFiles(c).find((f) => f.filename === m.filename);
+    const file = allFiles.find((f) => f.filename === m.filename);
     if (!file) continue;
     const lines = readNoteContent(file).split(/\r?\n/);
     const section = sliceSection(lines, m.lineStart);
