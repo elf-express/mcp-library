@@ -23,6 +23,8 @@ const __dirname = path.dirname(__filename);
 export const CHARACTER_LIMIT = 25000;
 
 const SKIP_DIRS = new Set([".git", "node_modules", "dist"]);
+const CODE_EXT = new Set([".cs", ".csproj", ".sln", ".json", ".ts", ".js"]);
+const CODE_SKIP_DIRS = new Set([...SKIP_DIRS, "bin", "obj", ".vs"]);
 
 // ---------------------------------------------------------------------------
 // 型別
@@ -31,6 +33,10 @@ const SKIP_DIRS = new Set([".git", "node_modules", "dist"]);
 export interface CorpusCapabilities {
   /** 是否啟用「速查表」抽取(文件需有 `## 速查表` 段落) */
   cheatsheet?: boolean;
+  /** 啟用 docs_code_search / docs_code_read,讀 corpora/<id>/examples/ */
+  examples?: boolean;
+  /** 啟用 docs_symbol,從 md 的 ##/### 標題建符號索引 */
+  symbol?: boolean;
 }
 
 export interface Corpus {
@@ -46,10 +52,17 @@ export interface NoteFile {
   fullPath: string;
 }
 
+export interface CodeFile {
+  path: string;     // 相對 examples/ 的路徑
+  fullPath: string;
+}
+
 export interface CachedNote {
   content: string;
   mtimeMs: number;
 }
+
+export interface SymbolEntry { filename: string; text: string; level: number; lineStart: number }
 
 interface Manifest {
   title?: string;
@@ -66,12 +79,15 @@ export const contentCache = new Map<string, CachedNote>();
 let corporaCache: { dir: string; mtimeMs: number; list: Corpus[] } | null = null;
 // corpusDir -> sources.json 內容(以 mtime 失效)
 const sourcesCache = new Map<string, { mtimeMs: number; map: Record<string, string> }>();
+// corpusDir -> 符號索引(以語料目錄 mtime 失效)
+const symbolIndexCache = new Map<string, { mtimeMs: number; index: Map<string, SymbolEntry[]> }>();
 
 /** 測試用:清空所有模組級快取 */
 export function _clearCaches(): void {
   contentCache.clear();
   corporaCache = null;
   sourcesCache.clear();
+  symbolIndexCache.clear();
 }
 
 // ---------------------------------------------------------------------------
@@ -172,7 +188,7 @@ export function listMarkdownFiles(corpus: Corpus): NoteFile[] {
     }
     for (const e of entries) {
       if (e.isDirectory()) {
-        if (SKIP_DIRS.has(e.name)) continue;
+        if (SKIP_DIRS.has(e.name) || e.name === "examples") continue;
         walk(path.join(dir, e.name), rel ? rel + "/" + e.name : e.name);
       } else if (e.name.toLowerCase().endsWith(".md")) {
         const r = rel ? rel + "/" + e.name : e.name;
@@ -182,6 +198,50 @@ export function listMarkdownFiles(corpus: Corpus): NoteFile[] {
   };
   walk(corpus.dir, "");
   return out.sort((a, b) => a.filename.localeCompare(b.filename, "zh-Hant"));
+}
+
+export function resolveExamplesDir(corpus: Corpus): string {
+  return path.join(corpus.dir, "examples");
+}
+
+/** 遞迴掃 examples/ 下白名單副檔名的源碼檔(跳 bin/obj/.vs)。 */
+export function listCodeFiles(corpus: Corpus): CodeFile[] {
+  const root = resolveExamplesDir(corpus);
+  const out: CodeFile[] = [];
+  const walk = (dir: string, rel: string) => {
+    let entries: fs.Dirent[];
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      if (e.isDirectory()) {
+        if (CODE_SKIP_DIRS.has(e.name)) continue;
+        walk(path.join(dir, e.name), rel ? rel + "/" + e.name : e.name);
+      } else if (CODE_EXT.has(path.extname(e.name).toLowerCase())) {
+        const r = rel ? rel + "/" + e.name : e.name;
+        out.push({ path: r, fullPath: path.join(dir, e.name) });
+      }
+    }
+  };
+  walk(root, "");
+  return out.sort((a, b) => a.path.localeCompare(b.path));
+}
+
+export function readCodeFileContent(file: CodeFile): string {
+  let mtimeMs = 0;
+  try {
+    mtimeMs = fs.statSync(file.fullPath).mtimeMs;
+  } catch {
+    return "";
+  }
+  const cached = contentCache.get(file.fullPath);
+  if (cached && cached.mtimeMs === mtimeMs) return cached.content;
+  let content = fs.readFileSync(file.fullPath, "utf-8");
+  if (content.charCodeAt(0) === 0xfeff) content = content.slice(1);
+  contentCache.set(file.fullPath, { content, mtimeMs });
+  return content;
 }
 
 export function readNoteContent(file: NoteFile): string {
@@ -274,26 +334,48 @@ export function truncateIfNeeded(text: string): string {
   );
 }
 
-export function extractCheatsheet(content: string): string | null {
+export interface Heading {
+  text: string;
+  level: number;
+  lineStart: number;
+}
+
+/**
+ * 掃 md 標題,回標題文字、層級、行號。
+ * minLevel 預設 2:只抓 ##/###(outline/cheatsheet 行為不變)。
+ * 傳 1 則納入 # 一級:供 buildSymbolIndex 用,使一級標題也進符號索引。
+ */
+export function extractHeadings(content: string, minLevel = 2): Heading[] {
   const lines = content.split(/\r?\n/);
-  let start = -1;
+  const out: Heading[] = [];
+  const re = new RegExp(`^(#{${minLevel},3})\\s+(.+?)\\s*$`);
   for (let i = 0; i < lines.length; i++) {
-    if (/^#{1,6}\s+.*速查/.test(lines[i])) {
-      start = i;
-      break;
-    }
+    const m = lines[i].match(re);
+    if (m) out.push({ text: m[2].replace(/[​﻿]/g, "").trim(), level: m[1].length, lineStart: i });
   }
-  if (start === -1) return null;
-  const startLevel = (lines[start].match(/^#+/) ?? ["#"])[0].length;
+  return out;
+}
+
+/** 從 lines[startIdx] 的標題切到下一個「同級或更高級」標題(不含),trim 後回傳 */
+export function sliceSection(lines: string[], startIdx: number): string {
+  const startLevel = (lines[startIdx].match(/^#+/) ?? ["#"])[0].length;
   let end = lines.length;
-  for (let i = start + 1; i < lines.length; i++) {
+  for (let i = startIdx + 1; i < lines.length; i++) {
     const m = lines[i].match(/^(#{1,6})\s+/);
     if (m && m[1].length <= startLevel) {
       end = i;
       break;
     }
   }
-  return lines.slice(start, end).join("\n").trim();
+  return lines.slice(startIdx, end).join("\n").trim();
+}
+
+export function extractCheatsheet(content: string): string | null {
+  const lines = content.split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    if (/^#{1,6}\s+.*速查/.test(lines[i])) return sliceSection(lines, i);
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
@@ -434,6 +516,206 @@ export function doCheatsheet(corpusId: string, filename: string): string {
   return truncateIfNeeded(`# [${corpusId}] ${file.filename} — 速查表` + (csrc ? "\n\n> " + csrc : "") + "\n\n" + cheat);
 }
 
+/** examples 能力 gate:回 Corpus 或錯誤訊息字串。 */
+function requireExamples(corpusId: string | undefined): Corpus | string {
+  if (!corpusId || !corpusId.trim()) {
+    return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
+  }
+  const c = getCorpus(corpusId);
+  if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
+  if (!c.capabilities.examples) {
+    return `語料 "${corpusId}" 無代碼範例(未啟用 examples)。請改用 docs_search 查文檔。`;
+  }
+  return c;
+}
+
+/** query 空 → 列範例檔(按頂層目錄分組);有 query → 關鍵字 AND 搜代碼。 */
+export function doCodeSearch(corpusId: string | undefined, query: string, limit: number, ctx: number): string {
+  const c = requireExamples(corpusId);
+  if (typeof c === "string") return c;
+  const files = listCodeFiles(c);
+  if (files.length === 0) return `語料 "${c.id}" 的 examples/ 沒有源碼檔。`;
+
+  const keywords = query.split(/\s+/).map((k) => k.trim()).filter((k) => k.length > 0);
+  if (keywords.length === 0) {
+    const out: string[] = [`# ${c.id} 範例源碼(${files.length} 檔)`, ""];
+    let lastTop = "";
+    for (const f of files) {
+      const top = f.path.includes("/") ? f.path.split("/")[0] : "(根)";
+      if (top !== lastTop) { out.push(`## ${top}`); lastTop = top; }
+      out.push(`- ${f.path}`);
+    }
+    out.push("", `> 讀單檔:docs_code_read(corpus="${c.id}", path="…");搜尋:docs_code_search(corpus="${c.id}", query="…")`);
+    return truncateIfNeeded(out.join("\n"));
+  }
+
+  const lower = keywords.map((k) => k.toLowerCase());
+  interface CodeHit { path: string; hitCount: number; snippets: string[] }
+  const hits: CodeHit[] = [];
+  for (const file of files) {
+    const content = readCodeFileContent(file);
+    const lc = content.toLowerCase();
+    if (!lower.every((k) => lc.includes(k))) continue;
+    const lines = content.split(/\r?\n/);
+    const idxs: number[] = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (lower.some((k) => lines[i].toLowerCase().includes(k))) idxs.push(i);
+    }
+    if (idxs.length === 0) continue;
+    const ranges: Array<[number, number]> = [];
+    for (const idx of idxs) {
+      const lo = Math.max(0, idx - ctx), hi = Math.min(lines.length - 1, idx + ctx);
+      const last = ranges[ranges.length - 1];
+      if (last && lo <= last[1] + 1) last[1] = Math.max(last[1], hi);
+      else ranges.push([lo, hi]);
+    }
+    const snippets = ranges.slice(0, 4).map(([lo, hi]) => {
+      const block: string[] = [];
+      for (let i = lo; i <= hi; i++) block.push(String(i + 1).padStart(4) + ": " + lines[i]);
+      return block.join("\n");
+    });
+    hits.push({ path: file.path, hitCount: idxs.length, snippets });
+  }
+  if (hits.length === 0) {
+    return `在 "${c.id}" 範例源碼中找不到同時含 [${keywords.join(", ")}] 的檔。建議減少關鍵字,或 docs_code_search(corpus="${c.id}", query="") 看有哪些檔。`;
+  }
+  hits.sort((a, b) => b.hitCount - a.hitCount);
+  const out: string[] = [`# 範例源碼搜尋:[${keywords.join(", ")}](${c.id})`, "", `共 ${hits.length} 檔命中。`, ""];
+  for (const h of hits.slice(0, limit)) {
+    out.push(`## ${h.path} (${h.hitCount} 處)`);
+    for (const s of h.snippets) { out.push("```"); out.push(s); out.push("```"); }
+    out.push(`> 讀全檔:docs_code_read(corpus="${c.id}", path="${h.path}")`, "");
+  }
+  return truncateIfNeeded(out.join("\n"));
+}
+
+/** 依 path 模糊比對讀單一範例源碼檔(結尾 / 包含)。 */
+export function doCodeRead(corpusId: string | undefined, p: string): string {
+  const c = requireExamples(corpusId);
+  if (typeof c === "string") return c;
+  const q = p.trim().toLowerCase();
+  const files = listCodeFiles(c);
+  let m = files.filter((f) => f.path.toLowerCase() === q);
+  if (m.length === 0) m = files.filter((f) => f.path.toLowerCase().endsWith("/" + q) || f.path.toLowerCase() === q);
+  if (m.length === 0) m = files.filter((f) => f.path.toLowerCase().includes(q));
+  if (m.length === 0) return `在 "${c.id}" 範例中找不到符合 "${p}" 的源碼檔。用 docs_code_search(corpus="${c.id}", query="") 看清單。`;
+  if (m.length > 1) return `"${p}" 符合多檔,請更精確:\n\n` + m.map((f) => "- " + f.path).join("\n");
+  const file = m[0];
+  const ext = path.extname(file.path).replace(".", "") || "";
+  return truncateIfNeeded(`# [${c.id}] ${file.path}\n\n\`\`\`${ext}\n` + readCodeFileContent(file) + "\n```");
+}
+
+/**
+ * 結構大綱:列某語料的分類目錄 + 篇名(headings=true 才展開篇內 ##/### 標題)。
+ * path 給定 → 只展開該頂層分類。corpusId 省略 → 提示先用 docs_list_corpora。
+ */
+export function doOutline(corpusId: string | undefined, filterPath: string | undefined, headings: boolean): string {
+  if (!corpusId || !corpusId.trim()) {
+    return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
+  }
+  const c = getCorpus(corpusId);
+  if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
+
+  const files = listMarkdownFiles(c);
+  // 依頂層目錄分組(無子目錄者歸 "(根)")
+  const groups = new Map<string, typeof files>();
+  for (const f of files) {
+    const top = f.filename.includes("/") ? f.filename.split("/")[0] : "(根)";
+    if (!groups.has(top)) groups.set(top, []);
+    groups.get(top)!.push(f);
+  }
+
+  const wantPath = filterPath?.trim();
+  if (wantPath && !groups.has(wantPath)) {
+    return `語料 "${corpusId}" 沒有分類 "${wantPath}"。可用分類:${[...groups.keys()].join(", ")}。`;
+  }
+
+  const out: string[] = [`# ${c.id} 結構大綱(${files.length} 篇 · ${groups.size} 類)`, ""];
+  for (const [top, fs] of groups) {
+    if (wantPath && top !== wantPath) continue;
+    out.push(`## ${top} (${fs.length} 篇)`);
+    for (const f of fs) {
+      const name = f.filename.includes("/") ? f.filename.split("/").slice(1).join("/") : f.filename;
+      const display = name.replace(/\.md$/i, "");
+      if (headings) {
+        out.push(`- ${display}`);
+        for (const h of extractHeadings(readNoteContent(f))) {
+          out.push(`  ${"  ".repeat(h.level - 2)}- ${h.text}`);
+        }
+      } else {
+        out.push(`- ${display}`);
+      }
+    }
+    out.push("");
+  }
+  if (!headings) {
+    out.push(`> 要展開篇內標題:docs_outline(corpus="${c.id}", path="<分類>", headings=true)`);
+  }
+  return truncateIfNeeded(out.join("\n"));
+}
+
+/** 掃語料所有 md,以 #/##/### 標題建「小寫標題 → SymbolEntry[]」索引,以語料目錄 mtime 失效。 */
+export function buildSymbolIndex(corpus: Corpus): Map<string, SymbolEntry[]> {
+  let mtimeMs = 0;
+  try { mtimeMs = fs.statSync(corpus.dir).mtimeMs; } catch { /* ignore */ }
+  const cached = symbolIndexCache.get(corpus.dir);
+  if (cached && cached.mtimeMs === mtimeMs) return cached.index;
+  const index = new Map<string, SymbolEntry[]>();
+  for (const f of listMarkdownFiles(corpus)) {
+    for (const h of extractHeadings(readNoteContent(f), 1)) {
+      const key = h.text.toLowerCase();
+      const entry: SymbolEntry = { filename: f.filename, text: h.text, level: h.level, lineStart: h.lineStart };
+      if (!index.has(key)) index.set(key, []);
+      index.get(key)!.push(entry);
+    }
+  }
+  symbolIndexCache.set(corpus.dir, { mtimeMs, index });
+  return index;
+}
+
+/** 按符號名(標題)精確→包含比對,回該標題段落 + 來源篇。 */
+export function doSymbol(corpusId: string | undefined, name: string, limit: number): string {
+  if (!corpusId || !corpusId.trim()) {
+    return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
+  }
+  const c = getCorpus(corpusId);
+  if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
+  if (!c.capabilities.symbol) {
+    return `語料 "${corpusId}" 未啟用 symbol(無符號索引)。請改用 docs_search 或 docs_outline。`;
+  }
+  const index = buildSymbolIndex(c);
+  const q = name.trim().toLowerCase();
+  if (!q) return "請提供要查的符號名(API/方法/組件名)。";
+
+  // 精確命中
+  let matches: SymbolEntry[] = index.get(q) ?? [];
+  // 否則包含比對(跨所有 key)
+  if (matches.length === 0) {
+    for (const [key, entries] of index) {
+      if (key.includes(q)) matches.push(...entries);
+    }
+  }
+  if (matches.length === 0) {
+    return `語料 "${corpusId}" 找不到符號 "${name}"。建議改用 docs_search(corpus="${corpusId}", query="${name}") 全文搜尋,或 docs_outline 看有哪些標題。`;
+  }
+  if (matches.length > limit) {
+    const list = matches.slice(0, limit).map((m) => `- [${corpusId}] ${m.text}  (${m.filename})`).join("\n");
+    return `符號 "${name}" 在 "${corpusId}" 有 ${matches.length} 個候選(顯示前 ${limit}):\n\n${list}\n\n請用更精確的名稱,或 docs_read 讀整篇。`;
+  }
+  const out: string[] = [];
+  const allFiles = listMarkdownFiles(c);
+  for (const m of matches) {
+    const file = allFiles.find((f) => f.filename === m.filename);
+    if (!file) continue;
+    const lines = readNoteContent(file).split(/\r?\n/);
+    const section = sliceSection(lines, m.lineStart);
+    const src = sourceLine(c, m.filename);
+    out.push(`# [${corpusId}] ${m.text}  ·  ${m.filename}` + (src ? `\n> ${src}` : "") + "\n\n" + section);
+    out.push("");
+  }
+  return truncateIfNeeded(out.join("\n"));
+}
+
 /**
  * 列出語料。onlyId 給定 → 只列該語料(供 /mcp/:corpus scoped 端點);
  * filter 給定 → 以 id/title 子字串過濾。
@@ -458,12 +740,19 @@ export function doListCorpora(opts?: { filter?: string; onlyId?: string }): stri
   const out: string[] = ["# 可用語料 (共 " + corpora.length + " 個)", ""];
   for (const c of corpora) {
     const count = listMarkdownFiles(c).length;
-    const caps = c.capabilities.cheatsheet ? " · 速查表" : "";
+    const badges: string[] = [];
+    if (c.capabilities.cheatsheet) badges.push("速查表");
+    if (c.capabilities.examples) badges.push("代碼範例");
+    if (c.capabilities.symbol) badges.push("符號查");
+    const caps = badges.length ? " · " + badges.join(" · ") : "";
     out.push(`## ${c.id}${caps}`);
     if (c.title && c.title !== c.id) out.push(`**${c.title}**`);
     if (c.description) out.push(c.description);
     out.push(`- 文件數:${count}`);
     out.push(`- 搜尋此語料:docs_search(corpus="${c.id}", query="…")`);
+    out.push(`- 結構大綱:docs_outline(corpus="${c.id}")`);
+    if (c.capabilities.examples) out.push(`- 程式碼範例:docs_code_search(corpus="${c.id}", query="…")`);
+    if (c.capabilities.symbol) out.push(`- 符號精確查:docs_symbol(corpus="${c.id}", name="…")`);
     out.push("");
   }
   return truncateIfNeeded(out.join("\n"));

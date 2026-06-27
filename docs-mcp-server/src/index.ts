@@ -2,11 +2,15 @@
 /**
  * Docs MCP Server — 多語料文檔查詢(single server, many corpora)
  *
- * 工具(皆唯讀,語料是「參數」不是「新工具」,故工具數恆為 4):
+ * 工具(皆唯讀,語料是「參數」不是「新工具」,故工具數恆為 8,capability-gated,不隨語料數膨脹):
  *   - docs_list_corpora  列出有哪些語料(探索入口)
  *   - docs_search        關鍵字搜尋;corpus 省略 = 跨所有語料
  *   - docs_read          依語料 + 檔名讀整篇
  *   - docs_cheatsheet    抽某篇的「速查表」段落(語料需啟用 cheatsheet capability)
+ *   - docs_outline       列語料目錄結構(分類 + 篇名,可展開 ##/### 標題)
+ *   - docs_code_search   在範例源碼中搜尋(語料需啟用 examples capability)
+ *   - docs_code_read     依路徑讀單一範例源碼(語料需啟用 examples capability)
+ *   - docs_symbol        按 API/組件名精確定位標題段落(語料需啟用 symbol capability)
  *
  * Transports:stdio(預設)或 http(TRANSPORT=http,Streamable HTTP)。
  * 端點(http):/mcp 全語料、/mcp/<corpus> 鎖定單一書(模型 B)。
@@ -29,6 +33,10 @@ import {
   doSearch,
   doRead,
   doCheatsheet,
+  doOutline,
+  doCodeSearch,
+  doCodeRead,
+  doSymbol,
 } from "./corpus.js";
 
 // ---------------------------------------------------------------------------
@@ -68,6 +76,41 @@ const CheatsheetInputSchema = z
       .describe("語料 id(用 docs_list_corpora 取得)。單書端點或 DOCS_SCOPE 下可省略。"),
     filename: z.string().min(1, "filename 不可為空").max(300)
       .describe('文件檔名或相對路徑,.md 可省略,支援模糊比對。'),
+  })
+  .strict();
+
+const OutlineInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional()
+      .describe("語料 id(用 docs_list_corpora 取得)。單書端點 /mcp/<corpus> 或 DOCS_SCOPE 下可省略。"),
+    path: z.string().max(200).optional()
+      .describe("只展開某個頂層分類(如 \"開發文檔\")。省略則列全部分類。"),
+    headings: z.boolean().default(false)
+      .describe("true 才展開每篇的 ##/### 標題(會讀全部檔案、較重)。預設 false。"),
+  })
+  .strict();
+
+const CodeSearchInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+    query: z.string().max(200).default("").describe("關鍵字(空白分隔為 AND)。留空 = 列出有哪些範例檔。"),
+    limit: z.number().int().min(1).max(30).default(10).describe("最多回傳幾檔(預設 10)"),
+    context_lines: z.number().int().min(0).max(6).default(2).describe("片段上下文行數(預設 2)"),
+  })
+  .strict();
+
+const CodeReadInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+    path: z.string().min(1).max(300).describe("源碼檔路徑或檔名(結尾/包含模糊比對)。"),
+  })
+  .strict();
+
+const SymbolInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+    name: z.string().min(1).max(120).describe("要查的符號名(API/方法/組件名,對標題精確→包含比對)。"),
+    limit: z.number().int().min(1).max(30).default(8).describe("候選上限(預設 8)"),
   })
   .strict();
 
@@ -175,6 +218,65 @@ function createServer(scope?: string): McpServer {
       if (!corpus || !corpus.trim()) return textResult(needCorpus());
       return textResult(doCheatsheet(corpus, p.filename));
     }
+  );
+
+  server.registerTool(
+    "docs_code_search",
+    {
+      title: "搜尋範例源碼",
+      description:
+        "在某語料附帶的程式碼範例中搜尋(query 留空則列出有哪些範例檔)。\n\n" +
+        "僅對啟用 examples 能力的語料有效(否則提示改用 docs_search)。\n\n" +
+        "參數:corpus、query(空=列檔)、limit、context_lines。" + scopeNote,
+      inputSchema: CodeSearchInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doCodeSearch(scope ?? p.corpus, p.query, p.limit, p.context_lines))
+  );
+
+  server.registerTool(
+    "docs_code_read",
+    {
+      title: "讀取範例源碼",
+      description:
+        "依路徑讀某語料的單一範例源碼檔(含程式碼框)。僅對啟用 examples 的語料有效。\n\n" +
+        "參數:corpus、path(模糊比對)。" + scopeNote,
+      inputSchema: CodeReadInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doCodeRead(scope ?? p.corpus, p.path))
+  );
+
+  server.registerTool(
+    "docs_symbol",
+    {
+      title: "API/符號精確查",
+      description:
+        "在某語料中按名字(API/方法/組件)精確定位到對應的標題段落,比全文搜尋更準。\n\n" +
+        "僅對啟用 symbol 能力的語料有效(否則提示改用 docs_search/docs_outline)。\n\n" +
+        "參數:corpus、name(對 #/##/### 標題比對)、limit。" + scopeNote,
+      inputSchema: SymbolInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doSymbol(scope ?? p.corpus, p.name, p.limit))
+  );
+
+  server.registerTool(
+    "docs_outline",
+    {
+      title: "語料結構大綱",
+      description:
+        "列出某個語料的內部目錄(分類資料夾 + 每篇檔名,可選展開篇內 ##/### 標題)。\n\n" +
+        "用途:當你還不知道某本「書」裡有什麼時的入口——比 docs_search(要先有關鍵字)、docs_read(要先知檔名)更早一步。\n\n" +
+        "參數:\n" +
+        "  - corpus (string):語料 id。\n" +
+        "  - path (string,選填):只展開某個分類。\n" +
+        "  - headings (boolean,選填):true 展開篇內標題,預設 false。" +
+        scopeNote,
+      inputSchema: OutlineInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doOutline(scope ?? p.corpus, p.path, p.headings))
   );
 
   return server;
