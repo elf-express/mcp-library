@@ -740,12 +740,19 @@ export function doListCorpora(opts?: { filter?: string; onlyId?: string }): stri
   const out: string[] = ["# 可用語料 (共 " + corpora.length + " 個)", ""];
   for (const c of corpora) {
     const count = listMarkdownFiles(c).length;
-    const caps = c.capabilities.cheatsheet ? " · 速查表" : "";
+    const badges: string[] = [];
+    if (c.capabilities.cheatsheet) badges.push("速查表");
+    if (c.capabilities.examples) badges.push("代碼範例");
+    if (c.capabilities.symbol) badges.push("符號查");
+    const caps = badges.length ? " · " + badges.join(" · ") : "";
     out.push(`## ${c.id}${caps}`);
     if (c.title && c.title !== c.id) out.push(`**${c.title}**`);
     if (c.description) out.push(c.description);
     out.push(`- 文件數:${count}`);
     out.push(`- 搜尋此語料:docs_search(corpus="${c.id}", query="…")`);
+    out.push(`- 結構大綱:docs_outline(corpus="${c.id}")`);
+    if (c.capabilities.examples) out.push(`- 程式碼範例:docs_code_search(corpus="${c.id}", query="…")`);
+    if (c.capabilities.symbol) out.push(`- 符號精確查:docs_symbol(corpus="${c.id}", name="…")`);
     out.push("");
   }
   return truncateIfNeeded(out.join("\n"));
