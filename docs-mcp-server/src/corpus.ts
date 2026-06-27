@@ -340,12 +340,17 @@ export interface Heading {
   lineStart: number;
 }
 
-/** 掃 md 的 ## / ### 標題,回標題文字、層級(2 或 3)、行號 */
-export function extractHeadings(content: string): Heading[] {
+/**
+ * 掃 md 標題,回標題文字、層級、行號。
+ * minLevel 預設 2:只抓 ##/###(outline/cheatsheet 行為不變)。
+ * 傳 1 則納入 # 一級:供 buildSymbolIndex 用,使一級標題也進符號索引。
+ */
+export function extractHeadings(content: string, minLevel = 2): Heading[] {
   const lines = content.split(/\r?\n/);
   const out: Heading[] = [];
+  const re = new RegExp(`^(#{${minLevel},3})\\s+(.+?)\\s*$`);
   for (let i = 0; i < lines.length; i++) {
-    const m = lines[i].match(/^(#{2,3})\s+(.+?)\s*$/);
+    const m = lines[i].match(re);
     if (m) out.push({ text: m[2].trim(), level: m[1].length, lineStart: i });
   }
   return out;
@@ -649,7 +654,7 @@ export function doOutline(corpusId: string | undefined, path: string | undefined
   return truncateIfNeeded(out.join("\n"));
 }
 
-/** 掃語料所有 md,以 ##/### 標題建「小寫標題 → SymbolEntry[]」索引,以語料目錄 mtime 失效。 */
+/** 掃語料所有 md,以 #/##/### 標題建「小寫標題 → SymbolEntry[]」索引,以語料目錄 mtime 失效。 */
 export function buildSymbolIndex(corpus: Corpus): Map<string, SymbolEntry[]> {
   let mtimeMs = 0;
   try { mtimeMs = fs.statSync(corpus.dir).mtimeMs; } catch { /* ignore */ }
@@ -657,7 +662,7 @@ export function buildSymbolIndex(corpus: Corpus): Map<string, SymbolEntry[]> {
   if (cached && cached.mtimeMs === mtimeMs) return cached.index;
   const index = new Map<string, SymbolEntry[]>();
   for (const f of listMarkdownFiles(corpus)) {
-    for (const h of extractHeadings(readNoteContent(f))) {
+    for (const h of extractHeadings(readNoteContent(f), 1)) {
       const key = h.text.toLowerCase();
       const entry: SymbolEntry = { filename: f.filename, text: h.text, level: h.level, lineStart: h.lineStart };
       if (!index.has(key)) index.set(key, []);
@@ -684,18 +689,10 @@ export function doSymbol(corpusId: string | undefined, name: string, limit: numb
 
   // 精確命中
   let matches: SymbolEntry[] = index.get(q) ?? [];
-  // 否則包含比對(跨所有 key):先全字串,若無則 token OR 比對
+  // 否則包含比對(跨所有 key)
   if (matches.length === 0) {
     for (const [key, entries] of index) {
       if (key.includes(q)) matches.push(...entries);
-    }
-  }
-  if (matches.length === 0) {
-    const tokens = q.split(/\s+/).filter((t) => t.length > 0);
-    if (tokens.length > 1) {
-      for (const [key, entries] of index) {
-        if (tokens.some((t) => key.includes(t))) matches.push(...entries);
-      }
     }
   }
   if (matches.length === 0) {
