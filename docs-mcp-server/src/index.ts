@@ -32,6 +32,7 @@ import {
   doOutline,
   doCodeSearch,
   doCodeRead,
+  doSymbol,
 } from "./corpus.js";
 
 // ---------------------------------------------------------------------------
@@ -232,6 +233,28 @@ function createServer(scope?: string): McpServer {
       annotations: READ_ONLY,
     },
     async (p) => textResult(doCodeRead(scope ?? p.corpus, p.path))
+  );
+
+  const SymbolInputSchema = z
+    .object({
+      corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+      name: z.string().min(1).max(120).describe("要查的符號名(API/方法/組件名,對標題精確→包含比對)。"),
+      limit: z.number().int().min(1).max(30).default(8).describe("候選上限(預設 8)"),
+    })
+    .strict();
+
+  server.registerTool(
+    "docs_symbol",
+    {
+      title: "API/符號精確查",
+      description:
+        "在某語料中按名字(API/方法/組件)精確定位到對應的標題段落,比全文搜尋更準。\n\n" +
+        "僅對啟用 symbol 能力的語料有效(否則提示改用 docs_search/docs_outline)。\n\n" +
+        "參數:corpus、name(對 ##/### 標題比對)、limit。" + scopeNote,
+      inputSchema: SymbolInputSchema.shape,
+      annotations: READ_ONLY,
+    },
+    async (p) => textResult(doSymbol(scope ?? p.corpus, p.name, p.limit))
   );
 
   server.registerTool(

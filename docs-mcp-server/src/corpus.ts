@@ -62,6 +62,8 @@ export interface CachedNote {
   mtimeMs: number;
 }
 
+export interface SymbolEntry { filename: string; text: string; level: number; lineStart: number }
+
 interface Manifest {
   title?: string;
   description?: string;
@@ -77,12 +79,15 @@ export const contentCache = new Map<string, CachedNote>();
 let corporaCache: { dir: string; mtimeMs: number; list: Corpus[] } | null = null;
 // corpusDir -> sources.json 內容(以 mtime 失效)
 const sourcesCache = new Map<string, { mtimeMs: number; map: Record<string, string> }>();
+// corpusDir -> 符號索引(以語料目錄 mtime 失效)
+const symbolIndexCache = new Map<string, { mtimeMs: number; index: Map<string, SymbolEntry[]> }>();
 
 /** 測試用:清空所有模組級快取 */
 export function _clearCaches(): void {
   contentCache.clear();
   corporaCache = null;
   sourcesCache.clear();
+  symbolIndexCache.clear();
 }
 
 // ---------------------------------------------------------------------------
@@ -640,6 +645,75 @@ export function doOutline(corpusId: string | undefined, path: string | undefined
   }
   if (!headings) {
     out.push(`> 要展開篇內標題:docs_outline(corpus="${c.id}", path="<分類>", headings=true)`);
+  }
+  return truncateIfNeeded(out.join("\n"));
+}
+
+/** 掃語料所有 md,以 ##/### 標題建「小寫標題 → SymbolEntry[]」索引,以語料目錄 mtime 失效。 */
+export function buildSymbolIndex(corpus: Corpus): Map<string, SymbolEntry[]> {
+  let mtimeMs = 0;
+  try { mtimeMs = fs.statSync(corpus.dir).mtimeMs; } catch { /* ignore */ }
+  const cached = symbolIndexCache.get(corpus.dir);
+  if (cached && cached.mtimeMs === mtimeMs) return cached.index;
+  const index = new Map<string, SymbolEntry[]>();
+  for (const f of listMarkdownFiles(corpus)) {
+    for (const h of extractHeadings(readNoteContent(f))) {
+      const key = h.text.toLowerCase();
+      const entry: SymbolEntry = { filename: f.filename, text: h.text, level: h.level, lineStart: h.lineStart };
+      if (!index.has(key)) index.set(key, []);
+      index.get(key)!.push(entry);
+    }
+  }
+  symbolIndexCache.set(corpus.dir, { mtimeMs, index });
+  return index;
+}
+
+/** 按符號名(標題)精確→包含比對,回該標題段落 + 來源篇。 */
+export function doSymbol(corpusId: string | undefined, name: string, limit: number): string {
+  if (!corpusId || !corpusId.trim()) {
+    return `請指定 corpus(可用:${corpusIdList()})。`;
+  }
+  const c = getCorpus(corpusId);
+  if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
+  if (!c.capabilities.symbol) {
+    return `語料 "${corpusId}" 未啟用 symbol(無符號索引)。請改用 docs_search 或 docs_outline。`;
+  }
+  const index = buildSymbolIndex(c);
+  const q = name.trim().toLowerCase();
+  if (!q) return "請提供要查的符號名(API/方法/組件名)。";
+
+  // 精確命中
+  let matches: SymbolEntry[] = index.get(q) ?? [];
+  // 否則包含比對(跨所有 key):先全字串,若無則 token OR 比對
+  if (matches.length === 0) {
+    for (const [key, entries] of index) {
+      if (key.includes(q)) matches.push(...entries);
+    }
+  }
+  if (matches.length === 0) {
+    const tokens = q.split(/\s+/).filter((t) => t.length > 0);
+    if (tokens.length > 1) {
+      for (const [key, entries] of index) {
+        if (tokens.some((t) => key.includes(t))) matches.push(...entries);
+      }
+    }
+  }
+  if (matches.length === 0) {
+    return `語料 "${corpusId}" 找不到符號 "${name}"。建議改用 docs_search(corpus="${corpusId}", query="${name}") 全文搜尋,或 docs_outline 看有哪些標題。`;
+  }
+  if (matches.length > limit) {
+    const list = matches.slice(0, limit).map((m) => `- [${corpusId}] ${m.text}  (${m.filename})`).join("\n");
+    return `符號 "${name}" 在 "${corpusId}" 有 ${matches.length} 個候選(顯示前 ${limit}):\n\n${list}\n\n請用更精確的名稱,或 docs_read 讀整篇。`;
+  }
+  const out: string[] = [];
+  for (const m of matches) {
+    const file = listMarkdownFiles(c).find((f) => f.filename === m.filename);
+    if (!file) continue;
+    const lines = readNoteContent(file).split(/\r?\n/);
+    const section = sliceSection(lines, m.lineStart);
+    const src = sourceLine(c, m.filename);
+    out.push(`# [${corpusId}] ${m.text}  ·  ${m.filename}` + (src ? `\n> ${src}` : "") + "\n\n" + section);
+    out.push("");
   }
   return truncateIfNeeded(out.join("\n"));
 }
