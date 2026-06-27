@@ -45,7 +45,7 @@ FROM ghcr.io/astral-sh/uv:debian
 LABEL org.opencontainers.image.source="https://github.com/elf-express/MCPJungle"
 LABEL org.opencontainers.image.description="MCPJungle fork (stdio) — dashboard i18n + segmented Add Server + setup guide"
 RUN apt-get update \
-    && apt-get install -y curl gnupg \
+    && apt-get install -y curl gnupg tzdata \
     && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y nodejs \
     && apt-get clean \

@@ -17,7 +17,8 @@ services:
       DATABASE_URL: ${MCPJUNGLE_DATABASE_URL:?set MCPJUNGLE_DATABASE_URL in .env}
       SERVER_MODE: ${SERVER_MODE:-development}
       OTEL_ENABLED: ${OTEL_ENABLED:-false}
-      MCP_SERVER_INIT_REQ_TIMEOUT_SEC: ${MCP_SERVER_INIT_REQ_TIMEOUT_SEC:-10}
+      MCP_SERVER_INIT_REQ_TIMEOUT_SEC: ${MCP_SERVER_INIT_REQ_TIMEOUT_SEC:-30}
+      TZ: ${TZ:-Asia/Taipei}
     ports:
       - "${MCPJUNGLE_HOST_PORT:-18800}:8080"
     volumes:
@@ -34,6 +35,7 @@ services:
       PORT: "5690"
       # dev 留空 = 僅內部網路可達。要硬化:設 DOCS_MCP_AUTH_TOKEN 並在 servers/*.json 加 bearer_token。
       MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
+      TZ: ${TZ:-Asia/Taipei}
     networks: [mcpjungl]
     restart: unless-stopped
 
@@ -49,6 +51,7 @@ services:
       - docs-mcp-server
     environment:
       REGISTRY_URL: http://mcpjungle:8080
+      TZ: ${TZ:-Asia/Taipei}
     networks: [mcpjungl]
     restart: "no"
 
