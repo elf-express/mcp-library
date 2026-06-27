@@ -70,13 +70,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
-      # 登入 GHCR(使用 GITHUB_TOKEN,無需額外 secret)
-      - name: Log in to GitHub Container Registry
+      # 登入 GHCR:有 GHCR_PAT(org 允許的合規 PAT、含 write:packages)就用它,否則 fallback GITHUB_TOKEN。
+      # 用 with.password 的 `||` fallback,不是 step `if:`——secrets context 在 step if 條件中不可用
+      # (會報 "Unrecognized named-value: 'secrets'"),放進 with.password 才合法。
+      - name: Log in to GHCR
         uses: docker/login-action@v4
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GHCR_PAT || secrets.GITHUB_TOKEN }}
 
       # 自動產生映像 tags 與 labels
       - name: Extract metadata (tags, labels)
