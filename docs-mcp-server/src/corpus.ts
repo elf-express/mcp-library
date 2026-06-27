@@ -351,7 +351,7 @@ export function extractHeadings(content: string, minLevel = 2): Heading[] {
   const re = new RegExp(`^(#{${minLevel},3})\\s+(.+?)\\s*$`);
   for (let i = 0; i < lines.length; i++) {
     const m = lines[i].match(re);
-    if (m) out.push({ text: m[2].trim(), level: m[1].length, lineStart: i });
+    if (m) out.push({ text: m[2].replace(/[​﻿]/g, "").trim(), level: m[1].length, lineStart: i });
   }
   return out;
 }
@@ -519,7 +519,7 @@ export function doCheatsheet(corpusId: string, filename: string): string {
 /** examples 能力 gate:回 Corpus 或錯誤訊息字串。 */
 function requireExamples(corpusId: string | undefined): Corpus | string {
   if (!corpusId || !corpusId.trim()) {
-    return `請指定 corpus(可用:${corpusIdList()})。`;
+    return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
   }
   const c = getCorpus(corpusId);
   if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;
@@ -676,7 +676,7 @@ export function buildSymbolIndex(corpus: Corpus): Map<string, SymbolEntry[]> {
 /** 按符號名(標題)精確→包含比對,回該標題段落 + 來源篇。 */
 export function doSymbol(corpusId: string | undefined, name: string, limit: number): string {
   if (!corpusId || !corpusId.trim()) {
-    return `請指定 corpus(可用:${corpusIdList()})。`;
+    return `請指定 corpus(用 docs_list_corpora 查看可用語料:${corpusIdList()}),或改用單書端點 /mcp/<corpus>。`;
   }
   const c = getCorpus(corpusId);
   if (!c) return `找不到語料 "${corpusId}"。可用語料:${corpusIdList()}。`;

@@ -2,11 +2,15 @@
 /**
  * Docs MCP Server — 多語料文檔查詢(single server, many corpora)
  *
- * 工具(皆唯讀,語料是「參數」不是「新工具」,故工具數恆為 4):
+ * 工具(皆唯讀,語料是「參數」不是「新工具」,故工具數恆為 8,capability-gated,不隨語料數膨脹):
  *   - docs_list_corpora  列出有哪些語料(探索入口)
  *   - docs_search        關鍵字搜尋;corpus 省略 = 跨所有語料
  *   - docs_read          依語料 + 檔名讀整篇
  *   - docs_cheatsheet    抽某篇的「速查表」段落(語料需啟用 cheatsheet capability)
+ *   - docs_outline       列語料目錄結構(分類 + 篇名,可展開 ##/### 標題)
+ *   - docs_code_search   在範例源碼中搜尋(語料需啟用 examples capability)
+ *   - docs_code_read     依路徑讀單一範例源碼(語料需啟用 examples capability)
+ *   - docs_symbol        按 API/組件名精確定位標題段落(語料需啟用 symbol capability)
  *
  * Transports:stdio(預設)或 http(TRANSPORT=http,Streamable HTTP)。
  * 端點(http):/mcp 全語料、/mcp/<corpus> 鎖定單一書(模型 B)。
@@ -83,6 +87,30 @@ const OutlineInputSchema = z
       .describe("只展開某個頂層分類(如 \"開發文檔\")。省略則列全部分類。"),
     headings: z.boolean().default(false)
       .describe("true 才展開每篇的 ##/### 標題(會讀全部檔案、較重)。預設 false。"),
+  })
+  .strict();
+
+const CodeSearchInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+    query: z.string().max(200).default("").describe("關鍵字(空白分隔為 AND)。留空 = 列出有哪些範例檔。"),
+    limit: z.number().int().min(1).max(30).default(10).describe("最多回傳幾檔(預設 10)"),
+    context_lines: z.number().int().min(0).max(6).default(2).describe("片段上下文行數(預設 2)"),
+  })
+  .strict();
+
+const CodeReadInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+    path: z.string().min(1).max(300).describe("源碼檔路徑或檔名(結尾/包含模糊比對)。"),
+  })
+  .strict();
+
+const SymbolInputSchema = z
+  .object({
+    corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
+    name: z.string().min(1).max(120).describe("要查的符號名(API/方法/組件名,對標題精確→包含比對)。"),
+    limit: z.number().int().min(1).max(30).default(8).describe("候選上限(預設 8)"),
   })
   .strict();
 
@@ -192,22 +220,6 @@ function createServer(scope?: string): McpServer {
     }
   );
 
-  const CodeSearchInputSchema = z
-    .object({
-      corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
-      query: z.string().max(200).default("").describe("關鍵字(空白分隔為 AND)。留空 = 列出有哪些範例檔。"),
-      limit: z.number().int().min(1).max(30).default(10).describe("最多回傳幾檔(預設 10)"),
-      context_lines: z.number().int().min(0).max(6).default(2).describe("片段上下文行數(預設 2)"),
-    })
-    .strict();
-
-  const CodeReadInputSchema = z
-    .object({
-      corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
-      path: z.string().min(1).max(300).describe("源碼檔路徑或檔名(結尾/包含模糊比對)。"),
-    })
-    .strict();
-
   server.registerTool(
     "docs_code_search",
     {
@@ -234,14 +246,6 @@ function createServer(scope?: string): McpServer {
     },
     async (p) => textResult(doCodeRead(scope ?? p.corpus, p.path))
   );
-
-  const SymbolInputSchema = z
-    .object({
-      corpus: z.string().max(100).optional().describe("語料 id。單書端點/DOCS_SCOPE 下可省。"),
-      name: z.string().min(1).max(120).describe("要查的符號名(API/方法/組件名,對標題精確→包含比對)。"),
-      limit: z.number().int().min(1).max(30).default(8).describe("候選上限(預設 8)"),
-    })
-    .strict();
 
   server.registerTool(
     "docs_symbol",
