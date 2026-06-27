@@ -31,6 +31,10 @@ const SKIP_DIRS = new Set([".git", "node_modules", "dist"]);
 export interface CorpusCapabilities {
   /** 是否啟用「速查表」抽取(文件需有 `## 速查表` 段落) */
   cheatsheet?: boolean;
+  /** 啟用 docs_code_search / docs_code_read,讀 corpora/<id>/examples/ */
+  examples?: boolean;
+  /** 啟用 docs_symbol,從 md 的 ##/### 標題建符號索引 */
+  symbol?: boolean;
 }
 
 export interface Corpus {
@@ -274,26 +278,43 @@ export function truncateIfNeeded(text: string): string {
   );
 }
 
-export function extractCheatsheet(content: string): string | null {
+export interface Heading {
+  text: string;
+  level: number;
+  lineStart: number;
+}
+
+/** 掃 md 的 ## / ### 標題,回標題文字、層級(2 或 3)、行號 */
+export function extractHeadings(content: string): Heading[] {
   const lines = content.split(/\r?\n/);
-  let start = -1;
+  const out: Heading[] = [];
   for (let i = 0; i < lines.length; i++) {
-    if (/^#{1,6}\s+.*速查/.test(lines[i])) {
-      start = i;
-      break;
-    }
+    const m = lines[i].match(/^(#{2,3})\s+(.+?)\s*$/);
+    if (m) out.push({ text: m[2].trim(), level: m[1].length, lineStart: i });
   }
-  if (start === -1) return null;
-  const startLevel = (lines[start].match(/^#+/) ?? ["#"])[0].length;
+  return out;
+}
+
+/** 從 lines[startIdx] 的標題切到下一個「同級或更高級」標題(不含),trim 後回傳 */
+export function sliceSection(lines: string[], startIdx: number): string {
+  const startLevel = (lines[startIdx].match(/^#+/) ?? ["#"])[0].length;
   let end = lines.length;
-  for (let i = start + 1; i < lines.length; i++) {
+  for (let i = startIdx + 1; i < lines.length; i++) {
     const m = lines[i].match(/^(#{1,6})\s+/);
     if (m && m[1].length <= startLevel) {
       end = i;
       break;
     }
   }
-  return lines.slice(start, end).join("\n").trim();
+  return lines.slice(startIdx, end).join("\n").trim();
+}
+
+export function extractCheatsheet(content: string): string | null {
+  const lines = content.split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    if (/^#{1,6}\s+.*速查/.test(lines[i])) return sliceSection(lines, i);
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
