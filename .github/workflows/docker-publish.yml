@@ -74,7 +74,7 @@ jobs:
       # 用 with.password 的 `||` fallback,不是 step `if:`——secrets context 在 step if 條件中不可用
       # (會報 "Unrecognized named-value: 'secrets'"),放進 with.password 才合法。
       - name: Log in to GHCR
-        uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee  # v4
+        uses: docker/login-action@c99871dec2022cc055c062a10cc1a1310835ceb4  # v4
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
