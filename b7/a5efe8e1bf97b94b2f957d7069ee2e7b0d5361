@@ -1,0 +1,1567 @@
+CLAUDE.md
+  s_05d0bb45e6bb5a::t_89b6ef974b70ef 13,88,108,124
+README.md
+  s_05d0bb45e6bb5a::t_44e1308cac5646 9,26
+docs-mcp-server/README.md
+  s_05d0bb45e6bb5a::t_14dc452ccba1bf 10,27,124
+"docs-mcp-server/corpora/opnsense-en/000 目錄.md"
+  s_05d0bb45e6bb5a::t_487f097ba19822 1-739
+"docs-mcp-server/corpora/opnsense-en/01 Welcome to OPNsense’s documentation!.md"
+  s_05d0bb45e6bb5a::t_2b0db2ef73a411 1-190
+"docs-mcp-server/corpora/opnsense-en/02 Introduction.md"
+  s_05d0bb45e6bb5a::t_d97c132699555e 1-141
+"docs-mcp-server/corpora/opnsense-en/03 Security.md"
+  s_05d0bb45e6bb5a::t_7a378aea80e88f 1-325
+"docs-mcp-server/corpora/opnsense-en/04 Releases.md"
+  s_05d0bb45e6bb5a::t_47198dc1bfc18c 1-63
+"docs-mcp-server/corpora/opnsense-en/05 Community Edition.md"
+  s_05d0bb45e6bb5a::t_b657841efd90d3 1-50
+"docs-mcp-server/corpora/opnsense-en/06 26.7 “Xenial Xenops” Series.md"
+  s_05d0bb45e6bb5a::t_0e02ec0c1b67c9 1-1079
+"docs-mcp-server/corpora/opnsense-en/07 26.1 “Witty Woodpecker” Series.md"
+  s_05d0bb45e6bb5a::t_a9f00d29915a11 1-1924
+"docs-mcp-server/corpora/opnsense-en/08 25.7 “Visionary Viper” Series.md"
+  s_05d0bb45e6bb5a::t_39c0f4ab9b77dc 1-1693
+"docs-mcp-server/corpora/opnsense-en/09 25.1 “Ultimate Unicorn” Series.md"
+  s_05d0bb45e6bb5a::t_68fca95c625952 1-1675
+"docs-mcp-server/corpora/opnsense-en/10 24.7 “Thriving Tiger” Series.md"
+  s_05d0bb45e6bb5a::t_69a5687f2acd27 1-1608
+"docs-mcp-server/corpora/opnsense-en/100 Trust.md"
+  s_05d0bb45e6bb5a::t_1580e1064ab69f 1-218
+"docs-mcp-server/corpora/opnsense-en/101 Log Files.md"
+  s_05d0bb45e6bb5a::t_ef44abe889f210 1-30
+"docs-mcp-server/corpora/opnsense-en/102 Diagnostics.md"
+  s_05d0bb45e6bb5a::t_3f3833453387a6 1-42
+"docs-mcp-server/corpora/opnsense-en/103 Configure 2FA TOTP & Google Authenticator.md"
+  s_05d0bb45e6bb5a::t_ae7bed062627e0 1-124
+"docs-mcp-server/corpora/opnsense-en/104 Setup Self-Signed Certificate Chains.md"
+  s_05d0bb45e6bb5a::t_45b1108b3182c8 1-430
+"docs-mcp-server/corpora/opnsense-en/105 Interfaces.md"
+  s_05d0bb45e6bb5a::t_2f82d564e2e767 1-64
+"docs-mcp-server/corpora/opnsense-en/106 Interface configuration.md"
+  s_05d0bb45e6bb5a::t_7fe106c983baa0 1-148
+"docs-mcp-server/corpora/opnsense-en/107 Devices.md"
+  s_05d0bb45e6bb5a::t_0f0c0391a287a5 1-268
+"docs-mcp-server/corpora/opnsense-en/108 Overview.md"
+  s_05d0bb45e6bb5a::t_6ad0c30e32f358 1-25
+"docs-mcp-server/corpora/opnsense-en/109 Settings.md"
+  s_05d0bb45e6bb5a::t_634c5bf821804b 1-75
+"docs-mcp-server/corpora/opnsense-en/11 24.1 “Savvy Shark” Series.md"
+  s_05d0bb45e6bb5a::t_34306b9cdbe513 1-1261
+"docs-mcp-server/corpora/opnsense-en/110 Neighbors.md"
+  s_05d0bb45e6bb5a::t_a6e8dcdb7b4ce9 1-118
+"docs-mcp-server/corpora/opnsense-en/111 Virtual IPs.md"
+  s_05d0bb45e6bb5a::t_6e9064f9ab51b1 1-133
+"docs-mcp-server/corpora/opnsense-en/112 Wireless.md"
+  s_05d0bb45e6bb5a::t_9fef35a151adf1 1-27
+"docs-mcp-server/corpora/opnsense-en/113 IPv6 setup.md"
+  s_05d0bb45e6bb5a::t_dfe66fadccdb37 1-320
+"docs-mcp-server/corpora/opnsense-en/114 Diagnostics.md"
+  s_05d0bb45e6bb5a::t_a4e6e48d2968dc 1-191
+"docs-mcp-server/corpora/opnsense-en/115 VLAN and LAGG Setup.md"
+  s_05d0bb45e6bb5a::t_5f415715322984 1-195
+"docs-mcp-server/corpora/opnsense-en/116 LAN Bridge.md"
+  s_05d0bb45e6bb5a::t_dfca29488c70b0 1-83
+"docs-mcp-server/corpora/opnsense-en/117 VXLAN Bridge.md"
+  s_05d0bb45e6bb5a::t_8e7df4a591b42b 1-228
+"docs-mcp-server/corpora/opnsense-en/118 Transparent Filtering Bridge.md"
+  s_05d0bb45e6bb5a::t_5eeb0a55b9d765 1-198
+"docs-mcp-server/corpora/opnsense-en/119 Interfaces Wireless Networks (INTERNAL).md"
+  s_05d0bb45e6bb5a::t_4852dec1d7d1f2 1-90
+"docs-mcp-server/corpora/opnsense-en/12 23.7 “Restless Roadrunner” Series.md"
+  s_05d0bb45e6bb5a::t_805caa7fdc7bd1 1-1632
+"docs-mcp-server/corpora/opnsense-en/120 Configuring Cellular Modems.md"
+  s_05d0bb45e6bb5a::t_22a6fa0830582e 1-132
+"docs-mcp-server/corpora/opnsense-en/121 IPv6 For Zen UK.md"
+  s_05d0bb45e6bb5a::t_ee64c21152c6e0 1-131
+"docs-mcp-server/corpora/opnsense-en/122 IPv6 for generic DSL dialup.md"
+  s_05d0bb45e6bb5a::t_893fd13a317652 1-55
+"docs-mcp-server/corpora/opnsense-en/123 IPv6 behind an AVM Fritz!Box.md"
+  s_05d0bb45e6bb5a::t_88d894c52943b5 1-116
+"docs-mcp-server/corpora/opnsense-en/124 IPv6 Tunnel Broker.md"
+  s_05d0bb45e6bb5a::t_b0666e0b6ec837 1-108
+"docs-mcp-server/corpora/opnsense-en/125 Deutsche Telekom Germany IPTV (Magenta TV) setup.md"
+  s_05d0bb45e6bb5a::t_8111629bdc8a98 1-63
+"docs-mcp-server/corpora/opnsense-en/126 Orange France FTTH IPv4 & IPv6.md"
+  s_05d0bb45e6bb5a::t_09fc15d1203d7a 1-184
+"docs-mcp-server/corpora/opnsense-en/127 Orange France IPTV setup.md"
+  s_05d0bb45e6bb5a::t_dc75f216769d5b 1-111
+"docs-mcp-server/corpora/opnsense-en/128 SFRRED France FTTH IPv4 & IPv6 & Phone.md"
+  s_05d0bb45e6bb5a::t_b1f60a563dd4de 1-311
+"docs-mcp-server/corpora/opnsense-en/129 Setup for Sky UK ISP.md"
+  s_05d0bb45e6bb5a::t_42967830c34ba3 1-103
+"docs-mcp-server/corpora/opnsense-en/13 23.1 “Quintessential Quail” Series.md"
+  s_05d0bb45e6bb5a::t_122ac603d768b5 1-1408
+"docs-mcp-server/corpora/opnsense-en/130 Firewall.md"
+  s_05d0bb45e6bb5a::t_095bb0b9193f5e 1-52
+"docs-mcp-server/corpora/opnsense-en/131 Generic info.md"
+  s_05d0bb45e6bb5a::t_61fdbb80f893dd 1-37
+"docs-mcp-server/corpora/opnsense-en/132 Aliases.md"
+  s_05d0bb45e6bb5a::t_86adb680f57615 1-421
+"docs-mcp-server/corpora/opnsense-en/133 Categories.md"
+  s_05d0bb45e6bb5a::t_fc578e45f2aeb8 1-25
+"docs-mcp-server/corpora/opnsense-en/134 [Interface] Groups.md"
+  s_05d0bb45e6bb5a::t_bd11ec9aba03b6 1-39
+"docs-mcp-server/corpora/opnsense-en/135 Network Address Translation.md"
+  s_05d0bb45e6bb5a::t_ae70611e106e57 1-334
+"docs-mcp-server/corpora/opnsense-en/136 Reflection and Hairpin NAT.md"
+  s_05d0bb45e6bb5a::t_6829b78829faa6 1-292
+"docs-mcp-server/corpora/opnsense-en/137 Rules.md"
+  s_05d0bb45e6bb5a::t_a9b6e9f9acdc26 1-586
+"docs-mcp-server/corpora/opnsense-en/138 Traffic Shaping.md"
+  s_05d0bb45e6bb5a::t_5f3b298c386e98 1-85
+"docs-mcp-server/corpora/opnsense-en/139 Reserve dedicated bandwidth.md"
+  s_05d0bb45e6bb5a::t_07f4b4f1b87999 1-145
+"docs-mcp-server/corpora/opnsense-en/14 22.7 “Powerful Panther” Series.md"
+  s_05d0bb45e6bb5a::t_ee17539eb44564 1-1398
+"docs-mcp-server/corpora/opnsense-en/140 Share internet bandwidth amongst users evenly.md"
+  s_05d0bb45e6bb5a::t_27f0bd0890ccb3 1-113
+"docs-mcp-server/corpora/opnsense-en/141 Limit maximum internet bandwidth users can consume.md"
+  s_05d0bb45e6bb5a::t_c9ecdb0c2b0d22 1-206
+"docs-mcp-server/corpora/opnsense-en/142 Prioritize Applications (Weighted) using Queues.md"
+  s_05d0bb45e6bb5a::t_c2472eddbbe3e5 1-126
+"docs-mcp-server/corpora/opnsense-en/143 Multi Interface shaping for a GuestNet.md"
+  s_05d0bb45e6bb5a::t_58537e0bcefdd2 1-95
+"docs-mcp-server/corpora/opnsense-en/144 Fighting Bufferbloat with FQ_CoDel.md"
+  s_05d0bb45e6bb5a::t_c2b9924845ac16 1-324
+"docs-mcp-server/corpora/opnsense-en/145 Control Plane Shaping.md"
+  s_05d0bb45e6bb5a::t_806c0a0c1e4382 1-207
+"docs-mcp-server/corpora/opnsense-en/146 (Advanced) Settings.md"
+  s_05d0bb45e6bb5a::t_76c35978331442 1-194
+"docs-mcp-server/corpora/opnsense-en/147 Normalization.md"
+  s_05d0bb45e6bb5a::t_04e8c10e212f37 1-45
+"docs-mcp-server/corpora/opnsense-en/148 Configure CARP.md"
+  s_05d0bb45e6bb5a::t_7272c90bb6e3c2 1-568
+"docs-mcp-server/corpora/opnsense-en/149 Log Files.md"
+  s_05d0bb45e6bb5a::t_1e860b1c8796c9 1-58
+"docs-mcp-server/corpora/opnsense-en/15 22.1 “Observant Owl” Series.md"
+  s_05d0bb45e6bb5a::t_bf873cf49c7e35 1-1577
+"docs-mcp-server/corpora/opnsense-en/150 Diagnostics.md"
+  s_05d0bb45e6bb5a::t_6593f20d8a89c7 1-110
+"docs-mcp-server/corpora/opnsense-en/151 Organize PF Rules by Category.md"
+  s_05d0bb45e6bb5a::t_479bc27c4f9139 1-63
+"docs-mcp-server/corpora/opnsense-en/152 Configure Spamhaus DROP.md"
+  s_05d0bb45e6bb5a::t_c4bcba6679f20c 1-122
+"docs-mcp-server/corpora/opnsense-en/153 Security Zones.md"
+  s_05d0bb45e6bb5a::t_a09c435f4d9f79 1-288
+"docs-mcp-server/corpora/opnsense-en/154 Virtual Private Networking.md"
+  s_05d0bb45e6bb5a::t_09ac0f0d7fcab7 1-735
+"docs-mcp-server/corpora/opnsense-en/155 WireGuard Site-to-Site Setup.md"
+  s_05d0bb45e6bb5a::t_a5f861dd3b98cf 1-289
+"docs-mcp-server/corpora/opnsense-en/156 WireGuard Road Warrior Setup.md"
+  s_05d0bb45e6bb5a::t_033f208ee438be 1-354
+"docs-mcp-server/corpora/opnsense-en/157 WireGuard AzireVPN Road Warrior Setup.md"
+  s_05d0bb45e6bb5a::t_e65b77f85c29a1 1-47
+"docs-mcp-server/corpora/opnsense-en/158 WireGuard MullvadVPN Road Warrior Setup.md"
+  s_05d0bb45e6bb5a::t_061b22d11cc62a 1-67
+"docs-mcp-server/corpora/opnsense-en/159 WireGuard ProtonVPN Road Warrior Setup.md"
+  s_05d0bb45e6bb5a::t_5db33d298afe7e 1-211
+"docs-mcp-server/corpora/opnsense-en/16 21.7 “Noble Nightingale” Series.md"
+  s_05d0bb45e6bb5a::t_30048cdf1a708b 1-1375
+"docs-mcp-server/corpora/opnsense-en/160 WireGuard Selective Routing to External VPN Endpoint.md"
+  s_05d0bb45e6bb5a::t_cffa1ab95465c2 1-385
+"docs-mcp-server/corpora/opnsense-en/161 OpenConnect Setup.md"
+  s_05d0bb45e6bb5a::t_8614ab33aaf6d3 1-45
+"docs-mcp-server/corpora/opnsense-en/162 Stunnel.md"
+  s_05d0bb45e6bb5a::t_fe8a8190225452 1-152
+"docs-mcp-server/corpora/opnsense-en/163 Zerotier Configuration.md"
+  s_05d0bb45e6bb5a::t_b6776d9f3c37ea 1-135
+"docs-mcp-server/corpora/opnsense-en/164 Reverse Proxy and Webserver.md"
+  s_05d0bb45e6bb5a::t_430b7abfbb426e 1-128
+"docs-mcp-server/corpora/opnsense-en/165 Anti Virus Engine.md"
+  s_05d0bb45e6bb5a::t_7b3d50c42b7b2b 1-31
+"docs-mcp-server/corpora/opnsense-en/166 c-icap.md"
+  s_05d0bb45e6bb5a::t_9f138a017dd1fd 1-87
+"docs-mcp-server/corpora/opnsense-en/167 ClamAV.md"
+  s_05d0bb45e6bb5a::t_6f0fd476f3c59c 1-137
+"docs-mcp-server/corpora/opnsense-en/168 nginx Basic Load Balancing.md"
+  s_05d0bb45e6bb5a::t_122c5ee420a4c9 1-57
+"docs-mcp-server/corpora/opnsense-en/169 nginx Header Hardening.md"
+  s_05d0bb45e6bb5a::t_52a8f1342972b8 1-109
+"docs-mcp-server/corpora/opnsense-en/17 21.1 “Marvelous Meerkat” Series.md"
+  s_05d0bb45e6bb5a::t_766fd89b2c846c 1-1326
+"docs-mcp-server/corpora/opnsense-en/170 nginx Local Website Hosting.md"
+  s_05d0bb45e6bb5a::t_357262f619b66c 1-131
+"docs-mcp-server/corpora/opnsense-en/171 nginx Basic Authentication & Authorization.md"
+  s_05d0bb45e6bb5a::t_4015a2a481b591 1-71
+"docs-mcp-server/corpora/opnsense-en/172 nginx IP Based Access Control Lists.md"
+  s_05d0bb45e6bb5a::t_444f98fe7c76f9 1-55
+"docs-mcp-server/corpora/opnsense-en/173 nginx TLS Fingerprints.md"
+  s_05d0bb45e6bb5a::t_0bf0dca6bdb195 1-80
+"docs-mcp-server/corpora/opnsense-en/174 nginx TLS Authentication & Authorization.md"
+  s_05d0bb45e6bb5a::t_99161e9cdef92e 1-60
+"docs-mcp-server/corpora/opnsense-en/175 nginx Web Application Firewall.md"
+  s_05d0bb45e6bb5a::t_c98d978a39a3fd 1-115
+"docs-mcp-server/corpora/opnsense-en/176 nginx TCP And UDP Streams.md"
+  s_05d0bb45e6bb5a::t_fe77743cf2ed3a 1-91
+"docs-mcp-server/corpora/opnsense-en/177 Caddy Reverse Proxy.md"
+  s_05d0bb45e6bb5a::t_5c647d904b5b60 1-1163
+"docs-mcp-server/corpora/opnsense-en/178 CPU Microcode updates [AMDIntel].md"
+  s_05d0bb45e6bb5a::t_5ac4bb10a7b122 1-53
+"docs-mcp-server/corpora/opnsense-en/179 Caching Proxy.md"
+  s_05d0bb45e6bb5a::t_c68773907651db 1-172
+"docs-mcp-server/corpora/opnsense-en/18 20.7 “Legendary Lion” Series.md"
+  s_05d0bb45e6bb5a::t_b1fa6b3dbd1ef1 1-891
+"docs-mcp-server/corpora/opnsense-en/180 FreeRADIUS.md"
+  s_05d0bb45e6bb5a::t_f1fbe330527361 1-99
+"docs-mcp-server/corpora/opnsense-en/181 Setup FreeRADIUS for accounting.md"
+  s_05d0bb45e6bb5a::t_f735fa659c2bf5 1-88
+"docs-mcp-server/corpora/opnsense-en/182 How To Setting Up A Mail Gateway.md"
+  s_05d0bb45e6bb5a::t_843e590fe5b258 1-114
+"docs-mcp-server/corpora/opnsense-en/183 Netbird Plugin Setup Guide.md"
+  s_05d0bb45e6bb5a::t_b3b94d409d9c52 1-142
+"docs-mcp-server/corpora/opnsense-en/184 Traceability of configuration changes using Git.md"
+  s_05d0bb45e6bb5a::t_731a46cec8272b 1-151
+"docs-mcp-server/corpora/opnsense-en/185 Cloud Backup Nextcloud.md"
+  s_05d0bb45e6bb5a::t_35b7fa97933de6 1-71
+"docs-mcp-server/corpora/opnsense-en/186 Relayd.md"
+  s_05d0bb45e6bb5a::t_9c5f8d022941b3 1-114
+"docs-mcp-server/corpora/opnsense-en/187 Wazuh Agent.md"
+  s_05d0bb45e6bb5a::t_609795be0e523a 1-146
+"docs-mcp-server/corpora/opnsense-en/188 Cloudflare Tunnel.md"
+  s_05d0bb45e6bb5a::t_600c4e0ea77552 1-132
+"docs-mcp-server/corpora/opnsense-en/189 Tor Configuration.md"
+  s_05d0bb45e6bb5a::t_476a7cc1b08d2b 1-299
+"docs-mcp-server/corpora/opnsense-en/19 20.1 “Keen Kingfisher” Series.md"
+  s_05d0bb45e6bb5a::t_ce304ee8f72c70 1-890
+"docs-mcp-server/corpora/opnsense-en/190 ntopng.md"
+  s_05d0bb45e6bb5a::t_04ee2fd34f577f 1-43
+"docs-mcp-server/corpora/opnsense-en/191 Services.md"
+  s_05d0bb45e6bb5a::t_7571e15b8f53e9 1-57
+"docs-mcp-server/corpora/opnsense-en/192 DHCP.md"
+  s_05d0bb45e6bb5a::t_ad350343915433 1-101
+"docs-mcp-server/corpora/opnsense-en/193 DHCrelay.md"
+  s_05d0bb45e6bb5a::t_c737e675091cc5 1-50
+"docs-mcp-server/corpora/opnsense-en/194 Dnsmasq DNS & DHCP.md"
+  s_05d0bb45e6bb5a::t_9c598f5a7e0453 1-943
+"docs-mcp-server/corpora/opnsense-en/195 ISC DHCP.md"
+  s_05d0bb45e6bb5a::t_2f706d9a1234fa 1-115
+"docs-mcp-server/corpora/opnsense-en/196 KEA DHCP.md"
+  s_05d0bb45e6bb5a::t_c039f36fc0ba64 1-661
+"docs-mcp-server/corpora/opnsense-en/197 Router Advertisements.md"
+  s_05d0bb45e6bb5a::t_3f1385c9fcdfee 1-154
+"docs-mcp-server/corpora/opnsense-en/198 OpenDNS.md"
+  s_05d0bb45e6bb5a::t_e9085face3f669 1-40
+"docs-mcp-server/corpora/opnsense-en/199 Unbound DNS.md"
+  s_05d0bb45e6bb5a::t_862e58ba3cb5df 1-360
+"docs-mcp-server/corpora/opnsense-en/20 19.7 “Jazzy Jaguar” Series.md"
+  s_05d0bb45e6bb5a::t_dd800f7bda1703 1-1159
+"docs-mcp-server/corpora/opnsense-en/200 Captive portal & GuestNET.md"
+  s_05d0bb45e6bb5a::t_19d351c7ef71a1 1-353
+"docs-mcp-server/corpora/opnsense-en/201 Setup a Guest Network.md"
+  s_05d0bb45e6bb5a::t_796cc9cf8a549b 1-484
+"docs-mcp-server/corpora/opnsense-en/202 Intrusion Prevention System.md"
+  s_05d0bb45e6bb5a::t_785da9de02204f 1-267
+"docs-mcp-server/corpora/opnsense-en/203 IPS SSLBlacklists & Feodo Tracker.md"
+  s_05d0bb45e6bb5a::t_d5562c15eb30a5 1-99
+"docs-mcp-server/corpora/opnsense-en/204 IPS Block SSL certificates.md"
+  s_05d0bb45e6bb5a::t_8a35975911d58a 1-105
+"docs-mcp-server/corpora/opnsense-en/205 IPS Bypass local traffic from inspection.md"
+  s_05d0bb45e6bb5a::t_0d503794cd296c 1-99
+"docs-mcp-server/corpora/opnsense-en/206 Log Files.md"
+  s_05d0bb45e6bb5a::t_0b83a1fabc72df 1-32
+"docs-mcp-server/corpora/opnsense-en/207 Monit.md"
+  s_05d0bb45e6bb5a::t_17d18a26e51751 1-248
+"docs-mcp-server/corpora/opnsense-en/208 Network Time.md"
+  s_05d0bb45e6bb5a::t_f6323b4d29b966 1-78
+"docs-mcp-server/corpora/opnsense-en/209 Community Plugins.md"
+  s_05d0bb45e6bb5a::t_36fbccafeb1678 1-93
+"docs-mcp-server/corpora/opnsense-en/21 19.1 “Inspiring Iguana” Series.md"
+  s_05d0bb45e6bb5a::t_56f39021635995 1-1383
+"docs-mcp-server/corpora/opnsense-en/210 Dynamic Routing (FRR).md"
+  s_05d0bb45e6bb5a::t_98986dc738bdea 1-552
+"docs-mcp-server/corpora/opnsense-en/211 Tayga NAT64 how-to.md"
+  s_05d0bb45e6bb5a::t_7dbb656a82a52c 1-103
+"docs-mcp-server/corpora/opnsense-en/212 ndp-proxy-go (Neighbor Discovery Proxy).md"
+  s_05d0bb45e6bb5a::t_c570ac14b4c9d3 1-405
+"docs-mcp-server/corpora/opnsense-en/213 Dynamic DNS.md"
+  s_05d0bb45e6bb5a::t_43fb599b994fac 1-121
+"docs-mcp-server/corpora/opnsense-en/214 BIND Plugin.md"
+  s_05d0bb45e6bb5a::t_bc94c70298619d 1-87
+"docs-mcp-server/corpora/opnsense-en/215 DNSCrypt-Proxy.md"
+  s_05d0bb45e6bb5a::t_c18ef4a5a04002 1-143
+"docs-mcp-server/corpora/opnsense-en/216 Multicast DNS Proxy.md"
+  s_05d0bb45e6bb5a::t_f64d43740297ff 1-44
+"docs-mcp-server/corpora/opnsense-en/217 Third-party Plugins.md"
+  s_05d0bb45e6bb5a::t_b4e55fa8326372 1-36
+"docs-mcp-server/corpora/opnsense-en/218 Zenarmor (Sensei) Overview.md"
+  s_05d0bb45e6bb5a::t_119a8ca9bc8198 1-130
+"docs-mcp-server/corpora/opnsense-en/219 Zenarmor (Sensei) Hardware Requirements.md"
+  s_05d0bb45e6bb5a::t_8e85901ab40062 1-75
+"docs-mcp-server/corpora/opnsense-en/22 18.7 “Happy Hippo” Series.md"
+  s_05d0bb45e6bb5a::t_d418f669aaa134 1-1681
+"docs-mcp-server/corpora/opnsense-en/220 Zenarmor (Sensei) Installing via Web Interface.md"
+  s_05d0bb45e6bb5a::t_90bf6d8a8059f0 1-200
+"docs-mcp-server/corpora/opnsense-en/221 Zenarmor Installing via Command Line.md"
+  s_05d0bb45e6bb5a::t_2166457ebf1c13 1-65
+"docs-mcp-server/corpora/opnsense-en/222 Q-Feeds connector.md"
+  s_05d0bb45e6bb5a::t_4a7a55fd4a0e41 1-161
+"docs-mcp-server/corpora/opnsense-en/223 Troubleshooting.md"
+  s_05d0bb45e6bb5a::t_ac346a3978165c 1-78
+"docs-mcp-server/corpora/opnsense-en/224 Password reset.md"
+  s_05d0bb45e6bb5a::t_54991fead2254c 1-69
+"docs-mcp-server/corpora/opnsense-en/225 Reset firmware configuration.md"
+  s_05d0bb45e6bb5a::t_baa07e6be3ae11 1-33
+"docs-mcp-server/corpora/opnsense-en/226 Restore Configuration via Console.md"
+  s_05d0bb45e6bb5a::t_56a5898ac661c5 1-89
+"docs-mcp-server/corpora/opnsense-en/227 WebGui access reset.md"
+  s_05d0bb45e6bb5a::t_3638e06653bb6c 1-29
+"docs-mcp-server/corpora/opnsense-en/228 Boot.md"
+  s_05d0bb45e6bb5a::t_aecf51801f414b 1-41
+"docs-mcp-server/corpora/opnsense-en/229 System hardening vs performance.md"
+  s_05d0bb45e6bb5a::t_82ba7f8e921ee4 1-50
+"docs-mcp-server/corpora/opnsense-en/23 18.1 “Groovy Gecko” Series.md"
+  s_05d0bb45e6bb5a::t_d67d343f65edec 1-1720
+"docs-mcp-server/corpora/opnsense-en/230 Gateways and monitoring.md"
+  s_05d0bb45e6bb5a::t_241a288aca7364 1-35
+"docs-mcp-server/corpora/opnsense-en/231 Network.md"
+  s_05d0bb45e6bb5a::t_42ef3f7dbb85fa 1-56
+"docs-mcp-server/corpora/opnsense-en/232 OpenVPN.md"
+  s_05d0bb45e6bb5a::t_8a0b96c7db18a8 1-33
+"docs-mcp-server/corpora/opnsense-en/233 Performance.md"
+  s_05d0bb45e6bb5a::t_edabc781055a2a 1-135
+"docs-mcp-server/corpora/opnsense-en/234 Development Manual.md"
+  s_05d0bb45e6bb5a::t_63ecf2369ef467 1-162
+"docs-mcp-server/corpora/opnsense-en/235 Development Workflow.md"
+  s_05d0bb45e6bb5a::t_9d8201cef0be6f 1-103
+"docs-mcp-server/corpora/opnsense-en/236 Coding Guidelines.md"
+  s_05d0bb45e6bb5a::t_9171f76cadb7fb 1-29
+"docs-mcp-server/corpora/opnsense-en/237 Basics and Future.md"
+  s_05d0bb45e6bb5a::t_1799ddd3b930ac 1-102
+"docs-mcp-server/corpora/opnsense-en/238 PSR-1 Basic Coding Standard.md"
+  s_05d0bb45e6bb5a::t_d610648f48e0e8 1-166
+"docs-mcp-server/corpora/opnsense-en/239 PSR-2 Coding Style Guide.md"
+  s_05d0bb45e6bb5a::t_8f47eb9018f31c 1-554
+"docs-mcp-server/corpora/opnsense-en/24 17.7 “Free Fox” Series.md"
+  s_05d0bb45e6bb5a::t_d757c4162ce14a 1-1198
+"docs-mcp-server/corpora/opnsense-en/240 PSR-12 Coding Style Guide.md"
+  s_05d0bb45e6bb5a::t_ffa18686f6cdb3 1-975
+"docs-mcp-server/corpora/opnsense-en/241 Python PEPs.md"
+  s_05d0bb45e6bb5a::t_0a217bfe4f751b 1-21
+"docs-mcp-server/corpora/opnsense-en/242 Architecture.md"
+  s_05d0bb45e6bb5a::t_5acc3c1319a6ac 1-119
+"docs-mcp-server/corpora/opnsense-en/243 Backend.md"
+  s_05d0bb45e6bb5a::t_a9f8c148d35cdd 1-48
+"docs-mcp-server/corpora/opnsense-en/244 Overview.md"
+  s_05d0bb45e6bb5a::t_324c5b78445339 1-67
+"docs-mcp-server/corpora/opnsense-en/245 Bootup autorun options.md"
+  s_05d0bb45e6bb5a::t_cecbdd7e83bc5e 1-125
+"docs-mcp-server/corpora/opnsense-en/246 CARP status.md"
+  s_05d0bb45e6bb5a::t_7c4f885ba4f993 1-104
+"docs-mcp-server/corpora/opnsense-en/247 Using configd.md"
+  s_05d0bb45e6bb5a::t_3ae50c7530675d 1-129
+"docs-mcp-server/corpora/opnsense-en/248 Using plugins.md"
+  s_05d0bb45e6bb5a::t_51849873d96169 1-277
+"docs-mcp-server/corpora/opnsense-en/249 Using Templates.md"
+  s_05d0bb45e6bb5a::t_d3cdcd4710f4e1 1-124
+"docs-mcp-server/corpora/opnsense-en/25 17.1 “Eclectic Eagle” Series.md"
+  s_05d0bb45e6bb5a::t_28bd63efa78b39 1-1247
+"docs-mcp-server/corpora/opnsense-en/250 Frontend.md"
+  s_05d0bb45e6bb5a::t_13f3e7c4cff57a 1-37
+"docs-mcp-server/corpora/opnsense-en/251 Creating Models.md"
+  s_05d0bb45e6bb5a::t_5173acafc6945b 1-32
+"docs-mcp-server/corpora/opnsense-en/252 Designing the model.md"
+  s_05d0bb45e6bb5a::t_2fc9e03248fe60 1-245
+"docs-mcp-server/corpora/opnsense-en/253 Usage example.md"
+  s_05d0bb45e6bb5a::t_09366bb4ff9d5f 1-75
+"docs-mcp-server/corpora/opnsense-en/254 Guidelines.md"
+  s_05d0bb45e6bb5a::t_647522002a0c24 1-29
+"docs-mcp-server/corpora/opnsense-en/255 Custom (app specific) field types.md"
+  s_05d0bb45e6bb5a::t_c4d589b2d0e408 1-80
+"docs-mcp-server/corpora/opnsense-en/256 Adding constraints.md"
+  s_05d0bb45e6bb5a::t_7dcf1c3d8a3687 1-132
+"docs-mcp-server/corpora/opnsense-en/257 Migrations.md"
+  s_05d0bb45e6bb5a::t_b9925b7f9b3780 1-80
+"docs-mcp-server/corpora/opnsense-en/258 Creating Models Field types.md"
+  s_05d0bb45e6bb5a::t_5a9fbe7c426ec4 1-601
+"docs-mcp-server/corpora/opnsense-en/259 Routing.md"
+  s_05d0bb45e6bb5a::t_bf324efb635940 1-74
+"docs-mcp-server/corpora/opnsense-en/26 16.7 “Dancing Dolphin” Series.md"
+  s_05d0bb45e6bb5a::t_5e36a9bfc5feb3 1-1186
+"docs-mcp-server/corpora/opnsense-en/260 Using controllers and views.md"
+  s_05d0bb45e6bb5a::t_00e47ec92e19e5 1-209
+"docs-mcp-server/corpora/opnsense-en/261 View construction (and tools).md"
+  s_05d0bb45e6bb5a::t_c1b0efdb0f2f36 1-287
+"docs-mcp-server/corpora/opnsense-en/262 UIBootgrid.md"
+  s_05d0bb45e6bb5a::t_c0da16eef6b34e 1-383
+"docs-mcp-server/corpora/opnsense-en/263 Dashboard widgets.md"
+  s_05d0bb45e6bb5a::t_22a5f9e46753fa 1-373
+"docs-mcp-server/corpora/opnsense-en/264 Components.md"
+  s_05d0bb45e6bb5a::t_d4578062bab5ad 1-27
+"docs-mcp-server/corpora/opnsense-en/265 Menu System.md"
+  s_05d0bb45e6bb5a::t_1782d4e47b2f77 1-67
+"docs-mcp-server/corpora/opnsense-en/266 Access Control List.md"
+  s_05d0bb45e6bb5a::t_22faad7137ccfb 1-78
+"docs-mcp-server/corpora/opnsense-en/267 Authentication.md"
+  s_05d0bb45e6bb5a::t_7258169000f782 1-97
+"docs-mcp-server/corpora/opnsense-en/268 API Reference.md"
+  s_05d0bb45e6bb5a::t_6ee5dd0df0e290 1-194
+"docs-mcp-server/corpora/opnsense-en/269 Auth.md"
+  s_05d0bb45e6bb5a::t_9eb89042d1f718 1-61
+"docs-mcp-server/corpora/opnsense-en/27 16.1 “Crafty Coyote” Series.md"
+  s_05d0bb45e6bb5a::t_0bac49dd19f107 1-1267
+"docs-mcp-server/corpora/opnsense-en/270 Captiveportal.md"
+  s_05d0bb45e6bb5a::t_16d77be0893647 1-79
+"docs-mcp-server/corpora/opnsense-en/271 Core.md"
+  s_05d0bb45e6bb5a::t_a2a239b77029d7 1-135
+"docs-mcp-server/corpora/opnsense-en/272 Cron.md"
+  s_05d0bb45e6bb5a::t_942d38602a1b85 1-40
+"docs-mcp-server/corpora/opnsense-en/273 Dhcrelay.md"
+  s_05d0bb45e6bb5a::t_baaeaf394f6a53 1-45
+"docs-mcp-server/corpora/opnsense-en/274 Diagnostics.md"
+  s_05d0bb45e6bb5a::t_1c0c00e41b4928 1-202
+"docs-mcp-server/corpora/opnsense-en/275 Dnsmasq.md"
+  s_05d0bb45e6bb5a::t_d0976b4fb37dec 1-77
+"docs-mcp-server/corpora/opnsense-en/276 Firewall.md"
+  s_05d0bb45e6bb5a::t_ba299746cc5ac4 1-307
+"docs-mcp-server/corpora/opnsense-en/277 Firmware.md"
+  s_05d0bb45e6bb5a::t_a4c0d4396806c6 1-81
+"docs-mcp-server/corpora/opnsense-en/278 Hostdiscovery.md"
+  s_05d0bb45e6bb5a::t_834e2c38531437 1-39
+"docs-mcp-server/corpora/opnsense-en/279 Ids.md"
+  s_05d0bb45e6bb5a::t_2cf88ecddbf877 1-74
+"docs-mcp-server/corpora/opnsense-en/28 15.7 “Brave Badger” Series.md"
+  s_05d0bb45e6bb5a::t_7d1cfb068c2ee1 1-1284
+"docs-mcp-server/corpora/opnsense-en/280 Interfaces.md"
+  s_05d0bb45e6bb5a::t_d22408b215034b 1-176
+"docs-mcp-server/corpora/opnsense-en/281 Ipsec.md"
+  s_05d0bb45e6bb5a::t_429f7598520812 1-192
+"docs-mcp-server/corpora/opnsense-en/282 Kea.md"
+  s_05d0bb45e6bb5a::t_69c4c57b30f52a 1-121
+"docs-mcp-server/corpora/opnsense-en/283 Monit.md"
+  s_05d0bb45e6bb5a::t_1e57477608f3ce 1-63
+"docs-mcp-server/corpora/opnsense-en/285 Openvpn.md"
+  s_05d0bb45e6bb5a::t_40607fd719a0cd 1-74
+"docs-mcp-server/corpora/opnsense-en/286 Radvd.md"
+  s_05d0bb45e6bb5a::t_7ff2ea44e942b6 1-44
+"docs-mcp-server/corpora/opnsense-en/287 Routes.md"
+  s_05d0bb45e6bb5a::t_e75c605ae42413 1-41
+"docs-mcp-server/corpora/opnsense-en/288 Routing.md"
+  s_05d0bb45e6bb5a::t_7091fd064691d3 1-35
+"docs-mcp-server/corpora/opnsense-en/289 Syslog.md"
+  s_05d0bb45e6bb5a::t_13806bb0e27156 1-46
+"docs-mcp-server/corpora/opnsense-en/29 15.1 “Ascending Albatross” Series.md"
+  s_05d0bb45e6bb5a::t_38841e1ea328e9 1-1193
+"docs-mcp-server/corpora/opnsense-en/290 Trafficshaper.md"
+  s_05d0bb45e6bb5a::t_a19e74050cefd7 1-58
+"docs-mcp-server/corpora/opnsense-en/291 Trust.md"
+  s_05d0bb45e6bb5a::t_fb0c0865156587 1-73
+"docs-mcp-server/corpora/opnsense-en/292 Unbound.md"
+  s_05d0bb45e6bb5a::t_d96d33731232ff 1-95
+"docs-mcp-server/corpora/opnsense-en/293 Wireguard.md"
+  s_05d0bb45e6bb5a::t_f71b6dae55fce1 1-75
+"docs-mcp-server/corpora/opnsense-en/294 Acmeclient.md"
+  s_05d0bb45e6bb5a::t_190e26f41cc9c0 1-111
+"docs-mcp-server/corpora/opnsense-en/295 Apcupsd.md"
+  s_05d0bb45e6bb5a::t_a39dea8b020e0f 1-39
+"docs-mcp-server/corpora/opnsense-en/296 Beats.md"
+  s_05d0bb45e6bb5a::t_f24559b1e26e61 1-38
+"docs-mcp-server/corpora/opnsense-en/297 Bind.md"
+  s_05d0bb45e6bb5a::t_a853d3a2f60989 1-101
+"docs-mcp-server/corpora/opnsense-en/298 Caddy.md"
+  s_05d0bb45e6bb5a::t_f17e7db3fa3068 1-105
+"docs-mcp-server/corpora/opnsense-en/299 Chrony.md"
+  s_05d0bb45e6bb5a::t_c0ad5c468441c1 1-42
+"docs-mcp-server/corpora/opnsense-en/30 Business Edition.md"
+  s_05d0bb45e6bb5a::t_c284e04d8e1c90 1-41
+"docs-mcp-server/corpora/opnsense-en/300 Cicap.md"
+  s_05d0bb45e6bb5a::t_7259797c450614 1-48
+"docs-mcp-server/corpora/opnsense-en/301 Clamav.md"
+  s_05d0bb45e6bb5a::t_4192f536dd2e6a 1-55
+"docs-mcp-server/corpora/opnsense-en/302 Collectd.md"
+  s_05d0bb45e6bb5a::t_fc47de14339493 1-36
+"docs-mcp-server/corpora/opnsense-en/303 Crowdsec.md"
+  s_05d0bb45e6bb5a::t_e4674777f9d68d 1-105
+"docs-mcp-server/corpora/opnsense-en/305 Dhcpv4.md"
+  s_05d0bb45e6bb5a::t_e1f08ac50620e3 1-36
+"docs-mcp-server/corpora/opnsense-en/306 Dhcpv6.md"
+  s_05d0bb45e6bb5a::t_4ca24d9a004890 1-37
+"docs-mcp-server/corpora/opnsense-en/309 Dnscryptproxy.md"
+  s_05d0bb45e6bb5a::t_82b2e5ca12dc57 1-108
+"docs-mcp-server/corpora/opnsense-en/31 26.4 Series.md"
+  s_05d0bb45e6bb5a::t_cf9d58cfdcf572 1-1618
+"docs-mcp-server/corpora/opnsense-en/310 Dyndns.md"
+  s_05d0bb45e6bb5a::t_0216af7c0e1660 1-53
+"docs-mcp-server/corpora/opnsense-en/311 Freeradius.md"
+  s_05d0bb45e6bb5a::t_bb5c4128b1384d 1-169
+"docs-mcp-server/corpora/opnsense-en/312 Ftpproxy.md"
+  s_05d0bb45e6bb5a::t_e16ba973940f57 1-41
+"docs-mcp-server/corpora/opnsense-en/313 Gridexample.md"
+  s_05d0bb45e6bb5a::t_5d04a23f3f9e15 1-40
+"docs-mcp-server/corpora/opnsense-en/314 Haproxy.md"
+  s_05d0bb45e6bb5a::t_88d5cf6e7ff587 1-159
+"docs-mcp-server/corpora/opnsense-en/315 Helloworld.md"
+  s_05d0bb45e6bb5a::t_53ee961a6598be 1-35
+"docs-mcp-server/corpora/opnsense-en/316 Hwprobe.md"
+  s_05d0bb45e6bb5a::t_27696665937c15 1-39
+"docs-mcp-server/corpora/opnsense-en/317 Iperf.md"
+  s_05d0bb45e6bb5a::t_49f129b689dd10 1-38
+"docs-mcp-server/corpora/opnsense-en/318 Lldpd.md"
+  s_05d0bb45e6bb5a::t_4bf1181566ac0d 1-39
+"docs-mcp-server/corpora/opnsense-en/319 Maltrail.md"
+  s_05d0bb45e6bb5a::t_7dc41e9784af46 1-66
+"docs-mcp-server/corpora/opnsense-en/32 25.10 Series.md"
+  s_05d0bb45e6bb5a::t_a669944a5fcf92 1-1325
+"docs-mcp-server/corpora/opnsense-en/320 Mdnsrepeater.md"
+  s_05d0bb45e6bb5a::t_8fd84d2a5b6f01 1-38
+"docs-mcp-server/corpora/opnsense-en/321 Muninnode.md"
+  s_05d0bb45e6bb5a::t_329d6d68c01067 1-38
+"docs-mcp-server/corpora/opnsense-en/322 Ndpproxy.md"
+  s_05d0bb45e6bb5a::t_e3e4b875749cd1 1-43
+"docs-mcp-server/corpora/opnsense-en/323 Ndproxy.md"
+  s_05d0bb45e6bb5a::t_73e504e1102c19 1-38
+"docs-mcp-server/corpora/opnsense-en/324 Netbird.md"
+  s_05d0bb45e6bb5a::t_440f88c0663724 1-60
+"docs-mcp-server/corpora/opnsense-en/325 Netdata.md"
+  s_05d0bb45e6bb5a::t_547b9b3342b7f3 1-38
+"docs-mcp-server/corpora/opnsense-en/326 Netsnmp.md"
+  s_05d0bb45e6bb5a::t_1a2f9c9ccb8974 1-53
+"docs-mcp-server/corpora/opnsense-en/327 Nginx.md"
+  s_05d0bb45e6bb5a::t_ac787375e09a98 1-168
+"docs-mcp-server/corpora/opnsense-en/328 Nodeexporter.md"
+  s_05d0bb45e6bb5a::t_752be35f2567e5 1-38
+"docs-mcp-server/corpora/opnsense-en/329 Nrpe.md"
+  s_05d0bb45e6bb5a::t_43a0aedf618bbc 1-53
+"docs-mcp-server/corpora/opnsense-en/33 25.4 Series.md"
+  s_05d0bb45e6bb5a::t_7312e1bb347734 1-1100
+"docs-mcp-server/corpora/opnsense-en/330 Ntopng.md"
+  s_05d0bb45e6bb5a::t_bb01587cb444f0 1-39
+"docs-mcp-server/corpora/opnsense-en/331 Nut.md"
+  s_05d0bb45e6bb5a::t_15e3ca86039323 1-44
+"docs-mcp-server/corpora/opnsense-en/332 Openconnect.md"
+  s_05d0bb45e6bb5a::t_de70b64ed31b14 1-38
+"docs-mcp-server/corpora/opnsense-en/333 Postfix.md"
+  s_05d0bb45e6bb5a::t_be0ee61f9f22f6 1-168
+"docs-mcp-server/corpora/opnsense-en/334 Proxy.md"
+  s_05d0bb45e6bb5a::t_bcafd2bd47ec4c 1-98
+"docs-mcp-server/corpora/opnsense-en/335 Proxysso.md"
+  s_05d0bb45e6bb5a::t_f746fab833a0d3 1-36
+"docs-mcp-server/corpora/opnsense-en/336 Puppetagent.md"
+  s_05d0bb45e6bb5a::t_b05f8387f15dbe 1-38
+"docs-mcp-server/corpora/opnsense-en/337 Qemuguestagent.md"
+  s_05d0bb45e6bb5a::t_4de9b7e7436891 1-38
+"docs-mcp-server/corpora/opnsense-en/338 Qfeeds.md"
+  s_05d0bb45e6bb5a::t_3e674f645d6cd1 1-32
+"docs-mcp-server/corpora/opnsense-en/339 Quagga.md"
+  s_05d0bb45e6bb5a::t_1f9e878791f773 1-242
+"docs-mcp-server/corpora/opnsense-en/34 24.10 Series.md"
+  s_05d0bb45e6bb5a::t_6b85d26269b581 1-1144
+"docs-mcp-server/corpora/opnsense-en/340 Radsecproxy.md"
+  s_05d0bb45e6bb5a::t_f6e03e52fe63cf 1-113
+"docs-mcp-server/corpora/opnsense-en/341 Redis.md"
+  s_05d0bb45e6bb5a::t_fcafff4c8c0bc1 1-39
+"docs-mcp-server/corpora/opnsense-en/342 Relayd.md"
+  s_05d0bb45e6bb5a::t_5b6f69931f0f85 1-50
+"docs-mcp-server/corpora/opnsense-en/343 Rspamd.md"
+  s_05d0bb45e6bb5a::t_917a3776eef3d6 1-38
+"docs-mcp-server/corpora/opnsense-en/344 Shadowsocks.md"
+  s_05d0bb45e6bb5a::t_a677112ce22fe5 1-57
+"docs-mcp-server/corpora/opnsense-en/345 Siproxd.md"
+  s_05d0bb45e6bb5a::t_4d5583b0766fd5 1-67
+"docs-mcp-server/corpora/opnsense-en/346 Smart.md"
+  s_05d0bb45e6bb5a::t_c445587c4b13de 1-29
+"docs-mcp-server/corpora/opnsense-en/347 Softether.md"
+  s_05d0bb45e6bb5a::t_6b43313afd9ace 1-38
+"docs-mcp-server/corpora/opnsense-en/348 Sslh.md"
+  s_05d0bb45e6bb5a::t_49e6499a2953d2 1-39
+"docs-mcp-server/corpora/opnsense-en/349 Stunnel.md"
+  s_05d0bb45e6bb5a::t_02c0c237d6af47 1-44
+"docs-mcp-server/corpora/opnsense-en/35 24.4 Series.md"
+  s_05d0bb45e6bb5a::t_c8d3fdc24a4c5b 1-862
+"docs-mcp-server/corpora/opnsense-en/350 Tailscale.md"
+  s_05d0bb45e6bb5a::t_cc95c94ef059f2 1-65
+"docs-mcp-server/corpora/opnsense-en/351 Tayga.md"
+  s_05d0bb45e6bb5a::t_6a8ef96a44a994 1-53
+"docs-mcp-server/corpora/opnsense-en/352 Telegraf.md"
+  s_05d0bb45e6bb5a::t_fa90314a9388ce 1-65
+"docs-mcp-server/corpora/opnsense-en/353 Tftp.md"
+  s_05d0bb45e6bb5a::t_d51a5b775f438c 1-38
+"docs-mcp-server/corpora/opnsense-en/354 Tinc.md"
+  s_05d0bb45e6bb5a::t_3993ea5bbabe41 1-47
+"docs-mcp-server/corpora/opnsense-en/355 Tor.md"
+  s_05d0bb45e6bb5a::t_2b8e178f2c8b13 1-116
+"docs-mcp-server/corpora/opnsense-en/356 Turnserver.md"
+  s_05d0bb45e6bb5a::t_2d616d87c46e8b 1-38
+"docs-mcp-server/corpora/opnsense-en/357 Udpbroadcastrelay.md"
+  s_05d0bb45e6bb5a::t_396b997beaf262 1-47
+"docs-mcp-server/corpora/opnsense-en/358 Vnstat.md"
+  s_05d0bb45e6bb5a::t_430613ad149912 1-43
+"docs-mcp-server/corpora/opnsense-en/359 Wazuhagent.md"
+  s_05d0bb45e6bb5a::t_0e4a0fb9bd5558 1-38
+"docs-mcp-server/corpora/opnsense-en/36 23.10 Series.md"
+  s_05d0bb45e6bb5a::t_7c2a908ef93378 1-1169
+"docs-mcp-server/corpora/opnsense-en/360 Wol.md"
+  s_05d0bb45e6bb5a::t_75da161b53b28f 1-35
+"docs-mcp-server/corpora/opnsense-en/361 Zabbixagent.md"
+  s_05d0bb45e6bb5a::t_cd4fe40eb763b4 1-50
+"docs-mcp-server/corpora/opnsense-en/362 Zabbixproxy.md"
+  s_05d0bb45e6bb5a::t_77d29bdbc27fb0 1-38
+"docs-mcp-server/corpora/opnsense-en/363 Zerotier.md"
+  s_05d0bb45e6bb5a::t_49433e09acc22e 1-43
+"docs-mcp-server/corpora/opnsense-en/364 OPNBECore.md"
+  s_05d0bb45e6bb5a::t_3ea67b6b8e951f 1-134
+"docs-mcp-server/corpora/opnsense-en/365 Examples.md"
+  s_05d0bb45e6bb5a::t_ad565b06be1b64 1-23
+"docs-mcp-server/corpora/opnsense-en/366 Hello world module & plugin.md"
+  s_05d0bb45e6bb5a::t_defaa9c9810717 1-810
+"docs-mcp-server/corpora/opnsense-en/367 Using grids module & plugin.md"
+  s_05d0bb45e6bb5a::t_3c74ef89011bc8 1-300
+"docs-mcp-server/corpora/opnsense-en/368 API enable standard services.md"
+  s_05d0bb45e6bb5a::t_c7015ee054b6eb 1-140
+"docs-mcp-server/corpora/opnsense-en/369 How-tos.md"
+  s_05d0bb45e6bb5a::t_4e6d795bdfbd38 1-23
+"docs-mcp-server/corpora/opnsense-en/37 23.4 Series.md"
+  s_05d0bb45e6bb5a::t_bd6379153710d0 1-981
+"docs-mcp-server/corpora/opnsense-en/370 Use the API.md"
+  s_05d0bb45e6bb5a::t_d6a55fa2dfa11e 1-197
+"docs-mcp-server/corpora/opnsense-en/371 ProfilingDebugging the kernel.md"
+  s_05d0bb45e6bb5a::t_650c1ac2dd6df2 1-420
+"docs-mcp-server/corpora/opnsense-en/372 Remote debugging the kernel.md"
+  s_05d0bb45e6bb5a::t_8eae871bbb415a 1-85
+"docs-mcp-server/corpora/opnsense-en/373 Project Relations.md"
+  s_05d0bb45e6bb5a::t_3ab7381e188559 1-26
+"docs-mcp-server/corpora/opnsense-en/374 Deciso B.V..md"
+  s_05d0bb45e6bb5a::t_ae6903746babbf 1-43
+"docs-mcp-server/corpora/opnsense-en/375 FreeBSD®.md"
+  s_05d0bb45e6bb5a::t_2cd02c9bb72427 1-39
+"docs-mcp-server/corpora/opnsense-en/376 M0n0wall.md"
+  s_05d0bb45e6bb5a::t_382a7e5b596ce4 1-98
+"docs-mcp-server/corpora/opnsense-en/377 Open Source Initiative.md"
+  s_05d0bb45e6bb5a::t_63b85ae53a607d 1-41
+"docs-mcp-server/corpora/opnsense-en/378 Legal notices.md"
+  s_05d0bb45e6bb5a::t_d7b2b1e70d0672 1-95
+"docs-mcp-server/corpora/opnsense-en/379 Support Options.md"
+  s_05d0bb45e6bb5a::t_b0208b916356a9 1-226
+"docs-mcp-server/corpora/opnsense-en/38 22.10 Series.md"
+  s_05d0bb45e6bb5a::t_b8c502b69ba743 1-913
+"docs-mcp-server/corpora/opnsense-en/380 Contribute.md"
+  s_05d0bb45e6bb5a::t_281c6181bc2358 1-187
+"docs-mcp-server/corpora/opnsense-en/382 About the Fork.md"
+  s_05d0bb45e6bb5a::t_c5f4ee16201388 1-94
+"docs-mcp-server/corpora/opnsense-en/39 22.4 Series.md"
+  s_05d0bb45e6bb5a::t_26d69b5c91e5e0 1-981
+"docs-mcp-server/corpora/opnsense-en/40 21.10 Series.md"
+  s_05d0bb45e6bb5a::t_90ad6a458cf92a 1-773
+"docs-mcp-server/corpora/opnsense-en/41 21.4 Series.md"
+  s_05d0bb45e6bb5a::t_4b5f9a71ea715a 1-978
+"docs-mcp-server/corpora/opnsense-en/42 20.7 “Legendary Lion” Series.md"
+  s_05d0bb45e6bb5a::t_312c4e3baa09fd 1-891
+"docs-mcp-server/corpora/opnsense-en/43 20.1 “Keen Kingfisher” Series.md"
+  s_05d0bb45e6bb5a::t_ac2408ed346d14 1-890
+"docs-mcp-server/corpora/opnsense-en/44 19.7 “Jazzy Jaguar” Series.md"
+  s_05d0bb45e6bb5a::t_70033253190e77 1-1159
+"docs-mcp-server/corpora/opnsense-en/45 19.1 “Inspiring Iguana” Series.md"
+  s_05d0bb45e6bb5a::t_37d12ef84d0628 1-1383
+"docs-mcp-server/corpora/opnsense-en/46 Business Edition.md"
+  s_05d0bb45e6bb5a::t_261c43d5606ca7 1-55
+"docs-mcp-server/corpora/opnsense-en/47 Central Management.md"
+  s_05d0bb45e6bb5a::t_f34a23427b7acc 1-476
+"docs-mcp-server/corpora/opnsense-en/48 Authoritative DNS.md"
+  s_05d0bb45e6bb5a::t_4f1716aa06e14d 1-729
+"docs-mcp-server/corpora/opnsense-en/49 Web Application Firewall.md"
+  s_05d0bb45e6bb5a::t_395b03c9c5b67f 1-663
+"docs-mcp-server/corpora/opnsense-en/50 OpenID Connect.md"
+  s_05d0bb45e6bb5a::t_88363ab7e36868 1-195
+"docs-mcp-server/corpora/opnsense-en/51 User Portal.md"
+  s_05d0bb45e6bb5a::t_58f99f93bb23d9 1-316
+"docs-mcp-server/corpora/opnsense-en/52 Scheduled jobs.md"
+  s_05d0bb45e6bb5a::t_57f4853d9b6ae0 1-33
+"docs-mcp-server/corpora/opnsense-en/53 Installation and setup.md"
+  s_05d0bb45e6bb5a::t_4214e104ba5cb6 1-39
+"docs-mcp-server/corpora/opnsense-en/54 Hardware sizing & setup.md"
+  s_05d0bb45e6bb5a::t_8f87dc635ce0b6 1-136
+"docs-mcp-server/corpora/opnsense-en/55 Initial Installation & Configuration.md"
+  s_05d0bb45e6bb5a::t_2821695799918f 1-439
+"docs-mcp-server/corpora/opnsense-en/56 Virtual & Cloud-Based Installation.md"
+  s_05d0bb45e6bb5a::t_e57ba5e0f9aa6a 1-126
+"docs-mcp-server/corpora/opnsense-en/57 Updates.md"
+  s_05d0bb45e6bb5a::t_f2ddd2444c156c 1-54
+"docs-mcp-server/corpora/opnsense-en/58 Included software.md"
+  s_05d0bb45e6bb5a::t_544ded15be5a11 1-91
+"docs-mcp-server/corpora/opnsense-en/59 Changelogs.md"
+  s_05d0bb45e6bb5a::t_a10f94e5587f53 1-50
+"docs-mcp-server/corpora/opnsense-en/60 Serial Access.md"
+  s_05d0bb45e6bb5a::t_27b3911dc3cf07 1-82
+"docs-mcp-server/corpora/opnsense-en/61 Installing OPNsense AWS image.md"
+  s_05d0bb45e6bb5a::t_506fcab871f71c 1-142
+"docs-mcp-server/corpora/opnsense-en/62 Installing OPNsense OVA image.md"
+  s_05d0bb45e6bb5a::t_59cd98e9c81798 1-45
+"docs-mcp-server/corpora/opnsense-en/63 OPNsense Azure Virtual Appliance.md"
+  s_05d0bb45e6bb5a::t_a0de33d8b431fe 1-71
+"docs-mcp-server/corpora/opnsense-en/64 Official hardware.md"
+  s_05d0bb45e6bb5a::t_6e98271042fd32 1-30
+"docs-mcp-server/corpora/opnsense-en/65 Quickstart getting started.md"
+  s_05d0bb45e6bb5a::t_5e5e695138ee64 1-89
+"docs-mcp-server/corpora/opnsense-en/66 Default Configurations.md"
+  s_05d0bb45e6bb5a::t_e2706204b0fb0b 1-52
+"docs-mcp-server/corpora/opnsense-en/67 Serial Console connectivity.md"
+  s_05d0bb45e6bb5a::t_6e5eb16517c785 1-59
+"docs-mcp-server/corpora/opnsense-en/68 BIOS updates settings.md"
+  s_05d0bb45e6bb5a::t_71b0ef06006b33 1-162
+"docs-mcp-server/corpora/opnsense-en/69 SFP(+) Compatibility.md"
+  s_05d0bb45e6bb5a::t_d176a03449d0f8 1-214
+"docs-mcp-server/corpora/opnsense-en/70 Support.md"
+  s_05d0bb45e6bb5a::t_7f1503f93578af 1-90
+"docs-mcp-server/corpora/opnsense-en/71 Lobby.md"
+  s_05d0bb45e6bb5a::t_44db491c91b946 1-30
+"docs-mcp-server/corpora/opnsense-en/72 General User Interface.md"
+  s_05d0bb45e6bb5a::t_14bac2d1b56a30 1-206
+"docs-mcp-server/corpora/opnsense-en/73 Dashboard.md"
+  s_05d0bb45e6bb5a::t_cf46e02e99e338 1-74
+"docs-mcp-server/corpora/opnsense-en/74 Password.md"
+  s_05d0bb45e6bb5a::t_87589ce853d24e 1-27
+"docs-mcp-server/corpora/opnsense-en/75 OPNsense Tools.md"
+  s_05d0bb45e6bb5a::t_33bc5072abe3a5 1-95
+"docs-mcp-server/corpora/opnsense-en/76 Reporting.md"
+  s_05d0bb45e6bb5a::t_d94637363b9fce 1-36
+"docs-mcp-server/corpora/opnsense-en/77 System Health & Round Robin Data.md"
+  s_05d0bb45e6bb5a::t_0f0b1e5e427f12 1-139
+"docs-mcp-server/corpora/opnsense-en/78 Using Insight - Netflow Analyzer.md"
+  s_05d0bb45e6bb5a::t_f48c71c4a351b8 1-118
+"docs-mcp-server/corpora/opnsense-en/79 Netflow Export & Analyses.md"
+  s_05d0bb45e6bb5a::t_e0f84cc8ecfaef 1-104
+"docs-mcp-server/corpora/opnsense-en/80 Reporting Settings.md"
+  s_05d0bb45e6bb5a::t_5e912f3a5aaad7 1-27
+"docs-mcp-server/corpora/opnsense-en/81 Reporting Traffic.md"
+  s_05d0bb45e6bb5a::t_a958b4382fb1b6 1-41
+"docs-mcp-server/corpora/opnsense-en/82 Reporting Unbound DNS.md"
+  s_05d0bb45e6bb5a::t_f97763c00eb919 1-81
+"docs-mcp-server/corpora/opnsense-en/83 Configure Netflow Exporter.md"
+  s_05d0bb45e6bb5a::t_dac4e60dc41700 1-33
+"docs-mcp-server/corpora/opnsense-en/84 System.md"
+  s_05d0bb45e6bb5a::t_ca146ea2e33f2e 1-51
+"docs-mcp-server/corpora/opnsense-en/85 Access User Management.md"
+  s_05d0bb45e6bb5a::t_bd9bb3606d0b58 1-153
+"docs-mcp-server/corpora/opnsense-en/86 Local Users & Groups.md"
+  s_05d0bb45e6bb5a::t_ec5cf82d376630 1-91
+"docs-mcp-server/corpora/opnsense-en/87 Access Servers LDAP.md"
+  s_05d0bb45e6bb5a::t_e8087974398518 1-131
+"docs-mcp-server/corpora/opnsense-en/88 Access Servers Radius.md"
+  s_05d0bb45e6bb5a::t_7b5562c37d7dbe 1-48
+"docs-mcp-server/corpora/opnsense-en/89 Two-factor authentication.md"
+  s_05d0bb45e6bb5a::t_0fcc58a1a90526 1-54
+"docs-mcp-server/corpora/opnsense-en/90 Configuration.md"
+  s_05d0bb45e6bb5a::t_017c6b28532264 1-77
+"docs-mcp-server/corpora/opnsense-en/91 Backups via secure copy (sftp).md"
+  s_05d0bb45e6bb5a::t_a738e5c073d72d 1-95
+"docs-mcp-server/corpora/opnsense-en/92 Firmware.md"
+  s_05d0bb45e6bb5a::t_5c6ab1a000f8c2 1-114
+"docs-mcp-server/corpora/opnsense-en/93 Gateways.md"
+  s_05d0bb45e6bb5a::t_9ad089968b0abd 1-99
+"docs-mcp-server/corpora/opnsense-en/94 Gateway groups Multi WAN.md"
+  s_05d0bb45e6bb5a::t_b219ad44574cd2 1-67
+"docs-mcp-server/corpora/opnsense-en/95 Multi WAN.md"
+  s_05d0bb45e6bb5a::t_2b3d6cdb4a69a9 1-324
+"docs-mcp-server/corpora/opnsense-en/96 High Availability.md"
+  s_05d0bb45e6bb5a::t_519260db857f30 1-99
+"docs-mcp-server/corpora/opnsense-en/97 Routes.md"
+  s_05d0bb45e6bb5a::t_552d40ae7c3f27 1-96
+"docs-mcp-server/corpora/opnsense-en/98 Settings.md"
+  s_05d0bb45e6bb5a::t_49c32b157e7fe2 1-274
+"docs-mcp-server/corpora/opnsense-en/99 Snapshots.md"
+  s_05d0bb45e6bb5a::t_5b10570d19432a 1-181
+docs-mcp-server/corpora/opnsense-en/LICENSE
+  s_05d0bb45e6bb5a::t_4c7a4023b52983 1-45
+docs-mcp-server/corpora/opnsense-en/corpus.json
+  s_05d0bb45e6bb5a::t_79e324a99fe19e 1-9
+docs-mcp-server/corpora/opnsense-en/sources.json
+  s_05d0bb45e6bb5a::t_eff89128b01376 1-380
+"docs-mcp-server/corpora/opnsense-zh-tw/000 目錄.md"
+  s_05d0bb45e6bb5a::t_62ad5412eb30ff 1-739
+"docs-mcp-server/corpora/opnsense-zh-tw/01 歡迎閱讀 OPNsense 的文檔！.md"
+  s_05d0bb45e6bb5a::t_820a74df670c09 1-191
+"docs-mcp-server/corpora/opnsense-zh-tw/02 介紹.md"
+  s_05d0bb45e6bb5a::t_03bcd99289cc87 1-142
+"docs-mcp-server/corpora/opnsense-zh-tw/03 安全.md"
+  s_05d0bb45e6bb5a::t_75846de842d258 1-326
+"docs-mcp-server/corpora/opnsense-zh-tw/04 發布.md"
+  s_05d0bb45e6bb5a::t_74c831a1bbd07d 1-64
+"docs-mcp-server/corpora/opnsense-zh-tw/05 社群版.md"
+  s_05d0bb45e6bb5a::t_0fc54a4daad7f0 1-51
+"docs-mcp-server/corpora/opnsense-zh-tw/06 26.7 “Xenial Xenops”系列.md"
+  s_05d0bb45e6bb5a::t_94b2a403fbf227 1-1080
+"docs-mcp-server/corpora/opnsense-zh-tw/07 26.1 “機智啄木鳥”系列.md"
+  s_05d0bb45e6bb5a::t_18da12c680008b 1-1925
+"docs-mcp-server/corpora/opnsense-zh-tw/08 25.7 「遠見卓識的毒蛇」系列.md"
+  s_05d0bb45e6bb5a::t_fbcc588af5ee4f 1-1694
+"docs-mcp-server/corpora/opnsense-zh-tw/09 25.1 “終極獨角獸”系列.md"
+  s_05d0bb45e6bb5a::t_2fc673a99b2da0 1-1676
+"docs-mcp-server/corpora/opnsense-zh-tw/10 24.7 「茁壯成長的老虎」系列.md"
+  s_05d0bb45e6bb5a::t_6a8d46e8672d2e 1-1609
+"docs-mcp-server/corpora/opnsense-zh-tw/100 相信.md"
+  s_05d0bb45e6bb5a::t_6a88bd3678ccbf 1-219
+"docs-mcp-server/corpora/opnsense-zh-tw/101 紀錄檔案.md"
+  s_05d0bb45e6bb5a::t_ad6147b78b2c16 1-31
+"docs-mcp-server/corpora/opnsense-zh-tw/102 診斷.md"
+  s_05d0bb45e6bb5a::t_f29f17934c08b5 1-43
+"docs-mcp-server/corpora/opnsense-zh-tw/103 設定雙重認證TOTP和 Google Authenticator.md"
+  s_05d0bb45e6bb5a::t_898b46a6322060 1-125
+"docs-mcp-server/corpora/opnsense-zh-tw/104 設定自簽名憑證鏈.md"
+  s_05d0bb45e6bb5a::t_5a7db98265c754 1-431
+"docs-mcp-server/corpora/opnsense-zh-tw/105 介面.md"
+  s_05d0bb45e6bb5a::t_896a940c7eb993 1-65
+"docs-mcp-server/corpora/opnsense-zh-tw/106 介面配置.md"
+  s_05d0bb45e6bb5a::t_16a397384e48c1 1-149
+"docs-mcp-server/corpora/opnsense-zh-tw/107 裝置.md"
+  s_05d0bb45e6bb5a::t_3cfac832d09952 1-269
+"docs-mcp-server/corpora/opnsense-zh-tw/108 概述.md"
+  s_05d0bb45e6bb5a::t_f059df6ca131bf 1-26
+"docs-mcp-server/corpora/opnsense-zh-tw/109 設定.md"
+  s_05d0bb45e6bb5a::t_2588d81f17559f 1-76
+"docs-mcp-server/corpora/opnsense-zh-tw/11 24.1 “精明鯊魚”系列.md"
+  s_05d0bb45e6bb5a::t_4170916593bc35 1-1262
+"docs-mcp-server/corpora/opnsense-zh-tw/110 鄰居.md"
+  s_05d0bb45e6bb5a::t_df9835876cc451 1-119
+"docs-mcp-server/corpora/opnsense-zh-tw/111 虛擬IP.md"
+  s_05d0bb45e6bb5a::t_d3a51cf678c7d4 1-134
+"docs-mcp-server/corpora/opnsense-zh-tw/112 無線的.md"
+  s_05d0bb45e6bb5a::t_55ef4c4df9495e 1-28
+"docs-mcp-server/corpora/opnsense-zh-tw/113 IPv6 設定.md"
+  s_05d0bb45e6bb5a::t_ec2cdd5031f936 1-321
+"docs-mcp-server/corpora/opnsense-zh-tw/114 診斷.md"
+  s_05d0bb45e6bb5a::t_93b911a9c7dedb 1-192
+"docs-mcp-server/corpora/opnsense-zh-tw/115 VLAN和LAGG設置.md"
+  s_05d0bb45e6bb5a::t_7df5207b38c532 1-196
+"docs-mcp-server/corpora/opnsense-zh-tw/116 LAN橋.md"
+  s_05d0bb45e6bb5a::t_048ada09e8fb70 1-84
+"docs-mcp-server/corpora/opnsense-zh-tw/117 VXLAN橋.md"
+  s_05d0bb45e6bb5a::t_1db5e3d48a79ae 1-229
+"docs-mcp-server/corpora/opnsense-zh-tw/118 透明過濾橋.md"
+  s_05d0bb45e6bb5a::t_b67114883c5cfb 1-199
+"docs-mcp-server/corpora/opnsense-zh-tw/119 無線網路介面（ INTERNAL ）.md"
+  s_05d0bb45e6bb5a::t_815c14aa534b1a 1-91
+"docs-mcp-server/corpora/opnsense-zh-tw/12 23.7 「不安分的公路跑者」系列.md"
+  s_05d0bb45e6bb5a::t_b43ed75f9a890d 1-1633
+"docs-mcp-server/corpora/opnsense-zh-tw/120 配置蜂巢式調變解調器.md"
+  s_05d0bb45e6bb5a::t_2901190fd07237 1-133
+"docs-mcp-server/corpora/opnsense-zh-tw/121 Zen 的 IPv6 UK.md"
+  s_05d0bb45e6bb5a::t_7b3755083098a4 1-132
+"docs-mcp-server/corpora/opnsense-zh-tw/122 通用撥號的 IPv6 DSL.md"
+  s_05d0bb45e6bb5a::t_bf46ec4fb60831 1-56
+"docs-mcp-server/corpora/opnsense-zh-tw/123 AVM Fritz!Box 後面的 IPv6.md"
+  s_05d0bb45e6bb5a::t_a23dea8333111f 1-117
+"docs-mcp-server/corpora/opnsense-zh-tw/124 IPv6 隧道代理.md"
+  s_05d0bb45e6bb5a::t_8e5076401e5a56 1-109
+"docs-mcp-server/corpora/opnsense-zh-tw/125 德國電信德國IPTV（洋紅TV）設置.md"
+  s_05d0bb45e6bb5a::t_ec432f11174bc5 1-64
+"docs-mcp-server/corpora/opnsense-zh-tw/126 法國橘色FTTH IPv4 和 IPv6.md"
+  s_05d0bb45e6bb5a::t_348d964b72dc4c 1-185
+"docs-mcp-server/corpora/opnsense-zh-tw/127 橙色法國IPTV設置.md"
+  s_05d0bb45e6bb5a::t_1a2848e0001b1c 1-112
+"docs-mcp-server/corpora/opnsense-zh-tw/128 SFRRED 法國 FTTH IPv4 & IPv6 & 電話.md"
+  s_05d0bb45e6bb5a::t_9f47fe3eb55821 1-312
+"docs-mcp-server/corpora/opnsense-zh-tw/129 天空設定UK ISP.md"
+  s_05d0bb45e6bb5a::t_5dee5e87b9ae33 1-104
+"docs-mcp-server/corpora/opnsense-zh-tw/13 23.1 “Quintessential Quail”系列.md"
+  s_05d0bb45e6bb5a::t_26891f48ebd02f 1-1409
+"docs-mcp-server/corpora/opnsense-zh-tw/130 防火牆.md"
+  s_05d0bb45e6bb5a::t_ccc19161d1bf63 1-53
+"docs-mcp-server/corpora/opnsense-zh-tw/131 一般資訊.md"
+  s_05d0bb45e6bb5a::t_3aeb551e7fe800 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/132 別名.md"
+  s_05d0bb45e6bb5a::t_dd0267370dd289 1-422
+"docs-mcp-server/corpora/opnsense-zh-tw/133 類別.md"
+  s_05d0bb45e6bb5a::t_5296dd73c0d664 1-26
+"docs-mcp-server/corpora/opnsense-zh-tw/134 [介面] 群組.md"
+  s_05d0bb45e6bb5a::t_c11547be7aae08 1-40
+"docs-mcp-server/corpora/opnsense-zh-tw/135 網路位址轉換.md"
+  s_05d0bb45e6bb5a::t_52da58d24d75b9 1-335
+"docs-mcp-server/corpora/opnsense-zh-tw/136 倒影與髮夾NAT.md"
+  s_05d0bb45e6bb5a::t_129601fceea660 1-293
+"docs-mcp-server/corpora/opnsense-zh-tw/137 規則.md"
+  s_05d0bb45e6bb5a::t_dbfa8343b71766 1-587
+"docs-mcp-server/corpora/opnsense-zh-tw/138 流量整形.md"
+  s_05d0bb45e6bb5a::t_473d41a90cbad3 1-86
+"docs-mcp-server/corpora/opnsense-zh-tw/139 預留專用頻寬.md"
+  s_05d0bb45e6bb5a::t_844a7024d43426 1-146
+"docs-mcp-server/corpora/opnsense-zh-tw/14 22.7 「威猛黑豹」系列.md"
+  s_05d0bb45e6bb5a::t_45747f384a9645 1-1399
+"docs-mcp-server/corpora/opnsense-zh-tw/140 在使用者之間均勻分享網路頻寬.md"
+  s_05d0bb45e6bb5a::t_0cdfd02833361f 1-114
+"docs-mcp-server/corpora/opnsense-zh-tw/141 限制使用者可以消耗的最大網路頻寬.md"
+  s_05d0bb45e6bb5a::t_ff041a1fb6b4c7 1-207
+"docs-mcp-server/corpora/opnsense-zh-tw/142 使用佇列對應用程式進行優先權排序（加權）.md"
+  s_05d0bb45e6bb5a::t_883fb3797eee37 1-127
+"docs-mcp-server/corpora/opnsense-zh-tw/143 GuestNet 的多重介面整形.md"
+  s_05d0bb45e6bb5a::t_51ac6b6d0eadbf 1-96
+"docs-mcp-server/corpora/opnsense-zh-tw/144 使用 FQ_CoDel 對抗緩衝區膨脹.md"
+  s_05d0bb45e6bb5a::t_0b33b2cf339bfb 1-325
+"docs-mcp-server/corpora/opnsense-zh-tw/145 控制平面整形.md"
+  s_05d0bb45e6bb5a::t_03178304cae1e4 1-208
+"docs-mcp-server/corpora/opnsense-zh-tw/146 （進階）設定.md"
+  s_05d0bb45e6bb5a::t_ae68d5f11c0c16 1-195
+"docs-mcp-server/corpora/opnsense-zh-tw/147 標準化.md"
+  s_05d0bb45e6bb5a::t_24fbe87c1d7ffc 1-46
+"docs-mcp-server/corpora/opnsense-zh-tw/148 配置CARP.md"
+  s_05d0bb45e6bb5a::t_e13982a40d417e 1-569
+"docs-mcp-server/corpora/opnsense-zh-tw/149 紀錄檔案.md"
+  s_05d0bb45e6bb5a::t_ad3420f382e63e 1-59
+"docs-mcp-server/corpora/opnsense-zh-tw/15 22.1 “觀察力敏銳的貓頭鷹”系列.md"
+  s_05d0bb45e6bb5a::t_0beaa1b1a729ed 1-1578
+"docs-mcp-server/corpora/opnsense-zh-tw/150 診斷.md"
+  s_05d0bb45e6bb5a::t_df265e8349cd23 1-111
+"docs-mcp-server/corpora/opnsense-zh-tw/151 依類別整理PF規則.md"
+  s_05d0bb45e6bb5a::t_471136e45929b1 1-64
+"docs-mcp-server/corpora/opnsense-zh-tw/152 配置 Spamhaus DROP.md"
+  s_05d0bb45e6bb5a::t_86c13733a7c2b8 1-123
+"docs-mcp-server/corpora/opnsense-zh-tw/153 安全區.md"
+  s_05d0bb45e6bb5a::t_bd4c30637e2e43 1-289
+"docs-mcp-server/corpora/opnsense-zh-tw/154 虛擬私人網路.md"
+  s_05d0bb45e6bb5a::t_ebd5fbcf013f60 1-736
+"docs-mcp-server/corpora/opnsense-zh-tw/155 WireGuard 站點到站點設置.md"
+  s_05d0bb45e6bb5a::t_1ff9d8d26f39a7 1-290
+"docs-mcp-server/corpora/opnsense-zh-tw/156 WireGuard Road Warrior 設置.md"
+  s_05d0bb45e6bb5a::t_05221a99e33859 1-355
+"docs-mcp-server/corpora/opnsense-zh-tw/157 WireGuard AzireVPN 行動戰士設置.md"
+  s_05d0bb45e6bb5a::t_00af52ca3a8235 1-48
+"docs-mcp-server/corpora/opnsense-zh-tw/158 WireGuard MullvadVPN 行動戰士設置.md"
+  s_05d0bb45e6bb5a::t_768ba0bc7cba8b 1-68
+"docs-mcp-server/corpora/opnsense-zh-tw/159 WireGuard ProtonVPN 行動辦公室設置.md"
+  s_05d0bb45e6bb5a::t_742a7475125ebe 1-212
+"docs-mcp-server/corpora/opnsense-zh-tw/16 21.7 “高貴的夜鶯”系列.md"
+  s_05d0bb45e6bb5a::t_fe76fde47ee95d 1-1376
+"docs-mcp-server/corpora/opnsense-zh-tw/160 WireGuard 選擇性路由到外部VPN端點.md"
+  s_05d0bb45e6bb5a::t_ce47893af4439c 1-386
+"docs-mcp-server/corpora/opnsense-zh-tw/161 OpenConnect 設定.md"
+  s_05d0bb45e6bb5a::t_8c9fe1a7cab41e 1-46
+"docs-mcp-server/corpora/opnsense-zh-tw/162 斯通內爾.md"
+  s_05d0bb45e6bb5a::t_658dab4b404968 1-153
+"docs-mcp-server/corpora/opnsense-zh-tw/163 零層配置.md"
+  s_05d0bb45e6bb5a::t_5d87ccdffba2fb 1-136
+"docs-mcp-server/corpora/opnsense-zh-tw/164 反向代理和Web伺服器.md"
+  s_05d0bb45e6bb5a::t_6a99749f6ff6cd 1-129
+"docs-mcp-server/corpora/opnsense-zh-tw/165 反病毒引擎.md"
+  s_05d0bb45e6bb5a::t_524589a99c668e 1-32
+"docs-mcp-server/corpora/opnsense-zh-tw/166 c-icap.md"
+  s_05d0bb45e6bb5a::t_6e26e7418336cb 1-87
+"docs-mcp-server/corpora/opnsense-zh-tw/167 ClamAV.md"
+  s_05d0bb45e6bb5a::t_91d7d1c005d538 1-137
+"docs-mcp-server/corpora/opnsense-zh-tw/168 nginx 基本負載平衡.md"
+  s_05d0bb45e6bb5a::t_ce677ec58fb2f7 1-58
+"docs-mcp-server/corpora/opnsense-zh-tw/169 nginx 頭部加固.md"
+  s_05d0bb45e6bb5a::t_230ad72d0302fe 1-110
+"docs-mcp-server/corpora/opnsense-zh-tw/17 21.1 「奇妙的貓鼬」系列.md"
+  s_05d0bb45e6bb5a::t_5de434966bed61 1-1327
+"docs-mcp-server/corpora/opnsense-zh-tw/170 nginx 本地網站託管.md"
+  s_05d0bb45e6bb5a::t_06d4238c7f8602 1-132
+"docs-mcp-server/corpora/opnsense-zh-tw/171 nginx 基本驗證與授權.md"
+  s_05d0bb45e6bb5a::t_d4168216cdd505 1-72
+"docs-mcp-server/corpora/opnsense-zh-tw/172 nginx IP基於存取控制列表.md"
+  s_05d0bb45e6bb5a::t_f8bc6e0fcfbbaa 1-56
+"docs-mcp-server/corpora/opnsense-zh-tw/173 nginx TLS指紋.md"
+  s_05d0bb45e6bb5a::t_740c9902c452c0 1-81
+"docs-mcp-server/corpora/opnsense-zh-tw/174 nginx TLS身份驗證與授權.md"
+  s_05d0bb45e6bb5a::t_e301d4e55f9b80 1-61
+"docs-mcp-server/corpora/opnsense-zh-tw/175 nginx Web應用程式防火牆.md"
+  s_05d0bb45e6bb5a::t_91bbf6cef5adae 1-116
+"docs-mcp-server/corpora/opnsense-zh-tw/176 nginx TCP和UDP流.md"
+  s_05d0bb45e6bb5a::t_b7d0099039a919 1-92
+"docs-mcp-server/corpora/opnsense-zh-tw/177 Caddy 反向代理.md"
+  s_05d0bb45e6bb5a::t_e6513d92551bec 1-1164
+"docs-mcp-server/corpora/opnsense-zh-tw/178 CPU微程式碼更新 [AMDIntel].md"
+  s_05d0bb45e6bb5a::t_40c33cb29c939f 1-54
+"docs-mcp-server/corpora/opnsense-zh-tw/179 快取代理.md"
+  s_05d0bb45e6bb5a::t_9e42d57dcd4e53 1-173
+"docs-mcp-server/corpora/opnsense-zh-tw/18 20.7 「傳奇獅子」系列.md"
+  s_05d0bb45e6bb5a::t_eca288202ad4cb 1-892
+"docs-mcp-server/corpora/opnsense-zh-tw/180 自由半徑.md"
+  s_05d0bb45e6bb5a::t_a2df11041f1330 1-100
+"docs-mcp-server/corpora/opnsense-zh-tw/181 設定 FreeRADIUS 進行記賬.md"
+  s_05d0bb45e6bb5a::t_381bafa955273a 1-89
+"docs-mcp-server/corpora/opnsense-zh-tw/182 如何設定郵件網關.md"
+  s_05d0bb45e6bb5a::t_96187e9af44340 1-115
+"docs-mcp-server/corpora/opnsense-zh-tw/183 Netbird 外掛程式安裝指南.md"
+  s_05d0bb45e6bb5a::t_44e62ad82448cf 1-143
+"docs-mcp-server/corpora/opnsense-zh-tw/184 使用 Git 追蹤配置更改.md"
+  s_05d0bb45e6bb5a::t_4050825b9e051d 1-152
+"docs-mcp-server/corpora/opnsense-zh-tw/185 雲端備份 Nextcloud.md"
+  s_05d0bb45e6bb5a::t_82d0afa1d75674 1-72
+"docs-mcp-server/corpora/opnsense-zh-tw/186 中繼器.md"
+  s_05d0bb45e6bb5a::t_ce459dafbcb9b5 1-115
+"docs-mcp-server/corpora/opnsense-zh-tw/187 瓦祖代理.md"
+  s_05d0bb45e6bb5a::t_7819f7e16b0aba 1-147
+"docs-mcp-server/corpora/opnsense-zh-tw/188 Cloudflare 隧道.md"
+  s_05d0bb45e6bb5a::t_38403048b1a208 1-133
+"docs-mcp-server/corpora/opnsense-zh-tw/189 Tor 配置.md"
+  s_05d0bb45e6bb5a::t_f688615fa25092 1-300
+"docs-mcp-server/corpora/opnsense-zh-tw/19 20.1 「翠鳥」系列.md"
+  s_05d0bb45e6bb5a::t_ae096b8755ce05 1-891
+"docs-mcp-server/corpora/opnsense-zh-tw/190 恩托彭.md"
+  s_05d0bb45e6bb5a::t_b43db3038b9fa1 1-44
+"docs-mcp-server/corpora/opnsense-zh-tw/191 服務.md"
+  s_05d0bb45e6bb5a::t_c2fdc4514bbe9a 1-58
+"docs-mcp-server/corpora/opnsense-zh-tw/192 DHCP.md"
+  s_05d0bb45e6bb5a::t_8ee9f06a44d617 1-101
+"docs-mcp-server/corpora/opnsense-zh-tw/193 DHC中繼.md"
+  s_05d0bb45e6bb5a::t_a75c60b05b0aef 1-51
+"docs-mcp-server/corpora/opnsense-zh-tw/194 Dnsmasq DNS & DHCP.md"
+  s_05d0bb45e6bb5a::t_35549fdefb91a1 1-943
+"docs-mcp-server/corpora/opnsense-zh-tw/195 ISC DHCP.md"
+  s_05d0bb45e6bb5a::t_9273cf9ff30d7c 1-115
+"docs-mcp-server/corpora/opnsense-zh-tw/196 KEA DHCP.md"
+  s_05d0bb45e6bb5a::t_222209f4f0a1f1 1-661
+"docs-mcp-server/corpora/opnsense-zh-tw/197 路由器廣告.md"
+  s_05d0bb45e6bb5a::t_04d3e7b5aa8240 1-155
+"docs-mcp-server/corpora/opnsense-zh-tw/198 開放DNS.md"
+  s_05d0bb45e6bb5a::t_b6a29ccddc2c9a 1-41
+"docs-mcp-server/corpora/opnsense-zh-tw/199 未綁定DNS.md"
+  s_05d0bb45e6bb5a::t_b3786f6919e0c8 1-361
+"docs-mcp-server/corpora/opnsense-zh-tw/20 19.7 「爵士捷豹」系列.md"
+  s_05d0bb45e6bb5a::t_ad30eba1c8773c 1-1160
+"docs-mcp-server/corpora/opnsense-zh-tw/200 強制入口網站和 GuestNET.md"
+  s_05d0bb45e6bb5a::t_09fff3a8a723ba 1-354
+"docs-mcp-server/corpora/opnsense-zh-tw/201 設定訪客網絡.md"
+  s_05d0bb45e6bb5a::t_8fd6db94667048 1-485
+"docs-mcp-server/corpora/opnsense-zh-tw/202 入侵防禦系統.md"
+  s_05d0bb45e6bb5a::t_68bb939e88d3ea 1-268
+"docs-mcp-server/corpora/opnsense-zh-tw/203 IPS SSL黑名單和 Feodo 追蹤器.md"
+  s_05d0bb45e6bb5a::t_dcfaaf8a5df955 1-100
+"docs-mcp-server/corpora/opnsense-zh-tw/204 IPS區塊SSL證書.md"
+  s_05d0bb45e6bb5a::t_2b977d50c474d5 1-106
+"docs-mcp-server/corpora/opnsense-zh-tw/205 IPS 繞過本地流量進行檢查.md"
+  s_05d0bb45e6bb5a::t_31bc0674ff4171 1-100
+"docs-mcp-server/corpora/opnsense-zh-tw/206 紀錄檔案.md"
+  s_05d0bb45e6bb5a::t_d9ea4fca8de86d 1-33
+"docs-mcp-server/corpora/opnsense-zh-tw/207 莫尼特.md"
+  s_05d0bb45e6bb5a::t_14c6debf96ca02 1-249
+"docs-mcp-server/corpora/opnsense-zh-tw/208 網路時間.md"
+  s_05d0bb45e6bb5a::t_76926f963f85e9 1-79
+"docs-mcp-server/corpora/opnsense-zh-tw/209 社群插件.md"
+  s_05d0bb45e6bb5a::t_73d8018b619e9f 1-94
+"docs-mcp-server/corpora/opnsense-zh-tw/21 19.1 「鼓舞人心的鬣蜥」系列.md"
+  s_05d0bb45e6bb5a::t_b3d48658cde6c3 1-1384
+"docs-mcp-server/corpora/opnsense-zh-tw/210 動態路由（ FRR ）.md"
+  s_05d0bb45e6bb5a::t_eec043b39733f8 1-553
+"docs-mcp-server/corpora/opnsense-zh-tw/211 Tayga NAT64使用方法.md"
+  s_05d0bb45e6bb5a::t_1a8c5fda8bdb93 1-104
+"docs-mcp-server/corpora/opnsense-zh-tw/212 ndp-proxy-go（鄰居發現代理）.md"
+  s_05d0bb45e6bb5a::t_09d15a58b9be23 1-406
+"docs-mcp-server/corpora/opnsense-zh-tw/213 動態DNS.md"
+  s_05d0bb45e6bb5a::t_6e4f3215f2ad08 1-122
+"docs-mcp-server/corpora/opnsense-zh-tw/214 BIND插件.md"
+  s_05d0bb45e6bb5a::t_8a3fd3b46bf2ae 1-88
+"docs-mcp-server/corpora/opnsense-zh-tw/215 DNSCrypt代理.md"
+  s_05d0bb45e6bb5a::t_67f85f69a84987 1-144
+"docs-mcp-server/corpora/opnsense-zh-tw/216 多播DNS代理.md"
+  s_05d0bb45e6bb5a::t_a92bfd0a44bc2c 1-45
+"docs-mcp-server/corpora/opnsense-zh-tw/217 第三方插件.md"
+  s_05d0bb45e6bb5a::t_42e0d9dc4b6ba6 1-37
+"docs-mcp-server/corpora/opnsense-zh-tw/218 Zenarmor（Sensei）概述.md"
+  s_05d0bb45e6bb5a::t_7d4aec187b68a3 1-131
+"docs-mcp-server/corpora/opnsense-zh-tw/219 Zenarmor（Sensei）硬體需求.md"
+  s_05d0bb45e6bb5a::t_6475ed1be21321 1-76
+"docs-mcp-server/corpora/opnsense-zh-tw/22 18.7 「快樂河馬」系列.md"
+  s_05d0bb45e6bb5a::t_161ca71d364aa7 1-1682
+"docs-mcp-server/corpora/opnsense-zh-tw/220 Zenarmor（Sensei）透過網頁介面安裝.md"
+  s_05d0bb45e6bb5a::t_aa6a129f7ab2e5 1-201
+"docs-mcp-server/corpora/opnsense-zh-tw/221 透過命令列安裝 Zenarmor.md"
+  s_05d0bb45e6bb5a::t_64ceb4c122715b 1-66
+"docs-mcp-server/corpora/opnsense-zh-tw/222 Q-Feeds 連接器.md"
+  s_05d0bb45e6bb5a::t_5600b2f1b00411 1-162
+"docs-mcp-server/corpora/opnsense-zh-tw/223 故障排除.md"
+  s_05d0bb45e6bb5a::t_f1337d9c52bad1 1-79
+"docs-mcp-server/corpora/opnsense-zh-tw/224 密碼重設.md"
+  s_05d0bb45e6bb5a::t_7b3a18a546cc53 1-70
+"docs-mcp-server/corpora/opnsense-zh-tw/225 重置韌體配置.md"
+  s_05d0bb45e6bb5a::t_830a1b4f6e5a38 1-34
+"docs-mcp-server/corpora/opnsense-zh-tw/226 透過控制台恢復配置.md"
+  s_05d0bb45e6bb5a::t_d09e30dafcf3a2 1-90
+"docs-mcp-server/corpora/opnsense-zh-tw/227 WebGui 存取權限重置.md"
+  s_05d0bb45e6bb5a::t_19c7f777bd052a 1-30
+"docs-mcp-server/corpora/opnsense-zh-tw/228 開機.md"
+  s_05d0bb45e6bb5a::t_91c884e6235cc8 1-42
+"docs-mcp-server/corpora/opnsense-zh-tw/229 系統強化與性能.md"
+  s_05d0bb45e6bb5a::t_7507a789e7f6d4 1-51
+"docs-mcp-server/corpora/opnsense-zh-tw/23 18.1 「酷炫壁虎」系列.md"
+  s_05d0bb45e6bb5a::t_99ce46bd46db21 1-1721
+"docs-mcp-server/corpora/opnsense-zh-tw/230 網關和監控.md"
+  s_05d0bb45e6bb5a::t_e7dd559d4aa8dc 1-36
+"docs-mcp-server/corpora/opnsense-zh-tw/231 網路.md"
+  s_05d0bb45e6bb5a::t_d198d576cca203 1-57
+"docs-mcp-server/corpora/opnsense-zh-tw/232 開放VPN.md"
+  s_05d0bb45e6bb5a::t_e7f5fc6ffa0c3a 1-34
+"docs-mcp-server/corpora/opnsense-zh-tw/233 效能.md"
+  s_05d0bb45e6bb5a::t_1565795793bcbc 1-136
+"docs-mcp-server/corpora/opnsense-zh-tw/234 開發手冊.md"
+  s_05d0bb45e6bb5a::t_e6de3b0be70e6a 1-163
+"docs-mcp-server/corpora/opnsense-zh-tw/235 開發流程.md"
+  s_05d0bb45e6bb5a::t_2b1dab0d87bfd2 1-104
+"docs-mcp-server/corpora/opnsense-zh-tw/236 編碼指南.md"
+  s_05d0bb45e6bb5a::t_99afbdfbef6c0a 1-30
+"docs-mcp-server/corpora/opnsense-zh-tw/237 基礎與未來.md"
+  s_05d0bb45e6bb5a::t_5463309b317319 1-103
+"docs-mcp-server/corpora/opnsense-zh-tw/238 PSR-1 基本編碼標準.md"
+  s_05d0bb45e6bb5a::t_dd7b67d275cbcc 1-167
+"docs-mcp-server/corpora/opnsense-zh-tw/239 PSR-2 編碼風格指南.md"
+  s_05d0bb45e6bb5a::t_2cef0c8b0d570b 1-555
+"docs-mcp-server/corpora/opnsense-zh-tw/24 17.7 「自由狐狸」系列.md"
+  s_05d0bb45e6bb5a::t_7ca99e5689d8cb 1-1199
+"docs-mcp-server/corpora/opnsense-zh-tw/240 PSR-12 編碼風格指南.md"
+  s_05d0bb45e6bb5a::t_aba92334e64de6 1-976
+"docs-mcp-server/corpora/opnsense-zh-tw/241 Python PEP.md"
+  s_05d0bb45e6bb5a::t_e010889f0e4025 1-22
+"docs-mcp-server/corpora/opnsense-zh-tw/242 大樓.md"
+  s_05d0bb45e6bb5a::t_c18264ecf3a639 1-120
+"docs-mcp-server/corpora/opnsense-zh-tw/243 後端.md"
+  s_05d0bb45e6bb5a::t_1ac45e88ed3fb1 1-49
+"docs-mcp-server/corpora/opnsense-zh-tw/244 概述.md"
+  s_05d0bb45e6bb5a::t_dc45db528278af 1-68
+"docs-mcp-server/corpora/opnsense-zh-tw/245 開機自動運轉選項.md"
+  s_05d0bb45e6bb5a::t_17b97dd00322d0 1-126
+"docs-mcp-server/corpora/opnsense-zh-tw/246 CARP狀態.md"
+  s_05d0bb45e6bb5a::t_37afbf5428bc2f 1-105
+"docs-mcp-server/corpora/opnsense-zh-tw/247 使用配置.md"
+  s_05d0bb45e6bb5a::t_2b65638630e544 1-130
+"docs-mcp-server/corpora/opnsense-zh-tw/248 使用插件.md"
+  s_05d0bb45e6bb5a::t_eda7e1bb1f0bce 1-278
+"docs-mcp-server/corpora/opnsense-zh-tw/249 使用模板.md"
+  s_05d0bb45e6bb5a::t_0a441aeb291c2f 1-125
+"docs-mcp-server/corpora/opnsense-zh-tw/25 17.1 「兼收並蓄的雄鷹」系列.md"
+  s_05d0bb45e6bb5a::t_77a1cf92f4a760 1-1248
+"docs-mcp-server/corpora/opnsense-zh-tw/250 前端.md"
+  s_05d0bb45e6bb5a::t_2242618fc5279c 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/251 創建模型.md"
+  s_05d0bb45e6bb5a::t_80b19ffab18758 1-33
+"docs-mcp-server/corpora/opnsense-zh-tw/252 設計模型.md"
+  s_05d0bb45e6bb5a::t_2cc866527faf15 1-246
+"docs-mcp-server/corpora/opnsense-zh-tw/253 使用範例.md"
+  s_05d0bb45e6bb5a::t_f67d90ea65db72 1-76
+"docs-mcp-server/corpora/opnsense-zh-tw/254 指南.md"
+  s_05d0bb45e6bb5a::t_e2307c3cdd8e21 1-30
+"docs-mcp-server/corpora/opnsense-zh-tw/255 自訂（特定於應用程式）欄位類型.md"
+  s_05d0bb45e6bb5a::t_d06f5d5d1602e7 1-81
+"docs-mcp-server/corpora/opnsense-zh-tw/256 新增約束.md"
+  s_05d0bb45e6bb5a::t_9f596028cb4c2c 1-133
+"docs-mcp-server/corpora/opnsense-zh-tw/257 遷移.md"
+  s_05d0bb45e6bb5a::t_bbafb91e8f35c6 1-81
+"docs-mcp-server/corpora/opnsense-zh-tw/258 建立模型欄位類型.md"
+  s_05d0bb45e6bb5a::t_dd48dbb15eac21 1-602
+"docs-mcp-server/corpora/opnsense-zh-tw/259 路由.md"
+  s_05d0bb45e6bb5a::t_ad61c58d1fcd99 1-75
+"docs-mcp-server/corpora/opnsense-zh-tw/26 16.7 “跳舞的海豚”系列.md"
+  s_05d0bb45e6bb5a::t_609eb567e9c046 1-1187
+"docs-mcp-server/corpora/opnsense-zh-tw/260 使用控制器和視圖.md"
+  s_05d0bb45e6bb5a::t_c445b00ca79ae7 1-210
+"docs-mcp-server/corpora/opnsense-zh-tw/261 看構造（和工具）.md"
+  s_05d0bb45e6bb5a::t_43d7ed4fc4213a 1-288
+"docs-mcp-server/corpora/opnsense-zh-tw/262 UI引導網格.md"
+  s_05d0bb45e6bb5a::t_5e55d3d8e4e640 1-384
+"docs-mcp-server/corpora/opnsense-zh-tw/263 儀表板小工具.md"
+  s_05d0bb45e6bb5a::t_010c446526342e 1-374
+"docs-mcp-server/corpora/opnsense-zh-tw/264 組件.md"
+  s_05d0bb45e6bb5a::t_515236c0ac402a 1-28
+"docs-mcp-server/corpora/opnsense-zh-tw/265 選單系統.md"
+  s_05d0bb45e6bb5a::t_0b29cc9c182a1e 1-68
+"docs-mcp-server/corpora/opnsense-zh-tw/266 存取控制列表.md"
+  s_05d0bb45e6bb5a::t_df54e3347c54ad 1-79
+"docs-mcp-server/corpora/opnsense-zh-tw/267 認證.md"
+  s_05d0bb45e6bb5a::t_40b21c1aa14070 1-98
+"docs-mcp-server/corpora/opnsense-zh-tw/268 API 參考.md"
+  s_05d0bb45e6bb5a::t_ba871b85a066bd 1-195
+"docs-mcp-server/corpora/opnsense-zh-tw/269 授權.md"
+  s_05d0bb45e6bb5a::t_7196b170789e2a 1-62
+"docs-mcp-server/corpora/opnsense-zh-tw/27 16.1 「狡猾的郊狼」系列.md"
+  s_05d0bb45e6bb5a::t_fd0ad4561bf6d6 1-1268
+"docs-mcp-server/corpora/opnsense-zh-tw/270 強制門戶.md"
+  s_05d0bb45e6bb5a::t_931310399d7072 1-80
+"docs-mcp-server/corpora/opnsense-zh-tw/271 核.md"
+  s_05d0bb45e6bb5a::t_edd1019447a780 1-136
+"docs-mcp-server/corpora/opnsense-zh-tw/272 克朗.md"
+  s_05d0bb45e6bb5a::t_c0990213298992 1-41
+"docs-mcp-server/corpora/opnsense-zh-tw/273 德克雷.md"
+  s_05d0bb45e6bb5a::t_7dfd442636487f 1-46
+"docs-mcp-server/corpora/opnsense-zh-tw/274 診斷.md"
+  s_05d0bb45e6bb5a::t_e9bde574214ca4 1-203
+"docs-mcp-server/corpora/opnsense-zh-tw/275 Dnsmasq.md"
+  s_05d0bb45e6bb5a::t_47cb9069510d51 1-77
+"docs-mcp-server/corpora/opnsense-zh-tw/276 防火牆.md"
+  s_05d0bb45e6bb5a::t_6fa1a0a781f59d 1-308
+"docs-mcp-server/corpora/opnsense-zh-tw/277 韌體.md"
+  s_05d0bb45e6bb5a::t_7f5a7d98704453 1-82
+"docs-mcp-server/corpora/opnsense-zh-tw/278 主機發現.md"
+  s_05d0bb45e6bb5a::t_4c05c825886425 1-40
+"docs-mcp-server/corpora/opnsense-zh-tw/279 ID.md"
+  s_05d0bb45e6bb5a::t_dd9329998f14d7 1-75
+"docs-mcp-server/corpora/opnsense-zh-tw/28 15.7 “勇敢的獾”系列.md"
+  s_05d0bb45e6bb5a::t_c704a5bd29baf0 1-1285
+"docs-mcp-server/corpora/opnsense-zh-tw/280 介面.md"
+  s_05d0bb45e6bb5a::t_eba66f7d4425ee 1-177
+"docs-mcp-server/corpora/opnsense-zh-tw/281 IPsec.md"
+  s_05d0bb45e6bb5a::t_11e31c59b47b3e 1-193
+"docs-mcp-server/corpora/opnsense-zh-tw/282 啄羊鸚鵡.md"
+  s_05d0bb45e6bb5a::t_0f8f38c6ab5f0d 1-122
+"docs-mcp-server/corpora/opnsense-zh-tw/283 莫尼特.md"
+  s_05d0bb45e6bb5a::t_3d7e1e55260641 1-64
+"docs-mcp-server/corpora/opnsense-zh-tw/285 OpenVPN.md"
+  s_05d0bb45e6bb5a::t_5eddade51928cc 1-75
+"docs-mcp-server/corpora/opnsense-zh-tw/286 拉德維德.md"
+  s_05d0bb45e6bb5a::t_3cc5dc0b4b9f42 1-45
+"docs-mcp-server/corpora/opnsense-zh-tw/287 路線.md"
+  s_05d0bb45e6bb5a::t_3ad82f9ac6f749 1-42
+"docs-mcp-server/corpora/opnsense-zh-tw/288 路由.md"
+  s_05d0bb45e6bb5a::t_40797d158adba3 1-36
+"docs-mcp-server/corpora/opnsense-zh-tw/289 系統日誌.md"
+  s_05d0bb45e6bb5a::t_4be5c373a6578f 1-47
+"docs-mcp-server/corpora/opnsense-zh-tw/29 15.1「信天翁升天」系列.md"
+  s_05d0bb45e6bb5a::t_19eab055beb545 1-1194
+"docs-mcp-server/corpora/opnsense-zh-tw/290 交通塑造者.md"
+  s_05d0bb45e6bb5a::t_7aa618ccf0ae0b 1-59
+"docs-mcp-server/corpora/opnsense-zh-tw/291 相信.md"
+  s_05d0bb45e6bb5a::t_50891632289aa9 1-74
+"docs-mcp-server/corpora/opnsense-zh-tw/292 無界.md"
+  s_05d0bb45e6bb5a::t_52be4bf9d8dc29 1-96
+"docs-mcp-server/corpora/opnsense-zh-tw/293 Wireguard.md"
+  s_05d0bb45e6bb5a::t_42b1a1e383df9b 1-75
+"docs-mcp-server/corpora/opnsense-zh-tw/294 Acmeclient.md"
+  s_05d0bb45e6bb5a::t_751aec79cd9530 1-111
+"docs-mcp-server/corpora/opnsense-zh-tw/295 Apcupsd.md"
+  s_05d0bb45e6bb5a::t_c1ac748cfe98d7 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/296 節拍.md"
+  s_05d0bb45e6bb5a::t_1d8d4d4a8b2e96 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/297 綁定.md"
+  s_05d0bb45e6bb5a::t_29430861162970 1-102
+"docs-mcp-server/corpora/opnsense-zh-tw/298 球童.md"
+  s_05d0bb45e6bb5a::t_b0e63c9b57fb85 1-106
+"docs-mcp-server/corpora/opnsense-zh-tw/299 克羅尼.md"
+  s_05d0bb45e6bb5a::t_06282c11058dd5 1-43
+"docs-mcp-server/corpora/opnsense-zh-tw/30 商業版.md"
+  s_05d0bb45e6bb5a::t_9ecaecc7de7ef4 1-42
+"docs-mcp-server/corpora/opnsense-zh-tw/300 西卡普.md"
+  s_05d0bb45e6bb5a::t_e04b405aa21ed0 1-49
+"docs-mcp-server/corpora/opnsense-zh-tw/301 克拉馬夫.md"
+  s_05d0bb45e6bb5a::t_010280254927a4 1-56
+"docs-mcp-server/corpora/opnsense-zh-tw/302 收集.md"
+  s_05d0bb45e6bb5a::t_fd049d6e3aaacd 1-37
+"docs-mcp-server/corpora/opnsense-zh-tw/303 眾包.md"
+  s_05d0bb45e6bb5a::t_990a254379e675 1-106
+"docs-mcp-server/corpora/opnsense-zh-tw/305 DHCPv4.md"
+  s_05d0bb45e6bb5a::t_5e1b097bcf03b4 1-37
+"docs-mcp-server/corpora/opnsense-zh-tw/306 DHCP6.md"
+  s_05d0bb45e6bb5a::t_f432b8fb2b1eaf 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/309 DNS加密代理.md"
+  s_05d0bb45e6bb5a::t_df496df031024e 1-109
+"docs-mcp-server/corpora/opnsense-zh-tw/31 26.4系列.md"
+  s_05d0bb45e6bb5a::t_86901c7b175af9 1-1619
+"docs-mcp-server/corpora/opnsense-zh-tw/310 動態.md"
+  s_05d0bb45e6bb5a::t_6145962537dcae 1-54
+"docs-mcp-server/corpora/opnsense-zh-tw/311 自由半徑.md"
+  s_05d0bb45e6bb5a::t_f510263d6e9c9a 1-170
+"docs-mcp-server/corpora/opnsense-zh-tw/312 FTPP代理.md"
+  s_05d0bb45e6bb5a::t_85d0aaa03971cd 1-42
+"docs-mcp-server/corpora/opnsense-zh-tw/313 網格範例.md"
+  s_05d0bb45e6bb5a::t_ae796ff8b3345c 1-41
+"docs-mcp-server/corpora/opnsense-zh-tw/314 哈普羅西.md"
+  s_05d0bb45e6bb5a::t_4442c500f82be8 1-160
+"docs-mcp-server/corpora/opnsense-zh-tw/315 你好世界.md"
+  s_05d0bb45e6bb5a::t_a1de8293e7674e 1-36
+"docs-mcp-server/corpora/opnsense-zh-tw/316 探針.md"
+  s_05d0bb45e6bb5a::t_8ab2b3155982cd 1-40
+"docs-mcp-server/corpora/opnsense-zh-tw/317 阻抗.md"
+  s_05d0bb45e6bb5a::t_266f37e16a1b54 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/318 利爾德.md"
+  s_05d0bb45e6bb5a::t_f8d6157af3d71e 1-40
+"docs-mcp-server/corpora/opnsense-zh-tw/319 馬爾特雷爾.md"
+  s_05d0bb45e6bb5a::t_bf1f1dc6de00c7 1-67
+"docs-mcp-server/corpora/opnsense-zh-tw/32 25.10系列.md"
+  s_05d0bb45e6bb5a::t_7f8453ad7ff74c 1-1326
+"docs-mcp-server/corpora/opnsense-zh-tw/320 Mdnsrepeater.md"
+  s_05d0bb45e6bb5a::t_94769df48d2880 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/321 穆尼諾德.md"
+  s_05d0bb45e6bb5a::t_a11f8b6cbfa214 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/322 Ndpproxy.md"
+  s_05d0bb45e6bb5a::t_191620988703c3 1-43
+"docs-mcp-server/corpora/opnsense-zh-tw/323 ND代理.md"
+  s_05d0bb45e6bb5a::t_e7e032d6c28bce 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/324 Netbird.md"
+  s_05d0bb45e6bb5a::t_0e7a6476bbc37d 1-60
+"docs-mcp-server/corpora/opnsense-zh-tw/325 網路數據.md"
+  s_05d0bb45e6bb5a::t_167fb41ac17eef 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/326 Netsnmp.md"
+  s_05d0bb45e6bb5a::t_c75e80e72afab6 1-53
+"docs-mcp-server/corpora/opnsense-zh-tw/327 Nginx.md"
+  s_05d0bb45e6bb5a::t_c6cf1c95f9f973 1-168
+"docs-mcp-server/corpora/opnsense-zh-tw/328 Nodeexporter.md"
+  s_05d0bb45e6bb5a::t_3789567b20f8fb 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/329 NRPE.md"
+  s_05d0bb45e6bb5a::t_654c130b660ceb 1-54
+"docs-mcp-server/corpora/opnsense-zh-tw/33 25.4系列.md"
+  s_05d0bb45e6bb5a::t_6b09cce97d699d 1-1101
+"docs-mcp-server/corpora/opnsense-zh-tw/330 Ntopng.md"
+  s_05d0bb45e6bb5a::t_b7857e55fb6f85 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/331 堅果.md"
+  s_05d0bb45e6bb5a::t_4efa994429f4a5 1-45
+"docs-mcp-server/corpora/opnsense-zh-tw/332 Openconnect.md"
+  s_05d0bb45e6bb5a::t_da00ae64a85b42 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/333 Postfix.md"
+  s_05d0bb45e6bb5a::t_24d580bb66585b 1-168
+"docs-mcp-server/corpora/opnsense-zh-tw/334 代理人.md"
+  s_05d0bb45e6bb5a::t_bac1479d6ce016 1-99
+"docs-mcp-server/corpora/opnsense-zh-tw/335 代理商.md"
+  s_05d0bb45e6bb5a::t_183acc52df3af5 1-37
+"docs-mcp-server/corpora/opnsense-zh-tw/336 普佩塔特.md"
+  s_05d0bb45e6bb5a::t_f90dd95efcaa82 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/337 Qemuguestagent.md"
+  s_05d0bb45e6bb5a::t_ba46f08fae69d1 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/338 Qfeeds.md"
+  s_05d0bb45e6bb5a::t_331abd3bc75c3c 1-32
+"docs-mcp-server/corpora/opnsense-zh-tw/339 斑驢.md"
+  s_05d0bb45e6bb5a::t_5e8d4342593dec 1-243
+"docs-mcp-server/corpora/opnsense-zh-tw/34 24.10系列.md"
+  s_05d0bb45e6bb5a::t_e94852ed0044f1 1-1145
+"docs-mcp-server/corpora/opnsense-zh-tw/340 雷達代理.md"
+  s_05d0bb45e6bb5a::t_e2c739efd00ea4 1-114
+"docs-mcp-server/corpora/opnsense-zh-tw/341 Redis.md"
+  s_05d0bb45e6bb5a::t_fb6e7bd5d4d2b1 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/342 中繼.md"
+  s_05d0bb45e6bb5a::t_ca2157176305da 1-51
+"docs-mcp-server/corpora/opnsense-zh-tw/343 Rspamd.md"
+  s_05d0bb45e6bb5a::t_76b843f7dc2b4c 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/344 影子襪.md"
+  s_05d0bb45e6bb5a::t_78dac38b06fe89 1-58
+"docs-mcp-server/corpora/opnsense-zh-tw/345 Siproxd.md"
+  s_05d0bb45e6bb5a::t_c7b76d223a0006 1-67
+"docs-mcp-server/corpora/opnsense-zh-tw/346 聰明的.md"
+  s_05d0bb45e6bb5a::t_ef6ababa66342d 1-30
+"docs-mcp-server/corpora/opnsense-zh-tw/347 Softether.md"
+  s_05d0bb45e6bb5a::t_677c6c93f7c7fb 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/348 Sslh.md"
+  s_05d0bb45e6bb5a::t_db2fffdb0ef8c9 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/349 斯通內爾.md"
+  s_05d0bb45e6bb5a::t_59c6e7448e1037 1-45
+"docs-mcp-server/corpora/opnsense-zh-tw/35 24.4系列.md"
+  s_05d0bb45e6bb5a::t_f21f3034924cf6 1-863
+"docs-mcp-server/corpora/opnsense-zh-tw/350 尾鱗.md"
+  s_05d0bb45e6bb5a::t_c803fa707c021a 1-66
+"docs-mcp-server/corpora/opnsense-zh-tw/351 礦.md"
+  s_05d0bb45e6bb5a::t_0d029d38e2ce5a 1-54
+"docs-mcp-server/corpora/opnsense-zh-tw/352 電報.md"
+  s_05d0bb45e6bb5a::t_d07fdf758fb705 1-66
+"docs-mcp-server/corpora/opnsense-zh-tw/353 Tftp.md"
+  s_05d0bb45e6bb5a::t_ac35048309f48b 1-38
+"docs-mcp-server/corpora/opnsense-zh-tw/354 我有.md"
+  s_05d0bb45e6bb5a::t_f1a5100db7d07a 1-48
+"docs-mcp-server/corpora/opnsense-zh-tw/355 托爾.md"
+  s_05d0bb45e6bb5a::t_6f342a1f4a4d96 1-117
+"docs-mcp-server/corpora/opnsense-zh-tw/356 轉機伺服器.md"
+  s_05d0bb45e6bb5a::t_84f5719c5102cd 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/357 Udp廣播中繼.md"
+  s_05d0bb45e6bb5a::t_63d683bcb61f2a 1-48
+"docs-mcp-server/corpora/opnsense-zh-tw/358 Vnstat.md"
+  s_05d0bb45e6bb5a::t_16fbd4bfb02a20 1-43
+"docs-mcp-server/corpora/opnsense-zh-tw/359 瓦祖哈根特.md"
+  s_05d0bb45e6bb5a::t_2d171a407b3538 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/36 23.10系列.md"
+  s_05d0bb45e6bb5a::t_5188399c0ac773 1-1170
+"docs-mcp-server/corpora/opnsense-zh-tw/360 羊毛.md"
+  s_05d0bb45e6bb5a::t_326c76f0fb8a18 1-36
+"docs-mcp-server/corpora/opnsense-zh-tw/361 Zabbixagent.md"
+  s_05d0bb45e6bb5a::t_539e81f67336d5 1-50
+"docs-mcp-server/corpora/opnsense-zh-tw/362 Zabbix代理.md"
+  s_05d0bb45e6bb5a::t_044ae118ee6f0d 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/363 零層.md"
+  s_05d0bb45e6bb5a::t_ef3a58090b9ad6 1-44
+"docs-mcp-server/corpora/opnsense-zh-tw/364 OPNBECore.md"
+  s_05d0bb45e6bb5a::t_53c79eea93851f 1-134
+"docs-mcp-server/corpora/opnsense-zh-tw/365 範例.md"
+  s_05d0bb45e6bb5a::t_ec348b30fae66e 1-24
+"docs-mcp-server/corpora/opnsense-zh-tw/366 Hello world 模組和插件.md"
+  s_05d0bb45e6bb5a::t_120b2af6a1b936 1-811
+"docs-mcp-server/corpora/opnsense-zh-tw/367 使用網格模組和插件.md"
+  s_05d0bb45e6bb5a::t_18b23790e1b51a 1-301
+"docs-mcp-server/corpora/opnsense-zh-tw/368 API啟用標準服務.md"
+  s_05d0bb45e6bb5a::t_636544aef65d39 1-141
+"docs-mcp-server/corpora/opnsense-zh-tw/369 操作指南.md"
+  s_05d0bb45e6bb5a::t_d2fcc6a0214ce9 1-24
+"docs-mcp-server/corpora/opnsense-zh-tw/37 23.4系列.md"
+  s_05d0bb45e6bb5a::t_ee1c88ef5f5565 1-982
+"docs-mcp-server/corpora/opnsense-zh-tw/370 使用API.md"
+  s_05d0bb45e6bb5a::t_e3a6a6128a881c 1-198
+"docs-mcp-server/corpora/opnsense-zh-tw/371 核心效能分析調試.md"
+  s_05d0bb45e6bb5a::t_9f6324c594cc79 1-419
+"docs-mcp-server/corpora/opnsense-zh-tw/372 遠端調試內核.md"
+  s_05d0bb45e6bb5a::t_869be7b416a80d 1-86
+"docs-mcp-server/corpora/opnsense-zh-tw/373 專案關係.md"
+  s_05d0bb45e6bb5a::t_e40b412d47007a 1-27
+"docs-mcp-server/corpora/opnsense-zh-tw/374 決定 BV.md"
+  s_05d0bb45e6bb5a::t_08bd87e2891403 1-44
+"docs-mcp-server/corpora/opnsense-zh-tw/375 FreeBSD®.md"
+  s_05d0bb45e6bb5a::t_9a019c9492b75d 1-39
+"docs-mcp-server/corpora/opnsense-zh-tw/376 門牆.md"
+  s_05d0bb45e6bb5a::t_5ec5a2dd60ab72 1-99
+"docs-mcp-server/corpora/opnsense-zh-tw/377 開源計劃.md"
+  s_05d0bb45e6bb5a::t_6ddd150db23984 1-42
+"docs-mcp-server/corpora/opnsense-zh-tw/378 法律聲明.md"
+  s_05d0bb45e6bb5a::t_8c47fdc4095b7e 1-96
+"docs-mcp-server/corpora/opnsense-zh-tw/379 支援選項.md"
+  s_05d0bb45e6bb5a::t_b5fb97036d7b12 1-227
+"docs-mcp-server/corpora/opnsense-zh-tw/38 22.10系列.md"
+  s_05d0bb45e6bb5a::t_01063504d7bd55 1-914
+"docs-mcp-server/corpora/opnsense-zh-tw/380 貢獻.md"
+  s_05d0bb45e6bb5a::t_29a0e0911381cf 1-188
+"docs-mcp-server/corpora/opnsense-zh-tw/382 關於叉子.md"
+  s_05d0bb45e6bb5a::t_446f31e0734fa7 1-95
+"docs-mcp-server/corpora/opnsense-zh-tw/39 22.4系列.md"
+  s_05d0bb45e6bb5a::t_2e8a52ed81500c 1-982
+"docs-mcp-server/corpora/opnsense-zh-tw/40 21.10系列.md"
+  s_05d0bb45e6bb5a::t_ac5bc1b4564a78 1-774
+"docs-mcp-server/corpora/opnsense-zh-tw/41 21.4系列.md"
+  s_05d0bb45e6bb5a::t_6626458a323509 1-979
+"docs-mcp-server/corpora/opnsense-zh-tw/42 20.7《傳奇雄獅》系列.md"
+  s_05d0bb45e6bb5a::t_ce3951b5d49dba 1-892
+"docs-mcp-server/corpora/opnsense-zh-tw/43 20.1《敏銳翠鳥》系列.md"
+  s_05d0bb45e6bb5a::t_e0dce4387f2268 1-891
+"docs-mcp-server/corpora/opnsense-zh-tw/44 19.7「爵士捷豹」系列.md"
+  s_05d0bb45e6bb5a::t_3a4fb280509dfa 1-1160
+"docs-mcp-server/corpora/opnsense-zh-tw/45 19.1「鼓舞鬣蜥」系列.md"
+  s_05d0bb45e6bb5a::t_840a3eca75a333 1-1384
+"docs-mcp-server/corpora/opnsense-zh-tw/46 商業版.md"
+  s_05d0bb45e6bb5a::t_68fa8a186c1b80 1-56
+"docs-mcp-server/corpora/opnsense-zh-tw/47 中央管理.md"
+  s_05d0bb45e6bb5a::t_4120f3a7564ebd 1-477
+"docs-mcp-server/corpora/opnsense-zh-tw/48 權威DNS.md"
+  s_05d0bb45e6bb5a::t_c53befe044a80c 1-730
+"docs-mcp-server/corpora/opnsense-zh-tw/49 網路應用防火牆.md"
+  s_05d0bb45e6bb5a::t_00bb4090b4f367 1-664
+"docs-mcp-server/corpora/opnsense-zh-tw/50 OpenID 連接.md"
+  s_05d0bb45e6bb5a::t_b9a942e0421a6d 1-196
+"docs-mcp-server/corpora/opnsense-zh-tw/51 使用者入口網站.md"
+  s_05d0bb45e6bb5a::t_c0a48f4b15c5ca 1-317
+"docs-mcp-server/corpora/opnsense-zh-tw/52 預定職位.md"
+  s_05d0bb45e6bb5a::t_1fb47b6e51349d 1-34
+"docs-mcp-server/corpora/opnsense-zh-tw/53 安裝和設定.md"
+  s_05d0bb45e6bb5a::t_1056048e71d58a 1-40
+"docs-mcp-server/corpora/opnsense-zh-tw/54 硬體尺寸和設置.md"
+  s_05d0bb45e6bb5a::t_03fc42b25d9e60 1-137
+"docs-mcp-server/corpora/opnsense-zh-tw/55 初始安裝和配置.md"
+  s_05d0bb45e6bb5a::t_28de2e3008100a 1-440
+"docs-mcp-server/corpora/opnsense-zh-tw/56 虛擬和基於雲端的安裝.md"
+  s_05d0bb45e6bb5a::t_fefa564eadaa79 1-127
+"docs-mcp-server/corpora/opnsense-zh-tw/57 更新.md"
+  s_05d0bb45e6bb5a::t_41c871a50ee9cc 1-55
+"docs-mcp-server/corpora/opnsense-zh-tw/58 包含的軟體.md"
+  s_05d0bb45e6bb5a::t_5bc9d6971879a0 1-92
+"docs-mcp-server/corpora/opnsense-zh-tw/59 更新日誌.md"
+  s_05d0bb45e6bb5a::t_618393cac7c883 1-51
+"docs-mcp-server/corpora/opnsense-zh-tw/60 序列存取.md"
+  s_05d0bb45e6bb5a::t_ea5b306f623fa4 1-83
+"docs-mcp-server/corpora/opnsense-zh-tw/61 安裝 OPNsense AWS鏡像.md"
+  s_05d0bb45e6bb5a::t_36a42bb285f1fd 1-143
+"docs-mcp-server/corpora/opnsense-zh-tw/62 安裝 OPNsense OVA鏡像.md"
+  s_05d0bb45e6bb5a::t_e394e9bf756974 1-46
+"docs-mcp-server/corpora/opnsense-zh-tw/63 OPNsense Azure虛擬設備.md"
+  s_05d0bb45e6bb5a::t_386a904069cc05 1-72
+"docs-mcp-server/corpora/opnsense-zh-tw/64 官方硬體.md"
+  s_05d0bb45e6bb5a::t_62c85df9effc42 1-31
+"docs-mcp-server/corpora/opnsense-zh-tw/65 快速入門.md"
+  s_05d0bb45e6bb5a::t_6e21e33d56076c 1-90
+"docs-mcp-server/corpora/opnsense-zh-tw/66 預設配置.md"
+  s_05d0bb45e6bb5a::t_a0ab25b72341a3 1-53
+"docs-mcp-server/corpora/opnsense-zh-tw/67 串行控制台連接.md"
+  s_05d0bb45e6bb5a::t_8a0b0a26b8b54a 1-60
+"docs-mcp-server/corpora/opnsense-zh-tw/68 BIOS更新設定.md"
+  s_05d0bb45e6bb5a::t_2ebe9a6bc09d57 1-163
+"docs-mcp-server/corpora/opnsense-zh-tw/69 SFP (+) 相容性.md"
+  s_05d0bb45e6bb5a::t_af50b1d27a32f5 1-215
+"docs-mcp-server/corpora/opnsense-zh-tw/70 支援.md"
+  s_05d0bb45e6bb5a::t_5501e9b37e3f92 1-91
+"docs-mcp-server/corpora/opnsense-zh-tw/71 大廳.md"
+  s_05d0bb45e6bb5a::t_28521e91ab9db8 1-31
+"docs-mcp-server/corpora/opnsense-zh-tw/72 通用使用者介面.md"
+  s_05d0bb45e6bb5a::t_01ca94ae108485 1-207
+"docs-mcp-server/corpora/opnsense-zh-tw/73 儀表板.md"
+  s_05d0bb45e6bb5a::t_ae12b60fb161c6 1-75
+"docs-mcp-server/corpora/opnsense-zh-tw/74 密碼.md"
+  s_05d0bb45e6bb5a::t_3ad66cb23e4484 1-28
+"docs-mcp-server/corpora/opnsense-zh-tw/75 OPNsense 工具.md"
+  s_05d0bb45e6bb5a::t_772646812f7ffb 1-96
+"docs-mcp-server/corpora/opnsense-zh-tw/76 報告.md"
+  s_05d0bb45e6bb5a::t_1fd62dd8145cd2 1-37
+"docs-mcp-server/corpora/opnsense-zh-tw/77 系統健康狀況和輪詢數據.md"
+  s_05d0bb45e6bb5a::t_bb4bb08afc0914 1-140
+"docs-mcp-server/corpora/opnsense-zh-tw/78 使用 Insight - Netflow 分析器.md"
+  s_05d0bb45e6bb5a::t_2c21e1ef4b4dbf 1-119
+"docs-mcp-server/corpora/opnsense-zh-tw/79 Netflow 匯出與分析.md"
+  s_05d0bb45e6bb5a::t_4940f3bca8fc92 1-105
+"docs-mcp-server/corpora/opnsense-zh-tw/80 報告設定.md"
+  s_05d0bb45e6bb5a::t_9886a2da8da8bb 1-28
+"docs-mcp-server/corpora/opnsense-zh-tw/81 交通報告.md"
+  s_05d0bb45e6bb5a::t_a966133ab4bf3a 1-42
+"docs-mcp-server/corpora/opnsense-zh-tw/82 報告 Unbound DNS.md"
+  s_05d0bb45e6bb5a::t_412de16f97c198 1-82
+"docs-mcp-server/corpora/opnsense-zh-tw/83 設定 Netflow 導出器.md"
+  s_05d0bb45e6bb5a::t_c5dcef2f44e330 1-34
+"docs-mcp-server/corpora/opnsense-zh-tw/84 系統.md"
+  s_05d0bb45e6bb5a::t_df6d977ce097a9 1-52
+"docs-mcp-server/corpora/opnsense-zh-tw/85 存取用戶管理.md"
+  s_05d0bb45e6bb5a::t_3e89ce716bd8d6 1-154
+"docs-mcp-server/corpora/opnsense-zh-tw/86 本地用戶和群組.md"
+  s_05d0bb45e6bb5a::t_f25815a2079f11 1-92
+"docs-mcp-server/corpora/opnsense-zh-tw/87 訪問伺服器LDAP.md"
+  s_05d0bb45e6bb5a::t_813e0c53d98759 1-132
+"docs-mcp-server/corpora/opnsense-zh-tw/88 訪問伺服器 Radius.md"
+  s_05d0bb45e6bb5a::t_4d120da2ef1721 1-49
+"docs-mcp-server/corpora/opnsense-zh-tw/89 雙重身份驗證.md"
+  s_05d0bb45e6bb5a::t_435225ce2b0c0b 1-55
+"docs-mcp-server/corpora/opnsense-zh-tw/90 配置.md"
+  s_05d0bb45e6bb5a::t_7e7bd3eae1f254 1-78
+"docs-mcp-server/corpora/opnsense-zh-tw/91 透過安全副本（sftp）進行備份.md"
+  s_05d0bb45e6bb5a::t_bda501ed89eb8d 1-96
+"docs-mcp-server/corpora/opnsense-zh-tw/92 韌體.md"
+  s_05d0bb45e6bb5a::t_ebd35017a2bbf2 1-115
+"docs-mcp-server/corpora/opnsense-zh-tw/93 閘道.md"
+  s_05d0bb45e6bb5a::t_2745ccb5fedb03 1-100
+"docs-mcp-server/corpora/opnsense-zh-tw/94 網關組 Multi WAN.md"
+  s_05d0bb45e6bb5a::t_0e98d0d4c7a8a7 1-68
+"docs-mcp-server/corpora/opnsense-zh-tw/95 多色WAN.md"
+  s_05d0bb45e6bb5a::t_2409d81a666939 1-325
+"docs-mcp-server/corpora/opnsense-zh-tw/96 高可用性.md"
+  s_05d0bb45e6bb5a::t_92a85e942e9b72 1-100
+"docs-mcp-server/corpora/opnsense-zh-tw/97 路線.md"
+  s_05d0bb45e6bb5a::t_eed7c4fb038870 1-97
+"docs-mcp-server/corpora/opnsense-zh-tw/98 設定.md"
+  s_05d0bb45e6bb5a::t_56976567382f4e 1-275
+"docs-mcp-server/corpora/opnsense-zh-tw/99 快照.md"
+  s_05d0bb45e6bb5a::t_1d602afe2dafa4 1-182
+docs-mcp-server/corpora/opnsense-zh-tw/LICENSE
+  s_05d0bb45e6bb5a::t_1aa47e2b441185 1-45
+docs-mcp-server/corpora/opnsense-zh-tw/corpus.json
+  s_05d0bb45e6bb5a::t_106414816e5584 1-9
+docs-mcp-server/corpora/opnsense-zh-tw/sources.json
+  s_05d0bb45e6bb5a::t_f5ead3a4203923 1-380
+docs-mcp-server/package.json
+  s_05d0bb45e6bb5a::t_43f4891e593a24 46
+docs-mcp-server/tests/opnsense-en.test.ts
+  s_05d0bb45e6bb5a::t_d3510f7548422b 1-82
+docs-mcp-server/tests/opnsense-zh-tw.test.ts
+  s_05d0bb45e6bb5a::t_548eb4127fbdb1 1-82
+mcpjungle/README.md
+  s_05d0bb45e6bb5a::t_d28b40d4f40862 46,83,92
+mcpjungle/docker-compose.dockhand.yml
+  s_05d0bb45e6bb5a::t_94d32da2144eda 36
+mcpjungle/register.sh
+  s_05d0bb45e6bb5a::t_11c12f251c4ee1 9,27
+mcpjungle/registrar.sh
+  s_05d0bb45e6bb5a::t_c270b980adba34 15
+mcpjungle/servers/docs-all.json
+  s_05d0bb45e6bb5a::t_73fbe556ac297a 4
+mcpjungle/servers/opnsense-en.json
+  s_05d0bb45e6bb5a::t_9efb892aa4de7d 1-6
+mcpjungle/servers/opnsense-zh-tw.json
+  s_05d0bb45e6bb5a::t_6a934ed56bd30e 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b7a5efe8e1bf97b94b2f957d7069ee2e7b0d5361",
+  "prompts": {},
+  "sessions": {
+    "s_05d0bb45e6bb5a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0e473c5a-f5f9-451c-9c67-72561974182d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
