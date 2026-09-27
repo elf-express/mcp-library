@@ -79,7 +79,7 @@ npm run cypress                      # cypress open
 ### docs-mcp-server:多語料機制(`src/corpus.ts` + `src/index.ts`)
 
 - 一個**語料 = `corpora/<id>/` 下一組 markdown**(可含分類子目錄)+ 一個選填 `corpus.json`(`title` / `description` / `capabilities`)。能力旗標:`cheatsheet`、`examples`(語料附 `examples/` 程式碼)、`symbol`(從標題建符號索引)。
-- **新增一本書不改任何 `.ts`**:丟資料夾 + `corpus.json`,重啟(本機)或重新部署(雲端)即出現在 `docs_list_corpora`。
+- **新增一本書不改任何 `.ts`**:丟資料夾 + `corpus.json`,重啟(本機)或重新部署(雲端)即出現在 `docs_list_corpora`。命名(`<書名>-<語言>`)、目錄樹、`corpus.json` 欄位(`book`/`language`/`source`/…)與內容規則見 [`docs-mcp-server/corpora/README.md`](docs-mcp-server/corpora/README.md)。
 - 工具**固定 8 個且全唯讀**,**`corpus` 是參數不是新工具**(領域再多、工具數不變);**capability-gated**——工具對所有語料都「在」,只對宣告該能力的語料生效,其餘回友善提示:
   - 無條件(所有語料):`docs_list_corpora`(探索入口)/ `docs_search` / `docs_read` / `docs_outline`(結構大綱)
   - `cheatsheet` 能力:`docs_cheatsheet`(抽速查表段落)

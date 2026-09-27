@@ -79,6 +79,8 @@
 
 ## 新增一個語料(疊加)
 
+> 命名規則、目錄樹、`corpus.json` 欄位與內容規則的權威版本:[`corpora/README.md`](corpora/README.md);完整流程見團隊 skill `elf-mcp-knowledge`。
+
 1. 在 `corpora/` 下建一個資料夾,名稱即語料 id,格式 `<書名>-<語言>`(例:`corpora/furion-zh-tw/`)。
 2. 把該領域的 `.md` 放進去(可用分類子目錄,如 `指南/快速上手.md`)。
 3. 放一個 `corpus.json` 描述它:
