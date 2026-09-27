@@ -1,0 +1,9 @@
+{
+  "book": "opnsense",
+  "language": "zh-TW",
+  "source": "https://docs.opnsense.org",
+  "license": "BSD-2-Clause(OPNsense 官方文件,https://github.com/opnsense/docs/blob/master/LICENSE;全文見 LICENSE)。繁中為機器翻譯衍生作品",
+  "title": "OPNsense 說明文件(繁體中文)",
+  "description": "OPNsense 防火牆官方文件繁體中文機器翻譯版(docs.opnsense.org,377 篇,2026-09-26 擷取;Google 翻譯,未經人工校稿,術語以 opnsense-en 原文為準):安裝、介面、防火牆規則/NAT、VPN(IPsec/OpenVPN/WireGuard)、路由、服務、外掛、疑難排解、版本說明。檔案扁平、以編號排序;「000 目錄.md」為章節目錄。僅含文字:圖片連結(../images/…)與指向已排除「000 全書」合併檔的連結刻意保留為失效連結。",
+  "capabilities": { "cheatsheet": false, "examples": false, "symbol": false }
+}

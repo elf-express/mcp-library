@@ -1,0 +1,6 @@
+{
+  "name": "opnsense-en",
+  "transport": "streamable_http",
+  "description": "OPNsense Documentation:OPNsense 防火牆官方文件英文原文 377 篇(安裝、介面、防火牆規則/NAT、VPN、路由、服務、外掛、疑難排解)(docs_list_corpora / docs_search / docs_read / docs_outline)",
+  "url": "http://docs-mcp-server:5690/mcp/opnsense-en"
+}

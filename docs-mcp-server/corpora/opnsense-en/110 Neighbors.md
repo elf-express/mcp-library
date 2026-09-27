@@ -1,0 +1,118 @@
+---
+title: "Neighbors"
+source: "https://docs.opnsense.org/manual/neighbors.html"
+chapter: ["Interfaces"]
+order: 110
+lang: "en"
+translated_by: "original"
+captured: "2026-09-26T11:32:36.348Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Settings](<109 Settings.md>)　｜　[下一篇：Virtual IPs ➡](<111 Virtual IPs.md>)
+
+# Neighbors
+
+> 章節：[Interfaces](<000 目錄.md#c-19>)
+
+## [Neighbors](#id1)
+
+Index
+
+-   [Neighbors](#neighbors)
+    
+    -   [Overview](#overview)
+        
+    -   [Automatic Discovery](#automatic-discovery)
+        
+        -   [Settings](#settings)
+            
+        -   [Discovered Hosts](#discovered-hosts)
+            
+        -   [Discovery Log](#discovery-log)
+            
+    -   [Static Assignments](#static-assignments)
+        
+
+## [Overview](#id2)
+
+Neighbors are hosts with a hardware address that are connected to the same OSI layer 2 broadcast domain.
+
+Hosts maintain their own local neighbor table, independent of other hosts in the same broadcast domain.
+
+Whenever a host sends a packet to an IP address, it first tries to resolve if the target can be found in the same broadcast domain. If the destination is not on-link, the packet will be sent to the default gateway.
+
+A central host like a firewall will automatically learn most neighbors since it will be the default gateway.
+
+## [Automatic Discovery](#id3)
+
+The host discovery service offers a way to discover most neighbors on the network via their ARP and NDP messages. When the daemon is activated, it builds a database of known neighbors and logs when IP address to MAC mappings change.
+
+This can be useful to see how volatile a network is and if unknown new hosts appear.
+
+Running the daemon improves some services that currently directly consume the ARP and NDP tables. The database has a persistent state, can be queried faster, and for IPv6 will have a better picture of RFC 4941 addresses.
+
+### [Settings](#id4)
+
+Settings can be found in Interfaces ‣ Neighbors ‣ Automatic Discovery
+
+---
+
+|   |   |
+| --- | --- |
+| **Enable** | Enable the “hostwatch” service to discover network hosts. |
+| **Interfaces** | Limit host discovery to the interfaces selected here. |
+| **Promiscuous mode** | Listening for network packets not targeted directly at us. |
+| **Verbose logging** | Verbosity mode, send more detailed information to the log. |
+| **Ignore networks** | Ignore the selected networks. |
+
+Attention
+
+The service will only listen on ethernet interfaces. Tunnel, loopback and similar interfaces are skipped since there is no ARP/NDP traffic.
+
+Tip
+
+Promiscuous mode is rarely needed. The firewall is in a central position and routes traffic between networks. The setting makes sense in a network where it would only be an observer.
+
+### [Discovered Hosts](#id5)
+
+If the host discovery service is enabled, you can see the contents of the database in this table. Otherwise, it will show the current contents of the kernel ARP and NDP tables.
+
+An interesting metric can be the “Last Seen” column, which shows hosts that have recently joined or not seen for a while.
+
+### [Discovery Log](#id6)
+
+In the discovery log, you can find entries for new stations (hosts) and movements.
+
+These logs have a simple structure, and could be consumed by an external syslog server for further processing (e.g., alerts for new stations).
+
+If the log is busy with a lot of movements that look like flapping, something could be wrong in your network. Most common would be MAC address duplication, or multiple hosts fighting for the same IP address.
+
+## [Static Assignments](#id7)
+
+This section allows the definition of static IPv4/IPv6 to MAC address mappings on your network.
+
+IPv4 entries will be saved into the ARP table, IPv6 into the NDP table.
+
+These tables define which hardware address is associated with which IP address. This can be practical when ARP/NDP messages are not being received or we want to force the IP/MAC combination for specific clients.
+
+When opening the page it will show a grid containing all static entries defined:
+
+---
+
+|   |   |
+| --- | --- |
+| **Ether Address** | Hardware MAC address of the client (format xx:xx:xx:xx:xx:xx) |
+| **IP address** | IP address to assign to the provided MAC address, which will either end up in the ARP (IPv4) or NDP (IPv6) table |
+| **Description** | Description for internal use |
+
+Attention
+
+Some entries can be from other sources like DHCP and cannot be edited.
+
+Tip
+
+To analyse the current contents of the ARP or NDP tables, use the interface diagnostics menu detailed in the [diagnostics](<114 Diagnostics.md>) document.
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Settings](<109 Settings.md>)　｜　[下一篇：Virtual IPs ➡](<111 Virtual IPs.md>)

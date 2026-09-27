@@ -1,0 +1,9 @@
+{
+  "book": "opnsense",
+  "language": "en",
+  "source": "https://docs.opnsense.org",
+  "license": "BSD-2-Clause (OPNsense documentation, https://github.com/opnsense/docs/blob/master/LICENSE; full text in LICENSE)",
+  "title": "OPNsense Documentation",
+  "description": "Official OPNsense firewall documentation (docs.opnsense.org, English original, 377 pages captured 2026-09-26): installation, interfaces, firewall rules/NAT, VPN (IPsec/OpenVPN/WireGuard), routing, services, plugins, troubleshooting, release notes. Flat, numbered files; '000 目錄.md' is the chapter table of contents. Text only: image links (../images/…) and the link to the excluded combined '000 全書' file are intentionally dangling.",
+  "capabilities": { "cheatsheet": false, "examples": false, "symbol": false }
+}

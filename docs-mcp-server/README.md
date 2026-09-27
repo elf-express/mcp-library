@@ -7,7 +7,7 @@
 - **stdio**:本機用,Claude Desktop 以子行程啟動。
 - **http**(本專案重點):Streamable HTTP,可部署到雲端 / Docker,遠端連接。
 
-種子語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
+語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`opnsense-en`(378 篇)、`opnsense-zh-tw`(378 篇,機器翻譯),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
 
 ## 安裝(npx 一行裝,本機 stdio)
 
@@ -24,7 +24,7 @@
 }
 ```
 
-重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` 兩本(共 207 篇)。
+重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` + `opnsense-en` + `opnsense-zh-tw` 四個語料(共 963 篇)。
 
 | AI 助手 | 設定檔 |
 |---|---|
@@ -121,7 +121,7 @@ TRANSPORT=http npm start          # 本機跑 HTTP(預設 5690)
 DOCS_SCOPE=sqlsugar-zh-tw npm run dev   # stdio 鎖定單一語料
 ```
 
-健康檢查:`curl http://localhost:5690/health` → `{"status":"ok","corpora":2,"docs":207}`
+健康檢查:`curl http://localhost:5690/health` → `{"status":"ok","corpora":4,"docs":963}`
 
 ## 二、本機 Docker 測試
 

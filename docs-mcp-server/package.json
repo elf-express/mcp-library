@@ -43,6 +43,7 @@
     "docs",
     "sqlsugar",
     "fcdesigner",
+    "opnsense",
     "claude"
   ],
   "dependencies": {

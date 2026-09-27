@@ -6,7 +6,7 @@
 
 | 子目錄 | 角色 | 說明 |
 | --- | --- | --- |
-| [`docs-mcp-server/`](./docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133);新增書 = 丟資料夾 + `corpus.json` |
+| [`docs-mcp-server/`](./docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133 + `opnsense-en` 378 + `opnsense-zh-tw` 378);新增書 = 丟資料夾 + `corpus.json` |
 | [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
 | [`shared-db/`](./shared-db) | (選用)內建 Postgres | 預設 DB 走**外部 IP**、用不到這個;想 stack 內建一顆 DB 才用 |
 | [`sqlsugar-mcp/`](./sqlsugar-mcp/sqlsugar-mcp-server) · [`fc-designer-mcp/`](./fc-designer-mcp) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
@@ -23,7 +23,7 @@ docker compose up -d --build
 ```
 
 * 起來的容器:`mcpjungle-server`(:18800)+ `docs-mcp-server` + 一次性 registrar;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
-* registrar 自動把 5 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
+* registrar 自動把 7 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `opnsense-en` / `opnsense-zh-tw` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**(實測時為 5 個,尚未含 opnsense)。
 * `MCPJUNGLE_DATABASE_URL` 的 host 用你 DB 的 **IP**(例 `192.168.25.100:15432`),**不是**容器名。
 * 用戶端連 `http://<host>:18800/mcp`(全部)或 `http://<host>:18800/mcp/<corpus>`。
 

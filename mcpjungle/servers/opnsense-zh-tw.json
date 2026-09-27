@@ -1,0 +1,6 @@
+{
+  "name": "opnsense-zh-tw",
+  "transport": "streamable_http",
+  "description": "OPNsense 說明文件(繁體中文):OPNsense 防火牆官方文件繁中機器翻譯 377 篇,術語以 opnsense-en 為準(docs_list_corpora / docs_search / docs_read / docs_outline)",
+  "url": "http://docs-mcp-server:5690/mcp/opnsense-zh-tw"
+}
