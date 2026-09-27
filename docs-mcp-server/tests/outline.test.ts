@@ -8,14 +8,14 @@ describe("doOutline", () => {
     const out = doOutline(undefined, undefined, false);
     expect(out).toMatch(/docs_list_corpora/);
   });
-  it("列出 fc 的分類與篇名(預設不展開標題)", () => {
-    const out = doOutline("fc", undefined, false);
+  it("列出 fc-zh-tw 的分類與篇名(預設不展開標題)", () => {
+    const out = doOutline("fc-zh-tw", undefined, false);
     expect(out).toMatch(/開發文檔/);
     expect(out).toMatch(/11表单 API/);
     expect(out).not.toMatch(/^### /m); // headings=false 不展開篇內標題
   });
   it("path 過濾只剩該分類", () => {
-    const out = doOutline("fc", "二次開發", false);
+    const out = doOutline("fc-zh-tw", "二次開發", false);
     expect(out).toMatch(/二次開發/);
     expect(out).not.toMatch(/開發文檔/);
   });

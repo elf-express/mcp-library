@@ -2,8 +2,8 @@
  * list-corpora.test.ts — 能力標註 + 可用領域工具提示測試
  *
  * 驗證 doListCorpora() 輸出:
- *   fc (symbol:true)           — 標題含「符號查」badge,有 docs_symbol / docs_outline 提示
- *   sqlsugar (cheatsheet+examples) — 標題含「速查表」「代碼範例」badges,有 docs_code_search / docs_outline 提示
+ *   fc-zh-tw (symbol:true)     — 標題含「符號查」badge,有 docs_symbol / docs_outline 提示
+ *   sqlsugar-zh-tw (cheatsheet+examples) — 標題含「速查表」「代碼範例」badges,有 docs_code_search / docs_outline 提示
  *   所有語料                    — 有 docs_outline 提示
  */
 
@@ -25,23 +25,23 @@ function write(rel: string, content: string) {
 beforeAll(() => {
   root = fs.mkdtempSync(path.join(os.tmpdir(), "docs-list-corpora-"));
 
-  // fc: symbol only
-  write("fc/corpus.json", JSON.stringify({
+  // fc-zh-tw: symbol only
+  write("fc-zh-tw/corpus.json", JSON.stringify({
     title: "FcDesigner Pro",
     description: "fc 描述",
     capabilities: { cheatsheet: false, symbol: true },
   }));
-  write("fc/intro.md", "# 介紹\n\n## API方法\n\n說明\n");
+  write("fc-zh-tw/intro.md", "# 介紹\n\n## API方法\n\n說明\n");
 
-  // sqlsugar: cheatsheet + examples
-  write("sqlsugar/corpus.json", JSON.stringify({
+  // sqlsugar-zh-tw: cheatsheet + examples
+  write("sqlsugar-zh-tw/corpus.json", JSON.stringify({
     title: "SqlSugar ORM",
     description: "sqlsugar 描述",
     capabilities: { cheatsheet: true, examples: true },
   }));
-  write("sqlsugar/query.md", "# 查詢\n\n## 速查表\n\n| 方法 | 說明 |\n| --- | --- |\n| Query | 查 |\n");
+  write("sqlsugar-zh-tw/query.md", "# 查詢\n\n## 速查表\n\n| 方法 | 說明 |\n| --- | --- |\n| Query | 查 |\n");
   // 建一個 examples/ 資料夾讓語料有效
-  write("sqlsugar/examples/Demo.cs", "// Demo\n");
+  write("sqlsugar-zh-tw/examples/Demo.cs", "// Demo\n");
 
   process.env.DOCS_CORPORA_DIR = root;
   _clearCaches();
@@ -59,28 +59,28 @@ afterAll(() => {
 describe("doListCorpora — 能力 badges", () => {
   it("fc(symbol=true) 標題含「符號查」badge", () => {
     const r = doListCorpora();
-    // fc 的標題行要有「· 符號查」
+    // fc-zh-tw 的標題行要有「· 符號查」
     expect(r).toContain("· 符號查");
   });
 
   it("fc(symbol=true) 標題不含「速查表」或「代碼範例」badge", () => {
     const r = doListCorpora();
-    // 取出 fc 區塊(## fc 到下一個 ## 之前)來驗證
-    const fcBlock = extractBlock(r, "## fc");
+    // 取出 fc-zh-tw 區塊(## fc-zh-tw 到下一個 ## 之前)來驗證
+    const fcBlock = extractBlock(r, "## fc-zh-tw");
     expect(fcBlock).not.toContain("速查表");
     expect(fcBlock).not.toContain("代碼範例");
   });
 
   it("sqlsugar(cheatsheet+examples) 標題含「速查表」與「代碼範例」badges", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## sqlsugar");
+    const block = extractBlock(r, "## sqlsugar-zh-tw");
     expect(block).toContain("速查表");
     expect(block).toContain("代碼範例");
   });
 
   it("sqlsugar 標題不含「符號查」badge", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## sqlsugar");
+    const block = extractBlock(r, "## sqlsugar-zh-tw");
     expect(block).not.toContain("符號查");
   });
 });
@@ -88,39 +88,39 @@ describe("doListCorpora — 能力 badges", () => {
 describe("doListCorpora — 領域工具提示(所有語料都有 docs_outline)", () => {
   it("fc 區塊包含 docs_outline 提示", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## fc");
-    expect(block).toContain('docs_outline(corpus="fc"');
+    const block = extractBlock(r, "## fc-zh-tw");
+    expect(block).toContain('docs_outline(corpus="fc-zh-tw"');
   });
 
   it("sqlsugar 區塊包含 docs_outline 提示", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## sqlsugar");
-    expect(block).toContain('docs_outline(corpus="sqlsugar"');
+    const block = extractBlock(r, "## sqlsugar-zh-tw");
+    expect(block).toContain('docs_outline(corpus="sqlsugar-zh-tw"');
   });
 });
 
 describe("doListCorpora — 領域工具提示(能力相關工具)", () => {
   it("fc(symbol=true) 區塊含 docs_symbol 提示", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## fc");
-    expect(block).toContain('docs_symbol(corpus="fc"');
+    const block = extractBlock(r, "## fc-zh-tw");
+    expect(block).toContain('docs_symbol(corpus="fc-zh-tw"');
   });
 
   it("fc(symbol=true) 區塊不含 docs_code_search 提示", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## fc");
+    const block = extractBlock(r, "## fc-zh-tw");
     expect(block).not.toContain("docs_code_search");
   });
 
   it("sqlsugar(examples=true) 區塊含 docs_code_search 提示", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## sqlsugar");
-    expect(block).toContain('docs_code_search(corpus="sqlsugar"');
+    const block = extractBlock(r, "## sqlsugar-zh-tw");
+    expect(block).toContain('docs_code_search(corpus="sqlsugar-zh-tw"');
   });
 
   it("sqlsugar(examples=true) 區塊不含 docs_symbol 提示", () => {
     const r = doListCorpora();
-    const block = extractBlock(r, "## sqlsugar");
+    const block = extractBlock(r, "## sqlsugar-zh-tw");
     expect(block).not.toContain("docs_symbol");
   });
 });

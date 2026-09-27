@@ -33,7 +33,7 @@ services:
     environment:
       REGISTRY_URL: ${REGISTRY_URL:-http://mcpjungle-server:8080}
       # 預設只註冊兩本書(你現有 gateway 多半已有 filesystem/fetch 等);要加就改清單
-      REGISTER_LIST: ${REGISTER_LIST:-sqlsugar fc}
+      REGISTER_LIST: ${REGISTER_LIST:-sqlsugar-zh-tw fc-zh-tw}
     networks: [gateway]
     restart: "no"
 

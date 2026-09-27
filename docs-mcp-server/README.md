@@ -3,11 +3,11 @@
 一個 MCP server,**掛多個文檔語料(corpus)**,讓 Claude(或任何 MCP 用戶端)搜尋、閱讀。
 新增一個領域 = 在 `corpora/` 丟一個資料夾 + 一個 `corpus.json`,**不必改任何程式碼**。
 
-- **一份部署、多本書**:工具數恆為 4(語料是「參數」不是「新工具」),不隨領域膨脹。
+- **一份部署、多本書**:工具數恆為 8(語料是「參數」不是「新工具」;依語料 `capabilities` 開關,未啟用的工具回友善提示),不隨領域膨脹。
 - **stdio**:本機用,Claude Desktop 以子行程啟動。
 - **http**(本專案重點):Streamable HTTP,可部署到雲端 / Docker,遠端連接。
 
-種子語料已打包進 `corpora/`:`sqlsugar`(74 篇)、`fc`(133 篇),會跟著映像一起部署。
+種子語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
 
 ## 安裝(npx 一行裝,本機 stdio)
 
@@ -24,7 +24,7 @@
 }
 ```
 
-重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar` + `fc` 兩本(共 207 篇)。
+重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` 兩本(共 207 篇)。
 
 | AI 助手 | 設定檔 |
 |---|---|
@@ -33,7 +33,7 @@
 | Windsurf | `.windsurfrules` |
 | Claude Desktop | `claude_desktop_config.json` |
 
-- 只想掛**單一本書**:加 `"env": { "DOCS_SCOPE": "fc" }`,該連線就只看得到 `fc`。
+- 只想掛**單一本書**:加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`,該連線就只看得到 `fc-zh-tw`。
 - **還沒發到 npm**(或想用本機原始碼):改成 `"command": "node", "args": ["<repo>/docs-mcp-server/dist/index.js"]`,前置先 `npm install && npm run build`。
 
 > 要遠端 / 雲端 / 多人共用,改走下方 **http** 模式(Streamable HTTP),不是 npx。
@@ -45,19 +45,25 @@
 | `docs_list_corpora` | **探索入口**:列出有哪些語料(id / 標題 / 描述 / 文件數) |
 | `docs_search` | 關鍵字全文搜尋;`corpus` 省略則**跨所有語料**(結果以 `[id]` 標註來源) |
 | `docs_read` | 依 `corpus` + `filename` 讀整篇(模糊比對,附官方來源連結) |
+| `docs_outline` | 列某語料的分類目錄與篇名(`headings=true` 展開篇內 `##`/`###` 標題) |
 | `docs_cheatsheet` | 抽某篇的「速查表」段落(語料需啟用 `cheatsheet` capability) |
+| `docs_code_search` | 搜語料附帶的 `examples/` 範例源碼,`query` 留空 = 列檔(語料需啟用 `examples` capability) |
+| `docs_code_read` | 讀單一範例源碼檔(語料需啟用 `examples` capability) |
+| `docs_symbol` | 依 API / 組件名對 `#`/`##`/`###` 標題精確→包含比對,回該段落(語料需啟用 `symbol` capability) |
 
-典型流程:先 `docs_list_corpora` 看有哪些書 → `docs_search(corpus="sqlsugar", query="WhereIF")` → `docs_read`。
+前 4 個(`docs_list_corpora` / `docs_search` / `docs_read` / `docs_outline`)對所有語料有效;後 4 個是 capability-gated——工具對所有語料都存在,未啟用該能力的語料會回友善提示並建議改用哪個工具。
+
+典型流程:先 `docs_list_corpora` 看有哪些書 → `docs_search(corpus="sqlsugar-zh-tw", query="WhereIF")` → `docs_read`。
 
 ## 混合端點(模型 B:一份部署,每本書各自網址)
 
 | 端點 | 看得到 | 用途 |
 |---|---|---|
 | `POST /mcp` | **全部語料**,AI 用 `corpus` 參數選書 | 一個連接器問所有東西 |
-| `POST /mcp/<corpus>` | **只有該語料**(如 `/mcp/sqlsugar`) | 在 Claude 只掛某一本書,完全隔離 |
+| `POST /mcp/<corpus>` | **只有該語料**(如 `/mcp/sqlsugar-zh-tw`) | 在 Claude 只掛某一本書,完全隔離 |
 | `GET /health` | — | 健康檢查(免驗證),回 `{status, corpora, docs}` |
 
-> 同一份部署,要全部就連 `/mcp`,要單書就連 `/mcp/sqlsugar`。將來想收斂成純單一入口、或拆成各自獨立 server 都不必改程式碼。
+> 同一份部署,要全部就連 `/mcp`,要單書就連 `/mcp/sqlsugar-zh-tw`。將來想收斂成純單一入口、或拆成各自獨立 server 都不必改程式碼。
 
 ## 環境變數
 
@@ -73,15 +79,18 @@
 
 ## 新增一個語料(疊加)
 
-1. 在 `corpora/` 下建一個資料夾,名稱即語料 id(例:`corpora/furion/`)。
+1. 在 `corpora/` 下建一個資料夾,名稱即語料 id,格式 `<書名>-<語言>`(例:`corpora/furion-zh-tw/`)。
 2. 把該領域的 `.md` 放進去(可用分類子目錄,如 `指南/快速上手.md`)。
 3. 放一個 `corpus.json` 描述它:
 
 ```json
 {
+  "book": "furion",
+  "language": "zh-TW",
+  "source": "https://furion.net/docs",
   "title": "Furion",
   "description": "Furion .NET 框架文檔:動態 API、依賴注入、Oops 例外…",
-  "capabilities": { "cheatsheet": false }
+  "capabilities": { "cheatsheet": false, "examples": false, "symbol": false }
 }
 ```
 
@@ -93,7 +102,7 @@
 
 5. 重新部署(雲端)/ 直接重啟(本機)。它就出現在 `docs_list_corpora` 了。**沒有任何 `.ts` 要改。**
 
-> `corpus.json` 全部欄位皆選填;省略時 `title`/`id` = 資料夾名、`description` 留空、無速查表能力。
+> 程式只讀 `title` / `description` / `capabilities`(皆選填;省略時 `title` = 資料夾名、`description` 留空、無任何 capability)。`book` / `language` / `source` 是團隊規定必填的中繼資料(讓人與 AI 分辨書名與語言,不靠拆 id 字串),程式不讀。
 
 ---
 
@@ -107,7 +116,7 @@ npm test                          # vitest:多語料隔離 / 跨語料 / capabil
 
 npm run dev                       # tsx watch(stdio)
 TRANSPORT=http npm start          # 本機跑 HTTP(預設 5690)
-DOCS_SCOPE=sqlsugar npm run dev   # stdio 鎖定單一語料
+DOCS_SCOPE=sqlsugar-zh-tw npm run dev   # stdio 鎖定單一語料
 ```
 
 健康檢查:`curl http://localhost:5690/health` → `{"status":"ok","corpora":2,"docs":207}`
@@ -140,7 +149,7 @@ curl -X POST http://localhost:5690/mcp \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"docs_list_corpora","arguments":{}}}'
 ```
 
-單書端點把上面的 `/mcp` 換成 `/mcp/sqlsugar` 即可(該連線只看得到 sqlsugar)。
+單書端點把上面的 `/mcp` 換成 `/mcp/sqlsugar-zh-tw` 即可(該連線只看得到 sqlsugar-zh-tw)。
 
 ## 三、部署到雲端
 
@@ -158,7 +167,7 @@ curl -X POST http://localhost:5690/mcp \
 Settings → Connectors → Add custom connector:
 
 - 全部語料:URL 填 `https://你的網域/mcp`
-- 只掛某一本書:URL 填 `https://你的網域/mcp/sqlsugar`
+- 只掛某一本書:URL 填 `https://你的網域/mcp/sqlsugar-zh-tw`
 - 有設 token 則在 Authorization 填 `Bearer <你的token>`
 
 > 遠端自訂連接器需付費方案且網址須為 HTTPS。只是本機自己用,改 stdio 模式更簡單(可配 `DOCS_SCOPE` 每本書一條設定)。
@@ -175,7 +184,7 @@ Settings → Connectors → Add custom connector:
     "docs-sqlsugar": {
       "command": "node",
       "args": ["E:\\source\\mcp-library\\docs-mcp-server\\dist\\index.js"],
-      "env": { "DOCS_SCOPE": "sqlsugar" }
+      "env": { "DOCS_SCOPE": "sqlsugar-zh-tw" }
     }
   }
 }
@@ -191,4 +200,4 @@ MCPJungle gateway 的部署、註冊、官方工具、Dockhand、ghcr 推送等,
 
 ## 與舊 server 的關係
 
-`sqlsugar-mcp-server`、`fc-designer-mcp` 兩個 standalone server 仍可獨立運作、未被更動。本 server 是把它們的文檔以「語料」形式合併到單一部署;舊的 sqlsugar server 另保有「範例 C# 程式碼搜尋」(`list_examples`/`read_code`/`search_code`),該功能目前未納入多語料 v1。
+`sqlsugar-mcp-server`、`fc-designer-mcp` 兩個 standalone server 仍可獨立運作、未被更動。本 server 是把它們的文檔以「語料」形式合併到單一部署;舊的 sqlsugar server 的「範例 C# 程式碼搜尋」(`list_examples`/`read_code`/`search_code`)已以 `examples` capability 收編為 `docs_code_search` / `docs_code_read`(範例碼在 `corpora/sqlsugar-zh-tw/examples/`);舊 `sqlsugar_list_notes` 的 `include_index`(附 index.md 分類導航)尚未補回。

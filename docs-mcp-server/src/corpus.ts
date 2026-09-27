@@ -281,8 +281,8 @@ export function loadSources(corpus: Corpus): Record<string, string> {
 /**
  * 從文件內文抽出官方來源 URL。掃描前 15 行,挑「引用區塊(>)或含 source/来源/來源/官方 字樣」的行,
  * 優先取 markdown 連結 [文字](url),否則取裸 URL。支援兩種常見格式:
- *   sqlsugar: `> 📖 官方文件:[果糖網…](https://…)`
- *   fc:       `> Source: https://…`
+ *   sqlsugar-zh-tw: `> 📖 官方文件:[果糖網…](https://…)`
+ *   fc-zh-tw:       `> Source: https://…`
  */
 export function extractSourceUrl(content: string): string | undefined {
   const lines = content.split(/\r?\n/).slice(0, 15);

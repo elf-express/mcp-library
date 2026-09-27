@@ -3,9 +3,9 @@ import { getCorpus, listCodeFiles, listMarkdownFiles, _clearCaches } from "../sr
 
 beforeEach(() => _clearCaches());
 
-describe("listCodeFiles(sqlsugar)", () => {
+describe("listCodeFiles(sqlsugar-zh-tw)", () => {
   it("掃到 examples/ 的源碼檔(.cs/.csproj/.sln),且不含 bin/obj", () => {
-    const c = getCorpus("sqlsugar")!;
+    const c = getCorpus("sqlsugar-zh-tw")!;
     const files = listCodeFiles(c);
     expect(files.length).toBeGreaterThan(0);
     expect(files.every((f) => /\.(cs|csproj|sln|json|ts|js)$/i.test(f.path))).toBe(true);
@@ -13,9 +13,9 @@ describe("listCodeFiles(sqlsugar)", () => {
   });
 });
 
-describe("listMarkdownFiles(sqlsugar) — examples/ 不含在 md 清單", () => {
+describe("listMarkdownFiles(sqlsugar-zh-tw) — examples/ 不含在 md 清單", () => {
   it("listMarkdownFiles 結果不含以 examples/ 開頭的路徑", () => {
-    const c = getCorpus("sqlsugar")!;
+    const c = getCorpus("sqlsugar-zh-tw")!;
     const files = listMarkdownFiles(c);
     expect(files.every((f) => !f.filename.startsWith("examples/"))).toBe(true);
   });

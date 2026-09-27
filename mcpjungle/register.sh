@@ -6,7 +6,7 @@
 #   - gateway 用 -stdio image(npx/uvx 才能跑官方 stdio server)
 #
 # 用法:
-#   REGISTRY=http://localhost:18800 ./register.sh            # docs(A:sqlsugar+fc)+ 工具(filesystem/fetch/time)
+#   REGISTRY=http://localhost:18800 ./register.sh            # docs(A:sqlsugar-zh-tw+fc-zh-tw)+ 工具(filesystem/fetch/time)
 #   REGISTRY=...                    ./register.sh all        # docs(B:整包一個 docs)+ 工具
 #   REGISTRY=...                    ./register.sh none       # 只註冊官方工具,不註冊 docs
 #   REGISTRY=... WITH_TOOLS=0       ./register.sh            # 只註冊 docs,不註冊官方工具
@@ -24,7 +24,7 @@ reg() { echo ">> 註冊 $(basename "$1")"; mcpjungle --registry "$REGISTRY" regi
 
 # 1) docs 語料
 case "$DOCS_MODE" in
-  per-book|a) reg "$DIR/sqlsugar.json"; reg "$DIR/fc.json" ;;
+  per-book|a) reg "$DIR/sqlsugar-zh-tw.json"; reg "$DIR/fc-zh-tw.json" ;;
   all|b)      reg "$DIR/docs-all.json" ;;
   none)       echo ">> 略過 docs 語料" ;;
   *) echo "用法: $0 [per-book|all|none]   (WITH_TOOLS=0 可略過官方工具)"; exit 1 ;;
