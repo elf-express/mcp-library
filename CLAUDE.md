@@ -112,7 +112,8 @@ npm run cypress                      # cypress open
 
 ### 部署拓樸:DB / 網路 / build vs pull
 
-- `MCPJUNGLE_DATABASE_URL` 的 host 填 DB 的**外部 IP**(例 `192.168.25.100:15432`),**不是容器名**;根 compose **不含 Postgres**。要自包含一顆 DB 才用 `mcpjungle/docker-compose.localtest.yml` 或 [`shared-db/`](shared-db)。
+- **DB 內建**:根 compose 含 `postgres` service(`postgres:16-alpine`,容器 `mcpjungle-postgres`,volume `pgdata`,不對外開 port)。gateway 以 `depends_on: condition: service_healthy` 等它就緒。零設定即可 `docker compose up -d --build`。
+- 要改接**既有的外部 DB**:在 `.env` 設 `MCPJUNGLE_DATABASE_URL`(host 填 DB 的 IP,不是容器名)覆寫預設值即可。改內建 DB 密碼要同時改 `POSTGRES_PASSWORD` 與 `MCPJUNGLE_DATABASE_URL` 兩處。
 - 網路 `mcpjungl` 由 stack **自建**(`<project>_mcpjungl`),**不必先 `docker network create`**。
 - gateway 映像 = vendored fork 從源碼 build:context `./MCPJungle`、`Dockerfile.fullbuild`、tag `mcpjungle-fork:latest`。
 - docs-mcp 映像由 `.github/workflows/docker-publish.yml` 在 push main 時自動 build + push 到 `ghcr.io/elf-express/docs-mcp-server:latest`(pull 法用的就是它)。

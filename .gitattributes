@@ -1,0 +1,3 @@
+knowledge.books/**/*.png !text !filter !merge !diff
+knowledge.books/**/*.jpg !text !filter !merge !diff
+knowledge.books/**/*.jpeg !text !filter !merge !diff

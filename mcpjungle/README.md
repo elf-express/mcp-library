@@ -6,7 +6,7 @@
 
 ```
 mcpjungle/
-  docker-compose.mcpjungle.yml   正式:gateway + docs-mcp + registrar(DB 走外部 IP、網路自建)
+  docker-compose.mcpjungle.yml   正式:postgres + gateway + docs-mcp + registrar(DB 內建、網路自建)
   docker-compose.localtest.yml   本機自包含測試(內含 postgres、自建網路)
   docker-compose.dockhand.yml    只部署 docs-mcp + registrar,接「現有」gateway(Dockhand 用)
   .env.example                   機密範本(複製成 .env)
@@ -20,7 +20,7 @@ mcpjungle/
 ## 網路 / DB
 
 - **網路 `mcpjungl` 由本 stack 自建**(部署時自動建 `<project>_mcpjungl`,像 `immich_default` 那樣),**不必先 `docker network create`**。gateway / docs-mcp / registrar 都在這個網路。
-- **DB 走外部 IP**:`MCPJUNGLE_DATABASE_URL` 的 host 填你 DB 的 **IP**(例 `192.168.25.100:15432`),本 compose **不含 Postgres**。
+- **DB 內建**:本 compose 含 `postgres` service(容器 `mcpjungle-postgres`、volume `pgdata`、不對外開 port),gateway 以 healthcheck 等它就緒。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
 
 ## 一、一鍵起
 
