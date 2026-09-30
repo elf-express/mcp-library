@@ -1,0 +1,35 @@
+mcpjungle/docker-compose.mcpjungle.yml
+  s_b0266bc09621d6::t_91d48dfd25e7b4 53
+CLAUDE.md
+  s_b0266bc09621d6::t_a5c18181666b9d 13,16,28,71,82
+mcpjungle/docker-compose.dockhand.yml
+  s_b0266bc09621d6::t_7002f66e834624 15
+.github/workflows/npm-publish.yml
+  s_b0266bc09621d6::t_b240741a0a3eb3 36,48
+.github/workflows/hf-spaces-sync.yml
+  s_b0266bc09621d6::t_a50a4eec0260f3 23-24,42,44
+.github/dependabot.yml
+  s_b0266bc09621d6::t_8395f75605ce72 5,14
+.github/workflows/docker-publish.yml
+  s_b0266bc09621d6::t_32712292e43e6c 46,55,59
+.github/workflows/ci.yml
+  s_b0266bc09621d6::t_ae270e342fa73b 80,82,125,127
+README.md
+  s_b0266bc09621d6::t_31da11702dac1d 3,9,11,50,54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "fb1d578f609ca2ae5eb93d1377a3c3cdf85b348c",
+  "prompts": {},
+  "sessions": {
+    "s_b0266bc09621d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3efb0bb-b1c9-4005-bf1e-55dee6a4c858",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
