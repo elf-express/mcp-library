@@ -1,0 +1,34 @@
+CLAUDE.md
+  s_a91388e7c34f17::t_fd03fceab3dcf7 115-116
+mcpjungle/docker-compose.mcpjungle.yml
+  s_a91388e7c34f17::t_7aac32d73c397e 1-4,6,9-28,35-37,39-40,81-82
+  s_a91388e7c34f17::t_e095e08eb7f317 83
+mcpjungle/.env.example
+  s_a91388e7c34f17::t_2cc69bd54fe5fb 1-6,8-13,15-22,28
+mcpjungle/README.md
+  s_a91388e7c34f17::t_7e480f79627080 9,23
+docker-compose.pull.yml
+  s_a91388e7c34f17::t_649ee68595f13c 3
+docker-compose.yml
+  s_a91388e7c34f17::t_c077d24c9bf283 1-3,6
+.env.example
+  s_a91388e7c34f17::t_3cdfaadc4e219d 1-6,8-23,28
+README.md
+  s_a91388e7c34f17::t_699450a0fbab85 17,20,25,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a39e3ebf8eda83675d7c89edfe9ef63e2d267f85",
+  "prompts": {},
+  "sessions": {
+    "s_a91388e7c34f17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ae6fd50b-9023-47e0-8b09-de3e8f0fc9da",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
