@@ -20,8 +20,8 @@ on:
     branches:
       - main
     paths:
-      - 'fc-designer-mcp/huggingface/**'
-      - 'sqlsugar-mcp/huggingface/**'
+      - 'mcp/legacy/fc-designer-mcp/huggingface/**'
+      - 'mcp/legacy/sqlsugar-mcp/huggingface/**'
       - '.github/workflows/hf-spaces-sync.yml'
   workflow_dispatch:
 
@@ -39,9 +39,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - hf_dir: fc-designer-mcp/huggingface
+          - hf_dir: mcp/legacy/fc-designer-mcp/huggingface
             space_name: fc-designer-mcp
-          - hf_dir: sqlsugar-mcp/huggingface
+          - hf_dir: mcp/legacy/sqlsugar-mcp/huggingface
             space_name: sqlsugar-mcp
     steps:
       - name: Checkout

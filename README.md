@@ -1,14 +1,14 @@
 # mcp-library
 
-多個 MCP server 的統一目錄(monorepo)。文檔查詢類已收斂為單一**多語料** server [`docs-mcp-server`](./docs-mcp-server),統一透過 **MCPJungle** gateway 對外。**根目錄一個 `docker compose up` 即可拉起全部。**
+多個 MCP server 的統一目錄(monorepo)。文檔查詢類已收斂為單一**多語料** server [`mcp/docs-mcp-server`](./mcp/docs-mcp-server),統一透過 **MCPJungle** gateway 對外。**根目錄一個 `docker compose up` 即可拉起全部。**
 
 ## 結構 / 服務一覽
 
 | 子目錄 | 角色 | 說明 |
 | --- | --- | --- |
-| [`docs-mcp-server/`](./docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133);新增書 = 丟資料夾 + `corpus.json` |
+| [`mcp/docs-mcp-server/`](./mcp/docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133);新增書 = 丟資料夾 + `corpus.json` |
 | [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
-| [`sqlsugar-mcp/`](./sqlsugar-mcp/sqlsugar-mcp-server) · [`fc-designer-mcp/`](./fc-designer-mcp) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
+| [`mcp/legacy/`](./mcp/legacy) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
 
 ---
 
@@ -47,8 +47,8 @@ docker compose up -d --build   # 零設定,不必先 cp .env.example
 
 ## legacy standalone
 
-舊的 `sqlsugar-mcp` / `fc-designer-mcp` standalone server 已被 docs-mcp 的「語料」取代,不在根 compose 堆疊。要單獨跑就進各自資料夾 `docker compose up -d`(token 用 `MCP_AUTH_TOKEN` / `FC_MCP_AUTH_TOKEN`)。
+舊的 standalone server 已被 docs-mcp 的「語料」取代,移到 `mcp/legacy/` 下、不在根 compose 堆疊。要單獨跑就進各自資料夾 `docker compose up -d`(token 用 `MCP_AUTH_TOKEN` / `FC_MCP_AUTH_TOKEN`)。
 
 ## 開發單一服務
 
-進各子目錄(如 [`docs-mcp-server/`](./docs-mcp-server)),依該目錄 README 操作。
+進各子目錄(如 [`mcp/docs-mcp-server/`](./mcp/docs-mcp-server)),依該目錄 README 操作。

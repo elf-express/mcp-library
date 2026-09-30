@@ -10,10 +10,10 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 四個層次:
 
-- [`docs-mcp-server/`](docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw`,打包進映像;語料 id 規則 `<書名>-<語言>`)。
+- [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw`,打包進映像;語料 id 規則 `<書名>-<語言>`)。
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **vendored 的 [MCPJungle fork 原始碼](mcpjungle/MCPJungle)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
-- [`sqlsugar-mcp/`](sqlsugar-mcp/sqlsugar-mcp-server) · [`fc-designer-mcp/`](fc-designer-mcp) — **legacy** standalone server,已被 docs-mcp 的語料取代,保留可回退,**不在根 compose 堆疊**。
+- [`mcp/legacy/`](mcp/legacy) —— `sqlsugar-mcp/` · `fc-designer-mcp/` — **legacy** standalone server,已被 docs-mcp 的語料取代,保留可回退,**不在根 compose 堆疊**。
 
 ## 常用命令
 
@@ -25,7 +25,7 @@ docker compose up -d --build         # build 法:現場 build,總是最新源碼
 docker compose -f docker-compose.pull.yml up -d   # pull 法:拉 ghcr 既建映像,不在 server build
 ```
 
-### docs-mcp-server 開發(核心,`cd docs-mcp-server`)
+### docs-mcp-server 開發(核心,`cd mcp/docs-mcp-server`)
 
 ```bash
 npm install
@@ -68,7 +68,7 @@ npm run cypress                      # cypress open
   { "mcpServers": { "docs": { "command": "npx", "args": ["-y", "@elf-express/docs-mcp-server"] } } }
   ```
   只掛單一本書加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`;未發 npm 時改 `"command": "node", "args": ["<repo>/docs-mcp-server/dist/index.js"]`(先 `npm install && npm run build`)。
-- **B. 本機原始碼** — `cd docs-mcp-server && npm install && npm run build`,再 stdio `npm run dev` 或 HTTP `$env:TRANSPORT="http"; npm start`(:5690,`/health` 驗)。
+- **B. 本機原始碼** — `cd mcp/docs-mcp-server && npm install && npm run build`,再 stdio `npm run dev` 或 HTTP `$env:TRANSPORT="http"; npm start`(:5690,`/health` 驗)。
 - **C. 遠端 / 雲端 HTTP** — 映像內建 `TRANSPORT=http`;設 `MCP_AUTH_TOKEN`、對外開 :5690、走 HTTPS。Claude 端 Settings → Connectors 填 `https://網域/mcp`(全語料)或 `/mcp/<corpus>`(單書),token 填 `Bearer <token>`。
 - **D. 經 gateway** — 根 `docker compose up -d --build` 一鍵起,用戶端連 `http://<host>:18800/mcp`(詳見上方「部署」)。
 
@@ -79,7 +79,7 @@ npm run cypress                      # cypress open
 ### docs-mcp-server:多語料機制(`src/corpus.ts` + `src/index.ts`)
 
 - 一個**語料 = `corpora/<id>/` 下一組 markdown**(可含分類子目錄)+ 一個選填 `corpus.json`(`title` / `description` / `capabilities`)。能力旗標:`cheatsheet`、`examples`(語料附 `examples/` 程式碼)、`symbol`(從標題建符號索引)。
-- **新增一本書不改任何 `.ts`**:丟資料夾 + `corpus.json`,重啟(本機)或重新部署(雲端)即出現在 `docs_list_corpora`。命名(`<書名>-<語言>`)、目錄樹、`corpus.json` 欄位(`book`/`language`/`source`/…)與內容規則見 [`docs-mcp-server/corpora/README.md`](docs-mcp-server/corpora/README.md)。
+- **新增一本書不改任何 `.ts`**:丟資料夾 + `corpus.json`,重啟(本機)或重新部署(雲端)即出現在 `docs_list_corpora`。命名(`<書名>-<語言>`)、目錄樹、`corpus.json` 欄位(`book`/`language`/`source`/…)與內容規則見 [`mcp/docs-mcp-server/corpora/README.md`](mcp/docs-mcp-server/corpora/README.md)。
 - 工具**固定 8 個且全唯讀**,**`corpus` 是參數不是新工具**(領域再多、工具數不變);**capability-gated**——工具對所有語料都「在」,只對宣告該能力的語料生效,其餘回友善提示:
   - 無條件(所有語料):`docs_list_corpora`(探索入口)/ `docs_search` / `docs_read` / `docs_outline`(結構大綱)
   - `cheatsheet` 能力:`docs_cheatsheet`(抽速查表段落)

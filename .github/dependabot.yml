@@ -2,7 +2,7 @@ version: 2
 updates:
   # fc-designer-mcp server
   - package-ecosystem: "npm"
-    directory: "/fc-designer-mcp"
+    directory: "/mcp/legacy/fc-designer-mcp"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
@@ -11,7 +11,7 @@ updates:
 
   # sqlsugar-mcp server
   - package-ecosystem: "npm"
-    directory: "/sqlsugar-mcp/sqlsugar-mcp-server"
+    directory: "/mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5

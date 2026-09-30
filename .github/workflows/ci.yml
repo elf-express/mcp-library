@@ -77,9 +77,9 @@ jobs:
       matrix:
         include:
           - name: fc-designer-mcp
-            dir: fc-designer-mcp
+            dir: mcp/legacy/fc-designer-mcp
           - name: sqlsugar-mcp
-            dir: sqlsugar-mcp/sqlsugar-mcp-server
+            dir: mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server
     defaults:
       run:
         working-directory: ${{ matrix.dir }}
@@ -122,9 +122,9 @@ jobs:
       matrix:
         include:
           - image: fc-designer-mcp
-            context: ./fc-designer-mcp
+            context: ./mcp/legacy/fc-designer-mcp
           - image: sqlsugar-mcp
-            context: ./sqlsugar-mcp/sqlsugar-mcp-server
+            context: ./mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server
     steps:
       - name: Checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7
