@@ -1,0 +1,47 @@
+.github/workflows/ci.yml
+  s_b0266bc09621d6::t_ae270e342fa73b 80,82,125,127
+.github/workflows/docker-publish.yml
+  s_b0266bc09621d6::t_32712292e43e6c 46,55,59
+.github/workflows/hf-spaces-sync.yml
+  s_b0266bc09621d6::t_a50a4eec0260f3 23-24,42,44
+.github/workflows/npm-publish.yml
+  s_b0266bc09621d6::t_b240741a0a3eb3 36,48
+mcp/docs-mcp-server/package-lock.json
+  s_a91388e7c34f17::t_f16a7122e6392a 14
+mcp/docs-mcp-server/package.json
+  s_a91388e7c34f17::t_2ae496520827d1 51
+.github/dependabot.yml
+  s_b0266bc09621d6::t_8395f75605ce72 5,14
+CLAUDE.md
+  s_b0266bc09621d6::t_a5c18181666b9d 13,16,28,71,82
+README.md
+  s_b0266bc09621d6::t_31da11702dac1d 3,9,11,50,54
+mcpjungle/docker-compose.dockhand.yml
+  s_b0266bc09621d6::t_7002f66e834624 15
+mcpjungle/docker-compose.mcpjungle.yml
+  s_b0266bc09621d6::t_91d48dfd25e7b4 53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "5584f45786b48fdcdd1ae605c1c5f08f72e637ea",
+  "prompts": {},
+  "sessions": {
+    "s_a91388e7c34f17": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ae6fd50b-9023-47e0-8b09-de3e8f0fc9da",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    },
+    "s_b0266bc09621d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3efb0bb-b1c9-4005-bf1e-55dee6a4c858",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
