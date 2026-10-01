@@ -1,0 +1,45 @@
+---
+title: "Dhcrelay"
+source: "https://docs.opnsense.org/development/api/core/dhcrelay.html"
+chapter: ["Development Manual","API Reference","Core API"]
+order: 273
+lang: "en"
+translated_by: "native"
+captured: "2026-09-26T11:34:01.078Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Cron](<272 Cron.md>)　｜　[下一篇：Diagnostics ➡](<274 Diagnostics.md>)
+
+# Dhcrelay
+
+> 章節：[Development Manual](<000 目錄.md#c-52>) › [API Reference](<000 目錄.md#c-58>) › [Core API](<000 目錄.md#c-59>)
+
+*Service (ServiceController.php)*
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `POST` | dhcrelay | service | reconfigure |  |
+
+*Resources (SettingsController.php)*
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `POST` | dhcrelay | settings | add\_dest |  |
+| `POST` | dhcrelay | settings | add\_relay |  |
+| `POST` | dhcrelay | settings | del\_dest | $uuid |
+| `POST` | dhcrelay | settings | del\_relay | $uuid |
+| `GET` | dhcrelay | settings | get |  |
+| `GET` | dhcrelay | settings | get\_dest | $uuid=null |
+| `GET` | dhcrelay | settings | get\_relay | $uuid=null |
+| `GET,POST` | dhcrelay | settings | search\_dest |  |
+| `GET,POST` | dhcrelay | settings | search\_relay |  |
+| `POST` | dhcrelay | settings | set |  |
+| `POST` | dhcrelay | settings | set\_dest | $uuid |
+| `POST` | dhcrelay | settings | set\_relay | $uuid |
+| `POST` | dhcrelay | settings | toggle\_relay | $uuid,$enabled=null |
+|  |  |  |  |  |
+| `<<uses>>` |  |  |  | *model* [DHCRelay.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/DHCRelay/DHCRelay.xml) |
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Cron](<272 Cron.md>)　｜　[下一篇：Diagnostics ➡](<274 Diagnostics.md>)

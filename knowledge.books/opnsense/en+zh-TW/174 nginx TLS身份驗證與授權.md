@@ -1,0 +1,75 @@
+---
+title: "nginx TLS Authentication & Authorization｜nginx TLS身份驗證與授權"
+title_original: "nginx TLS Authentication & Authorization"
+source: "https://docs.opnsense.org/manual/how-tos/nginx_tls_auth.html"
+chapter: ["Community Plugins","Web"]
+order: 174
+lang: "bilingual"
+translated_by: "google_v2"
+captured: "2026-09-26T11:33:08.475Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：nginx TLS Fingerprints｜nginx TLS指紋](<173 nginx TLS指紋.md>)　｜　[下一篇：nginx Web Application Firewall｜nginx Web應用程式防火牆 ➡](<175 nginx Web應用程式防火牆.md>)
+
+# nginx TLS Authentication & Authorization｜nginx TLS身份驗證與授權
+
+> 章節：[Community Plugins](<000 目錄.md#c-36>) › [Web](<000 目錄.md#c-37>)
+
+## nginx: TLS Authentication & Authorization｜nginx： TLS身份驗證與授權
+
+Warning
+
+警告
+
+Even if this is probably the most secure way to authenticate, a lot of clients do not support it. In addition, configuring client certificates can also be hard to do for users.
+
+即使這可能是最安全的身份驗證方式，但許多客戶端並不支援。此外，配置客戶端憑證對使用者來說也可能很困難。
+
+This authentication mechanism is recommended for machine to machine communication and experienced users.
+
+建議將此身份驗證機制用於機器對機器通訊和經驗豐富的用戶。
+
+## Background Information｜背景資訊
+
+TLS authentication happens when the HTTPS connection is set up and for this reason you can not configure it per directory (this information has not been received yet). If you want to use this authentication type in a custom application, the nginx plugin configures nginx to send you the required information like the CN).
+
+TLS身份驗證在HTTPS連線建立時進行，因此您無法按目錄進行設定（此資訊尚未收到）。如果您想在自訂應用程式中使用此驗證類型，nginx 外掛程式會設定 nginx 向您發送所需訊息，例如CN ）。
+
+## Configuration｜配置
+
+First of all, you need a CA, a client and a server certificate.
+
+首先，你需要一個CA ，一個客戶端憑證和一個伺服器憑證。
+
+Please create it like described in [Setup SSL VPN Road Warrior](https://docs.opnsense.org/manual/how-tos/sslvpn_client.html). If you want, that your VPN users can log into your application using the same certificate, you may use the same CA.
+
+請依照 [Setup SSL VPN Road Warrior](https://docs.opnsense.org/manual/how-tos/sslvpn_client.html)中的說明進行建立。如果您希望您的VPN用戶可以使用相同的憑證登入您的應用程序，您可以使用相同的CA 。
+
+![../../_images/nginx_auth_tls.png](<../images/b3eb48f3-nginx_auth_tls.png>)
+
+Next, choose the CA, the certificate and choose *on* as for client validation. This will reject any connection by a client, who has no valid certificate.
+
+接下來，選擇憑證CA ，並將用戶端驗證設定為*開啟*。這將拒絕任何沒有有效證書的用戶端的連線。
+
+## Testing｜測試
+
+```bash
+curl https://192.168.1.1:444/file.txt --cacert ../MyOPNsenseCA.crt
+<html>
+<head><title>400 No required SSL certificate was sent</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+<center>No required SSL certificate was sent</center>
+<hr><center>nginx</center>
+</body>
+</html>
+```
+
+```bash
+curl https://192.168.1.1:444/file.txt --cert ../nginx_client_test_cert.crt --key ../nginx_client_test_cert.key --cacert ../MyOPNsenseCA.crt
+Hello World
+```
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：nginx TLS Fingerprints｜nginx TLS指紋](<173 nginx TLS指紋.md>)　｜　[下一篇：nginx Web Application Firewall｜nginx Web應用程式防火牆 ➡](<175 nginx Web應用程式防火牆.md>)

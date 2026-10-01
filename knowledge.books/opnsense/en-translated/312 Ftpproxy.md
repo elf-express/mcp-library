@@ -1,0 +1,41 @@
+---
+title: "Ftpproxy"
+source: "https://docs.opnsense.org/development/api/plugins/ftpproxy.html"
+chapter: ["Development Manual","API Reference","Plugins API"]
+order: 312
+lang: "en"
+translated_by: "native"
+captured: "2026-09-26T11:34:18.269Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Freeradius](<311 Freeradius.md>)　｜　[下一篇：Gridexample ➡](<313 Gridexample.md>)
+
+# Ftpproxy
+
+> 章節：[Development Manual](<000 目錄.md#c-52>) › [API Reference](<000 目錄.md#c-58>) › [Plugins API](<000 目錄.md#c-60>)
+
+*Service (ServiceController.php)*
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `GET` | ftpproxy | service | config |  |
+| `GET` | ftpproxy | service | reload |  |
+| `GET` | ftpproxy | service | restart | $uuid |
+| `GET` | ftpproxy | service | start | $uuid |
+| `GET` | ftpproxy | service | status | $uuid |
+| `GET` | ftpproxy | service | stop | $uuid |
+
+*Resources (SettingsController.php)*
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `POST` | ftpproxy | settings | add\_proxy |  |
+| `POST` | ftpproxy | settings | del\_proxy | $uuid |
+| `GET` | ftpproxy | settings | get\_proxy | $uuid=null |
+| `GET` | ftpproxy | settings | search\_proxy |  |
+| `POST` | ftpproxy | settings | set\_proxy | $uuid |
+| `POST` | ftpproxy | settings | toggle\_proxy | $uuid |
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Freeradius](<311 Freeradius.md>)　｜　[下一篇：Gridexample ➡](<313 Gridexample.md>)

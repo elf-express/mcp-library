@@ -1,0 +1,50 @@
+---
+title: "System hardening vs performance"
+source: "https://docs.opnsense.org/troubleshooting/hardening.html"
+chapter: ["Troubleshooting","Topics"]
+order: 229
+lang: "en"
+translated_by: "original"
+captured: "2026-09-26T11:33:36.355Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Boot](<228 Boot.md>)　｜　[下一篇：Gateways and monitoring ➡](<230 Gateways and monitoring.md>)
+
+# System hardening vs performance
+
+> 章節：[Troubleshooting](<000 目錄.md#c-50>) › [Topics](<000 目錄.md#c-51>)
+
+OPNsense tends to choose more strict hardening options by default, so when comparing performance between upstream standard FreeBSD it’s good to know which settings differ and can have an impact on your measurements. This document aims to describe (some of) the differences, so when you value performance over security it is more obvious which toggles might be worthwhile to change.
+
+Keep in mind that most of the settings will need a reboot and can be altered using system tunables in System ‣ Settings ‣ Tunables.
+
+## IPv4 random ID’s \[net.inet.ip.random\_id\]
+
+control IP(v4) IDs generation behaviour. This closes a minor information leak which allows remote observers to determine the rate of packet generation on the machine by watching the counter. At the same time, on high-speed links, it can decrease the ID reuse cycle greatly. IPv6 flow IDs and fragment IDs are always random. (source `man -S 4 inet`)
+
+Our default is 1 (enabled).
+
+## Spectre and Meltdown
+
+To mitigate some of the speculative execution vulnerabilities, there are a couple of settings available in FreeBSD. More information about the various vulnerabilities and associated patches can be found [here](https://wiki.freebsd.org/SpeculativeExecutionVulnerabilities)
+
+Meltdown mitigation using Page Table Isolation (PTI), although also enabled in FreeBSD it’s worth to mention which setting is responsible for enabling this feature. To disable PTI set `vm.pmap.pti` to 0. Not all cpu’s are vulnerable for Meltdown, in which case PTI can be disabled safely.
+
+Spectre variant 2, the system offers IBRS-based mitigation on Intel CPUs. The IBRS mitigation main disadvantage is the significant performance penalty. In OPNsense IBRS is enabled (for Intel) by default by disabling (0) `hw.ibrs_disable`, upstream FreeBSD standard is disabled (1).
+
+## User/group separation (security.bsd)
+
+Freebsd offers a couple of toggles to tighten security for ordinary users, these likely don’t impact performance a lot, but these are the ones including descriptions that differ on our end (source `sysctl -d security.bsd`).
+
+| Setting | Description |
+| --- | --- |
+| security.bsd.hardlink\_check\_gid \[0->1\] | Unprivileged processes cannot create hard links to files owned by other groups |
+| security.bsd.hardlink\_check\_uid \[0->1\] | Unprivileged processes cannot create hard links to files owned by other users |
+| security.bsd.unprivileged\_proc\_debug \[1->0\] | Unprivileged processes may use process debugging facilities |
+| security.bsd.see\_other\_gids \[1->0\] | Unprivileged processes may see subjects/objects with different real gid |
+| security.bsd.see\_other\_uids \[1->0\] | Unprivileged processes may see subjects/objects with different real uid |
+| security.bsd.unprivileged\_read\_msgbuf \[1->0\] | Unprivileged processes may read the kernel message buffer |
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Boot](<228 Boot.md>)　｜　[下一篇：Gateways and monitoring ➡](<230 Gateways and monitoring.md>)

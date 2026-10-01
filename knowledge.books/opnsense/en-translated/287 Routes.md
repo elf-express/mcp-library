@@ -1,0 +1,41 @@
+---
+title: "Routes"
+source: "https://docs.opnsense.org/development/api/core/routes.html"
+chapter: ["Development Manual","API Reference","Core API"]
+order: 287
+lang: "en"
+translated_by: "native"
+captured: "2026-09-26T11:34:06.654Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Radvd](<286 Radvd.md>)　｜　[下一篇：Routing ➡](<288 Routing.md>)
+
+# Routes
+
+> 章節：[Development Manual](<000 目錄.md#c-52>) › [API Reference](<000 目錄.md#c-58>) › [Core API](<000 目錄.md#c-59>)
+
+*Resources (GatewayController.php)*
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `GET` | routes | gateway | status |  |
+
+*Resources (RoutesController.php)*
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `POST` | routes | routes | addroute |  |
+| `POST` | routes | routes | delroute | $uuid |
+| `GET` | routes | routes | get |  |
+| `GET` | routes | routes | getroute | $uuid=null |
+| `POST` | routes | routes | reconfigure |  |
+| `GET,POST` | routes | routes | searchroute |  |
+| `POST` | routes | routes | set |  |
+| `POST` | routes | routes | setroute | $uuid |
+| `POST` | routes | routes | toggleroute | $uuid,$disabled=null |
+|  |  |  |  |  |
+| `<<uses>>` |  |  |  | *model* [Route.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Routes/Route.xml) |
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Radvd](<286 Radvd.md>)　｜　[下一篇：Routing ➡](<288 Routing.md>)

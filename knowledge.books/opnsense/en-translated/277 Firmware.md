@@ -1,0 +1,81 @@
+---
+title: "Firmware"
+source: "https://docs.opnsense.org/development/api/core/firmware.html"
+chapter: ["Development Manual","API Reference","Core API"]
+order: 277
+lang: "en"
+translated_by: "native"
+captured: "2026-09-26T11:34:00.587Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Firewall](<276 Firewall.md>)　｜　[下一篇：Hostdiscovery ➡](<278 Hostdiscovery.md>)
+
+# Firmware
+
+> 章節：[Development Manual](<000 目錄.md#c-52>) › [API Reference](<000 目錄.md#c-58>) › [Core API](<000 目錄.md#c-59>)
+
+OPNsense has several API calls to get and set the firmware configuration:
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `POST` | core | firmware | audit |  |
+| `POST` | core | firmware | changelog | $version |
+| `POST` | core | firmware | check |  |
+| `POST` | core | firmware | connection |  |
+| `GET` | core | firmware | get |  |
+| `GET` | core | firmware | getOptions |  |
+| `POST` | core | firmware | health |  |
+| `GET` | core | firmware | info |  |
+| `POST` | core | firmware | log | $clear |
+| `POST` | core | firmware | poweroff |  |
+| `POST` | core | firmware | reboot |  |
+| `POST` | core | firmware | resyncPlugins |  |
+| `GET` | core | firmware | running |  |
+| `POST` | core | firmware | set |  |
+| `POST` | core | firmware | status |  |
+| `POST` | core | firmware | syncPlugins |  |
+| `POST` | core | firmware | update |  |
+| `POST` | core | firmware | upgrade |  |
+| `GET` | core | firmware | upgradestatus |  |
+
+Examples:
+
+```bash
+curl -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/getfirmwareconfig -v
+```
+
+```bash
+curl -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/status -v
+```
+
+```bash
+curl -d '' -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/changelog/18.1 -v
+```
+
+## Packages
+
+You can manage the packages and plugins in OPNsense, using these API calls:
+
+| Method | Module | Controller | Command | Parameters |
+| --- | --- | --- | --- | --- |
+| `POST` | core | firmware | details | $pkg\_name |
+| `POST` | core | firmware | install | $pkg\_name |
+| `POST` | core | firmware | license | $pkg\_name |
+| `POST` | core | firmware | lock | $pkg\_name |
+| `POST` | core | firmware | remove | $pkg\_name |
+| `POST` | core | firmware | reinstall | $pkg\_name |
+| `POST` | core | firmware | unlock | $pkg\_name |
+
+Examples:
+
+```bash
+curl -d '' -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/lock/os-xen -v
+```
+
+```bash
+curl -d '' -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/license/acme.sh -v
+```
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Firewall](<276 Firewall.md>)　｜　[下一篇：Hostdiscovery ➡](<278 Hostdiscovery.md>)

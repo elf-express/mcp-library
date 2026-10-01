@@ -1,0 +1,405 @@
+---
+title: "ndp-proxy-go (Neighbor Discovery Proxy)"
+source: "https://docs.opnsense.org/manual/ndp-proxy-go.html"
+chapter: ["Community Plugins","Routing"]
+order: 212
+lang: "en"
+translated_by: "native"
+captured: "2026-09-26T11:33:28.245Z"
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Tayga NAT64 how-to](<211 Tayga NAT64 how-to.md>)　｜　[下一篇：Dynamic DNS ➡](<213 Dynamic DNS.md>)
+
+# ndp-proxy-go (Neighbor Discovery Proxy)
+
+> 章節：[Community Plugins](<000 目錄.md#c-36>) › [Routing](<000 目錄.md#c-45>)
+
+-   [Introduction](#introduction)
+    
+-   [Installation](#installation)
+    
+-   [Proxy Settings](#proxy-settings)
+    
+-   [Link Types](#link-types)
+    
+    -   [Ethernet Links](#ethernet-links)
+        
+    -   [Point-to-point Links](#point-to-point-links)
+        
+-   [Example Setup](#example-setup)
+    
+    -   [Settings](#settings)
+        
+    -   [Firewall Rules](#firewall-rules)
+        
+    -   [NAT Rules (Redirect DNS)](#nat-rules-redirect-dns)
+        
+    -   [Router Advertisements](#router-advertisements)
+        
+    -   [High Availability](#high-availability)
+        
+-   [Logging](#logging)
+    
+
+## [Introduction](#id1)
+
+ndp-proxy-go is a userspace host-learning IPv6 Neighbor Discovery Proxy.
+
+It can proxy SLAAC on-link prefixes to several downstream interfaces by proxying neighbor discovery protocol (NDP), router advertisements (RA) and duplicate address detection (DAD). For each discovered client it installs host routes automatically.
+
+If your ISP provides only a single dynamic /64 prefix via RA - or a static prefix that is not properly routed - you can use ndp-proxy-go to proxy and route this prefix to all devices on separate downstream interfaces to create Layer 3 isolation.
+
+The proxy handles privacy extension and changing prefixes gracefully; the setup is fully dynamic and self healing.
+
+For the ISP, it will look like the proxy itself owns all global unicast addresses (GUA) with its WAN facing MAC address.
+
+The proxy does not support NPTv6 deployments, as it will not map internal ULA to external GUA addresses.
+
+More technical details: [ndp-proxy-go](https://github.com/Monviech/ndp-proxy-go/blob/main/README.md)
+
+## [Installation](#id2)
+
+Install `os-ndp-proxy-go` from System ‣ Firmware ‣ Plugins.
+
+## [Proxy Settings](#id3)
+
+**General**
+
+| **Option** | **Description** |
+| --- | --- |
+| **Enable** | Enable or disable this service. |
+| **Enable CARP failover** | If any CARP VHID on this node is in MASTER state the service will be started, otherwise stopped. As NDP is stateless, a short interruption of IPv6 connectivity must be expected during CARP transitions. |
+| **Upstream interface** | Choose the upstream interface which receives the external IPv6 prefix from the ISP. Usually, this is the WAN interface. Ethernet interfaces are fully supported, point-to-point (PPPoE) devices are experimental. |
+| **Downstream interfaces** | Choose one or multiple downstream interfaces which should proxy the upstream IPv6 prefix. Only ethernet interfaces are supported. |
+| **Proxy router advertisements** | Proxy upstream RAs to downstream interfaces. Disable this if you use your own RA daemon. |
+| **Install host routes** | Automatically create host routes for discovered clients. Disabling this means you must manually handle all routing decisions. |
+| **Static prefixes** | Manually trust an IPv6 prefix for downstream learning. This is only needed in static IPv6 provider networks without usable RA information on the upstream interface. |
+| **Static routers** | Manually trust an upstream router link-local address. This is only needed in static IPv6 provider networks without usable RA information on the upstream interface. |
+| **Neighbor cache lifetime** | Neighbor cache lifetime in minutes. This controls when stale clients, host routes and firewall aliases are cleaned up. When using a point-to-point interface as upstream, increasing this lifetime is necessary to not prematurely clean up routes. |
+| **Max learned neighbors** | Maximum learned neighbors, increase for large networks. |
+| **Neighbor cache file** | Persist cache to file on service stop and load it on service start. Only neighbors with a valid cache lifetime are loaded. This helps on system reboots to minimize downtime of individual clients. |
+| **Max route operations** | Maximum route operations per second. Limits how fast routes are applied; excess operations are queued, not dropped. |
+| **Max alias operations** | Maximum firewall alias operations per second. Limits how fast aliases are populated; excess operations are queued, not dropped. |
+| **Packet capture timeout** | Controls CPU usage vs. NDP responsiveness. Lower values (e.g., 25 ms) minimize latency during cache refresh at the cost of more CPU. Higher values (100–250 ms) reduce CPU use but may introduce small latency spikes. |
+| **Debug log** | Enable debug logging. |
+
+**Aliases**
+
+| **Option** | **Description** |
+| --- | --- |
+| **Interface** | Add IPv6 addresses to the firewall alias that belongs to this proxied interface. When choosing any, all IPv6 addresses will be added. |
+| **Firewall alias** | Choose an “external (advanced)” type alias from “Firewall - Aliases”. Whenever a client is discovered, the IPv6 address will be automatically added to the chosen alias. When the neighbor cache lifetime expires, the IPv6 address will be removed from the alias. |
+
+## [Link Types](#id4)
+
+The proxy supports different link types on the upstream interface with some important differences.
+
+### [Ethernet Links](#id5)
+
+-   **WAN (upstream)**:
+    
+    The upstream ethernet interface must be configured to allow SLAAC, so it can configure an IPv6 address and a default route to the ISP. Periodic router advertisements must be sent from the ISP to the WAN.
+    
+-   **LAN (downstreams)**:
+    
+    The downstream interfaces must be ethernet and configure a link-local address (LLA).
+    
+
+Using ethernet interfaces is the recommended setup for best performance, rapid host discovery and self-healing of IPv6 after firewall reboots. Since the ISP router will perform Neighbor Discovery (ND) for every unknown client GUA, the proxy can instantly relearn clients when they send any traffic to the internet.
+
+Tip
+
+You can proxy the upstream prefix to any amount of downstream interfaces. Since this proxy includes DAD messages, IP address conflicts are unlikely to cause issues even in larger proxied networks or when using this with cloud providers.
+
+### [Point-to-point Links](#id6)
+
+-   **WAN (upstream)**:
+    
+    The upstream point-to-point interface must be configured to allow SLAAC, so it can configure an IPv6 address and a default route to the ISP. Periodic router advertisements must be sent from the ISP to the WAN.
+    
+-   **LAN (downstreams)**:
+    
+    The downstream interface must be ethernet and configure a link-local address (LLA).
+    
+
+The proxy includes experimental support for point-to-point upstream interfaces such as PPPoE. Unlike Ethernet links, a point-to-point link does not perform Neighbor Discovery (ND) for downstream GUAs. This has some important implications:
+
+-   Only Router Solicitations (RS) are forwarded upstream.
+    
+-   NS/NA forwarding is intentionally disabled on point-to-point links.
+    
+-   The cache-ttl must be increased, since there are less NA containing a GUA to learn from, otherwise routes might get removed prematurely.
+    
+
+Attention
+
+If you receive a single /64 prefix via DHCPv6-PD on a PPPoE link, it must be terminated on a router **before** the proxy. This could be another OPNsense, or a device like a Fritzbox. The proxy does not listen and learn a prefix from DHCPv6. To use PPPoE as upstream, IPv6 configuration must be set to SLAAC.
+
+Attention
+
+After a firewall reboot, IPv6 connectivity may be delayed until downstream clients perform SLAAC and DAD again. This is expected behavior on PPPoE, as the upstream (ISP) router never probes GUAs via Neighbor Discovery (ND) like on ethernet links. The behavior can be mitigated by using the Neighbor cache file option.
+
+## [Example Setup](#id7)
+
+Follow if you are a user with a router in a SLAAC only network (e.g. home, cloud VPS, mobile LTE/5G networks) In such a setup, your router will not receive a prefix delegation via DHCPv6-PD, but only set an on-link /64 prefix.
+
+### [Settings](#id8)
+
+Go to Interfaces ‣ WAN and select SLAAC as IPv6 configuration.
+
+|   |   |
+| --- | --- |
+| **IPv6 Configuration Type** | `SLAAC` |
+
+Save the settings.
+
+Go to Interfaces ‣ LAN and select link-local as IPv6 configuration.
+
+|   |   |
+| --- | --- |
+| **IPv6 Configuration Type** | `link-local` |
+
+Save and apply the new interface settings.
+
+Go to Services ‣ NDP Proxy ‣ Settings
+
+|   |   |
+| --- | --- |
+| **Enable** | `X` |
+| **Upstream interface** | `WAN` |
+| **Downstream interfaces** | `LAN` |
+| **Proxy router advertisements** | `X` |
+| **Install host routes** | `X` |
+| **Neighbor cache lifetime** | Increase when using a point-to-point upstream or when having a lot of clients with intermittent connectivity. This prevents routes and firewall aliases from being removed prematurely. |
+| **Neighbor cache file** | `X` |
+
+After applying the configuration, all devices in your LAN network will autogenerate a GUA with SLAAC and receive the router as their default gateway. Check the firewall rules on LAN if IPv6 is allowed to any destination. Verify the setup by pinging an IPv6 location on the internet.
+
+Note
+
+In the default setup, Router Advertisements from the ISP are forwarded directly. Any other Router Advertisement daemons on the LAN interface must be disabled, for example in Services ‣ Router Advertisements and Services ‣ Dnsmasq DNS & DHCP.
+
+Attention
+
+The default firewall aliases (e.g., LAN network) will not contain any proxied IPv6 addresses. Either follow the Firewall Rules example, or set the source to any in your default IPv6 allow rule.
+
+### [Firewall Rules](#id9)
+
+The proxy supports populating firewall aliases with IPv6 addresses of learned clients. This can be used to only permit access to the internet, while blocking requests to other networks that also receive IPv6 addresses from the same on-link prefix.
+
+Since only learned clients are added, the alias will always have an up to date state that reflects the proxied interface.
+
+Note
+
+The proxy only learns IPv6 addresses that are inside the WAN on-link prefix and only of clients it manages. After initial setup, it can take a few minutes until all clients have been learned.
+
+-   Go to Firewall ‣ Aliases and create these aliases:
+    
+
+| Option | Value |
+| --- | --- |
+| **Name** | `ndp_proxy_global` (Will contain all learned IPv6 addresses) |
+| **Type** | `External (advanced)` |
+
+| Option | Value |
+| --- | --- |
+| **Name** | `ndp_proxy_lan` (Will contain only LAN IPv6 addresses) |
+| **Type** | `External (advanced)` |
+
+-   Press **Apply**
+    
+-   Go to Services ‣ NDP Proxy ‣ Settings ‣ Aliases and map these two aliases so the proxy can populate them:
+    
+
+| Option | Value |
+| --- | --- |
+| **Interface** | `any` |
+| **Firewall alias** | `ndp_proxy_global` |
+
+| Option | Value |
+| --- | --- |
+| **Interface** | `LAN` |
+| **Firewall alias** | `ndp_proxy_lan` |
+
+-   Press **Apply**
+    
+-   Go to Firewall ‣ Rules ‣ LAN and create a rule that allows Internet access, but denies communication with other segments in the same IPv6 prefix:
+    
+
+|   |   |
+| --- | --- |
+| **Action** | Pass |
+| **Interface** | LAN |
+| **Direction** | In |
+| **TCP/IP Version** | IPv6 |
+| **Protocol** | Any |
+| **Source** | `ndp_proxy_lan` |
+| **Source port** | Any |
+| **Invert Destination** | `X` |
+| **Destination** | `ndp_proxy_global` |
+| **Destination port** | Any |
+| **Description** | Allow IPv6 internet access for all LAN clients known by NDP Proxy |
+
+-   Press **Apply**
+    
+
+Tip
+
+If additional networks are proxied, just add more aliases (e.g., `ndp_proxy_vlan1`) and create the same rule on that interface.
+
+Tip
+
+If you need client specific aliases, take a look at the `MAC address` alias type in Firewall ‣ Aliases, which can dynamically track IPv4 and IPv6 addresses of a single client.
+
+### [NAT Rules (Redirect DNS)](#id10)
+
+NAT rules are only required if you want to redirect DNS requests to the local running Unbound server. Most ISPs will include DNS servers as RDNSS options in the RAs, which could circumvent the local DNS server.
+
+Since IPv6 requires a routable address as target, we will configure a loopback device.
+
+Go to Interfaces ‣ Devices ‣ Loopback and create a new loopback device:
+
+| Option | Value |
+| --- | --- |
+| **Device ID** | `1` (automatic, if number is different just change description accordingly) |
+| **Description** | `lo1` |
+
+-   Press **Apply**
+    
+
+Go to Interfaces ‣ Assignments and assign the new loopback device:
+
+| Option | Value |
+| --- | --- |
+| **Device** | `lo1` |
+| **Description** | `lo1_DNS` |
+
+-   Press **Add**
+    
+
+Go to Interfaces ‣ lo1\_DNS and assign IP addresses to the loopback device:
+
+| Option | Value |
+| --- | --- |
+| **Enable** | `X` |
+| **Description** | `lo1_DNS` |
+| **IPv6 Configuration Type** | `Static` |
+| **IPv6 address** | `fd01::1/128` |
+
+-   Press **Save**
+    
+
+Go to Firewall ‣ NAT ‣ Destination NAT (Port Forward) and create a NAT rule that redirects IPv6 DNS. We will use the same firewall aliases that have been created in the Firewall Rules step:
+
+|   |   |
+| --- | --- |
+| **Interface** | LAN |
+| **TCP/IP Version** | IPv6 |
+| **Protocol** | TCP/UDP |
+| **Source** | `ndp_proxy_lan` |
+| **Source Port** | any |
+| **Invert Destination** | `X` |
+| **Destination** | `ndp_proxy_global` |
+| **Destination port** | DNS |
+| **Redirect target IP** | `fd01::1` |
+| **Redirect target port** | DNS |
+| **Filter rule association** | Pass |
+| **Description** | Redirect LAN IPv6 DNS requests to Unbound |
+
+-   Press **Save** and **Apply**
+    
+
+Attention
+
+Ensure that Unbound listens on port 53 and on all network interfaces, or the loopback device will not be included and IPv6 DNS will not work.
+
+Tip
+
+If additional networks are proxied, just add more aliases (e.g., `ndp_proxy_vlan1`) and create the same NAT rule on that interface. Alternatively, any could be used as source and destination, though this will match any traffic so be careful.
+
+### [Router Advertisements](#id11)
+
+Per default, the proxy forwards Router Solicitations from downstream to upstream, and Router Advertisements from upstream to downstream. The only alterations are the sending MAC address, and the Source Link Layer (SLLA) option.
+
+In most setups, the default is the best choice. In more complex environments, having full control over the RAs could be a requirement. The NDP proxy can be combined with [radvd](<197 Router Advertisements.md>) to fulfill that requirement.
+
+Go to Services ‣ NDP Proxy ‣ Settings and disable Proxy router advertisements.
+
+Next go to Services ‣ Router Advertisements and create a new entry:
+
+| Option | Value |
+| --- | --- |
+| **Enabled** | `X` |
+| **Interface** | `LAN` |
+| **Constructor** | `WAN` |
+
+Now the LAN interface will send RAs advertising the prefix constructed from the WAN SLAAC address. You can set custom RDNSS and DNSSL options, or set a different mode to additionally use a DHCPv6 server.
+
+### [High Availability](#id12)
+
+To use the proxy in HA, enable the advanced mode in Services ‣ NDP Proxy ‣ Settings and toggle Enable CARP failover.
+
+The simplest is using Proxy router advertisements to proxy the RAs of the ISP. When using [radvd](<197 Router Advertisements.md>) instead, advertise a CARP link-local address as source.
+
+Since Neighbor Discovery relies on a single link-layer router identity, a brief interruption may occur during failover while both the upstream ISP router and downstream clients relearn the router’s MAC address.
+
+Tip
+
+If you use NAT to rewrite the DNS server, create the same loopback device as outlined in the NAT Rules (Redirect DNS) section on both Master and Backup with the same IPv6 address. That way, you can use the same IPv6 address as target in the NAT rule without a virtual IP address.
+
+Attention
+
+Do not forget to add NDP Proxy to Services in System ‣ High Availability ‣ Settings and synchronize.
+
+## [Logging](#id13)
+
+With the debug logging you can find out the details of the proxies behavior.
+
+You can see logs of received and sent RA, NDP (NS, NA) and DAD messages. If something does not work as expected, reading the log file is the first step to troubleshoot.
+
+Go to Services ‣ NDP Proxy ‣ Settings
+
+|   |   |
+| --- | --- |
+| **Debug log** | `X` |
+
+Apply this setting and go to Services ‣ NDP Proxy ‣ Log File
+
+The proxy must learn the prefix from RAs:
+
+> -   RA prefix learned: “::/64” (valid 2h0m0s)
+>     
+>     -   A prefix was learned from an RA on the upstream interface. Without this message appearing the proxy will not learn any addresses, and your downstream clients will most likely not receive RAs to autoconfigure SLAAC addresses.
+>         
+>     
+> -   skip learn “IPv6 address” (not in allowed RA prefixes)
+>     
+>     -   No prefix was learned from RAs yet or there are clients with IPv6 addresses outside of the learned prefix. The proxy only caches neighbors in the prefixes it learned via RAs. This prevents the cache from being poisoned.
+>         
+>     
+
+The proxy must install host routes to target the individual downstream clients:
+
+> -   route installed: “IPv6 address” via eth0
+>     
+>     -   A route was successfully installed, the client should be able to reach the internet now.
+>         
+>     
+> -   route deleted: “IPv6 address”
+>     
+>     -   A route was deleted, most likely the client was offline longer than the neighbor caching time, or it changed its IPv6 address via privacy extension.
+>         
+>     
+> -   route add err: exit status 1 (out: add host “IPv6 address”: gateway eth0 fib 0: route already in table)
+>     
+>     -   There is already a different route that would overlap with the one the proxy tries to install. To fix this ensure the prefix does not have static routes you manually configured, or turn off the automatic hoste route installation if you want to handle all routes manually.
+>         
+>     
+
+Attention
+
+The proxy does not clean up installed host routes when it is stopped. This is intentional to minimize downtime of IPv6 clients between service restarts. It does automatically prune routes while it runs when the `cache-ttl` of a discovered neighbor expires.
+
+---
+
+[⬆ 目錄](<000 目錄.md>)　｜　[⬅ 上一篇：Tayga NAT64 how-to](<211 Tayga NAT64 how-to.md>)　｜　[下一篇：Dynamic DNS ➡](<213 Dynamic DNS.md>)
