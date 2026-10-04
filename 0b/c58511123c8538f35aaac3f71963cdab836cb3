@@ -1,0 +1,41 @@
+AGENTS.md
+  s_09081a776f7361::t_0bcfad319c07b1 1-51
+docs/superpowers/plans/2026-06-26-mcpjungle-dashboard.md
+  s_41cb4846e26afd::t_834b6f352fea72 1-840
+docs/superpowers/specs/2026-06-26-mcpjungle-dashboard-design.md
+  s_41cb4846e26afd::t_012d8532f7eec6 1-136
+mcpjungle/nginx.example.conf
+  s_b0266bc09621d6::t_fa03c49cdde6f7 1-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0bc58511123c8538f35aaac3f71963cdab836cb3",
+  "prompts": {},
+  "sessions": {
+    "s_09081a776f7361": {
+      "agent_id": {
+        "tool": "github-copilot",
+        "id": "b109a070-0567-40a8-bb7d-7174268eed40",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    },
+    "s_41cb4846e26afd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-acompact-cb8675abce19c3ee",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    },
+    "s_b0266bc09621d6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e3efb0bb-b1c9-4005-bf1e-55dee6a4c858",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
