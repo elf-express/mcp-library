@@ -1,0 +1,19 @@
+.gitattributes
+  s_94f72ef52d29c7::t_e8c95801da06b6 5,7-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "738802831c4f569989c44a6863b5188d1aa869ba",
+  "prompts": {},
+  "sessions": {
+    "s_94f72ef52d29c7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "74143f3a-816c-47bc-81d8-5952c8d89e55",
+        "model": "claude-opus-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
