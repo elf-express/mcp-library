@@ -3,8 +3,12 @@ dist/
 .env
 *.log
 .DS_Store
-
+.playwright-mcp
 # Cypress 執行產物(截圖 / 影片 / 下載),非原始碼
 cypress/screenshots/
 cypress/videos/
 cypress/downloads/
+
+# 本機工具產物 —— 每台機器自己決定要不要用,不該進版控
+.codegraph/
+.claude/
