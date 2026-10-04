@@ -13,3 +13,11 @@ cypress/downloads/
 .codegraph/
 .claude/
 .mcp.json
+
+# 超過 CI 5MB 門檻的「全書」合併檔 —— 檔案留在磁碟上,只是不進版控。
+# 它們是把整本書串成一檔的衍生物,corpora/README.md 第六節明定合併檔「一律排除」,
+# 永遠不會上架成語料;而 ci.yml 的 basics 掃整棵樹擋 >5MB,留著就是每次 CI 紅。
+# 其餘較小的 000 全書*.md 仍在版控中,要不要一併處理另行決定。
+/knowledge.books/nginx/en/000 全書 (nginx.org) en.md
+/knowledge.books/nginx/en+zh-TW/000 全書 (nginx.org) en+zh-TW.md
+/knowledge.books/opnsense/en+zh-TW/000 全書 (docs.opnsense.org) en+zh-TW.md
