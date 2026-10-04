@@ -12,3 +12,4 @@ cypress/downloads/
 # 本機工具產物 —— 每台機器自己決定要不要用,不該進版控
 .codegraph/
 .claude/
+.mcp.json
