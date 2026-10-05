@@ -150,7 +150,7 @@ docs-mcp-server/corpora/
 
 - [ ] **選 id**:`<書名>-<語言>`,符合第一節所有規則;`ls docs-mcp-server/corpora/ mcpjungle/servers/` 與 `docker exec mcpjungle-server /mcpjungle list servers` 確認不撞名
 - [ ] **建資料夾** `docs-mcp-server/corpora/<id>/`,只放 `.md`(第六節規則:純文字、不放合併全書)
-- [ ] **每篇 md**:`# 標題` 開頭,前 15 行內有來源行 `> 📖 官方文件:[文字](https://…)` 或 `> Source: https://…`;做不到時(例如 YAML front matter)改用 `sources.json`
+- [ ] **每篇 md**:`# 標題` 開頭,前 15 行內有來源行 `> 📖 官方文件:[文字](https://…)` 或 `> Source: https://…`;做不到時(例如 YAML front matter)改用 `sources.json`,或由匯入腳本把 `source: "…"` 去掉引號(如 `nginx-en`)
 - [ ] **`corpus.json`**:`book` / `language` / `source` / `title` / `description` / `capabilities` 都寫;capabilities 與內容相符
 - [ ] 單檔 < 5 MB,不含連線字串 / 密碼 / token
 - [ ] **smoke test**:複製 skill 的 `templates/corpus-smoke.test.ts` 成 `docs-mcp-server/tests/<id>.test.ts`,換成語料的**真實**標題與關鍵字(不可放寬比對)
@@ -174,6 +174,8 @@ docs-mcp-server/corpora/
 
 以 YAML front matter 擷取的文件(如 OPNsense:`source: "https://…"`)**不符合**第 2 條的格式——自動抽取會把結尾的 `"` 一起吃進網址。
 這類語料一律從 front matter 產生 `sources.json`,md 內容保持與擷取來源一致,方便日後重新同步。
+
+例外:語料由匯入腳本產生時(如 `nginx-en` 的 `npm run import:nginx-en`),可在轉換時把 `source: "https://…"` 改成不帶引號的 `source: https://…`,自動抽取即可取得正確網址,不必另產 `sources.json`;重新同步時重跑匯入腳本即可。
 
 ---
 
