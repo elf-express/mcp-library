@@ -1,0 +1,8 @@
+{
+  "book": "nginx",
+  "language": "en",
+  "source": "https://nginx.org/en/docs/",
+  "title": "nginx documentation",
+  "description": "nginx 官方英文文件:入門/安裝/設定指南、FAQ、開發指南,以及 http / stream / mail / njs 各模組的指令參考。指令可用 docs_symbol 依名稱精確查(如 proxy_pass)。",
+  "capabilities": { "cheatsheet": false, "symbol": true }
+}

@@ -7,7 +7,7 @@
 - **stdio**:本機用,Claude Desktop 以子行程啟動。
 - **http**(本專案重點):Streamable HTTP,可部署到雲端 / Docker,遠端連接。
 
-種子語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
+種子語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`nginx-en`(149 篇,由 `npm run import:nginx-en` 從 `knowledge.books/nginx/en` 產生),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
 
 ## 安裝(npx 一行裝,本機 stdio)
 
@@ -24,7 +24,7 @@
 }
 ```
 
-重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` 兩本(共 207 篇)。
+重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en` 三本(共 356 篇)。
 
 | AI 助手 | 設定檔 |
 |---|---|

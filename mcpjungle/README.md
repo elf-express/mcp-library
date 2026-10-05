@@ -15,7 +15,7 @@ mcpjungle/
   servers/                       各 server 的註冊設定檔(*.json)
 ```
 
-> docs-mcp 的 image 由 `../docs-mcp-server` 建置(compose 內 `build: ../docs-mcp-server`)。
+> docs-mcp 的 image 由 `../mcp/docs-mcp-server` 建置(compose 內 `build: ../mcp/docs-mcp-server`)。
 
 ## 網路 / DB
 
@@ -43,7 +43,7 @@ docker compose -f docker-compose.mcpjungle.yml up -d --build
 
 ```bash
 brew install mcpjungle/mcpjungle/mcpjungle      # 或 GitHub Releases 下載 binary
-REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-tw + 官方工具(filesystem/fetch/time)
+REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-tw + nginx-en + 官方工具(filesystem/fetch/time)
 # 手動等同:mcpjungle --registry http://localhost:18800 register -c ./servers/sqlsugar-zh-tw.json
 ```
 
@@ -51,7 +51,7 @@ REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-
 
 兩種策略:
 
-- **A. 每本書各自註冊**(推薦):`servers/sqlsugar-zh-tw.json` + `servers/fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`docs-mcp-server/corpora/README.md`](../docs-mcp-server/corpora/README.md))。
+- **A. 每本書各自註冊**(推薦):`servers/sqlsugar-zh-tw.json` + `servers/fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`mcp/docs-mcp-server/corpora/README.md`](../mcp/docs-mcp-server/corpora/README.md))。
 - **B. 整包一個 `docs`**:改註冊 `servers/docs-all.json` → `docs__docs_search`(用 `corpus` 參數選書)。新增書不必動 gateway。
 
 ## 三、官方 stdio 工具(filesystem / fetch / time)
@@ -80,7 +80,7 @@ compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway
 2. 環境變數 UI 填機密(`.env` 不進 git):至少 `MCPJUNGLE_DATABASE_URL`。
 3. 部署;之後 `git push` → 自動重佈,registrar 重跑(已註冊略過)。
 
-調整註冊清單:`registrar` 的 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw filesystem fetch time`)。
+調整註冊清單:`registrar` 的 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`)。
 
 > **語料改名後(舊名 `sqlsugar` / `fc` → `sqlsugar-zh-tw` / `fc-zh-tw`)**:registrar 只會「新增」清單內的名字,不會移除舊名。已部署的 gateway 請手動 `docker exec mcpjungle-server /mcpjungle deregister sqlsugar`、`deregister fc`,否則舊 server 仍指向已不存在的 `/mcp/sqlsugar`、`/mcp/fc`(docs-mcp-server 回 404)。
 
@@ -89,7 +89,7 @@ compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway
 你已有一台 MCPJungle 在跑,就**不要再起 gateway**——用 [`docker-compose.dockhand.yml`](./docker-compose.dockhand.yml) 只部署 `docs-mcp` + `registrar`,註冊進現有 gateway(**已實測,含 redeploy 冪等**)。
 
 1. Dockhand → 新增 Git stack,compose 路徑填 `mcpjungle/docker-compose.dockhand.yml`。
-2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle-server:8080`)、(選)`REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw`)。
+2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle-server:8080`)、(選)`REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en`)。
 3. 開 webhook。
 
 > registrar 內建**重試**(等 docs-mcp 開始監聽才註冊,避免 race)+ **冪等**(已註冊略過),redeploy 安全。
