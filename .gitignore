@@ -21,3 +21,6 @@ cypress/downloads/
 /knowledge.books/nginx/en/000 全書 (nginx.org) en.md
 /knowledge.books/nginx/en+zh-TW/000 全書 (nginx.org) en+zh-TW.md
 /knowledge.books/opnsense/en+zh-TW/000 全書 (docs.opnsense.org) en+zh-TW.md
+
+# 巢狀 worktree 保底(規則見 AGENTS.md 的 Worktree 一節)
+/mcp-library/

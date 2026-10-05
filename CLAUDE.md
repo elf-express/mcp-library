@@ -132,3 +132,4 @@ npm run cypress                      # cypress open
 - [`.github/workflows/ci.yml`](.github/workflows/ci.yml):`basics`(**Conventional Commits** PR 檢查、>5MB 大檔擋、機密掃描)+ `build-test` matrix + PR 時 docker build verify。
 - `build-test` matrix **目前只涵蓋 `fc-designer-mcp` 與 `sqlsugar-mcp`**;核心 `docs-mcp-server` 的 vitest 不在此 matrix,改它後請在本機 `npm test`。
 - 提交訊息走 **Conventional Commits**(`feat:` / `fix:` / `deploy:` …),否則 PR 會被擋。
+- worktree 放 repo 外的 `E:\source\mcp-library-<短名>`(見 [AGENTS.md](AGENTS.md) 的 Worktree 一節)。
