@@ -1,0 +1,21 @@
+.gitattributes
+  s_58251641b98742::t_f15326d35bdf75 1-8
+knowledge.books/.vscode/extensions.json
+  s_58251641b98742::t_ee6cd695bc99af 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ca1ca9ca2fcb8d0f67d4d3960fb35879d604c797",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
