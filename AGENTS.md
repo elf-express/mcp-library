@@ -31,9 +31,9 @@
 
 ## Worktree
 
-- worktree 一律放在 repo 外的同層目錄 `E:\source\mcp-library-<短名>`,不要開在 repo 目錄裡面(會被當成未追蹤檔,也會被 docker build context 掃進去)。
-- 開法:`git -C E:\source\mcp-library worktree add E:\source\mcp-library-<短名> -b <分支> origin/main`;PR 合併後 `git worktree remove`。
-- 用 Orca 管理工作區時,把 Orca 的 worktree 位置設為 `E:\source\`。
+- worktree 一律放在 repo 外的同層目錄 `E:\source\mcp-library-<短名>`，不要開在 repo 目錄裡面（會被當成未追蹤檔，也會被 docker build context 掃進去）。
+- 開法：`git -C E:\source\mcp-library worktree add E:\source\mcp-library-<短名> -b <分支> origin/main`；PR 合併後 `git -C E:\source\mcp-library worktree remove E:\source\mcp-library-<短名>`。
+- 用 Orca 管理工作區時，把 Orca 的 worktree 位置設為 `E:\source\`。
 
 ## 開發建議
 
