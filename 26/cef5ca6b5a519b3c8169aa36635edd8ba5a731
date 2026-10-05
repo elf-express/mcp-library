@@ -1,0 +1,33 @@
+mcpjungle/README.md
+  s_58251641b98742::t_378742054002d0 83
+  s_58251641b98742::t_abea3334fc4aa5 92
+mcpjungle/servers/nginx-en.json
+  s_58251641b98742::t_a34ea0e0a5d388 1-6
+mcp/docs-mcp-server/corpora/README.md
+  s_58251641b98742::t_bb72e7b5bb124e 40
+mcpjungle/docker-compose.dockhand.yml
+  s_58251641b98742::t_637ecad82be744 36
+mcpjungle/registrar.sh
+  s_58251641b98742::t_85bea4a41023c3 15
+CLAUDE.md
+  s_58251641b98742::t_e3501f19103604 108,125
+  s_58251641b98742::t_b4513a5cedf679 13
+mcpjungle/docker-compose.localtest.yml
+  s_58251641b98742::t_f5e1aa7c405ef4 38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "26cef5ca6b5a519b3c8169aa36635edd8ba5a731",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
