@@ -43,7 +43,7 @@ docker compose -f docker-compose.mcpjungle.yml up -d --build
 
 ```bash
 brew install mcpjungle/mcpjungle/mcpjungle      # 或 GitHub Releases 下載 binary
-REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-tw + 官方工具(filesystem/fetch/time)
+REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-tw + nginx-en + 官方工具(filesystem/fetch/time)
 # 手動等同:mcpjungle --registry http://localhost:18800 register -c ./servers/sqlsugar-zh-tw.json
 ```
 
