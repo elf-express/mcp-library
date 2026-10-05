@@ -1,0 +1,331 @@
+mcp/docs-mcp-server/corpora/nginx-en/corpus.json
+  s_58251641b98742::t_aea3b3c98fe5e2 1-8
+mcp/docs-mcp-server/scripts/import-nginx-en.ts
+  s_58251641b98742::t_24ee7425120752 1-41
+mcp/docs-mcp-server/package.json
+  s_58251641b98742::t_cf76aab6bf5ce1 25-26
+mcp/docs-mcp-server/tests/nginx-en.test.ts
+  s_58251641b98742::t_24c3bc56b7743e 1-31
+"mcp/docs-mcp-server/corpora/nginx-en/023 [01.01 docs] Beginner’s Guide.md"
+  s_2bf0f6e8b649b9::t_018774a9304819 1-230
+"mcp/docs-mcp-server/corpora/nginx-en/024 [01.01 docs] Building nginx from Sources.md"
+  s_2bf0f6e8b649b9::t_257abb3eb02036 1-557
+"mcp/docs-mcp-server/corpora/nginx-en/025 [01.01 docs] Contributing Changes.md"
+  s_2bf0f6e8b649b9::t_d09b0dbb8c8eba 1-92
+"mcp/docs-mcp-server/corpora/nginx-en/026 [01.01 docs] Controlling nginx.md"
+  s_2bf0f6e8b649b9::t_1138a46c371352 1-145
+"mcp/docs-mcp-server/corpora/nginx-en/027 [01.01 docs] A debugging log.md"
+  s_2bf0f6e8b649b9::t_5d761f1aaf96a9 1-114
+"mcp/docs-mcp-server/corpora/nginx-en/028 [01.01.01 dev] Development guide.md"
+  s_2bf0f6e8b649b9::t_0ea54589373ce0 1-3638
+"mcp/docs-mcp-server/corpora/nginx-en/029 [01.01 docs] Alphabetical index of directives.md"
+  s_2bf0f6e8b649b9::t_0e60010adcfeac 1-995
+"mcp/docs-mcp-server/corpora/nginx-en/030 [01.01 docs] Connection processing methods.md"
+  s_2bf0f6e8b649b9::t_26b2741edf15b0 1-38
+"mcp/docs-mcp-server/corpora/nginx-en/031 [01.01 docs] Example nginx configuration.md"
+  s_2bf0f6e8b649b9::t_a1c19a86018b35 1-154
+"mcp/docs-mcp-server/corpora/nginx-en/032 [01.01 docs] FAQ.md"
+  s_2bf0f6e8b649b9::t_7653a0b417f514 1-26
+"mcp/docs-mcp-server/corpora/nginx-en/033 [01.01.02 faq] What does the following error mean in the log file “accept() failed (53 Software.md"
+  s_2bf0f6e8b649b9::t_04a71dc89941d9 1-22
+"mcp/docs-mcp-server/corpora/nginx-en/034 [01.01.02 faq] Why nginx doesn’t handle chunked encoding responses from my backend properly.md"
+  s_2bf0f6e8b649b9::t_ab09b1c55df312 1-28
+"mcp/docs-mcp-server/corpora/nginx-en/035 [01.01.02 faq] Can I run nginx with “daemon off” or “master_process off” settings in a producti.md"
+  s_2bf0f6e8b649b9::t_5604a999da30ea 1-26
+"mcp/docs-mcp-server/corpora/nginx-en/036 [01.01.02 faq] How can nginx copyright be acknowledged when using nginx as part of a proprietar.md"
+  s_2bf0f6e8b649b9::t_34bc0e474c4a1f 1-28
+"mcp/docs-mcp-server/corpora/nginx-en/037 [01.01.02 faq] Is there a proper way to use nginx variables to make sections of the configurati.md"
+  s_2bf0f6e8b649b9::t_acc77b95495e71 1-22
+"mcp/docs-mcp-server/corpora/nginx-en/038 [01.01 docs] Tuning FreeBSD for the highload.md"
+  s_2bf0f6e8b649b9::t_4c66ccac226f17 1-112
+"mcp/docs-mcp-server/corpora/nginx-en/039 [01.01 docs] NGINX Open Source Governance.md"
+  s_2bf0f6e8b649b9::t_1c0d069dc89dcc 1-39
+"mcp/docs-mcp-server/corpora/nginx-en/040 [01.01 docs] Setting up hashes.md"
+  s_2bf0f6e8b649b9::t_30a3460621db8f 1-22
+"mcp/docs-mcp-server/corpora/nginx-en/041 [01.01 docs] Building nginx on the Win32 platform with Visual C.md"
+  s_2bf0f6e8b649b9::t_e9641e7d083328 1-92
+"mcp/docs-mcp-server/corpora/nginx-en/042 [01.01.03 http] Configuring HTTPS servers.md"
+  s_2bf0f6e8b649b9::t_047e7f8122097a 1-259
+"mcp/docs-mcp-server/corpora/nginx-en/043 [01.01.03 http] Converting rewrite rules.md"
+  s_2bf0f6e8b649b9::t_cf77bf0cda4f16 1-135
+"mcp/docs-mcp-server/corpora/nginx-en/044 [01.01.03 http] Using nginx as HTTP load balancer.md"
+  s_2bf0f6e8b649b9::t_1408ebed69407d 1-157
+"mcp/docs-mcp-server/corpora/nginx-en/045 [01.01.03 http] Module ngx_http_access_module.md"
+  s_2bf0f6e8b649b9::t_dd5ebef06d3835 1-66
+"mcp/docs-mcp-server/corpora/nginx-en/046 [01.01.03 http] Module ngx_http_acme_module.md"
+  s_2bf0f6e8b649b9::t_c68295a73322c0 1-278
+"mcp/docs-mcp-server/corpora/nginx-en/047 [01.01.03 http] Module ngx_http_addition_module.md"
+  s_2bf0f6e8b649b9::t_a3c001e795f1d6 1-67
+"mcp/docs-mcp-server/corpora/nginx-en/048 [01.01.03 http] Module ngx_http_api_module.md"
+  s_2bf0f6e8b649b9::t_9bff337ffd75ef 1-3412
+"mcp/docs-mcp-server/corpora/nginx-en/049 [01.01.03 http] Module ngx_http_auth_basic_module.md"
+  s_2bf0f6e8b649b9::t_2d8f84600fbeed 1-74
+"mcp/docs-mcp-server/corpora/nginx-en/050 [01.01.03 http] Module ngx_http_auth_jwt_module.md"
+  s_2bf0f6e8b649b9::t_b3d0bff7fe3141 1-256
+"mcp/docs-mcp-server/corpora/nginx-en/051 [01.01.03 http] Module ngx_http_auth_request_module.md"
+  s_2bf0f6e8b649b9::t_12ccb794642afd 1-70
+"mcp/docs-mcp-server/corpora/nginx-en/052 [01.01.03 http] Module ngx_http_auth_require_module.md"
+  s_2bf0f6e8b649b9::t_8eb9d5efb3b04a 1-60
+"mcp/docs-mcp-server/corpora/nginx-en/053 [01.01.03 http] Module ngx_http_autoindex_module.md"
+  s_2bf0f6e8b649b9::t_ef5d9fbee0e10b 1-80
+"mcp/docs-mcp-server/corpora/nginx-en/054 [01.01.03 http] Module ngx_http_browser_module.md"
+  s_2bf0f6e8b649b9::t_ac36377b4d3490 1-116
+"mcp/docs-mcp-server/corpora/nginx-en/055 [01.01.03 http] Module ngx_http_charset_module.md"
+  s_2bf0f6e8b649b9::t_922ddc6dace3b0 1-137
+"mcp/docs-mcp-server/corpora/nginx-en/056 [01.01.03 http] Module ngx_http_core_module.md"
+  s_2bf0f6e8b649b9::t_b96919c164f6d1 1-2090
+"mcp/docs-mcp-server/corpora/nginx-en/057 [01.01.03 http] Module ngx_http_dav_module.md"
+  s_2bf0f6e8b649b9::t_357e965cff6333 1-122
+"mcp/docs-mcp-server/corpora/nginx-en/058 [01.01.03 http] Module ngx_http_empty_gif_module.md"
+  s_2bf0f6e8b649b9::t_063d999ec141bf 1-44
+"mcp/docs-mcp-server/corpora/nginx-en/059 [01.01.03 http] Module ngx_http_f4f_module.md"
+  s_2bf0f6e8b649b9::t_367d3f54197b72 1-61
+"mcp/docs-mcp-server/corpora/nginx-en/060 [01.01.03 http] Module ngx_http_fastcgi_module.md"
+  s_2bf0f6e8b649b9::t_7630c085ca3c80 1-1015
+"mcp/docs-mcp-server/corpora/nginx-en/061 [01.01.03 http] Module ngx_http_flv_module.md"
+  s_2bf0f6e8b649b9::t_9c76debe3c8737 1-48
+"mcp/docs-mcp-server/corpora/nginx-en/062 [01.01.03 http] Module ngx_http_geo_module.md"
+  s_2bf0f6e8b649b9::t_24782e3ee34da9 1-137
+"mcp/docs-mcp-server/corpora/nginx-en/063 [01.01.03 http] Module ngx_http_geoip_module.md"
+  s_2bf0f6e8b649b9::t_cd68d7fd08a62f 1-166
+"mcp/docs-mcp-server/corpora/nginx-en/064 [01.01.03 http] Module ngx_http_grpc_module.md"
+  s_2bf0f6e8b649b9::t_fab478ed471a21 1-592
+"mcp/docs-mcp-server/corpora/nginx-en/065 [01.01.03 http] Module ngx_http_gunzip_module.md"
+  s_2bf0f6e8b649b9::t_c15840b57f6063 1-57
+"mcp/docs-mcp-server/corpora/nginx-en/066 [01.01.03 http] Module ngx_http_gzip_module.md"
+  s_2bf0f6e8b649b9::t_9c19de1e4ceaba 1-177
+"mcp/docs-mcp-server/corpora/nginx-en/067 [01.01.03 http] Module ngx_http_gzip_static_module.md"
+  s_2bf0f6e8b649b9::t_d7423016cd2475 1-49
+"mcp/docs-mcp-server/corpora/nginx-en/068 [01.01.03 http] Module ngx_http_headers_module.md"
+  s_2bf0f6e8b649b9::t_249bd4c442fb30 1-146
+"mcp/docs-mcp-server/corpora/nginx-en/069 [01.01.03 http] Module ngx_http_hls_module.md"
+  s_2bf0f6e8b649b9::t_00e1e81205c45e 1-185
+"mcp/docs-mcp-server/corpora/nginx-en/070 [01.01.03 http] Module ngx_http_image_filter_module.md"
+  s_2bf0f6e8b649b9::t_e0c8cc4a626c00 1-155
+"mcp/docs-mcp-server/corpora/nginx-en/071 [01.01.03 http] Module ngx_http_index_module.md"
+  s_2bf0f6e8b649b9::t_297bf2546f21f0 1-62
+"mcp/docs-mcp-server/corpora/nginx-en/072 [01.01.03 http] Module ngx_http_internal_redirect_module.md"
+  s_2bf0f6e8b649b9::t_e43898f3001ff2 1-62
+"mcp/docs-mcp-server/corpora/nginx-en/073 [01.01.03 http] Module ngx_http_js_module.md"
+  s_2bf0f6e8b649b9::t_c98fda9596f2d3 1-749
+"mcp/docs-mcp-server/corpora/nginx-en/074 [01.01.03 http] Module ngx_http_keyval_module.md"
+  s_2bf0f6e8b649b9::t_f2d3b058e518c8 1-100
+"mcp/docs-mcp-server/corpora/nginx-en/075 [01.01.03 http] Module ngx_http_limit_conn_module.md"
+  s_2bf0f6e8b649b9::t_b7e39ac25132f9 1-159
+"mcp/docs-mcp-server/corpora/nginx-en/076 [01.01.03 http] Module ngx_http_limit_req_module.md"
+  s_2bf0f6e8b649b9::t_0196202fd63ee6 1-174
+"mcp/docs-mcp-server/corpora/nginx-en/077 [01.01.03 http] Module ngx_http_log_module.md"
+  s_2bf0f6e8b649b9::t_5cf69acf2e627b 1-200
+"mcp/docs-mcp-server/corpora/nginx-en/078 [01.01.03 http] Module ngx_http_map_module.md"
+  s_2bf0f6e8b649b9::t_3b2d631026da30 1-140
+"mcp/docs-mcp-server/corpora/nginx-en/079 [01.01.03 http] Module ngx_http_memcached_module.md"
+  s_2bf0f6e8b649b9::t_852a0c30d7fa28 1-265
+"mcp/docs-mcp-server/corpora/nginx-en/080 [01.01.03 http] Module ngx_http_mirror_module.md"
+  s_2bf0f6e8b649b9::t_e192f687c80b55 1-76
+"mcp/docs-mcp-server/corpora/nginx-en/081 [01.01.03 http] Module ngx_http_mp4_module.md"
+  s_2bf0f6e8b649b9::t_6ed1e150cf6a19 1-139
+"mcp/docs-mcp-server/corpora/nginx-en/082 [01.01.03 http] Module ngx_http_num_map_module.md"
+  s_2bf0f6e8b649b9::t_0df0cb700a45bc 1-71
+"mcp/docs-mcp-server/corpora/nginx-en/083 [01.01.03 http] Module ngx_http_oidc_module.md"
+  s_2bf0f6e8b649b9::t_991d41e613b8a4 1-338
+"mcp/docs-mcp-server/corpora/nginx-en/084 [01.01.03 http] Module ngx_http_perl_module.md"
+  s_2bf0f6e8b649b9::t_52a09d2d2add24 1-311
+"mcp/docs-mcp-server/corpora/nginx-en/085 [01.01.03 http] Module ngx_http_proxy_module.md"
+  s_2bf0f6e8b649b9::t_973faf5e86a5be 1-1556
+"mcp/docs-mcp-server/corpora/nginx-en/086 [01.01.03 http] Module ngx_http_proxy_protocol_vendor_module.md"
+  s_2bf0f6e8b649b9::t_9cdbacda7412a6 1-60
+"mcp/docs-mcp-server/corpora/nginx-en/087 [01.01.03 http] Module ngx_http_random_index_module.md"
+  s_2bf0f6e8b649b9::t_7eb6d68613567a 1-46
+"mcp/docs-mcp-server/corpora/nginx-en/088 [01.01.03 http] Module ngx_http_realip_module.md"
+  s_2bf0f6e8b649b9::t_8262c0ec4f7304 1-86
+"mcp/docs-mcp-server/corpora/nginx-en/089 [01.01.03 http] Module ngx_http_referer_module.md"
+  s_2bf0f6e8b649b9::t_84fd02470db5fc 1-108
+"mcp/docs-mcp-server/corpora/nginx-en/090 [01.01.03 http] Module ngx_http_rewrite_module.md"
+  s_2bf0f6e8b649b9::t_330499499dd81c 1-281
+"mcp/docs-mcp-server/corpora/nginx-en/091 [01.01.03 http] Module ngx_http_scgi_module.md"
+  s_2bf0f6e8b649b9::t_75ed26b76442ca 1-887
+"mcp/docs-mcp-server/corpora/nginx-en/092 [01.01.03 http] Module ngx_http_secure_link_module.md"
+  s_2bf0f6e8b649b9::t_c6b4476cadbdf1 1-146
+"mcp/docs-mcp-server/corpora/nginx-en/093 [01.01.03 http] Module ngx_http_session_log_module.md"
+  s_2bf0f6e8b649b9::t_e486ada1a3771b 1-90
+"mcp/docs-mcp-server/corpora/nginx-en/094 [01.01.03 http] Module ngx_http_slice_module.md"
+  s_2bf0f6e8b649b9::t_046eea26914463 1-67
+"mcp/docs-mcp-server/corpora/nginx-en/096 [01.01.03 http] Module ngx_http_split_clients_module.md"
+  s_2bf0f6e8b649b9::t_5c045bfff37e30 1-61
+"mcp/docs-mcp-server/corpora/nginx-en/097 [01.01.03 http] Module ngx_http_ssi_module.md"
+  s_2bf0f6e8b649b9::t_b8a7be4b01890d 1-308
+"mcp/docs-mcp-server/corpora/nginx-en/098 [01.01.03 http] Module ngx_http_ssl_module.md"
+  s_2bf0f6e8b649b9::t_e02cbc549b30d2 1-889
+"mcp/docs-mcp-server/corpora/nginx-en/099 [01.01.03 http] Module ngx_http_status_module.md"
+  s_2bf0f6e8b649b9::t_e5f75b47210eec 1-653
+"mcp/docs-mcp-server/corpora/nginx-en/100 [01.01.03 http] Module ngx_http_stub_status_module.md"
+  s_2bf0f6e8b649b9::t_13bd4804f36c94 1-109
+"mcp/docs-mcp-server/corpora/nginx-en/101 [01.01.03 http] Module ngx_http_sub_module.md"
+  s_2bf0f6e8b649b9::t_09d09567effe28 1-82
+"mcp/docs-mcp-server/corpora/nginx-en/102 [01.01.03 http] Module ngx_http_tunnel_module.md"
+  s_2bf0f6e8b649b9::t_4f4938ebae6db8 1-285
+"mcp/docs-mcp-server/corpora/nginx-en/103 [01.01.03 http] Module ngx_http_upstream_conf_module.md"
+  s_2bf0f6e8b649b9::t_3e32a69885209f 1-204
+"mcp/docs-mcp-server/corpora/nginx-en/104 [01.01.03 http] Module ngx_http_upstream_hc_module.md"
+  s_2bf0f6e8b649b9::t_ed464f6aee5e3c 1-258
+"mcp/docs-mcp-server/corpora/nginx-en/105 [01.01.03 http] Module ngx_http_upstream_module.md"
+  s_2bf0f6e8b649b9::t_b14ef6226a4d30 1-758
+"mcp/docs-mcp-server/corpora/nginx-en/106 [01.01.03 http] Module ngx_http_userid_module.md"
+  s_2bf0f6e8b649b9::t_5351238661347b 1-163
+"mcp/docs-mcp-server/corpora/nginx-en/107 [01.01.03 http] Module ngx_http_uwsgi_module.md"
+  s_2bf0f6e8b649b9::t_54005bd1c22cde 1-1139
+"mcp/docs-mcp-server/corpora/nginx-en/108 [01.01.03 http] Module ngx_http_v2_module.md"
+  s_2bf0f6e8b649b9::t_0ad1d6cf076e7c 1-227
+"mcp/docs-mcp-server/corpora/nginx-en/109 [01.01.03 http] Module ngx_http_v3_module.md"
+  s_2bf0f6e8b649b9::t_1b5b21cfe7dad9 1-169
+"mcp/docs-mcp-server/corpora/nginx-en/110 [01.01.03 http] Module ngx_http_xslt_module.md"
+  s_2bf0f6e8b649b9::t_3d58654f31f10c 1-149
+"mcp/docs-mcp-server/corpora/nginx-en/111 [01.01.03 http] How nginx processes a request.md"
+  s_2bf0f6e8b649b9::t_264152b7b2e677 1-177
+"mcp/docs-mcp-server/corpora/nginx-en/112 [01.01.03 http] Server names.md"
+  s_2bf0f6e8b649b9::t_d984800c76ced8 1-280
+"mcp/docs-mcp-server/corpora/nginx-en/113 [01.01.03 http] WebSocket proxying.md"
+  s_2bf0f6e8b649b9::t_a0139ca811d92e 1-58
+"mcp/docs-mcp-server/corpora/nginx-en/114 [01.01 docs] nginx documentation.md"
+  s_2bf0f6e8b649b9::t_f06da7f447a61e 1-173
+"mcp/docs-mcp-server/corpora/nginx-en/115 [01.01 docs] Installing nginx.md"
+  s_2bf0f6e8b649b9::t_4b5f5f2b090d7a 1-32
+"mcp/docs-mcp-server/corpora/nginx-en/116 [01.01.04 mail] Module ngx_mail_auth_http_module.md"
+  s_2bf0f6e8b649b9::t_f5ec201b0b1b2d 1-197
+"mcp/docs-mcp-server/corpora/nginx-en/117 [01.01.04 mail] Module ngx_mail_core_module.md"
+  s_2bf0f6e8b649b9::t_2a14a274c0562b 1-270
+"mcp/docs-mcp-server/corpora/nginx-en/118 [01.01.04 mail] Module ngx_mail_imap_module.md"
+  s_2bf0f6e8b649b9::t_a28f8d8dbafb7a 1-76
+"mcp/docs-mcp-server/corpora/nginx-en/119 [01.01.04 mail] Module ngx_mail_pop3_module.md"
+  s_2bf0f6e8b649b9::t_4be0d772d0a7ed 1-66
+"mcp/docs-mcp-server/corpora/nginx-en/120 [01.01.04 mail] Module ngx_mail_proxy_module.md"
+  s_2bf0f6e8b649b9::t_ab21926377d00d 1-104
+"mcp/docs-mcp-server/corpora/nginx-en/121 [01.01.04 mail] Module ngx_mail_realip_module.md"
+  s_2bf0f6e8b649b9::t_aa52bb49577be3 1-46
+"mcp/docs-mcp-server/corpora/nginx-en/122 [01.01.04 mail] Module ngx_mail_smtp_module.md"
+  s_2bf0f6e8b649b9::t_d48a7cc7e9966e 1-90
+"mcp/docs-mcp-server/corpora/nginx-en/123 [01.01.04 mail] Module ngx_mail_ssl_module.md"
+  s_2bf0f6e8b649b9::t_d509dc96d4a3d6 1-446
+"mcp/docs-mcp-server/corpora/nginx-en/124 [01.01 docs] Debugging nginx with DTrace pid provider.md"
+  s_2bf0f6e8b649b9::t_701406320e17fb 1-86
+"mcp/docs-mcp-server/corpora/nginx-en/125 [01.01 docs] Core functionality.md"
+  s_2bf0f6e8b649b9::t_46a895933a01e2 1-529
+"mcp/docs-mcp-server/corpora/nginx-en/126 [01.01 docs] Module ngx_google_perftools_module.md"
+  s_2bf0f6e8b649b9::t_1095185e13f115 1-48
+"mcp/docs-mcp-server/corpora/nginx-en/127 [01.01 docs] Module ngx_mgmt_module.md"
+  s_2bf0f6e8b649b9::t_958093ecf7395c 1-226
+"mcp/docs-mcp-server/corpora/nginx-en/128 [01.01 docs] Module ngx_otel_module.md"
+  s_2bf0f6e8b649b9::t_dd2511e14629b4 1-230
+"mcp/docs-mcp-server/corpora/nginx-en/129 [01.01.05 njs] Changes.md"
+  s_2bf0f6e8b649b9::t_c6f1a3b20c7192 1-2454
+"mcp/docs-mcp-server/corpora/nginx-en/130 [01.01.05 njs] Command-line interface.md"
+  s_2bf0f6e8b649b9::t_02c8ae718d6661 1-56
+"mcp/docs-mcp-server/corpora/nginx-en/131 [01.01.05 njs] Compatibility.md"
+  s_2bf0f6e8b649b9::t_32a511ee0c1899 1-152
+"mcp/docs-mcp-server/corpora/nginx-en/132 [01.01.05 njs] JavaScript Engine.md"
+  s_2bf0f6e8b649b9::t_56a08efb8f82bf 1-57
+"mcp/docs-mcp-server/corpora/nginx-en/133 [01.01.05 njs] nginx JavaScript module.md"
+  s_2bf0f6e8b649b9::t_8633ce54c85de3 1-108
+"mcp/docs-mcp-server/corpora/nginx-en/134 [01.01.05 njs] Download and install.md"
+  s_2bf0f6e8b649b9::t_92791c87fbc0c9 1-83
+"mcp/docs-mcp-server/corpora/nginx-en/135 [01.01.05 njs] Using node modules with njs.md"
+  s_2bf0f6e8b649b9::t_a7ff658288aa60 1-423
+"mcp/docs-mcp-server/corpora/nginx-en/136 [01.01.05 njs] Understanding preloaded objects.md"
+  s_2bf0f6e8b649b9::t_f988682f01147c 1-49
+"mcp/docs-mcp-server/corpora/nginx-en/137 [01.01.05 njs] Reference.md"
+  s_2bf0f6e8b649b9::t_73d5c6e29bf2ff 1-3176
+"mcp/docs-mcp-server/corpora/nginx-en/138 [01.01.05 njs] Security.md"
+  s_2bf0f6e8b649b9::t_fe0ab0d49efedc 1-62
+"mcp/docs-mcp-server/corpora/nginx-en/139 [01.01.05 njs] Writing njs code using TypeScript definition files.md"
+  s_2bf0f6e8b649b9::t_e5157c42192ca1 1-87
+"mcp/docs-mcp-server/corpora/nginx-en/140 [01.01 docs] Support for QUIC and HTTP3.md"
+  s_2bf0f6e8b649b9::t_0ae355e0590f09 1-113
+"mcp/docs-mcp-server/corpora/nginx-en/141 [01.01.06 stream] Module ngx_stream_access_module.md"
+  s_2bf0f6e8b649b9::t_aa0711044d39e8 1-61
+"mcp/docs-mcp-server/corpora/nginx-en/142 [01.01.06 stream] Module ngx_stream_core_module.md"
+  s_2bf0f6e8b649b9::t_12083e8512da35 1-589
+"mcp/docs-mcp-server/corpora/nginx-en/143 [01.01.06 stream] Module ngx_stream_geo_module.md"
+  s_2bf0f6e8b649b9::t_99ca42215d600e 1-123
+"mcp/docs-mcp-server/corpora/nginx-en/144 [01.01.06 stream] Module ngx_stream_geoip_module.md"
+  s_2bf0f6e8b649b9::t_9f44e2b9cef294 1-145
+"mcp/docs-mcp-server/corpora/nginx-en/145 [01.01.06 stream] Module ngx_stream_js_module.md"
+  s_2bf0f6e8b649b9::t_5acc9e4ba00f64 1-659
+"mcp/docs-mcp-server/corpora/nginx-en/146 [01.01.06 stream] Module ngx_stream_keyval_module.md"
+  s_2bf0f6e8b649b9::t_abe356a43632d0 1-106
+"mcp/docs-mcp-server/corpora/nginx-en/147 [01.01.06 stream] Module ngx_stream_limit_conn_module.md"
+  s_2bf0f6e8b649b9::t_3924d2c311b1c8 1-115
+"mcp/docs-mcp-server/corpora/nginx-en/148 [01.01.06 stream] Module ngx_stream_log_module.md"
+  s_2bf0f6e8b649b9::t_2d6188b5436bfe 1-133
+"mcp/docs-mcp-server/corpora/nginx-en/149 [01.01.06 stream] Module ngx_stream_map_module.md"
+  s_2bf0f6e8b649b9::t_8eee56a981b26e 1-128
+"mcp/docs-mcp-server/corpora/nginx-en/150 [01.01.06 stream] Module ngx_stream_mqtt_filter_module.md"
+  s_2bf0f6e8b649b9::t_db5a6163c4288b 1-91
+"mcp/docs-mcp-server/corpora/nginx-en/151 [01.01.06 stream] Module ngx_stream_mqtt_preread_module.md"
+  s_2bf0f6e8b649b9::t_c3ad9709c48c2f 1-55
+"mcp/docs-mcp-server/corpora/nginx-en/152 [01.01.06 stream] Module ngx_stream_num_map_module.md"
+  s_2bf0f6e8b649b9::t_8aece29b7e7b81 1-71
+"mcp/docs-mcp-server/corpora/nginx-en/153 [01.01.06 stream] Module ngx_stream_pass_module.md"
+  s_2bf0f6e8b649b9::t_8fcfbdb1f71340 1-79
+"mcp/docs-mcp-server/corpora/nginx-en/154 [01.01.06 stream] Module ngx_stream_proxy_module.md"
+  s_2bf0f6e8b649b9::t_399347fd088e32 1-561
+"mcp/docs-mcp-server/corpora/nginx-en/155 [01.01.06 stream] Module ngx_stream_proxy_protocol_vendor_module.md"
+  s_2bf0f6e8b649b9::t_22020aa52c1357 1-57
+"mcp/docs-mcp-server/corpora/nginx-en/156 [01.01.06 stream] Module ngx_stream_realip_module.md"
+  s_2bf0f6e8b649b9::t_69a37f8060586a 1-58
+"mcp/docs-mcp-server/corpora/nginx-en/157 [01.01.06 stream] Module ngx_stream_return_module.md"
+  s_2bf0f6e8b649b9::t_bd04d6e5b6f2ed 1-45
+"mcp/docs-mcp-server/corpora/nginx-en/158 [01.01.06 stream] Module ngx_stream_set_module.md"
+  s_2bf0f6e8b649b9::t_f9cd3e2a6e335b 1-45
+"mcp/docs-mcp-server/corpora/nginx-en/159 [01.01.06 stream] Module ngx_stream_split_clients_module.md"
+  s_2bf0f6e8b649b9::t_85cbcdc99bafc3 1-64
+"mcp/docs-mcp-server/corpora/nginx-en/160 [01.01.06 stream] Module ngx_stream_ssl_module.md"
+  s_2bf0f6e8b649b9::t_5c22ff454618f1 1-817
+"mcp/docs-mcp-server/corpora/nginx-en/161 [01.01.06 stream] Module ngx_stream_ssl_preread_module.md"
+  s_2bf0f6e8b649b9::t_fecf4c71e2b855 1-110
+"mcp/docs-mcp-server/corpora/nginx-en/162 [01.01.06 stream] Module ngx_stream_upstream_hc_module.md"
+  s_2bf0f6e8b649b9::t_a2e8537d3f1dcb 1-185
+"mcp/docs-mcp-server/corpora/nginx-en/163 [01.01.06 stream] Module ngx_stream_upstream_module.md"
+  s_2bf0f6e8b649b9::t_f9b1972f708cc4 1-367
+"mcp/docs-mcp-server/corpora/nginx-en/164 [01.01.06 stream] Module ngx_stream_zone_sync_module.md"
+  s_2bf0f6e8b649b9::t_73fedef85f1ab4 1-356
+"mcp/docs-mcp-server/corpora/nginx-en/165 [01.01.06 stream] How nginx processes a TCPUDP session.md"
+  s_2bf0f6e8b649b9::t_514503d406fd5e 1-48
+"mcp/docs-mcp-server/corpora/nginx-en/166 [01.01 docs] Command-line parameters.md"
+  s_2bf0f6e8b649b9::t_787553c14398f9 1-45
+"mcp/docs-mcp-server/corpora/nginx-en/167 [01.01 docs] Configuration file measurement units.md"
+  s_2bf0f6e8b649b9::t_8aa7e5eebbe213 1-58
+"mcp/docs-mcp-server/corpora/nginx-en/168 [01.01 docs] A message “ ‘sys_errlist’ is deprecated; use ‘strerror’ or ‘strerror_r’ instead .md"
+  s_2bf0f6e8b649b9::t_a486b298091394 1-29
+"mcp/docs-mcp-server/corpora/nginx-en/169 [01.01 docs] Logging to syslog.md"
+  s_2bf0f6e8b649b9::t_2b5dcf56ef7df3 1-53
+"mcp/docs-mcp-server/corpora/nginx-en/170 [01.01 docs] Alphabetical index of variables.md"
+  s_2bf0f6e8b649b9::t_0545b2ed74a795 1-277
+"mcp/docs-mcp-server/corpora/nginx-en/171 [01.01 docs] I am trying to open Facebook, Yahoo!, Yandex, Tumblr, Google etc., and instead I.md"
+  s_2bf0f6e8b649b9::t_ce6aa3a3f0ab51 1-63
+"mcp/docs-mcp-server/corpora/nginx-en/172 [01.01 docs] nginx for Windows.md"
+  s_2bf0f6e8b649b9::t_e50edec24d584c 1-73
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c6466dd1f84893d0bce1bf72c1830338f3259f33",
+  "prompts": {},
+  "sessions": {
+    "s_2bf0f6e8b649b9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-ae118-implementer-ab8857f81d170864",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    },
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
