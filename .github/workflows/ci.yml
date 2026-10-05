@@ -5,8 +5,9 @@ name: CI
 # 觸發:push / PR 到 main
 # 內含:
 #   - basics:    commit lint、大檔案檢查、機密掃描
-#   - build-test: matrix — 每個 server 的 TypeScript build + 單元測試
+#   - build-test: matrix — 每個 server 的 TypeScript build + 單元測試(docs-mcp-server 另上傳 JUnit 報告)
 #   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
+# repo 政策只允許官方與已驗證發行者的 action,且必須釘 SHA。
 # =============================================================================
 
 on:
@@ -35,9 +36,27 @@ jobs:
         with:
           fetch-depth: 0
 
+      # 用內建 shell 檢查,不引用第三方 action(repo 政策只允許官方與已驗證發行者)
       - name: Check commit messages (Conventional Commits)
         if: github.event_name == 'pull_request'
-        uses: webiny/action-conventional-commits@7f91b1595ca1951cdb671ddc9f07a49081ec5b69  # v1.4.2
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          PATTERN='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert|deploy)(\([^)]+\))?!?: .+'
+          BAD=0
+          while IFS= read -r line; do
+            subject="${line#* }"
+            if ! printf '%s\n' "$subject" | grep -qE "$PATTERN"; then
+              echo "::error::不符合 Conventional Commits:$line"
+              BAD=1
+            fi
+          done < <(git log --no-merges --format='%h %s' "$BASE_SHA..$HEAD_SHA")
+          if [ "$BAD" -ne 0 ]; then
+            echo "::error::commit 標題需為 type(scope): 說明,type 限 $PATTERN"
+            exit 1
+          fi
+          echo "commit 標題皆符合 Conventional Commits"
 
       - name: Check for large files (> 5MB)
         run: |
@@ -76,10 +95,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - name: docs-mcp-server
+            dir: mcp/docs-mcp-server
+            node: 24
+            test_args: -- --reporter=default --reporter=junit --outputFile.junit=test-results/junit.xml
           - name: fc-designer-mcp
             dir: mcp/legacy/fc-designer-mcp
+            node: 20
+            test_args: ''
           - name: sqlsugar-mcp
             dir: mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server
+            node: 20
+            test_args: ''
     defaults:
       run:
         working-directory: ${{ matrix.dir }}
@@ -90,7 +117,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e  # v6
         with:
-          node-version: 20
+          node-version: ${{ matrix.node }}
           cache: npm
           cache-dependency-path: ${{ matrix.dir }}/package-lock.json
 
@@ -101,7 +128,15 @@ jobs:
         run: npm run build
 
       - name: Run unit tests
-        run: npm test
+        run: npm test ${{ matrix.test_args }}
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        with:
+          name: test-results-${{ matrix.name }}
+          path: ${{ matrix.dir }}/test-results/
+          if-no-files-found: ignore
 
       - name: Verify build output
         run: |
@@ -121,6 +156,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - image: docs-mcp-server
+            context: ./mcp/docs-mcp-server
           - image: fc-designer-mcp
             context: ./mcp/legacy/fc-designer-mcp
           - image: sqlsugar-mcp
