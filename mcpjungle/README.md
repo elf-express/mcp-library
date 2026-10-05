@@ -15,7 +15,7 @@ mcpjungle/
   servers/                       各 server 的註冊設定檔(*.json)
 ```
 
-> docs-mcp 的 image 由 `../docs-mcp-server` 建置(compose 內 `build: ../docs-mcp-server`)。
+> docs-mcp 的 image 由 `../mcp/docs-mcp-server` 建置(compose 內 `build: ../mcp/docs-mcp-server`)。
 
 ## 網路 / DB
 
@@ -51,7 +51,7 @@ REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-
 
 兩種策略:
 
-- **A. 每本書各自註冊**(推薦):`servers/sqlsugar-zh-tw.json` + `servers/fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`docs-mcp-server/corpora/README.md`](../docs-mcp-server/corpora/README.md))。
+- **A. 每本書各自註冊**(推薦):`servers/sqlsugar-zh-tw.json` + `servers/fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`mcp/docs-mcp-server/corpora/README.md`](../mcp/docs-mcp-server/corpora/README.md))。
 - **B. 整包一個 `docs`**:改註冊 `servers/docs-all.json` → `docs__docs_search`(用 `corpus` 參數選書)。新增書不必動 gateway。
 
 ## 三、官方 stdio 工具(filesystem / fetch / time)

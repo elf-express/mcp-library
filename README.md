@@ -6,7 +6,7 @@
 
 | 子目錄 | 角色 | 說明 |
 | --- | --- | --- |
-| [`mcp/docs-mcp-server/`](./mcp/docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133);新增書 = 丟資料夾 + `corpus.json` |
+| [`mcp/docs-mcp-server/`](./mcp/docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133 + `nginx-en` 149);新增書 = 丟資料夾 + `corpus.json` |
 | [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
 | [`mcp/legacy/`](./mcp/legacy) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
 
@@ -21,7 +21,7 @@ docker compose up -d --build   # 零設定,不必先 cp .env.example
 ```
 
 * 起來的容器:`mcpjungle-server`(:18800)+ `docs-mcp-server` + 一次性 registrar;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
-* registrar 自動把 5 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
+* registrar 自動把 6 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
 * DB 是內建的 `mcpjungle-postgres`(volume `pgdata`,不對外開 port);gateway 等它 healthy 才啟動。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
 * 用戶端連 `http://<host>:18800/mcp`(全部)或 `http://<host>:18800/mcp/<corpus>`。
 

@@ -175,7 +175,7 @@ docs-mcp-server/corpora/
 以 YAML front matter 擷取的文件(如 OPNsense:`source: "https://…"`)**不符合**第 2 條的格式——自動抽取會把結尾的 `"` 一起吃進網址。
 這類語料一律從 front matter 產生 `sources.json`,md 內容保持與擷取來源一致,方便日後重新同步。
 
-例外:語料由匯入腳本產生時(如 `nginx-en` 的 `npm run import:nginx-en`),可在轉換時把 `source: "https://…"` 改成不帶引號的 `source: https://…`,自動抽取即可取得正確網址,不必另產 `sources.json`;重新同步時重跑匯入腳本即可。
+例外:語料由匯入腳本產生時(如 `nginx-en` 的 `npm run import:nginx-en`),可在轉換時把 `source: "https://…"` 改成不帶引號的 `source: https://…`,自動抽取即可取得正確網址,不必另產 `sources.json`;重新同步時重跑匯入腳本即可。此類語料的 md 以 YAML front matter 開頭、其後才是 `# 標題`,亦符合本節「`# 標題` 開頭」的要求。
 
 ---
 

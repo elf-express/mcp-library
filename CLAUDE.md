@@ -85,7 +85,7 @@ npm run cypress                      # cypress open
   - `cheatsheet` 能力:`docs_cheatsheet`(抽速查表段落)
   - `examples` 能力:`docs_code_search` / `docs_code_read`(查語料附帶的程式碼範例,如 sqlsugar-zh-tw 的 C#)
   - `symbol` 能力:`docs_symbol`(按 API/組件名精確定位標題段落;索引含 `#`/`##`/`###`,並去 U+200B 零寬字元)
-  - 目前:`sqlsugar-zh-tw` 開 `cheatsheet`+`examples`、`fc-zh-tw` 開 `symbol`;`docs_list_corpora` 會標每語料的能力 + 可用工具。
+  - 目前:`sqlsugar-zh-tw` 開 `cheatsheet`+`examples`、`fc-zh-tw` 與 `nginx-en` 開 `symbol`;`docs_list_corpora` 會標每語料的能力 + 可用工具。
 - `corpus` 參數型別是 `z.string()` 而非 enum(語料是執行期動態資料),未知語料在 runtime 給友善提示。
 - **corpora 根目錄解析順序**(`resolveCorporaDir`):`DOCS_CORPORA_DIR` → 打包的 `corpora/` → server 根的上一層。
 - **來源連結**:優先讀語料的 `sources.json`(明確覆寫);否則**自動從每篇 MD 前 15 行抽取** `> Source: https://…` 或 `> 📖 官方文件:[文字](https://…)`。
@@ -121,7 +121,7 @@ npm run cypress                      # cypress open
 ## 易踩雷
 
 - **容器名固定 `mcpjungle-server`**:已有同名 gateway 在跑會撞名,先停舊的;要接「現有」gateway 用 `docker-compose.dockhand.yml`(別再起新 gateway)。
-- **跨目錄 build**:`mcpjungle/docker-compose.mcpjungle.yml` 的 docs-mcp 服務 `build: ../docs-mcp-server` — 從 `mcpjungle/` 觸發卻 build 上一層,改 docs server 的 Dockerfile 會連帶影響這裡。
+- **跨目錄 build**:`mcpjungle/docker-compose.mcpjungle.yml` 的 docs-mcp 服務 `build: ../mcp/docs-mcp-server` — 從 `mcpjungle/` 觸發卻 build 另一個目錄,改 docs server 的 Dockerfile 會連帶影響這裡。
 - **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
 - **legacy 與多語料的關係**:舊 `sqlsugar-mcp-server` 曾有 7 個工具(notes 文檔 4 + C# 程式碼搜尋 3)。docs-mcp 已把**文檔**泛化(`docs_search`/`docs_read`/`docs_list_corpora`/`docs_cheatsheet`),並把**程式碼搜尋**以 `examples` capability 收編成 `docs_code_search`/`docs_code_read`(範例碼複製進 `corpora/sqlsugar-zh-tw/examples/`,legacy 的 `examples/` 保留不動);另加 `docs_outline`/`docs_symbol`。舊 standalone server 仍可獨立回退。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
