@@ -10,7 +10,7 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 四個層次:
 
-- [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw`,打包進映像;語料 id 規則 `<書名>-<語言>`)。
+- [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,打包進映像;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由 `npm run import:nginx-en` 從 `knowledge.books/nginx/en` 產生,勿手改。
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **vendored 的 [MCPJungle fork 原始碼](mcpjungle/MCPJungle)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
 - [`mcp/legacy/`](mcp/legacy) —— `sqlsugar-mcp/` · `fc-designer-mcp/` — **legacy** standalone server,已被 docs-mcp 的語料取代,保留可回退,**不在根 compose 堆疊**。
@@ -105,7 +105,7 @@ npm run cypress                      # cypress open
 
 ### MCPJungle gateway 與註冊(`mcpjungle/`)
 
-- compose 內含一次性 **`registrar` 容器**:等 gateway 就緒 → 自動註冊 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw filesystem fetch time`)→ 結束(`Exited (0)` 屬正常)。`registrar.sh` 含**重試 + 冪等**,redeploy 安全。
+- compose 內含一次性 **`registrar` 容器**:等 gateway 就緒 → 自動註冊 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`)→ 結束(`Exited (0)` 屬正常)。`registrar.sh` 含**重試 + 冪等**,redeploy 安全。
 - 註冊檔在 [`mcpjungle/servers/*.json`](mcpjungle/servers)。兩種策略:**A**(推薦)每本書各自註冊(`sqlsugar-zh-tw.json` + `fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`),可在 gateway 對每本書分組/權限;**B** 整包一個 `docs-all.json` → `docs__docs_search`(用 `corpus` 參數),新增書不動 gateway。
 - **兩個位址別搞混**:`--registry http://…:18800` 是 **CLI → gateway**;`servers/*.json` 裡的 `http://docs-mcp-server:5690/mcp/<corpus>` 是 **gateway → docs server**(用**容器名**,在 `mcpjungl` 網路內解析)。
 - MCPJungle 本身**沒有內建工具**,工具都來自註冊的 server;`filesystem`/`fetch`/`time` 是註冊的官方 stdio reference server。
@@ -122,7 +122,7 @@ npm run cypress                      # cypress open
 
 - **容器名固定 `mcpjungle-server`**:已有同名 gateway 在跑會撞名,先停舊的;要接「現有」gateway 用 `docker-compose.dockhand.yml`(別再起新 gateway)。
 - **跨目錄 build**:`mcpjungle/docker-compose.mcpjungle.yml` 的 docs-mcp 服務 `build: ../docs-mcp-server` — 從 `mcpjungle/` 觸發卻 build 上一層,改 docs server 的 Dockerfile 會連帶影響這裡。
-- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
+- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
 - **legacy 與多語料的關係**:舊 `sqlsugar-mcp-server` 曾有 7 個工具(notes 文檔 4 + C# 程式碼搜尋 3)。docs-mcp 已把**文檔**泛化(`docs_search`/`docs_read`/`docs_list_corpora`/`docs_cheatsheet`),並把**程式碼搜尋**以 `examples` capability 收編成 `docs_code_search`/`docs_code_read`(範例碼複製進 `corpora/sqlsugar-zh-tw/examples/`,legacy 的 `examples/` 保留不動);另加 `docs_outline`/`docs_symbol`。舊 standalone server 仍可獨立回退。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 

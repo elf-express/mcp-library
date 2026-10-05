@@ -37,6 +37,7 @@
 | id | book | language | 篇數 | capabilities |
 |---|---|---|---|---|
 | `fc-zh-tw` | `fc` | `zh-TW` | 133 | `symbol` |
+| `nginx-en` | `nginx` | `en` | 149 | `symbol` |
 | `opnsense-en` | `opnsense` | `en` | 378(377 篇 + `000 目錄.md`) | (無) |
 | `opnsense-zh-tw` | `opnsense` | `zh-TW` | 378(377 篇 + `000 目錄.md`) | (無) |
 | `sqlsugar-zh-tw` | `sqlsugar` | `zh-TW` | 74 | `cheatsheet`、`examples` |

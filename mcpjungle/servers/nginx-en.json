@@ -1,0 +1,6 @@
+{
+  "name": "nginx-en",
+  "transport": "streamable_http",
+  "description": "nginx 官方英文文件:設定指南、FAQ、http/stream/mail/njs 模組指令參考,指令可依名稱精確查(docs_list_corpora / docs_search / docs_read / docs_outline / docs_symbol)",
+  "url": "http://docs-mcp-server:5690/mcp/nginx-en"
+}
