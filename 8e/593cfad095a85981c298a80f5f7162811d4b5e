@@ -1,0 +1,23 @@
+.gitignore
+  s_58251641b98742::t_a63764e8221473 24-26
+AGENTS.md
+  s_58251641b98742::t_8de2a3ccce02a3 32-37
+CLAUDE.md
+  s_58251641b98742::t_259c9fc1794d50 135
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8e593cfad095a85981c298a80f5f7162811d4b5e",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
