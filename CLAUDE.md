@@ -13,6 +13,7 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 - [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,打包進映像;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由 `npm run import:nginx-en` 從 `knowledge.books/nginx/en` 產生,勿手改。
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **vendored 的 [MCPJungle fork 原始碼](mcpjungle/MCPJungle)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
+- [`knowledge.books/`](knowledge.books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `corpora/<書名>-<語言>/` 語料。
 - [`mcp/legacy/`](mcp/legacy) —— `sqlsugar-mcp/` · `fc-designer-mcp/` — **legacy** standalone server,已被 docs-mcp 的語料取代,保留可回退,**不在根 compose 堆疊**。
 
 ## 常用命令
@@ -67,7 +68,7 @@ npm run cypress                      # cypress open
   ```json
   { "mcpServers": { "docs": { "command": "npx", "args": ["-y", "@elf-express/docs-mcp-server"] } } }
   ```
-  只掛單一本書加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`;未發 npm 時改 `"command": "node", "args": ["<repo>/docs-mcp-server/dist/index.js"]`(先 `npm install && npm run build`)。
+  只掛單一本書加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`;未發 npm 時改 `"command": "node", "args": ["<repo>/mcp/docs-mcp-server/dist/index.js"]`(先 `npm install && npm run build`)。
 - **B. 本機原始碼** — `cd mcp/docs-mcp-server && npm install && npm run build`,再 stdio `npm run dev` 或 HTTP `$env:TRANSPORT="http"; npm start`(:5690,`/health` 驗)。
 - **C. 遠端 / 雲端 HTTP** — 映像內建 `TRANSPORT=http`;設 `MCP_AUTH_TOKEN`、對外開 :5690、走 HTTPS。Claude 端 Settings → Connectors 填 `https://網域/mcp`(全語料)或 `/mcp/<corpus>`(單書),token 填 `Bearer <token>`。
 - **D. 經 gateway** — 根 `docker compose up -d --build` 一鍵起,用戶端連 `http://<host>:18800/mcp`(詳見上方「部署」)。
