@@ -9,16 +9,16 @@
 
 種子語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`nginx-en`(149 篇,由 `npm run import:nginx-en` 從 `knowledge.books/nginx/en` 產生),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
 
-## 安裝(npx 一行裝,本機 stdio)
+## 安裝(本機 stdio)
 
-發布到 npm 後,任何專案**不必 clone、不必 build**,一行就裝。在工作目錄建 `.mcp.json`:
+先 `npm install && npm run build`;npm 套件已停止發布。在工作目錄建 `.mcp.json`:
 
 ```json
 {
   "mcpServers": {
     "docs": {
-      "command": "npx",
-      "args": ["-y", "@elf-express/docs-mcp-server"]
+      "command": "node",
+      "args": ["<repo>/mcp/docs-mcp-server/dist/index.js"]
     }
   }
 }
@@ -34,9 +34,8 @@
 | Claude Desktop | `claude_desktop_config.json` |
 
 - 只想掛**單一本書**:加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`,該連線就只看得到 `fc-zh-tw`。
-- **還沒發到 npm**(或想用本機原始碼):改成 `"command": "node", "args": ["<repo>/docs-mcp-server/dist/index.js"]`,前置先 `npm install && npm run build`。
 
-> 要遠端 / 雲端 / 多人共用,改走下方 **http** 模式(Streamable HTTP),不是 npx。
+> 要遠端 / 雲端 / 多人共用,改走下方 **http** 模式(Streamable HTTP),不是本機 stdio。
 
 ## 工具(皆唯讀)
 

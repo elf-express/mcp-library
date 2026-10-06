@@ -53,22 +53,15 @@ docker compose -f docker-compose.dockhand.yml up -d            # 只起 docs-mcp
 REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(需先裝官方 mcpjungle CLI)
 ```
 
-### E2E(根目錄)
-
-```bash
-npm run test:e2e                     # cypress run(注意:cypress/ 目前多為腳手架預設範例,非真實業務 E2E)
-npm run cypress                      # cypress open
-```
-
 ## 安裝 / 接入 AI(docs-mcp)
 
 讓 Claude / 任何 MCP 用戶端用上 fc/sqlsugar 文檔查詢,四種接法:
 
-- **A. 本機 stdio(最簡單)** — 工作目錄建 `.mcp.json`:
+- **A. 本機 stdio(最簡單)** — 先在 `mcp/docs-mcp-server` 執行 `npm install && npm run build`,工作目錄建 `.mcp.json`:
   ```json
-  { "mcpServers": { "docs": { "command": "npx", "args": ["-y", "@elf-express/docs-mcp-server"] } } }
+  { "mcpServers": { "docs": { "command": "node", "args": ["<repo>/mcp/docs-mcp-server/dist/index.js"] } } }
   ```
-  只掛單一本書加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`;未發 npm 時改 `"command": "node", "args": ["<repo>/mcp/docs-mcp-server/dist/index.js"]`(先 `npm install && npm run build`)。
+  只掛單一本書加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`。npm 套件已停止發布。
 - **B. 本機原始碼** — `cd mcp/docs-mcp-server && npm install && npm run build`,再 stdio `npm run dev` 或 HTTP `$env:TRANSPORT="http"; npm start`(:5690,`/health` 驗)。
 - **C. 遠端 / 雲端 HTTP** — 映像內建 `TRANSPORT=http`;設 `MCP_AUTH_TOKEN`、對外開 :5690、走 HTTPS。Claude 端 Settings → Connectors 填 `https://網域/mcp`(全語料)或 `/mcp/<corpus>`(單書),token 填 `Bearer <token>`。
 - **D. 經 gateway** — 根 `docker compose up -d --build` 一鍵起,用戶端連 `http://<host>:18800/mcp`(詳見上方「部署」)。
