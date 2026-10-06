@@ -10,6 +10,46 @@
 | [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
 | [`mcp/legacy/`](./mcp/legacy) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
 
+## 目錄結構
+
+> 重整中(E-122):本節描述重整完成後的結構,各 Task 合併前實際路徑可能還是舊的。
+
+```
+mcp-library/
+├─ .github/workflows/      ci.yml、docker-publish.yml
+├─ README.md · CLAUDE.md · AGENTS.md
+├─ compose.yaml            主檔:postgres + gateway + docs-mcp + registrar(現場 build)
+├─ compose.pull.yaml       docs-mcp、registrar 改拉 ghcr 映像
+├─ compose.attach.yaml     只起 docs-mcp + registrar,接現有 gateway
+├─ .env.example · nginx.example.conf
+└─ mcpjungle/
+    ├─ gateway/            MCPJungle(源自上游 c2a2c8d,自 2026-10 起獨立維護)
+    ├─ books/<書名>/
+    │   ├─ source/         原稿與翻譯(不打包進映像)
+    │   ├─ corpus/<id>/    語料:corpus.json + markdown(id = <書名>-<語言>)
+    │   └─ import.ts       轉換腳本(需要時)
+    ├─ docs-mcp-server/    多語料文檔 MCP server(不含語料)
+    └─ registry/           非書本 MCP 註冊檔(filesystem/fetch/time…)+ registrar
+```
+
+worktree 一律放 repo 外:`E:\source\mcp-library-<短名>`。
+
+## 加一本書
+
+> 重整中(E-122):以下流程在 E-122 完成後生效。
+
+只動 `mcpjungle/books/<書名>/` 一個資料夾,不改任何 `.ts`、compose 或註冊檔。
+
+1. 原稿放 `mcpjungle/books/<書名>/source/`(選用)。
+2. 建 `mcpjungle/books/<書名>/corpus/<書名>-<語言>/`,放 markdown 與 `corpus.json`(欄位見 [`mcpjungle/books/README.md`](mcpjungle/books/README.md))。`book` 要等於 `<書名>`,id 要等於 `<book>-<language 小寫>`。
+3. 需要轉換時寫 `mcpjungle/books/<書名>/import.ts`(參考 `books/nginx/import.ts`),在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/<書名>/import.ts`。
+4. 驗證:
+   ```bash
+   cd mcpjungle/docs-mcp-server && npm ci && npm test
+   node ../registry/gen-book-configs.mjs ../books "$(mktemp -d)"   # 印出的 id 要包含新書
+   ```
+5. 開 PR。合併後重新部署(`docker compose up -d --build`),registrar 會自動註冊 `<id>`,工具名為 `<id>__docs_search` 等。
+
 ---
 
 ## 部署:一鍵起全部(推薦)
