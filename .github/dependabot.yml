@@ -1,22 +1,13 @@
 version: 2
 updates:
-  # fc-designer-mcp server
+  # docs-mcp-server
   - package-ecosystem: "npm"
-    directory: "/mcp/legacy/fc-designer-mcp"
+    directory: "/mcp/docs-mcp-server"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
     commit-message:
-      prefix: "chore(fc-deps)"
-
-  # sqlsugar-mcp server
-  - package-ecosystem: "npm"
-    directory: "/mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "chore(sqlsugar-deps)"
+      prefix: "chore(docs-mcp-deps)"
 
   # GitHub Actions workflows 本身
   - package-ecosystem: "github-actions"

@@ -30,9 +30,9 @@
 
 ## 🎯 影響範圍
 
-- [ ] SqlSugar 文件(`*.md`)
-- [ ] MCP 伺服器(`sqlsugar-mcp-server/`)
-- [ ] 效能測試專案
+- [ ] 書本 / 語料(mcpjungle/books/)
+- [ ] docs-mcp-server
+- [ ] gateway / registrar
 - [ ] CI/CD
 - [ ] 其他:
 
@@ -47,18 +47,17 @@
 ## 🐳 Docker 映像影響(如有)
 
 - [ ] 無 Docker 變更
-- [ ] 修改了 `sqlsugar-mcp-server/Dockerfile`
+- [ ] 修改了 Dockerfile
 - [ ] 修改了 `docker-compose.yml` / 環境變數
 - [ ] 需要更新使用者的部署設定
 
 ## ✅ 提交前檢查清單
 
 - [ ] PR 標題符合 Conventional Commits
-- [ ] 本機所有測試通過(`npm run build` 在 `sqlsugar-mcp-server/`)
+- [ ] 本機所有測試通過(受影響子專案的 npm test / go test)
 - [ ] 已自我 review diff
 - [ ] 沒有夾帶機密資訊(密碼、token)
 - [ ] 沒有夾帶與本次目的無關的變更
-- [ ] 影響使用者的變更已更新 `CHANGELOG.md` 的 `[Unreleased]` 區塊
 - [ ] 影響部署的變更已更新 `README.md`
 
 ## 🔗 相關連結
