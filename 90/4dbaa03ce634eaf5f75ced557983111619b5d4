@@ -1,0 +1,35 @@
+CLAUDE.md
+  s_6456ca2796410e::t_6500c33c904dc4 91
+mcp/docs-mcp-server/README.md
+  s_6456ca2796410e::t_8b58c3e00d0496 75
+mcp/docs-mcp-server/src/corpus.ts
+  s_6456ca2796410e::t_401cadeb59fac3 78-79,97,99,101,105,107,109,113-115,117,121-136,138-144,146-147,149,151-157,159-184,187,475,773
+mcp/docs-mcp-server/src/index.ts
+  s_6456ca2796410e::t_87f3e3431e7380 18,292
+mcp/docs-mcp-server/tests/corpus-roots.test.ts
+  s_58251641b98742::t_f2f281c43835d8 1-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "904dbaa03ce634eaf5f75ced557983111619b5d4",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    },
+    "s_6456ca2796410e": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a10f39-2f9d-73f2-bbb1-e8cc2474c580",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
