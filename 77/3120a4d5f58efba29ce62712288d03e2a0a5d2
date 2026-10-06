@@ -1,0 +1,21 @@
+.github/workflows/ci.yml
+  s_58251641b98742::t_4f212ddbb33023 35,105,153,159
+.github/workflows/docker-publish.yml
+  s_58251641b98742::t_8e2236077de687 56,60,69,98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "773120a4d5f58efba29ce62712288d03e2a0a5d2",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
