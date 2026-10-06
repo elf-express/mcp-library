@@ -13,6 +13,7 @@ mcpjungle/
   register.sh                    手動註冊(host 上用官方 mcpjungle CLI)
   registrar.sh                   一次性自動註冊容器用的腳本
   servers/                       各 server 的註冊設定檔(*.json)
+  gateway/                       MCPJungle 原始碼(自行維護)
 ```
 
 > docs-mcp 的 image 由 `../mcp/docs-mcp-server` 建置(compose 內 `build: ../mcp/docs-mcp-server`)。

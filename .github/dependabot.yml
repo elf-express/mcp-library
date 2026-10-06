@@ -9,6 +9,22 @@ updates:
     commit-message:
       prefix: "chore(docs-mcp-deps)"
 
+  # gateway(Go 模組與 dashboard 前端)
+  - package-ecosystem: "gomod"
+    directory: "/mcpjungle/gateway"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(gateway-deps)"
+  - package-ecosystem: "npm"
+    directory: "/mcpjungle/gateway/web/dashboard"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(dashboard-deps)"
+
   # GitHub Actions workflows 本身
   - package-ecosystem: "github-actions"
     directory: "/"

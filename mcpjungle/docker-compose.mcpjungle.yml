@@ -28,7 +28,7 @@ services:
 
   mcpjungle:
     build:
-      context: ./MCPJungle
+      context: ./gateway
       dockerfile: Dockerfile.fullbuild
     image: mcpjungle-fork:latest
     container_name: mcpjungle-server

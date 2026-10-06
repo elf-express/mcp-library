@@ -11,7 +11,7 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 四個層次:
 
 - [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,打包進映像;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由 `npm run import:nginx-en` 從 `knowledge.books/nginx/en` 產生,勿手改。
-- [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **vendored 的 [MCPJungle fork 原始碼](mcpjungle/MCPJungle)**(從源碼 build,非 pull 官方映像)。
+- [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **自行維護的 [MCPJungle(源自上游 c2a2c8d)](mcpjungle/gateway)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
 - [`knowledge.books/`](knowledge.books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `corpora/<書名>-<語言>/` 語料。
 
@@ -108,7 +108,7 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 - **DB 內建**:根 compose 含 `postgres` service(`postgres:16-alpine`,容器 `mcpjungle-postgres`,volume `pgdata`,不對外開 port)。gateway 以 `depends_on: condition: service_healthy` 等它就緒。零設定即可 `docker compose up -d --build`。
 - 要改接**既有的外部 DB**:在 `.env` 設 `MCPJUNGLE_DATABASE_URL`(host 填 DB 的 IP,不是容器名)覆寫預設值即可。改內建 DB 密碼要同時改 `POSTGRES_PASSWORD` 與 `MCPJUNGLE_DATABASE_URL` 兩處。
 - 網路 `mcpjungl` 由 stack **自建**(`<project>_mcpjungl`),**不必先 `docker network create`**。
-- gateway 映像 = vendored fork 從源碼 build:context `./MCPJungle`、`Dockerfile.fullbuild`、tag `mcpjungle-fork:latest`。
+- gateway 映像 = 自行維護的 MCPJungle(源自上游 c2a2c8d)從源碼 build:context `./gateway`、`Dockerfile.fullbuild`、tag `mcpjungle-fork:latest`。
 - docs-mcp 映像由 `.github/workflows/docker-publish.yml` 在 push main 時自動 build + push 到 `ghcr.io/elf-express/docs-mcp-server:latest`(pull 法用的就是它)。
 
 ## 易踩雷
