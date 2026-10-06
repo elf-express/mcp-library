@@ -17,8 +17,6 @@
 
 ## 常用命令
 
-- `npm install`：安裝 root 依賴。
-- `npm run test:e2e`：執行 Cypress E2E 測試。
 - `docker compose up -d --build`：在 root 啟動整個 stack（gateway + docs-mcp + registrar）。
 - `docker compose -f docker-compose.pull.yml up -d`：從 GHCR pull image，而不是 build。
 
