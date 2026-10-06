@@ -1,7 +1,7 @@
 /**
  * 匯入 nginx 英文文件為 docs-mcp 語料 nginx-en。
  * 用法:npm run import:nginx-en
- * 讀 <repo>/knowledge.books/nginx/en/,全部轉換驗證通過後,
+ * 讀 <repo>/mcpjungle/books/nginx/source/en/,全部轉換驗證通過後,
  * 清空 corpora/nginx-en/ 的 md(保留 corpus.json)再寫入;任何錯誤都不寫檔。
  */
 import * as fs from "node:fs";
@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { isIncluded, transformPage } from "./nginx-transform.js";
 
 const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const srcDir = path.resolve(serverRoot, "../../knowledge.books/nginx/en");
+const srcDir = path.resolve(serverRoot, "../../mcpjungle/books/nginx/source/en");
 const outDir = path.join(serverRoot, "corpora", "nginx-en");
 
 function fail(msg: string): never {
