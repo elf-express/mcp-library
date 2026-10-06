@@ -15,7 +15,7 @@
  * Transports:stdio(預設)或 http(TRANSPORT=http,Streamable HTTP)。
  * 端點(http):/mcp 全語料、/mcp/<corpus> 鎖定單一書(模型 B)。
  * stdio 下可用 DOCS_SCOPE=<corpus> 鎖定單一書(供 Claude Desktop 每書一條設定)。
- * 語料目錄:DOCS_CORPORA_DIR -> 打包的 corpora/ -> server 根上一層。
+ * 語料目錄:DOCS_CORPORA_DIR(可多個) -> 打包的 corpora/ -> ../books/*\/corpus/。
  * Auth(http):設 MCP_AUTH_TOKEN 後 /mcp* 需帶 "Authorization: Bearer <token>"。
  */
 
@@ -289,7 +289,7 @@ function logStartupInfo(scope?: string): void {
     console.error("[docs-mcp-server]   - " + c.id + (c.title !== c.id ? " (" + c.title + ")" : ""));
   }
   if (corpora.length === 0) {
-    console.error("[docs-mcp-server] 警告:找不到任何語料。請設定 DOCS_CORPORA_DIR 或在 corpora/ 放語料目錄。");
+    console.error("[docs-mcp-server] 警告:找不到任何語料。請設定 DOCS_CORPORA_DIR,或在 books/<書名>/corpus/ 放語料目錄。");
   }
   if (scope) {
     if (getCorpus(scope)) console.error("[docs-mcp-server] 已鎖定單一語料:" + scope);
