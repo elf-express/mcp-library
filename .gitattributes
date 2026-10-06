@@ -6,7 +6,7 @@
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
 
-# ── knowledge.books 素材 ────────────────────────────────────────────────
+# ── books/*/source 素材 ────────────────────────────────────────────────
 # 書是「素材」,不是原始碼。放進這裡不代表要上架成語料 —— 上架是另一回事,由人挑哪一種形式。
 # 素材區保留完整(含 en+zh-TW 雙語對照、en-translated 等衍生物),語料只取其中一種。
 
@@ -23,10 +23,10 @@
 # svg 本來就沒納管 —— 它是文字格式、可 diff、數量也少。
 
 # 二進位圖片:不做 CRLF 轉換、diff 不展開內容
-knowledge.books/**/*.png  -text -diff
-knowledge.books/**/*.jpg  -text -diff
-knowledge.books/**/*.jpeg -text -diff
+mcpjungle/books/*/source/**/*.png  -text -diff
+mcpjungle/books/*/source/**/*.jpg  -text -diff
+mcpjungle/books/*/source/**/*.jpeg -text -diff
 
 # 不計入 GitHub 語言統計、diff 預設折疊。
 # 沒有這行,2600+ 篇書會把這個 repo 標成 Markdown 專案,蓋掉真正的 TypeScript 原始碼。
-knowledge.books/** linguist-vendored
+mcpjungle/books/*/source/** linguist-vendored
