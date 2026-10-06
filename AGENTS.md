@@ -7,13 +7,11 @@
 - 這是一個 MCP server monorepo，根目錄主要負責統一部署與整合。
 - 主要工作是啟動 MCPJungle gateway、docs-mcp-server 以及 registrar，讓多個 MCP 服務對外呈現單一入口。
 - `mcp/docs-mcp-server/` 是推薦的多語料文檔查詢服務；`mcpjungle/` 是 gateway 與註冊部署。
-- `mcp/legacy/` 下的 `sqlsugar-mcp/`、`fc-designer-mcp/` 是 legacy standalone server，保留作回退或比較用途。
 
 ## 主要目錄
 
 - `mcp/docs-mcp-server/`：核心多語料 docs MCP server。
 - `mcpjungle/`：MCPJungle gateway stack、註冊器與 server 註冊設定。
-- `mcp/legacy/sqlsugar-mcp/`、`mcp/legacy/fc-designer-mcp/`：legacy standalone server。
 
 ## 常用命令
 

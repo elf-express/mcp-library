@@ -5,7 +5,7 @@ name: CI
 # 觸發:push / PR 到 main
 # 內含:
 #   - basics:    commit lint、大檔案檢查、機密掃描
-#   - build-test: matrix — 每個 server 的 TypeScript build + 單元測試(docs-mcp-server 另上傳 JUnit 報告)
+#   - build-test: docs-mcp-server 的 TypeScript build + 單元測試(上傳 JUnit 報告)
 #   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
 # repo 政策只允許官方與已驗證發行者的 action,且必須釘 SHA。
 # =============================================================================
@@ -78,9 +78,7 @@ jobs:
                --exclude="package-lock.json" \
                --exclude-dir=node_modules --exclude-dir=bin --exclude-dir=obj \
                --exclude-dir=.git --exclude-dir=dist --exclude-dir=build \
-               --exclude-dir=examples --exclude-dir=notes \
-               --exclude-dir='SqlSugar-vs-EFCore效能測試-MySQL版' \
-               --exclude-dir='SqlSugar-vs-EFCore效能測試-SqlServer版' . ; then
+               --exclude-dir=examples . ; then
             echo "::error::偵測到疑似機密資訊硬編碼"
             echo "::error::請改用環境變數、.env(已 .gitignore)或 secret manager"
             echo "::error::若為誤判,請用 *.example 後綴或在該行加 // pragma: allowlist secret"
@@ -99,14 +97,6 @@ jobs:
             dir: mcp/docs-mcp-server
             node: 24
             test_args: -- --reporter=default --reporter=junit --outputFile.junit=test-results/junit.xml
-          - name: fc-designer-mcp
-            dir: mcp/legacy/fc-designer-mcp
-            node: 20
-            test_args: ''
-          - name: sqlsugar-mcp
-            dir: mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server
-            node: 20
-            test_args: ''
     defaults:
       run:
         working-directory: ${{ matrix.dir }}
@@ -158,10 +148,6 @@ jobs:
         include:
           - image: docs-mcp-server
             context: ./mcp/docs-mcp-server
-          - image: fc-designer-mcp
-            context: ./mcp/legacy/fc-designer-mcp
-          - image: sqlsugar-mcp
-            context: ./mcp/legacy/sqlsugar-mcp/sqlsugar-mcp-server
     steps:
       - name: Checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7

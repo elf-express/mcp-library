@@ -1,7 +1,0 @@
-node_modules
-dist
-*.map
-.git
-.gitignore
-test-client.mjs
-README.md

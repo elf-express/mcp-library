@@ -198,7 +198,3 @@ Settings → Connectors → Add custom connector:
 MCPJungle gateway 的部署、註冊、官方工具、Dockhand、ghcr 推送等,已獨立到 repo 根的 **[`mcpjungle/`](../mcpjungle/)**(它是整個 library 的 gateway,不屬於本 server)。完整說明見 [`../mcpjungle/README.md`](../mcpjungle/README.md)。
 
 本 server 在那套部署裡的角色:gateway 以容器名 `http://docs-mcp-server:5690/mcp/<corpus>` 連到它;image 為 `ghcr.io/elf-express/docs-mcp-server:latest`(由本目錄 `build`)。
-
-## 與舊 server 的關係
-
-`sqlsugar-mcp-server`、`fc-designer-mcp` 兩個 standalone server 仍可獨立運作、未被更動。本 server 是把它們的文檔以「語料」形式合併到單一部署;舊的 sqlsugar server 的「範例 C# 程式碼搜尋」(`list_examples`/`read_code`/`search_code`)已以 `examples` capability 收編為 `docs_code_search` / `docs_code_read`(範例碼在 `corpora/sqlsugar-zh-tw/examples/`);舊 `sqlsugar_list_notes` 的 `include_index`(附 index.md 分類導航)尚未補回。

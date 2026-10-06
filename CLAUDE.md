@@ -14,7 +14,6 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **vendored 的 [MCPJungle fork 原始碼](mcpjungle/MCPJungle)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
 - [`knowledge.books/`](knowledge.books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `corpora/<書名>-<語言>/` 語料。
-- [`mcp/legacy/`](mcp/legacy) —— `sqlsugar-mcp/` · `fc-designer-mcp/` — **legacy** standalone server,已被 docs-mcp 的語料取代,保留可回退,**不在根 compose 堆疊**。
 
 ## 常用命令
 
@@ -117,12 +116,11 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 - **容器名固定 `mcpjungle-server`**:已有同名 gateway 在跑會撞名,先停舊的;要接「現有」gateway 用 `docker-compose.dockhand.yml`(別再起新 gateway)。
 - **跨目錄 build**:`mcpjungle/docker-compose.mcpjungle.yml` 的 docs-mcp 服務 `build: ../mcp/docs-mcp-server` — 從 `mcpjungle/` 觸發卻 build 另一個目錄,改 docs server 的 Dockerfile 會連帶影響這裡。
 - **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
-- **legacy 與多語料的關係**:舊 `sqlsugar-mcp-server` 曾有 7 個工具(notes 文檔 4 + C# 程式碼搜尋 3)。docs-mcp 已把**文檔**泛化(`docs_search`/`docs_read`/`docs_list_corpora`/`docs_cheatsheet`),並把**程式碼搜尋**以 `examples` capability 收編成 `docs_code_search`/`docs_code_read`(範例碼複製進 `corpora/sqlsugar-zh-tw/examples/`,legacy 的 `examples/` 保留不動);另加 `docs_outline`/`docs_symbol`。舊 standalone server 仍可獨立回退。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 
 ## CI / commit 規範
 
-- [`.github/workflows/ci.yml`](.github/workflows/ci.yml):`basics`(**Conventional Commits** PR 檢查、>5MB 大檔擋、機密掃描)+ `build-test` matrix + PR 時 docker build verify。
-- `build-test` matrix **目前只涵蓋 `fc-designer-mcp` 與 `sqlsugar-mcp`**;核心 `docs-mcp-server` 的 vitest 不在此 matrix,改它後請在本機 `npm test`。
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml):`basics`(**Conventional Commits** PR 檢查、>5MB 大檔擋、機密掃描)+ `build-test` + PR 時 docker build verify。
+- `build-test` 跑 docs-mcp-server 的 build + vitest。
 - 提交訊息走 **Conventional Commits**(`feat:` / `fix:` / `deploy:` …),否則 PR 會被擋。
 - worktree 放 repo 外的 `E:\source\mcp-library-<短名>`(見 [AGENTS.md](AGENTS.md) 的 Worktree 一節)。

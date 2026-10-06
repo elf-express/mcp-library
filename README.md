@@ -8,7 +8,6 @@
 | --- | --- | --- |
 | [`mcp/docs-mcp-server/`](./mcp/docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133 + `nginx-en` 149);新增書 = 丟資料夾 + `corpus.json` |
 | [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
-| [`mcp/legacy/`](./mcp/legacy) | legacy standalone | 已被 docs-mcp 語料取代,保留可回退 |
 
 ## 目錄結構
 
@@ -84,10 +83,6 @@ docker compose up -d --build   # 零設定,不必先 cp .env.example
 公司一套、家裡一套,兩網域各跑一份,任一邊斷線另一邊接手,最終都註冊到 MCPJungle 統一管理。
 
 ---
-
-## legacy standalone
-
-舊的 standalone server 已被 docs-mcp 的「語料」取代,移到 `mcp/legacy/` 下、不在根 compose 堆疊。要單獨跑就進各自資料夾 `docker compose up -d`(token 用 `MCP_AUTH_TOKEN` / `FC_MCP_AUTH_TOKEN`)。
 
 ## 開發單一服務
 
