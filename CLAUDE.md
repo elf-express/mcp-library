@@ -10,10 +10,10 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 四個層次:
 
-- [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,打包進映像;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由 `npm run import:nginx-en` 從 `knowledge.books/nginx/en` 產生,勿手改。
+- [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,打包進映像;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由 `npm run import:nginx-en` 從 `mcpjungle/books/nginx/source/en` 產生,勿手改。
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **自行維護的 [MCPJungle(源自上游 c2a2c8d)](mcpjungle/gateway)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
-- [`knowledge.books/`](knowledge.books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `corpora/<書名>-<語言>/` 語料。
+- [`mcpjungle/books/<書名>/source/`](mcpjungle/books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `corpora/<書名>-<語言>/` 語料。
 
 ## 常用命令
 
