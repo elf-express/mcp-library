@@ -72,7 +72,7 @@
 | `TRANSPORT` | `stdio` | 設 `http` 啟用雲端 HTTP 模式 |
 | `PORT` | `5690` | HTTP 監聽埠 |
 | `MCP_AUTH_TOKEN` | (空) | 設定後 `/mcp*` 需帶 `Authorization: Bearer <token>`;留空為公開 |
-| `DOCS_CORPORA_DIR` | 自動 | 覆寫語料根目錄。預設用打包的 `corpora/` |
+| `DOCS_CORPORA_DIR` | 自動 | 覆寫語料根目錄,可用 `;`(Windows)或 `:`(Linux)分隔多個。預設:打包的 `corpora/`,沒有則掃 `../books/*/corpus/` |
 | `DOCS_SCOPE` | (空) | **stdio 模式**鎖定單一語料(供 Claude Desktop 每本書一條設定) |
 
 ---

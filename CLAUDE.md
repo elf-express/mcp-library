@@ -88,7 +88,7 @@ npm run cypress                      # cypress open
   - `symbol` 能力:`docs_symbol`(按 API/組件名精確定位標題段落;索引含 `#`/`##`/`###`,並去 U+200B 零寬字元)
   - 目前:`sqlsugar-zh-tw` 開 `cheatsheet`+`examples`、`fc-zh-tw` 與 `nginx-en` 開 `symbol`;`docs_list_corpora` 會標每語料的能力 + 可用工具。
 - `corpus` 參數型別是 `z.string()` 而非 enum(語料是執行期動態資料),未知語料在 runtime 給友善提示。
-- **corpora 根目錄解析順序**(`resolveCorporaDir`):`DOCS_CORPORA_DIR` → 打包的 `corpora/` → server 根的上一層。
+- **corpora 根目錄解析順序**(`resolveCorporaDirs`):`DOCS_CORPORA_DIR`(可用 `path.delimiter` 分隔多個)→ 打包的 `corpora/` → `../books/*/corpus/`;同 id 出現在多個根時保留先掃到的並警告。
 - **來源連結**:優先讀語料的 `sources.json`(明確覆寫);否則**自動從每篇 MD 前 15 行抽取** `> Source: https://…` 或 `> 📖 官方文件:[文字](https://…)`。
 - 快取(`corporaCache` / `contentCache` / `sourcesCache`)以 **mtime 失效**,改檔即時生效;搜尋是多關鍵字 AND、命中數排序、輸出截斷在 25000 字元。
 

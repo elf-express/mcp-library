@@ -75,8 +75,8 @@ interface Manifest {
 // ---------------------------------------------------------------------------
 
 export const contentCache = new Map<string, CachedNote>();
-// 語料清單快取(以 corpora 根目錄 + 其 mtime 為鍵)
-let corporaCache: { dir: string; mtimeMs: number; list: Corpus[] } | null = null;
+// 語料清單快取(以各 corpora 根目錄 + 其 mtime 組成的鍵失效)
+let corporaCache: { key: string; list: Corpus[] } | null = null;
 // corpusDir -> sources.json 內容(以 mtime 失效)
 const sourcesCache = new Map<string, { mtimeMs: number; map: Record<string, string> }>();
 // corpusDir -> 符號索引(以語料目錄 mtime 失效)
@@ -94,18 +94,51 @@ export function _clearCaches(): void {
 // 語料探索
 // ---------------------------------------------------------------------------
 
-/** 解析 corpora 根目錄:DOCS_CORPORA_DIR -> 打包的 corpora/ -> server 根上一層 */
-export function resolveCorporaDir(): string {
+function isDir(p: string): boolean {
+  try {
+    return fs.statSync(p).isDirectory();
+  } catch {
+    return false;
+  }
+}
+
+function mtimeOf(p: string): number {
+  try {
+    return fs.statSync(p).mtimeMs;
+  } catch {
+    return -1;
+  }
+}
+
+/** 列出 books 目錄下每本書的 corpus/(略過 . 開頭目錄與沒有 corpus/ 的書) */
+export function listBookCorpusRoots(booksDir: string): string[] {
+  let entries: fs.Dirent[];
+  try {
+    entries = fs.readdirSync(booksDir, { withFileTypes: true });
+  } catch {
+    return [];
+  }
+  return entries
+    .filter((e) => e.isDirectory() && !e.name.startsWith("."))
+    .map((e) => path.join(booksDir, e.name, "corpus"))
+    .filter(isDir)
+    .sort();
+}
+
+/** 解析所有 corpora 根目錄:DOCS_CORPORA_DIR(可用 path.delimiter 分隔)-> 打包的 corpora/ -> ../books/*\/corpus/ */
+export function resolveCorporaDirs(): string[] {
   const envDir = process.env.DOCS_CORPORA_DIR;
-  if (envDir && envDir.trim().length > 0) return path.resolve(envDir);
+  if (envDir && envDir.trim().length > 0) {
+    return envDir
+      .split(path.delimiter)
+      .map((d) => d.trim())
+      .filter((d) => d.length > 0)
+      .map((d) => path.resolve(d));
+  }
   const serverRoot = path.resolve(__dirname, "..");
   const bundled = path.join(serverRoot, "corpora");
-  try {
-    if (fs.statSync(bundled).isDirectory()) return bundled;
-  } catch {
-    /* ignore */
-  }
-  return path.resolve(serverRoot, "..");
+  if (isDir(bundled)) return [bundled];
+  return listBookCorpusRoots(path.resolve(serverRoot, "..", "books"));
 }
 
 function readManifest(dir: string): Manifest {
@@ -117,39 +150,41 @@ function readManifest(dir: string): Manifest {
   }
 }
 
-/** 掃描 corpora 根目錄,每個子目錄 = 一個語料。結果以 mtime 快取。 */
+/** 掃描所有 corpora 根目錄,每個子目錄 = 一個語料;id 重複時保留先掃到的。結果以 mtime 快取。 */
 export function discoverCorpora(): Corpus[] {
-  const root = resolveCorporaDir();
-  let mtimeMs = 0;
-  try {
-    mtimeMs = fs.statSync(root).mtimeMs;
-  } catch {
-    return [];
-  }
-  if (corporaCache && corporaCache.dir === root && corporaCache.mtimeMs === mtimeMs) {
-    return corporaCache.list;
-  }
-  let entries: fs.Dirent[];
-  try {
-    entries = fs.readdirSync(root, { withFileTypes: true });
-  } catch {
-    return [];
-  }
+  const roots = resolveCorporaDirs();
+  const key = roots.map((r) => r + "@" + mtimeOf(r)).join("\n");
+  if (corporaCache && corporaCache.key === key) return corporaCache.list;
   const list: Corpus[] = [];
-  for (const e of entries) {
-    if (!e.isDirectory() || SKIP_DIRS.has(e.name)) continue;
-    const dir = path.join(root, e.name);
-    const m = readManifest(dir);
-    list.push({
-      id: e.name,
-      title: m.title?.trim() || e.name,
-      description: m.description?.trim() || "",
-      dir,
-      capabilities: m.capabilities ?? {},
-    });
+  const seen = new Map<string, string>();
+  for (const root of roots) {
+    let entries: fs.Dirent[];
+    try {
+      entries = fs.readdirSync(root, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+    for (const e of entries) {
+      if (!e.isDirectory() || SKIP_DIRS.has(e.name)) continue;
+      const dir = path.join(root, e.name);
+      const prev = seen.get(e.name.toLowerCase());
+      if (prev) {
+        console.error(`[docs-mcp-server] 語料 id 重複:${e.name}(${dir}),保留 ${prev}`);
+        continue;
+      }
+      seen.set(e.name.toLowerCase(), dir);
+      const m = readManifest(dir);
+      list.push({
+        id: e.name,
+        title: m.title?.trim() || e.name,
+        description: m.description?.trim() || "",
+        dir,
+        capabilities: m.capabilities ?? {},
+      });
+    }
   }
   list.sort((a, b) => a.id.localeCompare(b.id));
-  corporaCache = { dir: root, mtimeMs, list };
+  corporaCache = { key, list };
   return list;
 }
 
@@ -437,7 +472,7 @@ export function doSearch(corpusId: string | undefined, query: string, limit: num
     targets = [c];
   } else {
     targets = discoverCorpora();
-    if (targets.length === 0) return "錯誤:找不到任何語料。corpora 目錄:" + resolveCorporaDir();
+    if (targets.length === 0) return "錯誤:找不到任何語料。corpora 目錄:" + resolveCorporaDirs().join(", ");
   }
 
   let hits: Hit[] = [];
@@ -735,7 +770,7 @@ export function doListCorpora(opts?: { filter?: string; onlyId?: string }): stri
   if (corpora.length === 0) {
     return onlyId
       ? `找不到語料 "${opts?.onlyId}"。`
-      : "目前沒有語料。corpora 目錄:" + resolveCorporaDir();
+      : "目前沒有語料。corpora 目錄:" + resolveCorporaDirs().join(", ");
   }
   const out: string[] = ["# 可用語料 (共 " + corpora.length + " 個)", ""];
   for (const c of corpora) {
