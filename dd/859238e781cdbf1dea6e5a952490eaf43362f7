@@ -1,0 +1,21 @@
+CLAUDE.md
+  s_58251641b98742::t_6ec37d3d5b2274 60,62,64
+mcp/docs-mcp-server/README.md
+  s_58251641b98742::t_3f5cc25f37e738 12,14,20-21,38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "dd859238e781cdbf1dea6e5a952490eaf43362f7",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
