@@ -1,0 +1,29 @@
+.github/PULL_REQUEST_TEMPLATE.md
+  s_58251641b98742::t_a49afb0b6fae29 33-35,50,57
+.github/dependabot.yml
+  s_58251641b98742::t_a29a30843dc6bd 3,5,10
+.github/workflows/ci.yml
+  s_58251641b98742::t_7b866fe3d63a01 8,81
+.github/workflows/docker-publish.yml
+  s_58251641b98742::t_017a0217177f9f 11-12
+CLAUDE.md
+  s_58251641b98742::t_dedb26da44c41c 123-124
+mcpjungle/README.md
+  s_58251641b98742::t_b69026078c6af7 99
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ec537ab82022cd5df0012f28ac76981377547e8c",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
