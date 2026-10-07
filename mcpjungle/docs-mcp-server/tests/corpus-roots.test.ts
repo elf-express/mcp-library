@@ -7,7 +7,9 @@ import * as os from "node:os";
 import * as path from "node:path";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import {
+  describeCorporaDirs,
   discoverCorpora,
+  doListCorpora,
   listBookCorpusRoots,
   resolveCorporaDirs,
   _clearCaches,
@@ -76,5 +78,29 @@ describe("discoverCorpora(多根)", () => {
     const dup = discoverCorpora().find((c) => c.id === "dup-en")!;
     expect(dup.dir).toBe(path.join(books, "beta", "corpus", "dup-en"));
     expect(warn).toHaveBeenCalledWith(expect.stringContaining("dup-en"));
+  });
+});
+
+describe("預設語料根(repo 內開發)", () => {
+  it("未設 DOCS_CORPORA_DIR 時掃 mcpjungle/books/*/corpus,包含三個種子語料", () => {
+    delete process.env.DOCS_CORPORA_DIR;
+    _clearCaches();
+    const roots = resolveCorporaDirs().map((r) => r.split(path.sep).join("/"));
+    expect(roots.length).toBeGreaterThan(0);
+    expect(roots.every((r) => /\/mcpjungle\/books\/[^/]+\/corpus$/.test(r))).toBe(true);
+    const ids = discoverCorpora().map((c) => c.id);
+    expect(ids).toEqual(expect.arrayContaining(["fc-zh-tw", "nginx-en", "sqlsugar-zh-tw"]));
+  });
+});
+
+describe("沒有任何語料根", () => {
+  it("錯誤訊息列出找過的位置,不是空字串", () => {
+    delete process.env.DOCS_CORPORA_DIR;
+    const fallback = describeCorporaDirs([]);
+    expect(fallback).toContain("(無;已找過");
+    expect(fallback).toContain(path.join("books", "*", "corpus"));
+    process.env.DOCS_CORPORA_DIR = path.delimiter;
+    _clearCaches();
+    expect(doListCorpora()).toMatch(/corpora 目錄:\(無;DOCS_CORPORA_DIR=".+" 沒有有效路徑\)$/);
   });
 });

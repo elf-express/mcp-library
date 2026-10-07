@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { directiveNames, isIncluded, transformPage } from "../scripts/nginx-transform.js";
+import { directiveNames, isIncluded, transformPage } from "../../books/nginx/transform.js";
 
 describe("isIncluded", () => {
   it("收英文文件與模組頁", () => {

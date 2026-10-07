@@ -12,7 +12,9 @@
 #   - 開 webhook 自動重佈;每次 push 後 docs-mcp 重建、registrar 重跑(已註冊的略過)
 services:
   docs-mcp-server:
-    build: ../mcp/docs-mcp-server
+    build:
+      context: .
+      dockerfile: docs-mcp-server/Dockerfile
     image: ghcr.io/elf-express/docs-mcp-server:latest
     container_name: docs-mcp-server
     environment:

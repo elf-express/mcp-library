@@ -43,7 +43,8 @@ jobs:
       matrix:
         include:
           - image: docs-mcp-server
-            context: ./mcp/docs-mcp-server
+            context: ./mcpjungle
+            dockerfile: ./mcpjungle/docs-mcp-server/Dockerfile
             title: Docs MCP Server (multi-corpus)
             description: Multi-corpus MCP server for searching bundled markdown docs
           - image: docs-registrar

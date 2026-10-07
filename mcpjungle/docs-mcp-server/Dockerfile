@@ -1,10 +1,13 @@
+# build context = mcpjungle/(見根 compose 與 .github/workflows/docker-publish.yml),才拿得到 books/*/corpus/
+#   docker build -f docs-mcp-server/Dockerfile -t docs-mcp-server .   (在 mcpjungle/ 執行)
+
 # ---- build stage ----
 FROM node:26-alpine AS build
 WORKDIR /app
-COPY package.json package-lock.json* ./
+COPY docs-mcp-server/package.json docs-mcp-server/package-lock.json* ./
 RUN npm install
-COPY tsconfig.json ./
-COPY src ./src
+COPY docs-mcp-server/tsconfig.json ./
+COPY docs-mcp-server/src ./src
 RUN npm run build
 
 # ---- runtime stage ----
@@ -15,12 +18,12 @@ ENV TRANSPORT=http
 ENV PORT=5690
 
 # production deps only
-COPY package.json package-lock.json* ./
+COPY docs-mcp-server/package.json docs-mcp-server/package-lock.json* ./
 RUN npm install --omit=dev && npm cache clean --force
 
-# compiled server + bundled corpora(每個語料一個子目錄)
 COPY --from=build /app/dist ./dist
-COPY corpora ./corpora
+# 每本書的 corpus/ 內容併入 corpora/,成為 corpora/<id>/
+COPY books/*/corpus/ ./corpora/
 
 EXPOSE 5690
 

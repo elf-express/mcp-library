@@ -133,7 +133,7 @@ jobs:
       matrix:
         include:
           - name: docs-mcp-server
-            dir: mcp/docs-mcp-server
+            dir: mcpjungle/docs-mcp-server
             node: 24
             test_args: -- --reporter=default --reporter=junit --outputFile.junit=test-results/junit.xml
     defaults:
@@ -186,7 +186,8 @@ jobs:
       matrix:
         include:
           - image: docs-mcp-server
-            context: ./mcp/docs-mcp-server
+            context: ./mcpjungle
+            dockerfile: ./mcpjungle/docs-mcp-server/Dockerfile
           - image: mcpjungle-gateway
             context: ./mcpjungle/gateway
             dockerfile: ./mcpjungle/gateway/Dockerfile.fullbuild

@@ -141,6 +141,16 @@ export function resolveCorporaDirs(): string[] {
   return listBookCorpusRoots(path.resolve(serverRoot, "..", "books"));
 }
 
+/** 錯誤訊息用的 corpora 根目錄清單;一個都沒有時說明找過哪些位置 */
+export function describeCorporaDirs(roots: string[] = resolveCorporaDirs()): string {
+  if (roots.length > 0) return roots.join(", ");
+  const envDir = process.env.DOCS_CORPORA_DIR;
+  if (envDir && envDir.trim().length > 0) return `(無;DOCS_CORPORA_DIR="${envDir}" 沒有有效路徑)`;
+  const serverRoot = path.resolve(__dirname, "..");
+  const booksGlob = path.join(path.resolve(serverRoot, "..", "books"), "*", "corpus");
+  return `(無;已找過 ${path.join(serverRoot, "corpora")} 與 ${booksGlob})`;
+}
+
 function readManifest(dir: string): Manifest {
   try {
     const raw = fs.readFileSync(path.join(dir, "corpus.json"), "utf-8");
@@ -472,7 +482,7 @@ export function doSearch(corpusId: string | undefined, query: string, limit: num
     targets = [c];
   } else {
     targets = discoverCorpora();
-    if (targets.length === 0) return "錯誤:找不到任何語料。corpora 目錄:" + resolveCorporaDirs().join(", ");
+    if (targets.length === 0) return "錯誤:找不到任何語料。corpora 目錄:" + describeCorporaDirs();
   }
 
   let hits: Hit[] = [];
@@ -770,7 +780,7 @@ export function doListCorpora(opts?: { filter?: string; onlyId?: string }): stri
   if (corpora.length === 0) {
     return onlyId
       ? `找不到語料 "${opts?.onlyId}"。`
-      : "目前沒有語料。corpora 目錄:" + resolveCorporaDirs().join(", ");
+      : "目前沒有語料。corpora 目錄:" + describeCorporaDirs();
   }
   const out: string[] = ["# 可用語料 (共 " + corpora.length + " 個)", ""];
   for (const c of corpora) {
