@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:52.821Z"
 ---
 
-
 # Limit maximum internet bandwidth users can consume
-
 
 For this example we will divide the internet Download traffic between the connected users in such manner that each user will receive up to a maximum of 1 Mbps.
 
@@ -88,7 +86,7 @@ Now press apply to activate the traffic shaping rules.
 
 *Screenshot Rules*
 
-[圖：../../_images/shaping_rules_s3.png](https://docs.opnsense.org/_images/shaping_rules_s3.png)
+[圖](https://docs.opnsense.org/_images/shaping_rules_s3.png)
 
 ### Prioritize using Queues
 
@@ -197,7 +195,4 @@ Now press apply to activate the traffic shaping rules.
 
 *Screenshot Rules*
 
-[圖：../../_images/shaping_rules_s4.png](https://docs.opnsense.org/_images/shaping_rules_s4.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/shaping_rules_s4.png)

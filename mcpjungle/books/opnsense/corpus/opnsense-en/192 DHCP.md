@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:19.090Z"
 ---
 
-
 # DHCP
-
 
 DHCP is used to automatically provide clients with an IP address (instead of clients having to set one themselves). DHCP is available for both IPv4 and IPv6 clients, referred to as DHCPv4 and DHCPv6, respectively.
 
@@ -93,6 +91,3 @@ ISC, KEA and Dnsmasq offer the possibility to reserve an IP address for a specif
 For **Dnsmasq**, you should define reservations **inside of the pool**. The IP address will be completely reserved inside the dynamic range, meaning the reserved IP will not be offered to dynamic clients.
 
 For **ISC and KEA**, you should only define reservations **outside of the pool**. Unless you can guarantee that this client is online at all times when the reservation is in the dynamic range, the DHCP server is free to offer this IP address to a different client when the first client goes offline.
-
----
-

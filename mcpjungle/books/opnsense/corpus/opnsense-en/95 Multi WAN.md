@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:27.942Z"
 ---
 
-
 # Multi WAN
-
 
 Multi WAN scenarios are commonly used for failover or load balancing, but combinations are also possible with OPNsense.
 
@@ -316,6 +314,3 @@ Afterwards, reconnect the main ISP and wait for the failback to happen. The same
 If there are issues, verify default gateway switching, gateway priorities, and if the correct failover and failback states options have been set.
 
 For further diagnostics, use Firewall ‣ Diagnostics ‣ States.
-
----
-

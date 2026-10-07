@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:48.737Z"
 ---
 
-
 # [Interface] Groups
-
 
 ## \[Interface\] Groups
 
@@ -31,6 +29,3 @@ For multiwan setups be careful with groups. Since groups are not bound to a spec
 | Members | Member interfaces |
 
 For a deployment strategy visit [Security Zones](<153 Security Zones.md>)
-
----
-

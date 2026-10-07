@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:46.436Z"
 ---
 
-
 # CARP狀態
-
 
 ## 一般
 
@@ -97,6 +95,3 @@ Carp 狀態變更通常會記錄到 syslog（系統 ‣ 日誌檔案 ‣ 常規�
 ```
 ..... carp promoted by 1048576 due to service recovery
 ```
-
----
-

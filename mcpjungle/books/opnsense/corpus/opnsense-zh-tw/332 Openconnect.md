@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:28.437Z"
 ---
 
-
 # Openconnect
-
 
 *資源（GeneralController.php）*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:28.437Z"
 | `POST` | openconnect | 服務 | 啟動 | |
 | `GET` | openconnect | 服務 | 狀態 | |
 | `POST` | openconnect | 服務 | 停止 | |
-
----
-

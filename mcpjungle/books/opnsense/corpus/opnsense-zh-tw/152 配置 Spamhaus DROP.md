@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:57.372Z"
 ---
 
-
 # 配置 Spamhaus DROP
-
 
 Spamhaus 不路由或對等列表
 
@@ -115,6 +113,3 @@ DROP（不要路由或對等）和 DROPv6 是建議性「丟棄所有流量」�
 ## 檢查 pf 表
 
 若要列出目前位於 DROP 和 DROPv6 清單中的 IP 位址，請前往防火牆 ‣ 診斷 ‣ 別名，然後選擇您要查看的清單。
-
----
-

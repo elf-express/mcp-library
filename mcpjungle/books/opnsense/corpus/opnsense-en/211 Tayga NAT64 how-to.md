@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:27.701Z"
 ---
 
-
 # Tayga NAT64 how-to
-
 
 ## Introduction
 
@@ -95,6 +93,3 @@ You may also want to advertise the NAT64 prefix in Router Advertisements. This c
 ## Testing
 
 You can use a service like [https://internet.nl/connection/](https://internet.nl/connection/) to verify that devices in your IPv6-only LAN have IPv6 and IP4 Internet access.
-
----
-

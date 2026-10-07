@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:12.304Z"
 ---
 
-
 # Serial Access
-
 
 
 
@@ -74,6 +72,3 @@ Access to the device is likely to be access restricted. You should run the comma
 If OPNsense is running, you will now be asked for your username and password if authentication is enabled. Otherwise the menu is displayed (at least after pressing enter). The credentials are the same as those used for SSH.
 
 A thing to note is that the screen won’t always auto-update. If you connect and see no output, try pressing Enter first before checking the other (more complex) possibilities. Another thing is that, when connecting via `screen`, you might not be able to scroll (but you can still pipe the output through a pager like `more` or `less`).
-
----
-

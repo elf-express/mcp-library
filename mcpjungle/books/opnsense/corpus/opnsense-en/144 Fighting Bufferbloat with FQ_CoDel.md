@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:54.355Z"
 ---
 
-
 # Fighting Bufferbloat with FQ_CoDel
-
 
 ## Fighting Bufferbloat with FQ\_CoDel
 
@@ -166,15 +164,15 @@ They are all substantially the same. Pick one and use it for all your measuremen
 
 **Waveform Speed Test** [https://www.waveform.com/tools/bufferbloat](https://www.waveform.com/tools/bufferbloat)
 
-[圖：../../_images/waveform_bufferbloat_test_post_config_tuning.png](https://docs.opnsense.org/_images/waveform_bufferbloat_test_post_config_tuning.png)
+[圖](https://docs.opnsense.org/_images/waveform_bufferbloat_test_post_config_tuning.png)
 
 **Cloudflare** [https://speed.cloudflare.com/](https://speed.cloudflare.com/)
 
-[圖：../../_images/cloudflare_speedtest.png](https://docs.opnsense.org/_images/cloudflare_speedtest.png)
+[圖](https://docs.opnsense.org/_images/cloudflare_speedtest.png)
 
 **Speedtest.net** [http://speedtest.net](http://speedtest.net/)
 
-[圖：../../_images/speedtest_net.png](https://docs.opnsense.org/_images/speedtest_net.png)
+[圖](https://docs.opnsense.org/_images/speedtest_net.png)
 
 ## Tuning FQ\_CoDel
 
@@ -316,6 +314,3 @@ If you are experiencing slow starts disable ECN
 -   [https://bugs.freebsd.org/bugzilla/show\_bug.cgi?id=276890](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276890)
     
 -   [https://marc.info/?t=170776797300003&r=1&w=2](https://marc.info/?t=170776797300003&r=1&w=2)
-
----
-

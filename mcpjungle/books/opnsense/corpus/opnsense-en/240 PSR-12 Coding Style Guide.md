@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:42.904Z"
 ---
 
-
 # PSR-12 Coding Style Guide
-
 
 Note
 
@@ -967,6 +965,3 @@ $instance = new class extends \Foo implements
     // Class content
 };
 ```
-
----
-

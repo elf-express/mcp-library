@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:19.347Z"
 ---
 
-
 # 使用 Insight - Netflow 分析器
-
 
 OPNsense 配備了一個名為 Insight 的靈活快速的 Netflow 分析器。若要使用 Insight，需要設定 Netflow 匯出器以在本機擷取 Netflow 資料。為此，請參閱 [設定 Netflow 導出器](<83 設定 Netflow 導出器.md>) 。
 
@@ -19,7 +17,7 @@ OPNsense 配備了一個名為 Insight 的靈活快速的 Netflow 分析器。�
 
 Insight 是 OPNsense 的一個完全整合部分。它的用戶介面簡潔而強大。可以透過「報告」‣「Insight」來存取它。
 
-[圖：../../_images/insight_gui.png](https://docs.opnsense.org/_images/insight_gui.png)
+[圖](https://docs.opnsense.org/_images/insight_gui.png)
 
 Insight 提供了一整套分析工具，從圖形概覽到 csv 匯出器，方便您使用自己喜歡的電子表格進行進一步分析。
 
@@ -37,15 +35,15 @@ Insight 的預設視圖是「熱門使用者和圖形概覽」。此視圖可以
 
 **堆疊**
 
-[圖：../../_images/stacked_view.png](https://docs.opnsense.org/_images/stacked_view.png)
+[圖](https://docs.opnsense.org/_images/stacked_view.png)
 
 **溪流**
 
-[圖：../../_images/stream_view.png](https://docs.opnsense.org/_images/stream_view.png)
+[圖](https://docs.opnsense.org/_images/stream_view.png)
 
 **擴充版**
 
-[圖：../../_images/expanded_view.png](https://docs.opnsense.org/_images/expanded_view.png)
+[圖](https://docs.opnsense.org/_images/expanded_view.png)
 
 ### 介面
 
@@ -65,7 +63,7 @@ Insight 的預設視圖是「熱門使用者和圖形概覽」。此視圖可以
 
 點擊圓餅圖中的某一部分，即可開啟詳細視圖進行進一步分析。
 
-[圖：../../_images/pie_piece.png](https://docs.opnsense.org/_images/pie_piece.png) [圖：../../_images/pie_details.png](https://docs.opnsense.org/_images/pie_details.png)
+[圖](https://docs.opnsense.org/_images/pie_piece.png) [圖](https://docs.opnsense.org/_images/pie_details.png)
 
 ### IP地址餅圖
 
@@ -83,17 +81,17 @@ Insight 的預設視圖是「熱門使用者和圖形概覽」。此視圖可以
 
 點選標籤開啟詳細資料檢視後，即可建立新查詢。
 
-[圖：../../_images/insight_details_view.png](https://docs.opnsense.org/_images/insight_details_view.png)
+[圖](https://docs.opnsense.org/_images/insight_details_view.png)
 
 選擇有效的日期範圍（起始日期/結束日期）和介面後，也可以透過按連接埠或IP位址篩選來進一步縮小輸出範圍。點擊刷新圖示即可更新詳細輸出。如果要查看完整詳細列表，請將連接埠和位址留空。
 
-[圖：../../_images/insight_full_details.png](https://docs.opnsense.org/_images/insight_full_details.png)
+[圖](https://docs.opnsense.org/_images/insight_full_details.png)
 
 ## 匯出視圖
 
 透過**匯出**視圖，您可以將資料匯出到您喜歡的電子表格或其他資料分析應用程式中進行進一步分析。
 
-[圖：../../_images/insight_export_view.png](https://docs.opnsense.org/_images/insight_export_view.png)
+[圖](https://docs.opnsense.org/_images/insight_export_view.png)
 
 若要匯出數據，請選擇一個**集合**：
 
@@ -110,7 +108,4 @@ Insight 的預設視圖是「熱門使用者和圖形概覽」。此視圖可以
 
 然後選擇日期範圍（從/到），並點擊**匯出**按鈕。
 
-[圖：../../_images/insight_export.png](https://docs.opnsense.org/_images/insight_export.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/insight_export.png)

@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:14.730Z"
 ---
 
-
 # DHCPv4
-
 
 *資源（LeasesController.php）*
 
@@ -29,6 +27,3 @@ captured: "2026-09-26T11:34:14.730Z"
 | `POST` | dhcpv4 | 服務 | 啟動 | |
 | `GET` | dhcpv4 | 服務 | 狀態 | |
 | `POST` | dhcpv4 | 服務 | 停止 | |
-
----
-

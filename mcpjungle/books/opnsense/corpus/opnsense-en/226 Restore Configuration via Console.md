@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:35.838Z"
 ---
 
-
 # Restore Configuration via Console
-
 
 Sometimes you may accidentally introduce a breaking change that interrupts network access, prevents user login or makes SSH and WebGUI inaccessible. Rolling back without a reinstall is possible if there is serial and console access.
 
@@ -81,6 +79,3 @@ reboot
 After the reboot, confirm that you can log in and that the breaking change has been rolled back. If not, repeat the above steps and go back further with the backup configuration timestamp.
 
 If this cannot fix it, [reinstall your appliance](<55 Initial Installation & Configuration.md>) with the latest available image and restore a known-good configuration you have kept safe.
-
----
-

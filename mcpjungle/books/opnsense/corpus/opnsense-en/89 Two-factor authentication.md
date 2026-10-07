@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:26.920Z"
 ---
 
-
 # Two-factor authentication
 
-
-[圖：../_images/two_factor_authentication.png](https://docs.opnsense.org/_images/two_factor_authentication.png)
+[圖](https://docs.opnsense.org/_images/two_factor_authentication.png)
 
 Two-factor authentication also known as 2FA or 2-Step Verification is an authentication method that requires two components, such as a pin/password + a token.
 
@@ -46,6 +44,3 @@ The 2FA feature can be used with any time based one-time password token, althoug
 ## Configuration & Setup
 
 To setup see: [Configure 2FA TOTP & Google Authenticator](<103 Configure 2FA TOTP & Google Authenticator.md>).
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:30.494Z"
 ---
 
-
 # Puppetagent
-
 
 *Service (ServiceController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:30.494Z"
 | `POST` | puppetagent | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [PuppetAgent.xml](https://github.com/opnsense/plugins/blob/master/sysutils/puppet-agent/src/opnsense/mvc/app/models/OPNsense/PuppetAgent/PuppetAgent.xml) |
-
----
-

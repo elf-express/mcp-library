@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:59.905Z"
 ---
 
-
 # WireGuard Site-to-Site Setup
-
 
 ## Introduction
 
@@ -281,6 +279,3 @@ Press **Save** and **Apply**.
 Note
 
 Now both sites have full access to the LAN of the other Site through the Wireguard Tunnel. For additional networks just add more **Allowed IPs** to the Wireguard Endpoints and adjust the firewall rules to allow the traffic.
-
----
-

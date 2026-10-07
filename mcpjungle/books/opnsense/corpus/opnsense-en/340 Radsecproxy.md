@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:32.970Z"
 ---
 
-
 # Radsecproxy
-
 
 *Resources (ClientsController.php)*
 
@@ -105,6 +103,3 @@ captured: "2026-09-26T11:34:32.970Z"
 | `POST` | radsecproxy | tls | toggle\_item | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [RadSecProxy.xml](https://github.com/opnsense/plugins/blob/master/net/radsecproxy/src/opnsense/mvc/app/models/OPNsense/RadSecProxy/RadSecProxy.xml) |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:29.746Z"
 ---
 
-
 # Multicast DNS Proxy
-
 
 If you want to connect multicast DNS of multiple networks, you will need to proxy between them.
 
@@ -36,6 +34,3 @@ The configuration is fairly simple. Just enable the service and add the interfac
 | --- | --- |
 | Enabled | checked |
 | Interfaces | LAN, OPT1, OPT2 |
-
----
-

@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:18.269Z"
 ---
 
-
 # FTPP代理
-
 
 *服務（ServiceController.php）*
 
@@ -34,6 +32,3 @@ captured: "2026-09-26T11:34:18.269Z"
 | `GET` | ftpproxy | 設定 | 搜尋代理 | |
 | `POST` | ftpproxy | 設定 | 設定代理程式 | $uuid |
 | `POST` | ftpproxy | 設定 | toggle\_proxy | $uuid |
-
----
-

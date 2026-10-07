@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:04.743Z"
 ---
 
-
 # 權威DNS
-
 
 ## [權威DNS](#id1)
 
@@ -722,6 +720,3 @@ drill -p 53053 @127.0.0.1 -x 192.168.1.2
 只有當 Unbound 具有 `internal` 的轉發表項時，`host.internal` 的查詢才會到達本地區域。
 
 如果沒有轉發，Unbound 會嘗試正常解析名稱，並且不會自動了解本機託管區域。
-
----
-

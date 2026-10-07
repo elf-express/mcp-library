@@ -8,7 +8,6 @@ translated_by: "original"
 captured: "2026-09-26T11:31:40.397Z"
 ---
 
-
 # Welcome to OPNsense’s documentation!
 
 
@@ -183,6 +182,3 @@ captured: "2026-09-26T11:31:40.397Z"
 >     -   [Closing Words](<380 Contribute.md#closing-words>)
 > -   [History](https://docs.opnsense.org/history.html)
 >     -   [About the Fork](<382 About the Fork.md>)
-
----
-

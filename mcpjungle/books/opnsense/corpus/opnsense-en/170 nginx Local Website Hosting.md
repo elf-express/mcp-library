@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:07.464Z"
 ---
 
-
 # nginx Local Website Hosting
-
 
 ## nginx: Local Website Hosting
 
@@ -123,6 +121,3 @@ curl "http://192.168.0.1:8080/test.php"
 -   Check your logs regularly.
     
 -   Consider hardening your directory and file access permission (like making directories and files read only for nginx and PHP)
-
----
-

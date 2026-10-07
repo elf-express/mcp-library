@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:10.264Z"
 ---
 
-
 # Included software
-
 
 OPNsense® comes with a lot of features included in the base system, for some situations you may need additional software, which is either provided via a plugin or only as a binary package (without user interface).
 
@@ -83,6 +81,3 @@ opnsense-code src
 Note
 
 There are a lot of resources available about building ports packages, such as [https://www.freebsd.org/ports/](https://www.freebsd.org/ports/) and the pointers in our documentation and tools. We consider building custom software a feature not usable for beginners, before creating support tickets, make sure you have the necessary skillsets needed to perform such tasks.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:06.948Z"
 ---
 
-
 # nginx Basic Authentication & Authorization
-
 
 ## nginx: Basic Authentication & Authorization
 
@@ -63,6 +61,3 @@ curl -v -u user:password  "http://example.com/restricted/image.png"
 ## Advanced Authentication
 
 The entry advanced authentication is used to call an external authentication provider. In the case of OPNsense, this is currently a special script, which authenticates against the local database. If you want to use it, do not enter a realm nor select a user list. Please note that this feature may change in the future.
-
----
-

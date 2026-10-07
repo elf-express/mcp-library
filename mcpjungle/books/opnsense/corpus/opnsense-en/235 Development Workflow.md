@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:41.386Z"
 ---
 
-
 # Development Workflow
-
 
 
 
@@ -95,6 +93,3 @@ Easy Access is Key to Collaboration
 Although this is just a peek into OPNsense development workflow it brings to attention a key aspect: moving barriers out of the way to enable as many people as possible to produce quick results. Yes,there are barriers like [git](http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) and [GitHub](https://guides.github.com/activities/contributing-to-open-source/) to deal with, maybe even learning FreeBSD intricacies, but once you have your code in the GUI and working fine, you’ll feel proud enough to endure the hardships of making sure your patch will have a place in our upstream repositories so the community as a whole can benefit from your dedication.
 
 The OPNsense core team looks forward to your feedback; “We are seeking for more improvements in the build system and eagerly await your pull requests.” Take care and code responsibly. :)
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:15.056Z"
 ---
 
-
 # Wazuh Agent
-
 
 ## Introduction
 
@@ -138,6 +136,3 @@ Wazuh offers quite some [proof of concept](https://documentation.wazuh.com/curre
 In case log entries are being collected in `/var/ossec/logs/opnsense_syslog.log` and no events are being collected in the Manager, it’s usually a good idea to check how Wazuh processes these lines.
 
 The Wazuh ‣ Tools ‣ Ruleset test menu item in the manager offers an easy to use tool to inspect log events.
-
----
-

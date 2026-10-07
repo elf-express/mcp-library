@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:12.716Z"
 ---
 
-
 # Clamav
-
 
 *Resources (GeneralController.php)*
 
@@ -47,6 +45,3 @@ captured: "2026-09-26T11:34:12.716Z"
 | `POST` | clamav | url | toggle\_url | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Url.xml](https://github.com/opnsense/plugins/blob/master/security/clamav/src/opnsense/mvc/app/models/OPNsense/ClamAV/Url.xml) |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:18.080Z"
 ---
 
-
 # DHCrelay
-
 
 ## [DHCrelay](#id1)
 
@@ -42,6 +40,3 @@ DHCrelay binds to port 67 like other available DHCP servers. To run multiple ser
 | Interface | Which interface to apply relaying to. Only interfaces with an Ethernet address can be selected. Only one interface per destination per address family is allowed. |
 | Destination | The target destination of the relay from the pool of previously set up destinations. |
 | Agent Information | If this is checked, the DHCP relay will append the circuit ID (interface number) and the agent ID to the DHCP request. |
-
----
-

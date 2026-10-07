@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:34:47.202Z"
 ---
 
-
 # Using grids module & plugin
-
 
 Creating grid enabled forms
 
-[圖：../../_images/grid-sample.png](https://docs.opnsense.org/_images/grid-sample.png)
+[圖](https://docs.opnsense.org/_images/grid-sample.png)
 
 ## Goal
 
@@ -291,7 +289,4 @@ The sample package on [GitHub](https://github.com/opnsense/plugins/tree/master/d
 
 Now go to http\[s\]://your.host/ui/gridexample and try it out.
 
-[圖：../../_images/grid-test-drive.png](https://docs.opnsense.org/_images/grid-test-drive.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/grid-test-drive.png)

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:19.842Z"
 ---
 
-
 # OPNsense Tools
-
 
 The OPNsense project offers a number of tools to instantly patch the system, revert a package to a previous (older version) state or revert the whole kernel.
 
@@ -87,6 +85,3 @@ You need a special feature for a plugin and ask in Github for it. A developer ad
 The -c changes the default core to plugin repo and adds the patch to the system.
 
 It is also possible to add patches from different users, just add -a githubusername before -c
-
----
-

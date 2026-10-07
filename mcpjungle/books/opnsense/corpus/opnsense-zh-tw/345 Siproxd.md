@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:35.970Z"
 ---
 
-
 # Siproxd
-
 
 *資源（DomainController.php）*
 
@@ -59,6 +57,3 @@ captured: "2026-09-26T11:34:35.970Z"
 | `GET` | siproxd | 使用者 | toggle\_user | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [User.xml](https://github.com/opnsense/plugins/blob/master/net/siproxd/src/opnsense/mvc/app/models/OPNsense/Siproxd/User.xml) |
-
----
-

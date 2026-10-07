@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:19.829Z"
 ---
 
-
 # Haproxy
-
 
 *Resources (ExportController.php)*
 
@@ -151,6 +149,3 @@ captured: "2026-09-26T11:34:19.829Z"
 | `GET` | haproxy | statistics | counters |  |
 | `GET` | haproxy | statistics | info |  |
 | `GET` | haproxy | statistics | tables |  |
-
----
-

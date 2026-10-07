@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:11.289Z"
 ---
 
-
 # Caddy 反向代理
-
 
 ## [Caddy：反向代理](#id1)
 
@@ -1156,6 +1154,3 @@ Caddy 支援HA 代理協定。如果需要將協定頭加入上游，請將代�
 -   開啟管理端點：`http://YOUR_LAN_IP:2019/debug/pprof/`
     
 -   請按照 [Profiling Caddy](https://caddyserver.com/docs/profiling) 上的說明進行操作。
-
----
-

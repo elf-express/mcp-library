@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:08.675Z"
 ---
 
-
 # Wireguard
-
 
 *Resources (ClientController.php)*
 
@@ -67,6 +65,3 @@ captured: "2026-09-26T11:34:08.675Z"
 | `POST` | wireguard | service | start |  |
 | `GET` | wireguard | service | status |  |
 | `POST` | wireguard | service | stop |  |
-
----
-

@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:41.448Z"
 ---
 
-
 # 無線網路介面（ INTERNAL ）
-
 
 ## 介面：無線網路（ INTERNAL ）
 
@@ -83,6 +81,3 @@ FreeBSD 支援無線網路卡的存取點（基礎架構）模式，但此功能
 
 
 若要連接到網絡，請將安全設定設為“ WPA/WPA2企業版”，並將身分驗證設定設為“受保護的EAP ( PEAP )”。內部驗證應設定為 MSCHAPv2，使用者名稱和密碼是您在RADIUS插件中設定的值。
-
----
-

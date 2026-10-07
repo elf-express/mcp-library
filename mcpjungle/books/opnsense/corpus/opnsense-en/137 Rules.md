@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:49.638Z"
 ---
 
-
 # Rules
-
 
 ## [Rules](#id4)
 
@@ -236,7 +234,7 @@ Our overview shows all the rules that apply to the selected interface, group or 
 
 API access is described in more detail in the [firewall](<276 Firewall.md>) API reference manual.
 
-[圖：../_images/firewall_rules_1.png](https://docs.opnsense.org/_images/firewall_rules_1.png)
+[圖](https://docs.opnsense.org/_images/firewall_rules_1.png)
 
 ##### [Interface filter](#id15)
 
@@ -408,7 +406,7 @@ Keep in mind that when the service that listens on the divert socket is stopped,
 
 Our overview shows all the rules that apply to the selected interface (group) or floating section. For every rule some details are provided and when applicable you can perform actions, such as move, edit, copy, delete.
 
-[圖：../_images/Firewall_overview.png](https://docs.opnsense.org/_images/Firewall_overview.png)
+[圖](https://docs.opnsense.org/_images/Firewall_overview.png)
 
 Below you will find some highlights about this screen.
 
@@ -578,6 +576,3 @@ Common issues in this area include return traffic using a different interface th
 Inspecting used netmasks is also a good idea, intending to match a host but providing a subnet is a mistake easily made (e.g. `192.168.1.1/32` vs `192.168.1.1/24` is in reality all of `192.168.1.x`).
 
 Last but not least, remember rules are matched in order and the default (inbound) policy is `block` if nothing else is specified, since we match traffic on `inbound`, make sure to add rules where traffic originates from (e.g. `lan` for traffic leaving your network, the return should normally be allowed by state).
-
----
-

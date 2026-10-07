@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:19.319Z"
 ---
 
-
 # Freeradius
-
 
 *Resources (AvpairController.php)*
 
@@ -161,6 +159,3 @@ captured: "2026-09-26T11:34:19.319Z"
 | `GET` | freeradius | user | toggle\_user | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [User.xml](https://github.com/opnsense/plugins/blob/master/net/freeradius/src/opnsense/mvc/app/models/OPNsense/Freeradius/User.xml) |
-
----
-

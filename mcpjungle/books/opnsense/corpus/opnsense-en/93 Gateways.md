@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:28.431Z"
 ---
 
-
 # Gateways
-
 
 
 
@@ -91,6 +89,3 @@ Some VPN types support sending traffic to the interface without knowing an inter
 When a gateway is marked offline, always check if the monitor address is reachable via the correct interface first. You can use Interfaces->Diagnostics->Ping to test connectivity. In case the monitor address is not in the same subnet as the interface, also check if there’s a static route (System->Routes->Status) available which sends the requested traffic to the correct upstream gateway.
 
 There should always be a `dpinger` process active, which you can check on the services page (System->Diagnostics->Services), finally if all seems to be running you can deep dive into the packets leaving the interface, if dpinger is active, there should be ICMP packets heading to your monitor address, which you can inspect using Interfaces->Diagnostics->Packet Capture.
-
----
-

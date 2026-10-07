@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:21.869Z"
 ---
 
-
 # Unbound DNS
-
 
 Unbound is a validating, recursive, caching DNS resolver. It is designed to be fast and lean and incorporates modern features based on open standards.
 
@@ -352,6 +350,3 @@ It is the sole responsibility of the administrator which places a file in the ex
 Note
 
 This method replaces the `Custom options` settings in the General page of the Unbound configuration, which was removed in version 21.7.
-
----
-

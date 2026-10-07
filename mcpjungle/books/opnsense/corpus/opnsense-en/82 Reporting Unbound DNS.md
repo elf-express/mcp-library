@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:21.371Z"
 ---
 
-
 # Reporting Unbound DNS
-
 
 ## Reporting: Unbound DNS
 
@@ -73,6 +71,3 @@ It’s possible that a queried domain with a record type other than a CNAME (e.g
 -   The blocklist used if a query was blocked.
     
 -   Either a block or whitelist action button, which can be used in the same way as described above for the “Top domains” in the overview section. Please note that this column will not appear if blocklists are disabled.
-
----
-

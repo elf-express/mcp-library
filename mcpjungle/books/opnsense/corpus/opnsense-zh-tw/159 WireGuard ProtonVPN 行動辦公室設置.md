@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:00.894Z"
 ---
 
-
 # WireGuard ProtonVPN 行動辦公室設置
-
 
 ## 介紹
 
@@ -23,7 +21,7 @@ ProtonVPN 是基於雲端的VPN供應商，提供安全隧道並保護隱私。�
 
 首先顯示的是現有的 WireGuard 配置及其到期日期，接下來是產生新配置的選項。
 
-[圖：../../_images/proton_wireguard_configuration.png](https://docs.opnsense.org/_images/proton_wireguard_configuration.png)
+[圖](https://docs.opnsense.org/_images/proton_wireguard_configuration.png)
 
 -   為產生的配置選擇一個名稱
     
@@ -63,7 +61,7 @@ ProtonVPN 是基於雲端的VPN供應商，提供安全隧道並保護隱私。�
     -   操作成功後，螢幕上將出現如下視窗。
         
 
-[圖：../../_images/proton_configuration_1.png](https://docs.opnsense.org/_images/proton_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/proton_configuration_1.png)
 
 完整的配置如下：
 
@@ -204,6 +202,3 @@ wg pubkey < wgPrivateKey
 通俗地說，如果DNS伺服器向非本地位址發出任何請求，它將通過VPN網關。
 
 ProtonVPN 網站上的所有圖片均為 ProtonVPN 所有，並已獲得書面許可使用。
-
----
-

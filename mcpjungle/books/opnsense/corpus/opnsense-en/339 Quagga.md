@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:32.493Z"
 ---
 
-
 # Quagga
-
 
 *Resources (BfdController.php)*
 
@@ -234,6 +232,3 @@ captured: "2026-09-26T11:34:32.493Z"
 | `POST` | quagga | static | toggle\_route | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [STATICd.xml](https://github.com/opnsense/plugins/blob/master/net/frr/src/opnsense/mvc/app/models/OPNsense/Quagga/STATICd.xml) |
-
----
-

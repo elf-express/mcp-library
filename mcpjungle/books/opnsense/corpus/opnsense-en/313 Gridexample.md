@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:18.783Z"
 ---
 
-
 # Gridexample
-
 
 *Service (ServiceController.php)*
 
@@ -32,6 +30,3 @@ captured: "2026-09-26T11:34:18.783Z"
 | `POST` | gridexample | settings | toggle\_item | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [GridExample.xml](https://github.com/opnsense/plugins/blob/master/devel/grid_example/src/opnsense/mvc/app/models/OPNsense/GridExample/GridExample.xml) |
-
----
-

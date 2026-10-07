@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:38.371Z"
 ---
 
-
 # Performance
-
 
 ## Receive-side scaling
 
@@ -127,6 +125,3 @@ netstat -Q
 ### **Note regarding IPS**
 
 When Suricata is running in IPS mode, Netmap is utilized to fetch packets off the line for inspection. By default, OPNsense has configured Suricata in such a way that the packet which has passed inspection will be re-injected into the host networking stack for routing/firewalling purposes. The current Suricata/Netmap implementation limits this re-injection to one thread only. Work is underway to address this issue since the new Netmap API (V14+) is now capable of increasing this thread count. Until then, no benefit is gained from RSS when using IPS.
-
----
-

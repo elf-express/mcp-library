@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:50.644Z"
 ---
 
-
 # Network Address Translation
-
 
 ## [Network Address Translation](#id1)
 
@@ -326,6 +324,3 @@ When adding a rule, the following fields are available:
 ## [How-tos](#id8)
 
 -   [Reflection and Hairpin NAT](<136 Reflection and Hairpin NAT.md>)
-
----
-

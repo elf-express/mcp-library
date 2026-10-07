@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:09.482Z"
 ---
 
-
 # nginx TCP和UDP流
-
 
 ## nginx： TCP和UDP流
 
@@ -84,6 +82,3 @@ curl https://HOSTNAME:PORT -vkI --resolve HOSTNAME:PORT:IP
 | HOSTNAME | 您要連接的主機名稱（example.com） |
 | PORT | 代理運行的連接埠 |
 | IP | IP您的 OPNsense 設備（用於覆蓋DNS ） |
-
----
-

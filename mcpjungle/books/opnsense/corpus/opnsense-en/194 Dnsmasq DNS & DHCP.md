@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:18.884Z"
 ---
 
-
 # Dnsmasq DNS & DHCP
-
 
 ## [Dnsmasq DNS & DHCP](#id1)
 
@@ -935,6 +933,3 @@ As final step, create a firewall rule with the `dnsmasq_example_com` alias as de
 Tip
 
 Verify the contents of the alias in Firewall ‣ Diagnostics ‣ Aliases: It should populate with IP addresses as soon as clients resolve `example.com` via Dnsmasq.
-
----
-

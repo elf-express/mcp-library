@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:48.448Z"
 ---
 
-
 # Usage example
-
 
 Now let’s test our model using a small PHP script (in /usr/local/opnsense/mvc/script/ ):
 
@@ -67,6 +65,3 @@ When inspecting our config.xml file, you will notice the following content has b
   </myModule>
 </myManufacturer>
 ```
-
----
-

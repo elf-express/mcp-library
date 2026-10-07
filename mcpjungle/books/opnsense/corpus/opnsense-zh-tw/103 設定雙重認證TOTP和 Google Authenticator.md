@@ -9,13 +9,11 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:31.958Z"
 ---
 
-
 # 設定雙重認證TOTP和 Google Authenticator
-
 
 本教學將向您展示如何使用 OPNsense 和 Google Authenticator 設定一次性密碼雙重認證。 OPNsense 的所有服務均可與此雙重認證解決方案搭配使用。
 
-[圖：../../_images/two_factor_authentication.png](https://docs.opnsense.org/_images/two_factor_authentication.png)
+[圖](https://docs.opnsense.org/_images/two_factor_authentication.png)
 
 注意事項
 
@@ -49,11 +47,11 @@ captured: "2026-09-26T11:32:31.958Z"
 
 若要啟動 Google Authenticator 上的新OTP種子，請先點選鉛筆圖示重新開啟您剛剛建立的使用者。
 
-[圖：../../_images/OTP_seed.png](https://docs.opnsense.org/_images/OTP_seed.png)
+[圖](https://docs.opnsense.org/_images/OTP_seed.png)
 
 現在會顯示QR程式碼：
 
-[圖：../../_images/otp_qr_code.png](https://docs.opnsense.org/_images/otp_qr_code.png)
+[圖](https://docs.opnsense.org/_images/otp_qr_code.png)
 
 警告
 
@@ -63,15 +61,15 @@ captured: "2026-09-26T11:32:31.958Z"
 
 對於 SailOTP，配置方式如下：
 
-[圖：../../_images/sailotp_menu.jpg](https://docs.opnsense.org/_images/sailotp_menu.jpg)
+[圖](https://docs.opnsense.org/_images/sailotp_menu.jpg)
 
 下拉開啟應用程式選單，然後選擇新增令牌的條目。
 
-[圖：../../_images/sailotp_scan_qr.jpg](https://docs.opnsense.org/_images/sailotp_scan_qr.jpg)
+[圖](https://docs.opnsense.org/_images/sailotp_scan_qr.jpg)
 
 下一步，您需要點擊螢幕掃描之前建立的QR碼。
 
-[圖：../../_images/sailotp_scanresult.jpg](https://docs.opnsense.org/_images/sailotp_scanresult.jpg)
+[圖](https://docs.opnsense.org/_images/sailotp_scanresult.jpg)
 
 掃描QR條碼後，將開啟一個新視圖，您可以在其中查看結果詳情。您可以使用此視圖檢查掃描結果產生的金鑰和OTP設定是否與您的設定相符。點選「新增」確認一切正常。
 
@@ -96,7 +94,7 @@ captured: "2026-09-26T11:32:31.958Z"
 
 點擊測試按鈕，如果一切順利，您應該會看到*成功通過身份驗證*。
 
-[圖：../../_images/system_access_tester.png](https://docs.opnsense.org/_images/system_access_tester.png)
+[圖](https://docs.opnsense.org/_images/system_access_tester.png)
 
 ## 步驟 6 - 啟用身份驗證伺服器
 
@@ -104,7 +102,7 @@ captured: "2026-09-26T11:32:31.958Z"
 
 **注意：請確保您已測試過您的令牌！**
 
-[圖：../../_images/auth_server.png](https://docs.opnsense.org/_images/auth_server.png)
+[圖](https://docs.opnsense.org/_images/auth_server.png)
 
 ## 步驟 7 - 使用令牌
 
@@ -116,7 +114,4 @@ captured: "2026-09-26T11:32:31.958Z"
 
 代碼每 30 秒更新一次。範例程式碼：
 
-[圖：../../_images/google_token_sample.png](https://docs.opnsense.org/_images/google_token_sample.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/google_token_sample.png)

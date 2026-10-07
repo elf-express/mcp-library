@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:51.587Z"
 ---
 
-
 # Creating Models Field types
-
 
 ## Creating Models / Field types
 
@@ -593,6 +591,3 @@ Select a virtual address defined in Interfaces -> Virtual IPs -> Settings, use w
 | BlankDesc | `text` | Set a label for the empty option |
 | Multiple | Y,N | Allow to select multiple options |
 | Type | `text` | The virtual ip type to select, `*` for all (default) |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:45.084Z"
 ---
 
-
 # SFRRED France FTTH IPv4 & IPv6 & Phone
-
 
 ## SFR/RED France FTTH IPv4 & IPv6 & Phone
 
@@ -28,7 +26,7 @@ Before starting this guide, you should have the MAC address of your SFR/RED Box.
 
 SFR/RED requires that the WAN interface assignment should look similar to this:
 
-[圖：../../_images/SFRRED_assignations.png](https://docs.opnsense.org/_images/SFRRED_assignations.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_assignations.png)
 
 -   WAN interface has MAC xx:xx:xx:xx:xx:xx which is the original WAN MAC of the BOX (spoofed),
     
@@ -50,11 +48,11 @@ Select options:
 -   IPv6 configuration: DHCPv6.
     
 
-[圖：../../_images/SFRRED_WAN_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_1.png)
 
 **On the DHCPv4 request it is a requirement to pass the following:**
 
-[圖：../../_images/SFRRED_WAN_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_2.png)
 
 Note
 
@@ -72,7 +70,7 @@ It is necessary to specify the following ”Request Options”:
 
 **On the DHCPv6 request we need to use raw options**
 
-[圖：../../_images/SFRRED_WAN_configuration_3.png](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_3.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_3.png)
 
 Note
 
@@ -112,7 +110,7 @@ Click ”Save” and then ”Apply”.
 
 Select Interfaces ‣ Parameters and set your DUID.
 
-[圖：../../_images/SFRRED_interfaces_parameters.png](https://docs.opnsense.org/_images/SFRRED_interfaces_parameters.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_interfaces_parameters.png)
 
 Note
 
@@ -124,7 +122,7 @@ Click ”Save” and then ”Apply”
 
 Select Interfaces ‣ \[LAN\] and set IPv4 to “Static IPv4” and IPv6 Configuration Type to “Track Interface”.
 
-[圖：../../_images/SFRRED_LAN_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_1.png)
 
 And define the IPv6 Prefix ID to ”0” Finally, set the following parameters as shown:
 
@@ -135,7 +133,7 @@ And define the IPv6 Prefix ID to ”0” Finally, set the following parameters a
 -   the IPv6 Prefix ID to ”0”.
     
 
-[圖：../../_images/SFRRED_LAN_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_2.png)
 
 Click ”Save” and then ”Apply”
 
@@ -190,7 +188,7 @@ Select Services ‣ Nginx ‣ Configuration
 
 Activate NGINX
 
-[圖：../../_images/SFRRED_services_nginx_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_1.png)
 
 ### Services / Nginx / Configuration / HTTP(s)
 
@@ -198,7 +196,7 @@ Select Services ‣ Nginx ‣ Configuration ‣ HTTP(s)
 
 Create a new config
 
-[圖：../../_images/SFRRED_services_nginx_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_2.png)
 
 Note
 
@@ -219,7 +217,7 @@ Select Services ‣ Nginx ‣ Configuration ‣ HTTP(s) ‣ URL Rewriting
 
 Add a new rewrite rule
 
-[圖：../../_images/SFRRED_services_nginx_configuration_3.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_3.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_3.png)
 
 ### Services / Nginx / Configuration / HTTP(s) / HTTP Server
 
@@ -227,7 +225,7 @@ Select Services ‣ Nginx ‣ Configuration ‣ HTTP(s) ‣ HTTP Server
 
 Add a new rewrite rule
 
-[圖：../../_images/SFRRED_services_nginx_configuration_4.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_4.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_4.png)
 
 Note
 
@@ -243,7 +241,7 @@ Select Services ‣ Unbound DNS ‣ General
 
 Add parameters to let SFR/RED Box discover the SIP proxy:
 
-[圖：../../_images/SFRRED_services_unbound_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_services_unbound_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_unbound_configuration_1.png)
 
 Warning
 
@@ -258,7 +256,7 @@ Select Services ‣ Siproxd
 
 Define basic parameters:
 
-[圖：../../_images/SFRRED_services_siproxd_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_1.png)
 
 ### Services / Siproxd / Outbound Domains
 
@@ -266,7 +264,7 @@ Select Services ‣ Siproxd ‣ Outbound Domains
 
 Create the configuration for outbound domain:
 
-[圖：../../_images/SFRRED_services_siproxd_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_2.png)
 
 Note
 
@@ -290,7 +288,7 @@ Select Services ‣ DHCPv4 ‣ \[LAN\]
 
 Click on \[+\] to add a static mapping:
 
-[圖：../../_images/SFRRED_services_dhcp_lan.png](https://docs.opnsense.org/_images/SFRRED_services_dhcp_lan.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_dhcp_lan.png)
 
 ### Firewall / NAT / Destination NAT (Port Forward)
 
@@ -298,11 +296,8 @@ Select Firewall ‣ NAT ‣ Destination NAT (Port Forward)
 
 Add a new forwarding rule:
 
-[圖：../../_images/SFRRED_lan_port_forwarding.png](https://docs.opnsense.org/_images/SFRRED_lan_port_forwarding.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_lan_port_forwarding.png)
 
 Note
 
 Right now, everything should be ready. Restart the firewall, once ready plug the SFR/RED Box on your LAN and start it. You should be able to enjoy IPv4, IPv6 and Phone.
-
----
-

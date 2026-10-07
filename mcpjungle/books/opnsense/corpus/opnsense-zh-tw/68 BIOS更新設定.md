@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:14.312Z"
 ---
 
-
 # BIOS更新設定
-
 
 ## BIOS更新/設定
 
@@ -155,6 +153,3 @@ USB drive:/
 ## [**微程式碼更新**](#id8)
 
 微代碼補丁包含在我們的EFI韌體更新中。如果需要微程式碼更新來解決AMD /Intel 認為足夠重要的特定問題，您可以使用 [ CPU微程式碼更新 \[ AMD /Intel\]]( https://docs.opnsense.org/manual/cpu-microcode.html ) 外掛程式自行安裝微程式碼更新。
-
----
-

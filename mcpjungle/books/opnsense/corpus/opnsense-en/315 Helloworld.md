@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:20.299Z"
 ---
 
-
 # Helloworld
-
 
 *Service (ServiceController.php)*
 
@@ -27,6 +25,3 @@ captured: "2026-09-26T11:34:20.299Z"
 | `POST` | helloworld | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [HelloWorld.xml](https://github.com/opnsense/plugins/blob/master/devel/helloworld/src/opnsense/mvc/app/models/OPNsense/HelloWorld/HelloWorld.xml) |
-
----
-

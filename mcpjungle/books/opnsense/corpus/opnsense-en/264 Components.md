@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:54.068Z"
 ---
 
-
 # Components
-
 
 OPNsense® **components** are not directly related to the front and backend.
 
@@ -19,6 +17,3 @@ For the OPNsense framework we’ve developed some shared components for common t
 -   [Menu System](<265 Menu System.md>)
 -   [Access Control List](<266 Access Control List.md>)
 -   [Authentication](<267 Authentication.md>)
-
----
-

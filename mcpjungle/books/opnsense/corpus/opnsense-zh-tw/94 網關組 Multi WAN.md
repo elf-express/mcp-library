@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:27.436Z"
 ---
 
-
 # 網關組 Multi WAN
-
 
 ## 網關組 / 多WAN
 
@@ -60,6 +58,3 @@ captured: "2026-09-26T11:32:27.436Z"
 有關如何配置，請閱讀：
 
 -   [多合一WAN](<95 多色WAN.md>)
-
----
-

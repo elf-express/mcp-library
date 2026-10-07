@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:14.312Z"
 ---
 
-
 # BIOS updates settings
-
 
 ## BIOS updates / settings
 
@@ -154,6 +152,3 @@ Select `Auto` here to enable the feature.
 ## [**Microcode updates**](#id8)
 
 Microcode patches are distributed in our EFI firmware updates. If a Microcode update is required to address specific issues which are deemed important enough by AMD/Intel, you can install the microcode update yourself in a timely manner by using the [CPU Microcode updates \[AMD/Intel\]](<178 CPU Microcode updates [AMDIntel].md>) plugin.
-
----
-

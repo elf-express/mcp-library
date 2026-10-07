@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:40.883Z"
 ---
 
-
 # PSR-1 Basic Coding Standard
-
 
 Note
 
@@ -158,6 +156,3 @@ Whatever naming convention is used SHOULD be applied consistently within a reaso
 ### 4.3. Methods
 
 Method names MUST be declared in `camelCase()`.
-
----
-

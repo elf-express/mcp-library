@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:28.956Z"
 ---
 
-
 # NRPE
-
 
 *資源（CommandController.php）*
 
@@ -46,6 +44,3 @@ captured: "2026-09-26T11:34:28.956Z"
 | `POST` | nrpe | 禮拜 | 開始 | |
 | `GET` | nrpe | 服務 | 狀態 | |
 | `POST` | nrpe | 服務 | 停止 | |
-
----
-

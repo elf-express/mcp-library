@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:36.348Z"
 ---
 
-
 # Neighbors
-
 
 ## [Neighbors](#id1)
 
@@ -110,6 +108,3 @@ Some entries can be from other sources like DHCP and cannot be edited.
 Tip
 
 To analyse the current contents of the ARP or NDP tables, use the interface diagnostics menu detailed in the [diagnostics](<114 Diagnostics.md>) document.
-
----
-

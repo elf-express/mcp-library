@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:41.999Z"
 ---
 
-
 # Zen 的 IPv6 UK
-
 
 **原作者：**馬丁沃斯利
 
@@ -27,11 +25,11 @@ Zen 提供了兩種設定 IPv6 的方法。
 
 Zen 在初始 V4 連線中使用 PPPoE，因此請將 PPPoE 輸入為 V4 連線類型，並設定 PPPoE 連線的使用者名稱和密碼；使用DHCP IPv6，請在 IPv6 連線中選擇 DHCPv6，如下所示。
 
-[圖：../../_images/ZenUK_image1.png](https://docs.opnsense.org/_images/ZenUK_image1.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image1.png)
 
 下一步是設定 DHCPv6 所需的參數，這些參數位於下面所示的WAN介面的 DHCPv6 用戶端設定部分。
 
-[圖：../../_images/ZenUK_image2.png](https://docs.opnsense.org/_images/ZenUK_image2.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image2.png)
 
 如前所述，Zen 提供 /48 前綴，因此請相應地選擇前綴大小。
 
@@ -43,11 +41,11 @@ Zen 在初始 V4 連線中使用 PPPoE，因此請將 PPPoE 輸入為 V4 連線�
 
 選擇介面 ‣ \[ LAN \] 並將 IPv6 設定類型設定為“追蹤介面”
 
-[圖：../../_images/ZenUK_image3.png](https://docs.opnsense.org/_images/ZenUK_image3.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image3.png)
 
 最後，將追蹤 IPv6 介面設定為WAN ，除非有本文檔未涵蓋的特殊要求，將 IPv6 前綴ID設定為 0。
 
-[圖：../../_images/ZenUK_image4.png](https://docs.opnsense.org/_images/ZenUK_image4.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image4.png)
 
 點擊“儲存”，然後點擊“應用”。
 
@@ -63,11 +61,11 @@ Zen 在初始 V4 連線中使用 PPPoE，因此請將 PPPoE 輸入為 V4 連線�
 
 Zen 在初始 V4 連線中使用 PPPoE，因此請將 PPPoE 輸入為 V4 連線類型，並設定 PPPoE 連線的使用者名稱和密碼；使用DHCP IPv6，請在 IPv6 連線中選擇 DHCPv6，如下所示。
 
-[圖：../../_images/ZenUK_image1.png](https://docs.opnsense.org/_images/ZenUK_image1.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image1.png)
 
 下一步是設定 DHCPv6 所需的參數，這些參數位於下面所示的WAN介面的 DHCPv6 用戶端設定部分。
 
-[圖：../../_images/ZenUK_image2.png](https://docs.opnsense.org/_images/ZenUK_image2.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image2.png)
 
 如前所述，Zen 提供 /48 前綴，因此請相應地選擇前綴大小。
 
@@ -77,7 +75,7 @@ Zen 在初始 V4 連線中使用 PPPoE，因此請將 PPPoE 輸入為 V4 連線�
 
 LAN介面設定非常簡單，我們只需要將 IPv6 設定類型設定為靜態，然後輸入我們的靜態位址。
 
-[圖：../../_images/ZenUK_image5.png](https://docs.opnsense.org/_images/ZenUK_image5.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image5.png)
 
 Zen 為我們提供了一個 /48 前綴，用於LAN ，因此請從該範圍內選擇一個位址。例如，我們的前綴是：
 
@@ -87,7 +85,7 @@ Zen 為我們提供了一個 /48 前綴，用於LAN ，因此請從該範圍內�
 
 2a02:8242:55AB:0:4:3:2:1就夠了。
 
-[圖：../../_images/ZenUK_image6.png](https://docs.opnsense.org/_images/ZenUK_image6.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image6.png)
 
 我們希望在此介面上使用 /64 前綴。
 
@@ -101,7 +99,7 @@ Zen 為我們提供了一個 /48 前綴，用於LAN ，因此請從該範圍內�
 
 首先，啟用伺服器。
 
-[圖：../../_images/ZenUK_image7.png](https://docs.opnsense.org/_images/ZenUK_image7.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image7.png)
 
 你會注意到子網路已經有一個範圍，子網路遮罩就是我們在LAN中設定的/64。此外，我們還需要使用一個範圍，可用範圍會告訴我們這個範圍是多少。
 
@@ -113,17 +111,14 @@ Zen 為我們提供了一個 /48 前綴，用於LAN ，因此請從該範圍內�
 
 2a02:8231:d256::eeee:ffff:ffff:ffff
 
-[圖：../../_images/ZenUK_image8.png](https://docs.opnsense.org/_images/ZenUK_image8.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image8.png)
 
 這應該涵蓋大多數LAN子網，這裡給出的範圍是281、 474.976.710 、655個位址。
 
 我們也可以設定前綴委派範圍，這適用於需要獨立範圍的子路由器或VLAN設備。對於前綴，我們只關心高 64 位，因為在本例中我們只分配 64 位元前綴。我們知道 Zen 已經分配了一個 /48 前綴，所以我們像這樣輸入前綴範圍：
 
-[圖：../../_images/ZenUK_image9.png](https://docs.opnsense.org/_images/ZenUK_image9.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image9.png)
 
 我們的前綴範圍是高 48 位，加上接下來 16 位的一部分，但不能超出我們用於LAN位址的範圍。在上面的範例中，我最多允許 254 個 /64 子網路。
 
 輸入這些資訊後，點擊儲存。
-
----
-

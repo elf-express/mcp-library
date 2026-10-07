@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:08.000Z"
 ---
 
-
 # nginx TLS Fingerprints
-
 
 ## nginx: TLS Fingerprints
 
@@ -72,6 +70,3 @@ Now in the configuration page under HTTP ‣ TLS Fingerprints there will be an e
 ## Trusted Fingerprints
 
 A trusted fingerprint is a fingerprint, which will be used to detect man in the middle attacks by comparing the client hello of the fingerprint with the data sent by the client. If there are additional ciphers or curves, you will get this information via an HTTP header into your application. Please note that you can have only one fingerprint per User-Agent.
-
----
-

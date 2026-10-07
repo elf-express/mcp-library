@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:56.066Z"
 ---
 
-
 # Authentication
-
 
 Access Control List
 
@@ -89,6 +87,3 @@ For this reason we extended the `AuthenticationFactory` with a method called `li
 Each provider should implement `OPNsenseAuthSSOProvidersISSOContainer`, which returns the service a provider belongs too. One provider can yield multiple service endpoints. The class `Provider` should be used to yield providers in `listProviders()`. This is merely a wrapper pointing to the service(s).
 
 Services need to implement their own logic for handling the login sequence and, when applicable, creating sessions on successful logins.
-
----
-

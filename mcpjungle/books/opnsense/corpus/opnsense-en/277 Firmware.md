@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:00.587Z"
 ---
 
-
 # Firmware
-
 
 OPNsense has several API calls to get and set the firmware configuration:
 
@@ -73,6 +71,3 @@ curl -d '' -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/lock/
 ```bash
 curl -d '' -k -u "$key":"$secret" https://opnsense.local/api/core/firmware/license/acme.sh -v
 ```
-
----
-

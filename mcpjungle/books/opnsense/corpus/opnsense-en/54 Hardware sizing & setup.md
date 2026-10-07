@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:07.757Z"
 ---
 
-
 # Hardware sizing & setup
-
 
 The **hardware setup** requires a careful preparation and selection of the standard PC hardware components for the intended installation of OPNsense.
 
@@ -128,6 +126,3 @@ List of references
 -   Schellevis, Jos; *Hardware requirements*; [OPNsense > Get started](https://opnsense.org/users/get-started/) (2015)
     
 -   McKusick, Marshall; Neville-Neil, George V; Warson, Robert NM; *The Design and Implementation of the FreeBSD Operating System* (2015); Addison-Wesley, New Jersey; ISBN 978-0321968975
-
----
-

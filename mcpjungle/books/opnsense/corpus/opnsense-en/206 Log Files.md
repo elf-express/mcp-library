@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:25.142Z"
 ---
 
-
 # Log Files
-
 
 When troubleshooting problems with your firewall, it is very likely you have to check the logs available on your system. In the UI of OPNsense, the log files are generally grouped with the settings of the component they belong to. The log files can be found here:
 
@@ -24,6 +22,3 @@ When troubleshooting problems with your firewall, it is very likely you have to 
 | **Network Time** | Services ‣ Network Time ‣ Log File | *NTP daemon logs* |
 | **Unbound DNS** | Services ‣ Unbound DNS ‣ Log File | *Unbound resolver logs can be found here* |
 | **Web Proxy** | Services ‣ Web Proxy ‣ Log File | *Squid access.log, store.log and cache.log* |
-
----
-

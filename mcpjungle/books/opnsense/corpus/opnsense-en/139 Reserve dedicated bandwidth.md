@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:51.139Z"
 ---
 
-
 # Reserve dedicated bandwidth
-
 
 **Reserve dedicated bandwidth for a realtime traffic such as (hosted) Voice Over IP (VOIP) server.**
 
@@ -136,7 +134,4 @@ Now press apply to activate the traffic shaping rules.
 
 *Screenshot Rules*
 
-[圖：../../_images/shaping_rules_s1.png](https://docs.opnsense.org/_images/shaping_rules_s1.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/shaping_rules_s1.png)

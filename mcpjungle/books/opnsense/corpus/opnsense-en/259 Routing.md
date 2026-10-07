@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:52.044Z"
 ---
 
-
 # Routing
-
 
 ## General
 
@@ -66,6 +64,3 @@ https://{host}}/api/sample/tools/echo
 ```
 
 When the controller has a method called echoAction.
-
----
-

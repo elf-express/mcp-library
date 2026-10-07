@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:50.754Z"
 ---
 
-
 # FreeBSD®
-
 
 FreeBSD是FreeBSD基金會的註冊商標。 FreeBSD標誌和「服務的力量」是FreeBSD基金會的商標。
 
@@ -31,6 +29,3 @@ OPNsense 是基於 FreeBSD 建置。 OPNsense 團隊的目標是盡可能貼近�
 參見
 
 若要將您的 FreeBSD 託管安裝轉換為 OPNsense，請參閱 [OPNsense 更新工具 @ github 上的 OPNsense 開機腳本](https://github.com/opnsense/update/)
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:04.924Z"
 ---
 
-
 # ClamAV
-
 
 The ClamAV plugin can be used with other plugins, like c-icap and rspamd, to scan for viruses.
 
@@ -129,6 +127,3 @@ Scan files inside archives. This is very important as archives can contain malwa
 Block encrypted archive
 
 Encrypted archives are usually used to transfer files encrypted which don’t support encryption on their own or the sender is not aware how to encrypt those files. A tool like 7z can derive a key from a password given by the creator of the file, which will be used to encrypt the compressed data. The ClamAV cannot scan this data as it is missing the key/password. Some malware authors used encrypted archives to avoid scanning and told the victim in the email text how to unpack it.
-
----
-

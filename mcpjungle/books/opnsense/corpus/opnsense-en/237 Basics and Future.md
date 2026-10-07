@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:40.378Z"
 ---
 
-
 # Basics and Future
-
 
 This article explains the basic coding guidelines that apply and put the development effort into perspective by explaining the difficulties of legacy code and the interaction/migration to new [MVC-based](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) code. It also explains guideline differences between new and legacy code.
 
@@ -94,6 +92,3 @@ When moving to the legacy part of the system, our goal is to stick as close to P
 Note
 
 When building new (MVC based) code, its not allowed to include legacy parts directly. The main reason for this is preventing technical debt being stacked in new components and loosing oversight.
-
----
-

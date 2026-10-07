@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:33:55.069Z"
 ---
 
-
 # Menu System
-
 
 OPNsense Menu System
 
-[圖：../../_images/menusystem.png](https://docs.opnsense.org/_images/menusystem.png)
+[圖](https://docs.opnsense.org/_images/menusystem.png)
 
 ## Overview
 
@@ -59,6 +57,3 @@ The top level should be named “menu” to let the system know this is a menu s
 -   VisibleName, name to use (if not set the tagname / id will be used)
     
 -   cssClass, style attributes for the frontend system.
-
----
-

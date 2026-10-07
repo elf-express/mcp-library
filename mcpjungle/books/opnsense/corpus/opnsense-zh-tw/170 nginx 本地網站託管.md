@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:07.464Z"
 ---
 
-
 # nginx 本地網站託管
-
 
 ## nginx：本地網站託管
 
@@ -124,6 +122,3 @@ curl "http://192.168.0.1:8080/test.php"
 -   定期查看日誌。
     
 -   考慮加強目錄和檔案存取權限（例如，將目錄和檔案對 nginx 和PHP設定為唯讀）
-
----
-

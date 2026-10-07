@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:09.249Z"
 ---
 
-
 # Updates
-
 
 The OPNsense update schedule consists of two major releases each year, which receive minor updates about every two weeks. The major release version number consists of the year and month of release (e.g. 25.1 for the January 2025 release), with the fortnightly minor updates adding a third number (e.g. 25.1.3 for the third update to 25.1).
 
@@ -46,6 +44,3 @@ Major updates are installed offline. This means no web or SSH server is running 
 If you choose option 12 on the console menu on latest release, you are asked if you want to upgrade to the newest version or to the next major release. Type in the major release number (for example “19.1”) and press enter. OPNsense will download all release files for an offline upgrade (kernel, packages etc.) and reboot afterwards.
 
 After the reboot, it will install all updates and when it is done, it will reboot again. You should then be on the desired release.
-
----
-

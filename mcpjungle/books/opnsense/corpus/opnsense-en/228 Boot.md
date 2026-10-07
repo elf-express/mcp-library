@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:37.862Z"
 ---
 
-
 # Boot
-
 
 ## hangs at “booting…”
 
@@ -33,6 +31,3 @@ Note
 To enter the loader prompt press `3` when the OPNsense boot menu is visible
 
 After installation, you could persist these settings in System ‣ Settings ‣ Tunables
-
----
-

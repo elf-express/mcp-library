@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:22.836Z"
 ---
 
-
 # Muninnode
-
 
 *Resources (GeneralController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:22.836Z"
 | `POST` | muninnode | service | start |  |
 | `GET` | muninnode | service | status |  |
 | `POST` | muninnode | service | stop |  |
-
----
-

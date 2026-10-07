@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:23.345Z"
 ---
 
-
 # Ndpproxy
-
 
 *Resources (GeneralController.php)*
 
@@ -35,6 +33,3 @@ captured: "2026-09-26T11:34:23.345Z"
 | `POST` | ndpproxy | service | start |  |
 | `GET` | ndpproxy | service | status |  |
 | `POST` | ndpproxy | service | stop |  |
-
----
-

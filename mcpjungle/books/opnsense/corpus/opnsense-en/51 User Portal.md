@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:06.252Z"
 ---
 
-
 # User Portal
-
 
 -   [Preparation](#preparation)
     
@@ -45,7 +43,7 @@ In order to effectively use this module, make sure to allow users to login to OP
 
 ## [General](#id2)
 
-[圖：../../_images/user_portal.png](https://docs.opnsense.org/_images/user_portal.png)
+[圖](https://docs.opnsense.org/_images/user_portal.png)
 
 The portal replaces the simple user password menu, which can be found at Lobby ‣ Password and offers additional functionality for self-service support.
 
@@ -308,6 +306,3 @@ Afterwards, edit the CA again, and select a `Revocation per type`, e.g., `Unspec
 Attention
 
 Deleting a certificate from the GUI will not invalidate it. You must use the revocation component to publish the revocation to the OpenVPN instance.
-
----
-

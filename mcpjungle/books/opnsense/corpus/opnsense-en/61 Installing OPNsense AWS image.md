@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:10.780Z"
 ---
 
-
 # Installing OPNsense AWS image
 
-
-[圖：../../_images/amazon-web-services.png](https://docs.opnsense.org/_images/amazon-web-services.png)
+[圖](https://docs.opnsense.org/_images/amazon-web-services.png)
 
 Our EC2 image is available in the [aws marketplace](https://aws.amazon.com/marketplace/pp/prodview-lu5v2tokic3py).
 
@@ -22,13 +20,13 @@ To start a new instance go to “instances”, followed by “launch instance”
 
 Next go to “AWS Marketplace” and search “OPNsense”. Our official image is sold via Deciso Sales B.V..
 
-[圖：../../_images/aws_step1_choose_ami.png](https://docs.opnsense.org/_images/aws_step1_choose_ami.png)
+[圖](https://docs.opnsense.org/_images/aws_step1_choose_ami.png)
 
 ## Step 2 - Select Type
 
 Choose an instance type
 
-[圖：../../_images/aws_launch_new_image.png](https://docs.opnsense.org/_images/aws_launch_new_image.png)
+[圖](https://docs.opnsense.org/_images/aws_launch_new_image.png)
 
 ## Step 3 - Configure Instance Details
 
@@ -52,27 +50,27 @@ Optionally you may add tags to the instance, it’s safe to leave this empty.
 
 To configure security group, make sure you allow HTTPS access from your own network. Since SSH is also enabled by default on these images, you may enable port 22 (SSH) too from your network.
 
-[圖：../../_images/aws_configure_security_group.png](https://docs.opnsense.org/_images/aws_configure_security_group.png)
+[圖](https://docs.opnsense.org/_images/aws_configure_security_group.png)
 
 ## Step 7 - Review your settings
 
-[圖：../../_images/aws_review_settings.png](https://docs.opnsense.org/_images/aws_review_settings.png)
+[圖](https://docs.opnsense.org/_images/aws_review_settings.png)
 
 ## Step 8 - SSH keypair
 
 Select ssh keypair or skip, the selected ssh key is attached to the ec2-user, you can change this afterwards from the usermanager. (System -> Access -> Users).
 
-[圖：../../_images/aws_ssh_keypair.png](https://docs.opnsense.org/_images/aws_ssh_keypair.png)
+[圖](https://docs.opnsense.org/_images/aws_ssh_keypair.png)
 
 ## Step 9 - Review status page
 
-[圖：../../_images/aws_status.png](https://docs.opnsense.org/_images/aws_status.png)
+[圖](https://docs.opnsense.org/_images/aws_status.png)
 
 ## Step 10 - AWS instances
 
 Go to your AWS instances
 
-[圖：../../_images/aws_instances.png](https://docs.opnsense.org/_images/aws_instances.png)
+[圖](https://docs.opnsense.org/_images/aws_instances.png)
 
 Select the image, go to “image settings” then “get system log” to obtain the initial password for the ec2-user (if not specified in the user data) and the initial root password.
 
@@ -131,9 +129,6 @@ When the ec2 console doesn’t show the initial password you can also use the co
 
 ## Step 11 - Search current address and login
 
-[圖：../../_images/aws_search_current_ip.png](https://docs.opnsense.org/_images/aws_search_current_ip.png)
+[圖](https://docs.opnsense.org/_images/aws_search_current_ip.png)
 
 Login to OPNsense using the address provided.
-
----
-

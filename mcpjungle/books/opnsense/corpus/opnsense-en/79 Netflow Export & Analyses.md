@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:20.861Z"
 ---
 
-
 # Netflow Export & Analyses
 
-
-[圖：../_images/netflow_analyzer_insight.png](https://docs.opnsense.org/_images/netflow_analyzer_insight.png)
+[圖](https://docs.opnsense.org/_images/netflow_analyzer_insight.png)
 
 Netflow is a monitoring feature, invented by Cisco, it is implemented in the FreeBSD kernel with ng\_netflow (Netgraph). Since Netgraph is a kernel implementation it is very fast with little overhead compared to softflowd or pfflowd.
 
@@ -48,7 +46,7 @@ If you are not interested in ingress traffic then OPNsense offers the option to 
 
 OPNsense Netflow Exporter supports multiple interfaces, filtering of ingress flows and multiple destinations including local capture for analysis by Insight (OPNsense Netflow Analyzer).
 
-[圖：../_images/netflow_exporter1.png](https://docs.opnsense.org/_images/netflow_exporter1.png)
+[圖](https://docs.opnsense.org/_images/netflow_exporter1.png)
 
 ## Netflow Analyzer - Insight
 
@@ -96,6 +94,3 @@ See [Configure Netflow Exporter](<83 Configure Netflow Exporter.md>)
 ### Setup Insight
 
 See [Using Insight - Netflow Analyzer](<78 Using Insight - Netflow Analyzer.md>)
-
----
-

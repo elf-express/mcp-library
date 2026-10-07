@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:05.438Z"
 ---
 
-
 # Reverse Proxy and Webserver
-
 
 Note
 
@@ -120,6 +118,3 @@ A reverse proxy can still get access to the encrypted content if it has the priv
 -   [nginx: Basic Load Balancing](<168 nginx Basic Load Balancing.md>)
     
 -   [Caddy: Reverse Proxy](<177 Caddy Reverse Proxy.md>)
-
----
-

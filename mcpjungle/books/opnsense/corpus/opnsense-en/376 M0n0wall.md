@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:51.260Z"
 ---
 
-
 # M0n0wall
-
 
 
 
@@ -90,6 +88,3 @@ the m0n0wall spirit will live on in the various projects it has spawned.
 Deciso B.V. the founder of OPNsense has taken over the m0n0wall websites from Manuel Kasper and continues to offer all the sources, website & forum content both as a historical reference as well as to preserve knowledge gained.
 
 The OPNsense core team would like to thank Manuel for all his efforts, as without him OPNsense would not have been possible.
-
----
-

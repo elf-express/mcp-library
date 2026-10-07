@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:36.484Z"
 ---
 
-
 # Softether
-
 
 *資源（GeneralController.php）*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:36.484Z"
 | `POST` | 軟以太 | 服務 | 啟動 | |
 | `GET` | 軟以太 | 服務 | 狀態 | |
 | `POST` | 軟以太 | 服務 | 停止 | |
-
----
-

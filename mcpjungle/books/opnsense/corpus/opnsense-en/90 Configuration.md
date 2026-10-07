@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:25.397Z"
 ---
 
-
 # Configuration
-
 
 The configuration section contains some tools to keep track of your setup.
 
@@ -69,6 +67,3 @@ The following buttons are available in the “backups (compare)” pane:
 Tip
 
 You can specify the number of backups to keep in the backups menu (System ‣ Configuration ‣ Backups), which can be quite practical when a higher level of auditability is required.
-
----
-

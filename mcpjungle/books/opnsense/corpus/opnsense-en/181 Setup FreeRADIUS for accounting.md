@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:12.522Z"
 ---
 
-
 # Setup FreeRADIUS for accounting
-
 
 ## Goal of this tutorial
 
@@ -80,6 +78,3 @@ For the initial test, it might be practical to debug the traffic going in and ou
 /etc/init.d/freeradius stop
 freeradius -X
 ```
-
----
-

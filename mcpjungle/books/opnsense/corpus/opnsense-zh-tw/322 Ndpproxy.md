@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:23.345Z"
 ---
 
-
 # Ndpproxy
-
 
 *資源（GeneralController.php）*
 
@@ -35,6 +33,3 @@ captured: "2026-09-26T11:34:23.345Z"
 | `POST` | ndpproxy | 服務 | 啟動 | |
 | `GET` | ndpproxy | 服務 | 狀態 | |
 | `POST` | ndpproxy | 服務 | 停止 | |
-
----
-

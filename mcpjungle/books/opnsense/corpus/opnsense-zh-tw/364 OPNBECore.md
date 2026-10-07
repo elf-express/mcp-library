@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:44.664Z"
 ---
 
-
 # OPNBECore
-
 
 *資源（SyncController.php）– 繼承自：ApiControllerBase*
 
@@ -126,6 +124,3 @@ r = requests.post(
 ```
 
 上面的範例將重啟`cron`服務。
-
----
-

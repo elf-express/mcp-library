@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:21.101Z"
 ---
 
-
 # OpenDNS
-
 
 [OpenDNS](https://www.opendns.com/) is a company and service that extends the Domain Name System (DNS) by adding features such as phishing protection and optional content filtering in addition to DNS lookup, if its DNS servers are used.
 
@@ -32,6 +30,3 @@ A minimum amount of settings is needed in order to register with OpenDNS.
 Note
 
 When disabling the service, please check your name servers in System ‣ Settings ‣ General, since this feature removed the previous ones.
-
----
-

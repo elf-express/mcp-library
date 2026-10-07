@@ -25,6 +25,12 @@ describe("opnsense 語料", () => {
     expect(out).toMatch(/wireguard-s2s\.html(?!")/);
   });
 
+  it("docs_symbol 在 zh-tw 查 WireGuard 定位到同名段落", () => {
+    const out = doSymbol("opnsense-zh-tw", "WireGuard", 8);
+    expect(out).toMatch(/^# Wireguard$/m);
+    expect(out).toMatch(/293 Wireguard\.md/);
+  });
+
   it("docs_search 查 防火牆 規則 有命中且無導覽列與本機圖片", () => {
     const out = doSearch("opnsense-zh-tw", "防火牆 規則", 10, 1);
     expect(out).toMatch(/防火牆/);

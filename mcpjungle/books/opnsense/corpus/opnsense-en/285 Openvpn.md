@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:04.644Z"
 ---
 
-
 # Openvpn
-
 
 *Resources (ClientOverwritesController.php)*
 
@@ -66,6 +64,3 @@ captured: "2026-09-26T11:34:04.644Z"
 | `GET` | openvpn | service | search\_sessions |  |
 | `POST` | openvpn | service | start\_service | $id=null |
 | `POST` | openvpn | service | stop\_service | $id=null |
-
----
-

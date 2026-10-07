@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:26.909Z"
 ---
 
-
 # Nodeexporter
-
 
 *Resources (GeneralController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:26.909Z"
 | `POST` | nodeexporter | service | start |  |
 | `GET` | nodeexporter | service | status |  |
 | `POST` | nodeexporter | service | stop |  |
-
----
-

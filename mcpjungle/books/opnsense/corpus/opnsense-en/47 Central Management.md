@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:04.225Z"
 ---
 
-
 # Central Management
-
 
 ## [Central Management](#id2)
 
@@ -82,7 +80,7 @@ Note
 
 You can disable certificate validation if your using a self-signed certificate, although we advise to generate proper certificates for the machines.
 
-[圖：../../_images/OPNcentral_hosts.png](https://docs.opnsense.org/_images/OPNcentral_hosts.png) **Icons**  
+[圖](https://docs.opnsense.org/_images/OPNcentral_hosts.png) **Icons**  
 Group membership  
 Download configuration (or all as a zip file)  
 Edit host configuration  
@@ -149,7 +147,7 @@ On various management pages there are direct links available to login to the fir
 
 The example below shows a link in the firmware status page which will open `https://node1.opnsense.local`.
 
-[圖：../../_images/OPNcentral_status_uptodate.png](https://docs.opnsense.org/_images/OPNcentral_status_uptodate.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_status_uptodate.png)
 
 When the management server is allowed to access the OPNcentral components on the connected node it will automatically login after the link is clicked with the proper credentials assigned to the api token user.
 
@@ -157,7 +155,7 @@ If the latests Business Edition is installed on the managed machine, but access 
 
 When the connected machine is not using the business edition, it’s not possible to use the link, a message such as the following will be presented to the user:
 
-[圖：../../_images/OPNcentral_auto_login_unavailable.png](https://docs.opnsense.org/_images/OPNcentral_auto_login_unavailable.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_auto_login_unavailable.png)
 
 Note
 
@@ -167,7 +165,7 @@ Make sure your browser trusts the remote node otherwise the browser can’t acce
 
 All connected and enabled machines can be contacted using the Management ‣ Status ‣ Firmware page, when visiting the page all connected machines will automatically be contacted to report their status and installed version.
 
-[圖：../../_images/OPNcentral_status_toupdate.png](https://docs.opnsense.org/_images/OPNcentral_status_toupdate.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_status_toupdate.png)
 
 When an update is available, it will be shown in the list, including if this upgrade requires a reboot. The upgrade button starts the upgrade procedure, but will only upgrade machines that will require a reboot if **Enable reboot** is checked.
 
@@ -181,7 +179,7 @@ The upgrade wheel starts spinning when an upgrade was requested, since the upgra
 
 The service status and control page provides an overview on all managed OPNsense firewalls connected to OPNcentral and offers the ability to restart services when needed.
 
-[圖：../../_images/OPNcentral_service_status_overview.png](https://docs.opnsense.org/_images/OPNcentral_service_status_overview.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_service_status_overview.png)
 
 In the screenshot above there are 7 machines managed by OPNcentral, for every configured service there’s an icon reflecting the status of the service.
 
@@ -202,7 +200,7 @@ In order to gain insights into the managed machines there is a resource page ava
 
 While collecting data for a machine there’s a spinner visible, as soon as information is collected you can view relevant information per node.
 
-[圖：../../_images/OPNcentral_resources_host.png](https://docs.opnsense.org/_images/OPNcentral_resources_host.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_resources_host.png)
 
 From left to right the following information is available:
 
@@ -253,7 +251,7 @@ The provisioning tool offers the ability to configure some settings in a more ce
 
 In order to configure the settings that should be shared, you can configure the “classes” to synchronize in the host settings Management ‣ Host ‣ Configuration.
 
-[圖：../../_images/OPNcentral_provisioning_host_classes_setup.png](https://docs.opnsense.org/_images/OPNcentral_provisioning_host_classes_setup.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_provisioning_host_classes_setup.png)
 
 Here you will find the same options as are available under System->High Availability->Settings. After configuring the desired parameters, you can use the Provisioning page (Management ‣ Provisioning) to inspect status and push options to the attached firewalls.
 
@@ -267,7 +265,7 @@ Add `OPNcentral - provision / reconfigure remote hosts` in System ‣ Settings �
 
 All provisioning classes known by the management machine will be shown in the table, combined with the status of each section. OPNcentral calculates if settings are equal, keeps track of changes and restarts related services when needed.
 
-[圖：../../_images/OPNcentral_provisioning_status.png](https://docs.opnsense.org/_images/OPNcentral_provisioning_status.png)
+[圖](https://docs.opnsense.org/_images/OPNcentral_provisioning_status.png)
 
 You can either selectlively reconfigure specific hosts with the checkbox or reconfigure all at once on command.
 
@@ -468,6 +466,3 @@ The browser should automatically trust the connection to the Central Host now. I
 Tip
 
 This feature is especially useful for Network Administrators that centrally manage a large amount of OPNsense Firewalls.
-
----
-

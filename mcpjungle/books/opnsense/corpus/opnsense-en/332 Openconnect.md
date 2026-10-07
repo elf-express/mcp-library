@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:28.437Z"
 ---
 
-
 # Openconnect
-
 
 *Resources (GeneralController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:28.437Z"
 | `POST` | openconnect | service | start |  |
 | `GET` | openconnect | service | status |  |
 | `POST` | openconnect | service | stop |  |
-
----
-

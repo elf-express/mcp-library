@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:53.071Z"
 ---
 
-
 # Using controllers and views
-
 
 ## General
 
@@ -22,7 +20,7 @@ Controllers are placed in the directory /usr/local/opnsense/mvc/app/controllers/
 
 Most components inherit from a set of standard controllers, which are specified in the diagram below including their primary usage scope (/ui or /api)
 
-[圖：../../_images/Controller_class_hierarchy.svg](https://docs.opnsense.org/_images/Controller_class_hierarchy.svg)
+[圖](https://docs.opnsense.org/_images/Controller_class_hierarchy.svg)
 
 ## View based controllers
 
@@ -201,6 +199,3 @@ public function uploadReservationsAction()
     }
 }
 ```
-
----
-

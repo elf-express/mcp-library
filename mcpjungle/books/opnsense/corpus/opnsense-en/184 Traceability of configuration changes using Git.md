@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:14.550Z"
 ---
 
-
 # Traceability of configuration changes using Git
-
 
 When seeking a solution to keep full traceability of configuration changes made by (various) users on your firewall, the git-backup plugin might be a useful addition to your setup.
 
@@ -143,6 +141,3 @@ As long as the plugin is installed and /conf/backup/git contains a git repositor
 Tip
 
 The firewall contains a local backup of the most recent changes (configured in System -> Configuration -> History) which the config changed event handler uses to feed to the consumers. If after a cleanup one would like to flush the collected changes again to the upstream provider, the `/conf/event_config_changed.json` could be removed to “forget” about the already handled config events (in which case all backups will be signaled again to all config syshook handlers)
-
----
-

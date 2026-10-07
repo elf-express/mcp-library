@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:39.374Z"
 ---
 
-
 # Development Manual
-
 
 
 
@@ -154,6 +152,3 @@ Being able to get the sources and build it yourself is one of the key factors of
 ## Sources
 
 Just looking for the sources? See: [OPNsense repository](https://github.com/opnsense)
-
----
-

@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:05.228Z"
 ---
 
-
 # OpenID 連接
-
 
 OpenID Connect (OIDC) 是建構在 OAuth 2.0 協定之上的身分層，允許應用程式驗證使用者身分並以安全的方式取得基本設定檔資訊。 OAuth 2.0 主要用於授權（授予對資源的存取權限），而 OIDC 透過引入 ID 令牌來新增身份驗證，令牌是有關使用者的數位簽署資訊。這使得應用程式（稱為「依賴方」）可以確認使用者是誰，而無需直接管理密碼。 OIDC廣泛應用於單一登入（SSO）場景，使用戶能夠使用Google、微軟或企業系統等可信任身分提供者登錄，同時保持流程標準化和安全。
 
@@ -188,6 +186,3 @@ OpenID 提供者可以透過 System ‣ Access ‣ OpenID Connect 進行配置�
 -   正品（[https://docs.goauthentik.io/add-secure-apps/providers/oauth2/](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/)）
     
 -   跳雲 ([https://jumpcloud.com/support/sso-with-oidc](https://jumpcloud.com/support/sso-with-oidc))
-
----
-

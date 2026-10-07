@@ -51,7 +51,7 @@ describe("transformPage", () => {
     const { content, leftovers } = transformPage(
       "> [![../_images/a.png](<../images/bc1-a.png>)](https://docs.opnsense.org/_images/a.png)",
     );
-    expect(content).toBe("> [圖：../_images/a.png](https://docs.opnsense.org/_images/a.png)");
+    expect(content).toBe("> [圖](https://docs.opnsense.org/_images/a.png)");
     expect(leftovers).toEqual([]);
   });
 
@@ -74,13 +74,39 @@ describe("transformPage", () => {
     const { content, leftovers } = transformPage(
       "a [![../_images/a.png](<../images/1-a.png>)](https://u/a.png) b ![ok](<../images/2-ok.png>) c",
     );
-    expect(content).toBe("a [圖：../_images/a.png](https://u/a.png) b ok c");
+    expect(content).toBe("a [圖](https://u/a.png) b ok c");
     expect(leftovers).toEqual([]);
   });
 
   it("篇間連結保留", () => {
     const { content } = transformPage("見 [防火牆](<52 防火牆.md>)");
     expect(content).toBe("見 [防火牆](<52 防火牆.md>)");
+  });
+
+  it("包連結圖的 alt 是路徑時只留「圖」", () => {
+    expect(transformPage("[![../../_images/z.png](<../images/1-z.png>)](https://u/z.png)").content).toBe("[圖](https://u/z.png)");
+  });
+
+  it("圖片路徑含括號不吞字", () => {
+    const { content, leftovers } = transformPage("a ![ok](<../images/x(1).png>) b");
+    expect(content).toBe("a ok b");
+    expect(leftovers).toEqual([]);
+  });
+
+  it("外層連結不是 http 的圖回報為殘留", () => {
+    expect(transformPage("[![x](<../images/x.png>)](../_images/x.png)").leftovers).toEqual([1]);
+  });
+
+  it("導覽列與麵包屑後的空行、檔尾的 --- 一併收掉", () => {
+    const raw = ["---", "title: x", "---", "", NAV, "", "# T", "", "> 章節：[A](<000 目錄.md#c-1>)", "", "## B", "", "內文", "", "---", "", NAV, ""].join("\n");
+    expect(transformPage(raw).content).toBe(["---", "title: x", "---", "", "# T", "", "## B", "", "內文"].join("\n"));
+  });
+
+  it("只有 frontmatter 的 source 去引號", () => {
+    const raw = ["---", 'source: "https://a/b.html"', "---", "", "```", 'source: "keep"', "```"].join("\n");
+    const { content } = transformPage(raw);
+    expect(content).toMatch(/^source: https:\/\/a\/b\.html$/m);
+    expect(content).toMatch(/^source: "keep"$/m);
   });
 
   it("CRLF 統一為 LF", () => {

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:11.706Z"
 ---
 
-
 # Bind
-
 
 *Resources (AclController.php)*
 
@@ -93,6 +91,3 @@ captured: "2026-09-26T11:34:11.706Z"
 | `POST` | bind | service | start |  |
 | `GET` | bind | service | status |  |
 | `POST` | bind | service | stop |  |
-
----
-

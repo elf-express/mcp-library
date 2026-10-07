@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:12.212Z"
 ---
 
-
 # Chrony
-
 
 *Resources (GeneralController.php)*
 
@@ -34,6 +32,3 @@ captured: "2026-09-26T11:34:12.212Z"
 | `POST` | chrony | service | start |  |
 | `GET` | chrony | service | status |  |
 | `POST` | chrony | service | stop |  |
-
----
-

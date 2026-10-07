@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:15.550Z"
 ---
 
-
 # Relayd
-
 
 The relayd plugin offers a load balancer which is capable of handling OSI layer 3 or 7 forwarding services to various backend servers while validating their availability.
 
@@ -106,6 +104,3 @@ In order to set up the example scenario, configure the following settings:
         
 
 Make sure to enable relayd on the generic settings tab, save settings and the new virtual host should be active.
-
----
-

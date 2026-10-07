@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:35.056Z"
 ---
 
-
 # Interface configuration
-
 
 All traffic in OPNsense travels via interfaces. By default, WAN and LAN are assigned, but many more are possible, like GUESTNET ([captive portal](<200 Captive portal & GuestNET.md>)) and PFSYNC ([high availability](<96 High Availability.md>)).
 
@@ -101,7 +99,7 @@ Note
 
 ## Mobile Networking
 
-[圖：../_images/OPNsense_4G_new.png](https://docs.opnsense.org/_images/OPNsense_4G_new.png)
+[圖](https://docs.opnsense.org/_images/OPNsense_4G_new.png)
 
 OPNsense supports 3G and 4G (LTE) cellular modems as failsafe or primary WAN interface. Both USB and (mini)PCIe cards are supported.
 
@@ -140,6 +138,3 @@ To setup Cellular Failover, just follow these two how-tos:
 Note
 
 Treat the cellular connection the same as a normal WAN connection.
-
----
-

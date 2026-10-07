@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:13.554Z"
 ---
 
-
 # How To Setting Up A Mail Gateway
-
 
 ## How To: Setting Up A Mail Gateway
 
@@ -106,6 +104,3 @@ Enable the Checkbox and click Save.
 ## Follow Up Tasks
 
 In the next step, you should go to the Firewall menu. Create a new rule to pass port TCP/25 traffic from Any to This Firewall.
-
----
-

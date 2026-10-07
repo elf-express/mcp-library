@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:17.770Z"
 ---
 
-
 # Dnscryptproxy
-
 
 *Resources (CloakController.php)*
 
@@ -100,6 +98,3 @@ captured: "2026-09-26T11:34:17.770Z"
 | `POST` | dnscryptproxy | whitelist | toggle\_whitelist | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Whitelist.xml](https://github.com/opnsense/plugins/blob/master/dns/dnscrypt-proxy/src/opnsense/mvc/app/models/OPNsense/Dnscryptproxy/Whitelist.xml) |
-
----
-

@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:03.699Z"
 ---
 
-
 # Business Edition
 
-
-[圖：_images/pexels-field-engineer-442152.jpg](https://docs.opnsense.org/_images/pexels-field-engineer-442152.jpg)
+[圖](https://docs.opnsense.org/_images/pexels-field-engineer-442152.jpg)
 
 A mission critical version of the well-known OPNsense firewall.
 
@@ -47,6 +45,3 @@ More information:
 -   [OpenID Connect](<50 OpenID Connect.md>)
 -   [User Portal](<51 User Portal.md>)
 -   [Scheduled jobs](<52 Scheduled jobs.md>)
-
----
-

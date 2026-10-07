@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:51.002Z"
 ---
 
-
 # Guidelines
-
 
 Some (simple) guidelines developing models
 
@@ -21,6 +19,3 @@ Some (simple) guidelines developing models
     1.  When using more models in a application/module, you might want to consider the following naming convention: /Vendor/Module/Model
         
 3.  Try to avoid more disc i/o actions than necessary, only call save() if you actually want to save content, serializeToConfig just keeps the data in memory.
-
----
-

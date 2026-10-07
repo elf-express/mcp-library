@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:17.256Z"
 ---
 
-
 # Dyndns
-
 
 *Resources (AccountsController.php)*
 
@@ -45,6 +43,3 @@ captured: "2026-09-26T11:34:17.256Z"
 | `POST` | dyndns | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [DynDNS.xml](https://github.com/opnsense/plugins/blob/master/dns/ddclient/src/opnsense/mvc/app/models/OPNsense/DynDNS/DynDNS.xml) |
-
----
-

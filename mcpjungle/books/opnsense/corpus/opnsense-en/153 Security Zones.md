@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:57.879Z"
 ---
 
-
 # Security Zones
-
 
 **Summary**
 
@@ -280,6 +278,3 @@ If we expand the LAN network with more vlans that are on the same level of trust
 Vice versa, if a network should become untrusted, we remove it from TRUST and add it to UNTRUST.
 
 This makes administration and auditing the ruleset more efficient. Deployment of new firewalls or via central management is simplified.
-
----
-

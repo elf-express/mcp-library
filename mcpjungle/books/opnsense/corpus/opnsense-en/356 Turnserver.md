@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:41.041Z"
 ---
 
-
 # Turnserver
-
 
 *Service (ServiceController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:41.041Z"
 | `POST` | turnserver | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Turnserver.xml](https://github.com/opnsense/plugins/blob/master/net/turnserver/src/opnsense/mvc/app/models/OPNsense/Turnserver/Turnserver.xml) |
-
----
-

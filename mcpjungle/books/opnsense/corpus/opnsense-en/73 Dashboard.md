@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:17.832Z"
 ---
 
-
 # Dashboard
-
 
 The Dashboard is the first page you will see after you log into OPNsense. Additionally, it can be accessed via Lobby ‣ Dashboard. The Dashboard provides an overview of your system status.
 
@@ -66,6 +64,3 @@ All widgets can be resized by dragging on one of the corners of the widget.
 Note
 
 The dashboard configuration is saved per user. This means that each user can have their own dashboard layout. Therefore, use the “Users and Groups” high availability option to synchronize the dashboard configuration.
-
----
-

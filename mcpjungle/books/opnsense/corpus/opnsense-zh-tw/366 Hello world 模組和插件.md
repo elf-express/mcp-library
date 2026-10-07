@@ -9,13 +9,11 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:34:45.939Z"
 ---
 
-
 # Hello world 模組和插件
-
 
 創建 Hello World 模組
 
-[圖：../../_images/Hello-World.jpg](https://docs.opnsense.org/_images/Hello-World.jpg)
+[圖](https://docs.opnsense.org/_images/Hello-World.jpg)
 
 ## 目標
 
@@ -803,6 +801,3 @@ os-helloworld-1.0.txz
 -   OPNsense 架構 [架構](<242 大樓.md>)
     
 -   OPNsense 建立模型 [開發：前端/建立模型](https://docs.opnsense.org/index.php/Develop:Frontend/Creating_models)
-
----
-

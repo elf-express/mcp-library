@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:23.137Z"
 ---
 
-
 # Intrusion Prevention System
-
 
 ## [Intrusion Prevention System](#id2)
 
@@ -259,6 +257,3 @@ If you want to contribute to the ruleset see: [https://github.com/opnsense/rules
 -   [IPS SSLBlacklists & Feodo Tracker](<203 IPS SSLBlacklists & Feodo Tracker.md>)
 -   [IPS Block SSL certificates](<204 IPS Block SSL certificates.md>)
 -   [IPS Bypass local traffic from inspection](<205 IPS Bypass local traffic from inspection.md>)
-
----
-

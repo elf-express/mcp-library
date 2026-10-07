@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:51.030Z"
 ---
 
-
 # Migrations
-
 
 When using the `<version/>` tag in the model xml you automatically allow upgrades of your configuration data. If the tag is missing, it will automatically assume your at version `0.0.0` (initial version).
 
@@ -72,6 +70,3 @@ The post action is called after normal model configuration and can sometimes be 
 Note
 
 Although there are toggles in place, data migration can easily lead to race conditions. Always try to design your software for change, adding fields which pass validation by default for example is always preferred above situations which will fail by default.
-
----
-

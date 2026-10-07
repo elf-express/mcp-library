@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:42.842Z"
 ---
 
-
 # Wazuhagent
-
 
 *Service (ServiceController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:42.842Z"
 | `POST` | wazuhagent | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [WazuhAgent.xml](https://github.com/opnsense/plugins/blob/master/security/wazuh-agent/src/opnsense/mvc/app/models/OPNsense/WazuhAgent/WazuhAgent.xml) |
-
----
-

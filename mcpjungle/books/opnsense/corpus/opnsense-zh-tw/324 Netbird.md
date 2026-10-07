@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:25.378Z"
 ---
 
-
 # Netbird
-
 
 *資源（AuthenticationController.php）*
 
@@ -52,6 +50,3 @@ captured: "2026-09-26T11:34:25.378Z"
 | `GET` | netbird | 狀態 | 狀態 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Status.xml](https://github.com/opnsense/plugins/blob/master/security/netbird/src/opnsense/mvc/app/models/OPNsense/Netbird/Status.xml) |
-
----
-

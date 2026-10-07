@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:31:42.359Z"
 ---
 
-
 # Releases
 
-
-[圖：_images/ideas_join_the_development.jpg](https://docs.opnsense.org/_images/ideas_join_the_development.jpg)
+[圖](https://docs.opnsense.org/_images/ideas_join_the_development.jpg)
 
 -   [Community Edition](<05 Community Edition.md>)
     -   [26.7 “Xenial Xenops” Series](<06 26.7 “Xenial Xenops” Series.md>)
@@ -55,6 +53,3 @@ captured: "2026-09-26T11:31:42.359Z"
     -   [20.1 “Keen Kingfisher” Series](<43 20.1 “Keen Kingfisher” Series.md>)
     -   [19.7 “Jazzy Jaguar” Series](<44 19.7 “Jazzy Jaguar” Series.md>)
     -   [19.1 “Inspiring Iguana” Series](<45 19.1 “Inspiring Iguana” Series.md>)
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:38.016Z"
 ---
 
-
 # Tayga
-
 
 *Resources (GeneralController.php)*
 
@@ -45,6 +43,3 @@ captured: "2026-09-26T11:34:38.016Z"
 | `POST` | tayga | service | start |  |
 | `GET` | tayga | service | status |  |
 | `POST` | tayga | service | stop |  |
-
----
-

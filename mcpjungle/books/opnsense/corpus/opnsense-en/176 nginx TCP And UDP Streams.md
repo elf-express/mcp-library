@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:09.482Z"
 ---
 
-
 # nginx TCP And UDP Streams
-
 
 ## nginx: TCP And UDP Streams
 
@@ -83,6 +81,3 @@ curl https://HOSTNAME:PORT -vkI --resolve HOSTNAME:PORT:IP
 | HOSTNAME | The hostname you want to connect (example.com) |
 | PORT | The port you run the proxy on |
 | IP | IP of your OPNsense device (to override DNS) |
-
----
-

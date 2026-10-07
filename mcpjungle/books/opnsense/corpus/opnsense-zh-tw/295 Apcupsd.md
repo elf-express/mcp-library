@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:10.171Z"
 ---
 
-
 # Apcupsd
-
 
 *服務（ServiceController.php）*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:10.171Z"
 | `POST` | apcupsd | 設定 | 設定 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Apcupsd.xml](https://github.com/opnsense/plugins/blob/master/sysutils/apcupsd/src/opnsense/mvc/app/models/OPNsense/Apcupsd/Apcupsd.xml) |
-
----
-

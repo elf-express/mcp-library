@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:52.559Z"
 ---
 
-
 # Share internet bandwidth amongst users evenly
-
 
 For this example we presume an internet connection of 10 Mbps Download and 1 Mbps Upload that we want to share evenly between all users.
 
@@ -104,7 +102,4 @@ Now press apply to activate the traffic shaping rules.
 
 *Screenshot Rules*
 
-[圖：../../_images/shaping_rules_s2.png](https://docs.opnsense.org/_images/shaping_rules_s2.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/shaping_rules_s2.png)

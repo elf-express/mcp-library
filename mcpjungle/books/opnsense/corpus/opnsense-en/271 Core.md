@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:58.082Z"
 ---
 
-
 # Core
-
 
 *Resources (BackupController.php)*
 
@@ -127,6 +125,3 @@ captured: "2026-09-26T11:33:58.082Z"
 | `POST` | core | tunables | set\_item | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Tunables.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Core/Tunables.xml) |
-
----
-

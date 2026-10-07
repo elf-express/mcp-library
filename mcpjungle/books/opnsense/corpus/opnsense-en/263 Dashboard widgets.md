@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:54.576Z"
 ---
 
-
 # Dashboard widgets
-
 
 ## General
 
@@ -365,6 +363,3 @@ Every widget must expose the endpoints it’s using to the framework, so the con
 If any of the defined endpoints is inaccessible, the widget will not be available for the user. Note that the same rules as for any other [ACL](<366 Hello world module & plugin.md#plugin-to-access-control-acl>) applies here.
 
 Translations are provided in the same XML file, you can access these values by using the `this.translations.<key>` variables in the widget class, The value of key is defined by the opening/closing XML tags.
-
----
-

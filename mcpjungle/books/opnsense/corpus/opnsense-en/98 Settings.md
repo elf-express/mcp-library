@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:31.476Z"
 ---
 
-
 # Settings
-
 
 Besides the configuration options that every component has, OPNsense also contains a lot of general settings that you can tweak. This page contains an overview of them.
 
@@ -266,6 +264,3 @@ A reconfigure doesn’t always apply the new tls settings instantly, if that’s
 To activate any changed settings use the “Apply” button below.
 
 To clear all the logs on the system use the “Reset Log Files” button.
-
----
-

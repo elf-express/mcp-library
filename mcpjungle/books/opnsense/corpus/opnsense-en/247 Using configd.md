@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:45.417Z"
 ---
 
-
 # Using configd
-
 
 ## General
 
@@ -121,6 +119,3 @@ When using the same settings as already specified in the base configuration, the
 Note
 
 The `NO_PROXY` setting may be used to exclude hosts from using a proxy, which is usually practical for xmlrpc sync
-
----
-

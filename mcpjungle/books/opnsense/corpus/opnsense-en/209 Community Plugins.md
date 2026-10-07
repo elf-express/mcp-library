@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:33:27.200Z"
 ---
 
-
 # Community Plugins
 
-
-[圖：_images/manual_guy.png](https://docs.opnsense.org/_images/manual_guy.png)
+[圖](https://docs.opnsense.org/_images/manual_guy.png)
 
 Plugins help extending your security product with additional functionality, some plugins are maintained and supported by the OPNsense team, a lot are supported by the community.
 
@@ -85,6 +83,3 @@ This section houses the documentation available for some of these plugins, not a
 ## Reporting
 
 -   [ntopng](<190 ntopng.md>)
-
----
-

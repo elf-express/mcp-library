@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:01.407Z"
 ---
 
-
 # WireGuard Selective Routing to External VPN Endpoint
-
 
 ## Introduction
 
@@ -377,6 +375,3 @@ The solutions include:
 Note
 
 If the DNS servers supplied by your VPN provider are local IPs (ie, within the scope of the `RFC1918_Networks` Alias created in Step 8), then, as discussed in Step 8, you will need to create an additional firewall rule in OPNsense to ensure that requests to those servers use the tunnel gateway rather than the normal WAN gateway. This rule would be similar to that created in Step 8, except that the destination would be your VPN provider’s DNS server IPs and the destination invert box would be unchecked. This rule would also need to be placed *above* the rule created in Step 8
-
----
-

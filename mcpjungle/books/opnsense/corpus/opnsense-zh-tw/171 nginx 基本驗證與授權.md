@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:06.948Z"
 ---
 
-
 # nginx 基本驗證與授權
-
 
 ## nginx：基本驗證和授權
 
@@ -64,6 +62,3 @@ curl -v -u user:password  "http://example.com/restricted/image.png"
 ## 進階身份驗證
 
 進階身份驗證入口用於呼叫外部身份驗證提供者。在 OPNsense 中，目前使用的是一段特殊的腳本，它會針對本地資料庫進行身份驗證。如果您想使用此功能，請不要輸入網域或選擇使用者清單。請注意，此功能未來可能會發生變化。
-
----
-

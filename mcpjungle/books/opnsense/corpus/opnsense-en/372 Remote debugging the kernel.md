@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:49.239Z"
 ---
 
-
 # Remote debugging the kernel
-
 
 FreeBSD supports remote debugging using a serial interface. Since most virtual solutions support serial interfaces it can be quite convenient to deploy a kernel and start a debug session on another machine.
 
@@ -77,6 +75,3 @@ db> c (continue)
 ```
 
 Then go to the build machine, make sure gdb is installed (`pkg install gdb`) and go to the directory where the debug symbols are and start a session, ask a backtrace `bt` and continue normal operation `c`:
-
----
-

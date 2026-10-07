@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:12.023Z"
 ---
 
-
 # FreeRADIUS
-
 
 ## Installation
 
@@ -91,6 +89,3 @@ The secret is used to provide a trust relationship between the client and the Fr
 IP Address or Network with CIDR
 
 This is the IP address of the Client (not the authenticating device). For example this could be the IP address of your switch.
-
----
-

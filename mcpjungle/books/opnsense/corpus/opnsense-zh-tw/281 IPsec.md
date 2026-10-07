@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:03.142Z"
 ---
 
-
 # IPsec
-
 
 *資源（ConnectionsController.php）*
 
@@ -185,6 +183,3 @@ captured: "2026-09-26T11:34:03.142Z"
 | `POST` | ipsec | vti | 切換 | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Swanctl.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/IPsec/Swanctl.xml) |
-
----
-

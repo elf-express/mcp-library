@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:23.633Z"
 ---
 
-
 # IPS SSL黑名單和 Feodo 追蹤器
-
 
 本教學介紹如何設定 IPS 系統以刪除 [abuse.ch](https://www.abuse.ch/) SSL 黑名單和 Feodo Tracker 上列出的 SSL 憑證。
 
@@ -22,14 +20,14 @@ Feodo（也稱為 Cridex 或 Bugat）是一種特洛伊木馬，用於實施電�
 -   始終首先升級到最新版本。請參閱[初始安裝與設定](<55 初始安裝和配置.md>) 和/或升級至最新版本：系統 ‣ 韌體 ‣ 取得更新
     
 
-[圖：../../_images/firmware.png](https://docs.opnsense.org/_images/firmware.png)
+[圖](https://docs.opnsense.org/_images/firmware.png)
 
 -   建議的最小記憶體為 2 GB，並且有足夠的可用磁碟空間用於日誌記錄（建議 >10 GB）。
     
 -   停用 **介面設定** 下的所有硬體卸載
     
 
-[圖：../../_images/disable_offloading.png](https://docs.opnsense.org/_images/disable_offloading.png)
+[圖](https://docs.opnsense.org/_images/disable_offloading.png)
 
 警告
 
@@ -43,7 +41,7 @@ Feodo（也稱為 Cridex 或 Bugat）是一種特洛伊木馬，用於實施電�
 
 要啟用IDS/IPS，只需前往服務‣入侵偵測並選擇**啟用和IPS模式**。確保您為正在執行的入侵偵測系統選擇了正確的介面。對於我們的範例，我們將使用 WAN 接口，因為這很可能是您與公共互聯網的連接。
 
-[圖：../../_images/idps.png](https://docs.opnsense.org/_images/idps.png)
+[圖](https://docs.opnsense.org/_images/idps.png)
 
 ## 應用程式配置
 
@@ -55,7 +53,7 @@ Feodo（也稱為 Cridex 或 Bugat）是一種特洛伊木馬，用於實施電�
 
 對於此範例，我們將只取得abuse.ch SSL 和 Dodo Tracker 規則集。為此：在每一項後選擇啟用。
 
-[圖：../../_images/rulesets_enable.png](https://docs.opnsense.org/_images/rulesets_enable.png)
+[圖](https://docs.opnsense.org/_images/rulesets_enable.png)
 
 若要下載規則集，請按**下載和更新規則**。
 
@@ -79,7 +77,7 @@ Feodo（也稱為 Cridex 或 Bugat）是一種特洛伊木馬，用於實施電�
 
 點擊日程，會出現一個彈出視窗：
 
-[圖：../../_images/schedule.png](https://docs.opnsense.org/_images/schedule.png)
+[圖](https://docs.opnsense.org/_images/schedule.png)
 
 選擇**啟用**並選擇時間。對於範例，它設定為每天的 11:12。選擇**儲存變更**並等待返回IDS畫面。
 
@@ -91,7 +89,4 @@ Feodo（也稱為 Cridex 或 Bugat）是一種特洛伊木馬，用於實施電�
 
 目前沒有可用的測試服務來檢查您的封鎖規則，但以下是已封鎖的實際警報的範例：
 
-[圖：../../_images/alerts.jpg](https://docs.opnsense.org/_images/alerts.jpg)
-
----
-
+[圖](https://docs.opnsense.org/_images/alerts.jpg)

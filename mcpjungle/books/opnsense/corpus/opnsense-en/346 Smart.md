@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:35.463Z"
 ---
 
-
 # Smart
-
 
 *Service (ServiceController.php)*
 
@@ -21,6 +19,3 @@ captured: "2026-09-26T11:34:35.463Z"
 | `POST` | smart | service | list | $details=null |
 | `POST` | smart | service | logs |  |
 | `POST` | smart | service | test |  |
-
----
-

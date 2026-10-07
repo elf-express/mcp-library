@@ -8,7 +8,6 @@ translated_by: "original"
 captured: "2026-09-26T11:34:54.308Z"
 ---
 
-
 # Contribute
 
 OPNsense is an open source community project that depends on your contributions for its continuing development & success.
@@ -180,6 +179,3 @@ Anything you can do to spread the word about OPNsense will help to reach our goa
 ## Closing Words
 
 If you have suggestions on how others can contribute to OPNsense and it is not yet listed on this page, then let us know. You can reach us at contact @ opnsense.org.
-
----
-

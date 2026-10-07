@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:38.861Z"
 ---
 
-
 # Virtual IPs
-
 
 When using additional addresses for features like NAT or binding services to different interfaces, you can add extra addresses to already defined interfaces using **Virtual IPs**.
 
@@ -125,6 +123,3 @@ Marks the active node, while listening to advertisements seen on the network. If
 ### DISABLED
 
 Displayed when **Temporarily Disable CARP** is clicked on this page.
-
----
-

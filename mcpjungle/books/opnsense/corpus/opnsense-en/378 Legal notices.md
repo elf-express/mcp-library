@@ -8,10 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:34:52.784Z"
 ---
 
-
 # Legal notices
 
-[圖：_images/opnsense_logo_horizontaal.png](https://docs.opnsense.org/_images/opnsense_logo_horizontaal.png)
+[圖](https://docs.opnsense.org/_images/opnsense_logo_horizontaal.png)
 
 The OPNsense project wants to be a project that is friendly for users, developers and partners. In this world with trademarks and copyright it is best to “keep things as simple as possible, but not simpler”. Below we pointed out the Licensing and Trademark rules we use.
 
@@ -88,6 +87,3 @@ OPNsense is a trademark. If you wish to use the name or logo in any way, you mu
 The official OPNsense logo is available for download: [`OPNsense logo`](https://docs.opnsense.org/_downloads/4a483e070cca7069c9e539596de0a17b/OPNsense_Logo.ai).
 
 If you have any questions about this policy, its interpretation, or want to ask for permission please email **project** @ **opnsense.org**.
-
----
-

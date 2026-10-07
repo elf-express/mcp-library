@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:25.899Z"
 ---
 
-
 # Netsnmp
-
 
 *Resources (GeneralController.php)*
 
@@ -45,6 +43,3 @@ captured: "2026-09-26T11:34:25.899Z"
 | `POST` | netsnmp | user | toggle\_user | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [User.xml](https://github.com/opnsense/plugins/blob/master/net-mgmt/net-snmp/src/opnsense/mvc/app/models/OPNsense/Netsnmp/User.xml) |
-
----
-

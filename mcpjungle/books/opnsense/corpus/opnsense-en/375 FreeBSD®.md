@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:50.754Z"
 ---
 
-
 # FreeBSD®
-
 
 FreeBSD is a registered trademark of The FreeBSD Foundation. The FreeBSD logo and The Power to Serve are trademarks of The FreeBSD Foundation.
 
@@ -31,6 +29,3 @@ OPNsense is built on top of FreeBSD. The aim of the OPNsense team is to stay as 
 See also
 
 To convert your FreeBSD hosted installation to OPNsense, see the OPNsense bootstrap script on [OPNsense’s update tools @ github](https://github.com/opnsense/update/)
-
----
-

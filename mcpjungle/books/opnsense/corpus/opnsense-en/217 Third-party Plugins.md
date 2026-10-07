@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:33:30.255Z"
 ---
 
-
 # Third-party Plugins
 
-
-[圖：_images/architecture-blue-sky-business-2599538.jpg](https://docs.opnsense.org/_images/architecture-blue-sky-business-2599538.jpg)
+[圖](https://docs.opnsense.org/_images/architecture-blue-sky-business-2599538.jpg)
 
 Like our community plugins in some cases software is delivered under a non-free license or combined with a commercial service from one of our partners, the Third-party section contains the documentation for these packages.
 
@@ -28,6 +26,3 @@ For support on this software, please consult the vendor as found below.
 ## Q-Feeds Threat Intelligence
 
 -   [Q-Feeds connector](<222 Q-Feeds connector.md>)
-
----
-

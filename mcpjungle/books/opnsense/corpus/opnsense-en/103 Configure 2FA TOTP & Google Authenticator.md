@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:32:31.958Z"
 ---
 
-
 # Configure 2FA TOTP & Google Authenticator
-
 
 This how-to will show you how to setup a One-time Password 2 Factor Authentication using OPNsense and Google’s Authenticator. All services of OPNsense can be used with this 2FA solution.
 
-[圖：../../_images/two_factor_authentication.png](https://docs.opnsense.org/_images/two_factor_authentication.png)
+[圖](https://docs.opnsense.org/_images/two_factor_authentication.png)
 
 Note
 
@@ -48,11 +46,11 @@ When done press **Save**.
 
 To activate your new OTP seed on the Google Authenticator, first reopen the user you just created by clicking on the pencil icon.
 
-[圖：../../_images/OTP_seed.png](https://docs.opnsense.org/_images/OTP_seed.png)
+[圖](https://docs.opnsense.org/_images/OTP_seed.png)
 
 Now it will show a QR code:
 
-[圖：../../_images/otp_qr_code.png](https://docs.opnsense.org/_images/otp_qr_code.png)
+[圖](https://docs.opnsense.org/_images/otp_qr_code.png)
 
 Warning
 
@@ -62,15 +60,15 @@ Now open your Google Authenticator compatible application and select the option 
 
 In case of SailOTP the configuration works like this:
 
-[圖：../../_images/sailotp_menu.jpg](https://docs.opnsense.org/_images/sailotp_menu.jpg)
+[圖](https://docs.opnsense.org/_images/sailotp_menu.jpg)
 
 Pull down to open the application menu and choose the entry to add a new Token.
 
-[圖：../../_images/sailotp_scan_qr.jpg](https://docs.opnsense.org/_images/sailotp_scan_qr.jpg)
+[圖](https://docs.opnsense.org/_images/sailotp_scan_qr.jpg)
 
 In the next step, you have to scan the previously created QR code by clicking on the screen.
 
-[圖：../../_images/sailotp_scanresult.jpg](https://docs.opnsense.org/_images/sailotp_scanresult.jpg)
+[圖](https://docs.opnsense.org/_images/sailotp_scanresult.jpg)
 
 When the QR code is scanned, a new view will open where you can see the details of the result. This view can be used to check if the generated key and OTP settings of the scan results do match your settings. Confirm if everything is ok by clicking “Add”.
 
@@ -95,7 +93,7 @@ Password field should be used to enter both token and your password, like: **Pas
 
 Hit the test button and if all goes well you should see *successfully authenticated*.
 
-[圖：../../_images/system_access_tester.png](https://docs.opnsense.org/_images/system_access_tester.png)
+[圖](https://docs.opnsense.org/_images/system_access_tester.png)
 
 ## Step 6 - Enable authentication server
 
@@ -103,7 +101,7 @@ Per default the system validates user credentials against the “Local Database�
 
 **Note: Make sure you’ve tested your token!**
 
-[圖：../../_images/auth_server.png](https://docs.opnsense.org/_images/auth_server.png)
+[圖](https://docs.opnsense.org/_images/auth_server.png)
 
 ## Step 7 - Using the token
 
@@ -115,7 +113,4 @@ Remember, you need to enter the token **before** or **after** you password (depe
 
 The code will change every 30 seconds. Sample code:
 
-[圖：../../_images/google_token_sample.png](https://docs.opnsense.org/_images/google_token_sample.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/google_token_sample.png)

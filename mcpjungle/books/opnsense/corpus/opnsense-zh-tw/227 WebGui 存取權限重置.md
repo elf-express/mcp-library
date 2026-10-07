@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:35.333Z"
 ---
 
-
 # WebGui 存取權限重置
-
 
 如果 Web 管理介面憑證因某種原因失效，您可以使用控制台選單重新配置存取權限。從選單中選擇`Set interface IP address` （選項 2），重新配置接口，提供地址配置後，您可以（暫時）切換回`HTTP` ，或在下一步生成新的自簽名證書。
 
@@ -22,6 +20,3 @@ captured: "2026-09-26T11:33:35.333Z"
 直接透過控制台或 shell 登入後，您還可以使用以下命令產生新的自簽名憑證並重新啟動 Web UI：
 
 `configctl webgui restart renew`
-
----
-

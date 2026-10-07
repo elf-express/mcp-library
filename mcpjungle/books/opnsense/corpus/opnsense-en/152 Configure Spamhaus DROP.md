@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:57.372Z"
 ---
 
-
 # Configure Spamhaus DROP
-
 
 The Spamhaus Don’t Route Or Peer Lists
 
@@ -114,6 +112,3 @@ Now do the same for outbound traffic on the LAN interface. Go to Firewall ‣ Ru
 ## Check pf Tables
 
 To list the IP addresses that are currently in the DROP and DROPv6 lists go to Firewall ‣ Diagnostics ‣ Aliases and select the list you want to see.
-
----
-

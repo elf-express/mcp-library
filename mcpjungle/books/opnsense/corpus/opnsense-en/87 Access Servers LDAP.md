@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:23.887Z"
 ---
 
-
 # Access Servers LDAP
-
 
 ## Access / Servers / LDAP
 
@@ -64,7 +62,7 @@ Note
 
 When clicking on the **Select** button right next to Authentication containers, something similar to the following will show up:
 
-[圖：../../_images/ldap_selectcontainer.png](https://docs.opnsense.org/_images/ldap_selectcontainer.png)
+[圖](https://docs.opnsense.org/_images/ldap_selectcontainer.png)
 
 Note
 
@@ -74,7 +72,7 @@ Tip
 
 The **Extended Query** can be used to select users who are member of a specific group (only relevant for external services, when not using the local user database). One can use something like this: **memberOf=CN=myGroup,CN=Users,DC=opnsense,DC=local** to select only members of the group *“myGroup”*. To add a user to a specific group under Windows just edit the groups properties and select **Add…** to add the user under the tab **Members**.
 
-[圖：../../_images/ldap_mygroup_properties.png](https://docs.opnsense.org/_images/ldap_mygroup_properties.png)
+[圖](https://docs.opnsense.org/_images/ldap_mygroup_properties.png)
 
 Tip
 
@@ -100,7 +98,7 @@ When users may not exist yet in the local database, you can also create them aut
 
 To test if the server is configured correctly, go to System ‣ Access ‣ Tester and select your LDAP server and enter a valid username + password. Click on **Test** and if everything is set up correctly it will show:
 
-[圖：../../_images/ldap_testok.png](https://docs.opnsense.org/_images/ldap_testok.png)
+[圖](https://docs.opnsense.org/_images/ldap_testok.png)
 
 Note
 
@@ -108,7 +106,7 @@ When limited to just one group, the group name will not be shown in the listing.
 
 If not (or your entered invalid credentials) it shows:
 
-[圖：../../_images/ldap_testfail.png](https://docs.opnsense.org/_images/ldap_testfail.png)
+[圖](https://docs.opnsense.org/_images/ldap_testfail.png)
 
 Tip
 
@@ -123,6 +121,3 @@ Warning
 Before changing the gui access to require LDAP, make sure at least one user is allowed to access the firewall with remote credentials. This can be achieved either by adding the `All pages` privilege to the user or making sure the user is member of a group with that privilege.
 
 To prevent being locked out, you can add “Local Database” as secondary option during your test.
-
----
-

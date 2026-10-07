@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:26.969Z"
 ---
 
-
 # Dynamic Routing (FRR)
-
 
 -   [Installation](#installation)
     
@@ -544,6 +542,3 @@ Routing ‣ STATIC
 | **BFD** | Mark the route as dependent on the BFD neighbor session with the next hop. |
 
 STATIC is a daemon that handles the installation and deletion of static routes. These routes can be used supplemental to dynamic routes. It is beneficial for fine grained control over routes in more complex network environments, if redistributing directly attached routes is not an option.
-
----
-

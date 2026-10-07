@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:44.068Z"
 ---
 
-
 # Deutsche Telekom Germany IPTV (Magenta TV) setup
-
 
 **Original Author:** Jascha Kirchhoff
 
@@ -28,25 +26,25 @@ Ensure you are running OPNsense 22.1 or later
 
 Then configure IGMPproxy as follows
 
-[圖：../../_images/dt_ger_iptv_01.png](https://docs.opnsense.org/_images/dt_ger_iptv_01.png) [圖：../../_images/dt_ger_iptv_02.png](https://docs.opnsense.org/_images/dt_ger_iptv_02.png)
+[圖](https://docs.opnsense.org/_images/dt_ger_iptv_01.png) [圖](https://docs.opnsense.org/_images/dt_ger_iptv_02.png)
 
 NOTE: downstream interface is LAN
 
-[圖：../../_images/dt_ger_iptv_03.png](https://docs.opnsense.org/_images/dt_ger_iptv_03.png)
+[圖](https://docs.opnsense.org/_images/dt_ger_iptv_03.png)
 
 ## **FIREWALL setup**
 
 We need to add two new rules for the WAN interface and modify one (the default IPv4 rule) on the LAN to get Magenta TV working. The key is to enable “allow options” in the Advanced Options for all three (!) rules, WAN and LAN.
 
-[圖：../../_images/dt_ger_iptv_04.png](https://docs.opnsense.org/_images/dt_ger_iptv_04.png)
+[圖](https://docs.opnsense.org/_images/dt_ger_iptv_04.png)
 
 NOTE the Source is “\*”
 
-[圖：../../_images/dt_ger_iptv_05.png](https://docs.opnsense.org/_images/dt_ger_iptv_05.png) [圖：../../_images/dt_ger_iptv_06.png](https://docs.opnsense.org/_images/dt_ger_iptv_06.png) [圖：../../_images/dt_ger_iptv_05.png](https://docs.opnsense.org/_images/dt_ger_iptv_05.png)
+[圖](https://docs.opnsense.org/_images/dt_ger_iptv_05.png) [圖](https://docs.opnsense.org/_images/dt_ger_iptv_06.png) [圖](https://docs.opnsense.org/_images/dt_ger_iptv_05.png)
 
 And finally Source NAT
 
-[圖：../../_images/dt_ger_iptv_07.png](https://docs.opnsense.org/_images/dt_ger_iptv_07.png)
+[圖](https://docs.opnsense.org/_images/dt_ger_iptv_07.png)
 
 I switched to Hybrid mode but it should also work in Automatic mode, because none of the Source NAT rules need to be modified.
 
@@ -55,6 +53,3 @@ Make sure you have clicked Save & Apply
 It is advisable at this point to reboot the system.
 
 Plug in your Media Receiver to one LAN port, turn on the receiver and after a few minutes you should see live TV. Also software updates should work out of the box. Update mode has been tested 2022-05, no additional settings are required.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:21.816Z"
 ---
 
-
 # Lldpd
-
 
 *Resources (GeneralController.php)*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:21.816Z"
 | `POST` | lldpd | service | start |  |
 | `GET` | lldpd | service | status |  |
 | `POST` | lldpd | service | stop |  |
-
----
-

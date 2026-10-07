@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:34.475Z"
 ---
 
-
 # Shadowsocks
-
 
 *Resources (GeneralController.php)*
 
@@ -49,6 +47,3 @@ captured: "2026-09-26T11:34:34.475Z"
 | `POST` | shadowsocks | service | start |  |
 | `GET` | shadowsocks | service | status |  |
 | `POST` | shadowsocks | service | stop |  |
-
----
-

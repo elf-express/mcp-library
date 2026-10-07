@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:03.405Z"
 ---
 
-
 # Zerotier Configuration
-
 
 Note
 
@@ -127,6 +125,3 @@ For `IPv4 Configuration Type`, choose `Static IPv4` then in the appropriate inpu
 You may choose to do the same for `IPv6 Configuration Type`.
 
 Once the interface has been assigned with an IP, it show now also show up on `Firewall` Rules etc…plus any other operations that be done on a interfaces can also be applied to your assigned interface.
-
----
-

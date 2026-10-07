@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:30.456Z"
 ---
 
-
 # Trust
-
 
 In OPNsense, certificates are used for ensuring trust between peers. To make using them easier, OPNsense allows creating certificates from the front-end. In addition to that, it also allows creating certificates for other purposes, avoiding the need to use the `openssl` command line tool. Certificates in OPNsense can be managed from System ‣ Trust ‣ Certificates.
 
@@ -210,6 +208,3 @@ Default settings for OpenSSL are saved into `/usr/local/openssl/openssl.cnf` (po
 ## Usage examples
 
 In [Setup Self-Signed Certificate Chains](<104 Setup Self-Signed Certificate Chains.md>) you will find examples of how to setup certificate chains yourself.
-
----
-

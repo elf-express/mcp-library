@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:46.585Z"
 ---
 
-
 # Generic info
-
 
 This chapter explains some of the concepts that are used in different modules of our firewall system and therefore don’t belong to a specific section of this topic.
 
@@ -29,6 +27,3 @@ When choosing source and/or destination addresses, the user can choose several o
 | \[Interface\] Network | All networks assigned to the device, this will also include networks of assigned virtual addresses (\[Interface\] is explained in the [interfaces](<106 Interface configuration.md>) topic). Normally used to allow traffic from or to clients connected to a specific interface. |
 | \[Interface\] Address | All addresses configured on an interface, this includes all virtual (alias) addresses as well. |
 | Virtual IPs | Explicit selection for addresses defined in [Virtual IPs](<111 Virtual IPs.md>) |
-
----
-

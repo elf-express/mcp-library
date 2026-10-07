@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:29.476Z"
 ---
 
-
 # Postfix
-
 
 *資源（AddressController.php）*
 
@@ -160,6 +158,3 @@ captured: "2026-09-26T11:34:29.476Z"
 | `POST` | postfix | 服務 | 開始 | |
 | `GET` | postfix | 服務 | 狀態 | |
 | `POST` | 後綴 | 服務 | 停止 | |
-
----
-

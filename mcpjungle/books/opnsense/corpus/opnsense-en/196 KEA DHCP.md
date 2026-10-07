@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:20.382Z"
 ---
 
-
 # KEA DHCP
-
 
 ## [KEA DHCP](#id1)
 
@@ -653,6 +651,3 @@ This page offers an overview of the (non static) leases being offered by KEA DHC
 Tip
 
 There are action buttons to quickly register and find reservations.
-
----
-

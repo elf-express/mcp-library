@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:13.720Z"
 ---
 
-
 # Crowdsec
-
 
 *Resources (AlertsController.php)*
 
@@ -97,6 +95,3 @@ captured: "2026-09-26T11:34:13.720Z"
 | Method | Module | Controller | Command | Parameters |
 | --- | --- | --- | --- | --- |
 | `GET` | crowdsec | version | get |  |
-
----
-

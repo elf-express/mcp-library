@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:41.498Z"
 ---
 
-
 # Configuring Cellular Modems
-
 
 OPNsense supports a wide range of USB and miniPCIe cellular modems that can be used as primary internet (WAN) connection or as failover for a fixed/ethernet connection.
 
@@ -91,7 +89,7 @@ If you need to enter a PIN number, then click on **Advanced Options**
 
 Click **Save** to apply the settings.
 
-[圖：../../_images/4g_configure_ppp.png](https://docs.opnsense.org/_images/4g_configure_ppp.png) [圖：../../_images/ppp_celular_configured.png](https://docs.opnsense.org/_images/ppp_celular_configured.png)
+[圖](https://docs.opnsense.org/_images/4g_configure_ppp.png) [圖](https://docs.opnsense.org/_images/ppp_celular_configured.png)
 
 ## Step 3 - Assign the WAN interface
 
@@ -103,7 +101,7 @@ Now click **Save** below the form.
 
 If everything went fine, then you are all set, and the default gateway will be the one of you cellular connection.
 
-[圖：../../_images/Interface_assignment_4g.png](https://docs.opnsense.org/_images/Interface_assignment_4g.png)
+[圖](https://docs.opnsense.org/_images/Interface_assignment_4g.png)
 
 ## Step 4 - Troubleshooting
 
@@ -124,6 +122,3 @@ When the device seems to work properly then checkout if the interface was assign
 You should see an IP address, Gateway IP and ISP DNS server(s). If all is filled in, then either your firewall is blocking the traffic or the network connection is not working well.
 
 In case you were not successful, you might have to check manually what is going on. Read the [Troubleshooting PPP Connections](https://www.freebsd.org/doc/handbook/ppp-troubleshoot.html) section in the FreeBSD manual for more information and consult the OPNsense support forum.
-
----
-

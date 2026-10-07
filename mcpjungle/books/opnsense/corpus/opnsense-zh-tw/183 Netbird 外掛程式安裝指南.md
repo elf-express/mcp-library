@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:13.038Z"
 ---
 
-
 # Netbird 外掛程式安裝指南
-
 
 ## 介紹
 
@@ -135,6 +133,3 @@ Netbird 日誌可透過 Web UI 存取：
 ## 結論
 
 OPNsense 的 Netbird 外掛提供了一種整合 Netbird 的 VPN 功能的強大方法。透過分配`wt0`、設定NAT以及配置防火牆規則，OPNsense 可以充當 Netbird 網路的路由對等點或出口節點。
-
----
-

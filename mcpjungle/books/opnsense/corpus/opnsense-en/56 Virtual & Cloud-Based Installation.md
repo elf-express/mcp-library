@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:08.756Z"
 ---
 
-
 # Virtual & Cloud-Based Installation
-
 
 ## Local/Server
 
@@ -83,7 +81,7 @@ opnsense-bootstrap is available at our [GitHub source repository](https://github
 
 ## Amazon AWS EC2 Cloud
 
-[圖：../_images/amazon-web-services.png](https://docs.opnsense.org/_images/amazon-web-services.png)
+[圖](https://docs.opnsense.org/_images/amazon-web-services.png)
 
 Installing OPNsense in Amazon Web Services can be a daunting task as no console is offered. Luckily, an easy-to-install AMI is available in the AWS Marketplace.
 
@@ -91,7 +89,7 @@ See our how-to for [Installing OPNsense AWS image](<61 Installing OPNsense AWS i
 
 ## Microsoft Azure
 
-[圖：../_images/Azure.png](https://docs.opnsense.org/_images/Azure.png)
+[圖](https://docs.opnsense.org/_images/Azure.png)
 
 OPNsense is available in the Microsoft Azure Marketplace as an easily installable virtual appliance.
 
@@ -118,6 +116,3 @@ This issue has been reported to be solved by disabling TX checksum offloading on
 ### Traffic Shaper does not work on VMware
 
 If you are using the VMXNET3 driver, try switching to E1000 instead.
-
----
-

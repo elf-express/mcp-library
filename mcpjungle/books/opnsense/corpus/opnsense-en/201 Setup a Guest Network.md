@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:33:22.651Z"
 ---
 
-
 # Setup a Guest Network
-
 
 This how to will explain how to setup a guest network using the captive portal. Guest Networks are widely used to allow guests controlled internet access at hotels, RV Parks or businesses.
 
-[圖：../../_images/opnsense_hotspot_controller.png](https://docs.opnsense.org/_images/opnsense_hotspot_controller.png)
+[圖](https://docs.opnsense.org/_images/opnsense_hotspot_controller.png)
 
 Note
 
@@ -178,13 +176,13 @@ Let’s create a custom landing page, to do so click on the tab **Templates** an
 
 Now download the default template, we will use this to create our own. Unpack the template zip file, you should have something similar to this:
 
-[圖：../../_images/template_filelisting.png](https://docs.opnsense.org/_images/template_filelisting.png)
+[圖](https://docs.opnsense.org/_images/template_filelisting.png)
 
 Most files of the template can be modified, but some are default and may not be changes. Upon upload any changes to the files listed in **exclude.list** will be ignored. Currently these include the bootstrap JavaScript and some fonts.
 
 With the captive portal enabled the default screen looks like:
 
-[圖：../../_images/default_login_no_authenticator.png](https://docs.opnsense.org/_images/default_login_no_authenticator.png)
+[圖](https://docs.opnsense.org/_images/default_login_no_authenticator.png)
 
 Let’s change this default with a new logo and a welcome message, to this:
 
@@ -310,7 +308,7 @@ Connect your PC or laptop to the Guest Network and start your favourite browser.
 
 To test your traffic shaper go to a speed test site such as [http://www.speedtest.net/](http://www.speedtest.net/) After testing your result should be similar to this (if your internet connection has sufficient bandwidth).
 
-> [圖：../../_images/cp-traffic-shaping.png](https://docs.opnsense.org/_images/cp-traffic-shaping.png)
+> [圖](https://docs.opnsense.org/_images/cp-traffic-shaping.png)
 
 Note
 
@@ -341,7 +339,7 @@ Go back to the Captive portal and select Vouchers (Services ‣ Captive Portal �
 
 Let’s create 1-day vouchers for our guests:
 
-[圖：../../_images/create_vouchers.png](https://docs.opnsense.org/_images/create_vouchers.png)
+[圖](https://docs.opnsense.org/_images/create_vouchers.png)
 
 Enter the Validity (1 day), the number of Vouchers and a Groupname (Wi-Fi day pass, for example). For the example we create 10 vouchers. Click on **Generate**.
 
@@ -378,7 +376,7 @@ This file can be used for creating nice guest vouchers (on paper) by just mergin
 
 Create something like this:
 
-[圖：../../_images/cp_royalhotel_voucher.png](https://docs.opnsense.org/_images/cp_royalhotel_voucher.png)
+[圖](https://docs.opnsense.org/_images/cp_royalhotel_voucher.png)
 
 You can select a database to and remove it entirely. This way you can create a voucher database for the arrival date of guest per guest group (week, midweek, weekend, etc.) and delete the full database when the guests have left.
 
@@ -402,7 +400,7 @@ Now users will see the login form as part of your template:
 
 To check the active sessions go to Services ‣ Captive Portal ‣ Sessions Our current session looks like this:
 
-[圖：../../_images/cp_active_sessions.png](https://docs.opnsense.org/_images/cp_active_sessions.png)
+[圖](https://docs.opnsense.org/_images/cp_active_sessions.png)
 
 You can drop an active session by clicking on the trashcan.
 
@@ -414,7 +412,7 @@ Notice the selection box at the upper right corner, with this you can select the
 
 You can check the validity and active status of a voucher by going to the voucher page of the captive portal (Services ‣ Captive Portal ‣ Vouchers) and select the correct database (Wi-Fi day pass in our example).
 
-[圖：../../_images/cp_active_vouchers.png](https://docs.opnsense.org/_images/cp_active_vouchers.png)
+[圖](https://docs.opnsense.org/_images/cp_active_vouchers.png)
 
 Note
 
@@ -461,7 +459,7 @@ if (data['clientState'] == 'AUTHORIZED') {
     window.open("session_popup.html","Session Status & Logout","width=400, height=400");
 ```
 
-[圖：../../_images/captiveportal_popup.png](https://docs.opnsense.org/_images/captiveportal_popup.png)
+[圖](https://docs.opnsense.org/_images/captiveportal_popup.png)
 
 ## Advanced - CLI Session Status
 
@@ -475,7 +473,4 @@ configctl captiveportal list_clients 0
 
 The output will be something similar to this:
 
-[圖：../../_images/cli_list_captiveportalsessions.png](https://docs.opnsense.org/_images/cli_list_captiveportalsessions.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/cli_list_captiveportalsessions.png)

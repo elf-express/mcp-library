@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:12.522Z"
 ---
 
-
 # 設定 FreeRADIUS 進行記賬
-
 
 ## 本教程的目標
 
@@ -81,6 +79,3 @@ ATTRIBUTE       Max-Daily-Session       3001    integer
 /etc/init.d/freeradius stop
 freeradius -X
 ```
-
----
-

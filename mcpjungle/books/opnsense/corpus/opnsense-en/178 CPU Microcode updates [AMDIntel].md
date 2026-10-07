@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:10.485Z"
 ---
 
-
 # CPU Microcode updates [AMDIntel]
-
 
 ## CPU Microcode updates \[AMD/Intel\]
 
@@ -45,6 +43,3 @@ Microcode patch level: 0x800126f
 ```
 
 Usually manufacturers publish a list of patch levels, for example AMD’s patches can be found in the linux [source](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amd-ucode/README) tree.
-
----
-

@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:30.771Z"
 ---
 
-
 # DNSCrypt代理
-
 
 ## 安裝
 
@@ -136,6 +134,3 @@ Cache Max TTL
 為此，請前往**服務->未綁定DNS->常規**並取消選取*啟用*。如果您使用 Dnsmasq，請前往**服務->Dnsmasq DNS->設定**並取消選取*啟用*。現在改為 **Services->DNSCrypt-Proxy->Configuration** 並新增 *Listen Address* 0.0.0.0:53 以使該服務被核心系統視為獨立。
 
 現在您可以繼續進行設定任務，例如選擇要使用的伺服器、隱私權政策或快取。此外，無需任何變通方法即可使用偽裝（覆蓋）或DNSBL 。
-
----
-

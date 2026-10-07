@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:41.550Z"
 ---
 
-
 # Vnstat
-
 
 *資源（GeneralController.php）*
 
@@ -35,6 +33,3 @@ captured: "2026-09-26T11:34:41.550Z"
 | `GET` | vnstat | 服務 | 狀態 | |
 | `POST` | vnstat | 服務 | 停止 | |
 | `GET` | vnstat | 服務 | 年度 | |
-
----
-

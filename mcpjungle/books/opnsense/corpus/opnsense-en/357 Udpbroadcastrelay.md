@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:43.094Z"
 ---
 
-
 # Udpbroadcastrelay
-
 
 *Service (ServiceController.php)*
 
@@ -39,6 +37,3 @@ captured: "2026-09-26T11:34:43.094Z"
 | `POST` | udpbroadcastrelay | settings | set |  |
 | `POST` | udpbroadcastrelay | settings | set\_relay | $uuid |
 | `POST` | udpbroadcastrelay | settings | toggle\_relay | $uuid |
-
----
-

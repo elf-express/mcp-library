@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:13.038Z"
 ---
 
-
 # Netbird Plugin Setup Guide
-
 
 ## Introduction
 
@@ -134,6 +132,3 @@ Netbird logs can be accessed via the Web UI:
 ## Conclusion
 
 The Netbird plugin for OPNsense provides a powerful way to integrate Netbird’s VPN capabilities. By assigning `wt0`, setting up NAT, and configuring firewall rules, OPNsense can serve as a routing peer or an exit node for Netbird networks.
-
----
-

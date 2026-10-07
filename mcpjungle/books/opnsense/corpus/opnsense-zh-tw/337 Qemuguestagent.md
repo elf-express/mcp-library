@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:31.017Z"
 ---
 
-
 # Qemuguestagent
-
 
 *服務（ServiceController.php）*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:31.017Z"
 | `POST` | qemuguestagent | 設定 | 設定 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [QemuGuestAgent.xml](https://github.com/opnsense/plugins/blob/master/emulators/qemu-guest-agent/src/opnsense/mvc/app/models/OPNsense/QemuGuestAgent/QemuGuestAgent.xml) |
-
----
-

@@ -8,15 +8,13 @@ translated_by: "original"
 captured: "2026-09-26T11:32:29.440Z"
 ---
 
-
 # High Availability
-
 
 OPNsense utilizes the Common Address Redundancy Protocol or CARP for hardware failover. Two or more firewalls can be configured as a failover group. If one interface fails on the primary or the primary goes offline entirely, the secondary becomes active.
 
 Utilizing this powerful feature of OPNsense creates a fully redundant firewall with automatic and seamless fail-over. While switching to the backup network connections will stay active with minimal interruption for the users.
 
-[圖：../_images/light_bulbs.png](https://docs.opnsense.org/_images/light_bulbs.png)
+[圖](https://docs.opnsense.org/_images/light_bulbs.png)
 
 ## Workflow
 
@@ -91,6 +89,3 @@ The status page connects to the backup host configured earlier and show all serv
 Tip
 
 Use the refresh button to update the backup node and restart all services at once.
-
----
-

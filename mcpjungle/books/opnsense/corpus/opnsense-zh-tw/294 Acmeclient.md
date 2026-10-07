@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:09.182Z"
 ---
 
-
 # Acmeclient
-
 
 *資源（AccountsController.php）*
 
@@ -103,6 +101,3 @@ captured: "2026-09-26T11:34:09.182Z"
 | `POST` | acmeclient | 驗證 | 更新 | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [AcmeClient.xml](https://github.com/opnsense/plugins/blob/master/security/acme-client/src/opnsense/mvc/app/models/OPNsense/AcmeClient/AcmeClient.xml) |
-
----
-

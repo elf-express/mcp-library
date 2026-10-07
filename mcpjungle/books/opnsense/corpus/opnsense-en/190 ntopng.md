@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:16.560Z"
 ---
 
-
 # ntopng
-
 
 ## Installation
 
@@ -35,6 +33,3 @@ The port ntopng’s UI should listen on. When you leave it on the default just o
 DNS Mode
 
 Here you can choose if ntopng should try to resolve IPs to host names.
-
----
-

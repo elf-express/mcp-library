@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:00.100Z"
 ---
 
-
 # Firewall
-
 
 The firewall API offers a way for machine to machine interaction between custom applications and OPNsense, it is part of the core system.
 
@@ -299,6 +297,3 @@ if r.status_code == 200:
     else:
         print("rule %s not found" % rule_description)
 ```
-
----
-

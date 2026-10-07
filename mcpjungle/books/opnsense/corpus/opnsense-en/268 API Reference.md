@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:56.573Z"
 ---
 
-
 # API Reference
-
 
 ## Introduction
 
@@ -186,6 +184,3 @@ When more detailed information is needed, best read the [Architecture](<242 Arch
 The business edition comes packed with some additional features which could also be used for integration purposes from third-party applications. The most relevant ones will be explained in this section.
 
 -   [OPNBECore](<364 OPNBECore.md>)
-
----
-

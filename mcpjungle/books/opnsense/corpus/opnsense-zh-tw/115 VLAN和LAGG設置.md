@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:32:38.363Z"
 ---
 
-
 # VLAN和LAGG設置
-
 
 ## [VLAN和LAGG設定](#id1)
 
@@ -188,6 +186,3 @@ OPNsense 負責在 VLAN 之間路由資料包。
 注意事項
 
 只有路由流量才能被中央防火牆過濾。同一VLAN中的設備透過使用ARP或NDP來發現其鄰居，從而直接通訊。
-
----
-

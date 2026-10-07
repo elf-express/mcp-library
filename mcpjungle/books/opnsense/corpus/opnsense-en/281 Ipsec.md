@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:03.142Z"
 ---
 
-
 # Ipsec
-
 
 *Resources (ConnectionsController.php)*
 
@@ -184,6 +182,3 @@ captured: "2026-09-26T11:34:03.142Z"
 | `POST` | ipsec | vti | toggle | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Swanctl.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/IPsec/Swanctl.xml) |
-
----
-

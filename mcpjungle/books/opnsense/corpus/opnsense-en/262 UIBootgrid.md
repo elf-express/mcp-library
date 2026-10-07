@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:53.586Z"
 ---
 
-
 # UIBootgrid
-
 
 The UIBootgrid system is a wrapper around [Tabulator](https://tabulator.info/) and provides a generic table system that is reusable on all pages requiring data listing and manipulation.
 
@@ -375,6 +373,3 @@ Enable or disable grid persistence (column setup in local storage). Expects a bo
 ## Other components
 
 If an `apply` button is rendered on the page through [$.SimpleActionButton](<261 View construction (and tools).md#simpleactionbutton>), :`UIBootgrid` will automatically signal to that element to prompt the user to apply if something in the grid changed, e.g. when a row has been edited. Internally it does this by simply calling `$(document).trigger("settings-changed");`.
-
----
-

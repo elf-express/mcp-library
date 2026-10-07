@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:28.956Z"
 ---
 
-
 # Nrpe
-
 
 *Resources (CommandController.php)*
 
@@ -45,6 +43,3 @@ captured: "2026-09-26T11:34:28.956Z"
 | `POST` | nrpe | service | start |  |
 | `GET` | nrpe | service | status |  |
 | `POST` | nrpe | service | stop |  |
-
----
-

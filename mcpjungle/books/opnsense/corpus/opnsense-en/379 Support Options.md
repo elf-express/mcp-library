@@ -8,7 +8,6 @@ translated_by: "original"
 captured: "2026-09-26T11:34:52.534Z"
 ---
 
-
 # Support Options
 
 
@@ -219,6 +218,3 @@ Below you will find the plugins available in the standard (community) version of
 | www/OPNProxy | OPNsense proxy additions to support more fine grained access management |
 | www/squid | Squid is a fully-featured HTTP, HTTPS, FTP, etc. proxy offering rich access control, authorization and logging environment to develop web proxy and content serving applications. |
 | www/web-proxy-sso | Allow to use the web proxy with Single Sign-On against an Active Directory instead of using a bundled authentication. |
-
----
-

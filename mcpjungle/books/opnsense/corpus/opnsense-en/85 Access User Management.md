@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:32:23.383Z"
 ---
 
-
 # Access User Management
-
 
 ## Access / User Management
 
-[圖：../_images/user_manager.png](https://docs.opnsense.org/_images/user_manager.png)
+[圖](https://docs.opnsense.org/_images/user_manager.png)
 
 The user manager of OPNsense allows for controlling access to the different part (pages) of the configurator as well as controlling access to particular services on a per user bases.
 
@@ -145,6 +143,3 @@ Note
 When using external authentication services (such as ldap), the firewall needs a route to the configured target machine in order to function properly. Specifically when the server is only reachable over a classic IPsec tunnel (non VTI), a static route might be needed to guide the packets into the right tunnel matching the policy. (for example when a policy for LAN exists, add a gateway pointing to our own address and a static routing pusing traffic to the other end).
 
 A quick test if the routes are properly setup can always be performed using ping from the `default` source address.
-
----
-

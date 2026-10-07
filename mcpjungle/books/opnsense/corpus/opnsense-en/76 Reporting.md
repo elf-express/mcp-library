@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:18.336Z"
 ---
 
-
 # Reporting
 
-
-[圖：_images/freelance-graphs-laptop-34069.jpg](https://docs.opnsense.org/_images/freelance-graphs-laptop-34069.jpg)
+[圖](https://docs.opnsense.org/_images/freelance-graphs-laptop-34069.jpg)
 
 Your firewall collects quite some information about its health and workload, the reporting section will provide insights into these.
 
@@ -28,6 +26,3 @@ Your firewall collects quite some information about its health and workload, the
 ## Setup guides
 
 -   [Configure Netflow Exporter](<83 Configure Netflow Exporter.md>)
-
----
-

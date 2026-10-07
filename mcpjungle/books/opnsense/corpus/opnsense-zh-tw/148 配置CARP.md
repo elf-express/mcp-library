@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:56.613Z"
 ---
 
-
 # 配置CARP
-
 
 -   [概述](#overview)
     
@@ -80,7 +78,7 @@ captured: "2026-09-26T11:32:56.613Z"
 
 OPNsense 更強大的功能之一是設定具有自動故障轉移選項的冗餘防火牆。本章逐步介紹如何建立基於兩個網路的設定。 192.168.1.0/24 將用於內部網絡，172.18.0.0/24 將用於將我們的流量路由到互聯網。
 
-[圖：../../_images/900px-Carp_setup_example.png](https://docs.opnsense.org/_images/900px-Carp_setup_example.png)
+[圖](https://docs.opnsense.org/_images/900px-Carp_setup_example.png)
 
 當使用 CARP（[FreeBSD CARP 手冊](https://www.freebsd.org/doc/handbook/carp.html)）時，所有故障安全介面都應該有一個專用 IP 位址，該位址將與一個共享虛擬 IP 位址結合，以便與兩個網路進行通訊。上圖中，虛線用於標記虛擬位址。
 
@@ -561,6 +559,3 @@ sysctl net.inet.carp.demotion=<signed demotion factor>
 -   堆疊交換器配置（例如 Cisco StackWise Virtual、Juniper VC），或
     
 -   支援 MLAG 的結構（例如 Arista MLAG、Extreme XOS MLAG）
-
----
-

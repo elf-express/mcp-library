@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:37.501Z"
 ---
 
-
 # Stunnel
-
 
 *Service (ServiceController.php)*
 
@@ -36,6 +34,3 @@ captured: "2026-09-26T11:34:37.501Z"
 | `POST` | stunnel | services | toggle\_item | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Stunnel.xml](https://github.com/opnsense/plugins/blob/master/security/stunnel/src/opnsense/mvc/app/models/OPNsense/Stunnel/Stunnel.xml) |
-
----
-

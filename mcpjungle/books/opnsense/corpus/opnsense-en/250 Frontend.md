@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:47.438Z"
 ---
 
-
 # Frontend
-
 
 The OPNsense frontend is implemented with [PHP/Phalcon](https://en.wikipedia.org/wiki/Phalcon_\(framework\)).
 
@@ -29,6 +27,3 @@ The OPNsense frontend is implemented with [PHP/Phalcon](https://en.wikipedia.org
 -   [View construction (and tools)](<261 View construction (and tools).md>)
 -   [UIBootgrid](<262 UIBootgrid.md>)
 -   [Dashboard widgets](<263 Dashboard widgets.md>)
-
----
-

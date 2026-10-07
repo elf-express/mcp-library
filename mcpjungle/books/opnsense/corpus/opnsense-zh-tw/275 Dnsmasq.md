@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:59.587Z"
 ---
 
-
 # Dnsmasq
-
 
 *資源（LeasesController.php）*
 
@@ -69,6 +67,3 @@ captured: "2026-09-26T11:33:59.587Z"
 | `POST` | dnsmasq | 設定 | upload\_hosts | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Dnsmasq.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Dnsmasq/Dnsmasq.xml) |
-
----
-

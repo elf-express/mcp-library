@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:11.505Z"
 ---
 
-
 # Caching Proxy
-
 
 
 
@@ -164,6 +162,3 @@ More information on how to utilize OPNsense’s proxy service can be found in:
 -   [Setup Anti Virus Protection using OPNsense Plugins](https://docs.opnsense.org/manual/how-tos/proxyicapantivirusinternal.html)
 -   [Setup Transparent Proxy](https://docs.opnsense.org/manual/how-tos/proxytransparent.html)
 -   [Setup Web Filtering](https://docs.opnsense.org/manual/how-tos/proxywebfilter.html)
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:50.242Z"
 ---
 
-
 # Deciso B.V.
-
 
 
 
@@ -35,6 +33,3 @@ Deciso founded OPNsense and offers the project a stable environment. The company
 Our extensive knowledge of software development provides the OPNsense community with a modern and professional approach and results in maintainable software.
 
 In its effort to create the most widely used open source security platform, Deciso has been joined by multiple partners who share the same views on open and transparent software.
-
----
-

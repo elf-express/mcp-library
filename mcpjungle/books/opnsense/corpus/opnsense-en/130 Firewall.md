@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:46.071Z"
 ---
 
-
 # Firewall
 
-
-[圖：_images/architecture-buildings-city-327345.jpg](https://docs.opnsense.org/_images/architecture-buildings-city-327345.jpg)
+[圖](https://docs.opnsense.org/_images/architecture-buildings-city-327345.jpg)
 
 To manage traffic flowing through your security appliance, a broad range of filtering and shaping features is available. These are all combined in the firewall section.
 
@@ -44,6 +42,3 @@ To manage traffic flowing through your security appliance, a broad range of filt
 -   [Organize PF Rules by Category](<151 Organize PF Rules by Category.md>)
 -   [Configure Spamhaus DROP](<152 Configure Spamhaus DROP.md>)
 -   [Security Zones](<153 Security Zones.md>)
-
----
-

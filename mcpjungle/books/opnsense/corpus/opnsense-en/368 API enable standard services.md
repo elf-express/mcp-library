@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:46.688Z"
 ---
 
-
 # API enable standard services
-
 
 OPNsense contains a simple wrapper which handles standard service actions like starting and stopping services. For this example, we assume the HelloWorld example is created and the model exists.
 
@@ -132,6 +130,3 @@ When deploying this controller into the HelloWorld module it would expose the fo
 | `POST` | /api/helloworld/service/restart |
 | `POST` | /api/helloworld/service/reconfigure |
 | `GET` | /api/helloworld/service/status |
-
----
-

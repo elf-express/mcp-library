@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:06.041Z"
 ---
 
-
 # Web Application Firewall
-
 
 ## [Web Application Firewall](#id4)
 
@@ -115,7 +113,7 @@ In order to use the integrated ACME client (for Let’s Encrypt), the ACME enabl
 
 Optionally a permanent redirect from HTTP to HTTPS can be enabled for all virtual servers. The HTTP port can be customized if necessary by enabling the advanced mode. Do not forget to create an additional firewall rule to allow access to the HTTP Port. When it is non standard, a port forward is necessary (e.g., listen on 8080, forward 80 to 8080).
 
-[圖：../../_images/OPNWAF_settings.png](https://docs.opnsense.org/_images/OPNWAF_settings.png)
+[圖](https://docs.opnsense.org/_images/OPNWAF_settings.png)
 
 Web protection is not enabled by default, but you can enable it in the Web protection tab. This is also the place to configure the module and settings which apply for all virtual hosts.
 
@@ -460,7 +458,7 @@ When web protection was enabled, we always advise to test if it’s actually fun
 
 This should show a page similar to the one below:
 
-[圖：../../_images/OPNWAF_forbidden.png](https://docs.opnsense.org/_images/OPNWAF_forbidden.png)
+[圖](https://docs.opnsense.org/_images/OPNWAF_forbidden.png)
 
 When deploying web protection for virtual servers, start with the Detection Only setting that can be set per virtual server. This way, you can evaluate the Web Security log file, and look for rules that match.
 
@@ -655,6 +653,3 @@ If the server behaves unexpected, checking the current requests and server load 
 Tip
 
 Server statistics are API enabled, meaning you could export them to an external monitoring system. Since they are not stored on disk, persistence requires external polling.
-
----
-

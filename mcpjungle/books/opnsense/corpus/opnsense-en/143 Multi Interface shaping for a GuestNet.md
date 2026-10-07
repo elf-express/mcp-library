@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:53.348Z"
 ---
 
-
 # Multi Interface shaping for a GuestNet
-
 
 One of the options with OPNsense’s traffic shaper is its ability to add shaping rules based upon two interfaces. This option allows you to shape traffic differently based on the direction the traffic is moving between interfaces.
 
@@ -87,6 +85,3 @@ Create a rule for the upload traffic
 | **description** | GuestNetUpload | *Enter a descriptive name* |
 
 Now press apply to activate the traffic shaping rules.
-
----
-

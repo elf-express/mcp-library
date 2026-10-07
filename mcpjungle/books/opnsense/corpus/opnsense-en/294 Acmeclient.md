@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:09.182Z"
 ---
 
-
 # Acmeclient
-
 
 *Resources (AccountsController.php)*
 
@@ -103,6 +101,3 @@ captured: "2026-09-26T11:34:09.182Z"
 | `POST` | acmeclient | validations | update | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [AcmeClient.xml](https://github.com/opnsense/plugins/blob/master/security/acme-client/src/opnsense/mvc/app/models/OPNsense/AcmeClient/AcmeClient.xml) |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:29.953Z"
 ---
 
-
 # Snapshots
-
 
 ## [Snapshots](#id1)
 
@@ -173,6 +171,3 @@ Snapshots can be kept for a while after an upgrade, to have the option to roll b
 Note
 
 [Creating a Snapshot](#snapshot-creating) can be repeated to retry the major upgrade. Refer to the [Recommended Workflow](#snapshot-recommended-workflow) for a quick overview.
-
----
-

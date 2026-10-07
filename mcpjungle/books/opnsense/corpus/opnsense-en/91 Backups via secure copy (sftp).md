@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:25.909Z"
 ---
 
-
 # Backups via secure copy (sftp)
-
 
 When your remote host supports SSH, it’s often possible to use sftp as well, which can be used for file transfers in a secure manner between machines (in this case your firewall and the backup target).
 
@@ -87,6 +85,3 @@ After willing in the details, press “Setup/Test sftp” to validate if it work
 Tip
 
 For advanced debugging use sftp on the command line, this plugin uses the same tool and reports the same errors.
-
----
-

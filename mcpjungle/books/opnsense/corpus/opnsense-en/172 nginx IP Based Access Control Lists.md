@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:08.996Z"
 ---
 
-
 # nginx IP Based Access Control Lists
-
 
 ## nginx: IP Based Access Control Lists
 
@@ -47,6 +45,3 @@ In the last step, the user list must be added to the object, that supports it. A
 
 
 After saving the location and restarting nginx, you are done.
-
----
-

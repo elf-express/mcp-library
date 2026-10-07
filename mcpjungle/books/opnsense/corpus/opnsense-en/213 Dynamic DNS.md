@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:28.728Z"
 ---
 
-
 # Dynamic DNS
-
 
 In order to update DNS records when the firewall’s IP address changes, use a dynamic DNS service provider.
 
@@ -113,6 +111,3 @@ Mythic Beasts is a UK based hosting provider who offers an API for DNS manipulat
 | --- | --- |
 | Username | Key ID |
 | Password | Secret |
-
----
-

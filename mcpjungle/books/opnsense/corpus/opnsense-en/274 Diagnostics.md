@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:59.100Z"
 ---
 
-
 # Diagnostics
-
 
 *Resources (ActivityController.php)*
 
@@ -194,6 +192,3 @@ captured: "2026-09-26T11:33:59.100Z"
 | `GET` | diagnostics | traffic | \_interface |  |
 | `GET` | diagnostics | traffic | \_top | $interfaces |
 | `GET` | diagnostics | traffic | stream | $poll\_interval=1 |
-
----
-

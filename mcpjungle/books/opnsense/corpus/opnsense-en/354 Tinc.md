@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:39.547Z"
 ---
 
-
 # Tinc
-
 
 *Service (ServiceController.php)*
 
@@ -39,6 +37,3 @@ captured: "2026-09-26T11:34:39.547Z"
 | `POST` | tinc | settings | toggle\_network | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Tinc.xml](https://github.com/opnsense/plugins/blob/master/security/tinc/src/opnsense/mvc/app/models/OPNsense/Tinc/Tinc.xml) |
-
----
-

@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:07.236Z"
 ---
 
-
 # Installation and setup
 
-
-[圖：_images/architect-architecture-black-and-white-1537008.jpg](https://docs.opnsense.org/_images/architect-architecture-black-and-white-1537008.jpg)
+[圖](https://docs.opnsense.org/_images/architect-architecture-black-and-white-1537008.jpg)
 
 When your device wasn’t shipped with OPNsense® [pre-installed](https://shop.opnsense.com/), you can find how to install it yourself and which hardware platforms are supported in this chapter.
 
@@ -31,6 +29,3 @@ When your device wasn’t shipped with OPNsense® [pre-installed](https://shop.o
 -   [Installing OPNsense AWS image](<61 Installing OPNsense AWS image.md>)
 -   [Installing OPNsense OVA image](<62 Installing OPNsense OVA image.md>)
 -   [OPNsense Azure Virtual Appliance](<63 OPNsense Azure Virtual Appliance.md>)
-
----
-

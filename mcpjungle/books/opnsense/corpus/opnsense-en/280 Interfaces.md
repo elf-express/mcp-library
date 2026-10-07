@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:02.110Z"
 ---
 
-
 # Interfaces
-
 
 *Resources (BridgeSettingsController.php)*
 
@@ -168,6 +166,3 @@ captured: "2026-09-26T11:34:02.110Z"
 | `POST` | interfaces | vxlan\_settings | set\_item | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [VxLan.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Interfaces/VxLan.xml) |
-
----
-

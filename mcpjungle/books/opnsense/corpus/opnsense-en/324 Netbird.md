@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:25.378Z"
 ---
 
-
 # Netbird
-
 
 *Resources (AuthenticationController.php)*
 
@@ -52,6 +50,3 @@ captured: "2026-09-26T11:34:25.378Z"
 | `GET` | netbird | status | status |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Status.xml](https://github.com/opnsense/plugins/blob/master/security/netbird/src/opnsense/mvc/app/models/OPNsense/Netbird/Status.xml) |
-
----
-

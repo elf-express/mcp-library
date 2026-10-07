@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:38.526Z"
 ---
 
-
 # Tailscale
-
 
 *Resources (AuthenticationController.php)*
 
@@ -57,6 +55,3 @@ captured: "2026-09-26T11:34:38.526Z"
 | `GET` | tailscale | status | status |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Status.xml](https://github.com/opnsense/plugins/blob/master/security/tailscale/src/opnsense/mvc/app/models/OPNsense/Tailscale/Status.xml) |
-
----
-

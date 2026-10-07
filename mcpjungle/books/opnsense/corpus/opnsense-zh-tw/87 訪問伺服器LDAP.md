@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:32:23.887Z"
 ---
 
-
 # 訪問伺服器LDAP
-
 
 ## 訪問 / 伺服器 / LDAP
 
@@ -65,7 +63,7 @@ LDAP亦可與 [雙重認證](<89 雙重身份驗證.md>)結合使用
 
 點擊身份驗證容器旁的**選擇**按鈕後，將顯示類似以下內容：
 
-[圖：../../_images/ldap_selectcontainer.png](https://docs.opnsense.org/_images/ldap_selectcontainer.png)
+[圖](https://docs.opnsense.org/_images/ldap_selectcontainer.png)
 
 注意事項
 
@@ -75,7 +73,7 @@ LDAP亦可與 [雙重認證](<89 雙重身份驗證.md>)結合使用
 
 **擴充查詢**可用於選擇屬於特定群組成員的使用者（僅在不使用本機使用者資料庫時與外部服務相關）。人們可以使用這樣的東西：**memberOf=CN=myGroup,CN=Users,DC=opnsense,DC=local**來只選擇群組*「myGroup」*的成員。若要將使用者新增至 Windows 下的特定群組，只需編輯群組屬性並選擇 **新增...**在選項卡**成員** 下新增使用者。
 
-[圖：../../_images/ldap_mygroup_properties.png](https://docs.opnsense.org/_images/ldap_mygroup_properties.png)
+[圖](https://docs.opnsense.org/_images/ldap_mygroup_properties.png)
 
 提示
 
@@ -101,7 +99,7 @@ LDAP亦可與 [雙重認證](<89 雙重身份驗證.md>)結合使用
 
 若要測試伺服器是否配置正確，請前往 System ‣ Access ‣ Tester 並選擇您的 LDAP 伺服器並輸入有效的使用者名稱 + 密碼。點擊**測試**，如果一切設定正確，它將顯示：
 
-[圖：../../_images/ldap_testok.png](https://docs.opnsense.org/_images/ldap_testok.png)
+[圖](https://docs.opnsense.org/_images/ldap_testok.png)
 
 注意事項
 
@@ -109,7 +107,7 @@ LDAP亦可與 [雙重認證](<89 雙重身份驗證.md>)結合使用
 
 否則（或您輸入的憑證無效）：
 
-[圖：../../_images/ldap_testfail.png](https://docs.opnsense.org/_images/ldap_testfail.png)
+[圖](https://docs.opnsense.org/_images/ldap_testfail.png)
 
 提示
 
@@ -124,6 +122,3 @@ LDAP亦可與 [雙重認證](<89 雙重身份驗證.md>)結合使用
 在將 GUI 存取權限變更為需要LDAP之前，請確保至少有一個使用者被允許使用遠端憑證存取防火牆。這可以透過向該使用者新增`All pages`權限，或確保該使用者是具有該權限的使用者群組的成員來實現。
 
 為防止被鎖定，您可以在測試期間新增「本機資料庫」作為輔助選項。
-
----
-

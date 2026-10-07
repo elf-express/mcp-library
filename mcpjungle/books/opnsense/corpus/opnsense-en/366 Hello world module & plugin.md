@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:34:45.939Z"
 ---
 
-
 # Hello world module & plugin
-
 
 Creating the hello world module
 
-[圖：../../_images/Hello-World.jpg](https://docs.opnsense.org/_images/Hello-World.jpg)
+[圖](https://docs.opnsense.org/_images/Hello-World.jpg)
 
 ## Goal
 
@@ -802,6 +800,3 @@ Reference
 -   OPNsense architecture [Architecture](<242 Architecture.md>)
     
 -   OPNsense creating models [Develop:Frontend/Creating\_models](https://docs.opnsense.org/index.php/Develop:Frontend/Creating_models)
-
----
-

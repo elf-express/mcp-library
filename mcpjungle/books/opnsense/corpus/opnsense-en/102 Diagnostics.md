@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:32.958Z"
 ---
 
-
 # Diagnostics
-
 
 ## Activity
 
@@ -34,6 +32,3 @@ The activity module shows current active processes and their details, you can se
 ## Services
 
 The services page shows the configured services and status, you can stop/start/restart all of them here.
-
----
-

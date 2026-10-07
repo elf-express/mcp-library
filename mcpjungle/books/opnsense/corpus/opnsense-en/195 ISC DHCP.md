@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:19.593Z"
 ---
 
-
 # ISC DHCP
-
 
 ## [ISC DHCP](#id2)
 
@@ -107,6 +105,3 @@ As mentioned in the settings overview, the current leased IP addresses can be se
 -   For DHCPv6, a MAC address will be shown if it exists in the NDP table or if the MAC address exists in the DUID, but only if this MAC address maps to a known vendor. This is because a MAC address cannot reliably be fetched from a DUID.
     
 -   The DHCPv6 leases page also shows the delegated prefixes in a separate tab.
-
----
-

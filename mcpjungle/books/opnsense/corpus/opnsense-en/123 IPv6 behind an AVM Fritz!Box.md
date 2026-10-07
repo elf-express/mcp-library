@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:42.712Z"
 ---
 
-
 # IPv6 behind an AVM Fritz!Box
-
 
 **Original Author:** Thomas Klein
 
@@ -108,6 +106,3 @@ While discovering the specifics of IPv6 behind a FB in combination with OPNsense
 In the directory /tmp/ you will find several IPv6 related intermediate files. The most helpful here was /tmp/<interfacename>\_prefixv6. In this file you will find the prefix delegated to you by your upstream router. If you are behind an FB and this file does not exist chances are you forgot to set the **Request only an IPv6 prefix** setting on the WAN interface.
 
 Another helpful command is radvdump. This tool dumps the output of the router advertisements in a nicely formatted way.
-
----
-

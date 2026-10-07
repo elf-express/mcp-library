@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:11.209Z"
 ---
 
-
 # Caddy
-
 
 *Resources (DiagnosticsController.php)*
 
@@ -97,6 +95,3 @@ captured: "2026-09-26T11:34:11.209Z"
 | `GET` | caddy | service | status |  |
 | `POST` | caddy | service | stop |  |
 | `GET` | caddy | service | validate |  |
-
----
-

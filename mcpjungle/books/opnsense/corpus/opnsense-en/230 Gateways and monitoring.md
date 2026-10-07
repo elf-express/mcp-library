@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:36.851Z"
 ---
 
-
 # Gateways and monitoring
-
 
 The address you are trying to monitor should be reachable using the interface the gateway is attached to, either directly or using a static route (check System ‣ Routes ‣ Status).
 
@@ -27,6 +25,3 @@ This message usually means that the configured gateway lies outside the configur
 Tip
 
 Double check the subnets of your interface and virtual IP’s, you can also use Interfaces ‣ Overview for a quick list of all configured addresses.
-
----
-

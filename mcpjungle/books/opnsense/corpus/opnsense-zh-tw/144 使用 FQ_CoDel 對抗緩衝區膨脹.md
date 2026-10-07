@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:54.355Z"
 ---
 
-
 # 使用 FQ_CoDel 對抗緩衝區膨脹
-
 
 ## 使用 FQ\_CoDel 對抗緩衝膨脹
 
@@ -167,15 +165,15 @@ target、interval、ECN實際上指的是隊列中的CoDel而不是FQ\_CoDel
 
 **波形速度測試** [https://www.waveform.com/tools/bufferbloat](https://www.waveform.com/tools/bufferbloat)
 
-[圖：../../_images/waveform_bufferbloat_test_post_config_tuning.png](https://docs.opnsense.org/_images/waveform_bufferbloat_test_post_config_tuning.png)
+[圖](https://docs.opnsense.org/_images/waveform_bufferbloat_test_post_config_tuning.png)
 
 **Cloudflare** [https://speed.cloudflare.com/](https://speed.cloudflare.com/)
 
-[圖：../../_images/cloudflare_speedtest.png](https://docs.opnsense.org/_images/cloudflare_speedtest.png)
+[圖](https://docs.opnsense.org/_images/cloudflare_speedtest.png)
 
 **Speedtest.net** [http://speedtest.net](http://speedtest.net/)
 
-[圖：../../_images/speedtest_net.png](https://docs.opnsense.org/_images/speedtest_net.png)
+[圖](https://docs.opnsense.org/_images/speedtest_net.png)
 
 ## 調音FQ\_CoDel
 
@@ -317,6 +315,3 @@ ECN IS 對於家庭路由器上的下行鏈路非常有用，其中終止跳點�
 -   [https://bugs.freebsd.org/bugzilla/show\_bug.cgi?id=276890](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276890)
     
 -   [https://marc.info/?t=170776797300003&r=1&w=2](https://marc.info/?t=170776797300003&r=1&w=2)
-
----
-

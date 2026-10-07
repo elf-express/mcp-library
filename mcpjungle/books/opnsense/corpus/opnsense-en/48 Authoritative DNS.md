@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:04.743Z"
 ---
 
-
 # Authoritative DNS
-
 
 ## [Authoritative DNS](#id1)
 
@@ -721,6 +719,3 @@ Attention
 A query for `host.internal` only reaches the local zone when Unbound has a forwarding entry for `internal`.
 
 Without forwarding, Unbound tries to resolve the name normally and does not automatically know about the locally hosted zone.
-
----
-

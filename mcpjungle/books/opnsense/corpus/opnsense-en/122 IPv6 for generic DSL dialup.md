@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:43.796Z"
 ---
 
-
 # IPv6 for generic DSL dialup
-
 
 ## Introduction
 
@@ -47,6 +45,3 @@ Then change to Interfaces ‣ \[LAN\] and set **IPv6 Configuration Type** to **T
 Hit Apply and disable/enable the NICs of your internal systems. Depending on the system and vendor, also a reboot could be required.
 
 If you experience problems with the 24h disconnect disrupting connectivity, it may help to set **Prevent Release** in section Interfaces ‣ Settings.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:32.011Z"
 ---
 
-
 # Proxysso
-
 
 *Service (ServiceController.php)*
 
@@ -28,6 +26,3 @@ captured: "2026-09-26T11:34:32.011Z"
 | --- | --- | --- | --- | --- |
 | `GET` | proxysso | settings | get |  |
 | `POST` | proxysso | settings | set |  |
-
----
-

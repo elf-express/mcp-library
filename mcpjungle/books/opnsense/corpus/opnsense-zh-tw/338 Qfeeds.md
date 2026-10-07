@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:31.458Z"
 ---
 
-
 # Qfeeds
-
 
 *資源（SettingsController.php）*
 
@@ -24,6 +22,3 @@ captured: "2026-09-26T11:34:31.458Z"
 | `GET` | qfeeds | 設定 | 統計 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Connector.xml](https://github.com/opnsense/plugins/blob/master/security/q-feeds-connector/src/opnsense/mvc/app/models/OPNsense/QFeeds/Connector.xml) |
-
----
-

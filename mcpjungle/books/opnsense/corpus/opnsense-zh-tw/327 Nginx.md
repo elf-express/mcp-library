@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:26.434Z"
 ---
 
-
 # Nginx
-
 
 *資源（BansController.php）*
 
@@ -160,6 +158,3 @@ captured: "2026-09-26T11:34:26.434Z"
 | `GET` | nginx | 設定 | 測試配置 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Nginx.xml](https://github.com/opnsense/plugins/blob/master/www/nginx/src/opnsense/mvc/app/models/OPNsense/Nginx/Nginx.xml) |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:38.363Z"
 ---
 
-
 # VLAN and LAGG Setup
-
 
 ## [VLAN and LAGG Setup](#id1)
 
@@ -187,6 +185,3 @@ It is the default gateway in VLAN 5, 20 and 33. It will receive packets with des
 Note
 
 Only routed traffic can be filtered by a central firewall. Devices in the same VLAN communicate directly by using ARP or NDP to discover their neighbors.
-
----
-

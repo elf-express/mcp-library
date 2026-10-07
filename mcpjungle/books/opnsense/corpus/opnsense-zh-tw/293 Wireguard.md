@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:08.675Z"
 ---
 
-
 # Wireguard
-
 
 *資源（ClientController.php）*
 
@@ -67,6 +65,3 @@ captured: "2026-09-26T11:34:08.675Z"
 | `POST` | WireGuard | 服務 | 開始 | |
 | `GET` | WireGuard | 服務 | 狀態 | |
 | `POST` | 線護罩 | 服務 | 停止 | |
-
----
-

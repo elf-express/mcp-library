@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:22.132Z"
 ---
 
-
 # Captive portal & GuestNET
-
 
 A **Captive Portal** allows you to force authentication, or redirection to a click through page for network access. This is commonly used on hotspot networks, but is also widely used in corporate networks for an additional layer of security on wireless or Internet access.
 
@@ -345,6 +343,3 @@ Any traffic originating from a client that is not DNS or access to the portal we
 | **Destination** | \_\_captiveportal\_zone\_<zone id> |
 
 After the above rules, an explicit pass rule is still required to allow clients to go to the internet, as would normally be the case on any interface that has no firewall rules defined.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:41.550Z"
 ---
 
-
 # Vnstat
-
 
 *Resources (GeneralController.php)*
 
@@ -35,6 +33,3 @@ captured: "2026-09-26T11:34:41.550Z"
 | `GET` | vnstat | service | status |  |
 | `POST` | vnstat | service | stop |  |
 | `GET` | vnstat | service | yearly |  |
-
----
-

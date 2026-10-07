@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:18.269Z"
 ---
 
-
 # Ftpproxy
-
 
 *Service (ServiceController.php)*
 
@@ -33,6 +31,3 @@ captured: "2026-09-26T11:34:18.269Z"
 | `GET` | ftpproxy | settings | search\_proxy |  |
 | `POST` | ftpproxy | settings | set\_proxy | $uuid |
 | `POST` | ftpproxy | settings | toggle\_proxy | $uuid |
-
----
-

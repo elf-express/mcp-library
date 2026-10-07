@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:32.284Z"
 ---
 
-
 # Zenarmor Installing via Command Line
-
 
 ## Zenarmor : Installing via Command Line
 
@@ -28,7 +26,7 @@ You may install Zenarmor if you have local system access to OPNsense or remote a
 
 When you have local access to OPNsense, you may simply log into OPNsense using the “root” user or another administrator account. You should see a list of OPNsense menu options.
 
-[圖：../../_images/opnsense-direct-system-access.png](https://docs.opnsense.org/_images/opnsense-direct-system-access.png)
+[圖](https://docs.opnsense.org/_images/opnsense-direct-system-access.png)
 
 ### SSH Access
 
@@ -38,7 +36,7 @@ If you only have shell access to OPNsense, you may install Zenarmor remotely by 
 $ ssh root@your-firewall-ip
 ```
 
-[圖：../../_images/opnsense-ssh-login.png](https://docs.opnsense.org/_images/opnsense-ssh-login.png)
+[圖](https://docs.opnsense.org/_images/opnsense-ssh-login.png)
 
 ### Download & Run Zenarmor Installer
 
@@ -57,6 +55,3 @@ This will copy the installation files onto the filesystem and will add a top-lev
 Once the installation has been completed, you may disconnect from your terminal session.
 
 You will now need to complete the “Initial Configuration Wizard” for Zenarmor to be fully operational. See the [Initial Configuration Wizard](<220 Zenarmor (Sensei) Installing via Web Interface.md#sensei-initial-configuration-wizard>) section for information.
-
----
-

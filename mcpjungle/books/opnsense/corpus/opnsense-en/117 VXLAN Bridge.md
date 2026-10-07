@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:40.041Z"
 ---
 
-
 # VXLAN Bridge
-
 
 ## [VXLAN Bridge](#id1)
 
@@ -220,6 +218,3 @@ For this step, using [Packet Capture](<114 Diagnostics.md#packet-capture>) is re
 Note
 
 These are some of the basic tests. If there are issues revisit each step of this setup guide. Since Layer 2 over Layer 3 tunnels can be brittle, there are a multitude of issues that often need to be resolved by network experts. When issues can not be resolved, using Layer 3 VPN routing between Sites is the best and most stable alternative.
-
----
-

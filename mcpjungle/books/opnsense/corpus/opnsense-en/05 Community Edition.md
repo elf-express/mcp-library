@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:31:43.350Z"
 ---
 
-
 # Community Edition
 
-
-[圖：_images/ideas_join_the_development.jpg](https://docs.opnsense.org/_images/ideas_join_the_development.jpg)
+[圖](https://docs.opnsense.org/_images/ideas_join_the_development.jpg)
 
 As of January 2015 there have been *351* releases leading to the latest version *26.7.4* named “Xenial Xenops”.
 
@@ -42,6 +40,3 @@ The list below contains all releases, ordered by version number categorized by m
 -   [16.1 “Crafty Coyote” Series](<27 16.1 “Crafty Coyote” Series.md>)
 -   [15.7 “Brave Badger” Series](<28 15.7 “Brave Badger” Series.md>)
 -   [15.1 “Ascending Albatross” Series](<29 15.1 “Ascending Albatross” Series.md>)
-
----
-

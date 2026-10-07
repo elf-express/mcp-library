@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:32.284Z"
 ---
 
-
 # 透過命令列安裝 Zenarmor
-
 
 ## Zenarmor：透過命令列安裝
 
@@ -29,7 +27,7 @@ captured: "2026-09-26T11:33:32.284Z"
 
 如果您擁有 OPNsense 的本機存取權限，只需使用「root」使用者或其他管理員帳戶登入 OPNsense 即可。您應該會看到 OPNsense 選單選項清單。
 
-[圖：../../_images/opnsense-direct-system-access.png](https://docs.opnsense.org/_images/opnsense-direct-system-access.png)
+[圖](https://docs.opnsense.org/_images/opnsense-direct-system-access.png)
 
 ### SSH訪問
 
@@ -39,7 +37,7 @@ captured: "2026-09-26T11:33:32.284Z"
 $ ssh root@your-firewall-ip
 ```
 
-[圖：../../_images/opnsense-ssh-login.png](https://docs.opnsense.org/_images/opnsense-ssh-login.png)
+[圖](https://docs.opnsense.org/_images/opnsense-ssh-login.png)
 
 ### 下載並運行 Zenarmor 安裝程序
 
@@ -58,6 +56,3 @@ pkg install os-sensei
 安裝完成後，您可以中斷與終端機會話的連線。
 
 現在您需要完成「初始設定精靈」才能讓 Zenarmor 完全正常運作。有關詳細信息，請參閱 [初始配置精靈](<220 Zenarmor（Sensei）透過網頁介面安裝.md#sensei-initial-configuration-wizard>)部分。
-
----
-

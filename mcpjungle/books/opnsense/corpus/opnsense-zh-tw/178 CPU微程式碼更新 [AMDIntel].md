@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:10.485Z"
 ---
 
-
 # CPU微程式碼更新 [AMDIntel]
-
 
 ## CPU微程式碼更新 \[ AMD /Intel\]
 
@@ -46,6 +44,3 @@ Microcode patch level: 0x800126f
 ```
 
 通常，製造商會發布補丁等級列表，例如AMD的補丁可以在 linux [原始碼](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amd-ucode/README)樹中找到。
-
----
-

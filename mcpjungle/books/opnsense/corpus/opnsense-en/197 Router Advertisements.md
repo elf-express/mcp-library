@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:20.609Z"
 ---
 
-
 # Router Advertisements
-
 
 ## [Router Advertisements](#id1)
 
@@ -146,6 +144,3 @@ To advertise a DHCPv6 server to clients, configure the available [modes](#radvd-
 For high availability with IPv6, static prefixes are a requirement for seamless failover.
 
 You can follow this setup example: [Configure CARP](<148 Configure CARP.md>)
-
----
-

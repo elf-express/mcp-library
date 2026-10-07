@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:22.327Z"
 ---
 
-
 # Maltrail
-
 
 *Resources (GeneralController.php)*
 
@@ -58,6 +56,3 @@ captured: "2026-09-26T11:34:22.327Z"
 | `POST` | maltrail | service | start |  |
 | `GET` | maltrail | service | status |  |
 | `POST` | maltrail | service | stop |  |
-
----
-

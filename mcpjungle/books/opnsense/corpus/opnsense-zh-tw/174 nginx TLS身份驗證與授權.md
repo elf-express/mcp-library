@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:08.475Z"
 ---
 
-
 # nginx TLS身份驗證與授權
-
 
 ## nginx： TLS身份驗證與授權
 
@@ -53,6 +51,3 @@ curl https://192.168.1.1:444/file.txt --cacert ../MyOPNsenseCA.crt
 curl https://192.168.1.1:444/file.txt --cert ../nginx_client_test_cert.crt --key ../nginx_client_test_cert.key --cacert ../MyOPNsenseCA.crt
 Hello World
 ```
-
----
-

@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:31.784Z"
 ---
 
-
 # Zenarmor（Sensei）硬體需求
-
 
 ## Zenarmor（Sensei）：硬體需求
 
@@ -68,6 +66,3 @@ Zenarmor 使用 Elasticsearch (https://en.wikipedia.org/wiki/Elasticsearch)或 M
 ```
 
 從 [版本0.7.0](https://www.zenarmor.com/docs/support/release-notes#07)開始，Zenarmor 會根據配置保留的歷史天數，使舊的報告資料過期，從而為最新資料釋放磁碟空間。
-
----
-

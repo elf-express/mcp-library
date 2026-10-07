@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:45.179Z"
 ---
 
-
 # Zabbix代理
-
 
 *資源（GeneralController.php）*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:45.179Z"
 | `POST` | zabbixproxy | 服務 | 啟動 | |
 | `GET` | zabbixproxy | 服務 | 狀態 | |
 | `POST` | zabbixproxy | 服務 | 停止 | |
-
----
-

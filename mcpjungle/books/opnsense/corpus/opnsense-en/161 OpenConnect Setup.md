@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:01.905Z"
 ---
 
-
 # OpenConnect Setup
-
 
 ## Introduction
 
@@ -37,6 +35,3 @@ Look out for errors like
 `To trust this server in future, perhaps add this to your command line: --servercert sha256:9f97a3395d18093a14f0d8e768dabee231af34d9ba35432dfe838d58dd633333`
 
 Now the field **Certificate Hash** comes into play, so please insert the string above without the hash size and set this one in field **Certificate Hash Type**.
-
----
-

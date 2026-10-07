@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:33:17.581Z"
 ---
 
-
 # Services
 
-
-[圖：_images/black-black-and-white-close-up-1496139.jpg](https://docs.opnsense.org/_images/black-black-and-white-close-up-1496139.jpg)
+[圖](https://docs.opnsense.org/_images/black-black-and-white-close-up-1496139.jpg)
 
 ---
 
@@ -49,6 +47,3 @@ Your security appliance comes with quite some services to ease network operation
 -   [Log Files](<206 Log Files.md>)
 -   [Monit](<207 Monit.md>)
 -   [Network Time](<208 Network Time.md>)
-
----
-

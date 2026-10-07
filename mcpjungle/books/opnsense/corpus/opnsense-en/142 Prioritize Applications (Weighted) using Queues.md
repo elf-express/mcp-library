@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:52.848Z"
 ---
 
-
 # Prioritize Applications (Weighted) using Queues
-
 
 By utilizing queues we can influence the bandwidth within a pipe and give certain applications more bandwidth than others based on a weighted algorithm.
 
@@ -117,7 +115,4 @@ Now press apply to activate the traffic shaping rules.
 
 *Screenshot Rules*
 
-[圖：../../_images/shaping_rules_s4.png](https://docs.opnsense.org/_images/shaping_rules_s4.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/shaping_rules_s4.png)

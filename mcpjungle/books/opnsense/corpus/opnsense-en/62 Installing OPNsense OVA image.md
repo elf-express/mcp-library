@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:11.274Z"
 ---
 
-
 # Installing OPNsense OVA image
-
 
 OPNsense is available as an Open Virtual Appliance (OVA) package, which can be deployed in various virtualization products (e.g. VMWare, Virtualbox).
 
@@ -22,7 +20,7 @@ In this document we describe the simple steps when deploying in VirtualBox, othe
 
 In the top menu, choose File ‣ Import appliance and select the image you downloaded, it should show a dialog like the following.
 
-[圖：../../_images/ova_import_dialog_1.png](https://docs.opnsense.org/_images/ova_import_dialog_1.png)
+[圖](https://docs.opnsense.org/_images/ova_import_dialog_1.png)
 
 Just click import, accept the license and the image should be transferred to your machine.
 
@@ -37,6 +35,3 @@ Please be aware that the order of the network cards in the virtualization produc
 ## Step 3 - Initial configuration
 
 The virtual machine is operational now, initial configuration is performed similar to other setups, as described in [Initial Installation & Configuration](<55 Initial Installation & Configuration.md>).
-
----
-

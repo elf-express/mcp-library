@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:14.049Z"
 ---
 
-
 # Cloud Backup Nextcloud
-
 
 ## Cloud Backup / Nextcloud
 
@@ -63,6 +61,3 @@ If you open it, you will see at lease a single backed up configuration file:
 
 
 References
-
----
-

@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:59.393Z"
 ---
 
-
 # WireGuard Road Warrior 設置
-
 
 ## 介紹
 
@@ -347,6 +345,3 @@ PrivateKey = YNqHwpcAmVj0lVzPSt3oUnL7cRPKB/geVxccs0C0kk0=
 PublicKey = CLnGaiAfyf6kTBJKh0M529MnlqfFqoWJ5K4IAJ2+X08=
 AllowedIPs = 10.10.10.2/32, fd00:1234:abcd:ef09:10:2/128
 ```
-
----
-

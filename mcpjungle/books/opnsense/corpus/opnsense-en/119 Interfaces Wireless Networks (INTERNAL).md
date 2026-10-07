@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:41.448Z"
 ---
 
-
 # Interfaces Wireless Networks (INTERNAL)
-
 
 ## Interfaces: Wireless Networks (INTERNAL)
 
@@ -82,6 +80,3 @@ This is system specific - this screenshot is for a Linux distribution with KDE P
 
 
 To connect to the network, set the security setting to “WPA/WPA2 Enterprise” and the authentication setting to “Protected EAP (PEAP)”. The inner authentication should be set to MSCHAPv2, and the username and password are the ones you set up in the RADIUS plugin.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:16.057Z"
 ---
 
-
 # Tor Configuration
-
 
 Note
 
@@ -291,6 +289,3 @@ This match is the target port of a connection. You can provide only a start port
 Action
 
 If you select “Reject”, no exit node traffic will be sent to this host and it will not be forwarded. If you choose “Accept”, your host may be chosen as an exit node in a circuit.
-
----
-

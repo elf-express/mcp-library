@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:44.050Z"
 ---
 
-
 # IPv6 Tunnel Broker
-
 
 **Original Author:** Shawn Webb
 
@@ -28,7 +26,7 @@ Enable ICMP on the WAN side of your OPNsense firewall. TunnelBroker’s UI will 
 
 Now add a tunnel. Make sure to add a routed /48 as we will need that to dish out individual /64 slices to each network. Once configured, your tunnel settings should look like this:
 
-[圖：../../_images/tunnelbroker_setup.png](https://docs.opnsense.org/_images/tunnelbroker_setup.png)
+[圖](https://docs.opnsense.org/_images/tunnelbroker_setup.png)
 
 ## Step 1 - Add GIF tunnel
 
@@ -46,7 +44,7 @@ Use the following settings and copy in the IPv4&6 addresses from your TunnelBrok
 | **ECN friendly behavior** | *disabled* |
 | **Description** | *Tunnel Broker* |
 
-[圖：../../_images/opnsense_add_gif.png](https://docs.opnsense.org/_images/opnsense_add_gif.png)
+[圖](https://docs.opnsense.org/_images/opnsense_add_gif.png)
 
 ## Step 2 - Configure the GIF tunnel as a new interface
 
@@ -60,13 +58,13 @@ The newly created interface must now be set as the default IPv6 gateway under Sy
 
 Now add basic firewall rules. Since I have a LAN network and a WLAN network, I allow WLAN to initiate connections to LAN, but not the other way around. I only have servers on LAN whereas most of my clients are on WLAN (Wireless LAN). I block all incoming to LAN and WLAN. Of course, outbound connections are fine.
 
-[圖：../../_images/tunnelbroker_fw_rules.png](https://docs.opnsense.org/_images/tunnelbroker_fw_rules.png)
+[圖](https://docs.opnsense.org/_images/tunnelbroker_fw_rules.png)
 
 ## Step 4 - Configure LAN interface
 
 Now configure your LAN interface. The static IPv6 address we’ll give it is a **/64** address from your assigned **/48**. I won’t show the WLAN settings simply because it’s the very same. You’ll repeat the same process for further networks, but assigning the next interface a separate **/64** address.
 
-[圖：../../_images/tunnelbroker_configure_lan.png](https://docs.opnsense.org/_images/tunnelbroker_configure_lan.png)
+[圖](https://docs.opnsense.org/_images/tunnelbroker_configure_lan.png)
 
 ## Step 5 - Configure DHCPv6 SLAAC
 
@@ -74,7 +72,7 @@ We’ll next configure OPNsense for Stateless Address Auto Configuration (SLAAC)
 
 Set the **Router Advertisements** setting to *Assisted* and the **Router Priority** setting to *Normal*.
 
-[圖：../../_images/tunnelbroker_dhcpv6.png](https://docs.opnsense.org/_images/tunnelbroker_dhcpv6.png)
+[圖](https://docs.opnsense.org/_images/tunnelbroker_dhcpv6.png)
 
 Save your settings.
 
@@ -95,11 +93,8 @@ First, install the **os-ddclient** plug-in under System ‣ Firmware ‣ Plugins
 | **Password** | *Update Tunnel Key* |
 | **Hostname(s)** | *Tunnel ID* |
 
-[圖：../../_images/tunnelbroker_configuration_ddclient.png](https://docs.opnsense.org/_images/tunnelbroker_configuration_ddclient.png) [圖：../../_images/tunnelbroker_tunneldetails_id.png](https://docs.opnsense.org/_images/tunnelbroker_tunneldetails_id.png) [圖：../../_images/tunnelbroker_tunneldetails_key.png](https://docs.opnsense.org/_images/tunnelbroker_tunneldetails_key.png)
+[圖](https://docs.opnsense.org/_images/tunnelbroker_configuration_ddclient.png) [圖](https://docs.opnsense.org/_images/tunnelbroker_tunneldetails_id.png) [圖](https://docs.opnsense.org/_images/tunnelbroker_tunneldetails_key.png)
 
 For **Check ip method**, select any method that will return an *IPv4* address (e.g., ipify-ipv4, Interface \[IPv4\], or ipv4only.me). If using “Interface \[IPv4\]”, also select the appropriate WAN interface to monitor.
 
 Add a **Description** for your own use and leave all other options unchanged. Enable and save this account configuration, then enable and start the Dynamic DNS service.
-
----
-

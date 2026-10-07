@@ -8,12 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:31:41.166Z"
 ---
 
-
 # Introduction
 
 Welcome to the OPNsense documentation & wiki project! The documentation is a work in progress and is updated frequently. If you would like to contribute in any way, please take a look at our guide on how to [Contribute](<380 Contribute.md>).
 
-[圖：_images/opnsense_logo_horizontaal.png](https://docs.opnsense.org/_images/opnsense_logo_horizontaal.png)
+[圖](https://docs.opnsense.org/_images/opnsense_logo_horizontaal.png)
 
 ## Welcome to OPNsense’s documentation!
 
@@ -134,6 +133,3 @@ The robust and reliable update mechanism gives OPNsense the ability to provide i
 -   802.1Q VLAN support
     
 -   and more…
-
----
-

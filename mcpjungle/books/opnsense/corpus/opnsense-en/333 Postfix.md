@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:29.476Z"
 ---
 
-
 # Postfix
-
 
 *Resources (AddressController.php)*
 
@@ -160,6 +158,3 @@ captured: "2026-09-26T11:34:29.476Z"
 | `POST` | postfix | service | start |  |
 | `GET` | postfix | service | status |  |
 | `POST` | postfix | service | stop |  |
-
----
-

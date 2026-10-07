@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:34.321Z"
 ---
 
-
 # Reset firmware configuration
-
 
 In cases where the firmware configuration is corrupt in the `config.xml` file, we can reset that section of our configuration using the following command (executed on a console or via SSH):
 
@@ -25,6 +23,3 @@ Note
 If our factory left a cache file which keeps a “factory-” plugin visible at all times, you can safely remove the reference using the following command:
 
 `rm /usr/local/opnsense/version/factory-*`
-
----
-

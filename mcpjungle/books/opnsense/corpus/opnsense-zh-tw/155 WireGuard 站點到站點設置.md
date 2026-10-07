@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:59.905Z"
 ---
 
-
 # WireGuard 站點到站點設置
-
 
 ## 介紹
 
@@ -282,6 +280,3 @@ WireGuard 是一種簡單快速的現代 VPN 協定。它的目標是比 IPSec �
 注意事項
 
 現在，兩個網站都可以透過 Wireguard 隧道完全存取另一個網站的LAN。對於其他網絡，只需向 Wireguard 端點添加更多 **允許的 IP** 並調整防火牆規則以允許流量。
-
----
-

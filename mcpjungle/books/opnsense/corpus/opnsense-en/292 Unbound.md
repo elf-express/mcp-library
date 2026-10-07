@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:09.685Z"
 ---
 
-
 # Unbound
-
 
 *Resources (DiagnosticsController.php)*
 
@@ -87,6 +85,3 @@ captured: "2026-09-26T11:34:09.685Z"
 | `POST` | unbound | settings | update\_blocklist |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Unbound.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Unbound/Unbound.xml) |
-
----
-

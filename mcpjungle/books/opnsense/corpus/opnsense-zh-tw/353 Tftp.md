@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:39.040Z"
 ---
 
-
 # Tftp
-
 
 *資源（GeneralController.php）*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:39.040Z"
 | `POST` | tftp | 服務 | 啟動 | |
 | `GET` | tftp | 服務 | 狀態 | |
 | `POST` | tftp | 服務 | 停止 | |
-
----
-

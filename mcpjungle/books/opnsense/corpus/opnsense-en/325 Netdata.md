@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:24.864Z"
 ---
 
-
 # Netdata
-
 
 *Resources (GeneralController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:24.864Z"
 | `POST` | netdata | service | start |  |
 | `GET` | netdata | service | status |  |
 | `POST` | netdata | service | stop |  |
-
----
-

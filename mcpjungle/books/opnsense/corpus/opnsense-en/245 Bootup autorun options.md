@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:44.400Z"
 ---
 
-
 # Bootup autorun options
-
 
 ## Bootup / autorun options
 
@@ -117,6 +115,3 @@ squid_enable="YES"
 ```
 
 The configd template system can be used to generate the necessary configuration file(s).
-
----
-

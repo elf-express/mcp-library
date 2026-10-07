@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:44.897Z"
 ---
 
-
 # Backend
-
 
 The OPNsense backend consists of several components (see Architecture for a full stack description).
 
@@ -40,6 +38,3 @@ Services which need to be executed at system startup can use rc(8) or our syshoo
 -   [Using configd](<247 Using configd.md>)
 -   [Using plugins](<248 Using plugins.md>)
 -   [Using Templates](<249 Using Templates.md>)
-
----
-

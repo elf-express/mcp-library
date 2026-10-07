@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:20.808Z"
 ---
 
-
 # Iperf
-
 
 *Resources (InstanceController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:20.808Z"
 | `GET` | iperf | service | start |  |
 | `GET` | iperf | service | status |  |
 | `GET` | iperf | service | stop |  |
-
----
-

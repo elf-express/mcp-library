@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:21.304Z"
 ---
 
-
 # Hwprobe
-
 
 *Resources (GeneralController.php)*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:21.304Z"
 | `POST` | hwprobe | service | start |  |
 | `GET` | hwprobe | service | status |  |
 | `POST` | hwprobe | service | stop |  |
-
----
-

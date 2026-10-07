@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:33.458Z"
 ---
 
-
 # Interfaces
 
-
-[圖：_images/blur-close-up-connection-1624895.jpg](https://docs.opnsense.org/_images/blur-close-up-connection-1624895.jpg)
+[圖](https://docs.opnsense.org/_images/blur-close-up-connection-1624895.jpg)
 
 All traffic flowing through your appliance is using (virtual) interfaces, this is where you manage most settings.
 
@@ -56,6 +54,3 @@ All traffic flowing through your appliance is using (virtual) interfaces, this i
 -   [Orange France IPTV setup](<127 Orange France IPTV setup.md>)
 -   [SFR/RED France FTTH IPv4 & IPv6 & Phone](<128 SFRRED France FTTH IPv4 & IPv6 & Phone.md>)
 -   [Setup for Sky UK ISP](<129 Setup for Sky UK ISP.md>)
-
----
-

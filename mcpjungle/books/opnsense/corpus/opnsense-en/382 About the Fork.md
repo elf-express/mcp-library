@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:53.799Z"
 ---
 
-
 # About the Fork
-
 
 Welcome to about the fork. This page is intended to explain the original motivation for forking, but keep in mind that currently less than 10% of the original legacy code base remains. As it stands today, OPNsense has evolved from being a fork to a whole new security platform with leading innovations such as weekly security updates for all components, a REST API, inline Intrusion Prevention and an intuitive modern user interface.
 
@@ -86,6 +84,3 @@ That being said it is important to know that [Deciso](https://www.deciso.com/) h
 In the end it all boils down to the direction we will go both technical as well as community involvement and transparency.
 
 You are invited! Try OPNsense, be part of the community and help the project move forward. OPNsense is rapidly becoming the number one open source firewall platform!
-
----
-

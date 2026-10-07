@@ -8,9 +8,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:19.593Z"
 ---
 
-
 # ISC DHCP
-
 
 ## [ISC DHCP](#id2)
 
@@ -107,6 +105,3 @@ DHCPv6 子選單還包括：
 -   對於 DHCPv6，如果 NDP 表中存在 MAC 位址，或 DUID 中存在 MAC 位址，則會顯示該位址，但前提是此 MAC 位址對應到已知供應商。這是因為無法從 DUID 可靠地取得 MAC 位址。
     
 -   DHCPv6 租用頁面也在單獨的標籤中顯示委派的前綴。
-
----
-

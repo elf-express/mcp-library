@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:45.084Z"
 ---
 
-
 # SFRRED 法國 FTTH IPv4 & IPv6 & 電話
-
 
 ## SFR/RED 法國 FTTH IPv4 & IPv6 & 電話
 
@@ -29,7 +27,7 @@ captured: "2026-09-26T11:32:45.084Z"
 
 SFR/RED 要求 WAN 介面分配應類似以下內容：
 
-[圖：../../_images/SFRRED_assignations.png](https://docs.opnsense.org/_images/SFRRED_assignations.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_assignations.png)
 
 -   WAN接口有MAC xx:xx:xx:xx:xx:xx，這是BOX的原始WAN MAC（惡搞的），
     
@@ -51,11 +49,11 @@ SFR/RED 要求 WAN 介面分配應類似以下內容：
 -   IPv6 設定：DHCPv6。
     
 
-[圖：../../_images/SFRRED_WAN_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_1.png)
 
 **在 DHCPv4 請求中，需要傳遞以下內容：**
 
-[圖：../../_images/SFRRED_WAN_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_2.png)
 
 注意事項
 
@@ -73,7 +71,7 @@ SFR/RED 要求 WAN 介面分配應類似以下內容：
 
 **在 DHCPv6 請求中，我們需要使用原始選項**
 
-[圖：../../_images/SFRRED_WAN_configuration_3.png](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_3.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_WAN_configuration_3.png)
 
 注意事項
 
@@ -113,7 +111,7 @@ SFR/RED 要求 WAN 介面分配應類似以下內容：
 
 選擇 Interfaces ‣Parameters 並設定您的 DUID。
 
-[圖：../../_images/SFRRED_interfaces_parameters.png](https://docs.opnsense.org/_images/SFRRED_interfaces_parameters.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_interfaces_parameters.png)
 
 注意事項
 
@@ -125,7 +123,7 @@ DUID 依據SFR/RED 盒子MAC 地址：00:03:00:01:xx:xx:xx:xx:xx:xx。
 
 選擇 Interfaces ‣ \[LAN\] 並將 IPv4 設定為“靜態 IPv4”，將 IPv6 設定類型設定為“追蹤介面”。
 
-[圖：../../_images/SFRRED_LAN_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_1.png)
 
 並將 IPv6 前綴ID定義為「0」最後，設定以下參數，如圖所示：
 
@@ -136,7 +134,7 @@ DUID 依據SFR/RED 盒子MAC 地址：00:03:00:01:xx:xx:xx:xx:xx:xx。
 -   IPv6 字首ID 為「0」。
     
 
-[圖：../../_images/SFRRED_LAN_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_LAN_configuration_2.png)
 
 點擊“儲存”，然後點擊“應用”
 
@@ -191,7 +189,7 @@ echo $data;
 
 激活NGINX
 
-[圖：../../_images/SFRRED_services_nginx_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_1.png)
 
 ### 服務/Nginx/設定/HTTP(s)
 
@@ -199,7 +197,7 @@ echo $data;
 
 建立一個新配置
 
-[圖：../../_images/SFRRED_services_nginx_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_2.png)
 
 注意事項
 
@@ -220,7 +218,7 @@ echo $data;
 
 新增新的重寫規則
 
-[圖：../../_images/SFRRED_services_nginx_configuration_3.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_3.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_3.png)
 
 ### 服務 / Nginx / 設定 / HTTP(s) / HTTP 伺服器
 
@@ -228,7 +226,7 @@ echo $data;
 
 新增新的重寫規則
 
-[圖：../../_images/SFRRED_services_nginx_configuration_4.png](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_4.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_nginx_configuration_4.png)
 
 注意事項
 
@@ -244,7 +242,7 @@ NGINX 應該為我們創建的頁面提供服務。
 
 新增參數讓SFR/RED Box發現SIP代理：
 
-[圖：../../_images/SFRRED_services_unbound_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_services_unbound_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_unbound_configuration_1.png)
 
 警告
 
@@ -259,7 +257,7 @@ NGINX 應該為我們創建的頁面提供服務。
 
 定義基本參數：
 
-[圖：../../_images/SFRRED_services_siproxd_configuration_1.png](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_1.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_1.png)
 
 ### 服務 / Siproxd / 出站域
 
@@ -267,7 +265,7 @@ NGINX 應該為我們創建的頁面提供服務。
 
 建立出站域配置：
 
-[圖：../../_images/SFRRED_services_siproxd_configuration_2.png](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_2.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_siproxd_configuration_2.png)
 
 注意事項
 
@@ -291,7 +289,7 @@ NGINX 應該為我們創建的頁面提供服務。
 
 點選\[+\]新增靜態映射：
 
-[圖：../../_images/SFRRED_services_dhcp_lan.png](https://docs.opnsense.org/_images/SFRRED_services_dhcp_lan.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_services_dhcp_lan.png)
 
 ### 防火牆 / NAT / 目標 NAT（連接埠轉送）
 
@@ -299,11 +297,8 @@ NGINX 應該為我們創建的頁面提供服務。
 
 新增新的轉送規則：
 
-[圖：../../_images/SFRRED_lan_port_forwarding.png](https://docs.opnsense.org/_images/SFRRED_lan_port_forwarding.png)
+[圖](https://docs.opnsense.org/_images/SFRRED_lan_port_forwarding.png)
 
 注意事項
 
 現在，一切都應該準備好了。重新啟動防火牆，準備好後將SFR/RED盒子插入LAN並啟動它。您應該能夠使用 IPv4、IPv6 和電話。
-
----
-

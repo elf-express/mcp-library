@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:05.943Z"
 ---
 
-
 # nginx Header Hardening
-
 
 ## nginx: Header Hardening
 
@@ -101,6 +99,3 @@ In short, the headers are:
 [1](#id1)
 
 If you switch the certificate without announcing its public key first via this header in a rollover time span, you will lock this clients out because they expect being targeted by a MITM attack and refuse the connection and it is hard to reset this pin in the browser.
-
----
-

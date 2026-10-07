@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:11.289Z"
 ---
 
-
 # Caddy Reverse Proxy
-
 
 ## [Caddy: Reverse Proxy](#id1)
 
@@ -1155,6 +1153,3 @@ Rarely, a performance profile might be requested. For this, a special admin endp
 -   Open the admin endpoint: `http://YOUR_LAN_IP:2019/debug/pprof/`
     
 -   Follow the instructions on [Profiling Caddy](https://caddyserver.com/docs/profiling).
-
----
-

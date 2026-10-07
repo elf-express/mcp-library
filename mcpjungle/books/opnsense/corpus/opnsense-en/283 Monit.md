@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:03.624Z"
 ---
 
-
 # Monit
-
 
 *Service (ServiceController.php)*
 
@@ -55,6 +53,3 @@ captured: "2026-09-26T11:34:03.624Z"
 | Method | Module | Controller | Command | Parameters |
 | --- | --- | --- | --- | --- |
 | `GET` | monit | status | get | $format=xml |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:27.413Z"
 ---
 
-
 # Ntopng
-
 
 *Resources (GeneralController.php)*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:27.413Z"
 | `POST` | ntopng | service | start |  |
 | `GET` | ntopng | service | status |  |
 | `POST` | ntopng | service | stop |  |
-
----
-

@@ -9,9 +9,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:33:08.996Z"
 ---
 
-
 # nginx IP基於存取控制列表
-
 
 ## nginx： IP基於存取控制列表
 
@@ -48,6 +46,3 @@ captured: "2026-09-26T11:33:08.996Z"
 
 
 儲存位置並重新啟動 nginx 後，就完成了。
-
----
-

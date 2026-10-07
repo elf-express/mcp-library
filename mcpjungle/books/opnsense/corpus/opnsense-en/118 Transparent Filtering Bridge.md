@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:41.195Z"
 ---
 
-
 # Transparent Filtering Bridge
-
 
 ## [Transparent Filtering Bridge](#id1)
 
@@ -190,6 +188,3 @@ Now you can connect the bridge member interfaces to their respective switch or r
 WAN should be connected to a trunk port on the WAN facing side, and LAN to a trunk port on the internal protected side.
 
 The firewall will be able to connect to the internet to fetch the latest updates via the management port.
-
----
-

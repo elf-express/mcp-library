@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:10.171Z"
 ---
 
-
 # Apcupsd
-
 
 *Service (ServiceController.php)*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:10.171Z"
 | `POST` | apcupsd | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Apcupsd.xml](https://github.com/opnsense/plugins/blob/master/sysutils/apcupsd/src/opnsense/mvc/app/models/OPNsense/Apcupsd/Apcupsd.xml) |
-
----
-

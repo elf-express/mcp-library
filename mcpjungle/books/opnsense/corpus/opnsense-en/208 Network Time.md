@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:26.176Z"
 ---
 
-
 # Network Time
-
 
 OPNsense ships with a standard [NTPd](http://doc.ntp.org/current-stable/) server, which synchronizes time with upstream servers and provides time to connected clients.
 
@@ -70,6 +68,3 @@ The status page can be used to query the health of the upstream time sources, it
 | Delay | roundtrip delay in milliseconds |
 | Offset | offset time in milliseconds of the server relative to this host |
 | Jitter | indicates the difference, in milliseconds, between two samples |
-
----
-

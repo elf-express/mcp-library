@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:28.930Z"
 ---
 
-
 # Routes
-
 
 Routing is one of the core features of your firewall, which is responsible for forwarding packets over the network based on (predefined) paths.
 
@@ -88,6 +86,3 @@ The following flags are supported by the kernel.
 ## Logs
 
 Route related logging, like `radvd` and `rtsold` for IPv6 write messages to this logging section which can be used for debugging purposes.
-
----
-

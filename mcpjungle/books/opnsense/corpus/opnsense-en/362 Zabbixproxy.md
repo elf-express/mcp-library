@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:45.179Z"
 ---
 
-
 # Zabbixproxy
-
 
 *Resources (GeneralController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:45.179Z"
 | `POST` | zabbixproxy | service | start |  |
 | `GET` | zabbixproxy | service | status |  |
 | `POST` | zabbixproxy | service | stop |  |
-
----
-

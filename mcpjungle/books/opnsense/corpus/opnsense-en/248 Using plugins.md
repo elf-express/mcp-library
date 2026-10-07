@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:45.924Z"
 ---
 
-
 # Using plugins
-
 
 ## General
 
@@ -269,6 +267,3 @@ function myplugin_xmlrpc_sync()
 Note
 
 If your plugin depends on other components in the system, make sure you enable synchronization for those as well.
-
----
-

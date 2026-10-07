@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:47.587Z"
 ---
 
-
 # 天空設定UK ISP
-
 
 **原作者：**馬丁沃斯利
 
@@ -25,7 +23,7 @@ Sky 使用簡單的 IPoE 連接，所需要的只是在橋接模式下合適的�
 
 將 IPv4 和 IPv6 設定類型分別設定為DHCP 和 DHCPv6。
 
-[圖：../../_images/skyuk_wan_1.png](https://docs.opnsense.org/_images/skyuk_wan_1.png)
+[圖](https://docs.opnsense.org/_images/skyuk_wan_1.png)
 
 ## **選項 61 - dhcp 客戶端識別碼**
 
@@ -33,7 +31,7 @@ Sky 使用簡單的 IPoE 連接，所需要的只是在橋接模式下合適的�
 
 在DHCP客戶端配置下選擇進階按鈕。
 
-[圖：../../_images/skyuk_lan_2.png](https://docs.opnsense.org/_images/skyuk_lan_2.png)
+[圖](https://docs.opnsense.org/_images/skyuk_lan_2.png)
 
 有一個條目“發送選項”，在此輸入使用者名稱和密碼，格式為：
 
@@ -53,7 +51,7 @@ dhcp 類別標識符“7.16a4N\_UNI|PCBAFAST2504Nv1.0”
 
 下一步是設定 DHCPv6 所需的參數，這些參數位於如下所示的WAN 介面的 DHCPv6 用戶端設定部分。
 
-[圖：../../_images/skyuk_wan_2.png](https://docs.opnsense.org/_images/skyuk_wan_2.png)
+[圖](https://docs.opnsense.org/_images/skyuk_wan_2.png)
 
 Sky 提供 /56 IPv6 委派，他們不在WAN 介面上提供全域 IPv6 位址，這只是連結本地。前綴委託大小應設定為 56。
 
@@ -61,7 +59,7 @@ Sky 提供 /56 IPv6 委派，他們不在WAN 介面上提供全域 IPv6 位址�
 
 唯一的其他要求可以在IPV6 DHCP下的介面：設定選單中找到。 “阻止釋放”選項。
 
-[圖：../../_images/skyuk_dhcp6c_interface_settings.png](https://docs.opnsense.org/_images/skyuk_dhcp6c_interface_settings.png)
+[圖](https://docs.opnsense.org/_images/skyuk_dhcp6c_interface_settings.png)
 
 這是因為 Sky DHCPv6 伺服器使用「黏性」位址。如果 OPNsense dhcp6 用戶端向伺服器發送釋放訊號，則分配的前綴很可能會更改，因此此設定以及「DHCP唯一識別碼」設定將嘗試減輕此風險。
 
@@ -71,7 +69,7 @@ Sky 提供 /56 IPv6 委派，他們不在WAN 介面上提供全域 IPv6 位址�
 
 儘管 OPNsense 儲存 IPv6 DUID，但它可能會遺失，這可能會再次導致給出新的前綴，因此介面：設定選單中提供了輸入和儲存 DUID 的選項。
 
-[圖：../../_images/skyuk_wan_3.png](https://docs.opnsense.org/_images/skyuk_wan_3.png)
+[圖](https://docs.opnsense.org/_images/skyuk_wan_3.png)
 
 標識符可以手動輸入，或者如果使用者點擊「i」圖標，則可以透過點擊「在此處插入現有的 DUID」圖例，將現有的 DUID 自動輸入到欄位中。
 
@@ -83,19 +81,16 @@ LAN 介面 Ipv4 位址應該在系統初始安裝時設置，如果沒有，則�
 
 我建議不要使用私有子網範圍192.168.\*.0，因為該範圍經常被酒店和其他公共網絡用於訪問，這可能會在使用VPN時導致問題。我首選的地址方法是使用 10.\*.\*.0 子網，其中第二個和第三個四位組是出生日期或其他一些容易記住的數字。即 10.1.11.0 是 11 月 1 日。這更加隨機，並且在公共網路上出現相同範圍的機會大大減少，但是位址範圍很容易記住。
 
-[圖：../../_images/ZenUK_image3.png](https://docs.opnsense.org/_images/ZenUK_image3.png) [圖：../../_images/skyuk_lan_1.png](https://docs.opnsense.org/_images/skyuk_lan_1.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image3.png) [圖](https://docs.opnsense.org/_images/skyuk_lan_1.png)
 
 一旦設定了 LAN IPv4 位址，LAN 介面中剩下的就是將介面設定為使用已指派的 IPv6 前綴。
 
 將追蹤 IPv6 介面設定為WAN，除非有本文檔未涵蓋的特殊要求，否則將 IPv6 前綴ID 設定為 0。
 
-[圖：../../_images/ZenUK_image4.png](https://docs.opnsense.org/_images/ZenUK_image4.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image4.png)
 
 點擊“儲存”，然後點擊“應用”。
 
 本文檔未介紹如何設定 IPv4 DHCP 伺服器，但這是必要的。
 
 此時建議重啟系統。
-
----
-

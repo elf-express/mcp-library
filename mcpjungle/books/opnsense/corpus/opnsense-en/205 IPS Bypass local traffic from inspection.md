@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:24.648Z"
 ---
 
-
 # IPS Bypass local traffic from inspection
-
 
 Note
 
@@ -91,6 +89,3 @@ Apply the configuration by pressing the **Apply** button at the bottom of the fo
 -   [https://docs.suricata.io/en/suricata-6.0.0/rules/bypass-keyword.html](https://docs.suricata.io/en/suricata-6.0.0/rules/bypass-keyword.html)
     
 -   [https://docs.suricata.io/en/suricata-6.0.0/performance/ignoring-traffic.html](https://docs.suricata.io/en/suricata-6.0.0/performance/ignoring-traffic.html)
-
----
-

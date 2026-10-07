@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:31:55.552Z"
 ---
 
-
 # Business Edition
 
-
-[圖：_images/architecture-blue-sky-business-2599538.jpg](https://docs.opnsense.org/_images/architecture-blue-sky-business-2599538.jpg)
+[圖](https://docs.opnsense.org/_images/architecture-blue-sky-business-2599538.jpg)
 
 OPNsense Business Edition is intended for companies, enterprises and professionals looking for a more selective upgrade path (lags behind the community edition), additional commercial features and who want to support the project in a more commercial way compared to donating.
 
@@ -33,6 +31,3 @@ The list below contains all releases, ordered by version number categorized by m
 -   [20.1 “Keen Kingfisher” Series](<43 20.1 “Keen Kingfisher” Series.md>)
 -   [19.7 “Jazzy Jaguar” Series](<44 19.7 “Jazzy Jaguar” Series.md>)
 -   [19.1 “Inspiring Iguana” Series](<45 19.1 “Inspiring Iguana” Series.md>)
-
----
-

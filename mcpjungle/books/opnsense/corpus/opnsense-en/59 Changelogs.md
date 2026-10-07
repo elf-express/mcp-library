@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:09.751Z"
 ---
 
-
 # Changelogs
-
 
 OPNsense core offers a changelog of the core and the plugins may offer their own changelog, if they are growing rapidly so the changelog does not fit into core anymore.
 
@@ -42,6 +40,3 @@ The plugins changelogs can be found in the plugins section after clicking the in
 
 
 After the description of the software behind the plugin or the plugin itself, the changelog follows.
-
----
-

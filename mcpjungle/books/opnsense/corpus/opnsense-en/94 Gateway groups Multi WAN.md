@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:27.436Z"
 ---
 
-
 # Gateway groups Multi WAN
-
 
 ## Gateway groups / Multi WAN
 
@@ -59,6 +57,3 @@ It is also possible to combine Load Balancing with Failover in such scenarios yo
 For a how to configure read:
 
 -   [Multi WAN](<95 Multi WAN.md>)
-
----
-

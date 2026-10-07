@@ -8,9 +8,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:18.884Z"
 ---
 
-
 # Dnsmasq DNS & DHCP
-
 
 ## [Dnsmasq DNS & DHCP](#id1)
 
@@ -935,6 +933,3 @@ Dnsmasq有一個強大的功能，它可以將解析的IP位址加入防火牆�
 提示
 
 在防火牆 ‣ 診斷 ‣ 別名中驗證別名的內容：一旦客戶端透過 Dnsmasq 解析 `example.com`，它就應該填入IP 位址。
-
----
-

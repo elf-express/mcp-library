@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:48.720Z"
 ---
 
-
 # Use the API
-
 
 ## [Use the API](#id1)
 
@@ -189,6 +187,3 @@ curl -X POST 'https://172.16.0.254:4444/api/auth/group/add/' \
 ```
 
 This approach allows you to test or automate API interactions outside of the GUI for debugging, automation and scripting.
-
----
-

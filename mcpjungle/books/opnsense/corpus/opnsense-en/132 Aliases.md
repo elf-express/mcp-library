@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:47.105Z"
 ---
 
-
 # Aliases
-
 
 Aliases are named lists of networks, hosts or ports that can be used as one entity by selecting the alias name in the various supported sections of the firewall. These aliases are particularly useful to condense firewall rules and minimize changes.
 
@@ -67,13 +65,13 @@ Sample
 
 Let’s say we want to create an alias table for **www.youtube.com**
 
-[圖：../_images/aliases_host.png](https://docs.opnsense.org/_images/aliases_host.png)
+[圖](https://docs.opnsense.org/_images/aliases_host.png)
 
 **Apply changes** and look at the content of our newly created pf table.
 
 Go to Firewall ‣ Diagnostics ‣ Aliases and select our newly created youtube table.
 
-[圖：../_images/pftable_youtube.png](https://docs.opnsense.org/_images/pftable_youtube.png)
+[圖](https://docs.opnsense.org/_images/pftable_youtube.png)
 
 As you can see there are multiple IP addresses for this domain.
 
@@ -258,7 +256,7 @@ The prefix changes, in this case we have a /48 prefix, so the new prefix is 2a02
 
 You may enter multiple addresses, for example if you have several servers on the same LAN segment, just add the suffix for each one. In the example below we have three servers.
 
-> [圖：../_images/alias_dynamic_ipv6_host.png](https://docs.opnsense.org/_images/alias_dynamic_ipv6_host.png)
+> [圖](https://docs.opnsense.org/_images/alias_dynamic_ipv6_host.png)
 
 ### BGP ASN
 
@@ -313,11 +311,11 @@ Let’s create a simple alias to allow 3 remote IP addresses access to an ipsec 
 -   192.168.202.2
     
 
-[圖：../_images/alias_remote_ipsec.png](https://docs.opnsense.org/_images/alias_remote_ipsec.png)
+[圖](https://docs.opnsense.org/_images/alias_remote_ipsec.png)
 
 We call our list remote\_ipsec and update our firewall rules accordingly.
 
-[圖：../_images/alias_firewall_rules.png](https://docs.opnsense.org/_images/alias_firewall_rules.png)
+[圖](https://docs.opnsense.org/_images/alias_firewall_rules.png)
 
 Note
 
@@ -413,6 +411,3 @@ Downloads
     
 
 To setup the DROP and DROPv6 lists in combination with the firewall rules, read: [Configure Spamhaus DROP](<152 Configure Spamhaus DROP.md>)
-
----
-

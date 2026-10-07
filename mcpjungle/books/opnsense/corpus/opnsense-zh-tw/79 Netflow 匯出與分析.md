@@ -9,11 +9,9 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:32:20.861Z"
 ---
 
-
 # Netflow 匯出與分析
 
-
-[圖：../_images/netflow_analyzer_insight.png](https://docs.opnsense.org/_images/netflow_analyzer_insight.png)
+[圖](https://docs.opnsense.org/_images/netflow_analyzer_insight.png)
 
 Netflow 是 Cisco 發明的監控功能，它在 FreeBSD 核心中透過 ng_netflow（Netgraph）實現。由於 Netgraph 是核心級實現，因此與 softflowd 或 pfflowd 相比，它速度非常快，而且開銷也很小。
 
@@ -49,7 +47,7 @@ OPNsense 同時支援 Netflow 版本 5 (IPv4) 和版本 9 (IPv4 和 IPv6)。
 
 OPNsense Netflow Exporter 支援多個介面、入口流過濾和多個目標，包括本地捕獲以供 Insight（OPNsense Netflow Analyzer）分析。
 
-[圖：../_images/netflow_exporter1.png](https://docs.opnsense.org/_images/netflow_exporter1.png)
+[圖](https://docs.opnsense.org/_images/netflow_exporter1.png)
 
 ## Netflow 分析器 - 洞察
 
@@ -97,6 +95,3 @@ OPNsense 提供功能齊全的 Netflow 分析器，具有以下功能：
 ### 設定洞察
 
 請參閱[使用 Insight - Netflow 分析器](<78 使用 Insight - Netflow 分析器.md>)
-
----
-

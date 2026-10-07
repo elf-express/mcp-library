@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:30.771Z"
 ---
 
-
 # DNSCrypt-Proxy
-
 
 ## Installation
 
@@ -135,6 +133,3 @@ You can use the DNSCrypt-Proxy as a full-featured standalone DNS instead of Unbo
 To do so go to **Services->Unbound DNS->General** and uncheck *Enable*. If you are using Dnsmasq go to **Services->Dnsmasq DNS->Settings** and uncheck *Enable*. Now change to **Services->DNSCrypt-Proxy->Configuration** and add the *Listen Address* 0.0.0.0:53 for the service to be considered as standalone by the core system.
 
 Now you can go on with your configuration task, like choosing which servers to use, privacy policy or caching. Also cloaking (overrides) or DNSBL can be used without any workarounds.
-
----
-

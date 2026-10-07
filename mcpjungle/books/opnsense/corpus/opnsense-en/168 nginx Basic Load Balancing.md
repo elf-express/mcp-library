@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:06.439Z"
 ---
 
-
 # nginx Basic Load Balancing
-
 
 ## nginx: Basic Load Balancing
 
@@ -49,6 +47,3 @@ Enter the domain name into the “Server Name” field and select the previously
 
 
 Click the reload button and you are done. You may need to open some ports in the firewall if you have not done that yet. Since you are directly on the firewall, There is no need to use NAT similar workaround.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:17.076Z"
 ---
 
-
 # Cloudflare Tunnel
-
 
 ## Introduction
 
@@ -124,6 +122,3 @@ fetch -qo - http://localhost:2000/healthcheck
 Warning
 
 The healthcheck may report `{"connsCount":1}` while the tunnel is still in the process of connecting — the connection count does not reliably indicate that the tunnel is fully established. Confirm tunnel status in the Cloudflare Zero Trust dashboard (Networks ‣ Connectors) or check the log for a `Registered tunnel connection` entry. See [cloudflared issue #1633](https://github.com/cloudflare/cloudflared/issues/1633) for details.
-
----
-

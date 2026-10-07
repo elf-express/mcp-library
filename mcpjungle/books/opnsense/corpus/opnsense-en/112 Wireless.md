@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:36.844Z"
 ---
 
-
 # Wireless
-
 
 Although wireless networks are supported in OPNsense, result may vary.
 
@@ -19,6 +17,3 @@ In our experience most companies use separate access points to facilitate WiFi, 
 Our documentation on the subject is limited, contributions will be shown below.
 
 -   [Interfaces: Wireless Networks (INTERNAL)](<119 Interfaces Wireless Networks (INTERNAL).md>)
-
----
-

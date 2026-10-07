@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:52.577Z"
 ---
 
-
 # View construction (and tools)
-
 
 Although most of our code base is being processed server side, some things just require interaction on the clients machine for a fluent user experience.
 
@@ -279,6 +277,3 @@ $("#upload").SimpleFileUploadDlg();
 Tip
 
 The `SimpleFileUploadDlg` action supports an `onAction` handler similar to the one described in `$.SimpleActionButton`
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:54.839Z"
 ---
 
-
 # (Advanced) Settings
-
 
 In some circumstances people might want to change how our system handles traffic by default, in which case the advanced settings section is a good place to look.
 
@@ -186,6 +184,3 @@ The following modes are available:
 -   always
     
 -   adaptive - in which case a lower and upper percentage should be specified referring to the usage of the state table.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:36.355Z"
 ---
 
-
 # System hardening vs performance
-
 
 OPNsense tends to choose more strict hardening options by default, so when comparing performance between upstream standard FreeBSD it’s good to know which settings differ and can have an impact on your measurements. This document aims to describe (some of) the differences, so when you value performance over security it is more obvious which toggles might be worthwhile to change.
 
@@ -42,6 +40,3 @@ Freebsd offers a couple of toggles to tighten security for ordinary users, these
 | security.bsd.see\_other\_gids \[1->0\] | Unprivileged processes may see subjects/objects with different real gid |
 | security.bsd.see\_other\_uids \[1->0\] | Unprivileged processes may see subjects/objects with different real uid |
 | security.bsd.unprivileged\_read\_msgbuf \[1->0\] | Unprivileged processes may read the kernel message buffer |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:46.931Z"
 ---
 
-
 # Using Templates
-
 
 ## General
 
@@ -116,6 +114,3 @@ generated_filenames = tmpl.generate('OPNsense/Sample')
 for filename in generated_filenames:
   print ('.. generated : %s'%filename)
 ```
-
----
-

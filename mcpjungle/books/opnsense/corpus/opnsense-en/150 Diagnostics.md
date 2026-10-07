@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:56.866Z"
 ---
 
-
 # Diagnostics
-
 
 ## Aliases
 
@@ -102,6 +100,3 @@ The following fields are available in the grid:
 ## Statistics
 
 Various detailed statistics gathered from [pfctl](https://www.freebsd.org/cgi/man.cgi?query=pfctl), such as packet counters per interface, memory limits, configured timeouts and detailed active rules.
-
----
-

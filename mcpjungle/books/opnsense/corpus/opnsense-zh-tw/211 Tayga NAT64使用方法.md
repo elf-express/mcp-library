@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:27.701Z"
 ---
 
-
 # Tayga NAT64使用方法
-
 
 ## 介紹
 
@@ -96,6 +94,3 @@ Tayga 使用隧道介面與系統進行封包交換。需要防火牆規則來�
 ## 測試
 
 您可以使用類似 [https://internet.nl/connection/](https://internet.nl/connection/)的服務來驗證您的 IPv6 專用LAN中的裝置是否具有 IPv6 和IP4網路存取。
-
----
-

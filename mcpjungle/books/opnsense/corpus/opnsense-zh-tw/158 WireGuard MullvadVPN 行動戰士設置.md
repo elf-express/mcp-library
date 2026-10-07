@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:02.898Z"
 ---
 
-
 # WireGuard MullvadVPN 行動戰士設置
-
 
 ## 介紹
 
@@ -60,6 +58,3 @@ curl -sSL https://api.mullvad.net/app/v1/wireguard-keys -H "Content-Type: applic
 ## 第四步－結論
 
 此時，您應該已經建立了有效的連接，並且能夠通過 Mullvad 網站上的連接測試。如果您的設定不起作用或測試未通過，建議您先查看VPN –> WireGuard –> 日誌檔案。
-
----
-

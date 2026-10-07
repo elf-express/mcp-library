@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:08.268Z"
 ---
 
-
 # Initial Installation & Configuration
-
 
 ## [Initial Installation & Configuration](#id1)
 
@@ -396,7 +394,7 @@ In case of a minimum install setup (i.e. on CF cards), OPNsense can be run with 
 
 **Enable RAM disk manually**
 
-[圖：../_images/Screenshot_Use_RAMdisks.png](https://docs.opnsense.org/_images/Screenshot_Use_RAMdisks.png)
+[圖](https://docs.opnsense.org/_images/Screenshot_Use_RAMdisks.png)
 
 Then via console, check your /etc/fstab and make sure your primary partition has **rw,noatime** instead of just **rw**.
 
@@ -430,7 +428,4 @@ GUI
 
 An update can be done through the GUI via System ‣ Firmware ‣ Updates.
 
-[圖：../_images/firmware-update.png](https://docs.opnsense.org/_images/firmware-update.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/firmware-update.png)

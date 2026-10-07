@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:13.221Z"
 ---
 
-
 # Cicap
-
 
 *Resources (AntivirusController.php)*
 
@@ -40,6 +38,3 @@ captured: "2026-09-26T11:34:13.221Z"
 | `POST` | cicap | service | start |  |
 | `GET` | cicap | service | status |  |
 | `POST` | cicap | service | stop |  |
-
----
-

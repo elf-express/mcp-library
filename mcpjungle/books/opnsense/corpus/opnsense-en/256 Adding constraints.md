@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:50.754Z"
 ---
 
-
 # Adding constraints
-
 
 Constraints can be used on top of type validations provided by the base fields described in the previous chapter. The base class BaseConstraint is used as base type and contains shared functionality.
 
@@ -124,6 +122,3 @@ Field Values:
 | type | SetIfConstraint |
 | field | the other field which we reference |
 | check | The value of the other field which makes this field required |
-
----
-

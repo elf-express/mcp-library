@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:00.388Z"
 ---
 
-
 # WireGuard AzireVPN Road Warrior Setup
-
 
 ## Introduction
 
@@ -39,6 +37,3 @@ Now we can **Enable** the VPN in tab **General** and continue with the setup.
 To let you internal clients go through the tunnel you have to add a NAT entry. Go to Firewall ‣ NAT ‣ Source NAT (Outbound) and add a rule. Check that rule generation is set to manual or hybrid. Add a rule and select Wireguard as **Interface**. **Source** should be your LAN network and set **Translation / target** to **interface address**.
 
 When assigning interfaces we can also add gateways to them. This would offer you the chance to balance traffic via different VPN providers or do more complex routing scenarios.
-
----
-

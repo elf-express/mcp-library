@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:43.378Z"
 ---
 
-
 # Architecture
-
 
 The main focus of the OPNsense project is to provide a secure and manageable platform for all your security applications. This means high quality software that is easily maintainable and bug free. We think that having a framework with a clear separation of concerns is essential to achieving these goals.
 
@@ -111,6 +109,3 @@ Between starting and stopping our firewall, we can identify three stages. After 
 Further details of each stage can be found in the [overview](<244 Overview.md>) document.
 
 To avoid endless dependency loops, services should prevent hooking on events that are not strictly required for operating. For example, forcing a restart of a component when a network interface has changed is usually a sign of not following best practices for designing network services.
-
----
-

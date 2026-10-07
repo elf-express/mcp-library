@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:32.806Z"
 ---
 
-
 # Q-Feeds connector
-
 
 ## [Q-Feeds connector](#id1)
 
@@ -153,6 +151,3 @@ You can use Reporting ‣ Unbound DNS to gain insights into the requested domain
 ## [DNS/Domain blocking using DNSCrypt-Proxy](#id9)
 
 When the DNSCrypt-Proxy plugin is installed, domain feeds can be used for DNS blocking. Enable **“Register domain feeds”** in Security ‣ Q-Feeds Connect, then select the Q-Feeds blocklist within the DNSCrypt-Proxy plugin settings to activate it.
-
----
-

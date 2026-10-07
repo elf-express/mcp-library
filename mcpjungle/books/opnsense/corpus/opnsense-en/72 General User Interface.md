@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:16.822Z"
 ---
 
-
 # General User Interface
-
 
 This article explains the basics of the OPNsense Graphical User Interface or GUI for short.
 
@@ -18,13 +16,13 @@ This article explains the basics of the OPNsense Graphical User Interface or GUI
 
 Before we can take a look at the GUI options we need to login. The default user is root and the password is opnsense.
 
-[圖：../_images/login.png](https://docs.opnsense.org/_images/login.png)
+[圖](https://docs.opnsense.org/_images/login.png)
 
 ## GUI Layout & Main Components
 
 The GUI consists out of the following main components:
 
-[圖：../_images/gui_layout.png](https://docs.opnsense.org/_images/gui_layout.png)
+[圖](https://docs.opnsense.org/_images/gui_layout.png)
 
 ### Logo & Link to Lobby
 
@@ -71,7 +69,7 @@ To add or remove a Favorites menu item, hover over the page title with your mous
 
 Favorites are shown in the Favorites menu item at the top of the menu area, where they can be selected for quick access.
 
-[圖：../_images/favorites.png](https://docs.opnsense.org/_images/favorites.png)
+[圖](https://docs.opnsense.org/_images/favorites.png)
 
 ### Search Navigation
 
@@ -198,6 +196,3 @@ Note
 Although the page numbers and last page button (`»`) are always visible, they can only be used when the size of the dataset is known upfront. In case of large datasets, such as intrusion alerts and log views the number of records is not known upfront, since there’s no relation between the size of the underlying data and the number of records.
 
 The record count in these cases is more or less a guestimate based on the number of records already shown.
-
----
-

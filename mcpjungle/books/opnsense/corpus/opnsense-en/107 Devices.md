@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:35.046Z"
 ---
 
-
 # Devices
-
 
 Besides wired, wireless and VPN interfaces, there are also some other, virtual interfaces, as well as some miscellaneous interface-related. These options can be found under Interfaces ‣ Devices. This document briefly explains these options.
 
@@ -260,6 +258,3 @@ Tip
 When using `PPPoE`, a lot of providers these days support [RFC 4638](https://datatracker.ietf.org/doc/html/rfc4638), in which case the internet provider expects the MTU value for the PPP connection itself to be 1500 bytes, which usually means the parent interface should add the 8 byte tunnel overhead. To use this, your device does need to support “jumbo-frames” to some extend in order to communicate with the next peer.
 
 To use a 1500 byte MTU on `PPPoE` in OPNsense, set the interface (usually Interfaces ‣ \[WAN\]) to an MTU value of `1508`, in which case the tunnel itself will use the full 1500 bytes.
-
----
-

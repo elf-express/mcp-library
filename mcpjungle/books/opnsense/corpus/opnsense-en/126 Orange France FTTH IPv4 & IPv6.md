@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:45.577Z"
 ---
 
-
 # Orange France FTTH IPv4 & IPv6
-
 
 **Authors:** Kev Willers, David Néel
 
@@ -24,15 +22,15 @@ The guide deals with just the internet connection. Setting up of TV or Phone is 
 
 Orange requires that the WAN is configured over VLAN 832. So the first step is to set up the VLAN on the intended WAN nic as shown below Interfaces ‣ Devices ‣ VLAN
 
-[圖：../../_images/OF_image0.png](https://docs.opnsense.org/_images/OF_image0.png)
+[圖](https://docs.opnsense.org/_images/OF_image0.png)
 
 and the WAN interface assignment should hence look something like this.
 
-[圖：../../_images/OF_image1.png](https://docs.opnsense.org/_images/OF_image1.png)
+[圖](https://docs.opnsense.org/_images/OF_image1.png)
 
 Finally, set the DUID for IPv6 WAN interface Interfaces ‣ Settings
 
-[圖：../../_images/OF_image1.1.png](https://docs.opnsense.org/_images/OF_image1.1.png)
+[圖](https://docs.opnsense.org/_images/OF_image1.1.png)
 
 Note
 
@@ -44,7 +42,7 @@ In order to establish the IPv4 and IPv6 connection Orange requires that the corr
 
 select options DHCP and DHCPv6 in general configuration
 
-[圖：../../_images/OF_image2.png](https://docs.opnsense.org/_images/OF_image2.png)
+[圖](https://docs.opnsense.org/_images/OF_image2.png)
 
 **On the DHCP request it is a requirement to pass the following:**
 
@@ -63,7 +61,7 @@ You can use this tool to generate the option-90 chain : [https://jsfiddle.net/kg
 
 These parameters should be passed as comma separated options in the ‘Send Options’ area of their WAN DHCP request
 
-[圖：../../_images/OF_image3.png](https://docs.opnsense.org/_images/OF_image3.png)
+[圖](https://docs.opnsense.org/_images/OF_image3.png)
 
 Note
 
@@ -96,17 +94,17 @@ These parameters should be passed as comma separated options in the ‘Request O
 
 Orange require that the DHCP and DHCP6 requests are made with a VLAN-PCP of 6. This can be done via ‘Use VLAN priority’ interface settings. Make sure to set this for both DHCP and DHCP6 at the same time.
 
-[圖：../../_images/OF_image4.png](https://docs.opnsense.org/_images/OF_image4.png)
+[圖](https://docs.opnsense.org/_images/OF_image4.png)
 
 On the DHCP6 request we need to use raw options
 
 Firstly select ‘Basic’ and tick ‘Request only an IPv6 prefix’ and set ‘Prefix delegation size’ to 56
 
-[圖：../../_images/OF_image5_1.png](https://docs.opnsense.org/_images/OF_image5_1.png)
+[圖](https://docs.opnsense.org/_images/OF_image5_1.png)
 
 Then select ‘Advanced’ and set ‘Use VLAN priority’ to ‘Internetwork Control (6)’
 
-[圖：../../_images/OF_image5.png](https://docs.opnsense.org/_images/OF_image5.png)
+[圖](https://docs.opnsense.org/_images/OF_image5.png)
 
 then add the following options in the ‘Send Options’ field
 
@@ -127,7 +125,7 @@ Use the exact same chain for IPv6 raw-option 11 and IPv4 option-90
 
 Finally set the Identity Association and Prefix interface as shown
 
-[圖：../../_images/OF_image6.png](https://docs.opnsense.org/_images/OF_image6.png)
+[圖](https://docs.opnsense.org/_images/OF_image6.png)
 
 Click ‘Save’ and then ‘Apply’.
 
@@ -135,25 +133,25 @@ Update IPv6 Gateway
 
 Select System ‣ Gateway ‣ Configuration and edit IPv6 gateway to add ‘fe80::ba0:bab’ as IP address
 
-[圖：../../_images/OF_image6_1.png](https://docs.opnsense.org/_images/OF_image6_1.png)
+[圖](https://docs.opnsense.org/_images/OF_image6_1.png)
 
 ## **LAN Interface**
 
 Select Interfaces ‣ \[LAN\] and set IPv4 to “Static IPv4” and IPv6 Configuration Type to “Track Interface”.
 
-[圖：../../_images/OF_image7.png](https://docs.opnsense.org/_images/OF_image7.png)
+[圖](https://docs.opnsense.org/_images/OF_image7.png)
 
 Finally, set the Track IPv6 Interface to WAN and set the IPv4 address to your chosen address.
 
 Tick ‘Manual Configuration’
 
-[圖：../../_images/OF_image8.png](https://docs.opnsense.org/_images/OF_image8.png)
+[圖](https://docs.opnsense.org/_images/OF_image8.png)
 
 Click ‘Save’ and then ‘Apply’.
 
 Select Services ‣ Router Advertisements On the Lan interface and set as below (use any IPv6 DNS)
 
-[圖：../../_images/OF_image9.png](https://docs.opnsense.org/_images/OF_image9.png)
+[圖](https://docs.opnsense.org/_images/OF_image9.png)
 
 Click ‘Save’
 
@@ -167,15 +165,12 @@ Rarely, the authentication option from the generator doesn’t work, you can ins
 
 Plug the WAN interface of the Livebox in your network (green port) Use Wireshark on any other computer in the network and look for DHCP Discover packets
 
-[圖：../../_images/OF_image10.png](https://docs.opnsense.org/_images/OF_image10.png)
+[圖](https://docs.opnsense.org/_images/OF_image10.png)
 
 ## decode DHCP packets
 
 In this packet, look for Option: (90) Authentication
 
-[圖：../../_images/OF_image11.png](https://docs.opnsense.org/_images/OF_image11.png)
+[圖](https://docs.opnsense.org/_images/OF_image11.png)
 
 You can copy paste the full option without the first 2 bytes (5a 46) in your WAN configuration
-
----
-

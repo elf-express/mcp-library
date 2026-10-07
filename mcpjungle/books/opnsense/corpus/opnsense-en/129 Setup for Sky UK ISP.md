@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:47.587Z"
 ---
 
-
 # Setup for Sky UK ISP
-
 
 **Original Author:** Martin Wasley
 
@@ -24,7 +22,7 @@ Sky uses a simple IPoE connection, all that is required is a suitable modem in b
 
 Set both IPv4 and IPv6 configuration type to DHCP and DHCPv6 respectively.
 
-[圖：../../_images/skyuk_wan_1.png](https://docs.opnsense.org/_images/skyuk_wan_1.png)
+[圖](https://docs.opnsense.org/_images/skyuk_wan_1.png)
 
 ## **Option61 - dhcp-client-identifier**
 
@@ -32,7 +30,7 @@ We now need to send the Sky login credentials. When using VDSL we do not need to
 
 Under DHCP Client Configuration select the Advanced button.
 
-[圖：../../_images/skyuk_lan_2.png](https://docs.opnsense.org/_images/skyuk_lan_2.png)
+[圖](https://docs.opnsense.org/_images/skyuk_lan_2.png)
 
 There is an entry ‘Send Options’, enter the UserID & Password here in the format:
 
@@ -52,7 +50,7 @@ So the full entry for the ‘Lease Requirements’ Send Options would be:
 
 The next step is to configure the parameters required for DHCPv6, these are located in the DHCPv6 client configuration section of the WAN interface shown below.
 
-[圖：../../_images/skyuk_wan_2.png](https://docs.opnsense.org/_images/skyuk_wan_2.png)
+[圖](https://docs.opnsense.org/_images/skyuk_wan_2.png)
 
 Sky provide a /56 IPv6 delegation, they do not provide a global IPv6 address on the WAN interface, this is link local only. Prefix delegation size should be set to 56.
 
@@ -60,7 +58,7 @@ Click ‘Save’ and ‘Apply’
 
 The only other requirement is found in the Interfaces:Settings menu under IPV6 DHCP. The ‘Prevent Release’ option.
 
-[圖：../../_images/skyuk_dhcp6c_interface_settings.png](https://docs.opnsense.org/_images/skyuk_dhcp6c_interface_settings.png)
+[圖](https://docs.opnsense.org/_images/skyuk_dhcp6c_interface_settings.png)
 
 This is there as the Sky DHCPv6 servers use a ‘sticky’ address. If the OPNsense dhcp6 client sends a release signal to the server it’s more than likely that the allocated prefix will change, thus this setting, along with the ‘DHCP Unique Identifier’ setting will attempt to mitigate this risk.
 
@@ -70,7 +68,7 @@ Once these settings have been entered, click on ‘Save’ then ‘Apply’.
 
 Although OPNsense stores the IPv6 DUID it is possible this can be lost, this again would probably result in a new prefix being given, therefore an option to enter and store a DUID is given in the Interface:Settings menu.
 
-[圖：../../_images/skyuk_wan_3.png](https://docs.opnsense.org/_images/skyuk_wan_3.png)
+[圖](https://docs.opnsense.org/_images/skyuk_wan_3.png)
 
 The Identifier can either be entered manually or if the user clicks on the ‘i’ icon, the existing DUID can be automatically entered into the field by clicking on the ‘Insert the existing DUID here’ legend.
 
@@ -82,19 +80,16 @@ The LAN interface Ipv4 address should have been setup during initial system inst
 
 It is my recommendation not to use the private subnet range 192.168.\*.0, as this range is often used by hotels and other public networks for access, this can cause issues when using a VPN. My preferred address method is using the 10.\*.\*.0 subnet where the second and third quartet are birth dates or some other easily memorable number. i.e. 10.1.11.0 would be the first of November. This is more random and the chances of the same range on a public network is greatly reduced, however the address range is easily memorable.
 
-[圖：../../_images/ZenUK_image3.png](https://docs.opnsense.org/_images/ZenUK_image3.png) [圖：../../_images/skyuk_lan_1.png](https://docs.opnsense.org/_images/skyuk_lan_1.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image3.png) [圖](https://docs.opnsense.org/_images/skyuk_lan_1.png)
 
 Once the LAN IPv4 address is set then all that remains in the LAN interface is to set the interface to use the assigned IPv6 prefix.
 
 Set the Track IPv6 Interface to WAN, unless there is a special requirement which this document does not cover, set the IPv6 Prefix ID to 0.
 
-[圖：../../_images/ZenUK_image4.png](https://docs.opnsense.org/_images/ZenUK_image4.png)
+[圖](https://docs.opnsense.org/_images/ZenUK_image4.png)
 
 Click ‘Save’ and then ‘Apply’.
 
 Setting up the IPv4 DHCP server is not covered in this document, but is required.
 
 It is advisable at this point to reboot the system.
-
----
-

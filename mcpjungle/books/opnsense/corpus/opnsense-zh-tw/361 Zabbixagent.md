@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:43.636Z"
 ---
 
-
 # Zabbixagent
-
 
 *服務（ServiceController.php）*
 
@@ -42,6 +40,3 @@ captured: "2026-09-26T11:34:43.636Z"
 | `POST` | zabbixagent | 設定 | 切換使用者參數 | $uuid |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [ZabbixAgent.xml](https://github.com/opnsense/plugins/blob/master/net-mgmt/zabbix-agent/src/opnsense/mvc/app/models/OPNsense/ZabbixAgent/ZabbixAgent.xml) |
-
----
-

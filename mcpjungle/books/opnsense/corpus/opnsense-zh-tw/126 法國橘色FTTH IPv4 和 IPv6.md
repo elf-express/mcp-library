@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:32:45.577Z"
 ---
 
-
 # 法國橘色FTTH IPv4 和 IPv6
-
 
 **作者：** 凱夫威勒斯、大衛尼爾
 
@@ -25,15 +23,15 @@ captured: "2026-09-26T11:32:45.577Z"
 
 Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡上設定 VLAN，如下所示 Interfaces ‣ Devices ‣ VLAN
 
-[圖：../../_images/OF_image0.png](https://docs.opnsense.org/_images/OF_image0.png)
+[圖](https://docs.opnsense.org/_images/OF_image0.png)
 
 因此 WAN 介面分配應該如下所示。
 
-[圖：../../_images/OF_image1.png](https://docs.opnsense.org/_images/OF_image1.png)
+[圖](https://docs.opnsense.org/_images/OF_image1.png)
 
 最後，設定 IPv6 的 DUID WAN 介面 Interfaces ‣ Settings
 
-[圖：../../_images/OF_image1.1.png](https://docs.opnsense.org/_images/OF_image1.1.png)
+[圖](https://docs.opnsense.org/_images/OF_image1.1.png)
 
 注意事項
 
@@ -45,7 +43,7 @@ Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡
 
 在常規配置中選擇選項DHCP和DHCPv6
 
-[圖：../../_images/OF_image2.png](https://docs.opnsense.org/_images/OF_image2.png)
+[圖](https://docs.opnsense.org/_images/OF_image2.png)
 
 **在DHCP請求中，要求透過以下內容：**
 
@@ -64,7 +62,7 @@ Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡
 
 這些參數應在其 WAN DHCP 請求的「傳送選項」區域中作為逗號分隔選項傳遞
 
-[圖：../../_images/OF_image3.png](https://docs.opnsense.org/_images/OF_image3.png)
+[圖](https://docs.opnsense.org/_images/OF_image3.png)
 
 注意事項
 
@@ -97,17 +95,17 @@ Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡
 
 橘色要求DHCP和DHCP6請求的VLAN-PCP為6。這可以透過「使用VLAN優先權」介面設定來完成。確保同時為 DHCP 和 DHCP6 設定此項目。
 
-[圖：../../_images/OF_image4.png](https://docs.opnsense.org/_images/OF_image4.png)
+[圖](https://docs.opnsense.org/_images/OF_image4.png)
 
 在 DHCP6 請求中，我們需要使用原始選項
 
 首先選擇「基本」並勾選「僅請求 IPv6 前綴」並將「前綴委託大小」設為 56
 
-[圖：../../_images/OF_image5_1.png](https://docs.opnsense.org/_images/OF_image5_1.png)
+[圖](https://docs.opnsense.org/_images/OF_image5_1.png)
 
 然後選擇“高級”並將“使用VLAN優先權”設定為“互聯網控制（6）”
 
-[圖：../../_images/OF_image5.png](https://docs.opnsense.org/_images/OF_image5.png)
+[圖](https://docs.opnsense.org/_images/OF_image5.png)
 
 然後在「傳送選項」欄位中新增以下選項
 
@@ -128,7 +126,7 @@ Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡
 
 最後設定Identity Association和Prefix介面如圖
 
-[圖：../../_images/OF_image6.png](https://docs.opnsense.org/_images/OF_image6.png)
+[圖](https://docs.opnsense.org/_images/OF_image6.png)
 
 點擊“儲存”，然後點擊“應用”。
 
@@ -136,25 +134,25 @@ Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡
 
 選擇 System ‣ Gateway ‣ Configuration 並編輯 IPv6 閘道以新增 ‘fe80::ba0:bab’ 為 IP 位址
 
-[圖：../../_images/OF_image6_1.png](https://docs.opnsense.org/_images/OF_image6_1.png)
+[圖](https://docs.opnsense.org/_images/OF_image6_1.png)
 
 ## **LAN接口**
 
 選擇 Interfaces ‣ \[LAN\] 並將 IPv4 設定為“靜態 IPv4”，將 IPv6 設定類型設定為“追蹤介面”。
 
-[圖：../../_images/OF_image7.png](https://docs.opnsense.org/_images/OF_image7.png)
+[圖](https://docs.opnsense.org/_images/OF_image7.png)
 
 最後，將追蹤 IPv6 介面設定為WAN，並將 IPv4 位址設定為您選擇的位址。
 
 勾選“手動配置”
 
-[圖：../../_images/OF_image8.png](https://docs.opnsense.org/_images/OF_image8.png)
+[圖](https://docs.opnsense.org/_images/OF_image8.png)
 
 點擊“儲存”，然後點擊“應用”。
 
 在 Lan 介面上選擇 Services ‣ Router Advertising 並設定如下（使用任何 IPv6 DNS）
 
-[圖：../../_images/OF_image9.png](https://docs.opnsense.org/_images/OF_image9.png)
+[圖](https://docs.opnsense.org/_images/OF_image9.png)
 
 點選“儲存”
 
@@ -168,15 +166,12 @@ Orange 要求經 VLAN 832 配置 WAN。因此第一步是在預期的 WAN 網卡
 
 將 Livebox 的 WAN 介面插入您的網路（綠色連接埠） 在網路中的任何其他電腦上使用 Wireshark 並尋找 DHCP 發現封包
 
-[圖：../../_images/OF_image10.png](https://docs.opnsense.org/_images/OF_image10.png)
+[圖](https://docs.opnsense.org/_images/OF_image10.png)
 
 ## 解碼DHCP資料包
 
 在此資料包中，尋找選項：(90) 身份驗證
 
-[圖：../../_images/OF_image11.png](https://docs.opnsense.org/_images/OF_image11.png)
+[圖](https://docs.opnsense.org/_images/OF_image11.png)
 
 您可以在 WAN 配置中複製貼上完整選項，而無需前 2 個位元組 (5a 46)
-
----
-

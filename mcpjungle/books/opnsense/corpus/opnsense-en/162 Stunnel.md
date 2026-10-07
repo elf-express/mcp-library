@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:02.402Z"
 ---
 
-
 # Stunnel
-
 
 Stunnel in OPNsense can be used to forward tcp connections securely using TLS mutual authentication. Although the application itself supports authentication based on pre-shared keys, our plugin only supports certificate based authentication, which is more secure but comes with more (connect) overhead ([https://www.stunnel.org/perf.html](https://www.stunnel.org/perf.html)).
 
@@ -144,6 +142,3 @@ Connection closed by foreign host.
 Note
 
 Please note the `127.0.0.2` host is the same as the service connecting to was running on, using a different address attached to the same firewall would result in a `NO-USER` error.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:37.014Z"
 ---
 
-
 # Sslh
-
 
 *服務（ServiceController.php）*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:37.014Z"
 | `POST` | sslh | 設定 | 設定 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [Settings.xml](https://github.com/opnsense/plugins/blob/master/net/sslh/src/opnsense/mvc/app/models/OPNsense/Sslh/Settings.xml) |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:35.001Z"
 ---
 
-
 # Redis
-
 
 *Service (ServiceController.php)*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:35.001Z"
 | `POST` | redis | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Redis.xml](https://github.com/opnsense/plugins/blob/master/databases/redis/src/opnsense/mvc/app/models/OPNsense/Redis/Redis.xml) |
-
----
-

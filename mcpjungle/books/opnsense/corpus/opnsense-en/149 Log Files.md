@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:55.846Z"
 ---
 
-
 # Log Files
-
 
 When troubleshooting problems with your firewall, it is very likely you have to check the logs available on your system. In the UI of OPNsense, the log files are generally grouped with the settings of the component they belong to. The log files can be found here:
 
@@ -50,6 +48,3 @@ Since log lines are stored on the system without an exact match to the rule in q
 The logging overview page shows the distribution of the firewall log lines over a set of different properties, but is limited in the amount of rules it will evaluate (5000).
 
 Although it may help to spot some clear patterns from the top of your log stash, the number of relevant use-cases is likely limited.
-
----
-

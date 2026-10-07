@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:13.314Z"
 ---
 
-
 # Default Configurations
-
 
 Since our firewall configuration is fully enclosed in a single xml file, we can offer the factory configurations in case a machine needs to be reinstalled at some point in time.
 
@@ -44,6 +42,3 @@ Below you will find the list of our currently available models:
 | DEC4040 | Rack | [`26.4`](https://docs.opnsense.org/_downloads/809402bb802da2431d0fcfed6c851e72/A20-config.xml) [`25.7/25.10`](https://docs.opnsense.org/_downloads/3de1b7f1c7c1d0cb0a2bb57d0b694cdf/A20-config.xml) [`25.1/25.4`](https://docs.opnsense.org/_downloads/3de1b7f1c7c1d0cb0a2bb57d0b694cdf/A20-config.xml) [`24.7/24.10`](https://docs.opnsense.org/_downloads/f0197442e1cfe5ace981bfa43361c7b2/A20-config.xml) [`23.1 ... 24.4`](https://docs.opnsense.org/_downloads/0d33cfc546f0558154b6c0afd05e5783/A20-config.xml) |
 | DEC4240 | Rack | [`26.4`](https://docs.opnsense.org/_downloads/809402bb802da2431d0fcfed6c851e72/A20-config.xml) [`25.7/25.10`](https://docs.opnsense.org/_downloads/3de1b7f1c7c1d0cb0a2bb57d0b694cdf/A20-config.xml) [`25.1/25.4`](https://docs.opnsense.org/_downloads/3de1b7f1c7c1d0cb0a2bb57d0b694cdf/A20-config.xml) [`24.7/24.10`](https://docs.opnsense.org/_downloads/f0197442e1cfe5ace981bfa43361c7b2/A20-config.xml) [`23.1 ... 24.4`](https://docs.opnsense.org/_downloads/0d33cfc546f0558154b6c0afd05e5783/A20-config.xml) |
 | DEC4280 | Rack | [`26.4`](https://docs.opnsense.org/_downloads/809402bb802da2431d0fcfed6c851e72/A20-config.xml) [`25.7/25.10`](https://docs.opnsense.org/_downloads/3de1b7f1c7c1d0cb0a2bb57d0b694cdf/A20-config.xml) [`25.1/25.4`](https://docs.opnsense.org/_downloads/3de1b7f1c7c1d0cb0a2bb57d0b694cdf/A20-config.xml) [`24.7/24.10`](https://docs.opnsense.org/_downloads/f0197442e1cfe5ace981bfa43361c7b2/A20-config.xml) [`23.1 ... 24.4`](https://docs.opnsense.org/_downloads/0d33cfc546f0558154b6c0afd05e5783/A20-config.xml) |
-
----
-

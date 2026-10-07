@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:15.813Z"
 ---
 
-
 # Support
-
 
 Firewalls can be complex devices, in which case it helps to have some pointers when running into issues. When official hardware is used, a free year of OPNsense Business Edition is offered with the product.
 
@@ -82,6 +80,3 @@ The filenames are similar to the ones used for the community edition, these are 
 Note
 
 For installs on our hardware, you will need the `serial` type.
-
----
-

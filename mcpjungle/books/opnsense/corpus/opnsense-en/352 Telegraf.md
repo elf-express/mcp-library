@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:40.550Z"
 ---
 
-
 # Telegraf
-
 
 *Resources (GeneralController.php)*
 
@@ -57,6 +55,3 @@ captured: "2026-09-26T11:34:40.550Z"
 | `POST` | telegraf | service | start |  |
 | `GET` | telegraf | service | status |  |
 | `POST` | telegraf | service | stop |  |
-
----
-

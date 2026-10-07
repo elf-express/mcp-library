@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:33.811Z"
 ---
 
-
 # Password reset
-
 
 Sometimes people lose their passwords, in which case it can be practical to reset the root password without performing a reinstall.
 
@@ -61,6 +59,3 @@ reboot
 ```
 
 The opnsense-shell will ask for a confirmation, respond with Y
-
----
-

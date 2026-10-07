@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:21.871Z"
 ---
 
-
 # Configure Netflow Exporter
-
 
 
 
@@ -25,6 +23,3 @@ For local analysis using Insight also enable **Capture local**.
 Depending on the application you would like to use select **Version** 5 or 9. Remember that version 5 does not support IPv6.
 
 Add your **Destinations** (ip:port then enter) local IP will be added automatically if Capture local is selected.
-
----
-

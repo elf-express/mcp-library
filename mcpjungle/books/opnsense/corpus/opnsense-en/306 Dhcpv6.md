@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:15.745Z"
 ---
 
-
 # Dhcpv6
-
 
 *Resources (LeasesController.php)*
 
@@ -29,6 +27,3 @@ captured: "2026-09-26T11:34:15.745Z"
 | `POST` | dhcpv6 | service | start |  |
 | `GET` | dhcpv6 | service | status |  |
 | `POST` | dhcpv6 | service | stop |  |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:56.613Z"
 ---
 
-
 # Configure CARP
-
 
 -   [Overview](#overview)
     
@@ -79,7 +77,7 @@ captured: "2026-09-26T11:32:56.613Z"
 
 One of the more powerful features of OPNsense is to set-up a redundant firewall with automatic fail-over option. This chapter describes step by step how to create a set-up based on two networks. The 192.168.1.0/24 will be used for the internal network and 172.18.0.0/24 will be used to route our traffic to the internet.
 
-[圖：../../_images/900px-Carp_setup_example.png](https://docs.opnsense.org/_images/900px-Carp_setup_example.png)
+[圖](https://docs.opnsense.org/_images/900px-Carp_setup_example.png)
 
 When using CARP ( [FreeBSD handbook on CARP](https://www.freebsd.org/doc/handbook/carp.html) ), all fail-safe interfaces should have a dedicated IP address which will be combined with one shared virtual IP address to communicate to both networks. In the picture above the dashed lines are used to mark the virtual addresses.
 
@@ -560,6 +558,3 @@ For reliable CARP failover, both firewalls must not only share the same VLAN (La
 -   A stacked switch configuration (e.g., Cisco StackWise Virtual, Juniper VC), or
     
 -   An MLAG-capable fabric (e.g., Arista MLAG, Extreme XOS MLAG)
-
----
-

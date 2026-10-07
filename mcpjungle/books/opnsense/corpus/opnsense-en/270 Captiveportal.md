@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:57.088Z"
 ---
 
-
 # Captiveportal
-
 
 *Resources (AccessController.php)*
 
@@ -71,6 +69,3 @@ captured: "2026-09-26T11:33:57.088Z"
 | `GET` | captiveportal | voucher | list\_providers |  |
 | `GET` | captiveportal | voucher | list\_voucher\_groups | $provider |
 | `GET` | captiveportal | voucher | list\_vouchers | $provider,$group |
-
----
-

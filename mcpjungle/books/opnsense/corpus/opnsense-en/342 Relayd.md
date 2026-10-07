@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:33.470Z"
 ---
 
-
 # Relayd
-
 
 *Service (ServiceController.php)*
 
@@ -42,6 +40,3 @@ captured: "2026-09-26T11:34:33.470Z"
 | --- | --- | --- | --- | --- |
 | `GET` | relayd | status | sum | $wait=0 |
 | `POST` | relayd | status | toggle | $nodeType=null,$id=null,$action=null |
-
----
-

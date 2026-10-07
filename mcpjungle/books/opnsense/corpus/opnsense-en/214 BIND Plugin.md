@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:29.241Z"
 ---
 
-
 # BIND Plugin
-
 
 ## History
 
@@ -79,6 +77,3 @@ The Blacklists are downloaded and updated with every **Save** within BIND config
 ## ACLs
 
 On tab ACLs you can create ACLs used for configuration options like **Recursion**. Add a new ACL via **+**, give it a **Name** and add as many networks as you wish in **Network List**.
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:53.847Z"
 ---
 
-
 # Control Plane Shaping
-
 
 Planes of Operation is a concept to describe and divide the functionality of a network device.
 
@@ -199,6 +197,3 @@ In case we need to create control plane of additional protocols such as BGP, PIM
 -   [https://forum.opnsense.org/index.php?topic=46990.0](https://forum.opnsense.org/index.php?topic=46990.0)
     
 -   [https://man.freebsd.org/cgi/man.cgi?ipfw(8](https://man.freebsd.org/cgi/man.cgi?ipfw\(8))
-
----
-

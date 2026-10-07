@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:10.012Z"
 ---
 
-
 # nginx Web應用程式防火牆
-
 
 ## nginx：網路應用程式防火牆
 
@@ -108,6 +106,3 @@ curl "http://example.com/index.php?a=select&b=union&c=from"
 注意事項
 
 在查看錯誤日誌時，您可以在日誌檢視器的篩選方塊中使用「 NAXSI 」作為篩選條件。
-
----
-

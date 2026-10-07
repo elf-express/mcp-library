@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:19.347Z"
 ---
 
-
 # Using Insight - Netflow Analyzer
-
 
 OPNsense is equipped with a flexible and fast Netflow Analyzer called Insight. To use Insight, one needs to configure the Netflow exporter for local capturing of Netflow data. To do so take a look at [Configure Netflow Exporter](<83 Configure Netflow Exporter.md>).
 
@@ -18,7 +16,7 @@ OPNsense is equipped with a flexible and fast Netflow Analyzer called Insight. T
 
 Insight is a fully integrated part of OPNsense. Its User Interface is simple yet powerful. It can be accessed via Reporting ‣ Insight.
 
-[圖：../../_images/insight_gui.png](https://docs.opnsense.org/_images/insight_gui.png)
+[圖](https://docs.opnsense.org/_images/insight_gui.png)
 
 Insight offers a full set of analysis tools, ranging from a graphical overview to a csv exporter for further analysis with your favorite spreadsheet.
 
@@ -36,15 +34,15 @@ One can show the traffic flows in a stacked manner (default), as a stream or exp
 
 **Stacked**
 
-[圖：../../_images/stacked_view.png](https://docs.opnsense.org/_images/stacked_view.png)
+[圖](https://docs.opnsense.org/_images/stacked_view.png)
 
 **Stream**
 
-[圖：../../_images/stream_view.png](https://docs.opnsense.org/_images/stream_view.png)
+[圖](https://docs.opnsense.org/_images/stream_view.png)
 
 **Expanded**
 
-[圖：../../_images/expanded_view.png](https://docs.opnsense.org/_images/expanded_view.png)
+[圖](https://docs.opnsense.org/_images/expanded_view.png)
 
 ### Interfaces
 
@@ -64,7 +62,7 @@ The port pie chart shows the percentage per port/application. One can change the
 
 Clicking on a piece of the pie will open a detailed view for further analysis.
 
-[圖：../../_images/pie_piece.png](https://docs.opnsense.org/_images/pie_piece.png) [圖：../../_images/pie_details.png](https://docs.opnsense.org/_images/pie_details.png)
+[圖](https://docs.opnsense.org/_images/pie_piece.png) [圖](https://docs.opnsense.org/_images/pie_details.png)
 
 ### IP Addresses Pie Chart
 
@@ -82,17 +80,17 @@ One can open the details view by clicking on one of the pieces of a pie chart or
 
 When opening the details view by clicking on the tab one can make a new query.
 
-[圖：../../_images/insight_details_view.png](https://docs.opnsense.org/_images/insight_details_view.png)
+[圖](https://docs.opnsense.org/_images/insight_details_view.png)
 
 After selecting a valid date range (form/to) and interface one can further limit the output by filtering on port or IP address. Select the refresh icon to update the detailed output. Leave Port and Address empty for a full detailed listing.
 
-[圖：../../_images/insight_full_details.png](https://docs.opnsense.org/_images/insight_full_details.png)
+[圖](https://docs.opnsense.org/_images/insight_full_details.png)
 
 ## Export View
 
 The **Export** view allows you to export the data for further analysis in your favorite spreadsheet or other data analysis application.
 
-[圖：../../_images/insight_export_view.png](https://docs.opnsense.org/_images/insight_export_view.png)
+[圖](https://docs.opnsense.org/_images/insight_export_view.png)
 
 To export data, select a **Collection** :
 
@@ -109,7 +107,4 @@ Select the **Resolution** in seconds (300,3600,86400)
 
 Then select a date range (from/to) and click the **export** button.
 
-[圖：../../_images/insight_export.png](https://docs.opnsense.org/_images/insight_export.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/insight_export.png)

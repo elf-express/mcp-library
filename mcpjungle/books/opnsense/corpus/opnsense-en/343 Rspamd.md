@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:33.997Z"
 ---
 
-
 # Rspamd
-
 
 *Service (ServiceController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:33.997Z"
 | `POST` | rspamd | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [RSpamd.xml](https://github.com/opnsense/plugins/blob/master/mail/rspamd/src/opnsense/mvc/app/models/OPNsense/Rspamd/RSpamd.xml) |
-
----
-

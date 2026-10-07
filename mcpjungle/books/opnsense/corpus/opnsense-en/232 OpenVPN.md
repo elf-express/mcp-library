@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:38.864Z"
 ---
 
-
 # OpenVPN
-
 
 ## Assigned Interfaces
 
@@ -25,6 +23,3 @@ There are multiple ways to fix this problem. For most setups, it will be suffici
 Another option is to manually select the option “Disable Reply-To” on each firewall rule you generate on the assigned interface. See [Rules](<137 Rules.md>) for further details.
 
 The third option is to globally disable the generation of `reply-to` completely as described in [(Advanced) Settings](<146 (Advanced) Settings.md>). However this method can break Multi-WAN setups.
-
----
-

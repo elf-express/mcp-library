@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:32:58.655Z"
 ---
 
-
 # Virtual Private Networking
-
 
 A virtual private network secures public network connections and in doing so it extends the private network into the public network such as internet. With a VPN you can create large secure networks that can act as one private network.
 
-[圖：../_images/Virtual_Private_Network_overview.png](https://docs.opnsense.org/_images/Virtual_Private_Network_overview.png)
+[圖](https://docs.opnsense.org/_images/Virtual_Private_Network_overview.png)
 
 (picture from [wikipedia](https://en.wikipedia.org/wiki/File:Virtual_Private_Network_overview.svg))
 
@@ -26,7 +24,7 @@ Creating a single secured private network with multiple branch offices connectin
 
 OPNsense offers a wide range of VPN technologies ranging from modern SSL VPNs to well known IPsec as well as WireGuard and Zerotier via the use of plugins.
 
-[圖：../_images/vpn.png](https://docs.opnsense.org/_images/vpn.png)
+[圖](https://docs.opnsense.org/_images/vpn.png)
 
 ## IPsec
 
@@ -727,6 +725,3 @@ Via plugins additional VPN technologies are offered, including:
 -   [OpenConnect Setup](<161 OpenConnect Setup.md>)
 -   [Stunnel](<162 Stunnel.md>)
 -   [Zerotier Configuration](<163 Zerotier Configuration.md>)
-
----
-

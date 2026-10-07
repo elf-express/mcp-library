@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:27.413Z"
 ---
 
-
 # Ntopng
-
 
 *資源（GeneralController.php）*
 
@@ -31,6 +29,3 @@ captured: "2026-09-26T11:34:27.413Z"
 | `POST` | ntopng | 服務 | 開始 | |
 | `GET` | ntopng | 服務 | 狀態 | |
 | `POST` | ntopng | 服務 | 停止 | |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:26.419Z"
 ---
 
-
 # Firmware
-
 
 In the firmware section you can keep your OPNsense up to date and have the ability to install additional software.
 
@@ -99,13 +97,10 @@ In order to do so, please choose the following settings:
 | Type: | Business |
 | Subscription: | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX (the activation key for the product) |
 
-[圖：../_images/quickstart_be.png](https://docs.opnsense.org/_images/quickstart_be.png)
+[圖](https://docs.opnsense.org/_images/quickstart_be.png)
 
 After save, go back to the status tab and click **Check for updates**
 
 Note
 
 Upgrading to OPNsense BE is only possible when the installed community version number is lower than the last available business edition. E.g. you can upgrade **22.7.x** to **22.10.x**, but you can not upgrade **23.1** to **22.10**. You can always re-install using the installer found on the [business mirror](https://opnsense-update.deciso.com/)
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:07.155Z"
 ---
 
-
 # Syslog
-
 
 *Service (ServiceController.php)*
 
@@ -38,6 +36,3 @@ captured: "2026-09-26T11:34:07.155Z"
 | `POST` | syslog | settings | toggle\_destination | $uuid,$enabled=null |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Syslog.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Syslog/Syslog.xml) |
-
----
-

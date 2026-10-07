@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:49.114Z"
 ---
 
-
 # Reflection and Hairpin NAT
-
 
 ## [Reflection and Hairpin NAT](#id2)
 
@@ -284,6 +282,3 @@ Tip
 -   In “Firewall ‣ Diagnostics ‣ Sessions you can check if there is a session between your internal client and your internal server, and which rule matches to it.
     
 -   Use tcpdump on the client, the opnsense and the server, and test if the traffic goes back and forth between the devices without any mistakes. Look for TCP SYN and SYN ACK. If there are only SYN then the connection isn’t established and there are mistakes in your rules.
-
----
-

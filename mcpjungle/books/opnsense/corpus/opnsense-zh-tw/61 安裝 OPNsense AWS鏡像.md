@@ -9,11 +9,9 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:32:10.780Z"
 ---
 
-
 # 安裝 OPNsense AWS鏡像
 
-
-[圖：../../_images/amazon-web-services.png](https://docs.opnsense.org/_images/amazon-web-services.png)
+[圖](https://docs.opnsense.org/_images/amazon-web-services.png)
 
 我們的EC2鏡像可在 [aws marketplace](https://aws.amazon.com/marketplace/pp/prodview-lu5v2tokic3py)中找到。
 
@@ -23,13 +21,13 @@ captured: "2026-09-26T11:32:10.780Z"
 
 接下來前往「 AWS Marketplace」並搜尋「OPNsense」。我們的官方圖片由Deciso Sales BV銷售。
 
-[圖：../../_images/aws_step1_choose_ami.png](https://docs.opnsense.org/_images/aws_step1_choose_ami.png)
+[圖](https://docs.opnsense.org/_images/aws_step1_choose_ami.png)
 
 ## 步驟 2 - 選擇類型
 
 選擇實例類型
 
-[圖：../../_images/aws_launch_new_image.png](https://docs.opnsense.org/_images/aws_launch_new_image.png)
+[圖](https://docs.opnsense.org/_images/aws_launch_new_image.png)
 
 ## 步驟 3 - 設定實例詳細信息
 
@@ -53,27 +51,27 @@ captured: "2026-09-26T11:32:10.780Z"
 
 若要設定安全群組，請確保允許從您自己的網路存取HTTPS 。由於這些鏡像預設也啟用了SSH ，您也可以從您的網路啟用連接埠 22 ( SSH )。
 
-[圖：../../_images/aws_configure_security_group.png](https://docs.opnsense.org/_images/aws_configure_security_group.png)
+[圖](https://docs.opnsense.org/_images/aws_configure_security_group.png)
 
 ## 步驟 7 - 檢查您的設置
 
-[圖：../../_images/aws_review_settings.png](https://docs.opnsense.org/_images/aws_review_settings.png)
+[圖](https://docs.opnsense.org/_images/aws_review_settings.png)
 
 ## 步驟 8 - SSH金鑰對
 
 選擇 SSH 金鑰對或跳過，所選 SSH 金鑰將附加到 ec2 用戶，之後您可以從用戶管理員變更此設定。 （系統 -> 存取 -> 使用者）
 
-[圖：../../_images/aws_ssh_keypair.png](https://docs.opnsense.org/_images/aws_ssh_keypair.png)
+[圖](https://docs.opnsense.org/_images/aws_ssh_keypair.png)
 
 ## 步驟 9 - 查看狀態頁面
 
-[圖：../../_images/aws_status.png](https://docs.opnsense.org/_images/aws_status.png)
+[圖](https://docs.opnsense.org/_images/aws_status.png)
 
 ## 步驟 10 - AWS實例
 
 前往您的AWS實例
 
-[圖：../../_images/aws_instances.png](https://docs.opnsense.org/_images/aws_instances.png)
+[圖](https://docs.opnsense.org/_images/aws_instances.png)
 
 選擇鏡像，進入“鏡像設定”，然後“取得系統日誌”以取得 ec2-user 的初始密碼（如果使用者資料中未指定）和初始 root 密碼。
 
@@ -132,9 +130,6 @@ login:
 
 ## 第 11 步 - 搜尋目前地址並登入
 
-[圖：../../_images/aws_search_current_ip.png](https://docs.opnsense.org/_images/aws_search_current_ip.png)
+[圖](https://docs.opnsense.org/_images/aws_search_current_ip.png)
 
 使用提供的地址登入 OPNsense。
-
----
-

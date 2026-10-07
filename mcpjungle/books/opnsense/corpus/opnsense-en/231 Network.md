@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:37.375Z"
 ---
 
-
 # Network
-
 
 ## Netmap (IPS, Sensei, …)
 
@@ -48,6 +46,3 @@ Any piece of software that uses system calls to communicate over sockets use the
 | 55 | ENOBUFS | No buffer space available. An operation on a socket or pipe was not performed because the system lacked sufficient buffer space or because a queue was full. **Check connectivity from the machine itself using** `ping`, most common mistakes are misconfigured routes, interface issues (disconnected) and policy based routing issues forcing traffic to the wrong target (using `reply-to`) |
 | 64 | EHOSTDOWN | Host is down. A socket operation failed because the destination host was down. **Expecting an (layer 2) ARP response but none was returned, often misconfigured subnets or hosts are actually not accessible over L2** |
 | 65 | EHOSTUNREACH | No route to host. A socket operation was attempted to an unreachable host **The routing table is a good place to look** (System ‣ Routes ‣ Status) |
-
----
-

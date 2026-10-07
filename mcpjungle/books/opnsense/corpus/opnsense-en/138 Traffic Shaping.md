@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:50.113Z"
 ---
 
-
 # Traffic Shaping
-
 
 Traffic shaping (also known as “packet shaping”) is the control of computer network traffic in order to optimize or guarantee performance, lower latency, and/or increase usable bandwidth by delaying packets that meet certain criteria. More specifically, traffic shaping is any action on a set of packets (often called a stream or a flow), which imposes additional delay on those packets such that they conform to some predetermined constraint (a contract or traffic profile).
 
@@ -77,6 +75,3 @@ Make sure to use easy to find descriptions, these will ease debugging when traff
 -   [Multi Interface shaping for a GuestNet](<143 Multi Interface shaping for a GuestNet.md>)
 -   [Fighting Bufferbloat with FQ\_CoDel](<144 Fighting Bufferbloat with FQ_CoDel.md>)
 -   [Control Plane Shaping](<145 Control Plane Shaping.md>)
-
----
-

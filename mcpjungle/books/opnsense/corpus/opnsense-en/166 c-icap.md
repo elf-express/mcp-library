@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:04.414Z"
 ---
 
-
 # c-icap
-
 
 ## Installation
 
@@ -79,6 +77,3 @@ A 204 response has the advantage, that the data don’t have to be sent over the
 Pass on error
 
 In case the scan fails, the file can be passed through. This is less secure but keeps the business running in case of failure. Keep in mind that this may put your network at risk.
-
----
-

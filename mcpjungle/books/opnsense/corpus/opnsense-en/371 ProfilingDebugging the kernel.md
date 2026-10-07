@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:48.228Z"
 ---
 
-
 # ProfilingDebugging the kernel
-
 
 ## Profiling/Debugging the kernel
 
@@ -412,6 +410,3 @@ Using the right datatypes in DTrace to increase profiling performance: [http://d
 FreeBSD DTrace manual page: [https://www.freebsd.org/cgi/man.cgi?query=dtrace](https://www.freebsd.org/cgi/man.cgi?query=dtrace)
 
 FreeBSD DTrace one-liners: [https://wiki.freebsd.org/DTrace/One-Liners](https://wiki.freebsd.org/DTrace/One-Liners)
-
----
-

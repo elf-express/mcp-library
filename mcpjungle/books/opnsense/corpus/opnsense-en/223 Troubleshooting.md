@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:33.308Z"
 ---
 
-
 # Troubleshooting
-
 
 
 
@@ -70,6 +68,3 @@ Some of the common mistakes we have seen over the years, combined with pointers 
 -   [Network](<231 Network.md>)
 -   [OpenVPN](<232 OpenVPN.md>)
 -   [Performance](<233 Performance.md>)
-
----
-

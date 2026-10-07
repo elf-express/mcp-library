@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:41.890Z"
 ---
 
-
 # PSR-2 Coding Style Guide
-
 
 Note
 
@@ -546,6 +544,3 @@ There are many elements of style and practice intentionally omitted by this guid
     
 
 Future recommendations MAY revise and extend this guide to address those or other elements of style and practice.
-
----
-

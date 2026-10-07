@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:12.808Z"
 ---
 
-
 # Quickstart getting started
-
 
 ## Quickstart / getting started
 
@@ -68,11 +66,11 @@ After performing basic setup, apply your OPNsense Business Edition license token
 
 **Option 1**: use Business Edition license
 
-[圖：../_images/quickstart_be.png](https://docs.opnsense.org/_images/quickstart_be.png)
+[圖](https://docs.opnsense.org/_images/quickstart_be.png)
 
 **Option 2**: use Community Edition
 
-[圖：../_images/quickstart_community.png](https://docs.opnsense.org/_images/quickstart_community.png)
+[圖](https://docs.opnsense.org/_images/quickstart_community.png)
 
 Note
 
@@ -81,6 +79,3 @@ The OPNsense Business Edition license token is sent by email including instructi
 Tip
 
 Always update your device after gaining access to the internet, updates are usually available once the device reaches your destination. Just go to the status tab in the firmware section, press “check for updates” and install the pending updates.
-
----
-

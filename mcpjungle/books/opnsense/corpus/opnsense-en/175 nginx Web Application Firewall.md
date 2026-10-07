@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:10.012Z"
 ---
 
-
 # nginx Web Application Firewall
-
 
 ## nginx: Web Application Firewall
 
@@ -107,6 +105,3 @@ curl "http://example.com/index.php?a=select&b=union&c=from"
 Note
 
 You can use “NAXSI” as a filter in the filter box of the log viewer when viewing the error log.
-
----
-

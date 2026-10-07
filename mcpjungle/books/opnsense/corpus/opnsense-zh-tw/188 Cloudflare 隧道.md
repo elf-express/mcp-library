@@ -9,9 +9,7 @@ translated_by: "gtx"
 captured: "2026-09-26T11:33:17.076Z"
 ---
 
-
 # Cloudflare 隧道
-
 
 ## 介紹
 
@@ -125,6 +123,3 @@ fetch -qo - http://localhost:2000/healthcheck
 警告
 
 當隧道仍在連接過程中時，運行狀況檢查可能會報告 `{"connsCount":1}` — 連線計數無法可靠地表示隧道已完全建立。在 Cloudflare 零信任儀表板（網路 ‣ 連接器）中確認隧道狀態，或檢查日誌中的 `Registered tunnel connection` 條目。有關詳細信息，請參閱 [cloudflared 問題 #1633](https://github.com/cloudflare/cloudflared/issues/1633)。
-
----
-

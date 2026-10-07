@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:44.145Z"
 ---
 
-
 # Zerotier
-
 
 *Resources (NetworkController.php)*
 
@@ -35,6 +33,3 @@ captured: "2026-09-26T11:34:44.145Z"
 | `GET` | zerotier | settings | status |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Zerotier.xml](https://github.com/opnsense/plugins/blob/master/net/zerotier/src/opnsense/mvc/app/models/OPNsense/Zerotier/Zerotier.xml) |
-
----
-

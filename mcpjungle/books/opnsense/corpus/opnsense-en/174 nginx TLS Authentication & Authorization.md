@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:08.475Z"
 ---
 
-
 # nginx TLS Authentication & Authorization
-
 
 ## nginx: TLS Authentication & Authorization
 
@@ -52,6 +50,3 @@ curl https://192.168.1.1:444/file.txt --cacert ../MyOPNsenseCA.crt
 curl https://192.168.1.1:444/file.txt --cert ../nginx_client_test_cert.crt --key ../nginx_client_test_cert.key --cacert ../MyOPNsenseCA.crt
 Hello World
 ```
-
----
-

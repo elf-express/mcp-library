@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:34:51.773Z"
 ---
 
-
 # Open Source Initiative
 
-
-[圖：../_images/osi_standard_logo.png](https://docs.opnsense.org/_images/osi_standard_logo.png)
+[圖](https://docs.opnsense.org/_images/osi_standard_logo.png)
 
 ---
 
@@ -33,6 +31,3 @@ OPNsense is licensed under an Open Source Initiative [approved license](http://o
 As founder, trademark owner and largest sponsor of OPNsense, Deciso is an active sponsor of the Open Source Initiative. see [OSI Corporate Sponsors & Support](http://opensource.org/sponsors)
 
 Deciso believes that sharing knowledge makes for better products.
-
----
-

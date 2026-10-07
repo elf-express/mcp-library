@@ -9,9 +9,7 @@ translated_by: "google_v2+gtx"
 captured: "2026-09-26T11:33:32.806Z"
 ---
 
-
 # Q-Feeds 連接器
-
 
 ## [Q-Feeds 連接器](#id1)
 
@@ -154,6 +152,3 @@ Q-Feeds 提供動態更新的 IoC 列表，專為與下一代防火牆 (NGFW) �
 ## [DNS /使用 DNSCrypt-Proxy 進行網域屏蔽](#id9)
 
 安裝 DNSCrypt-Proxy 外掛程式後，網域提要可用於 DNS 封鎖。在安全性‣ Q-Feeds Connect 中啟用**「註冊網域提要」**，然後在 DNSCrypt-Proxy 插件設定中選擇 Q-Feeds 封鎖清單以將其啟動。
-
----
-

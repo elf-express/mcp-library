@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:25.674Z"
 ---
 
-
 # Monit
-
 
 OPNsense uses Monit for monitoring services. Monit has quite extensive monitoring capabilities, which is why the configuration options are extensive as well. This guide will do a quick walk through the setup, with the configuration options explained in more detail afterwards, along with some caveats.
 
@@ -240,6 +238,3 @@ set limits {
 Warning
 
 It is the sole responsibility of the administrator which places a file in the extension directory to ensure that the configuration is valid.
-
----
-

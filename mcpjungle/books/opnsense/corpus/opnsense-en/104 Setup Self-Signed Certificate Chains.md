@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:32.484Z"
 ---
 
-
 # Setup Self-Signed Certificate Chains
-
 
 -   [Introduction to Public Key Infrastructure (PKI)](#introduction-to-public-key-infrastructure-pki)
     
@@ -422,6 +420,3 @@ Leaf Certificate private key data
 ```
 
 Implement these into your webserver, and the website will be secured with this certificate bundle. For automatic trust, you must install the intermediate and/or root CA certificate public keys into any client that connects to the webserver. Since the webserver offers a full certificate chain to the connecting client, manual trust can be established if a user decides to install the public key themselves.
-
----
-

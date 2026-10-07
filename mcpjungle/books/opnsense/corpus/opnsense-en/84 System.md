@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:22.372Z"
 ---
 
-
 # System
 
-
-[圖：_images/control-data-device-270700.jpg](https://docs.opnsense.org/_images/control-data-device-270700.jpg)
+[圖](https://docs.opnsense.org/_images/control-data-device-270700.jpg)
 
 The system section in the menu houses all general settings for your firewall needed for its operation. This includes options like administrative access, network routing and diagnostics features to debug your devices current activities.
 
@@ -43,6 +41,3 @@ The system section in the menu houses all general settings for your firewall nee
 
 -   [Configure 2FA TOTP & Google Authenticator](<103 Configure 2FA TOTP & Google Authenticator.md>)
 -   [Setup Self-Signed Certificate Chains](<104 Setup Self-Signed Certificate Chains.md>)
-
----
-

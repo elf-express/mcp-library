@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:55.568Z"
 ---
 
-
 # Access Control List
-
 
 Access Control List
 
@@ -70,6 +68,3 @@ The ACL scheme is bound to the default UI controller, and can be used by using t
   this page is accessible
 {% endif %}
 ```
-
----
-

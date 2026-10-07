@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:47.996Z"
 ---
 
-
 # Designing the model
-
 
 ## [Designing the model](#id1)
 
@@ -237,6 +235,3 @@ Note
 Although the cache will contain programmaticly generated rows using `getStaticChildren()` in `ArrayField`, it can’t automatically figure out if this content has changed.
 
 In cases you need to ensure these records are updated as well, you do need to call `flushCacheData()` on the static model. (e.g. `OPNsenseFirewallAlias::flushCacheData()`)
-
----
-

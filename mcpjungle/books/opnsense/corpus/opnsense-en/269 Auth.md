@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:57.573Z"
 ---
 
-
 # Auth
-
 
 *Resources (GroupController.php)*
 
@@ -53,6 +51,3 @@ captured: "2026-09-26T11:33:57.573Z"
 | `POST` | auth | user | upload |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [User.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Auth/User.xml) |
-
----
-

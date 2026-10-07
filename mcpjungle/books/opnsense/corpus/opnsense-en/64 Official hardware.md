@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:13.810Z"
 ---
 
-
 # Official hardware
-
 
 
 
@@ -22,6 +20,3 @@ This chapter contains topics around [official](https://shop.opnsense.com/) OPNse
 -   [BIOS updates / settings](<68 BIOS updates settings.md>)
 -   [SFP(+) Compatibility](<69 SFP(+) Compatibility.md>)
 -   [Support](<70 Support.md>)
-
----
-

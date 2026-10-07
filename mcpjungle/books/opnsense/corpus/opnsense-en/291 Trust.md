@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:07.670Z"
 ---
 
-
 # Trust
-
 
 *Resources (CaController.php)*
 
@@ -65,6 +63,3 @@ captured: "2026-09-26T11:34:07.670Z"
 | `POST` | trust | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [General.xml](https://github.com/opnsense/core/blob/master/src/opnsense/mvc/app/models/OPNsense/Trust/General.xml) |
-
----
-

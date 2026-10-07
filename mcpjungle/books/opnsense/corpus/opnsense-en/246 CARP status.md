@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:46.436Z"
 ---
 
-
 # CARP status
-
 
 ## General
 
@@ -96,6 +94,3 @@ When service status is recovered again, it will send something like the followin
 ```
 ..... carp promoted by 1048576 due to service recovery
 ```
-
----
-

@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:32:24.933Z"
 ---
 
-
 # Local Users & Groups
 
-
-[圖：../../_images/usermanager_groups.png](https://docs.opnsense.org/_images/usermanager_groups.png)
+[圖](https://docs.opnsense.org/_images/usermanager_groups.png)
 
 With the local user manager in OPNsense one can add users and groups and define the privileges for granting access to certain parts of the GUI (Web Configurator).
 
@@ -83,6 +81,3 @@ Each component in the same “lives” on it’s own path (endpoint), these are 
 | **Match** | *The different paths this privilege matches on* |
 | **Users** | *The number of users linked directly into this privilege* |
 | **Groups** | *The number of groups linked directly into this privilege* |
-
----
-

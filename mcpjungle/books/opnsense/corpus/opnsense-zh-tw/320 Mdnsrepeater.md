@@ -8,9 +8,7 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:34:24.362Z"
 ---
 
-
 # Mdnsrepeater
-
 
 *服務（ServiceController.php）*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:24.362Z"
 | `POST` | mdnsrepeater | 設定 | 設定 | |
 |  |  |  |  |  |
 | `<<uses>>` | | | | *模型* [MDNSRepeater.xml](https://github.com/opnsense/plugins/blob/master/net/mdns-repeater/src/opnsense/mvc/app/models/OPNsense/MDNSRepeater/MDNSRepeater.xml) |
-
----
-

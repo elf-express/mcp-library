@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:36.484Z"
 ---
 
-
 # Softether
-
 
 *Resources (GeneralController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:36.484Z"
 | `POST` | softether | service | start |  |
 | `GET` | softether | service | status |  |
 | `POST` | softether | service | stop |  |
-
----
-

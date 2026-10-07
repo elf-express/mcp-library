@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:05.228Z"
 ---
 
-
 # OpenID Connect
-
 
 OpenID Connect (OIDC) is an identity layer built on top of the OAuth 2.0 protocol that allows applications to verify a user’s identity and obtain basic profile information in a secure way. While OAuth 2.0 is mainly used for authorization (granting access to resources), OIDC adds authentication by introducing an ID Token, which is a digitally signed piece of information about the user. This makes it possible for applications (called “relying parties”) to confirm who the user is, without having to manage passwords directly. OIDC is widely used in single sign-on (SSO) scenarios, enabling users to log in with trusted identity providers like Google, Microsoft, or enterprise systems, while keeping the process standardized and secure.
 
@@ -187,6 +185,3 @@ Below a collection of useful links how to setup OpenID at various providers:
 -   Authentic ([https://docs.goauthentik.io/add-secure-apps/providers/oauth2/](https://docs.goauthentik.io/add-secure-apps/providers/oauth2/))
     
 -   Jumpcloud ([https://jumpcloud.com/support/sso-with-oidc](https://jumpcloud.com/support/sso-with-oidc))
-
----
-

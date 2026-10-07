@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:31.784Z"
 ---
 
-
 # Zenarmor (Sensei) Hardware Requirements
-
 
 ## Zenarmor (Sensei): Hardware Requirements
 
@@ -67,6 +65,3 @@ If you’re running a 100 Mbps link (about 100 users) that is quite active durin
 ```
 
 As of [version 0.7.0](https://www.zenarmor.com/docs/support/release-notes#07), Zenarmor expires old report data to free up disk space for the most recent data based on the configured number of days of history to keep.
-
----
-

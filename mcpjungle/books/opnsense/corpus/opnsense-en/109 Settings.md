@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:35.849Z"
 ---
 
-
 # Settings
-
 
 There are some advanced settings, which you can alter in Interfaces ‣ Settings, most of the time you should leave these settings default, but advanced scenarios may require specific settings.
 
@@ -67,6 +65,3 @@ Modify log level for IPv6 clients. Info will give status, interface leases and a
 This option can be used to enter an explicit DUID for use by IPv6 DHCP clients, the different types are detailed in [section 11 of rfc8415](https://tools.ietf.org/html/rfc8415#section-11)
 
 When not set, the dhcp v6 client (`dhcp6c`) will assign one automatically.
-
----
-

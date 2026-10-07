@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:14.224Z"
 ---
 
-
 # Collectd
-
 
 *Resources (GeneralController.php)*
 
@@ -28,6 +26,3 @@ captured: "2026-09-26T11:34:14.224Z"
 | `POST` | collectd | service | start |  |
 | `GET` | collectd | service | status |  |
 | `POST` | collectd | service | stop |  |
-
----
-

@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:43.885Z"
 ---
 
-
 # Overview
-
 
 The life of a service starts during the boot process, but with different hooks available, sometimes it is challenging to find the correct one. This paragraph aims to explain the various integration spots available, which are being explained in more detail in the rest of the chapter.
 
@@ -59,6 +57,3 @@ Now the system is booted and events may take place, some of the common integrati
 ## Shutdown (reboot)
 
 When the system is shutdown or being rebooted, we can hook actions using the [syshook/stop](<245 Bootup autorun options.md>) script directory. Services like the backup hook into this to flush contents before being terminated.
-
----
-

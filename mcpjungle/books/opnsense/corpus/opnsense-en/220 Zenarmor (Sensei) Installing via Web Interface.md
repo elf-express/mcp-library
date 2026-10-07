@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:34.831Z"
 ---
 
-
 # Zenarmor (Sensei) Installing via Web Interface
-
 
 ## Zenarmor (Sensei): Installing via Web Interface
 
@@ -34,7 +32,7 @@ Once the vendor plugin is installed, you should see the Zenarmor plugin availabl
 
 After installing Zenarmor, you should see the Zenarmor menu in the left sidebar of the OPNsense web interface. If you do not see the new, top-level menu, you may need to refresh the page.
 
-[圖：../../_images/zenarmor-install-complete.png](https://docs.opnsense.org/_images/zenarmor-install-complete.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-install-complete.png)
 
 Next, you will need to complete the “Initial Configuration Wizard” for Zenarmor to be fully operational.
 
@@ -56,7 +54,7 @@ To start the “Initial Configuration Wizard”:
 -   Accept the Terms of Service and Privacy Policy by clicking on the checkbox.
     
 
-[圖：../../_images/zenarmor-wizard-welcome.png](https://docs.opnsense.org/_images/zenarmor-wizard-welcome.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-welcome.png)
 
 -   Click the I Agree button to continue to the Hardware Check & Reporting Database section.
     
@@ -65,15 +63,15 @@ To start the “Initial Configuration Wizard”:
 
 Your hardware will be analyzed to ensure it meets the minimum requirements. You will receive one of the following responses: compatible hardware, low-end hardware, incompatible hardware. The setup will not continue if you have incompatible hardware.
 
-[圖：../../_images/zenarmor-wizard-hardware-high-end.png](https://docs.opnsense.org/_images/zenarmor-wizard-hardware-high-end.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-hardware-high-end.png)
 
 *Compatible*
 
-[圖：../../_images/zenarmor-wizard-hardware-low-end.png](https://docs.opnsense.org/_images/zenarmor-wizard-hardware-low-end.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-hardware-low-end.png)
 
 *Low-end*
 
-[圖：../../_images/zenarmor-wizard-hardware-incompatible.png](https://docs.opnsense.org/_images/zenarmor-wizard-hardware-incompatible.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-hardware-incompatible.png)
 
 *Incompatible*
 
@@ -99,11 +97,11 @@ Warning
 
 If you wish to use a remote ElasticSearch database, you must choose it now since you cannot change this after the initial configuration wizard has been completed.
 
-[圖：../../_images/zenarmor-wizard-reporting-database-high-end.png](https://docs.opnsense.org/_images/zenarmor-wizard-reporting-database-high-end.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-reporting-database-high-end.png)
 
 *High-end*
 
-[圖：../../_images/zenarmor-wizard-reporting-database-low-end.png](https://docs.opnsense.org/_images/zenarmor-wizard-reporting-database-low-end.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-reporting-database-low-end.png)
 
 *Low-end*
 
@@ -114,15 +112,15 @@ Note
 
 If you have SOHO or higher Zenarmor paid subscription, we recommend that you install your license key before proceeding with the initial configuration wizard since this will activate a feature that will enable you to have central reporting for many firewalls from a single Elasticsearch instance. Otherwise, only a single remote ES instance can be used with a single firewall.
 
-[圖：../../_images/zenarmor-wizard-reporting-database-remote.png](https://docs.opnsense.org/_images/zenarmor-wizard-reporting-database-remote.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-reporting-database-remote.png)
 
 Click the Install Database button to install the local database if one is chosen and to continue to the Interface Selection section.
 
-[圖：../../_images/zenarmor-installing-ecs.png](https://docs.opnsense.org/_images/zenarmor-installing-ecs.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-installing-ecs.png)
 
 Click the Next button to proceed with interface selection.
 
-[圖：../../_images/zenarmor-db-install-finished.png](https://docs.opnsense.org/_images/zenarmor-db-install-finished.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-db-install-finished.png)
 
 -   Click the Next button Interface Selection section.
     
@@ -137,7 +135,7 @@ Select the deployment mode depending on your topology and requirements. By defau
 
 Before selecting Netmap driver deployment options, make sure that the hardware offloadings are disabled on your node. Since the Hardware Offloading feature is incompatible with Netmap.
 
-[圖：../../_images/zenarmor-selecting-deployment-mode.png](https://docs.opnsense.org/_images/zenarmor-selecting-deployment-mode.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-selecting-deployment-mode.png)
 
 You may check the CPU Pinning option. Zenarmor has a setting to make CPU pinning optional, giving you more flexibility in how you configure your system for optimal performance. By default, Zenarmor is pinned to a dedicated core in order to prevent CPU context-switching overhead. Because if the process wanders between CPU processors, CPU cache misses occur, which has a negative impact on performance.
 
@@ -148,11 +146,11 @@ You may disable this setting depending on your requirements by clicking on the D
 
 For detailed information on “Deployment Modes”, see [here](https://www.zenarmor.com/docs/guides/deployment-modes).
 
-[圖：../../_images/zenarmor-wizard-interface-selection-available.png](https://docs.opnsense.org/_images/zenarmor-wizard-interface-selection-available.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-interface-selection-available.png)
 
 Click the Set Security Zone drop-down menu to assign a tag for the interface. You may set a custom security zone name or select one of the options available, such as DMZ, LAN, guest, wifi, or wan.
 
-[圖：../../_images/zenarmor-wizard-set-security-zone.png](https://docs.opnsense.org/_images/zenarmor-wizard-set-security-zone.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-set-security-zone.png)
 
 To add a custom security zone tag, click the Custom button in the Set Security Zone drop-down menu. After typing the new security zone name, such as vpn, click Add button.
 
@@ -178,11 +176,11 @@ Everyone who installs Zenarmor and login into their Zenconsole may take advantag
 
 If you have a subscription, select I already have my subscription key option to activate your subscription key.
 
-[圖：../../_images/zenarmor-wizard-activating-subscription.png](https://docs.opnsense.org/_images/zenarmor-wizard-activating-subscription.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-activating-subscription.png)
 
 You may also use the Free Edition by selecting the Get Me the Free Edition option. You may enter your email address if you wish to subscribe to the Zenarmor email list to stay up-to-date on the latest news.
 
-[圖：../../_images/zenarmor-getting-free-edition.png](https://docs.opnsense.org/_images/zenarmor-getting-free-edition.png)
+[圖](https://docs.opnsense.org/_images/zenarmor-getting-free-edition.png)
 
 Click Next to proceed to the Finish section.
 
@@ -191,7 +189,4 @@ Click Next to proceed to the Finish section.
 -   Click the Complete button to save your initial configuration data and start using Zenarmor.
     
 
-[圖：../../_images/zenarmor-wizard-finish.png](https://docs.opnsense.org/_images/zenarmor-wizard-finish.png)
-
----
-
+[圖](https://docs.opnsense.org/_images/zenarmor-wizard-finish.png)

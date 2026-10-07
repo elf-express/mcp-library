@@ -9,7 +9,6 @@ translated_by: "google_v2"
 captured: "2026-09-26T11:31:40.397Z"
 ---
 
-
 # 歡迎閱讀 OPNsense 的文檔！
 
 
@@ -184,6 +183,3 @@ captured: "2026-09-26T11:31:40.397Z"
 >     -   [結束語](<380 貢獻.md#closing-words>)
 > -   [歷史](https://docs.opnsense.org/history.html)
 >     -   [關於叉子](<382 關於叉子.md>)
-
----
-

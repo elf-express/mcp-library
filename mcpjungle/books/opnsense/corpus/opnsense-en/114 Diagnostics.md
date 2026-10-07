@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:37.853Z"
 ---
 
-
 # Diagnostics
-
 
 The interface diagnostics page contains various tools to help debug network issues.
 
@@ -183,6 +181,3 @@ Use [traceroute](https://www.freebsd.org/cgi/man.cgi?query=traceroute) / [tracer
 Tip
 
 The result grid also contains the [autonomous system number](https://en.wikipedia.org/wiki/Autonomous_system_\(Internet\)) which can be practical if you want to filter traffic to or from a specific party. Use Firewall ‣ Aliases to collect the associated networks and add them in rules.
-
----
-

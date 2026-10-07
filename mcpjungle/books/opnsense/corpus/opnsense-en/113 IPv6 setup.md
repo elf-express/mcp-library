@@ -8,13 +8,11 @@ translated_by: "original"
 captured: "2026-09-26T11:32:37.355Z"
 ---
 
-
 # IPv6 setup
-
 
 ## [IPv6 setup](#id3)
 
-[圖：../_images/IPv6.png](https://docs.opnsense.org/_images/IPv6.png)
+[圖](https://docs.opnsense.org/_images/IPv6.png)
 
 Index
 
@@ -312,6 +310,3 @@ When you experience issues during setup, consider the sequence of events as expl
 -   [IPv6 Tunnel Broker](<124 IPv6 Tunnel Broker.md>)
     
 -   [IPv6 for generic DSL dialup](<122 IPv6 for generic DSL dialup.md>)
-
----
-

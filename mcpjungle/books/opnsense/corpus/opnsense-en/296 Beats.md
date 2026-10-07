@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:10.682Z"
 ---
 
-
 # Beats
-
 
 *Service (ServiceController.php)*
 
@@ -30,6 +28,3 @@ captured: "2026-09-26T11:34:10.682Z"
 | `POST` | beats | settings | set |  |
 |  |  |  |  |  |
 | `<<uses>>` |  |  |  | *model* [Filebeat.xml](https://github.com/opnsense/plugins/blob/master/sysutils/beats/src/opnsense/mvc/app/models/OPNsense/Beats/Filebeat.xml) |
-
----
-

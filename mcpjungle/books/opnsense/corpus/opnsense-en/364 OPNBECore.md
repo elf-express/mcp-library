@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:34:44.664Z"
 ---
 
-
 # OPNBECore
-
 
 *Resources (SyncController.php) – extends : ApiControllerBase*
 
@@ -126,6 +124,3 @@ r = requests.post(
 ```
 
 The example above will restart the `cron` service.
-
----
-

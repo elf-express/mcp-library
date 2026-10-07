@@ -8,11 +8,9 @@ translated_by: "original"
 captured: "2026-09-26T11:33:03.918Z"
 ---
 
-
 # Anti Virus Engine
 
-
-[圖：../_images/eye_on_virus_new.jpg](https://docs.opnsense.org/_images/eye_on_virus_new.jpg)
+[圖](https://docs.opnsense.org/_images/eye_on_virus_new.jpg)
 
 **OPNsense** offers the industry standard ICAP to protect HTTP and HTTPS connections against ransomware, trojans, viruses and other malware .
 
@@ -23,6 +21,3 @@ OPNsense offers a ClamAV plugin, which can be used with the C-ICAP plugin or rel
 -   [Setup Anti Virus Protection](https://docs.opnsense.org/manual/how-tos/proxyicapantivirus.html)
     
 -   [Setup Anti Virus Protection using OPNsense Plugins](https://docs.opnsense.org/manual/how-tos/proxyicapantivirusinternal.html)
-
----
-

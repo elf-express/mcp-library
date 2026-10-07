@@ -8,7 +8,6 @@ translated_by: "original"
 captured: "2026-09-26T11:31:42.359Z"
 ---
 
-
 # Security
 
 ## [Security](#id14)
@@ -318,6 +317,3 @@ Below you will find the versions that have been tested or are currently in testi
 -   [https://www.ccn.cni.es/index.php/en/menu-ccn-en](https://www.ccn.cni.es/index.php/en/menu-ccn-en)
     
 -   [https://cpstic.ccn.cni.es/en/](https://cpstic.ccn.cni.es/en/)
-
----
-

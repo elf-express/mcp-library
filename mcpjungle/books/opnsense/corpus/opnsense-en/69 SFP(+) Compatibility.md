@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:32:15.318Z"
 ---
 
-
 # SFP(+) Compatibility
-
 
 Most OPNsense® appliances feature 10 Gigabit SFP+ cages powered by AMD® axgbe to allow for flexible connectivity. Different SFP(+) transceiver modules can be used to connect to different types of media (e.g. copper or fiber) depending on your needs.
 
@@ -206,6 +204,3 @@ When using SFP+Modules, do not mix 2.5/5Gbps and 10Gbps link-speed as the hardwa
 | --- | --- | --- | --- |
 | FlexOptix | P.C3025G.H Passive | 25G |  |
 | FS | SFP-H25G-CU1M | 25G | With Intel compatibility |
-
----
-

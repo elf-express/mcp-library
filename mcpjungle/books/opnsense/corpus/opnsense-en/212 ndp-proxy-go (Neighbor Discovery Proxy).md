@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:28.245Z"
 ---
 
-
 # ndp-proxy-go (Neighbor Discovery Proxy)
-
 
 -   [Introduction](#introduction)
     
@@ -397,6 +395,3 @@ The proxy must install host routes to target the individual downstream clients:
 Attention
 
 The proxy does not clean up installed host routes when it is stopped. This is intentional to minimize downtime of IPv6 clients between service restarts. It does automatically prune routes while it runs when the `cache-ttl` of a discovered neighbor expires.
-
----
-

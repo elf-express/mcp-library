@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:02.898Z"
 ---
 
-
 # WireGuard MullvadVPN Road Warrior Setup
-
 
 ## Introduction
 
@@ -59,6 +57,3 @@ See the how-to on selective routing for further information [WireGuard Selective
 ## Step 4 - Conclusion
 
 At this point, you should have a working connection and be able to pass the Mullvad connection test found on their website. If your configuration does not work or does not pass, a good place to start investigating is VPN –> WireGuard –> Log file.
-
----
-

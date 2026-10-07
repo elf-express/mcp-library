@@ -8,9 +8,7 @@ translated_by: "original"
 captured: "2026-09-26T11:33:49.453Z"
 ---
 
-
 # Custom (app specific) field types
-
 
 Applications can add their own custom field types, which should be derived from `BaseField` or one of its descendants. A very simple single item custom field type could look like this:
 
@@ -72,6 +70,3 @@ The validation can be used as any standard type, when prefixed with `.` the mode
 Tip
 
 Inspect the [basic field](https://github.com/opnsense/core/tree/master/src/opnsense/mvc/app/models/OPNsense/Base/FieldTypes) types for inspiration, a concrete example of a custom field type can be found in the [firewall](https://github.com/opnsense/core/tree/master/src/opnsense/mvc/app/models/OPNsense/Firewall) section
-
----
-
