@@ -1,0 +1,23 @@
+mcpjungle/gateway/web/dashboard/tsconfig.json
+  s_7f858966886028::t_465232891cd4f1 19
+mcpjungle/gateway/web/dashboard/package-lock.json
+  s_7f858966886028::t_665a065ade239c 20,1194-1513,2308-2310,2314,2317-2339
+mcpjungle/gateway/web/dashboard/package.json
+  s_7f858966886028::t_64a6e2da1cd2c4 15,18,24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ef94a9df18d07eb0824a4d64955eba7cb474bd54",
+  "prompts": {},
+  "sessions": {
+    "s_7f858966886028": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aa073fc5-2fd6-4c40-9346-ccc9d08873dc",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
