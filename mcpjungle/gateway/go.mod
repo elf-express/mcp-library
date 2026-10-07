@@ -6,7 +6,7 @@ require (
 	github.com/gin-gonic/gin v1.12.0
 	github.com/glebarez/sqlite v1.11.0
 	github.com/joho/godotenv v1.5.1
-	github.com/mark3labs/mcp-go v0.48.0
+	github.com/mark3labs/mcp-go v1.1.1
 	github.com/prometheus/client_golang v1.24.1
 	github.com/spf13/afero v1.15.0
 	github.com/spf13/cobra v1.10.2
@@ -70,6 +70,7 @@ require (
 	github.com/quic-go/qpack v0.6.0 // indirect
 	github.com/quic-go/quic-go v0.63.0 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
+	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
