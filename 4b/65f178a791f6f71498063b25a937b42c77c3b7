@@ -1,0 +1,57 @@
+.github/dependabot.yml
+  s_58251641b98742::t_d63fe72bf8e565 5
+.github/workflows/ci.yml
+  s_58251641b98742::t_1a22ac148804ec 136,189-190
+.github/workflows/docker-publish.yml
+  s_58251641b98742::t_b701258871c5db 46-47
+.gitignore
+  s_58251641b98742::t_04f269b509bb90 14
+AGENTS.md
+  s_58251641b98742::t_76786e179c73aa 9,13-14,37
+CLAUDE.md
+  s_58251641b98742::t_21886fcc04ebfe 13,16,28,59,61,64,74-75,117
+README.md
+  s_58251641b98742::t_7383f1fa6345cc 3,9,89
+mcpjungle/.dockerignore
+  s_58251641b98742::t_c566822f399180 1-8
+mcpjungle/README.md
+  s_58251641b98742::t_4fb0e3e4527de9 16-17,21,57
+mcpjungle/books/README.md
+  s_58251641b98742::t_3807136d11467f 1,3-4,34,51-52,54-65,67-73,75-90,92-100,105,164-165,169-170,174,191,202
+mcpjungle/books/nginx/import.ts
+  s_58251641b98742::t_37f7a3650c6712 3-5,10,12-14
+mcpjungle/docker-compose.dockhand.yml
+  s_58251641b98742::t_893411affe4172 15-17
+mcpjungle/docker-compose.localtest.yml
+  s_58251641b98742::t_a8556b7ab46188 38-40
+mcpjungle/docker-compose.mcpjungle.yml
+  s_58251641b98742::t_47e6902a9afad0 53-55
+mcpjungle/docs-mcp-server/Dockerfile
+  s_58251641b98742::t_c622aabfadc635 1-3,7,9-10,21,25-26
+mcpjungle/docs-mcp-server/README.md
+  s_58251641b98742::t_bff6568216164d 4,10,21,81,83,113,123,127-128,130-131,165
+mcpjungle/docs-mcp-server/package.json
+  s_58251641b98742::t_fc3ba553f9b23e 24,32,34
+mcpjungle/docs-mcp-server/src/corpus.ts
+  s_58251641b98742::t_64aaa08d8a2424 144-153,485,783
+mcpjungle/docs-mcp-server/tests/corpus-roots.test.ts
+  s_58251641b98742::t_93c5d105994c41 10,12,83-106
+mcpjungle/docs-mcp-server/tests/nginx-transform.test.ts
+  s_58251641b98742::t_b6d40ac86f5de1 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4b65f178a791f6f71498063b25a937b42c77c3b7",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
