@@ -1,0 +1,24 @@
+mcpjungle/books/opnsense/transform.ts
+  s_fd0c121d1f4c95::t_8828ca6ddd54e8 12
+  s_fd0c121d1f4c95::t_f97ab9aea6b0cd 32-34
+  s_fd0c121d1f4c95::t_2cfc2d43878295 1-11,13-31,35-42,44-46
+  s_fd0c121d1f4c95::t_66a1aacb25636e 43
+mcpjungle/docs-mcp-server/tests/opnsense-transform.test.ts
+  s_fd0c121d1f4c95::t_7d08089760e139 1-94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "711c416fc79c302eb730b86164cbfbd6bffc98c7",
+  "prompts": {},
+  "sessions": {
+    "s_fd0c121d1f4c95": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7343d9e3-8779-4e84-bfef-caa238059f21",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
