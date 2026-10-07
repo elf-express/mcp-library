@@ -194,8 +194,8 @@ Settings → Connectors → Add custom connector:
 
 ---
 
-## 五、部署到 MCPJungle(已移到 ../mcpjungle/)
+## 五、部署到 MCPJungle
 
-MCPJungle gateway 的部署、註冊、官方工具、Dockhand、ghcr 推送等,已獨立到 repo 根的 **[`mcpjungle/`](../mcpjungle/)**(它是整個 library 的 gateway,不屬於本 server)。完整說明見 [`../mcpjungle/README.md`](../mcpjungle/README.md)。
+MCPJungle gateway 的部署、註冊、官方工具、Dockhand、ghcr 推送等,寫在上一層的 **[`mcpjungle/README.md`](../README.md)**(gateway 是整個 library 共用的,不屬於本 server)。compose 檔在 repo 根目錄(`compose.yaml` / `compose.pull.yaml` / `compose.attach.yaml`);書本語料由 registrar 依各書 `corpus.json` 自動註冊,不必手寫註冊檔。
 
 本 server 在那套部署裡的角色:gateway 以容器名 `http://docs-mcp-server:5690/mcp/<corpus>` 連到它;image 為 `ghcr.io/elf-express/docs-mcp-server:latest`(由本目錄 `build`)。

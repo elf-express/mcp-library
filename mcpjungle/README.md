@@ -68,7 +68,7 @@ docker compose run --rm -e REGISTER_LIST="nginx-en" registrar   # 只註冊指�
 
 ## 三、官方 stdio 工具(filesystem / fetch / time)
 
-> **MCPJungle 本身沒有內建工具**——工具都來自註冊的 server。`-stdio` image 內含 npx/uvx,可跑官方 reference server。registrar 預設一起註冊這三個(`REGISTER_EXTRAS=0` 可略過):
+> **MCPJungle 本身沒有內建工具**——工具都來自註冊的 server。本 repo 的 gateway 映像由 `gateway/Dockerfile.fullbuild` 建置,執行階段以 `ghcr.io/astral-sh/uv:debian` 為底再裝 Node 22,內含 npx/uvx,可跑官方 reference server。registrar 預設一起註冊這三個(`REGISTER_EXTRAS=0` 可略過):
 
 | 設定檔 | 命令 | 說明 |
 |---|---|---|
