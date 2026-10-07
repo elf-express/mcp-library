@@ -1,0 +1,19 @@
+AGENTS.md
+  s_4f6972c29994b4::t_56a52cc15bff04 36-37,39-41,44,47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "14aeca8e9c3e22100b6e11130740a265d84dabc0",
+  "prompts": {},
+  "sessions": {
+    "s_4f6972c29994b4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a42fc057-0fbf-4489-b593-7edb61ef4b02",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
