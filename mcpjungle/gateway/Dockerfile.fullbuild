@@ -24,7 +24,7 @@ RUN cd web/dashboard && npm run build
 # -> /app/web/dashboard/dist
 
 # ---- Stage 2: build the Go binary (embeds the built frontend) ----
-FROM golang:1.24-alpine AS builder
+FROM golang:1.26-alpine AS builder
 WORKDIR /app
 RUN apk add --no-cache git
 COPY go.mod go.sum ./
