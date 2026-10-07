@@ -1,0 +1,21 @@
+mcpjungle/gateway/web/dashboard/package-lock.json
+  s_7f858966886028::t_7a37d8ecc3372f 14,1914-1916,1918-1919,2133-2135,2138-2140,2143,2145,2374-2382
+mcpjungle/gateway/web/dashboard/package.json
+  s_7f858966886028::t_5b719eead29d6d 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "354bface6a258724bd2767ae872a3cef31e1b71f",
+  "prompts": {},
+  "sessions": {
+    "s_7f858966886028": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aa073fc5-2fd6-4c40-9346-ccc9d08873dc",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
