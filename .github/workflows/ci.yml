@@ -6,6 +6,7 @@ name: CI
 # 內含:
 #   - basics:    commit lint、大檔案檢查、機密掃描
 #   - build-test: docs-mcp-server 的 TypeScript build + 單元測試(上傳 JUnit 報告)
+#   - gateway:    mcpjungle/gateway 的 go build / go test / golangci-lint
 #   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
 # repo 政策只允許官方與已驗證發行者的 action,且必須釘 SHA。
 # =============================================================================
@@ -86,6 +87,44 @@ jobs:
           fi
           echo "未發現明顯機密資訊"
 
+  gateway:
+    name: Gateway (go build / test / lint)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mcpjungle/gateway
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7
+
+      - name: Setup Node.js(dashboard 建置)
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020  # v6
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: mcpjungle/gateway/web/dashboard/package-lock.json
+
+      - name: Setup Go
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e  # v7.0.0
+        with:
+          go-version-file: mcpjungle/gateway/go.mod
+          cache-dependency-path: mcpjungle/gateway/go.sum
+
+      # internal/dashboardui 以 //go:embed dist 內嵌前端,沒有 dist 無法編譯
+      - name: Build dashboard
+        run: bash scripts/build-dashboard.sh
+
+      - name: Go build
+        run: go build ./...
+
+      - name: Go test
+        run: go test ./...
+
+      - name: Lint
+        env:
+          GOTOOLCHAIN: auto
+        run: go run github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.14.0 run ./...
+
   build-test:
     name: Build & Test (${{ matrix.name }})
     runs-on: ubuntu-latest
@@ -140,7 +179,7 @@ jobs:
   docker-build:
     name: Docker Build Verify (${{ matrix.image }})
     runs-on: ubuntu-latest
-    needs: build-test
+    needs: [build-test, gateway]
     if: github.event_name == 'pull_request'
     strategy:
       fail-fast: false
@@ -148,6 +187,9 @@ jobs:
         include:
           - image: docs-mcp-server
             context: ./mcp/docs-mcp-server
+          - image: mcpjungle-gateway
+            context: ./mcpjungle/gateway
+            dockerfile: ./mcpjungle/gateway/Dockerfile.fullbuild
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7
@@ -159,7 +201,7 @@ jobs:
         uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc  # v7
         with:
           context: ${{ matrix.context }}
-          file: ${{ matrix.context }}/Dockerfile
+          file: ${{ matrix.dockerfile || format('{0}/Dockerfile', matrix.context) }}
           push: false
           load: true
           tags: ${{ matrix.image }}:ci-test

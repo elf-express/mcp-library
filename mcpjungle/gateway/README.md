@@ -1,3 +1,6 @@
+> **本目錄源自 [MCPJungle](https://github.com/mcpjungle/mcpjungle) `c2a2c8d`(2026-05-20),自 2026-10 起在 mcp-library 獨立維護,不再跟隨上游。**
+> 授權沿用 [LICENSE](LICENSE)。建置用 [`Dockerfile.fullbuild`](Dockerfile.fullbuild)(dashboard + Go 一次建完);lint 規則見 [`.golangci.yml`](.golangci.yml),由 mcp-library 根 CI 執行。
+
 <h1 align="center">
   MCPJungle
 </h1>
