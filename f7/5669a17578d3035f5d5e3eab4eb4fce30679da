@@ -1,0 +1,21 @@
+mcpjungle/gateway/go.mod
+  s_7f858966886028::t_88f88e82da7f26 23-25,51
+mcpjungle/gateway/go.sum
+  s_7f858966886028::t_e77f84d052aafd 68-69,210-213,217-218
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f75669a17578d3035f5d5e3eab4eb4fce30679da",
+  "prompts": {},
+  "sessions": {
+    "s_7f858966886028": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aa073fc5-2fd6-4c40-9346-ccc9d08873dc",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
