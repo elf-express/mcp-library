@@ -7,7 +7,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ID_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const ID_RE = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
+const ID_MAX = 30;
 const BASE_TOOLS = ["docs_list_corpora", "docs_search", "docs_read", "docs_outline"];
 const CAPABILITY_TOOLS = {
   cheatsheet: ["docs_cheatsheet"],
@@ -34,7 +35,8 @@ export function collectBookConfigs(booksDir, { docsUrl, token = "" }) {
   for (const book of subdirs(booksDir)) {
     for (const id of subdirs(path.join(booksDir, book, "corpus"))) {
       const where = `${book}/corpus/${id}`;
-      if (!ID_RE.test(id)) { errors.push(`${where}:語料 id 只能用小寫英數與 -`); continue; }
+      if (!ID_RE.test(id)) { errors.push(`${where}:語料 id 只能用小寫英數與 -,且以字母開頭`); continue; }
+      if (id.length > ID_MAX) { errors.push(`${where}:語料 id 超過 ${ID_MAX} 字元`); continue; }
       if (seen.has(id)) { errors.push(`${where}:語料 id 與 ${seen.get(id)} 重複`); continue; }
       seen.set(id, where);
       let m;
@@ -49,7 +51,8 @@ export function collectBookConfigs(booksDir, { docsUrl, token = "" }) {
       if (!description) { errors.push(`${where}/corpus.json:缺 description`); continue; }
       if (m.book !== book) { errors.push(`${where}/corpus.json:book 應為 "${book}",實際是 ${JSON.stringify(m.book)}`); continue; }
       const expected = typeof m.language === "string" ? `${book}-${m.language.toLowerCase()}` : "";
-      if (id !== expected) { errors.push(`${where}:語料 id 應為 ${expected || "<book>-<language>"}`); continue; }
+      // 中英混排語料的 id 是 <book>-bi,language 填主要語言
+      if (id !== expected && id !== `${book}-bi`) { errors.push(`${where}:語料 id 應為 ${expected || "<book>-<language>"} 或 ${book}-bi`); continue; }
       const caps = m.capabilities ?? {};
       const tools = [...BASE_TOOLS, ...Object.keys(CAPABILITY_TOOLS).filter((k) => caps[k]).flatMap((k) => CAPABILITY_TOOLS[k])];
       const title = typeof m.title === "string" && m.title.trim() ? m.title.trim() : id;

@@ -62,12 +62,27 @@ for (const [name, files, pattern] of [
     "beta/corpus/alpha-en/corpus.json": manifest("alpha", "en"),
   }, /重複/],
   ["沒有任何語料", { "alpha/source/a.md": "# a" }, /沒有任何語料/],
+  ["id 不以字母開頭", { "9lives/corpus/9lives-en/corpus.json": manifest("9lives", "en") }, /以字母開頭/],
+  ["id 超過 30 字元", { "abcdefghijklmnopqrstuvwxyz01/corpus/abcdefghijklmnopqrstuvwxyz01-en/corpus.json": manifest("abcdefghijklmnopqrstuvwxyz01", "en") }, /超過 30 字元/],
 ]) {
   test(`不合法:${name}`, () => {
     const { errors } = collectBookConfigs(makeBooks(files), { docsUrl: "http://docs:5690" });
     assert.ok(errors.some((e) => pattern.test(e)), errors.join("\n"));
   });
 }
+
+test("中英混排語料:id 為 <book>-bi,language 填主要語言也合法", () => {
+  const books = makeBooks({ "alpha/corpus/alpha-bi/corpus.json": manifest("alpha", "zh-TW") });
+  const { configs, errors } = collectBookConfigs(books, { docsUrl: "http://docs:5690" });
+  assert.deepEqual(errors, []);
+  assert.deepEqual(configs.map((c) => c.name), ["alpha-bi"]);
+});
+
+test("id 剛好 30 字元合法", () => {
+  const book = "abcdefghijklmnopqrstuvwxyz0";
+  const books = makeBooks({ [`${book}/corpus/${book}-en/corpus.json`]: manifest(book, "en") });
+  assert.deepEqual(collectBookConfigs(books, { docsUrl: "http://docs:5690" }).errors, []);
+});
 
 test("CLI:有任何錯誤就 exit 1,且不寫任何檔", () => {
   const books = makeBooks({

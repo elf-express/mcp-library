@@ -172,7 +172,7 @@ mcpjungle/books/
 - [ ] **註冊**:不用手動註冊:registrar 會依 corpus.json 自動註冊;本機先跑 `node mcpjungle/registry/gen-book-configs.mjs mcpjungle/books <暫存目錄>` 確認合法(印出的 id 要包含新書)。合法條件(任一不符,registrar 不註冊任何 server 並以 1 結束):
   - 每個 `corpus/<id>/` 都有 `corpus.json`,且是 JSON 物件
   - `description` 非空;`book` 等於書資料夾名
-  - id 符合 `^[a-z0-9]+(-[a-z0-9]+)*$`,且等於 `<book>-<language 小寫>`
+  - id 符合 `^[a-z][a-z0-9]*(-[a-z0-9]+)*$`(以字母開頭)、≤ 30 字元,且等於 `<book>-<language 小寫>`;中英混排語料可用 `<book>-bi`
   - id 全域不重複,也不與 `mcpjungle/registry/*.json` 同名;整個 `books/` 至少一個語料
 - [ ] **文件**:本檔「現有語料」表、根 `README.md`、根 `CLAUDE.md`、`mcpjungle/docs-mcp-server/README.md`、`mcpjungle/README.md`
 - [ ] 部署後驗證 gateway:`list tools | grep '<id>__'` 與一次 `invoke <id>__docs_search`
