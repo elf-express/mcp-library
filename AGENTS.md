@@ -33,7 +33,7 @@
 
 - worktree 一律放在 repo 外的同層目錄 `E:\source\mcp-library-<短名>`，不要開在 repo 目錄裡面（會被當成未追蹤檔，也會被 docker build context 掃進去）。
 - 開法：`git -C E:\source\mcp-library worktree add E:\source\mcp-library-<短名> -b <分支> origin/main`；PR 合併後 `git -C E:\source\mcp-library worktree remove E:\source\mcp-library-<短名>`。
-- 用 Orca 管理工作區時，「工作樹位置」填絕對路徑 `E:\.ocrca\worktrees`（Orca 會再開 `<專案名>\<工作樹名>`；相對路徑從 repo 根解析，會開進 repo 裡面）。
+- 例外：Orca 開的 worktree 放在 repo 內的 `.ocrca\worktrees`（「工作樹位置」填相對路徑 `.ocrca\worktrees`，Orca 會再開 `<專案名>\<工作樹名>`）。`/.ocrca/` 已列入 `.gitignore`；docker build context 是 `mcpjungle/` 與 `mcpjungle/gateway/`，不含它。主倉庫勿跑 `git clean -x`，會連 worktree 一起刪掉。
 - 新 worktree 的設定腳本放在根目錄 [`orca.yaml`](orca.yaml)（`scripts.setup`，團隊共用）：裝 docs-mcp-server 依賴並 build，主倉庫有 `.env` 時一併複製。要改 gateway 的 worktree，另外跑 `(cd mcpjungle/gateway && bash scripts/build-dashboard.sh)`。
 
 ## 開發建議

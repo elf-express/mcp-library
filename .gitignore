@@ -20,3 +20,4 @@ dist/
 
 # 巢狀 worktree 保底(規則見 AGENTS.md 的 Worktree 一節)
 /mcp-library/
+/.ocrca/
