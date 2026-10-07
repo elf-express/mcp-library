@@ -33,17 +33,18 @@
 
 - worktree 一律放在 repo 外的同層目錄 `E:\source\mcp-library-<短名>`，不要開在 repo 目錄裡面（會被當成未追蹤檔，也會被 docker build context 掃進去）。
 - 開法：`git -C E:\source\mcp-library worktree add E:\source\mcp-library-<短名> -b <分支> origin/main`；PR 合併後 `git -C E:\source\mcp-library worktree remove E:\source\mcp-library-<短名>`。
-- 用 Orca 管理工作區時，把 Orca 的 worktree 位置設為 `E:\source\`。
-- Orca 的設定腳本（新 worktree 建立後在其根目錄執行，PowerShell）：
+- 用 Orca 管理工作區時，「工作樹位置」填 `E:\source\worktrees`。Orca 會在該位置下再開 `<專案名>\<工作樹名>`，填 `E:\source\` 會得到 `E:\source\mcp-library\<名稱>`，等於開在 repo 裡面。
+- Orca 的「設定腳本」（新 worktree 建立後執行，以 shell 腳本執行，環境變數用 `$VAR` 寫法）：
 
-  ```powershell
-  $ErrorActionPreference = 'Stop'; $PSNativeCommandUseErrorActionPreference = $true
+  ```sh
+  set -e
+  cd "$ORCA_WORKTREE_PATH"
   npm ci --prefix mcpjungle/docs-mcp-server
   npm run build --prefix mcpjungle/docs-mcp-server
-  if (Test-Path E:\source\mcp-library\.env) { Copy-Item E:\source\mcp-library\.env . }
+  if [ -f "$ORCA_ROOT_PATH/.env" ]; then cp "$ORCA_ROOT_PATH/.env" .; fi
   ```
 
-  只能填單行時改用 `npm ci --prefix mcpjungle/docs-mcp-server && npm run build --prefix mcpjungle/docs-mcp-server`。要改 gateway 的 worktree 另外跑 `bash -c "cd mcpjungle/gateway && bash scripts/build-dashboard.sh"`。
+  要改 gateway 的 worktree，另外跑 `(cd mcpjungle/gateway && bash scripts/build-dashboard.sh)`。
 
 ## 開發建議
 
