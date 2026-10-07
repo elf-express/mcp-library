@@ -48,7 +48,7 @@
 
 - [ ] 無 Docker 變更
 - [ ] 修改了 Dockerfile
-- [ ] 修改了 `docker-compose.yml` / 環境變數
+- [ ] 修改了 `compose*.yaml` / 環境變數
 - [ ] 需要更新使用者的部署設定
 
 ## ✅ 提交前檢查清單

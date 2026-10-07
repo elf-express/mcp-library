@@ -1,9 +1,0 @@
-# mcp-library —— 一鍵起 Postgres + gateway + docs-mcp + registrar(build 法)。
-# DB 內建、網路 mcpjungl 由 stack 自建 —— 不必自己先準備 Postgres、不必 docker network create。
-# 起(零設定,不必先 cp .env.example):
-#   docker compose up -d --build
-#
-# Dockhand:指向本 repo、compose 路徑 docker-compose.yml → 一鍵全起(env 全部可留空)。
-# pull 法(不在 server build)見 docker-compose.pull.yml。
-include:
-  - mcpjungle/docker-compose.mcpjungle.yml

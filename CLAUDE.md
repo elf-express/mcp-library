@@ -12,7 +12,7 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 - [`mcpjungle/docs-mcp-server/`](mcpjungle/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,放在 `mcpjungle/books/<書名>/corpus/<id>/`,映像 build 時併入;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生,勿手改。
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **自行維護的 [MCPJungle(源自上游 c2a2c8d)](mcpjungle/gateway)**(從源碼 build,非 pull 官方映像)。
-- [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
+- [`compose.yaml`](compose.yaml) — 根入口,一鍵把 postgres + gateway + docs-mcp + registrar 全拉起;另有 `compose.pull.yaml`(拉 ghcr 映像)與 `compose.attach.yaml`(接現有 gateway)。compose 只有這 3 份。
 - [`mcpjungle/books/<書名>/source/`](mcpjungle/books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `mcpjungle/books/<書名>/corpus/<書名>-<語言>/` 語料。
 
 ## 常用命令
@@ -20,9 +20,19 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 ### 部署(根目錄,推薦入口)
 
 ```bash
-cp .env.example .env                 # 必填 MCPJUNGLE_DATABASE_URL(host 用 DB 的「IP」,非容器名)
+cp .env.example .env                 # 選用;DB 內建,改接外部 DB 才填 MCPJUNGLE_DATABASE_URL(host 用 DB 的「IP」)
 docker compose up -d --build         # build 法:現場 build,總是最新源碼
-docker compose -f docker-compose.pull.yml up -d   # pull 法:拉 ghcr 既建映像,不在 server build
+docker compose -f compose.pull.yaml up -d             # pull 法:docs-mcp 與 registrar 拉 ghcr 映像,gateway 仍現場 build
+docker compose -f compose.attach.yaml up -d --build   # 只起 docs-mcp + registrar,接「現有」gateway
+docker compose exec mcpjungle /mcpjungle list servers  # 看 gateway 已註冊的 server
+```
+
+並存測試(與正式堆疊同時跑,`down -v` 一定要帶 `-p mcp-test`):
+
+```powershell
+$env:MCPJUNGLE_HOST_PORT="18900"; $env:IMAGE_TAG="mcp-test"
+docker compose -p mcp-test up -d --build
+docker compose -p mcp-test down -v
 ```
 
 ### docs-mcp-server 開發(核心,`cd mcpjungle/docs-mcp-server`)
@@ -46,9 +56,6 @@ $env:DOCS_SCOPE="sqlsugar-zh-tw"; npm run dev   # stdio 鎖定單一語料
 ### mcpjungle gateway(`cd mcpjungle`)
 
 ```bash
-docker compose -f docker-compose.mcpjungle.yml up -d --build   # 正式:gateway + docs-mcp + registrar
-docker compose -f docker-compose.localtest.yml up -d           # 自包含測試(內含 postgres + 自建網路)
-docker compose -f docker-compose.dockhand.yml up -d            # 只起 docs-mcp + registrar,接「現有」gateway
 REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(需先裝官方 mcpjungle CLI)
 ```
 
@@ -105,22 +112,22 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 
 ### 部署拓樸:DB / 網路 / build vs pull
 
-- **DB 內建**:根 compose 含 `postgres` service(`postgres:16-alpine`,容器 `mcpjungle-postgres`,volume `pgdata`,不對外開 port)。gateway 以 `depends_on: condition: service_healthy` 等它就緒。零設定即可 `docker compose up -d --build`。
+- **DB 內建**:根 compose 含 `postgres` service(`postgres:16-alpine`,volume `pgdata`,不對外開 port)。gateway 以 `depends_on: condition: service_healthy` 等它就緒。零設定即可 `docker compose up -d --build`。
 - 要改接**既有的外部 DB**:在 `.env` 設 `MCPJUNGLE_DATABASE_URL`(host 填 DB 的 IP,不是容器名)覆寫預設值即可。改內建 DB 密碼要同時改 `POSTGRES_PASSWORD` 與 `MCPJUNGLE_DATABASE_URL` 兩處。
 - 網路 `mcpjungl` 由 stack **自建**(`<project>_mcpjungl`),**不必先 `docker network create`**。
-- gateway 映像 = 自行維護的 MCPJungle(源自上游 c2a2c8d)從源碼 build:context `./gateway`、`Dockerfile.fullbuild`、tag `mcpjungle-fork:latest`。
+- gateway 映像 = 自行維護的 MCPJungle(源自上游 c2a2c8d)從源碼 build:context `./mcpjungle/gateway`、`Dockerfile.fullbuild`、tag `mcpjungle-fork:${IMAGE_TAG:-latest}`。
 - docs-mcp 映像由 `.github/workflows/docker-publish.yml` 在 push main 時自動 build + push 到 `ghcr.io/elf-express/docs-mcp-server:latest`(pull 法用的就是它)。
 
 ## 易踩雷
 
-- **容器名固定 `mcpjungle-server`**:已有同名 gateway 在跑會撞名,先停舊的;要接「現有」gateway 用 `docker-compose.dockhand.yml`(別再起新 gateway)。
+- **沒有 `container_name`**:容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。進容器用 `docker compose exec <服務名>`;要接「現有」gateway 用 `compose.attach.yaml`(別再起新 gateway)。可覆寫 `MCPJUNGLE_HOST_PORT`(預設 18800)、`IMAGE_TAG`(預設 latest)、`MCPJUNGLE_DATA_DIR`。
 - **build context 是 `mcpjungle/`**:docs-mcp 與 registrar 的 build context 是 `mcpjungle/`,`books/*/source` 由 `mcpjungle/.dockerignore` 排除。
 - **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 
 ## CI / commit 規範
 
-- [`.github/workflows/ci.yml`](.github/workflows/ci.yml):`basics`(**Conventional Commits** PR 檢查、>5MB 大檔擋、機密掃描)+ `build-test` + PR 時 docker build verify。
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml):`basics`(**Conventional Commits** PR 檢查、compose 驗證、>5MB 大檔擋、機密掃描)+ `build-test` + PR 時 docker build verify。
 - `build-test` 跑 docs-mcp-server 的 build + vitest。
 - 提交訊息走 **Conventional Commits**(`feat:` / `fix:` / `deploy:` …),否則 PR 會被擋。
 - worktree 放 repo 外的 `E:\source\mcp-library-<短名>`(見 [AGENTS.md](AGENTS.md) 的 Worktree 一節)。

@@ -1,0 +1,34 @@
+# 主檔的變體:docs-mcp 與 registrar 改拉 ghcr 映像(由 .github/workflows/docker-publish.yml 在 push main 時發布)。
+# gateway 沒有發布映像,仍現場 build。單檔即可用:docker compose -f compose.pull.yaml up -d
+# 以 extends 引用主檔各服務,只在這裡覆寫 build / pull_policy。
+services:
+  postgres:
+    extends:
+      file: compose.yaml
+      service: postgres
+
+  mcpjungle:
+    extends:
+      file: compose.yaml
+      service: mcpjungle
+
+  docs-mcp-server:
+    extends:
+      file: compose.yaml
+      service: docs-mcp-server
+    build: !reset null
+    pull_policy: always
+
+  registrar:
+    extends:
+      file: compose.yaml
+      service: registrar
+    build: !reset null
+    pull_policy: always
+
+volumes:
+  pgdata:
+
+networks:
+  mcpjungl:
+    driver: bridge
