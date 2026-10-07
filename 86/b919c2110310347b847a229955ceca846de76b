@@ -1,0 +1,23 @@
+mcpjungle/docs-mcp-server/tests/opnsense-transform.test.ts
+  s_fd0c121d1f4c95::t_e93dcc03bdb87b 105-108
+mcpjungle/books/opnsense/transform.ts
+  s_fd0c121d1f4c95::t_51a4de56473d1a 73-74
+mcpjungle/books/opnsense/import.ts
+  s_fd0c121d1f4c95::t_639a6af082762e 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "86b919c2110310347b847a229955ceca846de76b",
+  "prompts": {},
+  "sessions": {
+    "s_fd0c121d1f4c95": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7343d9e3-8779-4e84-bfef-caa238059f21",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
