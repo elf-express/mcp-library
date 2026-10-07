@@ -39,6 +39,8 @@ updates:
         versions: [">=6"]
       - dependency-name: "@vitejs/plugin-react"
         versions: [">=5"]
+      - dependency-name: "vitest"
+        versions: [">=3"]
 
   # GitHub Actions workflows 本身
   - package-ecosystem: "github-actions"
