@@ -1,0 +1,1525 @@
+"mcpjungle/books/opnsense/corpus/opnsense-en/269 Auth.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-58
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/73 儀表板.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-en/262 UIBootgrid.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-380
+"mcpjungle/books/opnsense/corpus/opnsense-en/356 Turnserver.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/195 ISC DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-112
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/248 使用插件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-275
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/328 Nodeexporter.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/75 OPNsense Tools.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-92
+"mcpjungle/books/opnsense/corpus/opnsense-en/218 Zenarmor (Sensei) Overview.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-127
+"mcpjungle/books/opnsense/corpus/opnsense-en/107 Devices.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-265
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/246 CARP狀態.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-102
+"mcpjungle/books/opnsense/corpus/opnsense-en/336 Puppetagent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/85 Access User Management.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-150
+"mcpjungle/books/opnsense/corpus/opnsense-en/150 Diagnostics.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-107
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/197 路由器廣告.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-152
+"mcpjungle/books/opnsense/corpus/opnsense-en/65 Quickstart getting started.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-86
+"mcpjungle/books/opnsense/corpus/opnsense-en/272 Cron.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/230 網關和監控.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/119 無線網路介面（ INTERNAL ）.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-88
+"mcpjungle/books/opnsense/corpus/opnsense-en/184 Traceability of configuration changes using Git.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-148
+"mcpjungle/books/opnsense/corpus/opnsense-en/350 Tailscale.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-62
+"mcpjungle/books/opnsense/corpus/opnsense-en/252 Designing the model.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-242
+"mcpjungle/books/opnsense/corpus/opnsense-en/367 Using grids module & plugin.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-297
+"mcpjungle/books/opnsense/corpus/opnsense-en/114 Diagnostics.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-188
+"mcpjungle/books/opnsense/corpus/opnsense-en/83 Configure Netflow Exporter.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-30
+"mcpjungle/books/opnsense/corpus/opnsense-en/217 Third-party Plugins.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-en/353 Tftp.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/271 核.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-133
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/228 開機.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-en/267 Authentication.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-94
+"mcpjungle/books/opnsense/corpus/opnsense-en/281 Ipsec.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-189
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/329 NRPE.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-51
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/345 Siproxd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-en/292 Unbound.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-92
+"mcpjungle/books/opnsense/corpus/opnsense-en/129 Setup for Sky UK ISP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-100
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/223 故障排除.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-76
+"mcpjungle/books/opnsense/corpus/opnsense-en/77 System Health & Round Robin Data.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-136
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/367 使用網格模組和插件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-298
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/124 IPv6 隧道代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-106
+"mcpjungle/books/opnsense/corpus/opnsense-en/94 Gateway groups Multi WAN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-en/357 Udpbroadcastrelay.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-44
+"mcpjungle/books/opnsense/corpus/opnsense-en/144 Fighting Bufferbloat with FQ_CoDel.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-321
+"mcpjungle/books/opnsense/corpus/opnsense-en/212 ndp-proxy-go (Neighbor Discovery Proxy).md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-402
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/83 設定 Netflow 導出器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-31
+"mcpjungle/books/opnsense/corpus/opnsense-en/120 Configuring Cellular Modems.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-129
+"mcpjungle/books/opnsense/corpus/opnsense-en/137 Rules.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-583
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/93 閘道.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-97
+"mcpjungle/books/opnsense/corpus/opnsense-en/349 Stunnel.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-en/56 Virtual & Cloud-Based Installation.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-123
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/193 DHC中繼.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-48
+"mcpjungle/books/opnsense/corpus/opnsense-en/339 Quagga.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-239
+"mcpjungle/books/opnsense/corpus/opnsense-en/358 Vnstat.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/78 使用 Insight - Netflow 分析器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-116
+"mcpjungle/books/opnsense/corpus/opnsense-en/14 22.7 “Powerful Panther” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1395
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/359 瓦祖哈根特.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/346 Smart.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-26
+"mcpjungle/books/opnsense/corpus/opnsense-en/62 Installing OPNsense OVA image.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-en/315 Helloworld.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-32
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/90 配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-75
+"mcpjungle/books/opnsense/corpus/opnsense-en/183 Netbird Plugin Setup Guide.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-139
+"mcpjungle/books/opnsense/corpus/opnsense-en/42 20.7 “Legendary Lion” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-888
+"mcpjungle/books/opnsense/corpus/opnsense-en/175 nginx Web Application Firewall.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-112
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/335 代理商.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/319 馬爾特雷爾.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-en/208 Network Time.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-75
+"mcpjungle/books/opnsense/corpus/opnsense-en/372 Remote debugging the kernel.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-82
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/81 交通報告.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/156 WireGuard Road Warrior 設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-352
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/40 21.10系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-771
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/01 歡迎閱讀 OPNsense 的文檔！.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-189
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/36 23.10系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1167
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/218 Zenarmor（Sensei）概述.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-128
+"mcpjungle/books/opnsense/corpus/opnsense-en/97 Routes.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-93
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/279 ID.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/323 ND代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/68 BIOS更新設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-160
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/165 反病毒引擎.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-29
+"mcpjungle/books/opnsense/corpus/opnsense-en/43 20.1 “Keen Kingfisher” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-887
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/179 快取代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-170
+"mcpjungle/books/opnsense/corpus/opnsense-en/142 Prioritize Applications (Weighted) using Queues.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-123
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/59 更新日誌.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-48
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/322 Ndpproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/302 收集.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-en/368 API enable standard services.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-137
+"mcpjungle/books/opnsense/corpus/opnsense-en/220 Zenarmor (Sensei) Installing via Web Interface.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-197
+"mcpjungle/books/opnsense/corpus/opnsense-en/294 Acmeclient.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-108
+"mcpjungle/books/opnsense/corpus/opnsense-en/244 Overview.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/149 紀錄檔案.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-56
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/159 WireGuard ProtonVPN 行動辦公室設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-209
+"mcpjungle/books/opnsense/corpus/opnsense-en/28 15.7 “Brave Badger” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1281
+"mcpjungle/books/opnsense/corpus/opnsense-en/321 Muninnode.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/182 如何設定郵件網關.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-112
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/291 相信.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-71
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/340 雷達代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-111
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/167 ClamAV.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-134
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/125 德國電信德國IPTV（洋紅TV）設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-61
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/08 25.7 「遠見卓識的毒蛇」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1691
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/53 安裝和設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/300 西卡普.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-46
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/109 設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-73
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/303 眾包.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-103
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/181 設定 FreeRADIUS 進行記賬.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-86
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/67 串行控制台連接.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-57
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/10 24.7 「茁壯成長的老虎」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1606
+"mcpjungle/books/opnsense/corpus/opnsense-en/311 Freeradius.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-166
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/104 設定自簽名憑證鏈.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-428
+"mcpjungle/books/opnsense/corpus/opnsense-en/141 Limit maximum internet bandwidth users can consume.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-203
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/13 23.1 “Quintessential Quail”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1406
+"mcpjungle/books/opnsense/corpus/opnsense-en/250 Frontend.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/82 報告 Unbound DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-79
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/231 網路.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-54
+"mcpjungle/books/opnsense/corpus/opnsense-en/91 Backups via secure copy (sftp).md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-92
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/86 本地用戶和群組.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-89
+"mcpjungle/books/opnsense/corpus/opnsense-en/362 Zabbixproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/103 Configure 2FA TOTP & Google Authenticator.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-121
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/348 Sslh.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/309 Dnscryptproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-105
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/283 莫尼特.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-61
+"mcpjungle/books/opnsense/corpus/opnsense-en/249 Using Templates.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-121
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/18 20.7 「傳奇獅子」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-889
+"mcpjungle/books/opnsense/corpus/opnsense-en/178 CPU Microcode updates [AMDIntel].md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-en/162 Stunnel.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-149
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/184 使用 Git 追蹤配置更改.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-149
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/227 WebGui 存取權限重置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+"mcpjungle/books/opnsense/corpus/opnsense-en/205 IPS Bypass local traffic from inspection.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/285 OpenVPN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/259 路由.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-en/90 Configuration.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-74
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/143 GuestNet 的多重介面整形.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-93
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/201 設定訪客網絡.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-482
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/355 托爾.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-114
+"mcpjungle/books/opnsense/corpus/opnsense-en/344 Shadowsocks.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-54
+"mcpjungle/books/opnsense/corpus/opnsense-en/112 Wireless.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-24
+"mcpjungle/books/opnsense/corpus/opnsense-en/312 Ftpproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/238 PSR-1 基本編碼標準.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-164
+"mcpjungle/books/opnsense/corpus/opnsense-en/53 Installation and setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/298 球童.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-103
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/281 IPsec.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-190
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/38 22.10系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-911
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/369 操作指南.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-21
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/339 斑驢.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-240
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/26 16.7 “跳舞的海豚”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1184
+"mcpjungle/books/opnsense/corpus/opnsense-en/277 Firmware.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-78
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/349 斯通內爾.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-en/370 Use the API.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-194
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/14 22.7 「威猛黑豹」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1396
+"mcpjungle/books/opnsense/corpus/opnsense-en/282 Kea.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-118
+"mcpjungle/books/opnsense/corpus/opnsense-en/49 Web Application Firewall.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-660
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/39 22.4系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-979
+"mcpjungle/books/opnsense/corpus/opnsense-en/270 Captiveportal.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-76
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/101 紀錄檔案.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-28
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/334 代理人.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-en/228 Boot.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/202 入侵防禦系統.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-265
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/364 OPNBECore.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-131
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/144 使用 FQ_CoDel 對抗緩衝區膨脹.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-322
+"mcpjungle/books/opnsense/corpus/opnsense-en/164 Reverse Proxy and Webserver.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-125
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/160 WireGuard 選擇性路由到外部VPN端點.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-383
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/195 ISC DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-112
+"mcpjungle/books/opnsense/corpus/opnsense-en/203 IPS SSLBlacklists & Feodo Tracker.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/310 動態.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-51
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/131 一般資訊.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/66 預設配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/342 中繼.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-48
+"mcpjungle/books/opnsense/corpus/opnsense-en/26 16.7 “Dancing Dolphin” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1183
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/244 概述.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-65
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/103 設定雙重認證TOTP和 Google Authenticator.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-122
+"mcpjungle/books/opnsense/corpus/opnsense-en/130 Firewall.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-49
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/270 強制門戶.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-77
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/239 PSR-2 編碼風格指南.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-552
+"mcpjungle/books/opnsense/corpus/opnsense-en/185 Cloud Backup Nextcloud.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-68
+"mcpjungle/books/opnsense/corpus/opnsense-en/359 Wazuhagent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/10 24.7 “Thriving Tiger” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1605
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/257 遷移.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-78
+"mcpjungle/books/opnsense/corpus/opnsense-en/70 Support.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-87
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/311 自由半徑.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-167
+"mcpjungle/books/opnsense/corpus/opnsense-en/279 Ids.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-71
+"mcpjungle/books/opnsense/corpus/opnsense-en/60 Serial Access.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-79
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/127 橙色法國IPTV設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-109
+"mcpjungle/books/opnsense/corpus/opnsense-en/174 nginx TLS Authentication & Authorization.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-57
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/72 通用使用者介面.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-204
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/06 26.7 “Xenial Xenops”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1077
+"mcpjungle/books/opnsense/corpus/opnsense-en/148 Configure CARP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-565
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/87 訪問伺服器LDAP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-129
+"mcpjungle/books/opnsense/corpus/opnsense-en/179 Caching Proxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-169
+"mcpjungle/books/opnsense/corpus/opnsense-en/194 Dnsmasq DNS & DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-940
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/295 Apcupsd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/303 Crowdsec.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-102
+"mcpjungle/books/opnsense/corpus/opnsense-en/134 [Interface] Groups.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/106 Interface configuration.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-145
+"mcpjungle/books/opnsense/corpus/opnsense-en/335 Proxysso.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/206 紀錄檔案.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-30
+"mcpjungle/books/opnsense/corpus/opnsense-en/253 Usage example.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-en/122 IPv6 for generic DSL dialup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-52
+"mcpjungle/books/opnsense/corpus/opnsense-en/155 WireGuard Site-to-Site Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-286
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/253 使用範例.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-73
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/58 包含的軟體.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-89
+"mcpjungle/books/opnsense/corpus/opnsense-en/325 Netdata.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/64 官方硬體.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-28
+"mcpjungle/books/opnsense/corpus/opnsense-en/265 Menu System.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/91 透過安全副本（sftp）進行備份.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-93
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/251 創建模型.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-30
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/171 nginx 基本驗證與授權.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-69
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/235 開發流程.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-101
+"mcpjungle/books/opnsense/corpus/opnsense-en/196 KEA DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-658
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/269 授權.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-59
+"mcpjungle/books/opnsense/corpus/opnsense-en/45 19.1 “Inspiring Iguana” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1380
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/80 報告設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-25
+"mcpjungle/books/opnsense/corpus/opnsense-en/29 15.1 “Ascending Albatross” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1190
+"mcpjungle/books/opnsense/corpus/opnsense-en/190 ntopng.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-en/318 Lldpd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/166 c-icap.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-84
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/151 依類別整理PF規則.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-61
+"mcpjungle/books/opnsense/corpus/opnsense-en/232 OpenVPN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-30
+"mcpjungle/books/opnsense/corpus/opnsense-en/25 17.1 “Eclectic Eagle” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1244
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/110 鄰居.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-116
+"mcpjungle/books/opnsense/corpus/opnsense-en/88 Access Servers Radius.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-45
+"mcpjungle/books/opnsense/corpus/opnsense-en/361 Zabbixagent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-en/12 23.7 “Restless Roadrunner” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1629
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/95 多色WAN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-322
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/326 Netsnmp.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-en/299 Chrony.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/56 虛擬和基於雲端的安裝.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-124
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/267 認證.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-95
+"mcpjungle/books/opnsense/corpus/opnsense-en/140 Share internet bandwidth amongst users evenly.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-110
+"mcpjungle/books/opnsense/corpus/opnsense-en/01 Welcome to OPNsense’s documentation!.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-188
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/247 使用配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-127
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/232 開放VPN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-31
+"mcpjungle/books/opnsense/corpus/opnsense-en/117 VXLAN Bridge.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-225
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/294 Acmeclient.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-108
+"mcpjungle/books/opnsense/corpus/opnsense-en/138 Traffic Shaping.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-82
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/261 看構造（和工具）.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-285
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/194 Dnsmasq DNS & DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-940
+"mcpjungle/books/opnsense/corpus/opnsense-en/251 Creating Models.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-29
+"mcpjungle/books/opnsense/corpus/opnsense-en/115 VLAN and LAGG Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-192
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/183 Netbird 外掛程式安裝指南.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-140
+"mcpjungle/books/opnsense/corpus/opnsense-en/104 Setup Self-Signed Certificate Chains.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-427
+"mcpjungle/books/opnsense/corpus/opnsense-en/354 Tinc.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-44
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/146 （進階）設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-192
+"mcpjungle/books/opnsense/corpus/opnsense-en/69 SFP(+) Compatibility.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-211
+"mcpjungle/books/opnsense/corpus/opnsense-en/260 Using controllers and views.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-206
+"mcpjungle/books/opnsense/corpus/opnsense-en/54 Hardware sizing & setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-133
+"mcpjungle/books/opnsense/corpus/opnsense-en/111 Virtual IPs.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-130
+"mcpjungle/books/opnsense/corpus/opnsense-en/119 Interfaces Wireless Networks (INTERNAL).md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-87
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/173 nginx TLS指紋.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-78
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/111 虛擬IP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-131
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/03 安全.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-324
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/380 貢獻.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-186
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/188 Cloudflare 隧道.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-130
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/377 開源計劃.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-en/172 nginx IP Based Access Control Lists.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-52
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/210 動態路由（ FRR ）.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-550
+"mcpjungle/books/opnsense/corpus/opnsense-en/68 BIOS updates settings.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-159
+"mcpjungle/books/opnsense/corpus/opnsense-en/04 Releases.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-60
+"mcpjungle/books/opnsense/corpus/opnsense-en/240 PSR-12 Coding Style Guide.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-972
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/71 大廳.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-28
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/186 中繼器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-112
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/278 主機發現.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/366 Hello world 模組和插件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-808
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/04 發布.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-61
+"mcpjungle/books/opnsense/corpus/opnsense-en/225 Reset firmware configuration.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-30
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/208 網路時間.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-76
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/45 19.1「鼓舞鬣蜥」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1381
+"mcpjungle/books/opnsense/corpus/opnsense-en/52 Scheduled jobs.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-30
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/344 影子襪.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-55
+"mcpjungle/books/opnsense/corpus/opnsense-en/100 Trust.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-215
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/233 效能.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-133
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/135 網路位址轉換.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-332
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/198 開放DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/92 韌體.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-112
+"mcpjungle/books/opnsense/corpus/opnsense-en/216 Multicast DNS Proxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-en/128 SFRRED France FTTH IPv4 & IPv6 & Phone.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-308
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/98 設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-272
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/315 你好世界.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-en/44 19.7 “Jazzy Jaguar” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1156
+"mcpjungle/books/opnsense/corpus/opnsense-en/351 Tayga.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-en/316 Hwprobe.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/41 21.4 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-975
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/122 通用撥號的 IPv6 DSL.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-53
+"mcpjungle/books/opnsense/corpus/opnsense-en/377 Open Source Initiative.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-en/153 Security Zones.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-285
+"mcpjungle/books/opnsense/corpus/opnsense-en/109 Settings.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/177 Caddy 反向代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1161
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/204 IPS區塊SSL證書.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-103
+"mcpjungle/books/opnsense/corpus/opnsense-en/227 WebGui access reset.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-26
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/262 UI引導網格.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-381
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/30 商業版.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-en/380 Contribute.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-185
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/379 支援選項.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-225
+"mcpjungle/books/opnsense/corpus/opnsense-en/234 Development Manual.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-159
+"mcpjungle/books/opnsense/corpus/opnsense-en/313 Gridexample.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/77 系統健康狀況和輪詢數據.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-137
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/139 預留專用頻寬.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-143
+"mcpjungle/books/opnsense/corpus/opnsense-en/376 M0n0wall.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-95
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/49 網路應用防火牆.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-661
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/05 社群版.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-48
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/273 德克雷.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-43
+"mcpjungle/books/opnsense/corpus/opnsense-en/13 23.1 “Quintessential Quail” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1405
+"mcpjungle/books/opnsense/corpus/opnsense-en/15 22.1 “Observant Owl” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1574
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/255 自訂（特定於應用程式）欄位類型.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-78
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/324 Netbird.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-57
+"mcpjungle/books/opnsense/corpus/opnsense-en/375 FreeBSD®.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/113 IPv6 設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-318
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/16 21.7 “高貴的夜鶯”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1373
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/325 網路數據.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/361 Zabbixagent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/61 安裝 OPNsense AWS鏡像.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-140
+"mcpjungle/books/opnsense/corpus/opnsense-en/211 Tayga NAT64 how-to.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-100
+"mcpjungle/books/opnsense/corpus/opnsense-en/192 DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-98
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/220 Zenarmor（Sensei）透過網頁介面安裝.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-198
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/250 前端.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/231 Network.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-53
+"mcpjungle/books/opnsense/corpus/opnsense-en/204 IPS Block SSL certificates.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-102
+"mcpjungle/books/opnsense/corpus/opnsense-en/125 Deutsche Telekom Germany IPTV (Magenta TV) setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-60
+"mcpjungle/books/opnsense/corpus/opnsense-en/332 Openconnect.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/50 OpenID Connect.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-192
+"mcpjungle/books/opnsense/corpus/opnsense-en/02 Introduction.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-139
+"mcpjungle/books/opnsense/corpus/opnsense-en/324 Netbird.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-57
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/118 透明過濾橋.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-196
+"mcpjungle/books/opnsense/corpus/opnsense-en/366 Hello world module & plugin.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-807
+"mcpjungle/books/opnsense/corpus/opnsense-en/159 WireGuard ProtonVPN Road Warrior Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-208
+"mcpjungle/books/opnsense/corpus/opnsense-en/116 LAN Bridge.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-80
+"mcpjungle/books/opnsense/corpus/opnsense-en/280 Interfaces.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-173
+"mcpjungle/books/opnsense/corpus/opnsense-en/352 Telegraf.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-62
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/22 18.7 「快樂河馬」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1679
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/76 報告.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-en/37 23.4 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-978
+"mcpjungle/books/opnsense/corpus/opnsense-en/306 Dhcpv6.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-en/163 Zerotier Configuration.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-132
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/288 路由.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-en/295 Apcupsd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/199 Unbound DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-357
+"mcpjungle/books/opnsense/corpus/opnsense-en/64 Official hardware.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+"mcpjungle/books/opnsense/corpus/opnsense-en/189 Tor Configuration.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-296
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/57 更新.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-52
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/313 網格範例.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/234 開發手冊.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-160
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/289 系統日誌.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-44
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/282 啄羊鸚鵡.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-119
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/46 商業版.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-53
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/305 DHCPv4.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/351 礦.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-51
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/130 防火牆.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/286 拉德維德.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/225 重置韌體配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-31
+"mcpjungle/books/opnsense/corpus/opnsense-en/254 Guidelines.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-26
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/09 25.1 “終極獨角獸”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1673
+"mcpjungle/books/opnsense/corpus/opnsense-en/81 Reporting Traffic.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/240 PSR-12 編碼風格指南.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-973
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/275 Dnsmasq.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-74
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/211 Tayga NAT64使用方法.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-101
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/47 中央管理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-474
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/12 23.7 「不安分的公路跑者」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1630
+"mcpjungle/books/opnsense/corpus/opnsense-en/132 Aliases.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-418
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/317 阻抗.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/124 IPv6 Tunnel Broker.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-105
+"mcpjungle/books/opnsense/corpus/opnsense-en/256 Adding constraints.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-129
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/175 nginx Web應用程式防火牆.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-113
+"mcpjungle/books/opnsense/corpus/opnsense-en/176 nginx TCP And UDP Streams.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-88
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/129 天空設定UK ISP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-101
+"mcpjungle/books/opnsense/corpus/opnsense-en/24 17.7 “Free Fox” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1195
+"mcpjungle/books/opnsense/corpus/opnsense-en/170 nginx Local Website Hosting.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-128
+"mcpjungle/books/opnsense/corpus/opnsense-en/364 OPNBECore.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-131
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/316 探針.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/168 nginx 基本負載平衡.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-55
+"mcpjungle/books/opnsense/corpus/opnsense-en/34 24.10 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1141
+"mcpjungle/books/opnsense/corpus/opnsense-en/92 Firmware.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-111
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/292 無界.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-93
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/21 19.1 「鼓舞人心的鬣蜥」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1381
+"mcpjungle/books/opnsense/corpus/opnsense-en/291 Trust.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-70
+"mcpjungle/books/opnsense/corpus/opnsense-en/259 Routing.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-71
+"mcpjungle/books/opnsense/corpus/opnsense-en/242 Architecture.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-116
+"mcpjungle/books/opnsense/corpus/opnsense-en/188 Cloudflare Tunnel.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-129
+"mcpjungle/books/opnsense/corpus/opnsense-en/374 Deciso B.V..md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-en/210 Dynamic Routing (FRR).md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-549
+"mcpjungle/books/opnsense/corpus/opnsense-en/82 Reporting Unbound DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-78
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/350 尾鱗.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-63
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/200 強制入口網站和 GuestNET.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-351
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/192 DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-98
+"mcpjungle/books/opnsense/corpus/opnsense-en/246 CARP status.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-101
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/89 雙重身份驗證.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-52
+"mcpjungle/books/opnsense/corpus/opnsense-en/319 Maltrail.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-63
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/31 26.4系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1616
+"mcpjungle/books/opnsense/corpus/opnsense-en/98 Settings.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-271
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/132 別名.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-419
+"mcpjungle/books/opnsense/corpus/opnsense-en/348 Sslh.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/278 Hostdiscovery.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/287 路線.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-en/257 Migrations.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-77
+"mcpjungle/books/opnsense/corpus/opnsense-en/289 Syslog.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-43
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/337 Qemuguestagent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/207 Monit.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-245
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/75 OPNsense 工具.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-93
+"mcpjungle/books/opnsense/corpus/opnsense-en/40 21.10 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-770
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/63 OPNsense Azure虛擬設備.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-69
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/296 節拍.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/215 DNSCrypt-Proxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-140
+"mcpjungle/books/opnsense/corpus/opnsense-en/17 21.1 “Marvelous Meerkat” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1323
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/147 標準化.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-43
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/365 範例.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-21
+"mcpjungle/books/opnsense/corpus/opnsense-en/360 Wol.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-32
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/29 15.1「信天翁升天」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1191
+"mcpjungle/books/opnsense/corpus/opnsense-en/07 26.1 “Witty Woodpecker” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1921
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/15 22.1 “觀察力敏銳的貓頭鷹”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1575
+"mcpjungle/books/opnsense/corpus/opnsense-en/180 FreeRADIUS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-en/19 20.1 “Keen Kingfisher” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-887
+"mcpjungle/books/opnsense/corpus/opnsense-en/51 User Portal.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-313
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/85 存取用戶管理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-151
+"mcpjungle/books/opnsense/corpus/opnsense-en/373 Project Relations.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-23
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/116 LAN橋.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-81
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/50 OpenID 連接.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-193
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/17 21.1 「奇妙的貓鼬」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1324
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/20 19.7 「爵士捷豹」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1157
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/99 快照.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-179
+"mcpjungle/books/opnsense/corpus/opnsense-en/223 Troubleshooting.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-75
+"mcpjungle/books/opnsense/corpus/opnsense-en/287 Routes.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-en/93 Gateways.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-en/371 ProfilingDebugging the kernel.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-417
+"mcpjungle/books/opnsense/corpus/opnsense-en/305 Dhcpv4.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/321 穆尼諾德.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/23 18.1 「酷炫壁虎」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1718
+"mcpjungle/books/opnsense/corpus/opnsense-en/245 Bootup autorun options.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-122
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/28 15.7 “勇敢的獾”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1282
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/243 後端.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-46
+"mcpjungle/books/opnsense/corpus/opnsense-en/123 IPv6 behind an AVM Fritz!Box.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-113
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/52 預定職位.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-31
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/169 nginx 頭部加固.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-107
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/158 WireGuard MullvadVPN 行動戰士設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-65
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/336 普佩塔特.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/70 支援.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-88
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/185 雲端備份 Nextcloud.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-69
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/187 瓦祖代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-144
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/378 法律聲明.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-94
+"mcpjungle/books/opnsense/corpus/opnsense-en/151 Organize PF Rules by Category.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-60
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/140 在使用者之間均勻分享網路頻寬.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-111
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/35 24.4系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-860
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/290 交通塑造者.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-56
+"mcpjungle/books/opnsense/corpus/opnsense-en/181 Setup FreeRADIUS for accounting.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-85
+"mcpjungle/books/opnsense/corpus/opnsense-en/33 25.4 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1097
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/27 16.1 「狡猾的郊狼」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1265
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/163 零層配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-133
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/306 DHCP6.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/273 Dhcrelay.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-en/347 Softether.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/118 Transparent Filtering Bridge.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-195
+"mcpjungle/books/opnsense/corpus/opnsense-en/310 Dyndns.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/347 Softether.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/338 Qfeeds.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-29
+"mcpjungle/books/opnsense/corpus/opnsense-en/286 Radvd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-en/136 Reflection and Hairpin NAT.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-289
+"mcpjungle/books/opnsense/corpus/opnsense-en/154 Virtual Private Networking.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-732
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/360 羊毛.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-en/87 Access Servers LDAP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-128
+"mcpjungle/books/opnsense/corpus/opnsense-en/38 22.10 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-910
+"mcpjungle/books/opnsense/corpus/opnsense-en/171 nginx Basic Authentication & Authorization.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-68
+"mcpjungle/books/opnsense/corpus/opnsense-en/200 Captive portal & GuestNET.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-350
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/153 安全區.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-286
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/105 介面.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-62
+"mcpjungle/books/opnsense/corpus/opnsense-en/139 Reserve dedicated bandwidth.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-142
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/241 Python PEP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-19
+"mcpjungle/books/opnsense/corpus/opnsense-en/235 Development Workflow.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-100
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/216 多播DNS代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-en/264 Components.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-24
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/19 20.1 「翠鳥」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-888
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/199 未綁定DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-358
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/37 23.4系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-979
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/74 密碼.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-25
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/215 DNSCrypt代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-141
+"mcpjungle/books/opnsense/corpus/opnsense-en/213 Dynamic DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-118
+"mcpjungle/books/opnsense/corpus/opnsense-en/238 PSR-1 Basic Coding Standard.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-163
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/309 DNS加密代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-106
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/280 介面.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-174
+"mcpjungle/books/opnsense/corpus/opnsense-en/239 PSR-2 Coding Style Guide.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-551
+"mcpjungle/books/opnsense/corpus/opnsense-en/276 Firewall.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-304
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/237 基礎與未來.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-100
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/363 零層.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-en/329 Nrpe.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-en/197 Router Advertisements.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-151
+"mcpjungle/books/opnsense/corpus/opnsense-en/322 Ndpproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/222 Q-Feeds 連接器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-159
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/370 使用API.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-195
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/219 Zenarmor（Sensei）硬體需求.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-73
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/133 類別.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-23
+"mcpjungle/books/opnsense/corpus/opnsense-en/59 Changelogs.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/02 介紹.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-140
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/44 19.7「爵士捷豹」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1157
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/162 斯通內爾.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-150
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/191 服務.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-55
+"mcpjungle/books/opnsense/corpus/opnsense-en/320 Mdnsrepeater.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/237 Basics and Future.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-99
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/24 17.7 「自由狐狸」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1196
+"mcpjungle/books/opnsense/corpus/opnsense-en/160 WireGuard Selective Routing to External VPN Endpoint.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-382
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/356 轉機伺服器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/382 About the Fork.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-91
+"mcpjungle/books/opnsense/corpus/opnsense-en/30 Business Edition.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/62 安裝 OPNsense OVA鏡像.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-43
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/196 KEA DHCP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-658
+"mcpjungle/books/opnsense/corpus/opnsense-en/89 Two-factor authentication.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-51
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/205 IPS 繞過本地流量進行檢查.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-97
+"mcpjungle/books/opnsense/corpus/opnsense-en/209 Community Plugins.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-90
+"mcpjungle/books/opnsense/corpus/opnsense-en/243 Backend.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-45
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/88 訪問伺服器 Radius.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-46
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/375 FreeBSD®.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/161 OpenConnect Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-en/247 Using configd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-126
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/123 AVM Fritz!Box 後面的 IPv6.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-114
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/357 Udp廣播中繼.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-45
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/330 Ntopng.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/369 How-tos.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-20
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/174 nginx TLS身份驗證與授權.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-58
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/161 OpenConnect 設定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-43
+"mcpjungle/books/opnsense/corpus/opnsense-en/337 Qemuguestagent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/264 組件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-25
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/54 硬體尺寸和設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-134
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/343 Rspamd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/18 20.7 “Legendary Lion” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-888
+"mcpjungle/books/opnsense/corpus/opnsense-en/226 Restore Configuration via Console.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-86
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/172 nginx IP基於存取控制列表.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-53
+"mcpjungle/books/opnsense/corpus/opnsense-en/365 Examples.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-20
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/106 介面配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-146
+"mcpjungle/books/opnsense/corpus/opnsense-en/79 Netflow Export & Analyses.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-101
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/266 存取控制列表.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-76
+"mcpjungle/books/opnsense/corpus/opnsense-en/236 Coding Guidelines.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-26
+"mcpjungle/books/opnsense/corpus/opnsense-en/149 Log Files.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-55
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/372 遠端調試內核.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-83
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/79 Netflow 匯出與分析.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-102
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/376 門牆.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/207 莫尼特.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-246
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/371 核心效能分析調試.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-416
+"mcpjungle/books/opnsense/corpus/opnsense-en/222 Q-Feeds connector.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-158
+"mcpjungle/books/opnsense/corpus/opnsense-en/57 Updates.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-51
+"mcpjungle/books/opnsense/corpus/opnsense-en/158 WireGuard MullvadVPN Road Warrior Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-en/378 Legal notices.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-93
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/338 Qfeeds.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-29
+"mcpjungle/books/opnsense/corpus/opnsense-en/127 Orange France IPTV setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-108
+"mcpjungle/books/opnsense/corpus/opnsense-en/27 16.1 “Crafty Coyote” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1264
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/150 診斷.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-108
+"mcpjungle/books/opnsense/corpus/opnsense-en/343 Rspamd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/173 nginx TLS Fingerprints.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-77
+"mcpjungle/books/opnsense/corpus/opnsense-en/255 Custom (app specific) field types.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-77
+"mcpjungle/books/opnsense/corpus/opnsense-en/66 Default Configurations.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-49
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/254 指南.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+"mcpjungle/books/opnsense/corpus/opnsense-en/186 Relayd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-111
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/178 CPU微程式碼更新 [AMDIntel].md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-51
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/213 動態DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-119
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/190 恩托彭.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/25 17.1 「兼收並蓄的雄鷹」系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1245
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/107 裝置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-266
+"mcpjungle/books/opnsense/corpus/opnsense-en/296 Beats.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/331 堅果.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-en/288 Routing.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-32
+"mcpjungle/books/opnsense/corpus/opnsense-en/121 IPv6 For Zen UK.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-128
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/299 克羅尼.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/245 開機自動運轉選項.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-123
+"mcpjungle/books/opnsense/corpus/opnsense-en/55 Initial Installation & Configuration.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-436
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/137 規則.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-584
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/373 專案關係.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-24
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/136 倒影與髮夾NAT.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-290
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/43 20.1《敏銳翠鳥》系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-888
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/374 決定 BV.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/312 FTPP代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-en/95 Multi WAN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-321
+"mcpjungle/books/opnsense/corpus/opnsense-en/16 21.7 “Noble Nightingale” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1372
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/252 設計模型.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-243
+"mcpjungle/books/opnsense/corpus/opnsense-en/105 Interfaces.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-61
+"mcpjungle/books/opnsense/corpus/opnsense-en/342 Relayd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-en/67 Serial Console connectivity.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-56
+"mcpjungle/books/opnsense/corpus/opnsense-en/76 Reporting.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/157 WireGuard AzireVPN 行動戰士設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-45
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/327 Nginx.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-165
+"mcpjungle/books/opnsense/corpus/opnsense-en/379 Support Options.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-224
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/301 克拉馬夫.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-53
+"mcpjungle/books/opnsense/corpus/opnsense-en/221 Zenarmor Installing via Command Line.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-62
+"mcpjungle/books/opnsense/corpus/opnsense-en/135 Network Address Translation.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-331
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/353 Tftp.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/143 Multi Interface shaping for a GuestNet.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-92
+"mcpjungle/books/opnsense/corpus/opnsense-en/193 DHCrelay.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/268 API 參考.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-192
+"mcpjungle/books/opnsense/corpus/opnsense-en/298 Caddy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-102
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/352 電報.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-63
+"mcpjungle/books/opnsense/corpus/opnsense-en/263 Dashboard widgets.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-370
+"mcpjungle/books/opnsense/corpus/opnsense-en/11 24.1 “Savvy Shark” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1258
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/382 關於叉子.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-92
+"mcpjungle/books/opnsense/corpus/opnsense-en/334 Proxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-95
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/217 第三方插件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-en/187 Wazuh Agent.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-143
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/11 24.1 “精明鯊魚”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1259
+"mcpjungle/books/opnsense/corpus/opnsense-en/165 Anti Virus Engine.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-28
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/272 克朗.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-38
+"mcpjungle/books/opnsense/corpus/opnsense-en/39 22.4 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-978
+"mcpjungle/books/opnsense/corpus/opnsense-en/341 Redis.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/333 Postfix.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-165
+"mcpjungle/books/opnsense/corpus/opnsense-en/355 Tor.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-113
+"mcpjungle/books/opnsense/corpus/opnsense-en/131 Generic info.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-34
+"mcpjungle/books/opnsense/corpus/opnsense-en/230 Gateways and monitoring.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-32
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/121 Zen 的 IPv6 UK.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-129
+"mcpjungle/books/opnsense/corpus/opnsense-en/156 WireGuard Road Warrior Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-351
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/226 透過控制台恢復配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-87
+"mcpjungle/books/opnsense/corpus/opnsense-en/84 System.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-48
+"mcpjungle/books/opnsense/corpus/opnsense-en/08 25.7 “Visionary Viper” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1690
+"mcpjungle/books/opnsense/corpus/opnsense-en/80 Reporting Settings.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-24
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/332 Openconnect.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/203 IPS SSL黑名單和 Feodo 追蹤器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-97
+"mcpjungle/books/opnsense/corpus/opnsense-en/110 Neighbors.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-115
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/209 社群插件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-91
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/120 配置蜂巢式調變解調器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-130
+"mcpjungle/books/opnsense/corpus/opnsense-en/46 Business Edition.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-52
+"mcpjungle/books/opnsense/corpus/opnsense-en/275 Dnsmasq.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-74
+"mcpjungle/books/opnsense/corpus/opnsense-en/297 Bind.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-98
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/346 聰明的.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/32 25.10系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1323
+"mcpjungle/books/opnsense/corpus/opnsense-en/108 Overview.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-22
+"mcpjungle/books/opnsense/corpus/opnsense-en/331 Nut.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-41
+"mcpjungle/books/opnsense/corpus/opnsense-en/274 Diagnostics.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-199
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/112 無線的.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-25
+"mcpjungle/books/opnsense/corpus/opnsense-en/36 23.10 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1166
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/141 限制使用者可以消耗的最大網路頻寬.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-204
+"mcpjungle/books/opnsense/corpus/opnsense-en/157 WireGuard AzireVPN Road Warrior Setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-44
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/258 建立模型欄位類型.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-599
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/249 使用模板.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-122
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/145 控制平面整形.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-205
+"mcpjungle/books/opnsense/corpus/opnsense-en/99 Snapshots.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-178
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/314 哈普羅西.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-157
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/115 VLAN和LAGG設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-193
+"mcpjungle/books/opnsense/corpus/opnsense-en/09 25.1 “Ultimate Unicorn” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1672
+"mcpjungle/books/opnsense/corpus/opnsense-en/168 nginx Basic Load Balancing.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-54
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/277 韌體.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-79
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/362 Zabbix代理.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/189 Tor 配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-297
+"mcpjungle/books/opnsense/corpus/opnsense-en/21 19.1 “Inspiring Iguana” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1380
+"mcpjungle/books/opnsense/corpus/opnsense-en/22 18.7 “Happy Hippo” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1678
+"mcpjungle/books/opnsense/corpus/opnsense-en/323 Ndproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/368 API啟用標準服務.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-138
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/100 相信.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-216
+"mcpjungle/books/opnsense/corpus/opnsense-en/241 Python PEPs.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-18
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/265 選單系統.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-65
+"mcpjungle/books/opnsense/corpus/opnsense-en/146 (Advanced) Settings.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-191
+"mcpjungle/books/opnsense/corpus/opnsense-en/166 c-icap.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-84
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/224 密碼重設.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-67
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/41 21.4系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-976
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/260 使用控制器和視圖.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-207
+"mcpjungle/books/opnsense/corpus/opnsense-en/58 Included software.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-88
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/180 自由半徑.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-97
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/55 初始安裝和配置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-437
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/297 綁定.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-99
+"mcpjungle/books/opnsense/corpus/opnsense-en/363 Zerotier.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-en/266 Access Control List.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-75
+"mcpjungle/books/opnsense/corpus/opnsense-en/23 18.1 “Groovy Gecko” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1717
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/148 配置CARP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-566
+"mcpjungle/books/opnsense/corpus/opnsense-en/191 Services.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-54
+"mcpjungle/books/opnsense/corpus/opnsense-en/206 Log Files.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-29
+"mcpjungle/books/opnsense/corpus/opnsense-en/317 Iperf.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/302 Collectd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-33
+"mcpjungle/books/opnsense/corpus/opnsense-en/182 How To Setting Up A Mail Gateway.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-111
+"mcpjungle/books/opnsense/corpus/opnsense-en/285 Openvpn.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-71
+"mcpjungle/books/opnsense/corpus/opnsense-en/233 Performance.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-132
+"mcpjungle/books/opnsense/corpus/opnsense-en/268 API Reference.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-191
+"mcpjungle/books/opnsense/corpus/opnsense-en/06 26.7 “Xenial Xenops” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1076
+"mcpjungle/books/opnsense/corpus/opnsense-en/05 Community Edition.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-en/202 Intrusion Prevention System.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-264
+"mcpjungle/books/opnsense/corpus/opnsense-en/32 25.10 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1322
+"mcpjungle/books/opnsense/corpus/opnsense-en/126 Orange France FTTH IPv4 & IPv6.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-181
+"mcpjungle/books/opnsense/corpus/opnsense-en/224 Password reset.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-66
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/51 使用者入口網站.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-314
+"mcpjungle/books/opnsense/corpus/opnsense-en/72 General User Interface.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-203
+"mcpjungle/books/opnsense/corpus/opnsense-en/345 Siproxd.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-64
+"mcpjungle/books/opnsense/corpus/opnsense-en/145 Control Plane Shaping.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-204
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/256 新增約束.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-130
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/94 網關組 Multi WAN.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-65
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/114 診斷.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-189
+"mcpjungle/books/opnsense/corpus/opnsense-en/133 Categories.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-22
+"mcpjungle/books/opnsense/corpus/opnsense-en/48 Authoritative DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-726
+"mcpjungle/books/opnsense/corpus/opnsense-en/102 Diagnostics.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-39
+"mcpjungle/books/opnsense/corpus/opnsense-en/152 Configure Spamhaus DROP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-119
+"mcpjungle/books/opnsense/corpus/opnsense-en/290 Trafficshaper.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-55
+"mcpjungle/books/opnsense/corpus/opnsense-en/301 Clamav.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-52
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/358 Vnstat.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/96 高可用性.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-97
+"mcpjungle/books/opnsense/corpus/opnsense-en/61 Installing OPNsense AWS image.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-139
+"mcpjungle/books/opnsense/corpus/opnsense-en/229 System hardening vs performance.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-47
+"mcpjungle/books/opnsense/corpus/opnsense-en/86 Local Users & Groups.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-88
+"mcpjungle/books/opnsense/corpus/opnsense-en/35 24.4 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-859
+"mcpjungle/books/opnsense/corpus/opnsense-en/198 OpenDNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/155 WireGuard 站點到站點設置.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-287
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/60 序列存取.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-80
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/229 系統強化與性能.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-48
+"mcpjungle/books/opnsense/corpus/opnsense-en/328 Nodeexporter.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/65 快速入門.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-87
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/134 [介面] 群組.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/293 Wireguard.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/221 透過命令列安裝 Zenarmor.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-63
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/97 路線.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-94
+"mcpjungle/books/opnsense/corpus/opnsense-en/271 Core.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-132
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/212 ndp-proxy-go（鄰居發現代理）.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-403
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/318 利爾德.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-37
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/69 SFP (+) 相容性.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-212
+"mcpjungle/books/opnsense/corpus/opnsense-en/258 Creating Models Field types.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-598
+"mcpjungle/books/opnsense/corpus/opnsense-en/219 Zenarmor (Sensei) Hardware Requirements.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/108 概述.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-23
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/154 虛擬私人網路.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-733
+"mcpjungle/books/opnsense/corpus/opnsense-en/78 Using Insight - Netflow Analyzer.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-115
+"mcpjungle/books/opnsense/corpus/opnsense-en/169 nginx Header Hardening.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-106
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/242 大樓.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-117
+"mcpjungle/books/opnsense/corpus/opnsense-en/74 Password.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-24
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/102 診斷.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-40
+"mcpjungle/books/opnsense/corpus/opnsense-en/177 Caddy Reverse Proxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1160
+"mcpjungle/books/opnsense/corpus/opnsense-en/63 OPNsense Azure Virtual Appliance.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-68
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/341 Redis.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-en/20 19.7 “Jazzy Jaguar” Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1156
+"mcpjungle/books/opnsense/corpus/opnsense-en/248 Using plugins.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-274
+"mcpjungle/books/opnsense/corpus/opnsense-en/167 ClamAV.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-134
+"mcpjungle/books/opnsense/corpus/opnsense-en/31 26.4 Series.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1615
+"mcpjungle/books/opnsense/corpus/opnsense-en/293 Wireguard.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-72
+"mcpjungle/books/opnsense/corpus/opnsense-en/03 Security.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-323
+"mcpjungle/books/opnsense/corpus/opnsense-en/73 Dashboard.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-71
+"mcpjungle/books/opnsense/corpus/opnsense-en/147 Normalization.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-42
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/48 權威DNS.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-727
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/117 VXLAN橋.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-226
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/274 診斷.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-200
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/142 使用佇列對應用程式進行優先權排序（加權）.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-124
+"mcpjungle/books/opnsense/corpus/opnsense-en/214 BIND Plugin.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-84
+"mcpjungle/books/opnsense/corpus/opnsense-en/283 Monit.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-60
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/214 BIND插件.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-85
+"mcpjungle/books/opnsense/corpus/opnsense-en/300 Cicap.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-45
+"mcpjungle/books/opnsense/corpus/opnsense-en/201 Setup a Guest Network.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-481
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/126 法國橘色FTTH IPv4 和 IPv6.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-182
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/164 反向代理和Web伺服器.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-126
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/128 SFRRED 法國 FTTH IPv4 & IPv6 & 電話.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-309
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/152 配置 Spamhaus DROP.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-120
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/33 25.4系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1098
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/263 儀表板小工具.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-371
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/176 nginx TCP和UDP流.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-89
+"mcpjungle/books/opnsense/corpus/opnsense-en/101 Log Files.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/34 24.10系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1142
+"mcpjungle/books/opnsense/corpus/opnsense-en/326 Netsnmp.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-50
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/170 nginx 本地網站託管.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-129
+"mcpjungle/books/opnsense/corpus/opnsense-en/113 IPv6 setup.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-317
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/138 流量整形.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-83
+"mcpjungle/books/opnsense/corpus/opnsense-en/333 Postfix.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-165
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/276 防火牆.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-305
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/236 編碼指南.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+"mcpjungle/books/opnsense/corpus/opnsense-en/330 Ntopng.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-36
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/84 系統.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-49
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/320 Mdnsrepeater.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-35
+"mcpjungle/books/opnsense/corpus/opnsense-en/96 High Availability.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-96
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/354 我有.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-45
+"mcpjungle/books/opnsense/corpus/opnsense-en/340 Radsecproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-110
+"mcpjungle/books/opnsense/corpus/opnsense-en/47 Central Management.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-473
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/42 20.7《傳奇雄獅》系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-889
+"mcpjungle/books/opnsense/corpus/opnsense-zh-tw/07 26.1 “機智啄木鳥”系列.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-1922
+"mcpjungle/books/opnsense/corpus/opnsense-en/314 Haproxy.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-156
+"mcpjungle/books/opnsense/corpus/opnsense-en/261 View construction (and tools).md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-284
+"mcpjungle/books/opnsense/corpus/opnsense-en/327 Nginx.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-165
+"mcpjungle/books/opnsense/corpus/opnsense-en/71 Lobby.md"
+  s_fd0c121d1f4c95::t_89e96c62be38ab 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4c4718e3a6748bf52767a8a4b8651d6aea1a3c78",
+  "prompts": {},
+  "sessions": {
+    "s_fd0c121d1f4c95": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7343d9e3-8779-4e84-bfef-caa238059f21",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
