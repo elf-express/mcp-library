@@ -1,0 +1,23 @@
+mcpjungle/books/README.md
+  s_58251641b98742::t_fd6d84975d8bd7 175
+mcpjungle/registry/gen-book-configs.mjs
+  s_58251641b98742::t_d851372ab816c4 10-11,38-39,54-55
+mcpjungle/registry/gen-book-configs.test.mjs
+  s_58251641b98742::t_3e0ce580c84688 65-66,74-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "68f272228bfea129224e8a1fcf2b8e78f314d9a6",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
