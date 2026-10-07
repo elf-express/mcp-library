@@ -29,6 +29,7 @@ services:
       context: ./mcpjungle/gateway
       dockerfile: Dockerfile.fullbuild
     image: mcpjungle-fork:${IMAGE_TAG:-latest}
+    pull_policy: build   # 每次 up 都重新 build,不沿用主機上同名的舊映像
     depends_on:
       postgres:
         condition: service_healthy
@@ -51,6 +52,7 @@ services:
       context: ./mcpjungle
       dockerfile: docs-mcp-server/Dockerfile
     image: ghcr.io/elf-express/docs-mcp-server:${IMAGE_TAG:-latest}
+    pull_policy: build
     environment:
       TRANSPORT: http
       PORT: "5690"
@@ -72,6 +74,7 @@ services:
       context: ./mcpjungle
       dockerfile: registry/Dockerfile
     image: ghcr.io/elf-express/docs-registrar:${IMAGE_TAG:-latest}
+    pull_policy: build
     depends_on:
       mcpjungle:
         condition: service_started
