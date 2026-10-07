@@ -39,8 +39,6 @@
 |---|---|---|---|---|
 | `fc-zh-tw` | `fc` | `zh-TW` | 133 | `symbol` |
 | `nginx-en` | `nginx` | `en` | 149 | `symbol` |
-| `opnsense-en` | `opnsense` | `en` | 378(377 篇 + `000 目錄.md`) | (無) |
-| `opnsense-zh-tw` | `opnsense` | `zh-TW` | 378(377 篇 + `000 目錄.md`) | (無) |
 | `sqlsugar-zh-tw` | `sqlsugar` | `zh-TW` | 74 | `cheatsheet`、`examples` |
 
 ---
@@ -72,7 +70,7 @@ mcpjungle/books/
 │   └── corpus/
 │       └── nginx-en/                      # 匯入腳本的產出,勿手改
 │
-├── opnsense/
+├── opnsense/                             # 示意:目前只有 source/,corpus/ 尚未上架
 │   ├── source/                            # 原稿與翻譯工作區
 │   └── corpus/
 │       ├── opnsense-en/                   # 同一本書的英文原文(扁平、檔名編號排序)
@@ -133,7 +131,7 @@ mcpjungle/books/
 
 未啟用的能力工具仍然存在,只會回友善提示並建議改用哪個工具——工具數恆為 8,不隨語料增加。
 
-完整範例(`opnsense-zh-tw/corpus.json`):
+完整範例(示意,`opnsense-zh-tw/corpus.json`):
 
 ```json
 {
@@ -204,6 +202,6 @@ mcpjungle/books/
 - **不放第三份雙語版**:見第一節。
 - **容量上限**:`books/*/corpus/` 總量約 **200 MB** 以內。語料會打包進 `docs-mcp-server` 的 Docker image,也在每次 clone 時下載;
   超過時把大型語料拆到獨立 repo(以 `DOCS_CORPORA_DIR` 掛載),不要繼續塞進本 repo。
-  目前總量:約 11.4 MB(`opnsense-en` 4.9 MB、`opnsense-zh-tw` 4.7 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB)。
+  目前總量:約 4 MB(`nginx-en` 2.2 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB)。
 - 單檔 < 5 MB(CI 會擋);不放任何機密——機密掃描**不掃** `examples/`。
 - 上游授權要求保留聲明時(BSD、MIT…),在語料根目錄放 `LICENSE` 全文,並在 `corpus.json` 的 `license` 註明。

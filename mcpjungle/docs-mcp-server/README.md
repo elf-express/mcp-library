@@ -162,7 +162,7 @@ curl -X POST http://localhost:5690/mcp \
 3. 健康檢查路徑 `/health`。
 4. **務必走 HTTPS**:MCP 遠端連接器要求 https,且 token 不該用明文 http 傳。
 
-常見平台:Railway / Render(連 Git、build context 設 `mcpjungle/`、Dockerfile 設 `docs-mcp-server/Dockerfile`、加 `MCP_AUTH_TOKEN` 變數)、Fly.io(`fly launch` → `fly secrets set` → `fly deploy`)、自有 VPS(`docker compose up -d` + Nginx/Caddy 反代加 TLS)。
+常見平台:Railway / Render(連 Git、build context 設 `mcpjungle/`、Dockerfile 設 `docs-mcp-server/Dockerfile`、加 `MCP_AUTH_TOKEN` 變數)、Fly.io(`fly launch` → `fly secrets set` → `fly deploy`)、自有 VPS(在 repo 根目錄以 [`compose.yaml`](../../compose.yaml) `docker compose up -d --build` 起整套,經 gateway :18800 對外;再以 Nginx/Caddy 反代加 TLS,範例見根目錄 [`nginx.example.conf`](../../nginx.example.conf))。
 
 ## 四、連接 Claude(遠端 MCP 連接器)
 

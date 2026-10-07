@@ -2,16 +2,7 @@
 
 多個 MCP server 的統一目錄(monorepo)。文檔查詢類已收斂為單一**多語料** server [`mcpjungle/docs-mcp-server`](./mcpjungle/docs-mcp-server),統一透過 **MCPJungle** gateway 對外。**根目錄一個 `docker compose up` 即可拉起全部。**
 
-## 結構 / 服務一覽
-
-| 子目錄 | 角色 | 說明 |
-| --- | --- | --- |
-| [`mcpjungle/docs-mcp-server/`](./mcpjungle/docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133 + `nginx-en` 149);新增書 = 丟資料夾 + `corpus.json` |
-| [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | registrar(書本註冊由 `corpus.json` 自動產生)/ 非書本註冊檔(`registry/`) |
-
 ## 目錄結構
-
-> 重整中(E-122):本節描述重整完成後的結構,各 Task 合併前實際路徑可能還是舊的。
 
 ```
 mcp-library/
@@ -35,8 +26,6 @@ worktree 一律放 repo 外:`E:\source\mcp-library-<短名>`。
 
 ## 加一本書
 
-> 重整中(E-122):以下流程在 E-122 完成後生效。
-
 只動 `mcpjungle/books/<書名>/` 一個資料夾,不改任何 `.ts`、compose 或註冊檔。
 
 1. 原稿放 `mcpjungle/books/<書名>/source/`(選用)。
@@ -56,7 +45,9 @@ worktree 一律放 repo 外:`E:\source\mcp-library-<短名>`。
 根 `compose.yaml` 起 `postgres` + `mcpjungle`(gateway)+ `docs-mcp` + `registrar`。**DB 內建、網路由 stack 自建**——不必自己準備 Postgres、不必 `docker network create`。
 
 ```bash
-docker compose up -d --build   # 零設定,不必先 cp .env.example
+docker compose up -d --build                           # 主檔:現場 build,零設定,不必先 cp .env.example
+docker compose -f compose.pull.yaml up -d              # docs-mcp、registrar 改拉 ghcr 映像
+docker compose -f compose.attach.yaml up -d --build    # 只起 docs-mcp + registrar,接現有 gateway
 ```
 
 * 起來的服務:`mcpjungle`(gateway,:18800)+ `docs-mcp-server` + 一次性 `registrar`;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
