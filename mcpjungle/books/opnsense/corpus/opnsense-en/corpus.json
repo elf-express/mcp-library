@@ -1,0 +1,9 @@
+{
+  "book": "opnsense",
+  "language": "en",
+  "source": "https://docs.opnsense.org",
+  "license": "BSD-2-Clause(OPNsense 官方文件,https://github.com/opnsense/docs/blob/master/LICENSE;全文見 LICENSE)",
+  "title": "OPNsense documentation",
+  "description": "OPNsense 防火牆官方英文文件(docs.opnsense.org,377 篇,2026-09-26 擷取):安裝、介面、防火牆規則/NAT、VPN(IPsec/OpenVPN/WireGuard)、路由、服務、外掛、疑難排解、版本說明。檔案扁平、以編號排序;圖片改為指向官方網址的連結。可用 docs_symbol 依標題查(如 WireGuard)。",
+  "capabilities": { "cheatsheet": false, "symbol": true }
+}
