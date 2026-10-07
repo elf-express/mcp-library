@@ -1,0 +1,91 @@
+# mcp-library 主堆疊:postgres + MCPJungle gateway(mcpjungle/gateway 現場 build)+ docs-mcp + 一次性 registrar。
+# DB 內建、網路由本 stack 自建(<project>_mcpjungl),不必先 docker network create。
+#   起:            docker compose up -d --build
+#   拉 ghcr 映像:   docker compose -f compose.pull.yaml up -d
+#   接現有 gateway: docker compose -f compose.attach.yaml up -d --build
+#   並存測試:      MCPJUNGLE_HOST_PORT=18900 IMAGE_TAG=mcp-test docker compose -p mcp-test up -d --build
+services:
+  # 內建 Postgres。預設帳號/密碼/DB 名皆為 mcpjungle,不對外開 port。
+  # 正式環境:在 .env 設 POSTGRES_PASSWORD,並同步改 MCPJUNGLE_DATABASE_URL 裡的密碼(兩處要一致)。
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mcpjungle}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mcpjungle}
+      POSTGRES_DB: ${POSTGRES_DB:-mcpjungle}
+      TZ: ${TZ:-Asia/Taipei}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mcpjungle} -d ${POSTGRES_DB:-mcpjungle}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [mcpjungl]
+    restart: always
+
+  mcpjungle:
+    build:
+      context: ./mcpjungle/gateway
+      dockerfile: Dockerfile.fullbuild
+    image: mcpjungle-fork:${IMAGE_TAG:-latest}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # 預設連內建 postgres;要接外部 DB 在 .env 設 MCPJUNGLE_DATABASE_URL(host 用 DB 的 IP)
+      DATABASE_URL: ${MCPJUNGLE_DATABASE_URL:-postgres://mcpjungle:mcpjungle@postgres:5432/mcpjungle?sslmode=disable}
+      SERVER_MODE: ${SERVER_MODE:-development}
+      OTEL_ENABLED: ${OTEL_ENABLED:-false}
+      MCP_SERVER_INIT_REQ_TIMEOUT_SEC: ${MCP_SERVER_INIT_REQ_TIMEOUT_SEC:-30}
+      TZ: ${TZ:-Asia/Taipei}
+    ports:
+      - "${MCPJUNGLE_HOST_PORT:-18800}:8080"
+    volumes:
+      - ${MCPJUNGLE_DATA_DIR:-/mnt/docker/app/data/mcpjungle}:/host:ro   # filesystem server 讀這裡
+    networks: [mcpjungl]
+    restart: always
+
+  docs-mcp-server:
+    build:
+      context: ./mcpjungle
+      dockerfile: docs-mcp-server/Dockerfile
+    image: ghcr.io/elf-express/docs-mcp-server:${IMAGE_TAG:-latest}
+    environment:
+      TRANSPORT: http
+      PORT: "5690"
+      # 留空 = 僅內部網路可達;要硬化就設 DOCS_MCP_AUTH_TOKEN,並在 servers/*.json 加 bearer_token
+      MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
+      TZ: ${TZ:-Asia/Taipei}
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:5690/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks: [mcpjungl]
+    restart: unless-stopped
+
+  # 一次性:等 gateway 就緒後註冊 server,然後結束(Exited 0 為正常)
+  registrar:
+    build:
+      context: ./mcpjungle
+      dockerfile: Dockerfile.registrar
+    image: ghcr.io/elf-express/docs-registrar:${IMAGE_TAG:-latest}
+    depends_on:
+      mcpjungle:
+        condition: service_started
+      docs-mcp-server:
+        condition: service_healthy
+    environment:
+      REGISTRY_URL: http://mcpjungle:8080
+      TZ: ${TZ:-Asia/Taipei}
+    networks: [mcpjungl]
+    restart: "no"
+
+volumes:
+  pgdata:          # docker compose down 不會刪,down -v 才會
+
+networks:
+  mcpjungl:
+    driver: bridge  # 實際名稱 <project>_mcpjungl

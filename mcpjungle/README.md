@@ -6,10 +6,6 @@
 
 ```
 mcpjungle/
-  docker-compose.mcpjungle.yml   正式:postgres + gateway + docs-mcp + registrar(DB 內建、網路自建)
-  docker-compose.localtest.yml   本機自包含測試(內含 postgres、自建網路)
-  docker-compose.dockhand.yml    只部署 docs-mcp + registrar,接「現有」gateway(Dockhand 用)
-  .env.example                   機密範本(複製成 .env)
   register.sh                    手動註冊(host 上用官方 mcpjungle CLI)
   registrar.sh                   一次性自動註冊容器用的腳本
   servers/                       各 server 的註冊設定檔(*.json)
@@ -18,26 +14,27 @@ mcpjungle/
   gateway/                       MCPJungle 原始碼(自行維護)
 ```
 
+> compose 檔都在 repo 根目錄:`compose.yaml`(正式:postgres + gateway + docs-mcp + registrar)、`compose.pull.yaml`(docs-mcp 與 registrar 改拉 ghcr)、`compose.attach.yaml`(只部署 docs-mcp + registrar,接「現有」gateway)。`.env.example` 也在根目錄。
+>
 > docs-mcp 的 image 以 `mcpjungle/` 為 build context、`docs-mcp-server/Dockerfile` 建置,把 `books/*/corpus/` 併成映像內的 `corpora/`;`books/*/source` 由 `.dockerignore` 排除。
 
 ## 網路 / DB
 
 - **網路 `mcpjungl` 由本 stack 自建**(部署時自動建 `<project>_mcpjungl`,像 `immich_default` 那樣),**不必先 `docker network create`**。gateway / docs-mcp / registrar 都在這個網路。
-- **DB 內建**:本 compose 含 `postgres` service(容器 `mcpjungle-postgres`、volume `pgdata`、不對外開 port),gateway 以 healthcheck 等它就緒。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
+- **DB 內建**:根 `compose.yaml` 含 `postgres` service(volume `pgdata`、不對外開 port),gateway 以 healthcheck 等它就緒。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
 
 ## 一、一鍵起
 
 ```bash
-cd mcpjungle
-cp .env.example .env                        # 填 MCPJUNGLE_DATABASE_URL(host 用你 DB 的 IP)
-docker compose -f docker-compose.mcpjungle.yml up -d --build
+# 在 repo 根目錄;零設定即可跑,要改預設值才 cp .env.example .env
+docker compose up -d --build
 ```
 
 網路自建、DB 走 IP、registrar 自動註冊都**已沙盒實測**(sqlsugar / fc / filesystem / fetch / time 共 5 個;語料現已改名為 `sqlsugar-zh-tw` / `fc-zh-tw`)。
 
-> ⚠️ container 名 `mcpjungle-server`:已有同名 gateway 在跑要先停掉(否則撞名)。
+> 容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。
 
-> 想全自包含測試(內含 postgres)?用 [`docker-compose.localtest.yml`](./docker-compose.localtest.yml)。
+> 想另起一份完整堆疊測試、又不動正式堆疊?用 `docker compose -p mcp-test`,見根 [README](../README.md) 的「並存測試」。
 > 要把 docs 接進你**現有**的 gateway?見下方 Dockhand 節。
 
 ## 二、註冊(自動 / 手動)
@@ -79,35 +76,35 @@ REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-
 
 compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway 就緒、自動註冊所有 server,然後結束(`Exited (0)` 正常)。**已實測約 20 秒內自動註冊 5 個,免手動 `register.sh`。**
 
-1. 新增 Git stack,指向本 repo,compose 路徑填 `mcpjungle/docker-compose.mcpjungle.yml`。
+1. 新增 Git stack,指向本 repo,compose 路徑填 `compose.yaml`(只拉不 build 填 `compose.pull.yaml`)。
 2. 環境變數 UI 填機密(`.env` 不進 git):至少 `MCPJUNGLE_DATABASE_URL`。
 3. 部署;之後 `git push` → 自動重佈,registrar 重跑(已註冊略過)。
 
 調整註冊清單:`registrar` 的 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`)。
 
-> **語料改名後(舊名 `sqlsugar` / `fc` → `sqlsugar-zh-tw` / `fc-zh-tw`)**:registrar 只會「新增」清單內的名字,不會移除舊名。已部署的 gateway 請手動 `docker exec mcpjungle-server /mcpjungle deregister sqlsugar`、`deregister fc`,否則舊 server 仍指向已不存在的 `/mcp/sqlsugar`、`/mcp/fc`(docs-mcp-server 回 404)。
+> **語料改名後(舊名 `sqlsugar` / `fc` → `sqlsugar-zh-tw` / `fc-zh-tw`)**:registrar 只會「新增」清單內的名字,不會移除舊名。已部署的 gateway 請在 repo 根目錄手動 `docker compose exec mcpjungle /mcpjungle deregister sqlsugar`、`deregister fc`,否則舊 server 仍指向已不存在的 `/mcp/sqlsugar`、`/mcp/fc`(docs-mcp-server 回 404)。
 
 ## 五、Dockhand(接你「現有」的 gateway)
 
-你已有一台 MCPJungle 在跑,就**不要再起 gateway**——用 [`docker-compose.dockhand.yml`](./docker-compose.dockhand.yml) 只部署 `docs-mcp` + `registrar`,註冊進現有 gateway(**已實測,含 redeploy 冪等**)。
+你已有一台 MCPJungle 在跑,就**不要再起 gateway**——用根目錄的 [`compose.attach.yaml`](../compose.attach.yaml) 只部署 `docs-mcp` + `registrar`,註冊進現有 gateway(**已實測,含 redeploy 冪等**)。
 
-1. Dockhand → 新增 Git stack,compose 路徑填 `mcpjungle/docker-compose.dockhand.yml`。
-2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle-server:8080`)、(選)`REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en`)。
+1. Dockhand → 新增 Git stack,compose 路徑填 `compose.attach.yaml`(project 名固定 `mcp-library-attach`,不會和同目錄的主堆疊撞名)。
+2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名,預設 `mcp-library_mcpjungl`;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle:8080` = 本 repo 主堆疊的服務名;別的 gateway 填它在該網路內的服務名或容器名)、(選)`REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en`)。
 3. 開 webhook。
 
 > registrar 內建**重試**(等 docs-mcp 開始監聽才註冊,避免 race)+ **冪等**(已註冊略過),redeploy 安全。
 
 ## 六、建置 / 推送 image 到 ghcr.io
 
-自 build 的 image 為 `ghcr.io/elf-express/<name>:latest`(`docs-mcp-server` / `docs-registrar`);`mcpjungle`/`postgres` 是官方 image 不推。
+自 build 的 image 為 `ghcr.io/elf-express/<name>:latest`(`docs-mcp-server` / `docs-registrar`);gateway(`mcpjungle-fork`)現場 build、`postgres` 是官方 image,都不推。三個自建映像的 tag 由 `IMAGE_TAG` 決定(預設 `latest`)。
 
 ```bash
 echo "$GHCR_PAT" | docker login ghcr.io -u <github 帳號> --password-stdin   # PAT 需 packages:write 權限
-docker compose -f docker-compose.mcpjungle.yml build docs-mcp
-docker compose -f docker-compose.mcpjungle.yml push docs-mcp
+docker compose build docs-mcp-server registrar    # 在 repo 根目錄
+docker compose push docs-mcp-server registrar
 ```
 
-推完別處即可 `docker pull ghcr.io/elf-express/docs-mcp-server:latest`;部署端要「只 pull 不 build」就把 `docs-mcp` 服務的 `build:` 移除。
+推完別處即可 `docker pull ghcr.io/elf-express/docs-mcp-server:latest`;部署端要「只 pull 不 build」就用 `compose.pull.yaml`。
 
 ## 存取控制 / 認證
 

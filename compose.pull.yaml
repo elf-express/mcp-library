@@ -1,0 +1,12 @@
+# 覆寫主檔:docs-mcp 與 registrar 改拉 ghcr 映像(由 .github/workflows/docker-publish.yml 在 push main 時發布)。
+# gateway 沒有發布映像,仍現場 build。單檔即可用:docker compose -f compose.pull.yaml up -d
+include:
+  - compose.yaml
+
+services:
+  docs-mcp-server:
+    build: !reset null
+    pull_policy: always
+  registrar:
+    build: !reset null
+    pull_policy: always

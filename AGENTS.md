@@ -17,13 +17,15 @@
 ## 常用命令
 
 - `docker compose up -d --build`：在 root 啟動整個 stack（gateway + docs-mcp + registrar）。
-- `docker compose -f docker-compose.pull.yml up -d`：從 GHCR pull image，而不是 build。
+- `docker compose -f compose.pull.yaml up -d`：docs-mcp 與 registrar 從 GHCR pull image（gateway 仍現場 build）。
+- `docker compose -f compose.attach.yaml up -d --build`：只起 docs-mcp + registrar，註冊進現有 gateway。
+- `docker compose -p mcp-test`（搭配 `MCPJUNGLE_HOST_PORT=18900`、`IMAGE_TAG=mcp-test`）：與正式堆疊並存的完整測試堆疊；`down -v` 一定要帶 `-p mcp-test`。
 
 ## 使用指引
 
-- 根目錄部署時，`MCPJUNGLE_DATABASE_URL` 必須是外部 DB IP（例如 `192.168.25.100:15432`），不是容器名稱。
-- root compose 不是全包含 Postgres，若需自包含測試請改用 `mcpjungle/docker-compose.localtest.yml` 或 `shared-db/docker-compose.yml`。
-- `mcpjungle/docker-compose.dockhand.yml` 用於將 `docs-mcp` 註冊至現有 MCPJungle gateway，不會建立新的 gateway。
+- compose 只有根目錄 3 份（`compose.yaml`、`compose.pull.yaml`、`compose.attach.yaml`），CI 會擋其他 compose 檔與 `container_name`。
+- 根 compose 已內建 Postgres；要改接外部 DB 才設 `MCPJUNGLE_DATABASE_URL`，host 用 DB 的 IP（例如 `192.168.25.100:15432`），不是容器名稱。
+- `compose.attach.yaml` 用於將 `docs-mcp` 註冊至現有 MCPJungle gateway，不會建立新的 gateway。
 - `mcpjungle/registrar.sh` 與 `mcpjungle/register.sh` 只在需要手動註冊時使用。
 
 ## Worktree
@@ -36,16 +38,15 @@
 
 - 若修改 `mcpjungle/docs-mcp-server`，同時參考 `mcpjungle/docs-mcp-server/README.md` 與其 package script。
 - 若修改 gateway 註冊流程或設定，請參考 `mcpjungle/README.md` 以及 `mcpjungle/servers/*.json`。
-- 不要在根目錄啟動同名已有容器 `mcpjungle-server`，否則會因 container 名稱衝突失敗。
+- 容器名由 compose 依 project 產生（如 `mcp-library-mcpjungle-1`），進容器用 `docker compose exec mcpjungle ...`，不要寫死容器名。
 
 ## 重要文件
 
 - `README.md`
 - `mcpjungle/README.md`
-- `docker-compose.yml`
-- `docker-compose.pull.yml`
-- `mcpjungle/docker-compose.mcpjungle.yml`
-- `mcpjungle/docker-compose.dockhand.yml`
+- `compose.yaml`
+- `compose.pull.yaml`
+- `compose.attach.yaml`
 
 ## 對 AI 的額外提醒
 

@@ -53,34 +53,53 @@ worktree 一律放 repo 外:`E:\source\mcp-library-<短名>`。
 
 ## 部署:一鍵起全部(推薦)
 
-根 `docker-compose.yml` 起 `postgres` + `mcpjungle`(gateway)+ `docs-mcp` + `registrar`。**DB 內建、網路由 stack 自建**——不必自己準備 Postgres、不必 `docker network create`。
+根 `compose.yaml` 起 `postgres` + `mcpjungle`(gateway)+ `docs-mcp` + `registrar`。**DB 內建、網路由 stack 自建**——不必自己準備 Postgres、不必 `docker network create`。
 
 ```bash
 docker compose up -d --build   # 零設定,不必先 cp .env.example
 ```
 
-* 起來的容器:`mcpjungle-server`(:18800)+ `docs-mcp-server` + 一次性 registrar;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
+* 起來的服務:`mcpjungle`(gateway,:18800)+ `docs-mcp-server` + 一次性 `registrar`;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
 * registrar 自動把 6 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
-* DB 是內建的 `mcpjungle-postgres`(volume `pgdata`,不對外開 port);gateway 等它 healthy 才啟動。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
+* DB 是內建的 `postgres` 服務(volume `pgdata`,不對外開 port);gateway 等它 healthy 才啟動。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
 * 用戶端連 `http://<host>:18800/mcp`(全部)或 `http://<host>:18800/mcp/<corpus>`。
 
-**Dockhand**:新增 Git stack 指向本 repo、compose 路徑 `docker-compose.yml` → 一鍵全起(env 可全部留空;網路與 DB 都由 stack 自建,**不用先 `docker network create`**)。
+**Dockhand**:新增 Git stack 指向本 repo、compose 路徑 `compose.yaml` → 一鍵全起(env 可全部留空;網路與 DB 都由 stack 自建,**不用先 `docker network create`**)。
 
-> ⚠️ container 名是 `mcpjungle-server`:若你已有**同名的 gateway** 在跑,先停掉舊的再起這個(否則撞名)。
-> 想把 docs 接進**現有** gateway(而非起新的)?見 [`mcpjungle/README.md`](./mcpjungle/README.md) 的 Dockhand 節。
+> 容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。
+> 想把 docs 接進**現有** gateway(而非起新的)?用 `compose.attach.yaml`,見 [`mcpjungle/README.md`](./mcpjungle/README.md) 的 Dockhand 節。
 
 ### 兩種部署法:build 或 pull
 
 | 方法 | 指令 | 何時用 |
 | --- | --- | --- |
 | **build**(預設) | `docker compose up -d --build` | git clone 後在 server 現場 build,總是最新原始碼 |
-| **pull**(較快) | `docker compose -f docker-compose.pull.yml up -d` | 拉 GitHub Action 建好的 ghcr image,不在 server build |
+| **pull**(較快) | `docker compose -f compose.pull.yaml up -d` | docs-mcp 與 registrar 拉 GitHub Action 建好的 ghcr image(gateway 沒有發布映像,仍現場 build) |
 
-`docs-mcp-server` image 由 [`.github/workflows/docker-publish.yml`](./.github/workflows/docker-publish.yml) 在 push 到 main 時自動 build + push 到 ghcr。pull 法把 compose 路徑改 `docker-compose.pull.yml` 即可(ghcr 是 private 的話,部署端先 `docker login ghcr.io`)。
+`docs-mcp-server` 與 `docs-registrar` image 由 [`.github/workflows/docker-publish.yml`](./.github/workflows/docker-publish.yml) 在 push 到 main 時自動 build + push 到 ghcr。pull 法把 compose 路徑改 `compose.pull.yaml` 即可(ghcr 是 private 的話,部署端先 `docker login ghcr.io`)。
 
 ### 備援架構
 
 公司一套、家裡一套,兩網域各跑一份,任一邊斷線另一邊接手,最終都註冊到 MCPJungle 統一管理。
+
+## 並存測試
+
+用 `-p mcp-test` 另起一份完整堆疊(含自家 gateway),port 與映像 tag 都和正式堆疊錯開,兩者可同時跑:
+
+```powershell
+# PowerShell(在 repo 根目錄)
+$env:MCPJUNGLE_HOST_PORT = "18900"; $env:IMAGE_TAG = "mcp-test"; $env:MCPJUNGLE_DATA_DIR = "$PWD\mcpjungle\books"
+docker compose -p mcp-test up -d --build
+docker compose -p mcp-test ps -a                       # registrar 應為 Exited (0),其餘 running/healthy
+docker compose -p mcp-test logs registrar              # 應註冊 6 個:sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time
+docker compose -p mcp-test exec mcpjungle /mcpjungle list servers
+curl.exe -s -o NUL -w "%{http_code}`n" http://localhost:18900/health   # 預期 200
+docker compose -p mcp-test down -v
+docker image rm mcpjungle-fork:mcp-test ghcr.io/elf-express/docs-mcp-server:mcp-test ghcr.io/elf-express/docs-registrar:mcp-test
+Remove-Item Env:MCPJUNGLE_HOST_PORT, Env:IMAGE_TAG, Env:MCPJUNGLE_DATA_DIR
+```
+
+`down -v` 一定要帶 `-p mcp-test`,否則刪到的是正式堆疊的 `pgdata`。
 
 ---
 

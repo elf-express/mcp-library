@@ -4,7 +4,7 @@ name: CI
 # monorepo 版通用 CI
 # 觸發:push / PR 到 main
 # 內含:
-#   - basics:    commit lint、大檔案檢查、機密掃描
+#   - basics:    commit lint、compose 驗證、大檔案檢查、機密掃描
 #   - build-test: docs-mcp-server 的 TypeScript build + 單元測試(上傳 JUnit 報告)
 #   - gateway:    mcpjungle/gateway 的 go build / go test / golangci-lint
 #   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
@@ -58,6 +58,20 @@ jobs:
             exit 1
           fi
           echo "commit 標題皆符合 Conventional Commits"
+
+      - name: Validate compose files
+        run: |
+          files="$(git ls-files '*compose*.yml' '*compose*.yaml' | sort | tr '
+' ' ')"
+          if [ "$files" != "compose.attach.yaml compose.pull.yaml compose.yaml " ]; then
+            echo "::error::compose 檔只能是根目錄 3 份,目前:$files"; exit 1
+          fi
+          if grep -n 'container_name' compose.yaml compose.pull.yaml compose.attach.yaml; then
+            echo "::error::compose 不可寫死 container_name(-p mcp-test 並存會撞名)"; exit 1
+          fi
+          docker compose -f compose.yaml config -q
+          docker compose -f compose.pull.yaml config -q
+          MCPJUNGLE_NETWORK=dummy docker compose -f compose.attach.yaml config -q
 
       - name: Check for large files (> 5MB)
         run: |
