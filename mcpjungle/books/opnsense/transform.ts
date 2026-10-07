@@ -70,7 +70,8 @@ export function transformPage(raw: string): TransformResult {
     while (out.length && out[out.length - 1].trim() === "") out.pop();
   };
   trimEnd();
-  if (navRemoved && out.length - 1 > frontmatterEnd && out[out.length - 1] === "---") {
+  const last = out.length - 1;
+  if (navRemoved && last - 1 > frontmatterEnd && out[last] === "---" && out[last - 1].trim() === "") {
     out.pop();
     trimEnd();
   }

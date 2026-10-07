@@ -102,6 +102,10 @@ describe("transformPage", () => {
     expect(transformPage(raw).content).toBe(["---", "title: x", "---", "", "# T", "", "## B", "", "內文"].join("\n"));
   });
 
+  it("檔尾 setext 標題的 --- 保留", () => {
+    expect(transformPage(["內文", "", "Heading", "---", NAV].join("\n")).content).toBe("內文\n\nHeading\n---");
+  });
+
   it("只有 frontmatter 的 source 去引號", () => {
     const raw = ["---", 'source: "https://a/b.html"', "---", "", "```", 'source: "keep"', "```"].join("\n");
     const { content } = transformPage(raw);

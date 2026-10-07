@@ -32,7 +32,7 @@ for (const { src, id } of LANGS) {
   const pages: { name: string; content: string }[] = [];
   for (const name of files) {
     const r = transformPage(fs.readFileSync(path.join(srcDir, name), "utf-8"));
-    if (r.leftovers.length) errors.push(`${src}/${name}:第 ${r.leftovers.join(", ")} 行仍含 ../images/`);
+    if (r.leftovers.length) errors.push(`${src}/${name}:第 ${r.leftovers.join(", ")} 行無法轉換(本機圖片、空連結或包圖外層不是 http)`);
     pages.push({ name, content: r.content });
   }
   results.push({ id, outDir: path.join(bookRoot, "corpus", id), pages });
