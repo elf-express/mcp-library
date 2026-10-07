@@ -61,8 +61,7 @@ jobs:
 
       - name: Validate compose files
         run: |
-          files="$(git ls-files '*compose*.yml' '*compose*.yaml' | sort | tr '
-' ' ')"
+          files="$(git ls-files '*compose*.yml' '*compose*.yaml' | sort | tr '\n' ' ')"
           if [ "$files" != "compose.attach.yaml compose.pull.yaml compose.yaml " ]; then
             echo "::error::compose 檔只能是根目錄 3 份,目前:$files"; exit 1
           fi
