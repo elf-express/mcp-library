@@ -1,0 +1,19 @@
+mcpjungle/README.md
+  s_4f0e5a1bd7e273::t_68a7b234ecfcf7 107-108
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "576be0f1c5588a1b87caceea46a4a80a553f15a8",
+  "prompts": {},
+  "sessions": {
+    "s_4f0e5a1bd7e273": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "19387976-641b-4938-a61f-22827fbd7186",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
