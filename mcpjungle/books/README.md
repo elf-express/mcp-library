@@ -39,6 +39,8 @@
 |---|---|---|---|---|
 | `fc-zh-tw` | `fc` | `zh-TW` | 133 | `symbol` |
 | `nginx-en` | `nginx` | `en` | 149 | `symbol` |
+| `opnsense-en` | `opnsense` | `en` | 377 | `symbol` |
+| `opnsense-zh-tw` | `opnsense` | `zh-TW` | 377 | `symbol` |
 | `sqlsugar-zh-tw` | `sqlsugar` | `zh-TW` | 74 | `cheatsheet`、`examples` |
 
 ---
@@ -70,22 +72,20 @@ mcpjungle/books/
 │   └── corpus/
 │       └── nginx-en/                      # 匯入腳本的產出,勿手改
 │
-├── opnsense/                             # 示意:目前只有 source/,corpus/ 尚未上架
-│   ├── source/                            # 原稿與翻譯工作區
-│   └── corpus/
+├── opnsense/                             # 由匯入腳本從原稿產生兩個語言的語料
+│   ├── import.ts                          # 在 docs-mcp-server 執行 npx tsx ../books/opnsense/import.ts
+│   ├── transform.ts
+│   ├── source/                            # 原稿與翻譯工作區(en/、zh-TW/ 等);不進映像
+│   └── corpus/                            # 匯入腳本的產出,勿手改 md
 │       ├── opnsense-en/                   # 同一本書的英文原文(扁平、檔名編號排序)
 │       │   ├── corpus.json
-│       │   ├── sources.json               # 由每篇 YAML front matter 的 source: 產生(見第五節)
 │       │   ├── LICENSE                    # 上游授權全文(BSD-2-Clause),非 .md 不會被索引
-│       │   ├── 000 目錄.md                # 章節目錄(唯一的階層導航)
 │       │   ├── 01 Welcome to OPNsense’s documentation!.md
-│       │   └── 137 Rules.md
+│       │   └── 155 WireGuard Site-to-Site Setup.md
 │       └── opnsense-zh-tw/                # 同一本書的繁中譯本 → 另一個語料,與 -en 相鄰
 │           ├── corpus.json
-│           ├── sources.json
 │           ├── LICENSE
-│           ├── 000 目錄.md
-│           └── 137 規則.md
+│           └── 03 安全.md
 │
 └── sqlsugar/
     └── corpus/
@@ -131,7 +131,7 @@ mcpjungle/books/
 
 未啟用的能力工具仍然存在,只會回友善提示並建議改用哪個工具——工具數恆為 8,不隨語料增加。
 
-完整範例(示意,`opnsense-zh-tw/corpus.json`):
+完整範例(`opnsense-zh-tw/corpus.json`):
 
 ```json
 {
@@ -139,9 +139,9 @@ mcpjungle/books/
   "language": "zh-TW",
   "source": "https://docs.opnsense.org",
   "license": "BSD-2-Clause(OPNsense 官方文件,https://github.com/opnsense/docs/blob/master/LICENSE;全文見 LICENSE)。繁中為機器翻譯衍生作品",
-  "title": "OPNsense 說明文件(繁體中文)",
-  "description": "OPNsense 防火牆官方文件繁體中文機器翻譯版(docs.opnsense.org,377 篇,2026-09-26 擷取;Google 翻譯,未經人工校稿,術語以 opnsense-en 原文為準):安裝、介面、防火牆規則/NAT、VPN(IPsec/OpenVPN/WireGuard)、路由、服務、外掛、疑難排解、版本說明。檔案扁平、以編號排序;「000 目錄.md」為章節目錄。僅含文字:圖片連結(../images/…)與指向已排除「000 全書」合併檔的連結刻意保留為失效連結。",
-  "capabilities": { "cheatsheet": false, "examples": false, "symbol": false }
+  "title": "OPNsense 文件(繁體中文)",
+  "description": "OPNsense 防火牆官方文件繁體中文版(docs.opnsense.org,377 篇,2026-09-26 擷取;機器翻譯(google_v2),168 小隊審稿中,術語以 opnsense-en 原文為準):安裝、介面、防火牆規則/NAT、VPN(IPsec/OpenVPN/WireGuard)、路由、服務、外掛、疑難排解、版本說明。檔案扁平、以編號排序;圖片改為指向官方網址的連結。可用 docs_symbol 依標題查(如 WireGuard)。",
+  "capabilities": { "cheatsheet": false, "symbol": true }
 }
 ```
 
@@ -202,6 +202,6 @@ mcpjungle/books/
 - **不放第三份雙語版**:見第一節。
 - **容量上限**:`books/*/corpus/` 總量約 **200 MB** 以內。語料會打包進 `docs-mcp-server` 的 Docker image,也在每次 clone 時下載;
   超過時把大型語料拆到獨立 repo(以 `DOCS_CORPORA_DIR` 掛載),不要繼續塞進本 repo。
-  目前總量:約 4 MB(`nginx-en` 2.2 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB)。
+  目前總量:約 13 MB(`opnsense-en` 4.6 MB、`opnsense-zh-tw` 4.4 MB、`nginx-en` 2.2 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB)。
 - 單檔 < 5 MB(CI 會擋);不放任何機密——機密掃描**不掃** `examples/`。
 - 上游授權要求保留聲明時(BSD、MIT…),在語料根目錄放 `LICENSE` 全文,並在 `corpus.json` 的 `license` 註明。

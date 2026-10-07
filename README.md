@@ -24,7 +24,7 @@ mcp-library/
     │   │   ├─ source/     原稿與翻譯(不打包進映像)
     │   │   └─ corpus/<id>/ 語料:corpus.json + markdown(id = <書名>-<語言>)
     │   ├─ nginx/          import.ts · transform.ts(由 source/en 產生 corpus/nginx-en)
-    │   └─ opnsense/       ONBOARDING.md · 168小隊-啟動提示.md(168小隊翻譯工作說明)
+    │   └─ opnsense/       import.ts · transform.ts(由 source/{en,zh-TW} 產生 corpus/opnsense-en、opnsense-zh-tw)· ONBOARDING.md · 168小隊-啟動提示.md(168小隊翻譯工作說明)
     ├─ docs-mcp-server/    多語料文檔 MCP server(不含語料)
     └─ registry/           非書本 MCP 註冊檔(filesystem/fetch/time…)+ registrar
 ```
@@ -58,7 +58,7 @@ docker compose -f compose.attach.yaml up -d --build    # 只起 docs-mcp + regis
 ```
 
 * 起來的服務:`mcpjungle`(gateway,:18800)+ `docs-mcp-server` + 一次性 `registrar`;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
-* registrar 自動把 6 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
+* registrar 自動把 8 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `opnsense-en` / `opnsense-zh-tw` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
 * DB 是內建的 `postgres` 服務(volume `pgdata`,不對外開 port);gateway 等它 healthy 才啟動。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
 * 用戶端連 `http://<host>:18800/mcp`(全部)或 `http://<host>:18800/mcp/<corpus>`。
 
@@ -89,7 +89,7 @@ docker compose -f compose.attach.yaml up -d --build    # 只起 docs-mcp + regis
 $env:MCPJUNGLE_HOST_PORT = "18900"; $env:IMAGE_TAG = "mcp-test"; $env:MCPJUNGLE_DATA_DIR = "$PWD\mcpjungle\books"
 docker compose -p mcp-test up -d --build
 docker compose -p mcp-test ps -a                       # registrar 應為 Exited (0),其餘 running/healthy
-docker compose -p mcp-test logs registrar              # 應註冊 6 個:sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time
+docker compose -p mcp-test logs registrar              # 應註冊 8 個:sqlsugar-zh-tw fc-zh-tw nginx-en opnsense-en opnsense-zh-tw filesystem fetch time
 docker compose -p mcp-test exec mcpjungle /mcpjungle list servers
 curl.exe -s -o NUL -w "%{http_code}`n" http://localhost:18900/health   # 預期 200
 docker compose -p mcp-test down -v

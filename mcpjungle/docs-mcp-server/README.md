@@ -7,7 +7,7 @@
 - **stdio**:本機用,Claude Desktop 以子行程啟動。
 - **http**(本專案重點):Streamable HTTP,可部署到雲端 / Docker,遠端連接。
 
-種子語料放在 `mcpjungle/books/<書名>/corpus/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`nginx-en`(149 篇,在本目錄執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生)。開發時直接掃 `../books/*/corpus/`,映像 build 時併成 `corpora/` 一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
+種子語料放在 `mcpjungle/books/<書名>/corpus/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`nginx-en`(149 篇,在本目錄執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生)、`opnsense-en` / `opnsense-zh-tw`(各 377 篇,在本目錄執行 `npx tsx ../books/opnsense/import.ts` 從 `mcpjungle/books/opnsense/source/{en,zh-TW}` 產生)。開發時直接掃 `../books/*/corpus/`,映像 build 時併成 `corpora/` 一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
 
 ## 安裝(本機 stdio)
 
@@ -24,7 +24,7 @@
 }
 ```
 
-重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en` 三本(共 356 篇)。
+重開 AI 助手後對它說「列出可用語料」即可。這**一個** server 同時涵蓋 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en` + `opnsense-en` + `opnsense-zh-tw` 五個語料(共 1110 篇)。
 
 | AI 助手 | 設定檔 |
 |---|---|
