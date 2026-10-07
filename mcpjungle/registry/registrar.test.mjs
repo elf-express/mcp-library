@@ -13,7 +13,7 @@ const fwd = (p) => p.replace(/\\/g, "/");
 const STUB = `#!/bin/sh
 case "$3" in
   list) n=0; while IFS= read -r s; do n=$((n+1)); echo "$n. $s"; done < "$STUB_STATE" ;;
-  register) node -e 'process.stdout.write(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).name+"\\\\n")' "$5" >> "$STUB_STATE" ;;
+  register) node -e 'process.stdout.write(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).name+"\\n")' "$5" >> "$STUB_STATE" ;;
 esac
 `;
 

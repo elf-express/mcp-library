@@ -161,7 +161,7 @@ mcpjungle/books/
 
 完整步驟、指令與驗證方式以 skill **`elf-mcp-knowledge`**(第 3 節 Step 0–7、第 5 節檢查清單)為準。以下是在本 repo 內要做的事:
 
-- [ ] **選 id**:`<書名>-<語言>`,符合第一節所有規則;`ls mcpjungle/books/*/corpus/ mcpjungle/servers/` 與 `docker compose exec mcpjungle /mcpjungle list servers` 確認不撞名
+- [ ] **選 id**:`<書名>-<語言>`,符合第一節所有規則;`ls mcpjungle/books/*/corpus/ mcpjungle/registry/` 與 `docker compose exec mcpjungle /mcpjungle list servers` 確認不撞名
 - [ ] **建資料夾** `mcpjungle/books/<書名>/corpus/<id>/`,只放 `.md`(第六節規則:純文字、不放合併全書)
 - [ ] **每篇 md**:`# 標題` 開頭,前 15 行內有來源行 `> 📖 官方文件:[文字](https://…)` 或 `> Source: https://…`;做不到時(例如 YAML front matter)改用 `sources.json`,或由匯入腳本把 `source: "…"` 去掉引號(如 `nginx-en`)
 - [ ] **`corpus.json`**:`book` / `language` / `source` / `title` / `description` / `capabilities` 都寫;capabilities 與內容相符
@@ -169,8 +169,11 @@ mcpjungle/books/
 - [ ] **smoke test**:複製 skill 的 `templates/corpus-smoke.test.ts` 成 `mcpjungle/docs-mcp-server/tests/<id>.test.ts`,換成語料的**真實**標題與關鍵字(不可放寬比對)
 - [ ] `cd mcpjungle/docs-mcp-server && npm run build && npm test`:既有測試全過、數量不減
 - [ ] 本機起 server,實際呼叫 `docs_list_corpora` / `docs_search` / `docs_read` / `docs_outline`,`/health` 的 corpora / docs 數正確
-- [ ] **註冊**:新增 `mcpjungle/servers/<id>.json`(`url` = `http://docs-mcp-server:5690/mcp/<id>`,`description` 列出所有有效工具)
-- [ ] **`REGISTER_LIST`** 兩處:`mcpjungle/registrar.sh` 預設值、根 `compose.attach.yaml` 預設值(`mcpjungle/register.sh` 的 per-book 清單也同步)
+- [ ] **註冊**:不用手動註冊:registrar 會依 corpus.json 自動註冊;本機先跑 `node mcpjungle/registry/gen-book-configs.mjs mcpjungle/books <暫存目錄>` 確認合法(印出的 id 要包含新書)。合法條件(任一不符,registrar 不註冊任何 server 並以 1 結束):
+  - 每個 `corpus/<id>/` 都有 `corpus.json`,且是 JSON 物件
+  - `description` 非空;`book` 等於書資料夾名
+  - id 符合 `^[a-z0-9]+(-[a-z0-9]+)*$`,且等於 `<book>-<language 小寫>`
+  - id 全域不重複,也不與 `mcpjungle/registry/*.json` 同名;整個 `books/` 至少一個語料
 - [ ] **文件**:本檔「現有語料」表、根 `README.md`、根 `CLAUDE.md`、`mcpjungle/docs-mcp-server/README.md`、`mcpjungle/README.md`
 - [ ] 部署後驗證 gateway:`list tools | grep '<id>__'` 與一次 `invoke <id>__docs_search`
 

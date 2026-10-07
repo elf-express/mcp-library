@@ -1,7 +1,8 @@
 # 只部署 docs-mcp + 一次性 registrar,把書註冊進「現有」的 MCPJungle gateway;不另起 gateway / DB。
 #   MCPJUNGLE_NETWORK  現有 gateway 所在的 Docker 網路完整名(預設 mcp-library_mcpjungl = 本 repo 主堆疊)
 #   REGISTRY_URL       registrar 連 gateway 的位址(預設 http://mcpjungle:8080 = 本 repo 主堆疊的服務名)
-#   REGISTER_LIST      要註冊的 server(預設只有各本書;現有 gateway 多半已有 filesystem/fetch/time)
+#   REGISTER_EXTRAS    預設 0 = 只註冊各本書(由 corpus.json 自動產生;現有 gateway 多半已有 filesystem/fetch/time)
+#   REGISTER_LIST      有值時只註冊這些 server
 # 起:docker compose -f compose.attach.yaml up -d --build
 name: mcp-library-attach
 
@@ -21,7 +22,7 @@ services:
         condition: service_healthy
     environment:
       REGISTRY_URL: ${REGISTRY_URL:-http://mcpjungle:8080}
-      REGISTER_LIST: ${REGISTER_LIST:-sqlsugar-zh-tw fc-zh-tw nginx-en}
+      REGISTER_EXTRAS: ${REGISTER_EXTRAS:-0}
     networks: !override [gateway]
 
 networks:

@@ -54,7 +54,7 @@ services:
     environment:
       TRANSPORT: http
       PORT: "5690"
-      # 留空 = 僅內部網路可達;要硬化就設 DOCS_MCP_AUTH_TOKEN,並在 servers/*.json 加 bearer_token
+      # 留空 = 僅內部網路可達;要硬化就設 DOCS_MCP_AUTH_TOKEN,registrar 會自動在書本註冊設定帶 bearer_token
       MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
       TZ: ${TZ:-Asia/Taipei}
     healthcheck:
@@ -66,11 +66,11 @@ services:
     networks: [mcpjungl]
     restart: unless-stopped
 
-  # 一次性:等 gateway 就緒後註冊 server,然後結束(Exited 0 為正常)
+  # 一次性:由各書 corpus.json 產生書本註冊設定,等 gateway 就緒後註冊,然後結束(Exited 0 為正常)
   registrar:
     build:
       context: ./mcpjungle
-      dockerfile: Dockerfile.registrar
+      dockerfile: registry/Dockerfile
     image: ghcr.io/elf-express/docs-registrar:${IMAGE_TAG:-latest}
     depends_on:
       mcpjungle:
@@ -79,6 +79,9 @@ services:
         condition: service_healthy
     environment:
       REGISTRY_URL: http://mcpjungle:8080
+      DOCS_MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
+      REGISTER_LIST: ${REGISTER_LIST:-}        # 有值時只註冊這些(書本 id / registry/*.json / registry/optional/*.json 的名稱)
+      REGISTER_EXTRAS: ${REGISTER_EXTRAS:-1}   # 0 = 只註冊書本,不含 filesystem/fetch/time
       TZ: ${TZ:-Asia/Taipei}
     networks: [mcpjungl]
     restart: "no"

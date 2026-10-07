@@ -49,9 +49,9 @@ jobs:
             description: Multi-corpus MCP server for searching bundled markdown docs
           - image: docs-registrar
             context: ./mcpjungle
-            dockerfile: ./mcpjungle/Dockerfile.registrar
-            title: MCPJungle registrar (docs configs baked in)
-            description: One-shot registrar with bundled server registration configs
+            dockerfile: ./mcpjungle/registry/Dockerfile
+            title: MCPJungle registrar (book configs generated from corpus.json)
+            description: MCPJungle registrar (book configs generated from corpus.json)
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7

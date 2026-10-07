@@ -26,7 +26,7 @@
 - compose 只有根目錄 3 份（`compose.yaml`、`compose.pull.yaml`、`compose.attach.yaml`），CI 會擋其他 compose 檔與 `container_name`。
 - 根 compose 已內建 Postgres；要改接外部 DB 才設 `MCPJUNGLE_DATABASE_URL`，host 用 DB 的 IP（例如 `192.168.25.100:15432`），不是容器名稱。
 - `compose.attach.yaml` 用於將 `docs-mcp` 註冊至現有 MCPJungle gateway，不會建立新的 gateway。
-- `mcpjungle/registrar.sh` 與 `mcpjungle/register.sh` 只在需要手動註冊時使用。
+- 書本的 MCPJungle 註冊設定由 registrar 依各書 `corpus.json` 自動產生，不手寫；非書本註冊檔在 `mcpjungle/registry/*.json`。手動重跑註冊用 `docker compose run --rm registrar`（可帶 `-e REGISTER_LIST=...`）。
 
 ## Worktree
 
@@ -37,7 +37,7 @@
 ## 開發建議
 
 - 若修改 `mcpjungle/docs-mcp-server`，同時參考 `mcpjungle/docs-mcp-server/README.md` 與其 package script。
-- 若修改 gateway 註冊流程或設定，請參考 `mcpjungle/README.md` 以及 `mcpjungle/servers/*.json`。
+- 若修改 gateway 註冊流程或設定，請參考 `mcpjungle/README.md` 以及 `mcpjungle/registry/`（`registrar.sh`、`gen-book-configs.mjs`，測試 `node --test "mcpjungle/registry/*.test.mjs"`）。
 - 容器名由 compose 依 project 產生（如 `mcp-library-mcpjungle-1`），進容器用 `docker compose exec mcpjungle ...`，不要寫死容器名。
 
 ## 重要文件
