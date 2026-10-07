@@ -1,6 +1,0 @@
-{
-  "name": "fc-zh-tw",
-  "transport": "streamable_http",
-  "description": "FcDesigner Pro(中文):表單設計器文件,二次開發/產品手冊/開發文檔,API 與組件可依標題精確查(docs_list_corpora / docs_search / docs_read / docs_outline / docs_symbol)",
-  "url": "http://docs-mcp-server:5690/mcp/fc-zh-tw"
-}
