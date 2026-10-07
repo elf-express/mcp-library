@@ -24,6 +24,21 @@ updates:
     open-pull-requests-limit: 5
     commit-message:
       prefix: "chore(dashboard-deps)"
+    ignore:
+      # react 19 需 react 與 react-dom 一起升，單獨升 react-dom 會讓 npm ci 失敗
+      - dependency-name: "react"
+        versions: [">=19"]
+      - dependency-name: "react-dom"
+        versions: [">=19"]
+      - dependency-name: "@types/react"
+        versions: [">=19"]
+      - dependency-name: "@types/react-dom"
+        versions: [">=19"]
+      # vite 6 以上大版本需 @vitejs/plugin-react 一起升
+      - dependency-name: "vite"
+        versions: [">=6"]
+      - dependency-name: "@vitejs/plugin-react"
+        versions: [">=5"]
 
   # GitHub Actions workflows 本身
   - package-ecosystem: "github-actions"
