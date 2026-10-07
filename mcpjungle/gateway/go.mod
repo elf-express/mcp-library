@@ -19,10 +19,10 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.38.0
 	go.uber.org/zap v1.27.0
 	gopkg.in/yaml.v3 v3.0.1
-	gorm.io/datatypes v1.2.5
+	gorm.io/datatypes v1.2.7
 	gorm.io/driver/postgres v1.5.11
 	gorm.io/driver/sqlite v1.4.3
-	gorm.io/gorm v1.26.1
+	gorm.io/gorm v1.30.0
 )
 
 require (
