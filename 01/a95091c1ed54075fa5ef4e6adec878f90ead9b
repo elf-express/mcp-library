@@ -1,0 +1,28 @@
+mcpjungle/README.md
+  s_fd0c121d1f4c95::t_3279d1fcb55f29 33
+mcpjungle/books/README.md
+  s_fd0c121d1f4c95::t_1b97e14c8d7a02 75-79,84,88,134,142-144
+  s_fd0c121d1f4c95::t_3279d1fcb55f29 42-43,205
+CLAUDE.md
+  s_fd0c121d1f4c95::t_3279d1fcb55f29 13,95,132
+mcpjungle/docs-mcp-server/README.md
+  s_fd0c121d1f4c95::t_3279d1fcb55f29 10,27
+README.md
+  s_fd0c121d1f4c95::t_3279d1fcb55f29 27,61,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "01a95091c1ed54075fa5ef4e6adec878f90ead9b",
+  "prompts": {},
+  "sessions": {
+    "s_fd0c121d1f4c95": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7343d9e3-8779-4e84-bfef-caa238059f21",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
