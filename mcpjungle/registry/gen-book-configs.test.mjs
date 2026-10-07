@@ -112,5 +112,5 @@ test("repo 實際的 mcpjungle/books 全部合法", () => {
   const { configs, errors } = collectBookConfigs(path.resolve(here, "../books"), { docsUrl: "http://docs-mcp-server:5690" });
   assert.deepEqual(errors, []);
   const names = configs.map((c) => c.name);
-  for (const id of ["fc-zh-tw", "nginx-en", "sqlsugar-zh-tw"]) assert.ok(names.includes(id), id);
+  for (const id of ["fc-zh-tw", "nginx-en", "opnsense-en", "opnsense-zh-tw", "sqlsugar-zh-tw"]) assert.ok(names.includes(id), id);
 });

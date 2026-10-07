@@ -30,7 +30,7 @@ mcpjungle/
 docker compose up -d --build
 ```
 
-網路自建、內建 DB、registrar 自動註冊都**已實測**(`-p mcp-test` 並存堆疊:`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `filesystem` / `fetch` / `time` 共 6 個)。
+網路自建、內建 DB、registrar 自動註冊都**已實測**(`-p mcp-test` 並存堆疊:`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `opnsense-en` / `opnsense-zh-tw` / `filesystem` / `fetch` / `time` 共 8 個)。
 
 > 容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。
 

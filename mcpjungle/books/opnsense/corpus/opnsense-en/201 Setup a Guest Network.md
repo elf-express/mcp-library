@@ -1,0 +1,476 @@
+---
+title: "Setup a Guest Network"
+source: https://docs.opnsense.org/manual/how-tos/guestnet.html
+chapter: ["Services","Captive portal & GuestNET","Examples"]
+order: 201
+lang: "en"
+translated_by: "original"
+captured: "2026-09-26T11:33:22.651Z"
+---
+
+# Setup a Guest Network
+
+This how to will explain how to setup a guest network using the captive portal. Guest Networks are widely used to allow guests controlled internet access at hotels, RV Parks or businesses.
+
+[圖](https://docs.opnsense.org/_images/opnsense_hotspot_controller.png)
+
+Note
+
+For the example we expect the GUESTNET interface to be connected with your actual guest network switch or access point. This tutorial does not explain how to setup a wireless network.
+
+Security considerations
+
+The Captive portal functionality operates entirely on the information available in the network. Protocols such as ARP or NDP do not provide any inherent proof of ownership. Since the portal has no control over the client, it is impossible to cryptographically prove a relationship between identity and device. Therefore, to improve security, the layer 2 network(s) attached to the portal must be properly isolated on the access point/switch level.
+
+These features are often called “layer 2 isolation” for access points or “port isolation” for switches and prevent direct client-to-client communication. These features cannot prevent spoofing, but lower visibility in the network.
+
+If stronger identity is a requirement, the Captive Portal likely isn’t for you. Consider using 802.1X network access control backed by a RADIUS/ policy server instead.
+
+Note that this is less relevant if you use a layer 3 network such as WireGuard.
+
+## Businesses
+
+Businesses usually want to share internet access with their guest and show them a landing page with a welcome message and some usage guidelines (policy). At the same time it is important to make sure guests won’t be able to access the company’s local network and limit the maximum internet usage.
+
+## Hotels and RV Parks
+
+Hotels and RV parks usually utilize a captive portal to allow guests (paid) access to internet for a limited duration. Guests need to login using a voucher they can either buy or obtain for free at the reception. OPNsense has built-in support for vouchers and can easily create them on the fly. With this example we will show you how to setup the Guest Network for this purpose and setup a reception account for creating new vouchers.
+
+## Prerequisites
+
+We will start configuration with a fresh OPNsense installation. You will need a system with a minimum of 3 ports (LAN/WAN/GUESTNET) for this tutorial.
+
+## Good to know
+
+As the Hotel/RV Parks setup is almost identical to the business setup we will start with that and after finishing add/change the specifics to match the Hotel Guest setup.
+
+## Step 1 - Configure Interface
+
+For the Guest Network we will add a new interface. Go to Interfaces ‣ Assignments And use the **+** to add a new interface. Press **Save**. The new interface will be called **OPT1**, click on \[OPT1\] in the left menu to change its settings.
+
+Select **Enable Interface** and fill in the following data for our example:
+
+|   |   |   |
+| --- | --- | --- |
+| **Description** | GUESTNET | *A descriptive name for the interface* |
+| **Block Private networks** | unselected |  |
+| **Block bogon networks** | unselected |  |
+| **IPv4 Configuration Type** | Static IPv4 | *Set a static IPv4 address for the example* |
+| **IPv6 configuration Type** | None |  |
+| **MAC address** | (Leave Blank) |  |
+| **MTU** | (Leave Blank) |  |
+| **MSS** | (Leave Blank) |  |
+| **Speed and duplex** | Default | *You may also select the speed when known* |
+| **Static IPv4 address** | 192.168.200.1/24 | *We will use this segment for our guests* |
+| **IPv4 Upstream Gateway** | Default |  |
+
+Press **Save** and then **Apply changes**.
+
+## Step 2 - Configure DHCP Server
+
+Go to Services ‣ DHCPv4 ‣ \[GUESTNET\].
+
+Fill in the following to setup the DHCP server for our guest net (leave everything
+
+else on its default setting):
+
+|   |   |   |
+| --- | --- | --- |
+| **Enable** | Checked | *Enable the DHCP server on GUESTNET* |
+| **Range** | 192.168.200.100 to 192.168.200.200 | *Serve IPs from this range* |
+| **DNS servers** | 192.168.200.1 | *Supply a DNS with the lease* |
+| **Gateway** | 192.168.200.1 | *Supply a gateway with the lease* |
+
+Click **Save**.
+
+## Step 3 - Add Firewall Rules
+
+Note
+
+Rules to allow DNS and access to the captive portal zone webserver are installed automatically. If you are overriding this behavior, install the rules as listed in [Captive Portal firewall rules](<200 Captive portal & GuestNET.md#captive-portal-firewall-rules>) before any other rules.
+
+Go to Firewall ‣ Rules to add a new rule.
+
+Now add the following rules (in order of prevalence):
+
+### Block Local Networks
+
+|   |   |   |
+| --- | --- | --- |
+| **Action** | Block | *Block this traffic* |
+| **Interface** | GUESTNET | *The GuestNet Interface* |
+| **Protocol** | any |  |
+| **Source** | GUESTNET net |  |
+| **Destination** | LAN net |  |
+| **Category** | GuestNet Basic Rules | *Category used for grouping rules* |
+| **Description** | Block Local Networks |  |
+
+Click **Save**.
+
+|   |   |   |
+| --- | --- | --- |
+| **Action** | Block | *Block this traffic* |
+| **Interface** | GUESTNET | *The GuestNet Interface* |
+| **Protocol** | any |  |
+| **Source** | GUESTNET net |  |
+| **Destination** | This Firewall |  |
+| **Category** | GuestNet Basic Rules | *Category used for grouping rules* |
+| **Description** | Block Firewall Access |  |
+
+Click **Save**.
+
+Note
+
+These rules are used to block access to our local LAN network and firewall access from the Guests. If you have multiple local networks then you need to block each of them with multiple rules or use a bigger subnet to cover them all.
+
+### Allow Guest Networks
+
+|   |   |   |
+| --- | --- | --- |
+| **Action** | Pass | *Allow this traffic* |
+| **Interface** | GUESTNET | *The GuestNet Interface* |
+| **Protocol** | any |  |
+| **Source** | GUESTNET net |  |
+| **Destination** | any |  |
+| **Destination port range** | any |  |
+| **Category** | GuestNet Basic Rules | *Category used for grouping rules* |
+| **Description** | Allow Guest Network |  |
+
+Click **Save** and then **Apply changes**
+
+## Step 4 - Create Captive Portal
+
+Go to Services ‣ Captive Portal ‣ Administration
+
+To add a new Zone press the **+** in the lower right corner of the form.
+
+Note
+
+When using multiple interfaces with the captive portal then each interface can have its own zone or multiple interfaces can share a zone.
+
+For the *Business* setup we will start with the following settings:
+
+|   |   |   |
+| --- | --- | --- |
+| **Enabled** | Checked |  |
+| **Interfaces** | GUESTNET | *Remove the default and add GUESTNET* |
+| **Authenticate using** | (blank) | *Remove any default setting* |
+| **Idle timeout** | 0 | *Disable Idle Timeout* |
+| **Hard timeout** | 0 | *No hard timeout* |
+| **Concurrent user logins** | Unchecked | *A user may only login once* |
+| **SSL certificate** | none | *Use plain http* |
+| **Hostname** | (leave blank) | *Used for redirecting login page* |
+| **Allowed addresses** | (leave blank) |  |
+| **Custom template** | none | *Use default template* |
+| **Description** | Guest Network | *Choose a description for the zone* |
+
+**Save** and the **Apply**
+
+## Step 5 - Create Template
+
+The template feature is one of the most powerful features of OPNsense’s Captive Portal solution and it’s very easy to work with.
+
+Let’s create a custom landing page, to do so click on the tab **Templates** and click on the download icon in the lower right corner ( [圖：download](https://docs.opnsense.org/_images/btn_download.png) ).
+
+
+
+Now download the default template, we will use this to create our own. Unpack the template zip file, you should have something similar to this:
+
+[圖](https://docs.opnsense.org/_images/template_filelisting.png)
+
+Most files of the template can be modified, but some are default and may not be changes. Upon upload any changes to the files listed in **exclude.list** will be ignored. Currently these include the bootstrap JavaScript and some fonts.
+
+With the captive portal enabled the default screen looks like:
+
+[圖](https://docs.opnsense.org/_images/default_login_no_authenticator.png)
+
+Let’s change this default with a new logo and a welcome message, to this:
+
+
+
+To do so use your favourite editor and open the **index.html** file to make the changes.
+
+Let’s make the following changes to the template:
+
+1.  Change the logo to **company-logo.png**
+    
+2.  Remove the navigation bar on the top
+    
+3.  Remove the height and width from the **<img>** tag
+    
+4.  Add a welcome text
+    
+5.  Make a link to the company website
+    
+
+Find the following part:
+
+```html
+<header class="page-head">
+<nav class="navbar navbar-default" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img class="brand-logo" src="images/default-logo.png" height="30" width="150">
+            </a>
+        </div>
+    </div>
+</nav>
+</header>
+```
+
+And change to:
+
+```html
+<header class="page-head">
+    <div align="center">
+      <a href="#">
+          <img class="brand-logo" src="images/company-logo.png">
+      </a>
+      <h1>Welcome to My Company Guest Network.</h1>
+      <h2>Feel free to use the guest network for professional usage</h2>
+      <h3>See our website for more details: <a href="https://www.opnsense.org">My Company</a></h3>
+    </div>
+</header>
+```
+
+Copy the company logo to the image directory. Now zip the template directory and upload the new template by pressing the **+** on the Template tab.
+
+[`Download the example Template (full)`](https://docs.opnsense.org/_downloads/de8901f287dc6f70f39c7bee653d5a15/mycompany_cptemplate.zip)
+
+Enter a **Template Name**, for this example we use **Company**. Hit Upload ( upload )
+
+To enable the captive portal on the GUESTNET interface just click on **Apply**.
+
+## Step 6 - Limit Guests Bandwidth
+
+For our example we will reserve 10 Mbps down and 1 Mbps Up for the Guest Network’s Internet Access. This bandwidth will be shared evenly between connected clients.
+
+Note
+
+With sharing evenly we mean that if 10 users at the same time try to use as much bandwidth as possible then everyone gets 1/10th. So in our example that would be 1 Mbps down stream (download). It is also possible to limit the traffic per user see also [Setup Traffic Shaping](https://docs.opnsense.org/manual/how-tos/shaper.html)
+
+Go to: Firewall ‣ Shaper ‣ Pipes.
+
+Create a pipe for the Download by pressing the **+** in the lower right corner of the form and enter the following details:
+
+|   |   |
+| --- | --- |
+| **Enabled** | Checked |
+| **bandwidth** | 10 |
+| **bandwidth Metric** | Mbit/s |
+| **mask** | Destination |
+| **Description** | pipe\_10Mbps\_down |
+
+Click **Save changes**. And add another pipe for the upload traffic.
+
+|   |   |
+| --- | --- |
+| **Enabled** | Checked |
+| **bandwidth** | 1 |
+| **bandwidth Metric** | Mbit/s |
+| **mask** | Destination |
+| **Description** | pipe\_1Mbps\_up |
+
+Click on **Save changes**.
+
+Create the traffic shaper rules. Click on the tab **Rules** and press the **+** to do so.
+
+First toggle the advanced mode (upper left corner of the form) and then fill in the following details (leave everything not specified on defaults):
+
+|   |   |
+| --- | --- |
+| **sequence** | (leave on default) |
+| **interface** | WAN |
+| **interface 2** | GUESTNET |
+| **direction** | in |
+| **target** | pipe\_10Mbps\_down |
+| **description** | Limit Guests download to 10 Mbps |
+
+Click **Save changes**.
+
+|   |   |
+| --- | --- |
+| **sequence** | (leave on default) |
+| **interface** | WAN |
+| **interface 2** | GUESTNET |
+| **direction** | out |
+| **target** | pipe\_1Mbps\_up |
+| **description** | Limit Guests upload to 1 Mbps |
+
+Click **Save changes**.
+
+Now click on **Apply** to apply the changes.
+
+## Step 7 - Test Business GuestNet
+
+Connect your PC or laptop to the Guest Network and start your favourite browser. Enter an address to browse to and you will be presented with the Login form we created with the template in the previous step. Click on login and start browsing.
+
+To test your traffic shaper go to a speed test site such as [http://www.speedtest.net/](http://www.speedtest.net/) After testing your result should be similar to this (if your internet connection has sufficient bandwidth).
+
+> [圖](https://docs.opnsense.org/_images/cp-traffic-shaping.png)
+
+Note
+
+Keep in mind we have only one connected client in this test, so all reserved bandwidth will be available for our client.
+
+## Royal Hotel Example
+
+From this point we will implement the Hotel/RV Park solution. You need to follow step 1-7 first and choose the template you like to use for your guests.
+
+This example will be for our “Royal Hotel”.
+
+## Step 8 - Add Voucher Server
+
+To add a Voucher Server go to: System ‣ Access ‣ Servers and click on **Add server** in the top right corner of the screen.
+
+Fill in:
+
+|   |   |   |
+| --- | --- | --- |
+| **Descriptive name** | Vouchers | *The name for your voucher server* |
+| **Type** | Voucher |  |
+
+Click on **Save**.
+
+## Step 9 - Create Vouchers
+
+Go back to the Captive portal and select Vouchers (Services ‣ Captive Portal ‣ Vouchers). Click on **Create Vouchers** in the lower right corner of the form.
+
+Let’s create 1-day vouchers for our guests:
+
+[圖](https://docs.opnsense.org/_images/create_vouchers.png)
+
+Enter the Validity (1 day), the number of Vouchers and a Groupname (Wi-Fi day pass, for example). For the example we create 10 vouchers. Click on **Generate**.
+
+A file will be generated called **Wi-Fi day pass.csv**. The content of this file looks like this:
+
+```
+username,password,vouchergroup,validity
+"IgJw@Pqf","MLi+Sb7Ak#","Wi-Fi day pass","86400"
+"++?f[@i[","!m*)e(@;F,","Wi-Fi day pass","86400"
+"bbtK9mBk","f/jCDL3:)b","Wi-Fi day pass","86400"
+"iD%L[jLJ","I#FoZ#g!AY","Wi-Fi day pass","86400"
+"+4bA\E[I","CNavt@0ck+","Wi-Fi day pass","86400"
+"+,fg/\Sv","#22iIL-iQA","Wi-Fi day pass","86400"
+":;Pc\N#s","Y\HuG9vAN$","Wi-Fi day pass","86400"
+"00nLb=0Q","0*C_\_Nb_x","Wi-Fi day pass","86400"
+"PA$J0YHF","kp!q%9;m)g","Wi-Fi day pass","86400"
+"a,mCxbya","LcnCb#g/di","Wi-Fi day pass","86400"
+```
+
+The content are:
+
+|   |   |
+| --- | --- |
+| **username** | *Username the guest needs to login with* |
+| **password** | *Password the guest needs to login with* |
+| **vouchergroup** | *The name of the group you created* |
+| **validity** | *The time the voucher will be valid in seconds* |
+
+Warning
+
+For security reasons the plain text passwords for the vouchers are NOT stored on the firewall.
+
+This file can be used for creating nice guest vouchers (on paper) by just merging the CSV data with Microsoft Word, LibreOffice or any other DTP/text editor.
+
+Create something like this:
+
+[圖](https://docs.opnsense.org/_images/cp_royalhotel_voucher.png)
+
+You can select a database to and remove it entirely. This way you can create a voucher database for the arrival date of guest per guest group (week, midweek, weekend, etc.) and delete the full database when the guests have left.
+
+Note
+
+When a voucher is activated the time will be used regardless of the user being logged in or out. For a “used time” solution use a Radius server look at [Setup FreeRADIUS for accounting](<181 Setup FreeRADIUS for accounting.md>)
+
+## Step 10 - Voucher Authentication
+
+Enable the voucher authentication by changing the zone settings. Go to the tab **Zones** and select the Guest Network by clicking on the pencil icon right next to it.
+
+Change **Authenticate using** from an empty field to **Vouchers**.
+
+When done click **Save changes** and the **Apply** to apply the new settings.
+
+Now users will see the login form as part of your template:
+
+
+
+## Check Sessions
+
+To check the active sessions go to Services ‣ Captive Portal ‣ Sessions Our current session looks like this:
+
+[圖](https://docs.opnsense.org/_images/cp_active_sessions.png)
+
+You can drop an active session by clicking on the trashcan.
+
+Note
+
+Notice the selection box at the upper right corner, with this you can select the right zone when you have configured more than one.
+
+## Check Voucher Status
+
+You can check the validity and active status of a voucher by going to the voucher page of the captive portal (Services ‣ Captive Portal ‣ Vouchers) and select the correct database (Wi-Fi day pass in our example).
+
+[圖](https://docs.opnsense.org/_images/cp_active_vouchers.png)
+
+Note
+
+The state valid means it is activated but still valid.
+
+## Advanced - Session popup
+
+Let’s create a Session Popup so users can see some details about their session and Logout. For this feature we will use OPNsense’s built-in API calls.
+
+In particular we will use the following API call (for zone id 0):
+
+```
+/api/captiveportal/access/status/0/
+```
+
+The response on this API call looks like this (for an active session):
+
+```
+{"userName":"IgJw@Pqf",
+"macAddress":"10:dd:b1:bc:75:46",
+"acc_session_timeout":14095,
+"authenticated_via":"Vouchers",
+"packets_out":2834,
+"bytes_in":512869,
+"last_accessed":1457527526,
+"zoneid":0,
+"sessionId":"npd5bd6SIVQeMfIbWBdong==","
+startTime":1457526930.1719,
+"bytes_out":1322351,
+"ipAddress":"192.168.200.100",
+"packets_in":3181,
+"clientState":"AUTHORIZED"}
+```
+
+It would go a bit to far to explain standard HTML and JavaScript used for our simple popup, but a full demo template can be downloaded:
+
+[`Download the example Template (with popup)`](https://docs.opnsense.org/_downloads/0697a6ef785429cc84da092c09b64205/template_popup.zip)
+
+The demo includes a new file called **session\_popup.html** with all the logic to show the time left on the voucher and a logout button. As well as a simple update to our index.html page to call the popup on a successful login. The latter looks like this (shown with a bit of context):
+
+```
+// redirect on successful login
+if (data['clientState'] == 'AUTHORIZED') {
+    window.open("session_popup.html","Session Status & Logout","width=400, height=400");
+```
+
+[圖](https://docs.opnsense.org/_images/captiveportal_popup.png)
+
+## Advanced - CLI Session Status
+
+OPNsense has a very powerful CLI that is particularly useful for debugging purposes. For this example we will use the cli to list the status off all active sessions.
+
+Type the following on the cli prompt to do so (for zone id 0):
+
+```
+configctl captiveportal list_clients 0
+```
+
+The output will be something similar to this:
+
+[圖](https://docs.opnsense.org/_images/cli_list_captiveportalsessions.png)
