@@ -104,6 +104,8 @@ compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway
 2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名,預設 `mcp-library_mcpjungl`;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle:8080` = 本 repo 主堆疊的服務名;別的 gateway 填它在該網路內的服務名或容器名)、(選)`REGISTER_EXTRAS`(預設 `0` = 只註冊書本,書本清單由 corpus.json 自動產生)或 `REGISTER_LIST`。
 3. 開 webhook。
 
+> **從 E-131 之前的 `mcpjungle/docker-compose.dockhand.yml` 升上來**:該檔預設網路是 `mcpjungl`,`compose.attach.yaml` 的預設改成 `mcp-library_mcpjungl`。沒設 `MCPJUNGLE_NETWORK` 會報 `network mcp-library_mcpjungl declared as external, but could not be found`——設成現有 gateway 的實際網路名(`docker network ls | grep mcpjungl`);主機上沒有 gateway 就改用 `compose.yaml` 一鍵全起。
+
 > registrar 內建**重試**(等 docs-mcp 開始監聽才註冊,避免 race)+ **冪等**(已註冊略過),redeploy 安全。
 
 ## 六、建置 / 推送 image 到 ghcr.io
