@@ -8,12 +8,13 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 精簡的 AI 部署速查另見 [AGENTS.md](AGENTS.md);各子專案有自己的 README,**要改某個 server 的行為,先讀它目錄下的 README,別直接動根 compose**。本檔聚焦「需讀多個檔案才懂的架構與機制」。
 
-四個層次:
+五個層次:
 
-- [`mcpjungle/docs-mcp-server/`](mcpjungle/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,放在 `mcpjungle/books/<書名>/corpus/<id>/`,映像 build 時併入;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生,勿手改。
-- [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **自行維護的 [MCPJungle(源自上游 c2a2c8d)](mcpjungle/gateway)**(從源碼 build,非 pull 官方映像)。
-- [`compose.yaml`](compose.yaml) — 根入口,一鍵把 postgres + gateway + docs-mcp + registrar 全拉起;另有 `compose.pull.yaml`(拉 ghcr 映像)與 `compose.attach.yaml`(接現有 gateway)。compose 只有這 3 份。
-- [`mcpjungle/books/<書名>/source/`](mcpjungle/books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `mcpjungle/books/<書名>/corpus/<書名>-<語言>/` 語料。
+- [`mcpjungle/books/<書名>/`](mcpjungle/books) — 書。`source/` 是原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取、不進映像**;`corpus/<書名>-<語言>/` 才是 server 讀的語料(目前 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,映像 build 時併入)。`nginx-en` 由在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生,勿手改。
+- [`mcpjungle/docs-mcp-server/`](mcpjungle/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」;本身不含語料。
+- [`mcpjungle/gateway/`](mcpjungle/gateway) — **自行維護的 MCPJungle(源自上游 c2a2c8d)**,從源碼 build,非 pull 官方映像;把各 server 註冊進來、對用戶端只開一個入口。
+- [`mcpjungle/registry/`](mcpjungle/registry) — 一次性 `registrar` 容器:書本註冊由 `corpus.json` 自動產生,加上非書本註冊檔(`filesystem`/`fetch`/`time`)。
+- 根 `compose*.yaml` — [`compose.yaml`](compose.yaml) 一鍵把 postgres + gateway + docs-mcp + registrar 全拉起;`compose.pull.yaml`(docs-mcp、registrar 拉 ghcr 映像)、`compose.attach.yaml`(接現有 gateway)。compose 只有這 3 份。
 
 ## 常用命令
 
@@ -53,11 +54,16 @@ $env:TRANSPORT="http"; npm start     # 本機跑 HTTP(預設 PORT 5690),curl /he
 $env:DOCS_SCOPE="sqlsugar-zh-tw"; npm run dev   # stdio 鎖定單一語料
 ```
 
-### mcpjungle gateway(`cd mcpjungle`)
+### mcpjungle gateway / registrar(根目錄)
 
 ```bash
-docker compose run --rm registrar                              # 手動重跑註冊(根目錄;可加 -e REGISTER_LIST=...)
-node --test "mcpjungle/registry/*.test.mjs"                    # gen-book-configs / registrar.sh 測試(需 sh,Windows 用 Git Bash)
+docker compose up -d --build                           # 主檔(gateway + docs-mcp + registrar + postgres)
+docker compose -f compose.pull.yaml up -d              # docs-mcp、registrar 拉 ghcr 映像
+docker compose -f compose.attach.yaml up -d --build    # 只起 docs-mcp + registrar,接現有 gateway
+docker compose -p mcp-test up -d --build               # 並存測試堆疊(先設 MCPJUNGLE_HOST_PORT=18900、IMAGE_TAG=mcp-test)
+docker compose run --rm registrar                      # 手動重跑註冊(可加 -e REGISTER_LIST=...)
+node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / registrar.sh 測試(需 sh,Windows 用 Git Bash)
+(cd mcpjungle/gateway && bash scripts/build-dashboard.sh && go build ./... && go test ./...)   # gateway;dashboard 以 go:embed 內嵌,需先 build
 ```
 
 ## 安裝 / 接入 AI(docs-mcp)
@@ -122,13 +128,18 @@ node --test "mcpjungle/registry/*.test.mjs"                    # gen-book-config
 ## 易踩雷
 
 - **沒有 `container_name`**:容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。進容器用 `docker compose exec <服務名>`;要接「現有」gateway 用 `compose.attach.yaml`(別再起新 gateway)。可覆寫 `MCPJUNGLE_HOST_PORT`(預設 18800)、`IMAGE_TAG`(預設 latest)、`MCPJUNGLE_DATA_DIR`。
-- **build context 是 `mcpjungle/`**:docs-mcp 與 registrar 的 build context 是 `mcpjungle/`,`books/*/source` 由 `mcpjungle/.dockerignore` 排除。
-- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊全部書本(`sqlsugar-zh-tw fc-zh-tw nginx-en`)與 `filesystem fetch time`。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。repo 內的設定**看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
+- **build context**:docs-mcp 與 registrar 的 build context 都是 `mcpjungle/`(Dockerfile 分別是 `docs-mcp-server/Dockerfile`、`registry/Dockerfile`),`books/*/source` 由 `mcpjungle/.dockerignore` 排除;gateway 的 context 是 `mcpjungle/gateway/`。
+- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊全部書本(`sqlsugar-zh-tw fc-zh-tw nginx-en`)與 `filesystem fetch time`。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。repo 內的設定**看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準:`docker compose exec mcpjungle /mcpjungle list servers`。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 
 ## CI / commit 規範
 
-- [`.github/workflows/ci.yml`](.github/workflows/ci.yml):`basics`(**Conventional Commits** PR 檢查、compose 驗證、>5MB 大檔擋、機密掃描)+ `build-test` + PR 時 docker build verify。
-- `build-test` 跑 docs-mcp-server 的 build + vitest。
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml) 五個 job:
+  - `basics`:**Conventional Commits** PR 檢查、compose 驗證(只准 3 份、不准 `container_name`)、>5MB 大檔擋、機密掃描
+  - `gateway`:`mcpjungle/gateway` 的 dashboard build + `go build` / `go test` / golangci-lint
+  - `registry`:`node --test "mcpjungle/registry/*.test.mjs"`
+  - `build-test`:docs-mcp-server 的 build + vitest
+  - `docker-build`:PR 時 build 映像驗證(不推)
+- [`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml):push main 時 build + push `docs-mcp-server`、`docs-registrar` 到 ghcr。
 - 提交訊息走 **Conventional Commits**(`feat:` / `fix:` / `deploy:` …),否則 PR 會被擋。
 - worktree 放 repo 外的 `E:\source\mcp-library-<短名>`(見 [AGENTS.md](AGENTS.md) 的 Worktree 一節)。

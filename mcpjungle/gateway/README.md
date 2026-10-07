@@ -62,6 +62,8 @@ Start with a local setup. Scale to a shared team gateway when you need it.
 
 ## Quickstart
 
+> **mcp-library 註記**:本 repo 以根目錄 [`compose.yaml`](../../compose.yaml) 與 [`Dockerfile.fullbuild`](Dockerfile.fullbuild) 建置,以下為上游原文。
+
 This quickstart guide will show you how to:
 1. Start the mcpjungle server locally using `docker compose`
 2. Add an MCP server in mcpjungle
@@ -189,6 +191,9 @@ The MCPJungle server is responsible for managing all the MCP servers registered 
 The gateway itself runs over streamable http transport and is accessible at the `/mcp` endpoint.
 
 ### Running inside Docker
+
+> **mcp-library 註記**:本 repo 以根目錄 [`compose.yaml`](../../compose.yaml) 與 [`Dockerfile.fullbuild`](Dockerfile.fullbuild) 建置,以下為上游原文。
+
 For running the MCPJungle server locally, docker compose is the recommended way:
 ```shell
 # docker-compose.yaml is optimized for individuals running mcpjungle on their local machines for personal use.
@@ -241,7 +246,7 @@ It is therefore suitable and recommended for production deployments.
 
 For the database, we recommend you deploy a separate Postgres DB cluster and supply its endpoint to mcpjungle (see [Database](#database) section below).
 
-You can see the definitions of the [standard Docker image](./Dockerfile) and the [stdio Docker image](./stdio.Dockerfile).
+You can see the definitions of the [standard Docker image](https://github.com/mcpjungle/MCPJungle/blob/main/Dockerfile) and the [stdio Docker image](https://github.com/mcpjungle/MCPJungle/blob/main/stdio.Dockerfile) upstream. This repo builds with [`Dockerfile.fullbuild`](./Dockerfile.fullbuild) instead.
 
 ### Running directly on host
 You can also run the server directly on your host machine using the binary:
@@ -489,7 +494,7 @@ So you can use the following configuration for the filesystem mcp server:
 
 Then, the mcp has access to `/host`, ie, the current working directory on your host machine.
 
-See [DEVELOPMENT.md](./DEVELOPMENT.md#docker-filesystem-access) for more details.
+See [development.mdx](./docs/developers/development.mdx#docker-filesystem-access) for more details.
 
 #### Running CLI commands from a Docker or Kubernetes deployment
 If your MCPJungle server is running in a remote Docker container or Kubernetes cluster, you can also execute the `mcpjungle` binary directly inside the container:
@@ -1005,8 +1010,8 @@ We're collecting more feedback on how people use OAuth with MCP servers, so feel
 
 We welcome contributions from the community! 
 
-- **For contribution guidelines and standards**, see [CONTRIBUTION.md](./CONTRIBUTION.md)
-- **For development setup and technical details**, see [DEVELOPMENT.md](./DEVELOPMENT.md)
+- **For contribution guidelines and standards**, see [contributing.mdx](./docs/developers/contributing.mdx)
+- **For development setup and technical details**, see [development.mdx](./docs/developers/development.mdx)
 
 Join our [Discord community](https://discord.gg/CapV4Z3krk) to connect with other contributors and maintainers.
 

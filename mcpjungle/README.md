@@ -30,7 +30,7 @@ mcpjungle/
 docker compose up -d --build
 ```
 
-網路自建、DB 走 IP、registrar 自動註冊都**已沙盒實測**(sqlsugar / fc / filesystem / fetch / time 共 5 個;語料現已改名為 `sqlsugar-zh-tw` / `fc-zh-tw`)。
+網路自建、內建 DB、registrar 自動註冊都**已實測**(`-p mcp-test` 並存堆疊:`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `filesystem` / `fetch` / `time` 共 6 個)。
 
 > 容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。
 
@@ -89,7 +89,7 @@ docker compose run --rm -e REGISTER_LIST="nginx-en" registrar   # 只註冊指�
 compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway 就緒、自動註冊所有 server,然後結束(`Exited (0)` 正常)。**加書不必改 compose 或註冊檔,重新部署即自動註冊。**
 
 1. 新增 Git stack,指向本 repo,compose 路徑填 `compose.yaml`(只拉不 build 填 `compose.pull.yaml`)。
-2. 環境變數 UI 填機密(`.env` 不進 git):至少 `MCPJUNGLE_DATABASE_URL`。
+2. 環境變數 UI 填機密(`.env` 不進 git):可全部留空(DB 內建);要接外部 DB 才填 `MCPJUNGLE_DATABASE_URL`,要開認證才填 `DOCS_MCP_AUTH_TOKEN`。
 3. 部署;之後 `git push` → 自動重佈,registrar 重跑(已註冊略過)。
 
 調整註冊清單:`REGISTER_LIST` / `REGISTER_EXTRAS`(見第二節)。
@@ -108,7 +108,7 @@ compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway
 
 ## 六、建置 / 推送 image 到 ghcr.io
 
-自 build 的 image 為 `ghcr.io/elf-express/<name>:latest`(`docs-mcp-server` / `docs-registrar`);gateway(`mcpjungle-fork`)現場 build、`postgres` 是官方 image,都不推。三個自建映像的 tag 由 `IMAGE_TAG` 決定(預設 `latest`)。
+推到 ghcr 的只有 `ghcr.io/elf-express/docs-mcp-server` 與 `ghcr.io/elf-express/docs-registrar`(push main 時由 [`docker-publish.yml`](../.github/workflows/docker-publish.yml) 自動推,也可手動推)。gateway 映像 `mcpjungle-fork` 沒有發布,部署端一律現場 build;`postgres` 直接用官方 `postgres:16-alpine`。三個自建映像(gateway / docs-mcp / registrar)的 tag 由 `IMAGE_TAG` 決定(預設 `latest`)。
 
 ```bash
 echo "$GHCR_PAT" | docker login ghcr.io -u <github 帳號> --password-stdin   # PAT 需 packages:write 權限

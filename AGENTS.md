@@ -10,9 +10,10 @@
 
 ## 主要目錄
 
-- `mcpjungle/docs-mcp-server/`：核心多語料 docs MCP server。
-- `mcpjungle/books/<書名>/corpus/<id>/`：語料;`source/` 是原稿,不進映像。
-- `mcpjungle/`：MCPJungle gateway stack、註冊器與 server 註冊設定。
+- `mcpjungle/books/<書名>/`：書；`corpus/<id>/` 是語料，`source/` 是原稿，不進映像。
+- `mcpjungle/docs-mcp-server/`：核心多語料 docs MCP server（不含語料）。
+- `mcpjungle/gateway/`：自行維護的 MCPJungle gateway（從源碼 build）。
+- `mcpjungle/registry/`：registrar 與非書本 server 註冊檔。
 
 ## 常用命令
 
@@ -44,6 +45,7 @@
 
 - `README.md`
 - `mcpjungle/README.md`
+- `mcpjungle/books/README.md`
 - `compose.yaml`
 - `compose.pull.yaml`
 - `compose.attach.yaml`
