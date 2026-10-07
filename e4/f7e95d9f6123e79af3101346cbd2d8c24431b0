@@ -1,0 +1,32 @@
+mcpjungle/docs-mcp-server/tests/opnsense.test.ts
+  s_fd0c121d1f4c95::t_d1df91fb418124 1-14,16,19,26-34
+  s_fd0c121d1f4c95::t_a0b59a8920d6f6 15,17-18,20-25
+mcpjungle/books/opnsense/corpus/opnsense-en/corpus.json
+  s_fd0c121d1f4c95::t_e36ba1201186c1 1-9
+mcpjungle/books/opnsense/import.ts
+  s_fd0c121d1f4c95::t_800e82d12a4fb8 1-49
+mcpjungle/books/opnsense/corpus/opnsense-en/LICENSE
+  s_fd0c121d1f4c95::t_e36ba1201186c1 1-45
+mcpjungle/books/opnsense/corpus/opnsense-zh-tw/corpus.json
+  s_fd0c121d1f4c95::t_e36ba1201186c1 1-9
+mcpjungle/books/opnsense/corpus/opnsense-zh-tw/LICENSE
+  s_fd0c121d1f4c95::t_e36ba1201186c1 1-45
+mcpjungle/registry/gen-book-configs.test.mjs
+  s_fd0c121d1f4c95::t_d1df91fb418124 115
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e4f7e95d9f6123e79af3101346cbd2d8c24431b0",
+  "prompts": {},
+  "sessions": {
+    "s_fd0c121d1f4c95": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7343d9e3-8779-4e84-bfef-caa238059f21",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
