@@ -56,7 +56,8 @@ $env:DOCS_SCOPE="sqlsugar-zh-tw"; npm run dev   # stdio 鎖定單一語料
 ### mcpjungle gateway(`cd mcpjungle`)
 
 ```bash
-REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(需先裝官方 mcpjungle CLI)
+docker compose run --rm registrar                              # 手動重跑註冊(根目錄;可加 -e REGISTER_LIST=...)
+node --test "mcpjungle/registry/*.test.mjs"                    # gen-book-configs / registrar.sh 測試(需 sh,Windows 用 Git Bash)
 ```
 
 ## 安裝 / 接入 AI(docs-mcp)
@@ -105,9 +106,9 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 
 ### MCPJungle gateway 與註冊(`mcpjungle/`)
 
-- compose 內含一次性 **`registrar` 容器**:等 gateway 就緒 → 自動註冊 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`)→ 結束(`Exited (0)` 屬正常)。`registrar.sh` 含**重試 + 冪等**,redeploy 安全。
-- 註冊檔在 [`mcpjungle/servers/*.json`](mcpjungle/servers)。兩種策略:**A**(推薦)每本書各自註冊(`sqlsugar-zh-tw.json` + `fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`),可在 gateway 對每本書分組/權限;**B** 整包一個 `docs-all.json` → `docs__docs_search`(用 `corpus` 參數),新增書不動 gateway。
-- **兩個位址別搞混**:`--registry http://…:18800` 是 **CLI → gateway**;`servers/*.json` 裡的 `http://docs-mcp-server:5690/mcp/<corpus>` 是 **gateway → docs server**(用**容器名**,在 `mcpjungl` 網路內解析)。
+- compose 內含一次性 **`registrar` 容器**:由 `mcpjungle/registry/gen-book-configs.mjs` 依各書 `corpus.json` 產生書本註冊設定 → 等 gateway 就緒 → 註冊全部書本 + `mcpjungle/registry/*.json`(filesystem/fetch/time)→ 結束(`Exited (0)` 屬正常)。`REGISTER_LIST` 有值時只註冊它列的名稱,`REGISTER_EXTRAS=0` 只註冊書本(`compose.attach.yaml` 預設)。註冊前先驗證(語料不合法、與 registry 同名、清單指到不存在的設定)→ exit 1 且不註冊任何 server;含**重試 + 冪等**,redeploy 安全。
+- 書本註冊設定**不手寫**,由 `corpus.json` 自動產生;非書本註冊檔在 [`mcpjungle/registry/*.json`](mcpjungle/registry)。兩種策略:**A**(預設)每本書各自註冊(server 名 = 語料 id → 工具 `sqlsugar-zh-tw__docs_search`),可在 gateway 對每本書分組/權限;**B** 整包一個 `docs` → `docs__docs_search`(用 `corpus` 參數):設 `REGISTER_LIST=docs`(設定在 `registry/optional/docs.json`)。
+- **兩個位址別搞混**:`--registry http://…:18800` 是 **CLI → gateway**;註冊設定裡的 `http://docs-mcp-server:5690/mcp/<corpus>`(`DOCS_MCP_URL` 可覆寫)是 **gateway → docs server**(用**容器名**,在 `mcpjungl` 網路內解析)。
 - MCPJungle 本身**沒有內建工具**,工具都來自註冊的 server;`filesystem`/`fetch`/`time` 是註冊的官方 stdio reference server。
 
 ### 部署拓樸:DB / 網路 / build vs pull
@@ -122,7 +123,7 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 
 - **沒有 `container_name`**:容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。進容器用 `docker compose exec <服務名>`;要接「現有」gateway 用 `compose.attach.yaml`(別再起新 gateway)。可覆寫 `MCPJUNGLE_HOST_PORT`(預設 18800)、`IMAGE_TAG`(預設 latest)、`MCPJUNGLE_DATA_DIR`。
 - **build context 是 `mcpjungle/`**:docs-mcp 與 registrar 的 build context 是 `mcpjungle/`,`books/*/source` 由 `mcpjungle/.dockerignore` 排除。
-- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
+- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊全部書本(`sqlsugar-zh-tw fc-zh-tw nginx-en`)與 `filesystem fetch time`。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。repo 內的設定**看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 
 ## CI / commit 規範

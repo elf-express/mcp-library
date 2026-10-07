@@ -5,6 +5,7 @@ name: CI
 # 觸發:push / PR 到 main
 # 內含:
 #   - basics:    commit lint、compose 驗證、大檔案檢查、機密掃描
+#   - registry:   gen-book-configs / registrar.sh 的 node --test
 #   - build-test: docs-mcp-server 的 TypeScript build + 單元測試(上傳 JUnit 報告)
 #   - gateway:    mcpjungle/gateway 的 go build / go test / golangci-lint
 #   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
@@ -138,6 +139,21 @@ jobs:
           GOTOOLCHAIN: auto
         run: go run github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.14.0 run ./...
 
+  registry:
+    name: Registrar (node --test)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020  # v6
+        with:
+          node-version: 24
+
+      - name: Test gen-book-configs / registrar.sh
+        run: node --test "mcpjungle/registry/*.test.mjs"
+
   build-test:
     name: Build & Test (${{ matrix.name }})
     runs-on: ubuntu-latest
@@ -192,7 +208,7 @@ jobs:
   docker-build:
     name: Docker Build Verify (${{ matrix.image }})
     runs-on: ubuntu-latest
-    needs: [build-test, gateway]
+    needs: [registry, build-test, gateway]
     if: github.event_name == 'pull_request'
     strategy:
       fail-fast: false
@@ -201,6 +217,9 @@ jobs:
           - image: docs-mcp-server
             context: ./mcpjungle
             dockerfile: ./mcpjungle/docs-mcp-server/Dockerfile
+          - image: docs-registrar
+            context: ./mcpjungle
+            dockerfile: ./mcpjungle/registry/Dockerfile
           - image: mcpjungle-gateway
             context: ./mcpjungle/gateway
             dockerfile: ./mcpjungle/gateway/Dockerfile.fullbuild

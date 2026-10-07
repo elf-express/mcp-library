@@ -1,6 +1,0 @@
-{
-  "name": "sqlsugar-zh-tw",
-  "transport": "streamable_http",
-  "description": "SqlSugar ORM(繁中):SqlSugar .NET ORM 用法筆記與速查表,附 C# 範例專案(docs_list_corpora / docs_search / docs_read / docs_outline / docs_cheatsheet / docs_code_search / docs_code_read)",
-  "url": "http://docs-mcp-server:5690/mcp/sqlsugar-zh-tw"
-}

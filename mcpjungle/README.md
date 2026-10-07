@@ -6,9 +6,9 @@
 
 ```
 mcpjungle/
-  register.sh                    手動註冊(host 上用官方 mcpjungle CLI)
-  registrar.sh                   一次性自動註冊容器用的腳本
-  servers/                       各 server 的註冊設定檔(*.json)
+  registry/                      registrar:Dockerfile、registrar.sh、gen-book-configs.mjs(+ 測試)
+    *.json                       非書本 server 的註冊設定(filesystem / fetch / time),預設一起註冊
+    optional/*.json              選用設定(docs = 整包一個),只在 REGISTER_LIST 點名時註冊
   docs-mcp-server/               多語料 docs MCP server 原始碼
   books/                         書本原稿(source/)與語料(corpus/<id>/)
   gateway/                       MCPJungle 原始碼(自行維護)
@@ -39,32 +39,44 @@ docker compose up -d --build
 
 ## 二、註冊(自動 / 手動)
 
-`up` 後 `registrar` 容器會**自動註冊**(見下方 GitOps)。要手動就裝官方 CLI:
+`up` 後 `registrar` 容器會**自動註冊**(見下方 GitOps)。**書本的註冊設定不手寫**:registrar 啟動時由 `registry/gen-book-configs.mjs` 掃 `books/*/corpus/*/corpus.json`,每個語料產生一份(`name` = 語料 id、`url` = `${DOCS_MCP_URL}/mcp/<id>`、`description` 含 corpus.json 的 title / description 與可用工具)。
+
+預設清單 = 全部書本 + `registry/*.json`。可調的環境變數:
+
+| 變數 | 預設 | 說明 |
+|---|---|---|
+| `REGISTER_LIST` | 空 | 有值時只註冊這些名稱(依序在書本、`registry/*.json`、`registry/optional/*.json` 找) |
+| `REGISTER_EXTRAS` | `1`(attach 版 `0`) | `0` = 預設清單只含書本 |
+| `DOCS_MCP_URL` | `http://docs-mcp-server:5690` | 書本註冊設定的 docs server 位址 |
+| `DOCS_MCP_AUTH_TOKEN` | 空 | 有值時書本註冊設定自動帶 `bearer_token` |
+
+註冊前會先驗證:語料不合法、`registry/*.json` 與語料同名、`REGISTER_LIST` 指到不存在的設定 → 列出原因並 exit 1,**不註冊任何 server**。
+
+手動重跑(在 repo 根目錄;冪等,已註冊的略過):
 
 ```bash
-brew install mcpjungle/mcpjungle/mcpjungle      # 或 GitHub Releases 下載 binary
-REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-tw + nginx-en + 官方工具(filesystem/fetch/time)
-# 手動等同:mcpjungle --registry http://localhost:18800 register -c ./servers/sqlsugar-zh-tw.json
+docker compose run --rm registrar
+docker compose run --rm -e REGISTER_LIST="nginx-en" registrar   # 只註冊指定的
 ```
 
-> **別搞混兩個位址**:`--registry`(=18800)是 **CLI → gateway**;`servers/*.json` 裡的 `http://docs-mcp-server:5690/...` 是 **gateway → docs server**(容器名,gateway 在 `mcpjungl` 網路內解析)。
+> **別搞混兩個位址**:`--registry`(=18800)是 **CLI → gateway**;註冊設定裡的 `http://docs-mcp-server:5690/...` 是 **gateway → docs server**(容器名,gateway 在 `mcpjungl` 網路內解析)。
 
 兩種策略:
 
-- **A. 每本書各自註冊**(推薦):`servers/sqlsugar-zh-tw.json` + `servers/fc-zh-tw.json` → 工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`books/README.md`](books/README.md))。
-- **B. 整包一個 `docs`**:改註冊 `servers/docs-all.json` → `docs__docs_search`(用 `corpus` 參數選書)。新增書不必動 gateway。
+- **A. 每本書各自註冊**(預設):工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`…。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`books/README.md`](books/README.md))。
+- **B. 整包一個 `docs`**:設 `REGISTER_LIST=docs`(設定在 `registry/optional/docs.json`)→ `docs__docs_search`(用 `corpus` 參數選書)。這份是手寫的,有設 `DOCS_MCP_AUTH_TOKEN` 時要自己加 `bearer_token`。
 
 ## 三、官方 stdio 工具(filesystem / fetch / time)
 
-> **MCPJungle 本身沒有內建工具**——工具都來自註冊的 server。`-stdio` image 內含 npx/uvx,可跑官方 reference server。`register.sh` 預設一起註冊這三個(`WITH_TOOLS=0` 可略過):
+> **MCPJungle 本身沒有內建工具**——工具都來自註冊的 server。`-stdio` image 內含 npx/uvx,可跑官方 reference server。registrar 預設一起註冊這三個(`REGISTER_EXTRAS=0` 可略過):
 
 | 設定檔 | 命令 | 說明 |
 |---|---|---|
-| `servers/filesystem.json` | `npx @modelcontextprotocol/server-filesystem /host` | 讀 gateway 容器內 `/host`(= `MCPJUNGLE_DATA_DIR` 掛載,唯讀) |
-| `servers/fetch.json` | `uvx mcp-server-fetch` | 抓網頁轉 markdown |
-| `servers/time.json` | `uvx mcp-server-time --local-timezone=Asia/Taipei` | 目前時間 / 時區轉換 |
+| `registry/filesystem.json` | `npx @modelcontextprotocol/server-filesystem /host` | 讀 gateway 容器內 `/host`(= `MCPJUNGLE_DATA_DIR` 掛載,唯讀) |
+| `registry/fetch.json` | `uvx mcp-server-fetch` | 抓網頁轉 markdown |
+| `registry/time.json` | `uvx mcp-server-time --local-timezone=Asia/Taipei` | 目前時間 / 時區轉換 |
 
-要 **github** 等**需 token** 的:照 stdio 格式加 `env` 欄位放進 `servers/`(沒進自動註冊,以免無 token 失敗):
+要 **github** 等**需 token** 的:照 stdio 格式加 `env` 欄位放進 `registry/optional/`(只在 `REGISTER_LIST` 點名時註冊,以免無 token 失敗;注意 token 會烤進 registrar 映像):
 
 ```json
 { "name": "github", "transport": "stdio", "command": "npx",
@@ -74,22 +86,22 @@ REGISTRY=http://localhost:18800 ./register.sh   # 預設:sqlsugar-zh-tw + fc-zh-
 
 ## 四、GitOps 自動部署(Portainer / Komodo / Dockge…)
 
-compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway 就緒、自動註冊所有 server,然後結束(`Exited (0)` 正常)。**已實測約 20 秒內自動註冊 5 個,免手動 `register.sh`。**
+compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway 就緒、自動註冊所有 server,然後結束(`Exited (0)` 正常)。**加書不必改 compose 或註冊檔,重新部署即自動註冊。**
 
 1. 新增 Git stack,指向本 repo,compose 路徑填 `compose.yaml`(只拉不 build 填 `compose.pull.yaml`)。
 2. 環境變數 UI 填機密(`.env` 不進 git):至少 `MCPJUNGLE_DATABASE_URL`。
 3. 部署;之後 `git push` → 自動重佈,registrar 重跑(已註冊略過)。
 
-調整註冊清單:`registrar` 的 `REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`)。
+調整註冊清單:`REGISTER_LIST` / `REGISTER_EXTRAS`(見第二節)。
 
-> **語料改名後(舊名 `sqlsugar` / `fc` → `sqlsugar-zh-tw` / `fc-zh-tw`)**:registrar 只會「新增」清單內的名字,不會移除舊名。已部署的 gateway 請在 repo 根目錄手動 `docker compose exec mcpjungle /mcpjungle deregister sqlsugar`、`deregister fc`,否則舊 server 仍指向已不存在的 `/mcp/sqlsugar`、`/mcp/fc`(docs-mcp-server 回 404)。
+> **語料改名後(舊名 `sqlsugar` / `fc` → `sqlsugar-zh-tw` / `fc-zh-tw`)**:registrar 只會「新增」,不會移除舊名。已部署的 gateway 請在 repo 根目錄手動 `docker compose exec mcpjungle /mcpjungle deregister sqlsugar`、`deregister fc`,否則舊 server 仍指向已不存在的 `/mcp/sqlsugar`、`/mcp/fc`(docs-mcp-server 回 404)。
 
 ## 五、Dockhand(接你「現有」的 gateway)
 
 你已有一台 MCPJungle 在跑,就**不要再起 gateway**——用根目錄的 [`compose.attach.yaml`](../compose.attach.yaml) 只部署 `docs-mcp` + `registrar`,註冊進現有 gateway(**已實測,含 redeploy 冪等**)。
 
 1. Dockhand → 新增 Git stack,compose 路徑填 `compose.attach.yaml`(project 名固定 `mcp-library-attach`,不會和同目錄的主堆疊撞名)。
-2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名,預設 `mcp-library_mcpjungl`;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle:8080` = 本 repo 主堆疊的服務名;別的 gateway 填它在該網路內的服務名或容器名)、(選)`REGISTER_LIST`(預設 `sqlsugar-zh-tw fc-zh-tw nginx-en`)。
+2. env:`MCPJUNGLE_NETWORK`(現有 gateway 網路完整名,預設 `mcp-library_mcpjungl`;沒設 `name:` 通常是 `<專案>_mcpjungl`)、`REGISTRY_URL`(預設 `http://mcpjungle:8080` = 本 repo 主堆疊的服務名;別的 gateway 填它在該網路內的服務名或容器名)、(選)`REGISTER_EXTRAS`(預設 `0` = 只註冊書本,書本清單由 corpus.json 自動產生)或 `REGISTER_LIST`。
 3. 開 webhook。
 
 > registrar 內建**重試**(等 docs-mcp 開始監聽才註冊,避免 race)+ **冪等**(已註冊略過),redeploy 安全。
@@ -110,7 +122,7 @@ docker compose push docs-mcp-server registrar
 
 | 連線 | 怎麼帶 |
 |---|---|
-| gateway → docs server | `servers/*.json` 的 `bearer_token` = docs server 的 `MCP_AUTH_TOKEN`(兩邊一致;dev 都不設) |
+| gateway → docs server | 設 `DOCS_MCP_AUTH_TOKEN`:docs server 的 `MCP_AUTH_TOKEN` 與 registrar 產生的書本註冊設定 `bearer_token` 同時帶上(dev 不設) |
 | 用戶端 → gateway | dev 開放;enterprise 用 `mcpjungle create mcp-client X --allow "sqlsugar-zh-tw"` 限定每 client 能用哪些 server(需採策略 A) |
 
 用戶端連 gateway:`http://<host>:18800/mcp`(全部),或工具分組端點 `http://<host>:18800/v0/groups/<group>/mcp`。

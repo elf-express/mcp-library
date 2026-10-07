@@ -7,7 +7,7 @@
 | 子目錄 | 角色 | 說明 |
 | --- | --- | --- |
 | [`mcpjungle/docs-mcp-server/`](./mcpjungle/docs-mcp-server) | docs server(多語料,推薦) | 一個 server 掛多本書(`sqlsugar-zh-tw` 74 + `fc-zh-tw` 133 + `nginx-en` 149);新增書 = 丟資料夾 + `corpus.json` |
-| [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | composes / registrar / 各 server 註冊檔(`servers/`) |
+| [`mcpjungle/`](./mcpjungle) | MCPJungle gateway 部署 | registrar(書本註冊由 `corpus.json` 自動產生)/ 非書本註冊檔(`registry/`) |
 
 ## 目錄結構
 
