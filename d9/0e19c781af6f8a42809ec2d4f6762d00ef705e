@@ -1,0 +1,35 @@
+AGENTS.md
+  s_58251641b98742::t_caf74a64e14633 13-16,48
+CLAUDE.md
+  s_58251641b98742::t_2ade3b15c670ff 11,13-17,57,60-66,131-132,137-143
+README.md
+  s_58251641b98742::t_b95dcc665e1d1d 48-50
+mcpjungle/README.md
+  s_58251641b98742::t_685c0034d37454 33,92,111
+mcpjungle/books/README.md
+  s_58251641b98742::t_5029ec32676d5d 73,134,205
+mcpjungle/docs-mcp-server/README.md
+  s_58251641b98742::t_5a6d1f66ed4dde 165
+mcpjungle/gateway/README.md
+  s_58251641b98742::t_85057715461b60 65-66,194-196,249,497,1013-1014
+mcpjungle/gateway/docs/deployment/docker.mdx
+  s_58251641b98742::t_e82281792ab62b 6-7
+mcpjungle/gateway/docs/developers/development.mdx
+  s_58251641b98742::t_0634dc36b499e6 33-34,92-93,175-176
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d90e19c781af6f8a42809ec2d4f6762d00ef705e",
+  "prompts": {},
+  "sessions": {
+    "s_58251641b98742": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "09448835-7b31-464d-8b14-4856c781b3eb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
