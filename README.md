@@ -6,18 +6,25 @@
 
 ```
 mcp-library/
-├─ .github/workflows/      ci.yml、docker-publish.yml
+├─ .github/               workflows/(ci.yml、docker-publish.yml)、dependabot.yml、PULL_REQUEST_TEMPLATE.md
+├─ .vscode/ · .gitattributes · .gitignore
 ├─ README.md · CLAUDE.md · AGENTS.md
 ├─ compose.yaml            主檔:postgres + gateway + docs-mcp + registrar(現場 build)
 ├─ compose.pull.yaml       docs-mcp、registrar 改拉 ghcr 映像
 ├─ compose.attach.yaml     只起 docs-mcp + registrar,接現有 gateway
 ├─ .env.example · nginx.example.conf
 └─ mcpjungle/
+    ├─ README.md           gateway 部署、註冊、Dockhand 說明
+    ├─ .dockerignore       docs-mcp / registrar 的 build context 是 mcpjungle/,排除 books/*/source
     ├─ gateway/            MCPJungle(源自上游 c2a2c8d,自 2026-10 起獨立維護)
-    ├─ books/<書名>/
-    │   ├─ source/         原稿與翻譯(不打包進映像)
-    │   ├─ corpus/<id>/    語料:corpus.json + markdown(id = <書名>-<語言>)
-    │   └─ import.ts       轉換腳本(需要時)
+    ├─ books/
+    │   ├─ README.md       語料命名、corpus.json 欄位與內容規則
+    │   ├─ .vscode/        extensions.json
+    │   ├─ <書名>/          fc · multica · nginx · opnsense · portabase · sqlsugar
+    │   │   ├─ source/     原稿與翻譯(不打包進映像)
+    │   │   └─ corpus/<id>/ 語料:corpus.json + markdown(id = <書名>-<語言>)
+    │   ├─ nginx/          import.ts · transform.ts(由 source/en 產生 corpus/nginx-en)
+    │   └─ opnsense/       ONBOARDING.md · 168小隊-啟動提示.md(168小隊翻譯工作說明)
     ├─ docs-mcp-server/    多語料文檔 MCP server(不含語料)
     └─ registry/           非書本 MCP 註冊檔(filesystem/fetch/time…)+ registrar
 ```
