@@ -1,6 +1,7 @@
-# corpora/ — 語料目錄規範
+# books/ — 書本與語料目錄規範
 
-這個目錄下的**每個子資料夾 = 一個語料(一本書)**。`docs-mcp-server` 啟動時掃描這裡,
+這個目錄下的**每個子資料夾 = 一本書**;書的 `corpus/` 下**每個子資料夾 = 一個語料**。
+`docs-mcp-server` 開發時掃描 `books/*/corpus/`,映像 build 時把它們併成 `corpora/`,
 新增一本書 = 丟一個資料夾 + `corpus.json`,**不改任何 `.ts`**。
 
 > 本檔是語料命名與目錄結構的**唯一權威版本**。完整的「新增知識庫」流程(驗證、註冊、部署、文件同步)
@@ -30,7 +31,7 @@
 | **不可**再放第三份雙語合併版 | 同內容存三份、搜三次;要雙語就讓 AI 分別查兩個語料 |
 | 書名本身可含 `-` | 如 `vue-router-en`;分辨書名與語言靠 `corpus.json` 的 `book` / `language`,**不靠**拆 id 字串 |
 | 用領域名,不用泛名 | `docs`、`notes`、`kb`、`test`、`new` 禁用;AI 看到的是 `<id>__docs_search`,id 是它選工具的唯一線索 |
-| id 在整台 gateway 唯一 | 不只在 `corpora/` 內唯一;`docs`(策略 B 整包)、`filesystem`、`fetch`、`time` 已被占用,以 `mcpjungle list servers` 為準 |
+| id 在整台 gateway 唯一 | 不只在 `books/` 內唯一;`docs`(策略 B 整包)、`filesystem`、`fetch`、`time` 已被占用,以 `mcpjungle list servers` 為準 |
 
 現有語料:
 
@@ -47,49 +48,61 @@
 ## 二、目錄樹範例
 
 ```text
-docs-mcp-server/corpora/
-├── README.md                          # 本檔(不是語料;根目錄的檔案不會被當成語料)
+mcpjungle/books/
+├── README.md                              # 本檔(不是書)
 │
-├── fc-zh-tw/                          # 有分類子目錄的語料
-│   ├── corpus.json
-│   ├── sources.json                   # 選用:覆寫自動抽取的來源連結
-│   ├── 二次開發/
-│   │   ├── 01项目介绍.md
-│   │   └── 02目录结构.md
-│   ├── 產品手冊/
-│   │   └── 01界面布局.md
-│   └── 開發文檔/
-│       └── 11表单 API.md
+├── fc/
+│   └── corpus/
+│       └── fc-zh-tw/                      # 有分類子目錄的語料
+│           ├── corpus.json
+│           ├── sources.json               # 選用:覆寫自動抽取的來源連結
+│           ├── 二次開發/
+│           │   ├── 01项目介绍.md
+│           │   └── 02目录结构.md
+│           ├── 產品手冊/
+│           │   └── 01界面布局.md
+│           └── 開發文檔/
+│               └── 11表单 API.md
 │
-├── opnsense-en/                       # 同一本書的英文原文(扁平、檔名編號排序)
-│   ├── corpus.json
-│   ├── sources.json                   # 由每篇 YAML front matter 的 source: 產生(見第五節)
-│   ├── LICENSE                        # 上游授權全文(BSD-2-Clause),非 .md 不會被索引
-│   ├── 000 目錄.md                    # 章節目錄(唯一的階層導航)
-│   ├── 01 Welcome to OPNsense’s documentation!.md
-│   ├── 02 Introduction.md
-│   └── 137 Rules.md
+├── nginx/                                 # 由匯入腳本從原稿產生語料的書
+│   ├── import.ts                          # 在 docs-mcp-server 執行 npx tsx ../books/nginx/import.ts
+│   ├── transform.ts
+│   ├── source/
+│   │   └── en/                            # 原稿;不進映像(mcpjungle/.dockerignore 排除 books/*/source)
+│   └── corpus/
+│       └── nginx-en/                      # 匯入腳本的產出,勿手改
 │
-├── opnsense-zh-tw/                    # 同一本書的繁中譯本 → 另一個語料,與 -en 相鄰
-│   ├── corpus.json
-│   ├── sources.json
-│   ├── LICENSE
-│   ├── 000 目錄.md
-│   ├── 02 介紹.md
-│   └── 137 規則.md
+├── opnsense/
+│   ├── source/                            # 原稿與翻譯工作區
+│   └── corpus/
+│       ├── opnsense-en/                   # 同一本書的英文原文(扁平、檔名編號排序)
+│       │   ├── corpus.json
+│       │   ├── sources.json               # 由每篇 YAML front matter 的 source: 產生(見第五節)
+│       │   ├── LICENSE                    # 上游授權全文(BSD-2-Clause),非 .md 不會被索引
+│       │   ├── 000 目錄.md                # 章節目錄(唯一的階層導航)
+│       │   ├── 01 Welcome to OPNsense’s documentation!.md
+│       │   └── 137 Rules.md
+│       └── opnsense-zh-tw/                # 同一本書的繁中譯本 → 另一個語料,與 -en 相鄰
+│           ├── corpus.json
+│           ├── sources.json
+│           ├── LICENSE
+│           ├── 000 目錄.md
+│           └── 137 規則.md
 │
-└── sqlsugar-zh-tw/                    # 扁平 md + 範例原始碼
-    ├── corpus.json
-    ├── index.md                       # 選用:分類導航
-    ├── Select用法.md
-    ├── AOP日誌.md
-    └── examples/                      # 僅 capabilities.examples=true 時;不會被當成 md 文件
-        └── SqlSugar-vs-EFCore效能測試-MySQL版/
-            └── ORMTEST/Program.cs
+└── sqlsugar/
+    └── corpus/
+        └── sqlsugar-zh-tw/                # 扁平 md + 範例原始碼
+            ├── corpus.json
+            ├── index.md                   # 選用:分類導航
+            ├── Select用法.md
+            └── examples/                  # 僅 capabilities.examples=true 時;不會被當成 md 文件
+                └── SqlSugar-vs-EFCore效能測試-MySQL版/
+                    └── ORMTEST/Program.cs
 ```
 
 結構重點:
 
+- 只有含 `corpus/` 的書會被掃到;`source/`、`import.ts` 等其他檔案不是語料。不同書的語料 id 仍須全域唯一(重複時保留先掃到的並警告)。
 - 分類最多**一層**子目錄(`開發文檔/xx.md`)。`docs_outline` 以頂層目錄分組,更深的目錄會被歸到第一層;沒有子目錄的檔案歸在「(根)」。
 - 檔名前綴編號(`01xxx.md`、`137 Rules.md`)保持閱讀順序。排序是字串排序(`localeCompare("zh-Hant")`),位數不一致時 `100` 會排在 `11` 前面。
 - `examples/` 只放白名單副檔名 `.cs .csproj .sln .json .ts .js`;`bin/`、`obj/`、`.vs/` 會被略過,也不要提交。
@@ -148,17 +161,17 @@ docs-mcp-server/corpora/
 
 完整步驟、指令與驗證方式以 skill **`elf-mcp-knowledge`**(第 3 節 Step 0–7、第 5 節檢查清單)為準。以下是在本 repo 內要做的事:
 
-- [ ] **選 id**:`<書名>-<語言>`,符合第一節所有規則;`ls docs-mcp-server/corpora/ mcpjungle/servers/` 與 `docker exec mcpjungle-server /mcpjungle list servers` 確認不撞名
-- [ ] **建資料夾** `docs-mcp-server/corpora/<id>/`,只放 `.md`(第六節規則:純文字、不放合併全書)
+- [ ] **選 id**:`<書名>-<語言>`,符合第一節所有規則;`ls mcpjungle/books/*/corpus/ mcpjungle/servers/` 與 `docker exec mcpjungle-server /mcpjungle list servers` 確認不撞名
+- [ ] **建資料夾** `mcpjungle/books/<書名>/corpus/<id>/`,只放 `.md`(第六節規則:純文字、不放合併全書)
 - [ ] **每篇 md**:`# 標題` 開頭,前 15 行內有來源行 `> 📖 官方文件:[文字](https://…)` 或 `> Source: https://…`;做不到時(例如 YAML front matter)改用 `sources.json`,或由匯入腳本把 `source: "…"` 去掉引號(如 `nginx-en`)
 - [ ] **`corpus.json`**:`book` / `language` / `source` / `title` / `description` / `capabilities` 都寫;capabilities 與內容相符
 - [ ] 單檔 < 5 MB,不含連線字串 / 密碼 / token
-- [ ] **smoke test**:複製 skill 的 `templates/corpus-smoke.test.ts` 成 `docs-mcp-server/tests/<id>.test.ts`,換成語料的**真實**標題與關鍵字(不可放寬比對)
-- [ ] `cd docs-mcp-server && npm run build && npm test`:既有測試全過、數量不減
+- [ ] **smoke test**:複製 skill 的 `templates/corpus-smoke.test.ts` 成 `mcpjungle/docs-mcp-server/tests/<id>.test.ts`,換成語料的**真實**標題與關鍵字(不可放寬比對)
+- [ ] `cd mcpjungle/docs-mcp-server && npm run build && npm test`:既有測試全過、數量不減
 - [ ] 本機起 server,實際呼叫 `docs_list_corpora` / `docs_search` / `docs_read` / `docs_outline`,`/health` 的 corpora / docs 數正確
 - [ ] **註冊**:新增 `mcpjungle/servers/<id>.json`(`url` = `http://docs-mcp-server:5690/mcp/<id>`,`description` 列出所有有效工具)
 - [ ] **`REGISTER_LIST`** 兩處:`mcpjungle/registrar.sh` 預設值、`mcpjungle/docker-compose.dockhand.yml` 預設值(`mcpjungle/register.sh` 的 per-book 清單也同步)
-- [ ] **文件**:本檔「現有語料」表、根 `README.md`、根 `CLAUDE.md`、`docs-mcp-server/README.md`、`mcpjungle/README.md`
+- [ ] **文件**:本檔「現有語料」表、根 `README.md`、根 `CLAUDE.md`、`mcpjungle/docs-mcp-server/README.md`、`mcpjungle/README.md`
 - [ ] 部署後驗證 gateway:`list tools | grep '<id>__'` 與一次 `invoke <id>__docs_search`
 
 改名既有語料時:registrar 只會新增、不會移除,已部署的 gateway 要手動 `mcpjungle deregister <舊名>`。
@@ -175,7 +188,7 @@ docs-mcp-server/corpora/
 以 YAML front matter 擷取的文件(如 OPNsense:`source: "https://…"`)**不符合**第 2 條的格式——自動抽取會把結尾的 `"` 一起吃進網址。
 這類語料一律從 front matter 產生 `sources.json`,md 內容保持與擷取來源一致,方便日後重新同步。
 
-例外:語料由匯入腳本產生時(如 `nginx-en` 的 `npm run import:nginx-en`),可在轉換時把 `source: "https://…"` 改成不帶引號的 `source: https://…`,自動抽取即可取得正確網址,不必另產 `sources.json`;重新同步時重跑匯入腳本即可。此類語料的 md 以 YAML front matter 開頭、其後才是 `# 標題`,亦符合本節「`# 標題` 開頭」的要求。
+例外:語料由匯入腳本產生時(如 `nginx-en` 的 `npx tsx ../books/nginx/import.ts`),可在轉換時把 `source: "https://…"` 改成不帶引號的 `source: https://…`,自動抽取即可取得正確網址,不必另產 `sources.json`;重新同步時重跑匯入腳本即可。此類語料的 md 以 YAML front matter 開頭、其後才是 `# 標題`,亦符合本節「`# 標題` 開頭」的要求。
 
 ---
 
@@ -186,7 +199,7 @@ docs-mcp-server/corpora/
 - **不放合併檔**:「全書」「整本書」「all-in-one」這類把所有頁面串成一檔的 md 是重複內容,會讓每次搜尋都多命中一篇超大檔,**一律排除**。
   目錄 / 索引頁(只有連結、沒有正文)可以保留,因為它是唯一的階層導航。
 - **不放第三份雙語版**:見第一節。
-- **容量上限**:`corpora/` 總量約 **200 MB** 以內。語料會打包進 `docs-mcp-server` 的 Docker image 與 npm 套件,也在每次 clone 時下載;
+- **容量上限**:`books/*/corpus/` 總量約 **200 MB** 以內。語料會打包進 `docs-mcp-server` 的 Docker image,也在每次 clone 時下載;
   超過時把大型語料拆到獨立 repo(以 `DOCS_CORPORA_DIR` 掛載),不要繼續塞進本 repo。
   目前總量:約 11.4 MB(`opnsense-en` 4.9 MB、`opnsense-zh-tw` 4.7 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB)。
 - 單檔 < 5 MB(CI 會擋);不放任何機密——機密掃描**不掃** `examples/`。

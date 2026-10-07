@@ -6,11 +6,12 @@
 
 - 這是一個 MCP server monorepo，根目錄主要負責統一部署與整合。
 - 主要工作是啟動 MCPJungle gateway、docs-mcp-server 以及 registrar，讓多個 MCP 服務對外呈現單一入口。
-- `mcp/docs-mcp-server/` 是推薦的多語料文檔查詢服務；`mcpjungle/` 是 gateway 與註冊部署。
+- `mcpjungle/docs-mcp-server/` 是推薦的多語料文檔查詢服務；`mcpjungle/` 是 gateway 與註冊部署。
 
 ## 主要目錄
 
-- `mcp/docs-mcp-server/`：核心多語料 docs MCP server。
+- `mcpjungle/docs-mcp-server/`：核心多語料 docs MCP server。
+- `mcpjungle/books/<書名>/corpus/<id>/`：語料;`source/` 是原稿,不進映像。
 - `mcpjungle/`：MCPJungle gateway stack、註冊器與 server 註冊設定。
 
 ## 常用命令
@@ -33,7 +34,7 @@
 
 ## 開發建議
 
-- 若修改 `mcp/docs-mcp-server`，同時參考 `mcp/docs-mcp-server/README.md` 與其 package script。 
+- 若修改 `mcpjungle/docs-mcp-server`，同時參考 `mcpjungle/docs-mcp-server/README.md` 與其 package script。
 - 若修改 gateway 註冊流程或設定，請參考 `mcpjungle/README.md` 以及 `mcpjungle/servers/*.json`。
 - 不要在根目錄啟動同名已有容器 `mcpjungle-server`，否則會因 container 名稱衝突失敗。
 

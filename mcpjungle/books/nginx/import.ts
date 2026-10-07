@@ -1,17 +1,17 @@
 /**
  * 匯入 nginx 英文文件為 docs-mcp 語料 nginx-en。
- * 用法:npm run import:nginx-en
- * 讀 <repo>/mcpjungle/books/nginx/source/en/,全部轉換驗證通過後,
- * 清空 corpora/nginx-en/ 的 md(保留 corpus.json)再寫入;任何錯誤都不寫檔。
+ * 用法(在 mcpjungle/docs-mcp-server):npx tsx ../books/nginx/import.ts
+ * 讀本書的 source/en/,全部轉換驗證通過後,
+ * 清空 corpus/nginx-en/ 的 md(保留 corpus.json)再寫入;任何錯誤都不寫檔。
  */
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
-import { isIncluded, transformPage } from "./nginx-transform.js";
+import { isIncluded, transformPage } from "./transform.js";
 
-const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const srcDir = path.resolve(serverRoot, "../../mcpjungle/books/nginx/source/en");
-const outDir = path.join(serverRoot, "corpora", "nginx-en");
+const bookRoot = path.dirname(fileURLToPath(import.meta.url));
+const srcDir = path.join(bookRoot, "source", "en");
+const outDir = path.join(bookRoot, "corpus", "nginx-en");
 
 function fail(msg: string): never {
   console.error(`[import-nginx-en] ${msg}`);

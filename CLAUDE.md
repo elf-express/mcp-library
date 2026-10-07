@@ -10,10 +10,10 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 四個層次:
 
-- [`mcp/docs-mcp-server/`](mcp/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,打包進映像;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由 `npm run import:nginx-en` 從 `mcpjungle/books/nginx/source/en` 產生,勿手改。
+- [`mcpjungle/docs-mcp-server/`](mcpjungle/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」(目前種子語料 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en`,放在 `mcpjungle/books/<書名>/corpus/<id>/`,映像 build 時併入;語料 id 規則 `<書名>-<語言>`)。`nginx-en` 由在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生,勿手改。
 - [`mcpjungle/`](mcpjungle) — gateway 部署層,把各 server 註冊進 MCPJungle、對用戶端只開一個入口。內含一份 **自行維護的 [MCPJungle(源自上游 c2a2c8d)](mcpjungle/gateway)**(從源碼 build,非 pull 官方映像)。
 - [`docker-compose.yml`](docker-compose.yml) — 根入口,一鍵把 gateway + docs-mcp + registrar 全拉起(`include` 了 `mcpjungle/docker-compose.mcpjungle.yml`)。
-- [`mcpjungle/books/<書名>/source/`](mcpjungle/books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `corpora/<書名>-<語言>/` 語料。
+- [`mcpjungle/books/<書名>/source/`](mcpjungle/books) — 書籍原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取**;要讓 AI 查得到,須整理成 `mcpjungle/books/<書名>/corpus/<書名>-<語言>/` 語料。
 
 ## 常用命令
 
@@ -25,7 +25,7 @@ docker compose up -d --build         # build 法:現場 build,總是最新源碼
 docker compose -f docker-compose.pull.yml up -d   # pull 法:拉 ghcr 既建映像,不在 server build
 ```
 
-### docs-mcp-server 開發(核心,`cd mcp/docs-mcp-server`)
+### docs-mcp-server 開發(核心,`cd mcpjungle/docs-mcp-server`)
 
 ```bash
 npm install
@@ -56,12 +56,12 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 
 讓 Claude / 任何 MCP 用戶端用上 fc/sqlsugar 文檔查詢,四種接法:
 
-- **A. 本機 stdio(最簡單)** — 先在 `mcp/docs-mcp-server` 執行 `npm install && npm run build`,工作目錄建 `.mcp.json`:
+- **A. 本機 stdio(最簡單)** — 先在 `mcpjungle/docs-mcp-server` 執行 `npm install && npm run build`,工作目錄建 `.mcp.json`:
   ```json
-  { "mcpServers": { "docs": { "command": "node", "args": ["<repo>/mcp/docs-mcp-server/dist/index.js"] } } }
+  { "mcpServers": { "docs": { "command": "node", "args": ["<repo>/mcpjungle/docs-mcp-server/dist/index.js"] } } }
   ```
   只掛單一本書加 `"env": { "DOCS_SCOPE": "fc-zh-tw" }`。npm 套件已停止發布。
-- **B. 本機原始碼** — `cd mcp/docs-mcp-server && npm install && npm run build`,再 stdio `npm run dev` 或 HTTP `$env:TRANSPORT="http"; npm start`(:5690,`/health` 驗)。
+- **B. 本機原始碼** — `cd mcpjungle/docs-mcp-server && npm install && npm run build`,再 stdio `npm run dev` 或 HTTP `$env:TRANSPORT="http"; npm start`(:5690,`/health` 驗)。
 - **C. 遠端 / 雲端 HTTP** — 映像內建 `TRANSPORT=http`;設 `MCP_AUTH_TOKEN`、對外開 :5690、走 HTTPS。Claude 端 Settings → Connectors 填 `https://網域/mcp`(全語料)或 `/mcp/<corpus>`(單書),token 填 `Bearer <token>`。
 - **D. 經 gateway** — 根 `docker compose up -d --build` 一鍵起,用戶端連 `http://<host>:18800/mcp`(詳見上方「部署」)。
 
@@ -71,8 +71,8 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 
 ### docs-mcp-server:多語料機制(`src/corpus.ts` + `src/index.ts`)
 
-- 一個**語料 = `corpora/<id>/` 下一組 markdown**(可含分類子目錄)+ 一個選填 `corpus.json`(`title` / `description` / `capabilities`)。能力旗標:`cheatsheet`、`examples`(語料附 `examples/` 程式碼)、`symbol`(從標題建符號索引)。
-- **新增一本書不改任何 `.ts`**:丟資料夾 + `corpus.json`,重啟(本機)或重新部署(雲端)即出現在 `docs_list_corpora`。命名(`<書名>-<語言>`)、目錄樹、`corpus.json` 欄位(`book`/`language`/`source`/…)與內容規則見 [`mcp/docs-mcp-server/corpora/README.md`](mcp/docs-mcp-server/corpora/README.md)。
+- 一個**語料 = `mcpjungle/books/<書名>/corpus/<id>/` 下一組 markdown**(可含分類子目錄)+ 一個選填 `corpus.json`(`title` / `description` / `capabilities`)。能力旗標:`cheatsheet`、`examples`(語料附 `examples/` 程式碼)、`symbol`(從標題建符號索引)。
+- **新增一本書不改任何 `.ts`**:丟資料夾 + `corpus.json`,重啟(本機)或重新部署(雲端)即出現在 `docs_list_corpora`。命名(`<書名>-<語言>`)、目錄樹、`corpus.json` 欄位(`book`/`language`/`source`/…)與內容規則見 [`mcpjungle/books/README.md`](mcpjungle/books/README.md)。
 - 工具**固定 8 個且全唯讀**,**`corpus` 是參數不是新工具**(領域再多、工具數不變);**capability-gated**——工具對所有語料都「在」,只對宣告該能力的語料生效,其餘回友善提示:
   - 無條件(所有語料):`docs_list_corpora`(探索入口)/ `docs_search` / `docs_read` / `docs_outline`(結構大綱)
   - `cheatsheet` 能力:`docs_cheatsheet`(抽速查表段落)
@@ -114,7 +114,7 @@ REGISTRY=http://localhost:18800 ./register.sh                  # 手動註冊(�
 ## 易踩雷
 
 - **容器名固定 `mcpjungle-server`**:已有同名 gateway 在跑會撞名,先停舊的;要接「現有」gateway 用 `docker-compose.dockhand.yml`(別再起新 gateway)。
-- **跨目錄 build**:`mcpjungle/docker-compose.mcpjungle.yml` 的 docs-mcp 服務 `build: ../mcp/docs-mcp-server` — 從 `mcpjungle/` 觸發卻 build 另一個目錄,改 docs server 的 Dockerfile 會連帶影響這裡。
+- **build context 是 `mcpjungle/`**:docs-mcp 與 registrar 的 build context 是 `mcpjungle/`,`books/*/source` 由 `mcpjungle/.dockerignore` 排除。
 - **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊 `sqlsugar-zh-tw fc-zh-tw nginx-en filesystem fetch time`(`REGISTER_LIST` 預設值)。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。`servers/*.json` **看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 

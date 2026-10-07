@@ -9,7 +9,6 @@
   },
   "files": [
     "dist",
-    "corpora",
     "README.md"
   ],
   "publishConfig": {
@@ -22,8 +21,7 @@
     "clean": "rm -rf dist",
     "prepublishOnly": "npm run build",
     "test": "vitest run",
-    "test:watch": "vitest",
-    "import:nginx-en": "tsx scripts/import-nginx-en.ts"
+    "test:watch": "vitest"
   },
   "engines": {
     "node": ">=18"
@@ -31,9 +29,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elf-express/mcp-library.git",
-    "directory": "docs-mcp-server"
+    "directory": "mcpjungle/docs-mcp-server"
   },
-  "homepage": "https://github.com/elf-express/mcp-library/tree/main/docs-mcp-server#readme",
+  "homepage": "https://github.com/elf-express/mcp-library/tree/main/mcpjungle/docs-mcp-server#readme",
   "bugs": "https://github.com/elf-express/mcp-library/issues",
   "license": "MIT",
   "author": "elf-express",

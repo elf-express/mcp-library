@@ -1,13 +1,13 @@
 # Docs MCP Server(多語料)
 
 一個 MCP server,**掛多個文檔語料(corpus)**,讓 Claude(或任何 MCP 用戶端)搜尋、閱讀。
-新增一個領域 = 在 `corpora/` 丟一個資料夾 + 一個 `corpus.json`,**不必改任何程式碼**。
+新增一個領域 = 在 `mcpjungle/books/<書名>/corpus/` 丟一個資料夾 + 一個 `corpus.json`,**不必改任何程式碼**。
 
 - **一份部署、多本書**:工具數恆為 8(語料是「參數」不是「新工具」;依語料 `capabilities` 開關,未啟用的工具回友善提示),不隨領域膨脹。
 - **stdio**:本機用,Claude Desktop 以子行程啟動。
 - **http**(本專案重點):Streamable HTTP,可部署到雲端 / Docker,遠端連接。
 
-種子語料已打包進 `corpora/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`nginx-en`(149 篇,由 `npm run import:nginx-en` 從 `mcpjungle/books/nginx/source/en` 產生),會跟著映像一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
+種子語料放在 `mcpjungle/books/<書名>/corpus/`:`sqlsugar-zh-tw`(74 篇)、`fc-zh-tw`(133 篇)、`nginx-en`(149 篇,在本目錄執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生)。開發時直接掃 `../books/*/corpus/`,映像 build 時併成 `corpora/` 一起部署。語料 id 格式為 `<書名>-<語言>`(`en` / `zh-tw` / `zh-cn` / `bi`)。
 
 ## 安裝(本機 stdio)
 
@@ -18,7 +18,7 @@
   "mcpServers": {
     "docs": {
       "command": "node",
-      "args": ["<repo>/mcp/docs-mcp-server/dist/index.js"]
+      "args": ["<repo>/mcpjungle/docs-mcp-server/dist/index.js"]
     }
   }
 }
@@ -78,9 +78,9 @@
 
 ## 新增一個語料(疊加)
 
-> 命名規則、目錄樹、`corpus.json` 欄位與內容規則的權威版本:[`corpora/README.md`](corpora/README.md);完整流程見團隊 skill `elf-mcp-knowledge`。
+> 命名規則、目錄樹、`corpus.json` 欄位與內容規則的權威版本:[`books/README.md`](../books/README.md);完整流程見團隊 skill `elf-mcp-knowledge`。
 
-1. 在 `corpora/` 下建一個資料夾,名稱即語料 id,格式 `<書名>-<語言>`(例:`corpora/furion-zh-tw/`)。
+1. 在 `mcpjungle/books/<書名>/corpus/` 下建一個資料夾,名稱即語料 id,格式 `<書名>-<語言>`(例:`mcpjungle/books/furion/corpus/furion-zh-tw/`)。
 2. 把該領域的 `.md` 放進去(可用分類子目錄,如 `指南/快速上手.md`)。
 3. 放一個 `corpus.json` 描述它:
 
@@ -110,7 +110,7 @@
 ## 一、本機開發
 
 ```bash
-cd docs-mcp-server
+cd mcpjungle/docs-mcp-server
 npm install
 npm run build
 npm test                          # vitest:多語料隔離 / 跨語料 / capability gating
@@ -120,14 +120,15 @@ TRANSPORT=http npm start          # 本機跑 HTTP(預設 5690)
 DOCS_SCOPE=sqlsugar-zh-tw npm run dev   # stdio 鎖定單一語料
 ```
 
-健康檢查:`curl http://localhost:5690/health` → `{"status":"ok","corpora":2,"docs":207}`
+健康檢查:`curl http://localhost:5690/health` → `{"status":"ok","corpora":3,"docs":356}`
 
 ## 二、本機 Docker 測試
 
+build context 是 `mcpjungle/`(才拿得到 `books/*/corpus/`),在 `mcpjungle/` 執行:
+
 ```bash
-# Windows PowerShell 用 $env:MCP_AUTH_TOKEN="..."
-export MCP_AUTH_TOKEN=my-secret-123
-docker compose up --build -d
+docker build -f docs-mcp-server/Dockerfile -t docs-mcp-server .
+docker run -d --name docs-mcp-server -e MCP_AUTH_TOKEN=my-secret-123 -p 5690:5690 docs-mcp-server
 curl http://localhost:5690/health
 ```
 
@@ -161,7 +162,7 @@ curl -X POST http://localhost:5690/mcp \
 3. 健康檢查路徑 `/health`。
 4. **務必走 HTTPS**:MCP 遠端連接器要求 https,且 token 不該用明文 http 傳。
 
-常見平台:Railway / Render(連 Git、選 Dockerfile、加 `MCP_AUTH_TOKEN` 變數)、Fly.io(`fly launch` → `fly secrets set` → `fly deploy`)、自有 VPS(`docker compose up -d` + Nginx/Caddy 反代加 TLS)。
+常見平台:Railway / Render(連 Git、build context 設 `mcpjungle/`、Dockerfile 設 `docs-mcp-server/Dockerfile`、加 `MCP_AUTH_TOKEN` 變數)、Fly.io(`fly launch` → `fly secrets set` → `fly deploy`)、自有 VPS(`docker compose up -d` + Nginx/Caddy 反代加 TLS)。
 
 ## 四、連接 Claude(遠端 MCP 連接器)
 

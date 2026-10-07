@@ -1,0 +1,8 @@
+# docs-mcp-server 與 registrar 的 build context 都是 mcpjungle/
+**/node_modules
+**/dist
+**/.env
+**/*.log
+gateway
+books/*/source
+docs-mcp-server/tests
