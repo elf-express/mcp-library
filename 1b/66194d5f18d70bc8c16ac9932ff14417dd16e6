@@ -1,0 +1,2633 @@
+mcpjungle/books/stalwart/source/en/ref/object/domain.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-629
+mcpjungle/books/stalwart/source/en/migration/proxy/examples/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/email/settings/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/003 Sizing.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-46
+mcpjungle/books/stalwart/source/en/auth/authentication/app-password.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/ref/object/spam-dnsbl-server.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-614
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/010 AllowedIp.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-231
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/082 PublicKey.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-250
+mcpjungle/books/stalwart/source/en/mta/reports/dkim.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-26
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/012 S3-compatible.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-32
+mcpjungle/books/stalwart/source/en/management/maintenance/database.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-68
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/037 Identity providers - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-64
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/mta-stage-auth.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-216
+mcpjungle/books/stalwart/source/en/ref/object/blocked-ip.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-273
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/125 MtaConnectionVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-23
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/033 DkimSignature.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-600
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/management/cli/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/011 ApiKey.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-272
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/086 SearchStore.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-568
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/048 Dovecot and Postfix.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-88
+mcpjungle/books/stalwart/source/en/ref/object/api-key.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-310
+mcpjungle/books/stalwart/source/en/mta/rewrite/address.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-85
+mcpjungle/books/stalwart/source/en/ref/object/data-store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-581
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/032 DkimReportSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-181
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/015 Outbound - TLS.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-160
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/017 Azure Blob Storage.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-22
+mcpjungle/books/stalwart/source/en/management/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/063 MtaInboundSession.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-165
+"mcpjungle/books/stalwart/corpus/stalwart-en/06 Domains/003 TLS certificates.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,16-17
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,18-40
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/040 DsnReportSettings.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-165
+mcpjungle/books/stalwart/source/en/migration/proxy/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/migration/proxy/mappings/redis.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-47
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/017 DNS Providers.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-32
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+mcpjungle/books/stalwart/source/en/storage/backends/composite/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/034 DmarcExternalReport.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-675
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/permissions.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-1438
+mcpjungle/books/stalwart/source/en/migration/guide/troubleshooting.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-82
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/031 Directory.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-809
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/026 Import and Export - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28
+mcpjungle/books/stalwart/source/en/ref/object/dns-resolver.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-420
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/019 Spam filter.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/001 Telemetry - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/005 Log file.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-33
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/009 Outbound - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-16
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/001 Collaboration settings - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-26
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/import-export/import/managesieve.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-163
+mcpjungle/books/stalwart/source/en/telemetry/tracing/console.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-25
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/039 Delivery Notifications.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-28
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/002 Data store.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-25
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,26
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/004 Untrusted Interpreter.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-136
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/014 NGINX.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-62
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/mta/reports/spf.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-26
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/006 Clustering & HA - Configuration - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-18
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/spamfilter/settings/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/haproxy.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-113
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/017 Outbound - Quotas.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-79
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/005 Certificates.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-41
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/001 Server settings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-20
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/009 PostgreSQL.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-58
+mcpjungle/books/stalwart/source/en/ref/object/trace.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-512
+mcpjungle/books/stalwart/source/en/ref/object/archived-item.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-566
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/009 Setting up DNS.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-131
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/cluster/deployment/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/146 Schema reference - Permissions.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-1134
+mcpjungle/books/stalwart/source/en/development/test.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-204
+mcpjungle/books/stalwart/source/en/ref/enum/dns-server-bootstrap-type.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-84
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/036 Attribute mapping.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-116
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/005 Notifications.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-25,27-81
+  s_fea4641b347a8a::t_9c99e667c21128 9,26
+mcpjungle/books/stalwart/source/en/email/settings/maintenance.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/025 Headers.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-18,20-82
+  s_fea4641b347a8a::t_9c99e667c21128 9,19
+mcpjungle/books/stalwart/source/en/ref/expression/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/006 Contacts.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-33,35-41,43-66
+  s_fea4641b347a8a::t_9c99e667c21128 9,34,42
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/005 Destinations.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-131
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/025 OIDC Provider.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-33,35-53
+  s_fea4641b347a8a::t_9c99e667c21128 9,34
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-queue-rcpt-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-29
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/044 Configuring the new deployment.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-97
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/045 HttpForm.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-189
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/039 Okta.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-84
+mcpjungle/books/stalwart/source/en/http/security.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/001 HTTP settings - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-50
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/143 MtaPriorityConstant.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-17
+mcpjungle/books/stalwart/source/en/server/tls/acme/configuration.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-44
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/018 Exporting server state.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-232
+mcpjungle/books/stalwart/source/en/mta/inbound/connect.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-34
+mcpjungle/books/stalwart/source/en/ref/object/account-password.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-157
+mcpjungle/books/stalwart/source/en/migration/import-export/import/jmap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-57
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/030 Import - JMAP.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-61
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/058 Objects - Metrics.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-304
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+mcpjungle/books/stalwart/source/en/http/form-submission.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-51
+mcpjungle/books/stalwart/source/en/management/applications/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-64
+mcpjungle/books/stalwart/source/en/mta/reports/analysis.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-30
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/052 MailingList.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-289
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/oauth/flows.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-34
+mcpjungle/books/stalwart/source/en/ref/object/action.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-614
+mcpjungle/books/stalwart/source/en/mta/authentication/dmarc.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-27
+mcpjungle/books/stalwart/source/en/ref/object/mta-stage-mail.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-194
+mcpjungle/books/stalwart/source/en/email/settings/imap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-101
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/nginx.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-58
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/021 Milter filters.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-152
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+mcpjungle/books/stalwart/source/en/configuration/expressions/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-138
+mcpjungle/books/stalwart/source/en/configuration/declarative-deployments.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-14
+mcpjungle/books/stalwart/source/en/encryption/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/storage/backends/composite/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+mcpjungle/books/stalwart/source/en/email/management/mailing-lists.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-65
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/006 Action.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-509
+mcpjungle/books/stalwart/source/en/ref/object/oidc-provider.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-307
+mcpjungle/books/stalwart/source/en/ref/object/calendar-alarm.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-152
+mcpjungle/books/stalwart/source/en/ref/object/directory.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-975
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-67
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/001 Email settings - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-55
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/telemetry/tracing/log.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-29
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/036 Maildir.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-203
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/049 InMemoryStore.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-569
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/migration/proxy/listeners.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-95
+mcpjungle/books/stalwart/source/en/install/platform/windows.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-321
+mcpjungle/books/stalwart/source/en/server/general.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/mta/inbound/rcpt.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-150
+mcpjungle/books/stalwart/source/en/storage/blob.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/development/urn.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-108
+"mcpjungle/books/stalwart/corpus/stalwart-en/11 Encryption settings/002 Encryption settings - Management.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-50
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/108 TaskManager.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-164
+mcpjungle/books/stalwart/source/en/management/cli/apply.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-783
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-71
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/061 MtaExtensions.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-224
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/caddy.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-148
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/041 Reports - SPF.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-30
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/ref/object/tracer.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-738
+mcpjungle/books/stalwart/source/en/http/access-control.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-91
+mcpjungle/books/stalwart/source/en/auth/backend/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-38
+mcpjungle/books/stalwart/source/en/collaboration/scheduling.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-132
+mcpjungle/books/stalwart/source/en/storage/backends/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-136
+mcpjungle/books/stalwart/source/en/migration/proxy/management/troubleshooting.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/040 DKIM.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-30
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/014 Creating objects.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-153
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/auth/principals/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/development/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/105 SpfReportSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-181
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/smtp.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/ref/object/spam-pyzor.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-159
+mcpjungle/books/stalwart/source/en/sieve/reference.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-560
+mcpjungle/books/stalwart/source/en/migration/guide/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-34
+mcpjungle/books/stalwart/source/en/install/migrate.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+mcpjungle/books/stalwart/source/en/mta/outbound/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-12
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-ehlo-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/027 Directories - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-31,33,35-42
+  s_fea4641b347a8a::t_9c99e667c21128 9,32,34
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/019 Apache Mesos.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-88
+mcpjungle/books/stalwart/source/en/storage/fts.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-63
+mcpjungle/books/stalwart/source/en/mta/outbound/strategy.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-67
+mcpjungle/books/stalwart/source/en/sieve/jmap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-7
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/004 Tracing & Logging - OpenTelemetry.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-57
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/http/webdav/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+mcpjungle/books/stalwart/source/en/mta/rewrite/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/081 OidcProvider.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-247
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/010 Strategies.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-24,26-71
+  s_fea4641b347a8a::t_9c99e667c21128 9,25
+mcpjungle/books/stalwart/source/en/telemetry/management.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/018 Filtering - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/003 AccountSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-157
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/028 Internal.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-20
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/019 BlockedIp.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-244
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/013 Migrating from another system.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/012 Fetching a single object.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-145
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/spamfilter/settings/mime_types.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-68
+mcpjungle/books/stalwart/source/en/ref/object/o-auth-client.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-300
+mcpjungle/books/stalwart/source/en/ref/expression/variable/spam-header-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-59
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/001 Clustering & HA - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-58
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/003 Proxy server - Installation.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-91
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/026 ClusterNode.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-239
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/sieve-user-interpreter.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-409
+mcpjungle/books/stalwart/source/en/migration/proxy/configuration.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-75
+mcpjungle/books/stalwart/source/en/storage/backends/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+mcpjungle/books/stalwart/source/en/migration/guide/migrate-accounts.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-298
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/015 Phishing protection.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-65
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/075 MtaStageRcpt.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-190
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/024 Upgrading Stalwart.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-202
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/ref/object/tls-internal-report.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-500
+mcpjungle/books/stalwart/source/en/configuration/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/009 Reverse Proxy - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-75
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/013 Application.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-247
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/014 ArchivedItem.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-492
+mcpjungle/books/stalwart/source/en/email/settings/ratelimit.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/121 Key.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-80
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/011 Coordination - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,29
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28,30-47
+mcpjungle/books/stalwart/source/en/migration/import-export/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-25
+mcpjungle/books/stalwart/source/en/mta/authentication/dkim/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/023 Rewriting - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14
+mcpjungle/books/stalwart/source/en/cluster/coordination/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/migration/proxy/mappings/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/mta/authentication/iprev.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-27
+mcpjungle/books/stalwart/source/en/mta/authentication/spf.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-39
+mcpjungle/books/stalwart/source/en/ref/object/public-key.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-277
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/116 TracingStore.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-430
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/install/platform/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-14
+mcpjungle/books/stalwart/source/en/ref/enum/time-zone.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-610
+mcpjungle/books/stalwart/source/en/collaboration/webdav.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-41
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/004 Scores.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-47
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/015 Telemetry - Management.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-35
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,36
+mcpjungle/books/stalwart/source/en/storage/in-memory.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-64
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/007 Linear Classifier - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,50
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-49,51-66
+mcpjungle/books/stalwart/source/en/install/store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-40
+mcpjungle/books/stalwart/source/en/ref/object/store-lookup.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-937
+mcpjungle/books/stalwart/source/en/ref/object/search.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-255
+mcpjungle/books/stalwart/source/en/configuration/expressions/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/management/cli/delete.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-84
+mcpjungle/books/stalwart/source/en/migration/import-export/import/imap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-78
+mcpjungle/books/stalwart/source/en/ref/object/http-form.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-220
+mcpjungle/books/stalwart/source/en/server/tls/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-76
+mcpjungle/books/stalwart/source/en/auth/scim/providers/keycloak.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-43
+mcpjungle/books/stalwart/source/en/telemetry/tracing/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-35
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/003 Updates.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-53
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+mcpjungle/books/stalwart/source/en/migration/proxy/management/api.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-176
+mcpjungle/books/stalwart/source/en/ref/object/account-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-185
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/103 SpamTag.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-249
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/mta/filter/sieve.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+mcpjungle/books/stalwart/source/en/mta/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/005 MIME types.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-72
+mcpjungle/books/stalwart/source/en/install/dns.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-127
+mcpjungle/books/stalwart/source/en/auth/scim/configuration.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-129
+mcpjungle/books/stalwart/source/en/migration/proxy/examples/dovecot.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-192
+mcpjungle/books/stalwart/source/en/ref/object/web-dav.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-159
+mcpjungle/books/stalwart/source/en/auth/authorization/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+mcpjungle/books/stalwart/source/en/mta/inbound/data.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-126
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/114 Trace.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10,17
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-16,18-405
+mcpjungle/books/stalwart/source/en/server/listener.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-79
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/023 Migrating from Dovecot.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-196
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/012 Caddy.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-138,140-152
+  s_fea4641b347a8a::t_9c99e667c21128 9,139
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/017 Trusted senders.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-36
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/storage/backends/composite/sharded-blob.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/011 Queues.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28,30-47
+  s_fea4641b347a8a::t_9c99e667c21128 9,29
+mcpjungle/books/stalwart/source/en/mta/reports/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/object/acme-provider.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-343
+mcpjungle/books/stalwart/source/en/storage/backends/sqlite.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-15
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/037 MTA-STS.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-75,77-104
+  s_fea4641b347a8a::t_9c99e667c21128 9,18,76
+mcpjungle/books/stalwart/source/en/ref/object/dmarc-internal-report.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-797
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/002 Inbound - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,23
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22,24-33
+mcpjungle/books/stalwart/source/en/server/tls/acme/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-14
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/100 SpamPyzor.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-141
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/email/settings/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-12
+mcpjungle/books/stalwart/source/en/ref/object/account.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-802
+mcpjungle/books/stalwart/source/en/spamfilter/settings/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-12
+mcpjungle/books/stalwart/source/en/server/tls/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/008 Coordination mechanism.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-22
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/004 Search store.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-60,62-67
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,61
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/028 Usage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-72
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/filter/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-13
+mcpjungle/books/stalwart/source/en/ref/object/mta-sts.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-145
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/002 Principals - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/007 Email settings - Management.md"
+  s_fea4641b347a8a::t_9c99e667c21128 1-11
+mcpjungle/docs-mcp-server/README.md
+  s_fea4641b347a8a::t_1299afdee618c8 10,27
+mcpjungle/books/stalwart/source/en/sieve/interpreter/trusted.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-68
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/006 Expressions - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-142
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/007 DATA stage.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-130
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/021 SQL Read Replicas.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22
+mcpjungle/books/stalwart/source/en/collaboration/file-storage.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+README.md
+  s_fea4641b347a8a::t_1299afdee618c8 23,27-28,62,93
+mcpjungle/books/stalwart/source/en/collaboration/notifications.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-77
+mcpjungle/books/stalwart/source/en/migration/import-export/import/exchange-ews.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-74
+mcpjungle/books/stalwart/source/en/mta/authentication/dkim/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+"mcpjungle/books/stalwart/corpus/stalwart-en/11 Encryption settings/004 OpenPGP.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-29,31-50
+  s_fea4641b347a8a::t_9c99e667c21128 9,30
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/022 CalendarAlarm.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-135
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/043 EventTracingLevel.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-223
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/backend/sql.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-146
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/007 Challenge Types.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-117
+mcpjungle/books/stalwart/source/en/http/jmap/websockets.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-27
+mcpjungle/books/stalwart/source/en/ref/object/network-listener.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-414
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/003 Server settings - Listeners.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-83
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/003 JMAP - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-26
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/064 MtaInboundThrottle.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-307
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/mta-extensions.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-260
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/013 DNS blocklists.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,25,93
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-24,26-92,94-100
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/010 Prometheus.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-44
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/013 HAProxy.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-117
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/002 Sieve scripting - Settings - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-20
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/046 Configuring the source server - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-23
+mcpjungle/books/stalwart/source/en/spamfilter/settings/scores.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-43
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/026 Body & Attachments.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,19
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-18,20-83
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/001 Migration - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/050 Objects - Jmap.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-326
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/084 ReportSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-173
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/mta/inbound/auth.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-38
+mcpjungle/books/stalwart/source/en/auth/principals/individual.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-25
+mcpjungle/books/stalwart/source/en/auth/principals/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/010 Configuration - Variables.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-175
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/management/webui/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/001 Spam & Phishing filter - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-19,21-51
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/110 Tenant.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-327
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/sieve/managesieve.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-25
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/011 SQLite.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-18
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/migration/import-export/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/004 IMAP and POP3.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-105
+mcpjungle/books/stalwart/source/en/cluster/orchestration/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/074 MtaStageMail.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-165
+mcpjungle/books/stalwart/source/en/ref/object/dsn-report-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-194
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/107 SystemSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-215
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/113 TlsReportSettings.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-208
+mcpjungle/books/stalwart/source/en/mta/outbound/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-rcpt-domain-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-13
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/104 SpamTrainingSample.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-249
+mcpjungle/books/stalwart/source/en/cluster/deployment/sizing.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-42
+mcpjungle/books/stalwart/source/en/ref/events.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-984
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-rcpt-to-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-29
+mcpjungle/books/stalwart/source/en/cluster/configuration/coordination.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+mcpjungle/books/stalwart/source/en/spamfilter/spamtrap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-14
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/009 Masked email.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,18
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-72
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/008 AUTH stage.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-42
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/023 CalendarScheduling.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-153
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/033 Sender Authentication - DMARC.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/007 RocksDB.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-21
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/storage/lookup/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/098 SpamFileExtension.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-240
+mcpjungle/books/stalwart/source/en/ref/object/sender-auth.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-251
+mcpjungle/books/stalwart/source/en/spamfilter/dmarc.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-17
+mcpjungle/books/stalwart/source/en/http/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-46
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/proxy-protocol.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/004 Environment variables.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-35
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/install/platform/_setup-wizard.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-103
+mcpjungle/books/stalwart/source/en/telemetry/tracing/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/057 MetricsStore.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-430
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/101 SpamRule.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-511
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/002 Database Internals.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-48
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/auth/authentication/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/133 MtaRcptVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-15
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/002 Email settings - Settings.md"
+  s_fea4641b347a8a::t_9c99e667c21128 1-13
+mcpjungle/books/stalwart/source/en/server/auto-ban.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-52
+mcpjungle/books/stalwart/transform.ts
+  s_fea4641b347a8a::t_112e322996a609 116
+  s_fea4641b347a8a::t_2761b8ab45298a 78
+  s_fea4641b347a8a::t_0dbb9364c0f8cb 237,239,245-246
+  s_fea4641b347a8a::t_6802024cff8e8a 105
+  s_fea4641b347a8a::t_cd55fdc736fe6c 273
+  s_fea4641b347a8a::t_714c9658530fac 1-77,79-104,106-115,117-236,238,240-244,247-272,274-277
+mcpjungle/books/stalwart/source/en/development/compile.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-102
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/003 Individual.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/011 Routing - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-71
+mcpjungle/books/stalwart/source/en/auth/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/004 Collaboration settings - Scheduling.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,26,66
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-25,27-65,67-136
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/015 Updating objects.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-157
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/007 Node ID.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-38
+mcpjungle/books/stalwart/source/en/server/tls/acme/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/014 History.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,22,24,30
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21,23,25-29,31-35
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/013 Searching and listing.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-162
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/020 ASN and GeoIP.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-79
+  s_fea4641b347a8a::t_9c99e667c21128 9,18
+mcpjungle/books/stalwart/source/en/cluster/configuration/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/collaboration/contact.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-62
+mcpjungle/books/stalwart/source/en/ref/object/mta-virtual-queue.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-249
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/041 Backup.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-54
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/management/tasks-actions/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/007 AddressBook.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-144
+mcpjungle/books/stalwart/source/en/http/ratelimit.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-30
+mcpjungle/books/stalwart/source/en/auth/authorization/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/storage/backends/rocksdb.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-17
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/135 SpamEmailVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-60
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/cluster/coordination/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-43
+mcpjungle/books/stalwart/source/en/migration/guide/configure-source/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/sieve/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-52
+mcpjungle/books/stalwart/source/en/ref/enum/locale.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-334
+mcpjungle/books/stalwart/source/en/ref/object/ai-model.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-426
+mcpjungle/books/stalwart/source/en/http/jmap/push.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-39
+mcpjungle/books/stalwart/source/en/mta/reports/dsn.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/013 Filesystem.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-17
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/auth/authentication/api-key.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-30
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/managesieve.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+mcpjungle/books/stalwart/source/en/management/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-13
+mcpjungle/books/stalwart/source/en/ref/object/mta-tls-strategy.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-298
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/004 Storage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-91
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/inbound/ehlo.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-101
+mcpjungle/books/stalwart/source/en/ref/object/arf-external-report.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-549
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/008 Metrics - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-39
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/003 Recovery mode.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-30
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/import-export/usage.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-68
+mcpjungle/books/stalwart/source/en/mta/rewrite/content.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-80
+mcpjungle/books/stalwart/source/en/mta/transport-security/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/017 Proxy server - Management - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/outbound/schedule.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-150
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/124 HttpVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-25
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/cluster/configuration/node-id.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-34
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/004 Proxy server - Configuration.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-79
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/036 DmarcReportSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-249
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/calendar.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-173
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/traefik.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-264
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/131 MtaRcptDomainVariable.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-15
+mcpjungle/books/stalwart/source/en/ref/object/metrics-store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-529
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/001 Access Control - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/004 TLS - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-80
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/136 SpamGenericVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-55
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/storage/lookup/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-15
+mcpjungle/books/stalwart/source/en/ref/object/sieve-system-script.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-261
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/021 Proxy server - Management - Troubleshooting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-58
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/016 DNS - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,16
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15,17-22
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/042 Enterprise.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-160
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/117 Objects - WebDav.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-141
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/031 OpenID Connect.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,46,74
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-45,47-73
+mcpjungle/books/stalwart/source/en/auth/backend/internal.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/022 OAuth Clients.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-17,19-32
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,18
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/015 Meilisearch.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-81
+mcpjungle/books/stalwart/source/en/auth/scim/provisioning.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-75
+mcpjungle/books/stalwart/source/en/ref/object/cluster-role.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-347
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/004 JMAP - Protocol.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-37
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/076 MtaSts.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-127
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/expression/constant/mta-aggregate-constant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/005 Topology.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-226
+mcpjungle/books/stalwart/source/en/management/cli/example-bulk-plan.ndjson
+  s_fea4641b347a8a::t_499c4a20f50087 1-9
+mcpjungle/books/stalwart/source/en/ref/object/tenant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-381
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/065 MtaMilter.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-347
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/012 Form Handling.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,23
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22,24-55
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/005 Sieve scripting - Variables.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-55
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/130 MtaQueueSenderVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-22
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/openid/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/032 CalDAV.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-74
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/management/tasks-actions/actions.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-60
+mcpjungle/books/stalwart/source/en/ref/expression/constant/mta-auth-type-constant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/009 Access Control.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,50
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-49,51-95
+mcpjungle/books/stalwart/source/en/storage/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/015 ArfExternalReport.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-475
+mcpjungle/books/stalwart/source/en/auth/openid/endpoints.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-33
+mcpjungle/books/stalwart/source/en/storage/lookup/remote.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-40
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/034 SCIM Provisioning - Configuration.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10,23,63,97
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-22,24-62,64-96,98-133
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/029 Signing.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-36,38-146
+  s_fea4641b347a8a::t_9c99e667c21128 9,20,37
+mcpjungle/books/stalwart/source/en/migration/proxy/examples/stalwart-upgrade.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-198
+mcpjungle/books/stalwart/source/en/management/cli/describe.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-154
+mcpjungle/books/stalwart/source/en/ref/object/tls-external-report.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-498
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/006 URN Namespace.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-112
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/management/webui/account-manager.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-42
+mcpjungle/books/stalwart/source/en/ref/object/security.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-202
+mcpjungle/books/stalwart/source/en/server/dns/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/005 Settings - Rate limiting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-40
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/migration/proxy/examples/cluster.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-116
+mcpjungle/books/stalwart/source/en/management/maintenance/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/046 HttpLookup.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-308
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/002 Applications - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,38
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-37,39-68
+mcpjungle/books/stalwart/source/en/http/jmap/protocol.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-33
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/030 Verifying.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/043 Reports - TLS.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-40
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/cluster/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/server/enterprise.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-58
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/142 MtaIpStrategyConstant.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-18
+mcpjungle/books/stalwart/source/en/ref/object/sieve-system-interpreter.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-264
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/001 Storage settings - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,14,16,18,24
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13,15,17,19-23,25-42
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/042 Migration Guide - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-38
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/020 Bootstrap.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-3998
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+mcpjungle/books/stalwart/source/en/ref/object/mta-stage-connect.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-194
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/015 Auto-banning.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,18
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-17,19-56
+mcpjungle/books/stalwart/source/en/spamfilter/classifier/autolearn.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-43
+mcpjungle/books/stalwart/source/en/storage/backends/redis.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+mcpjungle/books/stalwart/source/en/configuration/environment-variables.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/050 Migrating accounts.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-275
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/013 Administrators.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/037 DnsResolver.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-353
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/scim/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/faq.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-183
+mcpjungle/books/stalwart/source/en/ref/expression/variable/spam-default-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-52
+mcpjungle/books/stalwart/source/en/server/asn.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-75
+mcpjungle/books/stalwart/source/en/spamfilter/dnsbl.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-96
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/023 Local.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-23,25-26
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,24
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/093 SieveUserInterpreter.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-353
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/log.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-279
+mcpjungle/books/stalwart/source/en/ref/expression/constant/mta-require-constant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-15
+mcpjungle/books/stalwart/source/en/auth/backend/oidc.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-70
+mcpjungle/books/stalwart/source/en/ref/object/asn.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-335
+mcpjungle/books/stalwart/source/en/telemetry/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-rcpt-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-13
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/053 MaskedEmail.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-277
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/044 FileStorage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-117
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/migration/guide/finalize.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/141 MtaAuthTypeConstant.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-18
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/024 Objects - Calendar.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-153
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/123 TimeZone.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-612
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/038 Microsoft Exchange (EWS).md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-78
+mcpjungle/books/stalwart/source/en/install/performance.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+mcpjungle/books/stalwart/source/en/auth/oauth/endpoints.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-40
+mcpjungle/books/stalwart/source/en/storage/backends/s3.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/mta/reports/dmarc.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-62
+mcpjungle/books/stalwart/source/en/ref/object/enterprise.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-197
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/007 Operators.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-66
+"mcpjungle/books/stalwart/corpus/stalwart-en/11 Encryption settings/001 Encryption settings - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,16,32
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-31
+mcpjungle/books/stalwart/source/en/auth/scim/providers/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/019 Cache invalidation.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-46
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/060 MtaDeliverySchedule.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-314
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/139 SpamUrlVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-65
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/015 Coordination - Redis.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-57
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/002 AccountPassword.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-135
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/008 Account Manager.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,18,26,40
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-25,27-39,41-46
+mcpjungle/books/stalwart/source/en/mta/rewrite/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/017 Declarative bulk operations.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-787
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/022 Examples - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-16
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/corpus/stalwart-en/corpus.json
+  s_fea4641b347a8a::t_ff1cebc1158ed8 1-9
+mcpjungle/books/stalwart/source/en/ref/expression/variable/spam-email-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-58
+mcpjungle/books/stalwart/source/en/configuration/object-encoding.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-67
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/007 File Storage.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,32
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-31,33-36
+mcpjungle/books/stalwart/source/en/cluster/orchestration/apache-mesos.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-84
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/005 In-memory store.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21,23-63,65-67
+  s_fea4641b347a8a::t_9c99e667c21128 9,22,64,68
+mcpjungle/books/stalwart/source/en/migration/import-export/installation.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-61
+mcpjungle/books/stalwart/source/en/ref/object/mta-stage-rcpt.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-222
+mcpjungle/books/stalwart/source/en/management/cli/update.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-153
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/003 JMAP for Mail.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-52
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+mcpjungle/books/stalwart/source/en/install/platform/linux.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-302
+mcpjungle/books/stalwart/source/en/ref/expression/variable/spam-ip-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-59
+mcpjungle/books/stalwart/source/en/ref/object/tracing-store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-529
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/051 Log.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-250
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/spamfilter/settings/general.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/126 MtaEhloVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-24
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/migration/proxy/mappings/file.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/132 MtaRcptToVariable.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/009 Load balancing.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-26
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/005 Declarative deployments.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/010 Hyperparameters.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-91
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/server/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-19
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/007 API Endpoints.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-287
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/010 Command Line Interface - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-218
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/rewrite/headers.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-83
+mcpjungle/books/stalwart/source/en/configuration/expressions/operators.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-62
+mcpjungle/books/stalwart/source/en/install/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/068 MtaQueueQuota.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-294
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-mail-from-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+mcpjungle/docs-mcp-server/tests/stalwart-en.test.ts
+  s_fea4641b347a8a::t_5535ca9b28b5f4 26
+  s_fea4641b347a8a::t_8905a8b46ec7d2 1-25,27-30
+mcpjungle/books/stalwart/source/en/ref/object/search-store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-706
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/001 Sieve scripting - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-56
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/import-export/import/webdav.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-134
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/020 Sieve scripting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/003 Connect stage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-38
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/ref/object/spam-training-sample.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-277
+CLAUDE.md
+  s_fea4641b347a8a::t_2094265aae9d3d 13
+  s_fea4641b347a8a::t_1299afdee618c8 95,132
+mcpjungle/books/stalwart/source/en/management/cli/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-214
+mcpjungle/books/stalwart/source/en/http/jmap/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/mta/authentication/dkim/verify.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+mcpjungle/books/stalwart/source/en/ref/object/task-manager.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-198
+mcpjungle/books/stalwart/source/en/domains/tls-certificates.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+mcpjungle/books/stalwart/source/en/encryption/smime.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-78
+mcpjungle/books/stalwart/source/en/storage/backends/azure.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/008 Collaboration settings - Sharing.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,34,44,54
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-33,35-43,45-53,55-58
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/001 Management - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-16
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/guide/cutover.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-168
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/004 Testing Stalwart.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-205
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/authentication/dkim/sign.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-142
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/011 Authorization - Permissions.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-304
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/027 Sender Authentication.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/004 Group.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-28
+mcpjungle/books/stalwart/source/en/ref/object/role.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-273
+mcpjungle/books/stalwart/source/en/storage/backends/elasticsearch.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/001 Welcome to Stalwart.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-24
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/import-export/import/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-33
+mcpjungle/books/stalwart/source/en/ref/expression/constant/mta-verify-constant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-15
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/147 Schema reference - Events.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-943
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/006 Settings - Maintenance.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-58
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/031 Sender Authentication - SPF.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,18
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-43
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/009 JMAP for Sieve.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/091 SieveSystemInterpreter.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-225
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/domains/dns-records.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/019 Sharded In-Memory Store.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-24
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/008 App Passwords.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-26
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/008 WebDAV - Protocol.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-22
+mcpjungle/books/stalwart/source/en/domains/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/mta/inbound/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/cluster/coordination/nats.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-51
+mcpjungle/books/stalwart/source/en/ref/object/sieve-user-script.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-261
+mcpjungle/books/stalwart/source/en/ref/object/report-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-204
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/040 Keycloak.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-47
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/022 MTA Hooks.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-333
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+mcpjungle/books/stalwart/source/en/spamfilter/classifier/training.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/007 WebDAV - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/055 MemoryLookupKey.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-230
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+mcpjungle/books/stalwart/source/en/mta/authentication/arc.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-26
+mcpjungle/books/stalwart/source/en/auth/oauth/tokens.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-85
+mcpjungle/books/stalwart/source/en/install/platform/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/storage/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-38
+mcpjungle/books/stalwart/source/en/ref/object/dmarc-external-report.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-810
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/016 Removing objects.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-88
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/http/jmap/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/009 Redis source.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-51
+mcpjungle/books/stalwart/source/en/auth/scim/providers/okta.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-80
+mcpjungle/books/stalwart/source/en/migration/import-export/backup.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-50
+mcpjungle/books/stalwart/source/en/encryption/manage.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-46
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-connection-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-21
+mcpjungle/books/stalwart/source/en/mta/transport-security/mta-sts.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-100
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/006 Push notifications.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14,16-43
+  s_fea4641b347a8a::t_9c99e667c21128 9,15
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/035 Import - ManageSieve.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-167
+mcpjungle/books/stalwart/source/en/ref/object/imap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-220
+mcpjungle/books/stalwart/source/en/ref/object/task.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-1216
+mcpjungle/books/stalwart/source/en/ref/object/mta-hook.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-476
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/009 Values.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-61
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/005 Tasks.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-95,97-118
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,96
+mcpjungle/books/stalwart/source/en/ref/object/mta-delivery-schedule.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-374
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/034 Import - WebDAV.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-138
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/server/cache.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-53
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/112 TlsInternalReport.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-428
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/migration/proxy/management/observability.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-26
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/http.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-57
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/051 Finalizing the migration.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-40
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/cluster/configuration/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-14
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/059 MtaConnectionStrategy.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-288
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/118 WebHook.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-393
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/install/platform/_next-steps.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-90
+mcpjungle/books/stalwart/source/en/mta/outbound/tls.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-156
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/008 Sieve scripting - ManageSieve.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-29
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/004 Account.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-661
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/008 Choosing a directory.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-30
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/cluster/orchestration/docker-swarm.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-112
+mcpjungle/books/stalwart/source/en/ref/object/sharing.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-124
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/009 Metrics - OpenTelemetry.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-45
+mcpjungle/books/stalwart/source/en/collaboration/sharing.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+mcpjungle/books/stalwart/source/en/management/webui/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-53
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/040 Export.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-80
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/006 ACME - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/006 Actions.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-64
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+mcpjungle/books/stalwart/source/en/spamfilter/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-47
+mcpjungle/books/stalwart/source/en/sieve/examples.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-106
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/005 Authentication - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-12
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/011 Object encoding.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-71
+mcpjungle/books/stalwart/source/en/auth/scim/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-60
+mcpjungle/books/stalwart/source/en/migration/proxy/management/cache.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-42
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/011 LLM classifier.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-35,37-95
+  s_fea4641b347a8a::t_9c99e667c21128 9,36
+mcpjungle/books/stalwart/source/en/cluster/orchestration/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/012 Outbound - Scheduling.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-154
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/email/management/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+mcpjungle/books/stalwart/source/en/ref/object/mta-inbound-session.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-194
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/013 POP3.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-26
+mcpjungle/books/stalwart/source/en/auth/backend/ldap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-171
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/037 Google Takeout.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-117
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/048 Objects - Imap.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-189
+mcpjungle/books/stalwart/source/en/ref/expression/variable/http-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-23
+mcpjungle/books/stalwart/source/en/sieve/variables.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-51
+mcpjungle/books/stalwart/source/en/ref/object/event-tracing-level.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-250
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/052 Migration Guide - Troubleshooting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-86
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/145 MtaVerifyConstant.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-17
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/024 Envelope.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21,23-89
+  s_fea4641b347a8a::t_9c99e667c21128 9,22
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/016 Asn.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-265
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/11 Encryption settings/003 S-MIME.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,52
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-51,53-82
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/043 Preparation.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-38
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/003 Linux - MacOS.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-171,173-303
+  s_fea4641b347a8a::t_9c99e667c21128 9,172
+mcpjungle/books/stalwart/source/en/configuration/variables.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-171
+mcpjungle/books/stalwart/source/en/ref/object/calendar-scheduling.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-173
+mcpjungle/books/stalwart/source/en/spamfilter/phishing.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-61
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/002 Proxy server - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-26
+mcpjungle/books/stalwart/source/en/ref/object/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/003 Collaboration settings - Calendar.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,32,50
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-31,33-49,51-66
+mcpjungle/books/stalwart/source/en/auth/openid/id-tokens.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-55
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/pop3.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/management/troubleshoot.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-29
+mcpjungle/books/stalwart/source/en/management/cli/query.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-158
+mcpjungle/books/stalwart/source/en/migration/guide/configure-new.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-93
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/073 MtaStageEhlo.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-165
+mcpjungle/books/stalwart/source/en/auth/authentication/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-8
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/148 Schema reference - Metrics.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-590
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/022 Lookup lists - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/056 Metric.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-272
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/122 Locale.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-336
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/033 Provisioning models.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-79
+mcpjungle/books/stalwart/source/en/migration/import-export/import/exchange-graph.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-74
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/077 MtaTlsStrategy.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-265
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/http/webdav/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/management/applications/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/collaboration/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/object/tls-report-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-242
+mcpjungle/books/stalwart/source/en/ref/object/in-memory-store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-699
+mcpjungle/books/stalwart/source/en/mta/inbound/mail.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-57
+mcpjungle/books/stalwart/source/en/spamfilter/trusted.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+mcpjungle/books/stalwart/source/en/auth/authorization/administrator.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/007 Two-Factor Authentication.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-55
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/007 Choosing a database.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-43
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/128 MtaQueueHostVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-34
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/095 SpamClassifier.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-275
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/014 DMARC analysis.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21
+mcpjungle/books/stalwart/source/en/ref/expression/constant/mta-priority-constant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-15
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/031 Import - IMAP.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-82
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/011 Performance tuning.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/014 ElasticSearch.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-32
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/ref/object/spam-tag.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-280
+mcpjungle/books/stalwart/source/en/auth/openid/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-21
+mcpjungle/books/stalwart/source/en/ref/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/object/spam-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-166
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/017 Authorization Flows.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-38
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/020 Management API.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-180
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/032 ARC.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,18
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-30
+mcpjungle/books/stalwart/source/en/ref/object/mta-outbound-strategy.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-204
+mcpjungle/books/stalwart/source/en/migration/guide/configure-source/stalwart-old.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-116
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/008 FoundationDB.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-29
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+mcpjungle/books/stalwart/source/en/collaboration/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/ref/object/http.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-246
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/027 Import and Export - Installation.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-65
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/spamfilter/classifier/hyperparameters.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-87
+mcpjungle/books/stalwart/source/en/configuration/expressions/functions.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-338
+mcpjungle/books/stalwart/source/en/telemetry/metrics/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-35
+mcpjungle/books/stalwart/source/en/ref/object/app-password.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-310
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/011 Traefik.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,195,219,231
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-194,196-218,220-230,232-267
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/034 Reverse IP.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/012 Routing - IMAP.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-30
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/guide/configure-proxy.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-92
+mcpjungle/books/stalwart/source/en/storage/data.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/telemetry/metrics/opentelemetry.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-41
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/008 File source.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-40
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/guide/configure-source/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+mcpjungle/books/stalwart/source/en/sieve/llm.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-120
+mcpjungle/books/stalwart/source/en/development/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-14
+mcpjungle/books/stalwart/source/en/auth/oauth/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+mcpjungle/books/stalwart/source/en/ref/object/mta-milter.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-404
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/020 Interoperability.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-26
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/047 Older Stalwart server.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-114
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/015 Authorization - Quotas.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-38
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,39
+mcpjungle/books/stalwart/source/en/configuration/expressions/values.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-57
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/003 Compiling Stalwart.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-105
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/auth/oauth/oauth-client.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/cluster/configuration/load-balancing.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+"mcpjungle/books/stalwart/corpus/stalwart-en/001 FAQ.md"
+  s_fea4641b347a8a::t_9c99e667c21128 7
+  s_fea4641b347a8a::t_927673203ea19a 1-6,8-180
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/102 SpamSettings.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-147
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/data-retention.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-292
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/140 MtaAggregateConstant.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-18
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/management/maintenance/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/auth/openid/provider.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-49
+mcpjungle/books/stalwart/source/en/storage/backends/filesystem.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-13
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/003 Trusted Interpreter.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-56,58-72
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,57
+mcpjungle/books/stalwart/source/en/ref/object/mta-connection-strategy.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-327
+mcpjungle/books/stalwart/source/en/sieve/interpreter/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/mta/authentication/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/025 Cluster cache-locality routing.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-120
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/proxy/management/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+mcpjungle/books/stalwart/source/en/spamfilter/llm.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-91
+mcpjungle/books/stalwart/source/en/ref/object/mta-queue-quota.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-340
+mcpjungle/books/stalwart/source/en/auth/authorization/quotas.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-35
+mcpjungle/README.md
+  s_fea4641b347a8a::t_dac5180289deba 33
+mcpjungle/books/stalwart/source/en/auth/oauth/interoperability.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/auth/oauth/client-registration.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-51
+mcpjungle/books/stalwart/source/en/migration/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/005 Docker.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,176
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-175,177-301
+mcpjungle/books/stalwart/source/en/telemetry/metrics/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/010 SQL source.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-61
+mcpjungle/books/stalwart/source/en/migration/import-export/import/caldav.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-70
+mcpjungle/books/stalwart/source/en/management/cli/snapshot.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-228
+"mcpjungle/books/stalwart/corpus/stalwart-en/06 Domains/002 DNS records.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,26
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-25,27-36
+mcpjungle/books/stalwart/source/en/email/management/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/migration/proxy/installation.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-87
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/006 Domain lists.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-28
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/007 Web-based Administration - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,21,41
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-20,22-40,42-57
+mcpjungle/books/stalwart/source/en/ref/object/mta-stage-ehlo.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-194
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/071 MtaStageConnect.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-165
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/012 Alerts.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21,23-70
+  s_fea4641b347a8a::t_9c99e667c21128 9,22
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/115 Tracer.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-610
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/012 Upgrading.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-24
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/sieve/expressions.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-172
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/005 MAIL stage.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-61
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/018 Docker Swarm.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-116
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/078 MtaVirtualQueue.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-225
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/authentication/2fa.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-51
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/038 Reports - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-26,28-47
+  s_fea4641b347a8a::t_9c99e667c21128 9,27
+mcpjungle/books/stalwart/source/en/ref/enum/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/expression/variable/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/021 AI Models.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/035 Transport Security - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-16
+mcpjungle/books/stalwart/source/en/domains/dkim-rotation.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-46
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/003 Tracing & Logging - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-39
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/010 Reference.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-564
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/002 Deployment - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-16
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/auth/authentication/password.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-38
+mcpjungle/books/stalwart/source/en/auth/authorization/permissions.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-300
+mcpjungle/books/stalwart/source/en/migration/import-export/import/maildir.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-199
+"mcpjungle/books/stalwart/corpus/stalwart-en/10 Collaboration settings/002 Collaboration settings - WebDAV.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-45
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+mcpjungle/books/stalwart/source/en/auth/scim/mapping.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-112
+mcpjungle/books/stalwart/source/en/ref/object/email.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-280
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/027 ClusterRole.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-297
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/045 MTA settings - Management.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,20-22,30-31
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-19,23-29,32-33
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/028 Coordinator.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-496
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/007 LLM Integration.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-124
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/069 MtaRoute.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-378
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/authentication.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-222
+mcpjungle/books/stalwart/source/en/install/requirements.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-35
+mcpjungle/books/stalwart/source/en/management/maintenance/migration.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-84
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/097 SpamDnsblSettings.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-123
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/010 Authorization - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-14
+mcpjungle/books/stalwart/source/en/auth/oauth/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/object/mailing-list.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-327
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/018 Tokens.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,32
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-31,33-89
+mcpjungle/books/stalwart/source/en/mta/inbound/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-29
+mcpjungle/books/stalwart/source/en/mta/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-40
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/016 Backends - Redis.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-40
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+mcpjungle/books/stalwart/source/en/management/applications/update.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-49
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-queue-sender-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/092 SieveSystemScript.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-236
+mcpjungle/books/stalwart/source/en/mta/reports/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-43
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/019 Spamtrap.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/096 SpamDnsblServer.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-529
+mcpjungle/books/stalwart/source/en/cluster/coordination/peer-to-peer.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-37
+mcpjungle/books/stalwart/source/en/migration/proxy/mappings/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-69
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/001 Configuration - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-62
+"mcpjungle/books/stalwart/corpus/stalwart-en/06 Domains/004 DKIM key rotation.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-50
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+mcpjungle/books/stalwart/source/en/mta/management.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-29
+mcpjungle/books/stalwart/source/en/telemetry/tracing/opentelemetry.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-53
+mcpjungle/books/stalwart/source/en/collaboration/calendar.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-62
+mcpjungle/books/stalwart/source/en/ref/object/memory-lookup-key.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-254
+mcpjungle/books/stalwart/source/en/storage/backends/composite/sharded-in-memory.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-20
+mcpjungle/books/stalwart/source/en/telemetry/metrics/prometheus.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-40
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/008 Functions.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-342
+mcpjungle/books/stalwart/source/en/migration/import-export/import/takeout.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-113
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/008 ACME - Configuration.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-48
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/009 API Keys.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,26
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-25,27-34
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/035 Endpoints and protocol support.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-129
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/070 MtaStageAuth.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-185
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/mta/outbound/quota.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-75
+mcpjungle/books/stalwart/source/en/spamfilter/rules.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-67
+mcpjungle/books/stalwart/source/en/server/dns/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/cluster/deployment/storage.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-87
+mcpjungle/books/stalwart/source/en/encryption/pgp.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-46
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/006 Backends - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-36
+mcpjungle/books/stalwart/source/en/sieve/interpreter/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+mcpjungle/books/stalwart/source/en/auth/scim/endpoints.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-125
+mcpjungle/books/stalwart/source/en/spamfilter/digests.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-38
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/072 MtaStageData.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-235
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/085 Role.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-247
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/038 DnsServer.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-4613
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/005 WebSockets.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/022 Management - Troubleshooting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-32
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/038 Microsoft Entra ID.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-82
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/120 DnsServerType.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-85
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/021 Cache.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-255
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/alert.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-397
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/030 DataStore.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-474
+mcpjungle/books/stalwart/source/en/ref/object/metric.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-309
+mcpjungle/books/stalwart/source/en/ref/object/allowed-ip.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-256
+mcpjungle/books/stalwart/source/en/ref/object/metrics.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-400
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/007 Journal.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,19
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-18,20-31
+mcpjungle/books/stalwart/source/en/server/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/030 LDAP Server.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-175
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/033 CardDAV.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-154
+mcpjungle/books/stalwart/source/en/management/cli/get.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-141
+mcpjungle/books/stalwart/source/en/mta/transport-security/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-12
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/013 Routing.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-149
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/010 MySQL - MariaDB.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-56
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/018 DNS Resolver.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-58
+mcpjungle/books/stalwart/source/en/ref/object/dkim-signature.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-713
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/002 General.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-21,23-27,29-32
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,22,28
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/009 Learning.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,40
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-39,41-47
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/029 Import - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-37
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/encryption/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/ref/expression/constant/mta-ip-strategy-constant.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-16
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/004 Windows.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-204,206-322
+  s_fea4641b347a8a::t_9c99e667c21128 9,205
+mcpjungle/books/stalwart/source/en/install/upgrade.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-21
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/019 Dynamic Registration.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,24,36
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-23,25-35,37-55
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/032 SCIM Provisioning - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-64
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/system-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-257
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/001 MTA settings - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,24
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-23,25-44
+mcpjungle/books/stalwart/source/en/cluster/coordination/redis.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-53
+"mcpjungle/books/stalwart/corpus/stalwart-en/08 Email settings/008 Mailing lists.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-69
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/002 Telemetry - Events.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-31,33-720
+  s_fea4641b347a8a::t_9c99e667c21128 9,32
+mcpjungle/books/stalwart/source/en/migration/guide/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/telemetry/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-17
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/006 Proxy server - Listeners.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-99
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/041 Email.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-238
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/106 StoreLookup.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-761
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/127 MtaMailFromVariable.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-26
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/auth/scim/providers/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-60
+mcpjungle/books/stalwart/source/en/ref/object/spf-report-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-212
+mcpjungle/books/stalwart/source/en/http/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/enum/key.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-78
+mcpjungle/books/stalwart/source/en/sieve/interpreter/untrusted.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-132
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/019 Autoconfig.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,30
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-29,31-32
+mcpjungle/books/stalwart/source/en/ref/expression/variable/mta-queue-host-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-32
+mcpjungle/books/stalwart/source/en/server/autoconfig.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/016 Orchestration - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-20
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/management/tasks-actions/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-23
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/067 MtaOutboundThrottle.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-306
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/metrics.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-630
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/010 HTTP settings - Security.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-24
+mcpjungle/books/stalwart/source/en/email/management/masked-email.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-68
+mcpjungle/books/stalwart/source/en/storage/backends/foundationdb.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-25
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/012 Rules.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-71
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/006 Passwords.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-42
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/management/webui/branding.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-21
+mcpjungle/books/stalwart/source/en/spamfilter/classifier/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/storage/backends/mysql.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-52
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/029 SQL Database.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-150
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/049 Starting the proxy.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-155
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/storage/backends/meilisearch.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-77
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/003 Blob store.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-25,27-31
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,26,32
+mcpjungle/books/stalwart/source/en/management/cli/create.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-149
+mcpjungle/books/stalwart/source/en/cluster/orchestration/kubernetes.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-619
+mcpjungle/books/stalwart/source/en/server/dns/resolver.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/024 ID Tokens.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-59
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/017 Authentication.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-192
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/mta-route.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-451
+mcpjungle/books/stalwart/source/en/ref/expression/constant/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/006 RCPT stage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-51,53-154
+  s_fea4641b347a8a::t_9c99e667c21128 9,12,52
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/138 SpamIpVariable.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-61
+mcpjungle/books/stalwart/source/en/development/rfcs.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-332
+mcpjungle/books/stalwart/source/en/ref/object/mta-outbound-throttle.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-358
+mcpjungle/books/stalwart/source/en/telemetry/events.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-717
+mcpjungle/books/stalwart/source/en/auth/scim/providers/entra-id.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-78
+mcpjungle/books/stalwart/source/en/ref/object/spam-classifier.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-332
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/014 NATS.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-55
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+mcpjungle/books/stalwart/source/en/storage/backends/composite/sql-replica.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/015 SMTP and submission.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-32
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/proxy/mappings/sql.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-57
+mcpjungle/books/stalwart/source/en/cluster/configuration/roles.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-87
+mcpjungle/books/stalwart/source/en/ref/object/jmap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-391
+mcpjungle/books/stalwart/source/en/ref/object/mta-stage-data.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-273
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/010 Securing your server.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-68
+mcpjungle/books/stalwart/source/en/telemetry/alerts.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-66
+mcpjungle/books/stalwart/source/en/configuration/recovery-mode.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-26
+mcpjungle/books/stalwart/source/en/ref/object/cache.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-292
+mcpjungle/books/stalwart/source/en/ref/object/web-hook.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-478
+mcpjungle/books/stalwart/source/en/cluster/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/011 Exploring the schema.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-158
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/transport-security/dane.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-27
+mcpjungle/books/stalwart/source/en/server/reverse-proxy/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/telemetry/tracing/journal.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-27
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/026 OpenID Connect - Endpoints.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-35
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/migration/proxy/destinations.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-127
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/021 OAuth - Endpoints.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-43
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+mcpjungle/books/stalwart/source/en/ref/object/blob-store.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-1227
+mcpjungle/books/stalwart/source/en/ref/object/mta-inbound-throttle.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-359
+mcpjungle/books/stalwart/source/en/spamfilter/settings/domain_lists.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/003 Spam & Phishing filter - Settings - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,58
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-57
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/039 Domain.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-522
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/mta/filter/milter.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-148
+mcpjungle/books/stalwart/source/en/ref/object/dmarc-report-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-288
+mcpjungle/books/stalwart/source/en/auth/principals/group.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+mcpjungle/books/stalwart/source/en/server/dns/provider.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/080 OAuthClient.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-270
+mcpjungle/books/stalwart/source/en/ref/object/spam-file-extension.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-266
+mcpjungle/books/stalwart/source/en/ref/object/dns-server.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-5508
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/016 Rate limits.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-21,23-27,29-127
+  s_fea4641b347a8a::t_9c99e667c21128 9,22,28
+mcpjungle/books/stalwart/source/en/telemetry/webhooks.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-78
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/014 Tenants.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-45
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/039 Microsoft Exchange (Graph).md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-78
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/119 DnsServerBootstrapType.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-86
+mcpjungle/books/stalwart/source/en/migration/proxy/examples/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-12
+mcpjungle/books/stalwart/source/en/ref/object/http-lookup.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-354
+mcpjungle/books/stalwart/source/en/ref/object/queued-message.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-589
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/014 Connection.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-65
+mcpjungle/books/stalwart/source/en/spamfilter/classifier/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-62
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/042 Reports - DMARC.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-66
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/002 HTTP settings - Settings.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9-10
+  s_fea4641b347a8a::t_927673203ea19a 1-8,11-35
+mcpjungle/books/stalwart/source/en/storage/backends/postgresql.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-54
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/020 Database Console.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-71
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/domains/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/004 Tasks & Actions - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-27
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/025 Certificate.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-315
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/ref/object/masked-email.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-309
+"mcpjungle/books/stalwart/corpus/stalwart-en/02 Configuration/002 Bootstrap mode.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-40
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/017 Kubernetes.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-512,514-544,546-623
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,513,545
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/008 AiModel.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-352
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/144 MtaRequireConstant.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-17
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/mta/outbound/rate-limit.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-123
+mcpjungle/books/stalwart/source/en/ref/object/spam-llm.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-191
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/028 DKIM - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+mcpjungle/books/stalwart/source/en/email/settings/jmap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-48
+mcpjungle/books/stalwart/source/en/install/platform/docker.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-300
+mcpjungle/books/stalwart/source/en/migration/import-export/import/carddav.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-150
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/018 Greylisting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-25
+  s_fea4641b347a8a::t_9c99e667c21128 9,26
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/001 Development.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/013 Live Telemetry.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-48
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/018 BlobStore.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-994
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/016 Routing - HTTP.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-61
+mcpjungle/books/stalwart/source/en/http/settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/111 TlsExternalReport.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-426
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/010 Configuration - Roles.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-91
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/094 SieveUserScript.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-236
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/18 Development/005 RFCs.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-333
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/008 Training.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-39,41-58
+  s_fea4641b347a8a::t_9c99e667c21128 9,20,40
+mcpjungle/books/stalwart/source/en/ref/object/dkim-report-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-212
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/012 Authorization - Roles.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-21,23-31
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,22,32
+mcpjungle/books/stalwart/source/en/auth/backend/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/cluster/deployment/topology.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-222
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/001 Schema reference - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-139
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/019 Management - Maintenance.md"
+  s_fea4641b347a8a::t_9c99e667c21128 1-11
+mcpjungle/books/stalwart/source/en/configuration/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-58
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/099 SpamLlm.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-167
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/install/security.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-65
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/035 DmarcInternalReport.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-663
+mcpjungle/books/stalwart/source/en/migration/proxy/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-23
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/011 Examples.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,12-13,15-38,40-64,66-110
+  s_fea4641b347a8a::t_9c99e667c21128 10-11,14,39,65
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/044 Analysis.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,34
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-33
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/006 System Requirements.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-38
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/07 HTTP settings/011 HTTP settings - Rate limiting.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-34
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/023 Enterprise License.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-25,27-62
+  s_fea4641b347a8a::t_9c99e667c21128 9,26
+mcpjungle/books/stalwart/source/en/auth/authorization/tenants.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-41
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/012 AppPassword.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-272
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/054 MemoryLookupKeyValue.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-238
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/005 AcmeProvider.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-303
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/134 SpamDefaultVariable.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-54
+mcpjungle/books/stalwart/source/en/ref/object/bootstrap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-4941
+mcpjungle/books/README.md
+  s_fea4641b347a8a::t_1299afdee618c8 45,206
+mcpjungle/books/stalwart/source/en/ref/object/file-storage.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-131
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/023 OpenID Connect - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-25
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/088 Objects - Security.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-174
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/docs-mcp-server/tests/stalwart-transform.test.ts
+  s_fea4641b347a8a::t_5535ca9b28b5f4 101
+  s_fea4641b347a8a::t_c9d5a230589ec8 1-100,102-115
+mcpjungle/books/stalwart/source/en/configuration/bootstrap-mode.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+mcpjungle/books/stalwart/source/en/server/ai-models.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-50
+mcpjungle/books/stalwart/source/en/telemetry/history.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/007 Mappings - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-73
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/079 NetworkListener.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-364
+mcpjungle/books/stalwart/source/en/email/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-51
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/129 MtaQueueRcptVariable.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-31
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/021 Database Migration.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-85
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/05 Access Control/016 OAuth - Overview.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-20
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/mta/reports/tls.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-36
+mcpjungle/books/stalwart/source/en/management/tasks-actions/tasks.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-114
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/016 Collaborative digests.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-42
+  s_fea4641b347a8a::t_9c99e667c21128 9,18
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/020 Sharded Blob Store.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-24
+mcpjungle/books/stalwart/source/en/cluster/coordination/kafka.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-41
+mcpjungle/books/stalwart/source/en/ref/expression/variable/spam-generic-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-53
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/014 Routing - ManageSieve.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-24
+  s_fea4641b347a8a::t_9c99e667c21128 9
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/066 MtaOutboundStrategy.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-174
+  s_fea4641b347a8a::t_9c99e667c21128 10
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/089 SenderAuth.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-217
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/install/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+mcpjungle/books/stalwart/source/en/ref/enum/dns-server-type.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-83
+mcpjungle/books/stalwart/source/en/ref/object/address-book.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-165
+mcpjungle/books/stalwart/source/en/mta/filter/spam.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-10
+mcpjungle/books/stalwart/source/en/ref/object/cluster-node.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-268
+mcpjungle/books/stalwart/source/en/telemetry/live.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-44
+mcpjungle/books/stalwart/source/en/email/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/migration/guide/preparation.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-34
+mcpjungle/books/stalwart/source/en/mta/filter/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/object/spam-dnsbl-settings.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-138
+mcpjungle/books/stalwart/source/en/migration/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-24
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/006 Console.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-29
+mcpjungle/books/stalwart/source/en/migration/import-export/export.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-76
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/029 DataRetention.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-241
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/062 MtaHook.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-388
+mcpjungle/books/stalwart/source/en/sieve/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/036 DANE.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-31
+mcpjungle/books/stalwart/source/en/auth/authorization/roles.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/mta/outbound/queue.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-43
+mcpjungle/books/stalwart/source/en/ref/expression/variable/spam-url-variable.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-63
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/018 Observability.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-30
+mcpjungle/books/stalwart/source/en/development/api.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-283
+mcpjungle/books/stalwart/source/en/spamfilter/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/install/directory.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-28
+mcpjungle/books/stalwart/source/en/server/tls/certificates.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-37
+"mcpjungle/books/stalwart/corpus/stalwart-en/17 Migration/045 Configuring the proxy.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-79
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/022 Caching.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,20
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-19,21-57
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/090 Objects - Sharing.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-111
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/cluster/deployment/index.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-12
+"mcpjungle/books/stalwart/corpus/stalwart-en/09 MTA settings/004 EHLO stage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-42,44-56,58-105
+  s_fea4641b347a8a::t_9c99e667c21128 9,14,43,57
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/012 Peer-to-Peer.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-29,31-41
+  s_fea4641b347a8a::t_9c99e667c21128 9,30
+mcpjungle/books/stalwart/source/en/server/tls/acme/challenges.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-113
+"mcpjungle/books/stalwart/corpus/stalwart-en/03 Server settings/010 Proxy Protocol.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-17,19-28
+  s_fea4641b347a8a::t_9c99e667c21128 9,18
+mcpjungle/books/stalwart/source/en/migration/guide/configure-source/dovecot-postfix.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-90
+mcpjungle/books/stalwart/source/en/ref/object/coordinator.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-609
+mcpjungle/books/stalwart/source/en/development/database.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-45
+mcpjungle/books/stalwart/source/en/ref/object/memory-lookup-key-value.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-263
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/087 Search.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-220
+mcpjungle/books/stalwart/source/en/mta/authentication/index.mdx
+  s_fea4641b347a8a::t_499c4a20f50087 1-13
+mcpjungle/books/stalwart/source/en/migration/proxy/management/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+mcpjungle/books/stalwart/source/en/ref/object/spam-rule.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-596
+mcpjungle/books/stalwart/source/en/mta/filter/mtahooks.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-329
+mcpjungle/books/stalwart/source/en/ref/object/certificate.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-375
+mcpjungle/books/stalwart/source/en/mta/outbound/routing.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-145
+"mcpjungle/books/stalwart/corpus/stalwart-en/14 Clustering & HA/013 Apache Kafka - Redpanda.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,28
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-27,29-45
+"mcpjungle/books/stalwart/corpus/stalwart-en/16 Management/009 Branding.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,24
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-23,25
+"mcpjungle/books/stalwart/corpus/stalwart-en/01 Getting started/002 Getting started - Installation.md"
+  s_fea4641b347a8a::t_9c99e667c21128 1-15
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/137 SpamHeaderVariable.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-61
+mcpjungle/books/stalwart/source/en/migration/proxy/routing/imap.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-26
+mcpjungle/books/stalwart/source/en/http/webdav/protocol.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-18
+"mcpjungle/books/stalwart/corpus/stalwart-en/15 Telemetry/011 Webhooks.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,14
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-13,15-82
+mcpjungle/books/stalwart/source/en/storage/lookup/local.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+"mcpjungle/books/stalwart/corpus/stalwart-en/13 Sieve scripting/006 Expressions.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-176
+  s_fea4641b347a8a::t_9c99e667c21128 9
+mcpjungle/books/stalwart/source/en/spamfilter/greylist.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-22
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/083 QueuedMessage.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-490
+  s_fea4641b347a8a::t_9c99e667c21128 10
+mcpjungle/books/stalwart/source/en/migration/import-export/import/_meta.yml
+  s_fea4641b347a8a::t_499c4a20f50087 1-2
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/009 Alert.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-333
+mcpjungle/books/stalwart/source/en/mta/outbound/connection.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-61
+"mcpjungle/books/stalwart/corpus/stalwart-en/06 Domains/001 Domains - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9,12
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-11,13-40
+mcpjungle/books/stalwart/source/en/ref/object/application.md
+  s_fea4641b347a8a::t_499c4a20f50087 1-275
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/024 Remote.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-15,17-44
+  s_fea4641b347a8a::t_9c99e667c21128 9,16
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/047 Objects - Http.md"
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-205
+"mcpjungle/books/stalwart/corpus/stalwart-en/19 Schema reference/109 Task.md"
+  s_fea4641b347a8a::t_927673203ea19a 1-9,11-12,14-1009
+  s_fea4641b347a8a::t_9c99e667c21128 10,13
+"mcpjungle/books/stalwart/corpus/stalwart-en/12 Spam & Phishing filter/002 Spam & Phishing filter - Settings.md"
+  s_fea4641b347a8a::t_9c99e667c21128 1-13
+"mcpjungle/books/stalwart/corpus/stalwart-en/04 Storage settings/018 Composite - Overview.md"
+  s_fea4641b347a8a::t_9c99e667c21128 9
+  s_fea4641b347a8a::t_927673203ea19a 1-8,10-22
+mcpjungle/books/stalwart/import.ts
+  s_fea4641b347a8a::t_4a9aca0e3d89ce 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1b66194d5f18d70bc8c16ac9932ff14417dd16e6",
+  "prompts": {},
+  "sessions": {
+    "s_fea4641b347a8a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fea1d617-ecf2-460b-952e-344313133591",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
