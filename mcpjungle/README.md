@@ -6,9 +6,10 @@
 
 ```
 mcpjungle/
-  registry/                      registrar:Dockerfile、registrar.sh、gen-book-configs.mjs(+ 測試)
+  registry/                      registrar:Dockerfile、registrar.sh、gen-book-configs.mjs、gen-group-configs.mjs(+ 測試)
     *.json                       非書本 server 的註冊設定(filesystem / fetch / time),預設一起註冊
     optional/*.json              選用設定(docs = 整包一個),只在 REGISTER_LIST 點名時註冊
+    groups/*.json                工具群組設定(claude-tools),註冊完 server 後自動建立
   docs-mcp-server/               多語料 docs MCP server 原始碼
   books/                         書本原稿(source/)與語料(corpus/<id>/)
   gateway/                       MCPJungle 原始碼(自行維護)
@@ -47,10 +48,11 @@ docker compose up -d --build
 |---|---|---|
 | `REGISTER_LIST` | 空 | 有值時只註冊這些名稱(依序在書本、`registry/*.json`、`registry/optional/*.json` 找) |
 | `REGISTER_EXTRAS` | `1`(attach 版 `0`) | `0` = 預設清單只含書本 |
+| `REGISTER_GROUPS` | `1` | `0` = 不建立工具群組(見下方「工具群組」) |
 | `DOCS_MCP_URL` | `http://docs-mcp-server:5690` | 書本註冊設定的 docs server 位址 |
 | `DOCS_MCP_AUTH_TOKEN` | 空 | 有值時書本註冊設定自動帶 `bearer_token` |
 
-註冊前會先驗證:語料不合法、`registry/*.json` 與語料同名、`REGISTER_LIST` 指到不存在的設定 → 列出原因並 exit 1,**不註冊任何 server**。
+註冊前會先驗證:語料不合法、`registry/*.json` 與語料同名、`REGISTER_LIST` 指到不存在的設定、`registry/groups/*.json` 不合法 → 列出原因並 exit 1,**不註冊任何 server**。
 
 手動重跑(在 repo 根目錄;冪等,已註冊的略過):
 
@@ -65,6 +67,20 @@ docker compose run --rm -e REGISTER_LIST="nginx-en" registrar   # 只註冊指�
 
 - **A. 每本書各自註冊**(預設):工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`…。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`books/README.md`](books/README.md))。
 - **B. 整包一個 `docs`**:設 `REGISTER_LIST=docs`(設定在 `registry/optional/docs.json`)→ `docs__docs_search`(用 `corpus` 參數選書)。這份是手寫的,有設 `DOCS_MCP_AUTH_TOKEN` 時要自己加 `bearer_token`。
+
+### 工具群組
+
+registrar 註冊完 server 後,依 `registry/groups/<name>.json` 建立 MCPJungle 工具群組(格式同 `mcpjungle create group`:`name` 須等於檔名,`included_tools` / `included_servers` 至少一項,可加 `excluded_tools`)。`included_servers` 可寫 `"@books"`,展開成全部書本 server,加書不用改群組檔。
+
+- 群組不存在就 `create`,已存在就以 repo 設定 `update`(在 dashboard 手改的內容會被蓋回)。
+- 群組引用的 server 不在 gateway 上(如 attach 版的現有 gateway 沒有 `fetch`,或 `REGISTER_LIST=docs` 時沒有各本書)→ 略過該群組並印出缺哪些,不算失敗。
+
+目前有一個 `claude-tools`:全部書本 + `fetch` + `time`,不含 `filesystem`。用戶端改連群組端點就只看得到這些工具:
+
+```bash
+docker compose exec mcpjungle /mcpjungle list tools --group claude-tools
+# 用戶端:http://<host>:18800/v0/groups/claude-tools/mcp
+```
 
 ## 三、官方 stdio 工具(filesystem / fetch / time)
 

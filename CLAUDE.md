@@ -62,7 +62,7 @@ docker compose -f compose.pull.yaml up -d              # docs-mcp、registrar �
 docker compose -f compose.attach.yaml up -d --build    # 只起 docs-mcp + registrar,接現有 gateway
 docker compose -p mcp-test up -d --build               # 並存測試堆疊(先設 MCPJUNGLE_HOST_PORT=18900、IMAGE_TAG=mcp-test)
 docker compose run --rm registrar                      # 手動重跑註冊(可加 -e REGISTER_LIST=...)
-node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / registrar.sh 測試(需 sh,Windows 用 Git Bash)
+node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / gen-group-configs / registrar.sh 測試(需 sh,Windows 用 Git Bash)
 (cd mcpjungle/gateway && bash scripts/build-dashboard.sh && go build ./... && go test ./...)   # gateway;dashboard 以 go:embed 內嵌,需先 build
 ```
 
@@ -112,7 +112,7 @@ node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / regi
 
 ### MCPJungle gateway 與註冊(`mcpjungle/`)
 
-- compose 內含一次性 **`registrar` 容器**:由 `mcpjungle/registry/gen-book-configs.mjs` 依各書 `corpus.json` 產生書本註冊設定 → 等 gateway 就緒 → 註冊全部書本 + `mcpjungle/registry/*.json`(filesystem/fetch/time)→ 結束(`Exited (0)` 屬正常)。`REGISTER_LIST` 有值時只註冊它列的名稱,`REGISTER_EXTRAS=0` 只註冊書本(`compose.attach.yaml` 預設)。註冊前先驗證(語料不合法、與 registry 同名、清單指到不存在的設定)→ exit 1 且不註冊任何 server;含**重試 + 冪等**,redeploy 安全。
+- compose 內含一次性 **`registrar` 容器**:由 `mcpjungle/registry/gen-book-configs.mjs` 依各書 `corpus.json` 產生書本註冊設定 → 等 gateway 就緒 → 註冊全部書本 + `mcpjungle/registry/*.json`(filesystem/fetch/time)→ 依 `mcpjungle/registry/groups/*.json` 建立/更新工具群組(`claude-tools`;`included_servers` 的 `@books` = 全部書本;引用的 server 不在就略過;`REGISTER_GROUPS=0` 關閉)→ 結束(`Exited (0)` 屬正常)。`REGISTER_LIST` 有值時只註冊它列的名稱,`REGISTER_EXTRAS=0` 只註冊書本(`compose.attach.yaml` 預設)。註冊前先驗證(語料不合法、與 registry 同名、清單指到不存在的設定、群組設定不合法)→ exit 1 且不註冊任何 server;含**重試 + 冪等**,redeploy 安全。
 - 書本註冊設定**不手寫**,由 `corpus.json` 自動產生;非書本註冊檔在 [`mcpjungle/registry/*.json`](mcpjungle/registry)。兩種策略:**A**(預設)每本書各自註冊(server 名 = 語料 id → 工具 `sqlsugar-zh-tw__docs_search`),可在 gateway 對每本書分組/權限;**B** 整包一個 `docs` → `docs__docs_search`(用 `corpus` 參數):設 `REGISTER_LIST=docs`(設定在 `registry/optional/docs.json`)。
 - **兩個位址別搞混**:`--registry http://…:18800` 是 **CLI → gateway**;註冊設定裡的 `http://docs-mcp-server:5690/mcp/<corpus>`(`DOCS_MCP_URL` 可覆寫)是 **gateway → docs server**(用**容器名**,在 `mcpjungl` 網路內解析)。
 - MCPJungle 本身**沒有內建工具**,工具都來自註冊的 server;`filesystem`/`fetch`/`time` 是註冊的官方 stdio reference server。
