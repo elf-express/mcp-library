@@ -45,7 +45,7 @@ Example using an ECDSA P-256 private key stored directly:
   "signatureAlgorithm": "es256",
   "signatureKey": {
     "@type": "Text",
-    "secret": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQggybcqc86ulFFiOon\nWiYrLO4z8/kmkqvA7wGElBok9IqhRANCAAQxZK68FnQtHC0eyh8CA05xRIvxhVHn\n0ymka6XBh9aFtW4wfeoKhTkSKjHc/zjh9Rr2dr3kvmYe80fMGhW4ycGA\n-----END PRIVATE KEY-----\n"
+    "secret": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
   }
 }
 ```

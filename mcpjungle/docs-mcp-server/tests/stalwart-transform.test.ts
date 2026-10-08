@@ -1,5 +1,25 @@
 import { describe, expect, it } from "vitest";
-import { isIncluded, planCorpus, slugOf, sourceUrl, splitFrontMatter, transformBody } from "../../books/stalwart/transform.js";
+import { isIncluded, planCorpus, redactPrivateKeys, slugOf, sourceUrl, splitFrontMatter, transformBody } from "../../books/stalwart/transform.js";
+
+describe("redactPrivateKeys", () => {
+  const B64 = "QUJD".repeat(16);
+  it("JSON 字串內以 \\n 分行的私鑰改為 ...", () => {
+    expect(redactPrivateKeys(`"value": "-----BEGIN PRIVATE KEY-----\\n${B64}\\n${B64}\\n-----END PRIVATE KEY-----\\n"`)).toBe(
+      `"value": "-----BEGIN PRIVATE KEY-----\\n...\\n-----END PRIVATE KEY-----\\n"`,
+    );
+  });
+  it("真換行的 RSA 私鑰改為 ...", () => {
+    expect(redactPrivateKeys(`-----BEGIN RSA PRIVATE KEY-----\n${B64}\n${B64}\n-----END RSA PRIVATE KEY-----`)).toBe(
+      "-----BEGIN RSA PRIVATE KEY-----\n...\n-----END RSA PRIVATE KEY-----",
+    );
+  });
+  it("佔位字與只有開頭的片段不動", () => {
+    const placeholder = "-----BEGIN PRIVATE KEY-----\\nREPLACE_WITH_REAL_ED25519_PRIVATE_KEY_BASE64\\n-----END PRIVATE KEY-----";
+    expect(redactPrivateKeys(placeholder)).toBe(placeholder);
+    const headOnly = '"value":"-----BEGIN PRIVATE KEY-----\\n..."';
+    expect(redactPrivateKeys(headOnly)).toBe(headOnly);
+  });
+});
 
 describe("isIncluded", () => {
   it("收 md / mdx,排除 `_` 開頭的片段與非文件", () => {
