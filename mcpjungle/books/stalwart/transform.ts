@@ -55,6 +55,15 @@ export function splitFrontMatter(raw: string): { data: Record<string, string>; b
   return { data: parseFlatYaml(m[1]), body: text.slice(m[0].length) };
 }
 
+const PEM_PRIVATE_KEY = /(-----BEGIN ((?:[A-Z0-9]+ )*)PRIVATE KEY-----)(\\n|\r?\n)([A-Za-z0-9+/=\s\\]*?)(\\n|\r?\n)(-----END \2PRIVATE KEY-----)/g;
+
+/** 範例私鑰的 base64 內容改為 `...`(換行寫法 `\n` 或真換行都保留原樣;佔位字如 `REPLACE_WITH_…` 不動) */
+export function redactPrivateKeys(text: string): string {
+  return text.replace(PEM_PRIVATE_KEY, (all, begin: string, _t: string, sep1: string, b64: string, sep2: string, end: string) =>
+    /^[A-Za-z0-9+/=]{40,}$/.test(b64.replace(/\\n|\s/g, "")) ? `${begin}${sep1}...${sep2}${end}` : all,
+  );
+}
+
 function decodeEntities(s: string): string {
   return s.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&");
 }
@@ -165,6 +174,7 @@ const pad = (n: number, w: number) => String(n).padStart(w, "0");
  *  - 更深的目錄攤平,檔名 `NNN <標題>.md`(NNN 為分類內流水號)
  *  - 標題重複(如 62 篇 "Overview")時往上加目錄 label 直到唯一
  *  - 每篇:front matter(title / source / description)+ `# 標題` + `> Section:` 路徑 + 正文
+ *  - 正文先經 redactPrivateKeys 遮蔽範例私鑰
  */
 export function planCorpus(files: SourceFile[], metas: Record<string, DirMeta>): PlanResult {
   const errors: string[] = [];
@@ -263,7 +273,7 @@ export function planCorpus(files: SourceFile[], metas: Record<string, DirMeta>):
     used.add(out.toLowerCase());
 
     const { title, description, body } = x.node.file!;
-    const r = transformBody(body, x.node.rel);
+    const r = transformBody(redactPrivateKeys(body), x.node.rel);
     if (r.leftovers.length) errors.push(`${x.node.rel}:第 ${r.leftovers.join(", ")} 行仍有 MDX 元件或 import`);
     const fm = ["---", `title: ${JSON.stringify(title)}`, `source: ${sourceUrl(x.node.rel)}`];
     if (description) fm.push(`description: ${JSON.stringify(description)}`);

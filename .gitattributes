@@ -26,6 +26,8 @@
 mcpjungle/books/*/source/**/*.png  -text -diff
 mcpjungle/books/*/source/**/*.jpg  -text -diff
 mcpjungle/books/*/source/**/*.jpeg -text -diff
+mcpjungle/books/*/source/**/*.gif  -text -diff
+mcpjungle/books/*/source/**/*.webp -text -diff
 
 # 不計入 GitHub 語言統計、diff 預設折疊。
 # 沒有這行,2600+ 篇書會把這個 repo 標成 Markdown 專案,蓋掉真正的 TypeScript 原始碼。

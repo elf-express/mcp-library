@@ -17,6 +17,7 @@ dist/
 /mcpjungle/books/nginx/source/en/000 全書 (nginx.org) en.md
 /mcpjungle/books/nginx/source/en+zh-TW/000 全書 (nginx.org) en+zh-TW.md
 /mcpjungle/books/opnsense/source/en+zh-TW/000 全書 (docs.opnsense.org) en+zh-TW.md
+/mcpjungle/books/stalwart/source/en+zh-TW/000 全書 (stalw.art) en+zh-TW.md
 
 # 巢狀 worktree 保底(規則見 AGENTS.md 的 Worktree 一節)
 /mcp-library/
