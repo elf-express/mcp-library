@@ -2,7 +2,7 @@
   "book": "stalwart",
   "language": "en",
   "source": "https://stalw.art/docs/",
-  "license": "上游 stalwartlabs/website 未附授權檔;文件著作權屬 Stalwart Labs,原文收錄供查詢,內容以 https://stalw.art/docs/ 為準",
+  "license": "上游 stalwartlabs/website 未附授權檔;文件著作權屬 Stalwart Labs,取自官方文件原文,僅供團隊內部查詢,內容以 https://stalw.art/docs/ 為準",
   "title": "Stalwart documentation",
   "description": "Stalwart 郵件與協作伺服器(JMAP/IMAP/SMTP/CalDAV/CardDAV/WebDAV)官方英文文件(stalw.art/docs,487 篇,取自 stalwartlabs/website commit 8623f64,2026-10-03):安裝、設定與表達式、伺服器/儲存/HTTP/MTA/郵件設定、存取控制(LDAP/OIDC/OAuth/SCIM)、網域、加密、垃圾郵件過濾、Sieve、叢集、遙測、管理(WebUI/CLI)、遷移,以及 Schema reference(物件、列舉、常數、事件、指標)。19 個分類資料夾依官網側欄排序;站內連結改為 stalw.art 絕對網址,影片已移除。可用 docs_symbol 依物件或標題查(如 Account、DKIM)。",
   "capabilities": { "cheatsheet": false, "symbol": true }
