@@ -1,12 +1,15 @@
 #!/usr/bin/env sh
-# 一次性註冊容器:由各書 corpus.json 產生書本註冊設定,連同 registry/*.json 註冊進 gateway,然後結束。
-#   - 註冊前先驗證:語料設定不合法、registry/*.json 與語料同名、REGISTER_LIST 指到不存在的設定
+# 一次性註冊容器:由各書 corpus.json 產生書本註冊設定,連同 registry/*.json 註冊進 gateway,
+# 再依 registry/groups/*.json 建立或更新工具群組,然後結束。
+#   - 註冊前先驗證:語料設定不合法、registry/*.json 與語料同名、REGISTER_LIST 指到不存在的設定、群組設定不合法
 #     → 列出原因並以 1 結束,不註冊任何 server
 #   - 等 gateway 就緒;每個 server 註冊含重試;已註冊則略過(冪等,redeploy 安全)
+#   - 群組:已存在就以 repo 設定 update,不存在就 create;引用的 server 不在 gateway 上就略過該群組
 # 環境變數:
 #   REGISTRY_URL      gateway 位址(預設 http://mcpjungle:8080)
 #   REGISTER_LIST     空白分隔的 server 名;有值時只註冊這些
 #   REGISTER_EXTRAS   預設 1;0 = 預設清單只含書本,不含 registry/*.json
+#   REGISTER_GROUPS   預設 1;0 = 不建立工具群組
 #   DOCS_MCP_URL / DOCS_MCP_AUTH_TOKEN  傳給 gen-book-configs.mjs
 set -eu
 
@@ -15,12 +18,16 @@ CLI="${MCPJUNGLE_BIN:-/mcpjungle}"
 BOOKS="${BOOKS_DIR:-/books}"
 CONFIGS="${CONFIGS_DIR:-/configs}"
 GEN="${GEN_DIR:-/tmp/book-configs}"
+GROUPS_GEN="${GROUPS_GEN_DIR:-/tmp/group-configs}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 
 fail() { echo "registrar: $1(未註冊任何 server)"; exit 1; }
 
-rm -rf "$GEN"
+rm -rf "$GEN" "$GROUPS_GEN"
 node "$HERE/gen-book-configs.mjs" "$BOOKS" "$GEN" >/dev/null || fail "語料設定不合法"
+if [ "${REGISTER_GROUPS:-1}" != "0" ]; then
+  node "$HERE/gen-group-configs.mjs" check "$CONFIGS/groups" >/dev/null || fail "群組設定不合法"
+fi
 
 for f in "$CONFIGS"/*.json; do
   [ -f "$f" ] || continue
@@ -79,4 +86,20 @@ done
 
 echo "registrar: 完成,目前 servers:"
 "$CLI" --registry "$REGISTRY" list servers 2>/dev/null | grep -E '^[0-9]+\.' || true
+
+if [ "${REGISTER_GROUPS:-1}" != "0" ]; then
+  ready="$("$CLI" --registry "$REGISTRY" list servers 2>/dev/null | sed -n 's/^[0-9][0-9]*\. //p' |
+    node "$HERE/gen-group-configs.mjs" render "$CONFIGS/groups" "$GEN" "$GROUPS_GEN")" || ready=""
+  for g in $ready; do
+    if "$CLI" --registry "$REGISTRY" get group "$g" >/dev/null 2>&1; then action=update; else action=create; fi
+    echo ">> 群組 $g:$action"
+    j=0
+    until "$CLI" --registry "$REGISTRY" "$action" group -c "$GROUPS_GEN/$g.json"; do
+      j=$((j + 1))
+      if [ "$j" -ge 5 ]; then echo "   (群組 $g 重試 5 次仍失敗)"; failed="$failed group:$g"; break; fi
+      echo "   (群組 $g 失敗,3s 後重試 #$j)"
+      sleep 3
+    done
+  done
+fi
 if [ -n "$failed" ]; then echo "registrar: 註冊失敗:$failed"; exit 1; fi

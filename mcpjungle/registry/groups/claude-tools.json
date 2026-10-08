@@ -1,0 +1,5 @@
+{
+  "name": "claude-tools",
+  "description": "給 Claude 用的工具:全部書本文檔 + 抓網頁(fetch)+ 時間(time),不含讀 gateway 容器檔案的 filesystem。",
+  "included_servers": ["@books", "fetch", "time"]
+}

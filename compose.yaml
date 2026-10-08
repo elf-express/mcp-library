@@ -85,6 +85,7 @@ services:
       DOCS_MCP_AUTH_TOKEN: ${DOCS_MCP_AUTH_TOKEN:-}
       REGISTER_LIST: ${REGISTER_LIST:-}        # 有值時只註冊這些(書本 id / registry/*.json / registry/optional/*.json 的名稱)
       REGISTER_EXTRAS: ${REGISTER_EXTRAS:-1}   # 0 = 只註冊書本,不含 filesystem/fetch/time
+      REGISTER_GROUPS: ${REGISTER_GROUPS:-1}   # 0 = 不建立 registry/groups/*.json 的工具群組
       TZ: ${TZ:-Asia/Taipei}
     networks: [mcpjungl]
     restart: "no"

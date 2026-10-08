@@ -59,7 +59,7 @@ docker compose -f compose.attach.yaml up -d --build    # 只起 docs-mcp + regis
 ```
 
 * 起來的服務:`mcpjungle`(gateway,:18800)+ `docs-mcp-server` + 一次性 `registrar`;網路自動建 `<stack>_mcpjungl`(像 `immich_default` 那樣)。
-* registrar 自動把 9 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `opnsense-en` / `opnsense-zh-tw` / `stalwart-en` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**。
+* registrar 自動把 9 個 server 註冊上(`sqlsugar-zh-tw` / `fc-zh-tw` / `nginx-en` / `opnsense-en` / `opnsense-zh-tw` / `stalwart-en` / `filesystem` / `fetch` / `time`)——**已沙盒實測約 15 秒**;再建立工具群組 `claude-tools`(全部書本 + fetch + time,端點 `/v0/groups/claude-tools/mcp`,見 [mcpjungle/README.md](mcpjungle/README.md) 的「工具群組」)。
 * DB 是內建的 `postgres` 服務(volume `pgdata`,不對外開 port);gateway 等它 healthy 才啟動。要改接既有外部 DB 才在 `.env` 設 `MCPJUNGLE_DATABASE_URL`。
 * 用戶端連 `http://<host>:18800/mcp`(全部)或 `http://<host>:18800/mcp/<corpus>`。
 
