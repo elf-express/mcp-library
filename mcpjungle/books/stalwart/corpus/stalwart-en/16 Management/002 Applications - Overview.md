@@ -1,0 +1,68 @@
+---
+title: "Overview"
+source: https://stalw.art/docs/management/applications/
+---
+
+# Applications - Overview
+
+> Section: Management › Applications
+
+Stalwart can download and host one or more single-page applications (SPAs) directly from the server. Each hosted application is configured on the [Application](https://stalw.art/docs/ref/object/application) object (found in the WebUI under <!-- breadcrumb:Application --> Settings › Web Applications<!-- /breadcrumb:Application -->) and is served alongside the regular HTTP endpoints, without the need for a separate web server or reverse proxy in front.
+
+The built-in [WebUI](https://stalw.art/docs/management/webui/) is itself an Application: a single bundle mounted at both `/admin` (the administration console) and `/account` (the user self-service portal). Operators can register additional Applications on the same server, for example third-party management dashboards or self-hosted front-ends for the JMAP, CalDAV, CardDAV, and WebDAV stacks.
+
+## What an Application is
+
+An Application is a static SPA bundle, distributed as a zip archive, that the server downloads and unpacks locally. Once unpacked, the server serves the application's files in response to HTTP requests whose path matches one of the configured mount paths. The bundle is identified by the [`resourceUrl`](https://stalw.art/docs/ref/object/application#resourceurl) field, which points to the archive that will be fetched (for example the latest GitHub release of the WebUI), and by the [`description`](https://stalw.art/docs/ref/object/application#description) field, which carries a short human-readable label used in the management interfaces.
+
+Individual Applications can be disabled without removing them from the configuration by clearing the [`enabled`](https://stalw.art/docs/ref/object/application#enabled) flag. A disabled Application is not downloaded and is not served, but its configuration is retained.
+
+## Mount paths
+
+Each Application is mounted at one or more URL path prefixes, listed on the [`urlPrefix`](https://stalw.art/docs/ref/object/application#urlprefix) field. The server matches incoming HTTP requests against the configured prefixes and routes them to the corresponding bundle. A single Application may declare multiple prefixes, which is how the WebUI is exposed at both `/admin` and `/account` from the same deployment.
+
+Mount paths are local to the server's HTTP namespace and must not collide with the API endpoints used by JMAP, WebDAV, or the `.well-known` URIs. A path collision between two Applications, or between an Application and a server-provided endpoint, is rejected at configuration time.
+
+## The unpack directory
+
+The unpacked bundle is written to a working directory on the local filesystem, named by the [`unpackDirectory`](https://stalw.art/docs/ref/object/application#unpackdirectory) field. When the field is empty the system temporary directory is used, which on Linux means `/tmp`.
+
+Leaving it empty is a poor choice on any host that sweeps `/tmp`. `systemd-tmpfiles-clean` deletes files by access time, and most of an SPA bundle consists of chunks that are only loaded on particular screens, so they are never read again after the first visit and age out while the entry point and the login page stay fresh. The result is a server that appears to work until an operator opens a section it has not served in a while, and the browser reports that it could not fetch a dynamically imported module. Restarting clears it, because startup unpacks the bundle again, and it comes back on the same schedule. Point `unpackDirectory` at a persistent path, for example `/var/lib/stalwart/webui`, on any deployment where `/tmp` is swept or mounted `noexec`.
+
+The server creates the directory if it is missing, including any missing parents, but it does so as the user the service runs as. On a package installation that user is `stalwart`, so a directory under `/var/lib` that is owned by `root` will fail to unpack until its ownership is corrected.
+
+Within `unpackDirectory` the server keeps one subdirectory per Application record, and one subdirectory below that per unpacked bundle. Files are written under numeric names, and the mapping back to the names in the archive is held in memory only. A bundle extracted by hand into `unpackDirectory` is therefore never served, no matter where under it the files are placed. To install a bundle without outbound access to the publisher, stage the `.zip` on an internal HTTPS server and point [`resourceUrl`](https://stalw.art/docs/ref/object/application#resourceurl) at it.
+
+## Relationship to listeners
+
+Applications are served over HTTP traffic, but they do not themselves open sockets. The sockets are owned by the [NetworkListener](https://stalw.art/docs/ref/object/network-listener) object (found in the WebUI under <!-- breadcrumb:NetworkListener --> Settings › Network › Listeners<!-- /breadcrumb:NetworkListener -->). Any listener configured with the [`protocol`](https://stalw.art/docs/ref/object/network-listener#protocol) variant set to `http` will route requests whose path matches a registered mount to the corresponding Application. In a typical deployment a single HTTPS listener carries the JMAP, WebDAV, and Application traffic together; no per-Application listener is required.
+
+When [access control](https://stalw.art/docs/http/access-control) rules are in force, requests to Application mount paths are filtered alongside the rest of the HTTP surface. Operators restricting public exposure can therefore confine an Application (for example `/admin`) to a private listener while leaving the remaining HTTP endpoints reachable over the public one.
+
+## Installing an Application
+
+An Application is installed by creating an [Application](https://stalw.art/docs/ref/object/application) record with the bundle's download URL in [`resourceUrl`](https://stalw.art/docs/ref/object/application#resourceurl), the desired mount paths in [`urlPrefix`](https://stalw.art/docs/ref/object/application#urlprefix), and a short [`description`](https://stalw.art/docs/ref/object/application#description). The server then fetches the archive, unpacks it into the working directory, and begins serving the files; the [Updates](https://stalw.art/docs/management/applications/update) page covers how a bundle is refreshed afterwards. The same workflow is exposed through the WebUI, through `stalwart-cli`, and directly over the JMAP API on the `x:Application/set` method.
+
+## Outbound network requirement
+
+Each Application's bundle is fetched over HTTPS from the [`resourceUrl`](https://stalw.art/docs/ref/object/application#resourceurl) configured on its record, so outbound HTTPS connectivity from the Stalwart host to that URL is a hard requirement for the Application to be served. When the very first download of an Application fails, no previously installed bundle exists to fall back to and HTTP requests against the Application's mount paths return `404 Not Found` until the next refresh succeeds.
+
+For deployments behind a restrictive egress firewall, the firewall must allow HTTPS from the Stalwart host to whatever hosts serve each configured `resourceUrl`. When outbound internet access is not permitted at all, the bundle can be staged on an internal HTTPS server and the [`resourceUrl`](https://stalw.art/docs/ref/object/application#resourceurl) field updated to point at the internal location, after which the server refreshes from there instead.
+
+The bundle URL of the built-in WebUI and the specific symptom that misconfiguring this requirement produces are documented under the [WebUI overview](https://stalw.art/docs/management/webui/#outbound-network-requirement).
+
+## Bundle format
+
+An Application bundle is a `.zip` archive that must contain an `index.html` at its root. When the archive is unpacked, the server rewrites the `<base href="/">` tag in `index.html` to match the mount path the bundle is served from, so the same archive can be mounted at `/admin`, `/account`, or any other prefix without being repackaged. Assets referenced by relative URLs inside the bundle therefore resolve correctly regardless of the mount path.
+
+No checksum or signature verification is performed on the downloaded archive. Applications are intended to be installed from trusted sources only; the transport is always HTTPS, but the contents of the bundle are not cryptographically validated against an external manifest.
+
+:::caution
+
+Because no bundle-level signature is checked, only install Applications whose [`resourceUrl`](https://stalw.art/docs/ref/object/application#resourceurl) points at a source operated by a trusted publisher. A malicious bundle served from a hostile origin would be unpacked and served just like any other Application.
+
+:::
+
+## Multiple mount paths for a single Application
+
+The built-in WebUI is modelled as one Application with two entries in [`urlPrefix`](https://stalw.art/docs/ref/object/application#urlprefix), `/admin` and `/account`; the prefixes are URL-path aliases for the same bundle rather than two separate installations. Additional Applications can follow the same pattern when several aliases need to resolve to the same files.

@@ -10,7 +10,7 @@ MCP server 的 **monorepo**。核心價值不是單一 web app,而是**用 Docke
 
 五個層次:
 
-- [`mcpjungle/books/<書名>/`](mcpjungle/books) — 書。`source/` 是原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取、不進映像**;`corpus/<書名>-<語言>/` 才是 server 讀的語料(目前 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en` + `opnsense-en` + `opnsense-zh-tw`,映像 build 時併入)。`nginx-en` 由在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生;`opnsense-en`、`opnsense-zh-tw` 由 `npx tsx ../books/opnsense/import.ts` 從 `mcpjungle/books/opnsense/source/{en,zh-TW}` 產生;皆勿手改。
+- [`mcpjungle/books/<書名>/`](mcpjungle/books) — 書。`source/` 是原稿與翻譯工作區(`opnsense`/`nginx`/`portabase`/`multica`/`stalwart`,各含 `en/`、`zh-TW/`、`en+zh-TW/` 等語言版本),**不會被 server 直接讀取、不進映像**;`corpus/<書名>-<語言>/` 才是 server 讀的語料(目前 `sqlsugar-zh-tw` + `fc-zh-tw` + `nginx-en` + `opnsense-en` + `opnsense-zh-tw` + `stalwart-en`,映像 build 時併入)。`nginx-en` 由在 `mcpjungle/docs-mcp-server` 執行 `npx tsx ../books/nginx/import.ts` 從 `mcpjungle/books/nginx/source/en` 產生;`opnsense-en`、`opnsense-zh-tw` 由 `npx tsx ../books/opnsense/import.ts` 從 `mcpjungle/books/opnsense/source/{en,zh-TW}` 產生;`stalwart-en` 由 `npx tsx ../books/stalwart/import.ts` 從 `mcpjungle/books/stalwart/source/en`(stalwartlabs/website 的 `src/content/docs/docs` 複本)產生;皆勿手改。
 - [`mcpjungle/docs-mcp-server/`](mcpjungle/docs-mcp-server) — **核心**。多語料(corpus)文檔 MCP server,一個 server 掛多本「書」;本身不含語料。
 - [`mcpjungle/gateway/`](mcpjungle/gateway) — **自行維護的 MCPJungle(源自上游 c2a2c8d)**,從源碼 build,非 pull 官方映像;把各 server 註冊進來、對用戶端只開一個入口。
 - [`mcpjungle/registry/`](mcpjungle/registry) — 一次性 `registrar` 容器:書本註冊由 `corpus.json` 自動產生,加上非書本註冊檔(`filesystem`/`fetch`/`time`)。
@@ -92,7 +92,7 @@ node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / regi
   - `cheatsheet` 能力:`docs_cheatsheet`(抽速查表段落)
   - `examples` 能力:`docs_code_search` / `docs_code_read`(查語料附帶的程式碼範例,如 sqlsugar-zh-tw 的 C#)
   - `symbol` 能力:`docs_symbol`(按 API/組件名精確定位標題段落;索引含 `#`/`##`/`###`,並去 U+200B 零寬字元)
-  - 目前:`sqlsugar-zh-tw` 開 `cheatsheet`+`examples`、`fc-zh-tw`、`nginx-en`、`opnsense-en`、`opnsense-zh-tw` 開 `symbol`;`docs_list_corpora` 會標每語料的能力 + 可用工具。
+  - 目前:`sqlsugar-zh-tw` 開 `cheatsheet`+`examples`、`fc-zh-tw`、`nginx-en`、`opnsense-en`、`opnsense-zh-tw`、`stalwart-en` 開 `symbol`;`docs_list_corpora` 會標每語料的能力 + 可用工具。
 - `corpus` 參數型別是 `z.string()` 而非 enum(語料是執行期動態資料),未知語料在 runtime 給友善提示。
 - **corpora 根目錄解析順序**(`resolveCorporaDirs`):`DOCS_CORPORA_DIR`(可用 `path.delimiter` 分隔多個)→ 打包的 `corpora/` → `../books/*/corpus/`;同 id 出現在多個根時保留先掃到的並警告。
 - **來源連結**:優先讀語料的 `sources.json`(明確覆寫);否則**自動從每篇 MD 前 15 行抽取** `> Source: https://…` 或 `> 📖 官方文件:[文字](https://…)`。
@@ -129,7 +129,7 @@ node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / regi
 
 - **沒有 `container_name`**:容器名由 compose 依 project 產生(如 `mcp-library-mcpjungle-1`);升級時舊的固定名容器會被重建,`pgdata` volume 不變。進容器用 `docker compose exec <服務名>`;要接「現有」gateway 用 `compose.attach.yaml`(別再起新 gateway)。可覆寫 `MCPJUNGLE_HOST_PORT`(預設 18800)、`IMAGE_TAG`(預設 latest)、`MCPJUNGLE_DATA_DIR`。
 - **build context**:docs-mcp 與 registrar 的 build context 都是 `mcpjungle/`(Dockerfile 分別是 `docs-mcp-server/Dockerfile`、`registry/Dockerfile`),`books/*/source` 由 `mcpjungle/.dockerignore` 排除;gateway 的 context 是 `mcpjungle/gateway/`。
-- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊全部書本(`sqlsugar-zh-tw fc-zh-tw nginx-en opnsense-en opnsense-zh-tw`)與 `filesystem fetch time`。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。repo 內的設定**看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準:`docker compose exec mcpjungle /mcpjungle list servers`。
+- **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊全部書本(`sqlsugar-zh-tw fc-zh-tw nginx-en opnsense-en opnsense-zh-tw stalwart-en`)與 `filesystem fetch time`。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。repo 內的設定**看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準:`docker compose exec mcpjungle /mcpjungle list servers`。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 
 ## CI / commit 規範
