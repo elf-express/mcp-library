@@ -1,0 +1,32 @@
+---
+title: "Overview"
+source: https://stalw.art/docs/encryption/
+---
+
+# Encryption settings - Overview
+
+> Section: Encryption settings
+
+Encryption at rest is a term used to describe the process of encrypting data while it is stored, or "at rest", on persistent media such as hard drives, solid-state drives, or other forms of digital storage. The purpose of encryption at rest is to ensure that data stored on these media is not readable or accessible without the necessary decryption keys. The process usually involves taking clear-text data and converting it into cipher-text using an encryption algorithm and an encryption key. The key is a secret string of bits used by the encryption algorithm to scramble the data in a specific way. Without the key, or without a way to derive it, the scrambled data remains unintelligible and secure.
+
+Stalwart applies a user-centric encryption strategy where each user's plain-text messages are automatically encrypted using their provided [OpenPGP](https://stalw.art/docs/encryption/pgp) (Pretty Good Privacy) public key or [S/MIME](https://stalw.art/docs/encryption/smime) (Secure/Multipurpose Internet Mail Extensions) certificate before the messages are written to disk. Only the intended recipient, who holds the corresponding private key, can decrypt and access the message contents. As a result, system administrators with access to the server's data cannot decrypt and read the messages. Even if unauthorized access occurs, the stored messages appear as unintelligible ciphertext without the corresponding private key. This design protects each user's messages against external compromise as well as internal threats.
+
+## Configuration
+
+Server-wide encryption-at-rest behaviour is configured on the [Email](https://stalw.art/docs/ref/object/email) singleton (found in the WebUI under <!-- breadcrumb:Email --> Settings › Email › Defaults, Settings › Email › Encryption, Settings › Email › Limits, Settings › Email › Storage<!-- /breadcrumb:Email -->). Two fields govern the behaviour:
+
+- [`encryptAtRest`](https://stalw.art/docs/ref/object/email#encryptatrest): when `true` (the default), messages delivered via SMTP or LMTP are automatically encrypted before being written to disk, provided the recipient has registered an S/MIME certificate or OpenPGP public key. Setting this field to `false` disables the feature for all accounts.
+- [`encryptOnAppend`](https://stalw.art/docs/ref/object/email#encryptonappend): when `true`, messages manually appended by a client over JMAP or IMAP are also encrypted. The default is `false`, which leaves appended messages untouched so that clients retain full control over the contents they store.
+
+The server-wide [`encryptOnAppend`](https://stalw.art/docs/ref/object/email#encryptonappend) value is an override: when set to `true`, it applies to every account regardless of the per-account `encryptOnAppend` carried inside [`encryptionAtRest`](https://stalw.art/docs/ref/object/account-settings#encryptionatrest). When the server-wide flag is `false`, the per-account setting applies.
+
+For example:
+
+```json
+{
+  "encryptAtRest": true,
+  "encryptOnAppend": false
+}
+```
+
+Per-account encryption settings, including the selection of a specific public key and the symmetric algorithm, are carried on the [AccountSettings](https://stalw.art/docs/ref/object/account-settings) singleton (found in the WebUI under <!-- breadcrumb:AccountSettings --> Account › Settings<!-- /breadcrumb:AccountSettings -->) through the [`encryptionAtRest`](https://stalw.art/docs/ref/object/account-settings#encryptionatrest) field. Public keys themselves are stored as [PublicKey](https://stalw.art/docs/ref/object/public-key) objects (found in the WebUI under <!-- breadcrumb:PublicKey --> Account › Public Keys<!-- /breadcrumb:PublicKey -->); see [OpenPGP](https://stalw.art/docs/encryption/pgp) and [S/MIME](https://stalw.art/docs/encryption/smime) for the accepted key formats, and [Management](https://stalw.art/docs/encryption/manage) for how end users manage their own settings.

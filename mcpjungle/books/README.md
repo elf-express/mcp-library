@@ -42,6 +42,7 @@
 | `opnsense-en` | `opnsense` | `en` | 377 | `symbol` |
 | `opnsense-zh-tw` | `opnsense` | `zh-TW` | 377 | `symbol` |
 | `sqlsugar-zh-tw` | `sqlsugar` | `zh-TW` | 74 | `cheatsheet`、`examples` |
+| `stalwart-en` | `stalwart` | `en` | 487 | `symbol` |
 
 ---
 
@@ -202,6 +203,6 @@ mcpjungle/books/
 - **不放第三份雙語版**:見第一節。
 - **容量上限**:`books/*/corpus/` 總量約 **200 MB** 以內。語料會打包進 `docs-mcp-server` 的 Docker image,也在每次 clone 時下載;
   超過時把大型語料拆到獨立 repo(以 `DOCS_CORPORA_DIR` 掛載),不要繼續塞進本 repo。
-  目前總量:約 13 MB(`opnsense-en` 4.6 MB、`opnsense-zh-tw` 4.4 MB、`nginx-en` 2.2 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB)。
+  目前總量:約 17 MB(`opnsense-en` 4.6 MB、`opnsense-zh-tw` 4.4 MB、`nginx-en` 2.2 MB、`fc-zh-tw` 1.0 MB、`sqlsugar-zh-tw` 0.8 MB、`stalwart-en` 3.8 MB)。
 - 單檔 < 5 MB(CI 會擋);不放任何機密——機密掃描**不掃** `examples/`。
 - 上游授權要求保留聲明時(BSD、MIT…),在語料根目錄放 `LICENSE` 全文,並在 `corpus.json` 的 `license` 註明。

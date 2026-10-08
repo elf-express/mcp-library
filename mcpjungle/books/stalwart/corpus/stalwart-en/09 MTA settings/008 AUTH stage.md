@@ -1,0 +1,42 @@
+---
+title: "AUTH stage"
+source: https://stalw.art/docs/mta/inbound/auth/
+---
+
+# AUTH stage
+
+> Section: MTA settings › Inbound
+
+The `AUTH` command authenticates a user wishing to send an email message through an SMTP server. Once issued, the client supplies credentials using SASL, a framework for authentication and data security in network protocols. SASL supports mechanisms such as username and password, public-key cryptography, and bearer tokens.
+
+## Settings
+
+SASL authentication is configured on the [MtaStageAuth](https://stalw.art/docs/ref/object/mta-stage-auth) singleton (found in the WebUI under <!-- breadcrumb:MtaStageAuth --> Settings › MTA › Session › AUTH Stage<!-- /breadcrumb:MtaStageAuth -->). The relevant fields are:
+
+- [`saslMechanisms`](https://stalw.art/docs/ref/object/mta-stage-auth#saslmechanisms): a list of [SASL mechanisms](https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml) offered to clients, or an empty list to disable authentication. Stalwart supports `PLAIN`, `LOGIN`, `OAUTHBEARER`, and `XOAUTH2`. The default policy offers `[plain, login, oauthbearer, xoauth2]` on TLS-protected submission ports and `[oauthbearer, xoauth2]` on non-TLS submission ports, while disabling AUTH on port 25.
+- [`require`](https://stalw.art/docs/ref/object/mta-stage-auth#require): whether authentication is required to send email messages. The default expression requires authentication when `local_port != 25`.
+- [`mustMatchSender`](https://stalw.art/docs/ref/object/mta-stage-auth#mustmatchsender): whether the authenticated user (or one of their associated email addresses) must match the sender of the message. Default `true`.
+- [`maxFailures`](https://stalw.art/docs/ref/object/mta-stage-auth#maxfailures): maximum number of authentication errors allowed before the session is disconnected. Default 3.
+- [`waitOnFail`](https://stalw.art/docs/ref/object/mta-stage-auth#waitonfail): time to wait after an authentication failure. Default 5 seconds.
+
+Example restricting `PLAIN` and `LOGIN` to TLS-protected submission ports and requiring authentication outside port 25:
+
+```json
+{
+  "saslMechanisms": {
+    "match": {"0": {"if": "local_port != 25 && is_tls", "then": "[plain, login]"}},
+    "else": "false"
+  },
+  "require": {
+    "match": {"0": {"if": "listener != 'smtp'", "then": "true"}},
+    "else": "false"
+  },
+  "mustMatchSender": {"else": "true"},
+  "maxFailures": {"else": "3"},
+  "waitOnFail": {"else": "5s"}
+}
+```
+
+## Directory selection
+
+The authentication backend is selected automatically based on the domain name supplied in the credentials. Stalwart matches the domain against the configured [Domain](https://stalw.art/docs/ref/object/domain) objects and routes the authentication request to the [`directoryId`](https://stalw.art/docs/ref/object/domain#directoryid) associated with that domain, falling back to the internal directory when no explicit directory is set. No per-stage directory field exists on MtaStageAuth.

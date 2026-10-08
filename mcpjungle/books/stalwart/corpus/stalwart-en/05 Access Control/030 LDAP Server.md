@@ -1,0 +1,175 @@
+---
+title: "LDAP Server"
+source: https://stalw.art/docs/auth/backend/ldap/
+---
+
+# LDAP Server
+
+> Section: Access Control › Directories
+
+LDAP (Lightweight Directory Access Protocol) is an open, vendor-neutral protocol used to access and manage directory information services. LDAP directories such as OpenLDAP and Microsoft Active Directory store user credentials and metadata in a hierarchical form that can be queried efficiently, and are commonly used to centralise authentication across multiple systems.
+
+Stalwart integrates with LDAP directories for account authentication and lookup. With an LDAP directory configured, the server can reuse existing account records and group policies. Stalwart is compatible with LDAP directories that follow RFC 4511, including OpenLDAP and Active Directory.
+
+An LDAP integration is represented by the LDAP variant of the [Directory](https://stalw.art/docs/ref/object/directory) object (found in the WebUI under <!-- breadcrumb:Directory --> Settings › Authentication › Directories<!-- /breadcrumb:Directory -->).
+
+## Account provisioning
+
+Accounts are not copied from the directory in advance. Stalwart materialises a local account the first time it needs one, either when the user authenticates or when a message arrives for their address and the directory confirms it as a valid recipient. This second trigger is what makes just-in-time provisioning workable for LDAP: an account that has never signed in can still receive mail, because the directory can be queried for the address on demand.
+
+The gap it leaves is at the other end of the account's life. Just-in-time provisioning never removes anything, because a deleted directory entry simply stops appearing in query results rather than announcing itself. A departed user's mailbox persists, continues to accept mail, and continues to count against licensed mailbox limits until an administrator removes it.
+
+Where that matters, [SCIM provisioning](https://stalw.art/docs/auth/scim/) can be enabled per domain so that the identity provider suspends and deletes accounts explicitly. Doing so makes SCIM authoritative for the accounts in that domain and stops just-in-time synchronisation from writing to them. [Provisioning models](https://stalw.art/docs/auth/scim/provisioning) compares the two and covers how authority is assigned.
+
+## Connection details
+
+The minimum required configuration for LDAP is the URL of the directory server. The URL is set through [`url`](https://stalw.art/docs/ref/object/directory#url); a typical value is `"ldap://localhost:389"` for an unencrypted connection to a server on the same host.
+
+Related connection fields on the LDAP variant of the Directory object are:
+
+- [`url`](https://stalw.art/docs/ref/object/directory#url): URL of the LDAP server.
+- [`useTls`](https://stalw.art/docs/ref/object/directory#usetls): whether to negotiate TLS on the connection. Default `false`.
+- [`allowInvalidCerts`](https://stalw.art/docs/ref/object/directory#allowinvalidcerts): whether to accept invalid TLS certificates. Default `false`.
+- [`timeout`](https://stalw.art/docs/ref/object/directory#timeout): connection timeout, in milliseconds. Default `30000` (30 seconds).
+
+For example:
+
+```json
+{
+  "@type": "Ldap",
+  "description": "Corporate LDAP",
+  "url": "ldap://localhost:389",
+  "timeout": 30000,
+  "useTls": false,
+  "allowInvalidCerts": false
+}
+```
+
+## Default bind credentials
+
+Binding is the operation by which an LDAP client authenticates to the directory. To query the directory and validate account entries, Stalwart needs to bind using a service account that holds sufficient privileges to search the directory tree.
+
+Service-account credentials are configured through:
+
+- [`bindDn`](https://stalw.art/docs/ref/object/directory#binddn): the distinguished name of the account used to connect to the directory.
+- [`bindSecret`](https://stalw.art/docs/ref/object/directory#bindsecret): the secret associated with `bindDn`. Accepts a direct value, an environment-variable reference, or a file reference.
+
+For example:
+
+```json
+{
+  "@type": "Ldap",
+  "bindDn": "cn=admin,dc=example,dc=org",
+  "bindSecret": {
+    "@type": "Value",
+    "secret": "password"
+  }
+}
+```
+
+If `bindDn` is left unset, the server attempts anonymous queries. Some directories allow that for basic lookups, but most require an authenticated bind. Without valid credentials, authentication or address validation may fail.
+
+:::tip[Note]
+
+Even when users authenticate by binding as themselves, the service-account bind is still required for non-authentication operations such as retrieving account metadata and validating email addresses and domains.
+
+:::
+
+## Authentication methods
+
+Stalwart supports two authentication modes against an LDAP directory, selected by the [`bindAuthentication`](https://stalw.art/docs/ref/object/directory#bindauthentication) boolean on the Directory object.
+
+In some LDAP environments, particularly hardened OpenLDAP setups and Active Directory, password hashes are not returned even to a privileged service account. In those environments Stalwart cannot compare a stored hash against the password supplied by the user, so it must authenticate by attempting to bind directly as the user. If the bind succeeds, the credentials are considered valid.
+
+### Service-account bind (hash comparison)
+
+When [`bindAuthentication`](https://stalw.art/docs/ref/object/directory#bindauthentication) is set to `false`, Stalwart uses the service account (`bindDn` / `bindSecret`) to search for the user entry, reads the password hash from the attribute configured by [`attrSecret`](https://stalw.art/docs/ref/object/directory#attrsecret), and compares it against the password supplied at login. This mode only works if the LDAP server exposes password hashes in a format that Stalwart [recognises](https://stalw.art/docs/auth/authentication/password).
+
+For example:
+
+```json
+{
+  "@type": "Ldap",
+  "bindAuthentication": false,
+  "attrSecret": {"userPassword": true}
+}
+```
+
+:::tip[Note]
+
+This mode is only suitable when the LDAP server returns password hashes to the bind account. When the directory does not permit this (for example, in many Active Directory environments), use bind authentication instead.
+
+:::
+
+### Bind authentication
+
+When [`bindAuthentication`](https://stalw.art/docs/ref/object/directory#bindauthentication) is set to `true` (the default), Stalwart authenticates users by attempting to bind as the user themselves, using the password supplied at login. If the bind succeeds, the credentials are accepted. No password hash is read from the directory.
+
+In this mode, the user's distinguished name is located by running the [`filterLogin`](https://stalw.art/docs/ref/object/directory#filterlogin) search using the service account; the `?` placeholder in the filter is replaced with the login value. Once the DN is known, Stalwart attempts the user bind. Because the password hash is not available, Stalwart relies on the [`attrSecretChanged`](https://stalw.art/docs/ref/object/directory#attrsecretchanged) attribute (by default `pwdChangeTime`) to detect password changes and invalidate cached OAuth tokens.
+
+For example:
+
+```json
+{
+  "@type": "Ldap",
+  "bindAuthentication": true,
+  "filterLogin": "(&(objectClass=inetOrgPerson)(mail=?))",
+  "attrSecretChanged": {"pwdChangeTime": true}
+}
+```
+
+## Lookup filters
+
+Two LDAP filters drive account resolution: a login filter used at authentication time, and a mailbox filter used during email delivery.
+
+- [`filterLogin`](https://stalw.art/docs/ref/object/directory#filterlogin): locates the LDAP entry that matches the login value supplied by the user. Default `"(&(objectClass=inetOrgPerson)(mail=?))"`.
+- [`filterMailbox`](https://stalw.art/docs/ref/object/directory#filtermailbox): locates a user or group entry that matches a recipient email address or alias. Default `"(|(&(objectClass=inetOrgPerson)(|(mail=?)(mailAlias=?)))(&(objectClass=groupOfNames)(|(mail=?)(mailAlias=?))))"`.
+- [`filterMemberOf`](https://stalw.art/docs/ref/object/directory#filtermemberof): locates the groups an account belongs to when group membership is not carried on the account entry. The `?` is replaced with the account DN. Default `"(&(objectClass=groupOfNames)(member=?))"`.
+
+Each filter contains a `?` placeholder that the server replaces at runtime: the login value for `filterLogin`, the recipient address for `filterMailbox`, or the account DN for `filterMemberOf`.
+
+For example:
+
+```json
+{
+  "@type": "Ldap",
+  "filterLogin": "(&(|(objectClass=posixAccount)(objectClass=posixGroup))(uid=?))",
+  "filterMailbox": "(&(|(objectClass=posixAccount)(objectClass=posixGroup))(|(mail=?)(mailAlias=?)))"
+}
+```
+
+## Base DN
+
+Searches start from a base distinguished name configured through [`baseDn`](https://stalw.art/docs/ref/object/directory#basedn). The base DN sets the scope of every query and should be narrow enough to limit the search surface but broad enough to cover all relevant accounts.
+
+For example, `"dc=example,dc=org"` restricts lookups to entries under the `example.org` organisation.
+
+## Object attributes
+
+LDAP schemas vary between servers, so Stalwart has to be told which attributes to read for each piece of account information. The mapping is carried on the LDAP variant of the Directory object through the following fields:
+
+Each of these fields is a set of attribute names.
+
+- [`attrClass`](https://stalw.art/docs/ref/object/directory#attrclass): attribute(s) carrying the account's object class. Defaults to `{"objectClass": true}`. An account entry is treated as an individual unless its class matches [`groupClass`](https://stalw.art/docs/ref/object/directory#groupclass), which defaults to `"groupOfNames"`.
+- [`attrDescription`](https://stalw.art/docs/ref/object/directory#attrdescription): attribute(s) used as the account description. Default `{"description": true}`.
+- [`attrSecret`](https://stalw.art/docs/ref/object/directory#attrsecret): attribute carrying the password hash, used only when `bindAuthentication` is `false`. Default `{"userPassword": true}`.
+- [`attrSecretChanged`](https://stalw.art/docs/ref/object/directory#attrsecretchanged): attribute carrying the last password-change timestamp (or version value), used to invalidate OAuth tokens in bind-authentication mode. Default `{"pwdChangeTime": true}`.
+- [`attrMemberOf`](https://stalw.art/docs/ref/object/directory#attrmemberof): attribute(s) listing the groups an account belongs to. Default `{"memberOf": true}`.
+- [`attrEmail`](https://stalw.art/docs/ref/object/directory#attremail): attribute carrying the primary email address. Default `{"mail": true}`.
+- [`attrEmailAlias`](https://stalw.art/docs/ref/object/directory#attremailalias): attribute carrying email aliases. Default `{"mailAlias": true}`.
+
+There is no attribute mapping for the account's login name or for a per-account disk quota: the login name is resolved from the entry returned by [`filterLogin`](https://stalw.art/docs/ref/object/directory#filterlogin), and disk quotas are held on the [Account](https://stalw.art/docs/ref/object/account) and [Tenant](https://stalw.art/docs/ref/object/tenant) objects rather than read from the directory (see [Quotas](https://stalw.art/docs/auth/authorization/quotas)).
+
+For example:
+
+```json
+{
+  "@type": "Ldap",
+  "attrClass": {"objectClass": true},
+  "attrDescription": {"principalName": true, "description": true},
+  "attrSecret": {"userPassword": true},
+  "attrMemberOf": {"memberOf": true, "otherGroups": true},
+  "attrEmail": {"mail": true},
+  "attrEmailAlias": {"mailAlias": true}
+}
+```

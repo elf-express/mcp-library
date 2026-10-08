@@ -1,0 +1,70 @@
+---
+title: "Alerts"
+source: https://stalw.art/docs/telemetry/alerts/
+---
+
+# Alerts
+
+> Section: Telemetry
+
+Alerts notify administrators when a server metric, or a combination of metrics, crosses a defined threshold. The condition is evaluated continuously against the live metrics stream, and when it holds, a notification is emitted. Notifications can be delivered as an in-server event (which a [webhook](https://stalw.art/docs/telemetry/webhooks) can forward downstream) or as an email message.
+
+The trigger is an expression that can reference one or more metrics. Expressions support logical operators, so conditions such as `store_foundationdb_error > 100 || store_s3_error > 100` can be built up directly. Metric identifiers in the expression use underscores in place of dots and hyphens (`security_brute_force_ban` rather than `security.brute-force-ban`) because the expression language restricts variable names to alphanumeric characters and underscores.
+
+:::tip[Enterprise feature]
+
+This feature is available exclusively in the [Enterprise Edition](https://stalw.art/docs/server/enterprise) of Stalwart and is not included in the Community Edition.
+
+:::
+
+## Configuration
+
+Each alert is represented by an [Alert](https://stalw.art/docs/ref/object/alert) object (found in the WebUI under <!-- breadcrumb:Alert --> Settings › Telemetry › Alerts<!-- /breadcrumb:Alert -->). The relevant fields are:
+
+- [`enable`](https://stalw.art/docs/ref/object/alert#enable): whether the alert is active. Default `true`.
+- [`condition`](https://stalw.art/docs/ref/object/alert#condition): the expression evaluated against incoming metrics. The alert fires when the expression evaluates to true.
+- [`eventAlert`](https://stalw.art/docs/ref/object/alert#eventalert): event notification settings. A nested type with variants `Disabled` and `Enabled`.
+- [`emailAlert`](https://stalw.art/docs/ref/object/alert#emailalert): email notification settings. A nested type with variants `Disabled` and `Enabled`.
+
+### Event notification
+
+When the `Enabled` variant of [`eventAlert`](https://stalw.art/docs/ref/object/alert#eventalert) is selected, the alert emits a `telemetry.alert` event whenever [`condition`](https://stalw.art/docs/ref/object/alert#condition) holds. The event can be captured by a [WebHook](https://stalw.art/docs/ref/object/web-hook) so that downstream systems receive the notification.
+
+The fields on the `Enabled` variant are:
+
+- [`eventMessage`](https://stalw.art/docs/ref/object/alert#alerteventproperties): message carried by the emitted event. May reference metric values using placeholders.
+
+### Email notification
+
+When the `Enabled` variant of [`emailAlert`](https://stalw.art/docs/ref/object/alert#emailalert) is selected, the server sends an email each time the condition becomes true. The fields on the `Enabled` variant are:
+
+- [`fromName`](https://stalw.art/docs/ref/object/alert#alertemailproperties): optional display name of the sender.
+- [`fromAddress`](https://stalw.art/docs/ref/object/alert#alertemailproperties): sender email address.
+- [`to`](https://stalw.art/docs/ref/object/alert#alertemailproperties): set of recipient addresses, each keyed by address and mapped to `true`.
+- [`subject`](https://stalw.art/docs/ref/object/alert#alertemailproperties): subject line. May reference metric values using placeholders.
+- [`body`](https://stalw.art/docs/ref/object/alert#alertemailproperties): message body. May reference metric values using placeholders.
+
+## Example
+
+The following Alert fires when the count of FoundationDB or S3 errors exceeds one hundred. It raises an event notification carrying a message with the current counts and also sends an email with the same information:
+
+```json
+{
+  "enable": true,
+  "condition": {
+    "else": "store_foundationdb_error > 100 || store_s3_error > 100"
+  },
+  "eventAlert": {
+    "@type": "Enabled",
+    "eventMessage": "Database errors: FDB %{store.foundationdb-error}%, S3 %{store.s3-error}%"
+  },
+  "emailAlert": {
+    "@type": "Enabled",
+    "fromName": "Alert Subsystem",
+    "fromAddress": "alert@example.com",
+    "to": {"jdoe@example.com": true},
+    "subject": "Found %{store.foundationdb-error}% FDB and %{store.s3-error}% S3 errors",
+    "body": "We found %{store.foundationdb-error}% FDB and %{store.s3-error}% S3 errors."
+  }
+}
+```
