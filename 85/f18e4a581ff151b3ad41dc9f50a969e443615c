@@ -1,0 +1,35 @@
+mcpjungle/docs-mcp-server/README.md
+  s_5e1d12ee97a68a::t_683f1362e28b53 74-75,79-80
+mcpjungle/docs-mcp-server/package-lock.json
+  s_5e1d12ee97a68a::t_6ac343549cfb2d 14,1818-1820,1823
+mcpjungle/docs-mcp-server/package.json
+  s_5e1d12ee97a68a::t_52350961209188 50
+mcpjungle/docs-mcp-server/src/http.ts
+  s_b724025751e674::t_b57ac730c20074 10-13,18-19,29-44,46-49,52-53,64,66-70,79-99,162-164,167-183,192-194
+mcpjungle/docs-mcp-server/tests/http-ratelimit.test.ts
+  s_b724025751e674::t_fb0659c4770b2f 1-130
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "85f18e4a581ff151b3ad41dc9f50a969e443615c",
+  "prompts": {},
+  "sessions": {
+    "s_5e1d12ee97a68a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e56de2d5-155e-466c-8e84-8afb2a6ced81",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    },
+    "s_b724025751e674": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-a14217e32f253ef93",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
