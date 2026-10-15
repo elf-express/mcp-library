@@ -7,11 +7,16 @@
  *   未知 corpus 回 404。GET/DELETE 同時掛在兩種路徑上(以 session id 找 transport)。
  *
  * 與 MCP 遠端連接器(Claude Desktop / 網頁版 custom connector)相容。
+ *
+ * 限流(E-250):/mcp* 只計數「驗證失敗」的請求,同一來源 IP 在時間窗內超過上限即回 429,
+ * 到期自動解除;token 正確或未啟用驗證的請求不計數。不信任 X-Forwarded-For,以連線來源 IP 計數。
+ * /health 不受限流影響。
  */
 
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { isInitializeRequest } from "@modelcontextprotocol/sdk/types.js";
-import express, { type Request, type Response } from "express";
+import express, { type Express, type Request, type Response } from "express";
+import { rateLimit, type AugmentedRequest } from "express-rate-limit";
 import { randomUUID } from "node:crypto";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
@@ -21,14 +26,31 @@ export interface HttpDeps {
   hasCorpus: (id: string) => boolean;
 }
 
-export async function runHttp(
+export interface HttpOptions {
+  /** 設了之後 /mcp* 需帶 Authorization: Bearer <token>;空值 = 不驗證 */
+  authToken?: string;
+  /** 時間窗內允許的驗證失敗次數,超過回 429 */
+  rateLimitMax: number;
+  /** 限流時間窗(毫秒),到期自動解除 */
+  rateLimitWindowMs: number;
+}
+
+/** 讀正整數環境變數,沒設或不合法時回預設值 */
+function envInt(name: string, fallback: number): number {
+  const n = Number(process.env[name]);
+  return Number.isInteger(n) && n > 0 ? n : fallback;
+}
+
+export function createHttpApp(
   createServer: (scope?: string) => McpServer,
-  deps: HttpDeps
-): Promise<void> {
-  const port = parseInt(process.env.PORT || "5690", 10);
-  const authToken = process.env.MCP_AUTH_TOKEN?.trim();
+  deps: HttpDeps,
+  opts: HttpOptions
+): Express {
+  const { authToken, rateLimitMax, rateLimitWindowMs } = opts;
 
   const app = express();
+  // 不信任 X-Forwarded-For,一律以連線來源 IP 計數(gateway 不轉送這個標頭)
+  app.set("trust proxy", false);
   app.use(express.json({ limit: "8mb" }));
 
   // 每個 session 一個 transport,以 mcp-session-id 為鍵。
@@ -39,9 +61,13 @@ export async function runHttp(
     res.json({ status: "ok", corpora: deps.corporaCount(), docs: deps.docCount() });
   });
 
-  function checkAuth(req: Request, res: Response): boolean {
+  function isAuthorized(req: Request): boolean {
     if (!authToken) return true;
-    if ((req.headers.authorization || "") === "Bearer " + authToken) return true;
+    return (req.headers.authorization || "") === "Bearer " + authToken;
+  }
+
+  function checkAuth(req: Request, res: Response): boolean {
+    if (isAuthorized(req)) return true;
     res.status(401).json({
       jsonrpc: "2.0",
       error: { code: -32001, message: "Unauthorized: missing or invalid bearer token" },
@@ -49,6 +75,27 @@ export async function runHttp(
     });
     return false;
   }
+
+  // 只計數驗證失敗的請求:未啟用驗證或 token 正確的請求直接略過,不佔額度
+  const mcpLimiter = rateLimit({
+    windowMs: rateLimitWindowMs,
+    limit: rateLimitMax,
+    standardHeaders: "draft-8",
+    legacyHeaders: false,
+    skip: (req) => isAuthorized(req),
+    validate: { xForwardedForHeader: false },
+    handler: (req, res, _next, options) => {
+      const info = (req as AugmentedRequest).rateLimit;
+      console.error(
+        `[docs-mcp-server] 驗證失敗次數超過上限,回 429:ip=${req.ip} 已計 ${info.used}/${info.limit} 次,時間窗 ${rateLimitWindowMs}ms`
+      );
+      res.status(options.statusCode).json({
+        jsonrpc: "2.0",
+        error: { code: -32029, message: "Too many failed authentication attempts, retry later" },
+        id: null,
+      });
+    },
+  });
 
   // Client -> server(及 server 回應)。scope 為 undefined(/mcp)或語料 id(/mcp/:corpus)。
   async function handlePost(scope: string | undefined, req: Request, res: Response): Promise<void> {
@@ -112,14 +159,28 @@ export async function runHttp(
   };
 
   // 全語料端點
-  app.post("/mcp", (req, res) => handlePost(undefined, req, res));
-  app.get("/mcp", handleSessionRequest);
-  app.delete("/mcp", handleSessionRequest);
+  app.post("/mcp", mcpLimiter, (req, res) => handlePost(undefined, req, res));
+  app.get("/mcp", mcpLimiter, handleSessionRequest);
+  app.delete("/mcp", mcpLimiter, handleSessionRequest);
 
   // 單一語料端點(/mcp/<corpus>)
-  app.post("/mcp/:corpus", (req, res) => handlePost(req.params.corpus, req, res));
-  app.get("/mcp/:corpus", handleSessionRequest);
-  app.delete("/mcp/:corpus", handleSessionRequest);
+  app.post("/mcp/:corpus", mcpLimiter, (req, res) => handlePost(req.params.corpus as string, req, res));
+  app.get("/mcp/:corpus", mcpLimiter, handleSessionRequest);
+  app.delete("/mcp/:corpus", mcpLimiter, handleSessionRequest);
+
+  return app;
+}
+
+export async function runHttp(
+  createServer: (scope?: string) => McpServer,
+  deps: HttpDeps
+): Promise<void> {
+  const port = parseInt(process.env.PORT || "5690", 10);
+  const authToken = process.env.MCP_AUTH_TOKEN?.trim();
+  const rateLimitMax = envInt("DOCS_MCP_RATE_LIMIT_MAX", 20);
+  const rateLimitWindowMs = envInt("DOCS_MCP_RATE_LIMIT_WINDOW_MS", 15 * 60 * 1000);
+
+  const app = createHttpApp(createServer, deps, { authToken, rateLimitMax, rateLimitWindowMs });
 
   app.listen(port, () => {
     console.error(
@@ -128,5 +189,8 @@ export async function runHttp(
     );
     console.error("[docs-mcp-server] 語料數:" + deps.corporaCount() + ",文件數:" + deps.docCount());
     console.error("[docs-mcp-server] 驗證:" + (authToken ? "已啟用 Bearer Token" : "未啟用 (公開存取)"));
+    console.error(
+      "[docs-mcp-server] 限流:" + rateLimitWindowMs + "ms 內驗證失敗 " + rateLimitMax + " 次即回 429"
+    );
   });
 }
