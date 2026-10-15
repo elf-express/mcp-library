@@ -123,7 +123,7 @@ node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / gen-
 - 要改接**既有的外部 DB**:在 `.env` 設 `MCPJUNGLE_DATABASE_URL`(host 填 DB 的 IP,不是容器名)覆寫預設值即可。改內建 DB 密碼要同時改 `POSTGRES_PASSWORD` 與 `MCPJUNGLE_DATABASE_URL` 兩處。
 - 網路 `mcpjungl` 由 stack **自建**(`<project>_mcpjungl`),**不必先 `docker network create`**。
 - gateway 映像 = 自行維護的 MCPJungle(源自上游 c2a2c8d)從源碼 build:context `./mcpjungle/gateway`、`Dockerfile.fullbuild`、tag `mcpjungle-fork:${IMAGE_TAG:-latest}`。
-- docs-mcp 映像由 `.github/workflows/docker-publish.yml` 在 push main 時自動 build + push 到 `ghcr.io/elf-express/docs-mcp-server:latest`(pull 法用的就是它)。
+- docs-mcp 映像由 `.github/workflows/docker-publish.yml` 在 push release 時自動 build + push 到 `ghcr.io/elf-express/docs-mcp-server:latest`(pull 法用的就是它)。
 
 ## 易踩雷
 
@@ -132,14 +132,16 @@ node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / gen-
 - **server 名稱全域唯一(常踩)**:gateway 一啟動,`registrar` 已自動註冊全部書本(`sqlsugar-zh-tw fc-zh-tw nginx-en opnsense-en opnsense-zh-tw stalwart-en`)與 `filesystem fetch time`。**再用 dashboard UI / CLI 註冊同名 server 會報 `duplicate key value violates unique constraint "idx_mcp_servers_name" (SQLSTATE 23505)`**——要嘛換 `name`,要嘛先在 Servers 清單把舊的 deregister。repo 內的設定**看不出 DB 裡實際註冊了什麼**,以 gateway 執行時清單為準:`docker compose exec mcpjungle /mcpjungle list servers`。
 - Windows / PowerShell 環境:README 範例多為 bash,設環境變數請改 `$env:VAR="..."`;`docs-mcp-server` 的 `npm run clean`(`rm -rf`)在 PowerShell 不通。
 
-## CI / commit 規範
+## 分支 / CI / commit 規範
 
-- [`.github/workflows/ci.yml`](.github/workflows/ci.yml) 五個 job:
+- 動手前先讀 [BRANCHING.md](BRANCHING.md),依 elf-team-rule 規範操作分支。本 repo 為第 3 種自有專案:開發分支從 `origin/dev` 開出、PR 合回 `dev`;`release` 只從測過的 `dev` 快轉,是部署來源;`main` 只從 `release` 快轉。
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml) 在 push `dev`/`release`/`hotfix/**` 與所有 PR 時執行,六個 job:
   - `basics`:**Conventional Commits** PR 檢查、compose 驗證(只准 3 份、不准 `container_name`)、>5MB 大檔擋、機密掃描
   - `gateway`:`mcpjungle/gateway` 的 dashboard build + `go build` / `go test` / golangci-lint
   - `registry`:`node --test "mcpjungle/registry/*.test.mjs"`
   - `build-test`:docs-mcp-server 的 build + vitest
   - `docker-build`:PR 時 build 映像驗證(不推)
-- [`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml):push main 時 build + push `docs-mcp-server`、`docs-registrar` 到 ghcr。
+  - `ci`:彙總 job,組織 ruleset `elf-require-ci` 只要求它;`name: ci` 不可改名,新增 job 要加進它的 `needs`
+- [`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml):push release 時 build + push `docs-mcp-server`、`docs-registrar` 到 ghcr(`:release`、`:sha-<short>`、`:latest`)。
 - 提交訊息走 **Conventional Commits**(`feat:` / `fix:` / `deploy:` …),否則 PR 會被擋。
 - worktree 放 repo 外的 `E:\source\mcp-library-<短名>`(見 [AGENTS.md](AGENTS.md) 的 Worktree 一節)。

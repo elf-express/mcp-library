@@ -126,7 +126,7 @@ compose 內含一次性 `registrar` 容器:`docker compose up` 後它等 gateway
 
 ## 六、建置 / 推送 image 到 ghcr.io
 
-推到 ghcr 的只有 `ghcr.io/elf-express/docs-mcp-server` 與 `ghcr.io/elf-express/docs-registrar`(push main 時由 [`docker-publish.yml`](../.github/workflows/docker-publish.yml) 自動推,也可手動推)。gateway 映像 `mcpjungle-fork` 沒有發布,部署端一律現場 build;`postgres` 直接用官方 `postgres:16-alpine`。三個自建映像(gateway / docs-mcp / registrar)的 tag 由 `IMAGE_TAG` 決定(預設 `latest`)。
+推到 ghcr 的只有 `ghcr.io/elf-express/docs-mcp-server` 與 `ghcr.io/elf-express/docs-registrar`(push release 時由 [`docker-publish.yml`](../.github/workflows/docker-publish.yml) 自動推,也可手動推)。gateway 映像 `mcpjungle-fork` 沒有發布,部署端一律現場 build;`postgres` 直接用官方 `postgres:16-alpine`。三個自建映像(gateway / docs-mcp / registrar)的 tag 由 `IMAGE_TAG` 決定(預設 `latest`)。
 
 ```bash
 echo "$GHCR_PAT" | docker login ghcr.io -u <github 帳號> --password-stdin   # PAT 需 packages:write 權限

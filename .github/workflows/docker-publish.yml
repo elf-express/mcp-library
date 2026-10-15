@@ -4,7 +4,7 @@ name: Docker Publish
 # monorepo 版 — matrix 同時建構並推送所有 server 的 Docker 映像至 GHCR
 # 觸發時機:
 #   1. push tag v*.*.*           → 推 :vX.Y.Z + :X.Y + :X + :latest
-#   2. push to main(已通過 CI)  → 推 :main + :sha-<short>
+#   2. push to release(只從測過的 dev 快轉,見 BRANCHING.md)→ 推 :release + :sha-<short> + :latest
 #   3. 手動觸發(workflow_dispatch) → 輸入自訂 tag
 #
 # 映像位置:ghcr.io/<owner>/<image>
@@ -15,7 +15,7 @@ name: Docker Publish
 on:
   push:
     branches:
-      - main
+      - release
     tags:
       - 'v*.*.*'
   workflow_dispatch:
@@ -85,7 +85,7 @@ jobs:
             type=semver,pattern={{major}}
             type=ref,event=branch
             type=sha,prefix=sha-,format=short
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/release' }}
             type=raw,value=${{ github.event.inputs.tag }},enable=${{ github.event_name == 'workflow_dispatch' }}
           labels: |
             org.opencontainers.image.title=${{ matrix.title }}

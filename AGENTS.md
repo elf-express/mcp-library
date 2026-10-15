@@ -29,10 +29,14 @@
 - `compose.attach.yaml` 用於將 `docs-mcp` 註冊至現有 MCPJungle gateway，不會建立新的 gateway。
 - 書本的 MCPJungle 註冊設定由 registrar 依各書 `corpus.json` 自動產生，不手寫；非書本註冊檔在 `mcpjungle/registry/*.json`，工具群組設定在 `mcpjungle/registry/groups/*.json`（registrar 註冊完 server 後自動建立／更新）。手動重跑註冊用 `docker compose run --rm registrar`（可帶 `-e REGISTER_LIST=...`）。
 
+## 分支
+
+- 動手前先讀 `BRANCHING.md`，依 elf-team-rule 規範操作分支（第 3 種自有專案：開發分支從 `origin/dev` 開出、PR 合回 `dev`，`release` 是部署來源）。
+
 ## Worktree
 
 - worktree 一律放在 repo 外的同層目錄 `E:\source\mcp-library-<短名>`，不要開在 repo 目錄裡面（會被當成未追蹤檔，也會被 docker build context 掃進去）。
-- 開法：`git -C E:\source\mcp-library worktree add E:\source\mcp-library-<短名> -b <分支> origin/main`；PR 合併後 `git -C E:\source\mcp-library worktree remove E:\source\mcp-library-<短名>`。
+- 開法：`git -C E:\source\mcp-library worktree add E:\source\mcp-library-<短名> -b <分支> origin/dev`；PR 合併後 `git -C E:\source\mcp-library worktree remove E:\source\mcp-library-<短名>`。
 - 例外：Orca 開的 worktree 放在 repo 內的 `.ocrca\worktrees`（「工作樹位置」填相對路徑 `.ocrca\worktrees`，Orca 會再開 `<專案名>\<工作樹名>`）。`/.ocrca/` 已列入 `.gitignore`；docker build context 是 `mcpjungle/` 與 `mcpjungle/gateway/`，不含它。主倉庫勿跑 `git clean -x`，會連 worktree 一起刪掉。
 - 新 worktree 的設定腳本放在根目錄 [`orca.yaml`](orca.yaml)（`scripts.setup`，團隊共用）：裝 docs-mcp-server 依賴並 build，主倉庫有 `.env` 時一併複製。要改 gateway 的 worktree，另外跑 `(cd mcpjungle/gateway && bash scripts/build-dashboard.sh)`。
 
