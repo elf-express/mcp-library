@@ -1,0 +1,19 @@
+mcpjungle/docs-mcp-server/README.md
+  s_5e1d12ee97a68a::t_6fc1f03055dab2 80-81
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a020cd016424eacba96b9db4a5fc02a3c9abbceb",
+  "prompts": {},
+  "sessions": {
+    "s_5e1d12ee97a68a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e56de2d5-155e-466c-8e84-8afb2a6ced81",
+        "model": "unknown"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
