@@ -71,8 +71,14 @@
 | `TRANSPORT` | `stdio` | 設 `http` 啟用雲端 HTTP 模式 |
 | `PORT` | `5690` | HTTP 監聽埠 |
 | `MCP_AUTH_TOKEN` | (空) | 設定後 `/mcp*` 需帶 `Authorization: Bearer <token>`;留空為公開 |
+| `DOCS_MCP_RATE_LIMIT_MAX` | `20` | 時間窗內同一來源 IP 允許的驗證失敗次數,超過回 `429`(帶 `Retry-After`) |
+| `DOCS_MCP_RATE_LIMIT_WINDOW_MS` | `900000` | 限流時間窗(毫秒,預設 15 分鐘),到期自動解除 |
 | `DOCS_CORPORA_DIR` | 自動 | 覆寫語料根目錄,可用 `;`(Windows)或 `:`(Linux)分隔多個。預設:打包的 `corpora/`,沒有則掃 `../books/*/corpus/` |
 | `DOCS_SCOPE` | (空) | **stdio 模式**鎖定單一語料(供 Claude Desktop 每本書一條設定) |
+
+> 限流只計數驗證失敗(`401`)的請求;token 正確、未啟用驗證、其他 4xx(如未知語料 `404`)都不計數,被鎖的 IP 帶正確 token 仍可使用。封鎖在時間窗到期後自動解除。不信任 `X-Forwarded-For`,一律以連線來源 IP 計數;`/health` 不受限流影響。
+>
+> 限流只會拖慢驗證失敗的嘗試並寫入日誌,不能取代足夠長的隨機 `MCP_AUTH_TOKEN`(建議用 32 bytes 以上的隨機值產生);未設 `MCP_AUTH_TOKEN` 時不會計數任何請求。
 
 ---
 
