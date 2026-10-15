@@ -2,23 +2,22 @@ name: CI
 
 # =============================================================================
 # monorepo 版通用 CI
-# 觸發:push / PR 到 main
+# 觸發:push dev / release / hotfix/**,以及所有 PR(開發分支經 PR 進 dev,見 BRANCHING.md)
 # 內含:
 #   - basics:    commit lint、compose 驗證、大檔案檢查、機密掃描
 #   - registry:   gen-book-configs / registrar.sh 的 node --test
 #   - build-test: docs-mcp-server 的 TypeScript build + 單元測試(上傳 JUnit 報告)
 #   - gateway:    mcpjungle/gateway 的 go build / go test / golangci-lint
 #   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
+#   - ci:        彙總 job;組織 ruleset elf-require-ci 只要求這一個檢查(以 name 比對,勿改名),
+#                needs 必須列出上面所有 job
 # repo 政策只允許官方與已驗證發行者的 action,且必須釘 SHA。
 # =============================================================================
 
 on:
   push:
-    branches:
-      - main
+    branches: [dev, release, 'hotfix/**']
   pull_request:
-    branches:
-      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -240,3 +239,21 @@ jobs:
           tags: ${{ matrix.image }}:ci-test
           cache-from: type=gha,scope=${{ matrix.image }}
           cache-to: type=gha,mode=max,scope=${{ matrix.image }}
+
+  # 彙總:needs 列出上面所有 job,沒列進來的 job 失敗也擋不住合併與發佈
+  ci:
+    name: ci
+    if: always()
+    needs: [basics, gateway, registry, build-test, docker-build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Every required job succeeded
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          for r in $RESULTS; do
+            case "$r" in
+              success|skipped) ;;
+              *) echo "::error::a job in needs ended with '$r'"; exit 1 ;;
+            esac
+          done
