@@ -1,0 +1,35 @@
+.github/workflows/docker-publish.yml
+  s_3f2a49aea0fe6c::t_fbb067687d0b37 7
+  s_3f2a49aea0fe6c::t_44b4b818537e95 88
+  s_3f2a49aea0fe6c::t_a9d22d9980052a 18
+CLAUDE.md
+  s_3f2a49aea0fe6c::t_f2517b97e36a34 135,137-138
+  s_3f2a49aea0fe6c::t_a2b0bdde0576fa 126
+  s_3f2a49aea0fe6c::t_bed537be9f181f 144-145
+AGENTS.md
+  s_3f2a49aea0fe6c::t_421566ce642c17 32-35
+  s_3f2a49aea0fe6c::t_4d4bc7d80426da 39
+.github/workflows/ci.yml
+  s_3f2a49aea0fe6c::t_db05ed44e4cf91 5,12-13,19
+  s_3f2a49aea0fe6c::t_be6f173f20bc5d 242-259
+mcpjungle/README.md
+  s_3f2a49aea0fe6c::t_f0e3a53e408fb5 129
+BRANCHING.md
+  s_3f2a49aea0fe6c::t_0e3b26cced5b4e 1-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5d00449a8efc8d253bb0ea95ee410d5063afecff",
+  "prompts": {},
+  "sessions": {
+    "s_3f2a49aea0fe6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "67b8118e-db34-407b-b773-8dede5a3b3b6",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "楊清雲 <41539966+TW199501@users.noreply.github.com>"
+    }
+  }
+}
