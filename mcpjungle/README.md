@@ -66,7 +66,7 @@ docker compose run --rm -e REGISTER_LIST="nginx-en" registrar   # 只註冊指�
 兩種策略:
 
 - **A. 每本書各自註冊**(預設):工具 `sqlsugar-zh-tw__docs_search`、`fc-zh-tw__docs_search`…。可在 gateway 對「每本書」分組/權限。server 名 = 語料 id = `<書名>-<語言>`(命名規則見 [`books/README.md`](books/README.md))。
-- **B. 整包一個 `docs`**:設 `REGISTER_LIST=docs`(設定在 `registry/optional/docs.json`)→ `docs__docs_search`(用 `corpus` 參數選書)。這份是手寫的,有設 `DOCS_MCP_AUTH_TOKEN` 時要自己加 `bearer_token`。
+- **B. 整包一個 `docs`**:設 `REGISTER_LIST=docs`(設定在 `registry/optional/docs.json`)→ `docs__docs_search`(用 `corpus` 參數選書)。這份是手寫的,有設 `DOCS_MCP_AUTH_TOKEN` 時要自己加 `"bearer_token": "${DOCS_MCP_AUTH_TOKEN}"`(registrar 容器已帶這個變數;不可寫明文,理由見第三節)。
 
 ### 工具群組
 
@@ -92,13 +92,19 @@ docker compose exec mcpjungle /mcpjungle list tools --group claude-tools
 | `registry/fetch.json` | `uvx mcp-server-fetch` | 抓網頁轉 markdown |
 | `registry/time.json` | `uvx mcp-server-time --local-timezone=Asia/Taipei` | 目前時間 / 時區轉換 |
 
-要 **github** 等**需 token** 的:照 stdio 格式加 `env` 欄位放進 `registry/optional/`(只在 `REGISTER_LIST` 點名時註冊,以免無 token 失敗;注意 token 會烤進 registrar 映像):
+要 **github** 等**需 token** 的:照 stdio 格式加 `env` 欄位放進 `registry/optional/`(只在 `REGISTER_LIST` 點名時註冊,以免無 token 失敗)。**token 不可明文寫進 `registry/*.json`**——`registry/` 整包烤進 registrar 映像並推上 GHCR。值一律寫成 `${變數名}` 佔位:
 
 ```json
 { "name": "github", "transport": "stdio", "command": "npx",
   "args": ["-y", "@modelcontextprotocol/server-github"],
-  "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "你的PAT" } }
+  "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}" } }
 ```
+
+registrar 執行 `mcpjungle register -c` 時,CLI 以 registrar 容器的環境變數代換 `${...}`;變數沒設就報錯、不註冊。所以還要:
+
+1. 在根目錄 `compose.yaml` 的 `registrar.environment` 加一行 `GITHUB_PERSONAL_ACCESS_TOKEN: ${GITHUB_PERSONAL_ACCESS_TOKEN:-}`(`compose.pull.yaml` 以 `extends` 沿用,不必另改)。
+2. 實際值放 `.env`(不進 git)或 GitOps 平台的環境變數 UI。
+3. `REGISTER_LIST` 點名 `github`;有值時只註冊列出的名稱,書本等其他 server 要一起列(見第二節)。
 
 ## 四、GitOps 自動部署(Portainer / Komodo / Dockge…)
 
