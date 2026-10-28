@@ -140,8 +140,9 @@ node --test "mcpjungle/registry/*.test.mjs"            # gen-book-configs / gen-
   - `gateway`:`mcpjungle/gateway` 的 dashboard build + `go build` / `go test` / golangci-lint
   - `registry`:`node --test "mcpjungle/registry/*.test.mjs"`
   - `build-test`:docs-mcp-server 的 build + vitest
-  - `docker-build`:PR 時 build 映像驗證(不推)
+  - `docker-build`:PR 與 push dev 時 build 映像驗證(不推);只有 push dev 寫 buildkit 快取,PR 只讀
   - `ci`:彙總 job,組織 ruleset `elf-require-ci` 只要求它;`name: ci` 不可改名,新增 job 要加進它的 `needs`
+- [`.github/workflows/cleanup-pr-caches.yml`](.github/workflows/cleanup-pr-caches.yml):PR 關閉時刪除該 PR 的 Actions 快取
 - [`.github/workflows/docker-publish.yml`](.github/workflows/docker-publish.yml):push release 時 build + push `docs-mcp-server`、`docs-registrar` 到 ghcr(`:release`、`:sha-<short>`、`:latest`)。
 - 提交訊息走 **Conventional Commits**(`feat:` / `fix:` / `deploy:` …),否則 PR 會被擋。
 - worktree 放 repo 外的 `E:\source\mcp-library-<短名>`(見 [AGENTS.md](AGENTS.md) 的 Worktree 一節)。
