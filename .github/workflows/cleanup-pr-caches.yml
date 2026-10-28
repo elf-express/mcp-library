@@ -4,10 +4,15 @@ name: Cleanup PR Caches
 # PR 關閉(合併或關掉)時,刪掉該 PR 留下的 Actions 快取(ref = refs/pull/<n>/merge)
 # PR 的快取只有該 PR 自己讀得到,關閉後就是佔空間的垃圾;不清會一直佔到 7 天過期
 # 只用 runner 內建的 gh CLI,不引用第三方 action(repo 政策只允許官方與已驗證發行者)
+#
+# 用 pull_request_target 而非 pull_request:Dependabot 與 fork 的 PR 觸發 pull_request 時
+# GITHUB_TOKEN 一律唯讀,刪不了快取(而塞爆快取的正是 Dependabot PR)。
+# pull_request_target 在 base repo 的 context 執行,拿得到下方宣告的 actions: write。
+# 安全前提:本 workflow 不 checkout、不執行 PR 的任何程式碼,只用事件裡的 PR 編號(整數)。
 # =============================================================================
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
 
 permissions:
