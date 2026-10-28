@@ -8,7 +8,8 @@ name: CI
 #   - registry:   gen-book-configs / registrar.sh 的 node --test
 #   - build-test: docs-mcp-server 的 TypeScript build + 單元測試(上傳 JUnit 報告)
 #   - gateway:    mcpjungle/gateway 的 go build / go test / golangci-lint
-#   - docker-build: matrix — PR 時只 build 不 push(驗證映像可建)
+#   - docker-build: matrix — PR 與 push dev 時只 build 不 push(驗證映像可建);
+#                 只有 push dev 寫 buildkit 快取,PR 只讀(避免每個 PR 各存一份塞爆快取上限)
 #   - ci:        彙總 job;組織 ruleset elf-require-ci 只要求這一個檢查(以 name 比對,勿改名),
 #                needs 必須列出上面所有 job
 # repo 政策只允許官方與已驗證發行者的 action,且必須釘 SHA。
@@ -208,7 +209,9 @@ jobs:
     name: Docker Build Verify (${{ matrix.image }})
     runs-on: ubuntu-latest
     needs: [registry, build-test, gateway]
-    if: github.event_name == 'pull_request'
+    # PR:只讀快取、不寫(每個 PR 寫一份 ~1.5GB 的 buildkit 快取,dependabot 一多就塞爆 10GB 上限)
+    # push dev:寫一份共用快取(scope 綁映像名),所有開往 dev 的 PR 都讀得到
+    if: github.event_name == 'pull_request' || github.ref == 'refs/heads/dev'
     strategy:
       fail-fast: false
       matrix:
@@ -238,7 +241,7 @@ jobs:
           load: true
           tags: ${{ matrix.image }}:ci-test
           cache-from: type=gha,scope=${{ matrix.image }}
-          cache-to: type=gha,mode=max,scope=${{ matrix.image }}
+          cache-to: ${{ github.event_name == 'push' && format('type=gha,mode=max,scope={0}', matrix.image) || '' }}
 
   # 彙總:needs 列出上面所有 job,沒列進來的 job 失敗也擋不住合併與發佈
   ci:
