@@ -1,0 +1,33 @@
+name: Cleanup PR Caches
+
+# =============================================================================
+# PR 關閉(合併或關掉)時,刪掉該 PR 留下的 Actions 快取(ref = refs/pull/<n>/merge)
+# PR 的快取只有該 PR 自己讀得到,關閉後就是佔空間的垃圾;不清會一直佔到 7 天過期
+# 只用 runner 內建的 gh CLI,不引用第三方 action(repo 政策只允許官方與已驗證發行者)
+# =============================================================================
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  actions: write
+
+jobs:
+  cleanup:
+    name: Delete caches of PR #${{ github.event.pull_request.number }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete PR caches
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          REF: refs/pull/${{ github.event.pull_request.number }}/merge
+        run: |
+          count=$(gh cache list --ref "$REF" --limit 1000 --json id --jq 'length')
+          echo "PR 快取數量:$count($REF)"
+          if [ "$count" -gt 0 ]; then
+            gh cache list --ref "$REF" --limit 1000 --json id --jq '.[].id' \
+              | xargs -r -n1 gh cache delete
+          fi
+          echo "清理完成"
